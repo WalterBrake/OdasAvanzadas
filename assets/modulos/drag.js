@@ -49,6 +49,7 @@ Vue.component('drag', {
             app.particleAnimation(e, null, null, null, _this.particleColor)
             _this.setClassAnimation('start')
             s_select.play()
+            _this.playDragSound()
         },
         Drag (e) {
             var _this = this
@@ -58,6 +59,21 @@ Vue.component('drag', {
             var _this = this
             app.particleAnimation(e, null, null, null, _this.particleColor)
             _this.HitTestFn(e, true)
+            _this.playDropSound()
+        },
+        playDragSound(){
+            console.log('playDrag')
+            if(this.dragsound){
+                var sound = new Howl({ src: [this.dragsound] })
+                sound.play()
+            }
+        },
+        playDropSound(){
+            console.log('playDrop')
+            if(this.dropsound){
+                var sound = new Howl({ src: [this.dropsound] })
+                sound.play()
+            }
         },
         setClassAnimation(name) {
             var _this = this
@@ -211,7 +227,6 @@ Vue.component('drag', {
             if(dropzone.getAttribute(attr)){
                 var sound = new Howl({ src: [dropzone.getAttribute(attr)] })
                 sound.play()
-                
             }
         }
     },

@@ -734,6 +734,20 @@
 		"oAP": "\/ES1T1\/13\/asound\/b1.mp3",
 		"oF": 0
 		},
+	"\/ES1T1\/13\/asound\/b10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b10.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b2.mp3",
+		"oF": 0
+		},
 	"\/ES1T1\/13\/asound\/b3.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -762,11 +776,11 @@
 		"oAP": "\/ES1T1\/13\/asound\/b7.mp3",
 		"oF": 0
 		},
-	"\/ES1T1\/13\/asound\/b8.mp3": {
+	"\/ES1T1\/13\/asound\/b9.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES1T1\/13\/asound\/b8.mp3",
+		"oAP": "\/ES1T1\/13\/asound\/b9.mp3",
 		"oF": 0
 		},
 	"\/ES1T1\/13\/asound\/instruccion.mp3": {

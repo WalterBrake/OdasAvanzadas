@@ -1,3 +1,5 @@
+var EventBus = new Vue()
+
 Vue.component('scene', {
     props: [
         'answers', // total de respuestas
@@ -75,6 +77,7 @@ Vue.component('scene', {
                 if(this.oks == this.answers) {
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
                     if(this.alloksSound){
+                        console.log('allok')
                         var sound = new Howl({ src: [this.alloksSound] })
                         app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
                         setTimeout(function(){

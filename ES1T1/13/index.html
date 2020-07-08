@@ -40,12 +40,12 @@
             alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
             scene-color="#EB118B"
             @completed="sceneCompleted"
-            :devmode="false" >
+            :devmode="true">
             <info type="dragdrop" title="Distingo las letras" text="Arrastra el crayón para colorear las letras y la palomita para marcar los números." textaudio="asound/instruccion.mp3"></info>
             <activity>
                     <div class="row z-index">
                         <div class="mr-2">
-                            <drag initclass="addshadow"
+                            <drag initclass=""
                                 dropzone=".item"
                                 data="l"
                                 return-to-position
@@ -56,7 +56,7 @@
                             </drag>
                         </div>
                         <div class="ml-2">
-                            <drag initclass="addshadow"
+                            <drag initclass=""
                                 dropzone=".item"
                                 data="n"
                                 return-to-position
@@ -93,27 +93,27 @@
             <info type="dragdrop" title="Distingo las letras" text="Arrastra las letras mayúsculas adentro de la canasta." textaudio="asound/instruccion2.mp3"></info>
             <activity>
                     <div class="row z-index">
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-if-ok particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b1.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#48A2D9">
                             <img src="aimg/b1.svg"></drag></div>
-                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop return-if-error particle-color="#EB118B">
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" dropsound="asound/b2.mp3" drag-error-class="errorDrag" stay-if-ok return-if-error particle-color="#BE79B3">
                             <img src="aimg/b2.svg"></drag></div>
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b3.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#EB5155">
                             <img src="aimg/b3.svg"></drag></div>
-                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" dropsound="asound/b3.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#63BB73">
                             <img src="aimg/b4.svg"></drag></div>
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b5.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#49A1D9">
                             <img src="aimg/b5.svg"></drag></div>
                     </div> 
                     <div class="row z-index">
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-if-ok particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b6.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#FED359">
                             <img src="aimg/b6.svg"></drag></div>
-                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop return-if-error particle-color="#EB118B">
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" dropsound="asound/b7.mp3" drag-error-class="errorDrag" stay-if-ok return-if-error particle-color="#EC5559">
                             <img src="aimg/b7.svg"></drag></div>
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b7.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#4EAADF">
                             <img src="aimg/b8.svg"></drag></div>
-                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" dropsound="asound/b9.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#FCB522">
                             <img src="aimg/b9.svg"></drag></div>
-                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" dropsound="asound/b10.mp3" drag-error-class="errorDrag" stay-if-ok particle-color="#57B76D">
                             <img src="aimg/b10.svg"></drag></div>
                     </div> 
 

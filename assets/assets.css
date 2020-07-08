@@ -45,9 +45,8 @@ h1 {
   font-weight: normal;
 }
 h2 {
-  font-family: 'barnacle_boyregular';
   font-size: 0.9rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 img {
   -webkit-user-drag: none;
@@ -237,6 +236,11 @@ input[type=number] {
   transition: all 1s;
   opacity: 0;
   transform: scale(4);
+}
+.startScene h2,
+.endScene h2 {
+  font-family: 'barnacle_boyregular';
+  font-weight: normal;
 }
 .endScene h1 {
   font-size: 3rem;
