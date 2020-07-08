@@ -1,5 +1,10 @@
 Vue.component('info', {
-    props: ['title', 'text', 'textaudio', 'type', 'score'],
+    props: ['title', 'text', 'textaudio', 'type'],
+    data () {
+        return {
+            score: 0
+        }
+    },
     template: `
         <div class="info">
             <h1>{{title}}</h1>
@@ -11,6 +16,7 @@ Vue.component('info', {
                 </div>
             </div>
             <button class="reset button" @click="reset">Reiniciar</button>
+            
         </div>
     `,
     methods: {
@@ -18,5 +24,6 @@ Vue.component('info', {
     },
     mounted () {
         //this.$ref.instructions
+        this.score = this.$parent.score
     }
 })

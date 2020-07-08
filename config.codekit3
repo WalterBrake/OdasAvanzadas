@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "26667",
 "files": {
+	"\/.gitattributes": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.gitattributes",
+		"oF": 0
+		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -69,6 +76,34 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/asound\/bienhecho_hombre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/bienhecho_hombre.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/bienhecho_mujer.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/bienhecho_mujer.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/bienhecho_nina.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/bienhecho_nina.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/bienhecho_nino.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/bienhecho_nino.mp3",
+		"oF": 0
+		},
 	"\/assets\/asound\/end.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -83,62 +118,6 @@
 		"oAP": "\/assets\/asound\/error.mp3",
 		"oF": 0
 		},
-	"\/assets\/asound\/gen_binehecho_hombre.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_binehecho_hombre.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_binehecho_mujer.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_binehecho_mujer.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_binehecho_nina.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_binehecho_nina.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_binehecho_nino.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_binehecho_nino.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_vuelveaintentar_hombre.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_vuelveaintentar_hombre.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_vuelveaintentar_mujer.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_vuelveaintentar_mujer.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_vuelveaintentar_nina.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_vuelveaintentar_nina.mp3",
-		"oF": 0
-		},
-	"\/assets\/asound\/gen_vuelveaintentar_nino.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/assets\/asound\/gen_vuelveaintentar_nino.mp3",
-		"oF": 0
-		},
 	"\/assets\/asound\/ok.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -151,6 +130,34 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/assets\/asound\/select.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/vuelveaintentar_hombre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/vuelveaintentar_hombre.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/vuelveaintentar_mujer.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/vuelveaintentar_mujer.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/vuelveaintentar_nina.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/vuelveaintentar_nina.mp3",
+		"oF": 0
+		},
+	"\/assets\/asound\/vuelveaintentar_nino.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/asound\/vuelveaintentar_nino.mp3",
 		"oF": 0
 		},
 	"\/assets\/asound\/win.mp3": {
@@ -720,6 +727,48 @@
 		"oAP": "\/ES1T1\/13\/asound\/a9.mp3",
 		"oF": 0
 		},
+	"\/ES1T1\/13\/asound\/b1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b1.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b3.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b5.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b6.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b7.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/13\/asound\/b8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/13\/asound\/b8.mp3",
+		"oF": 0
+		},
 	"\/ES1T1\/13\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -748,7 +797,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 615745949,
-	"displayValue": "ODASAVANZADAS",
+	"displayValue": "OdasAvanzadas",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-ron",
 	"iconImageWasSetByUser": 0

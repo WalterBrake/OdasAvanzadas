@@ -9,37 +9,124 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        .ok svg { fill: #ffdd00; } 
+        .activity{
+            box-shadow: 0 0 40px rgba(0,0,0,0.05) inset;
+        }
+        .drag img{ max-width: 100px;}
+        [data="l"].okDrop svg path{ fill: #EB018C !important; }
+        [data="n"].okDrop{ position: relative;}
+        [data="n"].okDrop:after {
+            content: "";
+            position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+            background: url(aimg/check.svg) no-repeat 80% center ;
+         }
+        .basket{
+            width: 240px;
+            height: 240px;
+        }
+        
+        .okDrag img {transform: scale(.5); }
+        .drag.mayus img{ max-height: 86px;}
+        .drag.minus img{ max-height: 62px;}
     </style>
 </head>
 <body>
     <div id="app">
 
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
-
-        <scene :id="1" :current="current">
-            <info :score="score" type="dragdrop" title="Distingo las letras" text="Arrastra el crayón para colorear las letras y la palomita para marcar los números." textaudio="asound/instruccion.mp3"></info>
+        <scene v-if="currentScene==1" :key="1"
+            :answers="10" :score="50"
+            alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            scene-color="#EB118B"
+            @completed="sceneCompleted"
+            :devmode="false" >
+            <info type="dragdrop" title="Distingo las letras" text="Arrastra el crayón para colorear las letras y la palomita para marcar los números." textaudio="asound/instruccion.mp3"></info>
             <activity>
-                    <div class="row">
-                        <drag :x="30" :y="5" dropzone=".item" dropsound-attr="sound" data="l" return-to-position @isok="okFn" @iserror="errorFn" ><img src="aimg/crayon.svg"></drag>
-                        <drag :x="60" :y="5" dropzone=".item" dropsound-attr="sound" data="n" stay-in-drop @onOk="" @onError=""><img src="aimg/check.svg"></drag>
+                    <div class="row z-index">
+                        <div class="mr-2">
+                            <drag initclass="addshadow"
+                                dropzone=".item"
+                                data="l"
+                                return-to-position
+                                dropzone-ok-class="okDrop"
+                                dropzone-error-class="errorDrop"
+                                particle-color="#EB118B">
+                                    <img src="aimg/crayon.svg">
+                            </drag>
+                        </div>
+                        <div class="ml-2">
+                            <drag initclass="addshadow"
+                                dropzone=".item"
+                                data="n"
+                                return-to-position
+                                dropzone-ok-class="okDrop"
+                                dropzone-error-class="errorDrop"
+                                particle-color="#EB118B">
+                                    <img src="aimg/check.svg">
+                            </drag>
+                        </div>
                     </div> 
                     <div class="row mt-auto ">
-                        <div class="item" sound="asound/a1.mp3" data="l"><embedsvg src="aimg/a1.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a2.mp3" data="n"><embedsvg src="aimg/a2.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a3.mp3" data="l"><embedsvg src="aimg/a3.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a4.mp3" data="n"><embedsvg src="aimg/a4.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a5.mp3" data="l"><embedsvg src="aimg/a5.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a1.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a1.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a2.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="n"><embedsvg src="aimg/a2.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a3.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a3.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a4.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="n"><embedsvg src="aimg/a4.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a5.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a5.svg"></embedsvg></div>
                     </div>
-                    <div class="row">
-                        <div class="item" sound="asound/a6.mp3" data="n"><embedsvg src="aimg/a6.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a7.mp3" data="l"><embedsvg src="aimg/a7.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a8.mp3" data="n"><embedsvg src="aimg/a8.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a9.mp3" data="l"><embedsvg src="aimg/a9.svg"></embedsvg></div>
-                        <div class="item" sound="asound/a10.mp3" data="l"><embedsvg src="aimg/a10.svg"></embedsvg></div>
+                    <div class="row mb-1">
+                        <div class="item" oksound="asound/a6.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="n"><embedsvg src="aimg/a6.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a7.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a7.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a8.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="n"><embedsvg src="aimg/a8.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a9.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a9.svg"></embedsvg></div>
+                        <div class="item" oksound="asound/a10.mp3" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3" droptimes="untilok" data="l"><embedsvg src="aimg/a10.svg"></embedsvg></div>
                     </div>
             </activity>
         </scene>
+
+        <scene v-if="currentScene==2" :key="2"
+            :answers="6" :score="100"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#5EB247"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="dragdrop" title="Distingo las letras" text="Arrastra las letras mayúsculas adentro de la canasta." textaudio="asound/instruccion2.mp3"></info>
+            <activity>
+                    <div class="row z-index">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-if-ok particle-color="#EB118B">
+                            <img src="aimg/b1.svg"></drag></div>
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop return-if-error particle-color="#EB118B">
+                            <img src="aimg/b2.svg"></drag></div>
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b3.svg"></drag></div>
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b4.svg"></drag></div>
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b5.svg"></drag></div>
+                    </div> 
+                    <div class="row z-index">
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-if-ok particle-color="#EB118B">
+                            <img src="aimg/b6.svg"></drag></div>
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop return-if-error particle-color="#EB118B">
+                            <img src="aimg/b7.svg"></drag></div>
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b8.svg"></drag></div>
+                        <div><drag initclass="minus" dropzone=".basket" data="" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b9.svg"></drag></div>
+                        <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" drag-error-class="errorDrag" stay-in-drop particle-color="#EB118B">
+                            <img src="aimg/b10.svg"></drag></div>
+                    </div> 
+
+                    <div class="row mt-auto ">
+                        <div class="basket" data="m" droptimes="multiple">
+                            <img src="aimg/basket.svg">
+                        </div>
+                    </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -64,6 +151,5 @@
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
-    <script></script>
 </body>
 </html>

@@ -56,9 +56,19 @@ h1{
 }
 
 h2{
+    font-family: 'barnacle_boyregular';
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: normal;
 }
+
+
+img { 
+    -webkit-user-drag: none; 
+    -khtml-user-drag: none; 
+    -moz-user-drag: none; 
+    -o-user-drag: none; 
+    user-drag: none; 
+  }
 
 /* HIDE INPUT NUMBER ARROWS*/
 /* Chrome, Safari, Edge, Opera */
@@ -81,15 +91,18 @@ input[type=number] {
     display: flex;
     justify-content: center;
     width: 100%;
-    background: fade(@main, 50%);
-    /*@media (max-width: 1280px) {
-        flex-direction: column;
-        align-items: center;
-    }
-    */
     @media (max-width: 960px) {
         flex-direction: column;
         align-items: center;
+    }
+    .scenebar{
+        position: fixed;
+        bottom: 2px;
+        right: 2px;
+        background: @main;
+        color: @beige;
+        border-radius: 10px;
+        z-index: 999;
     }
 }
 
@@ -172,10 +185,24 @@ input[type=number] {
         max-width: 40px;
         margin-right: 10px;
     }
+    &.showmax {
+        background: @main;
+        font-size: 1.5rem;
+        embed {
+            max-width: 20px;
+        }
+        &.low{
+            background: @wrongcol;
+        }
+        &.mid{
+            background: @accent;
+        }
+    }
 }
 
 
-.activity{
+
+.activity, .startScene, .endScene{
     position: relative;
     background: @beige;
     width: 800px;
@@ -192,18 +219,63 @@ input[type=number] {
     }
 }
 
+.startScene, .endScene{
+    background:@main;
+    button{
+        font-size: 3rem;
+        padding: 10px 20px;
+        &[disabled]{
+            transition: all 1s;
+            opacity: 0;
+            transform: scale(4);
+        }
+    }
+}
+
+.endScene{
+    h1 {
+        font-size: 3rem;
+        color:@beige;
+    }
+    h2 {
+        margin: 10px 0;
+        font-size: 1.6rem;
+        color:@sec;
+    }
+    .endResults{
+        color:@sec;
+        margin: 10px;
+        strong {
+            font-weight: bold;
+            color:#fff;
+        }
+    }
+    .endResultErrors, .endImprove{
+        background: @main*.8;
+        padding: 4px;
+        border-radius: 6px;
+        color:@beige;
+    }
+    .endResultErrors{margin: 10px 0 4px 0; background: @main*.6;}
+    button {
+        margin: 20px 0;
+        font-size: 2rem;
+    }
+}
+
 
 .drag {
     .fullflexcenter;
     width: 120px;
     height: 120px;
-    position: absolute;
-    left: 0; top: 0;
+    //position: absolute;
+    //left: 0; top: 0;
 }
 
 
 .row{
     .fullflexcenter;
+    &.z-index{ position: relative; z-index: 999; }
 }
 
 .item{
@@ -223,6 +295,42 @@ input[type=number] {
 
 
 
+
+
+
+
 .mt-auto{margin-top: auto;}
+.mb-auto{margin-bottom: auto;}
+.ml-auto{margin-left: auto;}
+.mr-auto{margin-right: auto;}
+.mx-auto{margin-left: auto; margin-right: auto;}
+.my-auto{margin-top: auto; margin-bottom: auto;}
 
 
+
+@iterations: 10;
+.span-loop (@i) when (@i > 0) {
+    .mt-@{i} { margin-top: percentage(@i)*0.1; }
+    .mb-@{i} { margin-bottom: percentage(@i)*0.1; }
+    .ml-@{i} { margin-left: percentage(@i)*0.1; }
+    .mr-@{i} { margin-right: percentage(@i)*0.1; }
+    .span-loop(@i - 1);
+}
+.span-loop (@iterations);
+
+
+
+
+
+.devmode{
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 40%;
+    z-index: 9999;
+    .fullflexcenter;
+    background: @main;
+    opacity: 0.5;
+    button {
+        margin: 5px;
+    }
+}

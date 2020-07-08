@@ -1,12 +1,20 @@
 Vue.component('drag', {
     props: [
-        'x', 'y',
-        'dropzone',
-        'dropsound',
-        'dropsound-attr',
-        'data',
-        'returnToPosition',
-        'stayInDrop'
+        'dropzone', // item sobre el que se hace drop
+        'dragsound', // sonido al iniciar drag
+        'dropsound', // sonido al ser soltado
+        'dropsound-attr', // sonido en drop obtenido desde el dropzone
+        'data', // valor a comparar
+        'returnIfError', //regresa si error
+        'returnToPosition', // regresa aunque haya drop
+        'stayInDrop', // se queda al hacer drop
+        'stayIfOk', // se queda (deshabilita) si en drop es ok
+        'dropzoneOkClass', // coloca clase al dropzone si es ok
+        'dropzoneErrorClass', // coloca clase al dropzone si es error
+        'dragOkClass', // coloca clase al drag si es ok
+        'dragErrorClass', // coloca clase al drag si es error
+        'particleColor', // color de particulas
+        'initclass', // class de inicio
     ],
     data() {
         return {
@@ -15,8 +23,9 @@ Vue.component('drag', {
             draggable: null
         }
     },
+    //:style="'left:'+x+'%; top:'+y+'%;'"
     template: `
-        <div class="drag" ref="drag" :style="'left:'+x+'%; top:'+y+'%;'">
+        <div ref="drag" :class="'drag ' + (initclass!=undefined?initclass:'')">
             <slot></slot>
         </div>
     `,
@@ -37,7 +46,7 @@ Vue.component('drag', {
         },
         DragStart (e) {
             var _this = this
-            _this.particleAnimation(e)
+            app.particleAnimation(e, null, null, null, _this.particleColor)
             _this.setClassAnimation('start')
             s_select.play()
         },
@@ -47,15 +56,8 @@ Vue.component('drag', {
         },
         DragEnd (e) {
             var _this = this
-            _this.particleAnimation(e)
+            app.particleAnimation(e, null, null, null, _this.particleColor)
             _this.HitTestFn(e, true)
-        },
-        particleAnimation(e, num, time, size, onecolor) {
-            if(e) {
-                render.play();
-                updateCoords(e);
-                animateParticules(pointerX, pointerY, num, time, size, onecolor);
-            }
         },
         setClassAnimation(name) {
             var _this = this
@@ -68,7 +70,7 @@ Vue.component('drag', {
                     theclass = 'animate__wobble'
                     break
                 case 'ok':
-                    theclass = 'animate__bounce'
+                    theclass = 'animate__flash'
                     break
             }
             _this.$refs.drag.children[0].classList.add(theclass)
@@ -85,50 +87,132 @@ Vue.component('drag', {
                 if(Draggable.hitTest(_this.$refs.drag, dropzone, '50%')){
                     if(isdrop){
                         drops++
-                        _this.dropHitTest(dropzone)
+                        _this.dropHitTest(dropzone, e)
 
                     } else {
-                        _this.hoverHitTest(dropzone)
+                        _this.hoverHitTest(dropzone, e)
                     }
                 } else {
-                    if(!isdrop) { _this.hoverExitHitTest(dropzone) }
+                    if(!isdrop) { _this.hoverExitHitTest(dropzone, e) }
                 }
             }
-            if(isdrop && drops == 0){ _this.returnToInitPos() }
+            if(isdrop && drops == 0){ _this.backToInitPos() }
         },
-        hoverHitTest(dropzone) {
+        hoverHitTest(dropzone, e) {
+            var _this = this
+            if(!this.dropzoneCanBeDropped(dropzone)){
+                return false
+            }
             if(!dropzone.classList.contains('hover')){
                 dropzone.classList.add('hover')
                 s_select.play()
             }
         },
-        hoverExitHitTest(dropzone) { dropzone.classList.remove('hover') },
-        dropHitTest(dropzone) {
+        hoverExitHitTest(dropzone, e) {
+            if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+        },
+        dropHitTest(dropzone, e) {
+            if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
             var _this = this
+            
+            if(!_this.dropzoneCanBeDropped(dropzone)){
+                _this.backToInitPos()
+                return false
+            } else {
+                dropzone.classList.add('dropzoneused')
+            }
             if(this.data == dropzone.getAttribute('data')){
-                //ok
+                //## OK
                 s_ok.play()
                 _this.$emit('isok')
-                if(_this.returnToPosition!=undefined) { _this.returnToInitPos() }
-                if(_this.stayInDrop!=undefined) {
-                    _this.draggable[0].disable()
-                } else {
-                    _this.returnToInitPos()
-                }
+                _this.returnToPositionFn()
+                _this.stayInDropFn()
+                _this.dropzoneStatusClass('ok', dropzone)
+                _this.dropzoneSound(dropzone, 'oksound')
+                _this.dragStatusClass('ok')
+                _this.stayIfOkFn()
+                app.particleAnimation(e, 100, null, null)
+                EventBus.$emit('isok')
+                _this.setClassAnimation('ok')
             } else {
-                //error
+                //## ERROR
                 s_error.play()
                 _this.$emit('iserror')
-                if(_this.stayInDrop!=undefined) {
-                    _this.draggable[0].disable()
-                } else {
-                    _this.returnToInitPos()
-                }
+                _this.stayInDropFn()
+                _this.dropzoneStatusClass('error', dropzone)
+                _this.dropzoneSound(dropzone, 'errorsound')
+                _this.returnToPositionFn()
+                _this.returnIfErrorFn()
+                _this.dragStatusClass('error')
+                EventBus.$emit('iserror')
+                _this.setClassAnimation('error')
             }
         },
-        returnToInitPos(){
+        dropzoneCanBeDropped (dropzone) {
+            if(dropzone.getAttribute('droptimes') == 'multiple') {
+                return true
+            } else if(dropzone.getAttribute('droptimes') == 'once') {
+                return dropzone.classList.contains('dropzoneused') ? false : true
+            } else if(dropzone.getAttribute('droptimes') == 'untilok') {
+                return dropzone.classList.contains(this.dropzoneOkClass) ? false : true
+            }
+        },
+        dropzoneStatusClass(status, dropzone){
             var _this = this
-            TweenLite.to(_this.$refs.drag, .5, {x:0, y:0, top: _this.posy, left: _this.posx, delay: .2});
+            if(status == 'ok' && _this.dropzoneOkClass!=undefined) {
+                dropzone.classList.add(_this.dropzoneOkClass)
+                if(dropzone.classList.contains(_this.dropzoneErrorClass)){ dropzone.classList.remove(_this.dropzoneErrorClass) }
+            }
+            if(status == 'error' && _this.dropzoneErrorClass!=undefined) {
+                dropzone.classList.add(_this.dropzoneErrorClass)
+                if(dropzone.classList.contains(_this.dropzoneOkClass)){ dropzone.classList.remove(_this.dropzoneOkClass) }
+
+            }
+        },
+        dragStatusClass(status){
+            var _this = this
+            if(status == 'ok' && _this.dragOkClass!=undefined) {
+                _this.$refs.drag.classList.add(_this.dragOkClass)
+                if(_this.$refs.drag.classList.contains(_this.dragErrorClass)){ _this.$refs.drag.classList.remove(_this.dragErrorClass) }
+            }
+            if(status == 'error' && _this.dragErrorClass!=undefined) {
+                _this.$refs.drag.classList.add(_this.dragErrorClass)
+                if(_this.$refs.drag.classList.contains(_this.dragOkClass)){ _this.$refs.drag.classList.remove(_this.dragOkClass) }
+
+            }
+        },
+        stayIfOkFn(){
+            if(this.stayIfOk!=undefined) {
+                this.draggable[0].disable()
+            }
+        },
+        stayInDropFn(){
+            var _this = this
+            if(_this.stayInDrop!=undefined) {
+                _this.draggable[0].disable()
+            } else {
+                _this.returnToPositionFn()
+            }
+        },
+        returnToPositionFn(){
+            if(this.returnToPosition!=undefined) {
+                this.backToInitPos()
+            }
+        },
+        returnIfErrorFn(){
+            if(this.returnIfErrorFn!=undefined) {
+                this.backToInitPos()
+            }
+        },
+        backToInitPos(){
+            TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
+        },
+        dropzoneSound(dropzone, attr) {
+            if(dropzone.getAttribute(attr)){
+                var sound = new Howl({ src: [dropzone.getAttribute(attr)] })
+                sound.play()
+                
+            }
         }
     },
     mounted () {
