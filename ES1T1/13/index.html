@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distingo las letras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .ok svg { fill: #ffdd00; } 
+    </style>
+</head>
+<body>
+    <div id="app">
+
+
+
+        <scene :id="1" :current="current">
+            <info :score="score" type="dragdrop" title="Distingo las letras" text="Arrastra el crayón para colorear las letras y la palomita para marcar los números." textaudio="asound/instruccion.mp3"></info>
+            <activity>
+                    <div class="row">
+                        <drag :x="30" :y="5" dropzone=".item" dropsound-attr="sound" data="l" return-to-position @isok="okFn" @iserror="errorFn" ><img src="aimg/crayon.svg"></drag>
+                        <drag :x="60" :y="5" dropzone=".item" dropsound-attr="sound" data="n" stay-in-drop @onOk="" @onError=""><img src="aimg/check.svg"></drag>
+                    </div> 
+                    <div class="row mt-auto ">
+                        <div class="item" sound="asound/a1.mp3" data="l"><embedsvg src="aimg/a1.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a2.mp3" data="n"><embedsvg src="aimg/a2.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a3.mp3" data="l"><embedsvg src="aimg/a3.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a4.mp3" data="n"><embedsvg src="aimg/a4.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a5.mp3" data="l"><embedsvg src="aimg/a5.svg"></embedsvg></div>
+                    </div>
+                    <div class="row">
+                        <div class="item" sound="asound/a6.mp3" data="n"><embedsvg src="aimg/a6.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a7.mp3" data="l"><embedsvg src="aimg/a7.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a8.mp3" data="n"><embedsvg src="aimg/a8.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a9.mp3" data="l"><embedsvg src="aimg/a9.svg"></embedsvg></div>
+                        <div class="item" sound="asound/a10.mp3" data="l"><embedsvg src="aimg/a10.svg"></embedsvg></div>
+                    </div>
+            </activity>
+        </scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script></script>
+</body>
+</html>

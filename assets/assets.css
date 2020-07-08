@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.fullflexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root {
+  --main: #5EB246;
+  --sec: #005093;
+  --accent: #EB8B2E;
+  --clear: #AAE1FA;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDF4CE;
+  min-height: 100%;
+}
+.button {
+  border: none;
+  background: #fff;
+  font-family: 'barnacle_boyregular';
+  font-weight: normal;
+  border-radius: 10px;
+  padding: 6px;
+  color: #427d31;
+  outline: none;
+  cursor: pointer;
+}
+.fireworks {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 2001;
+}
+h1 {
+  font-family: 'barnacle_boyregular';
+  font-weight: normal;
+}
+h2 {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+/* HIDE INPUT NUMBER ARROWS*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* #### SCENE */
+.scene {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(94, 178, 70, 0.5);
+  /*@media (max-width: 1280px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    */
+}
+@media (max-width: 960px) {
+  .scene {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.info {
+  background: #5EB246;
+  border-radius: 20px;
+  color: #FDF4CE;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px;
+  text-align: center;
+}
+@media (max-width: 960px) {
+  .info {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1280px) and (min-width: 961px) {
+  .info {
+    max-width: 320px;
+  }
+}
+.info h1 {
+  font-size: 2.2rem;
+}
+.info h2 {
+  font-size: 1.4rem;
+  margin: 4px;
+}
+.info .bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info .bottom .scorebox {
+  width: 60%;
+}
+.info .bottom .instype {
+  width: 40%;
+}
+.info .bottom .instype embed {
+  width: 100%;
+}
+.info .reset {
+  margin-left: auto;
+}
+.audiotext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.audiotext .audiotextBtn {
+  margin: 4px;
+  max-width: 40px;
+}
+.audiotext .audiotextBtn embed,
+.audiotext .audiotextBtn img {
+  width: 100%;
+}
+.audiotext .audiotextBtn img {
+  cursor: pointer;
+}
+.audiotext .audiotextTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.audiotext .audiotextTxt .on {
+  transition: all .3s;
+  opacity: 1;
+  transform: scale(1);
+}
+.audiotext .audiotextTxt .off {
+  transform: scale(0.8);
+  opacity: 0;
+}
+.scorebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #005093;
+  color: #fff;
+  font-family: 'barnacle_boyregular';
+  font-weight: normal;
+  font-size: 2rem;
+  border-radius: 10px;
+  padding: 10px;
+}
+.scorebox embed {
+  width: 100%;
+  max-width: 40px;
+  margin-right: 10px;
+}
+.activity {
+  position: relative;
+  background: #FDF4CE;
+  width: 800px;
+  height: 600px;
+  border-radius: 20px;
+  border: 6px solid #FDF4CE;
+  margin: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 1280px) {
+  .activity {
+    width: 96%;
+  }
+}
+.drag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: .2s all;
+}
+.item div,
+.item img,
+.item svg {
+  width: 90%;
+  height: 90%;
+}
+.item.hover {
+  transition: .2s all;
+  transform: scale(1.4);
+}
+.mt-auto {
+  margin-top: auto;
+}
+/*# sourceMappingURL=assets.css.map */
