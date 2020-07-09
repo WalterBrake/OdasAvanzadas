@@ -803,6 +803,218 @@
 		"oA": 0,
 		"oAP": "\/ES1T1\/13\/index.html",
 		"oF": 0
+		},
+	"\/ES1T1\/14\/aimg\/banco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/banco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/barco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/barco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/casa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/casa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/coco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/coco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/crayon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/crayon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/foco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/foco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/maleta.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/maleta.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/masa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/masa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/paleta.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/paleta.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/prisa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/prisa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/aimg\/risa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/14\/aimg\/risa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/14\/asound\/banco.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/banco.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/barco.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/barco.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/casa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/casa.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/coco.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/coco.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/foco.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/foco.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/maleta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/maleta.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/masa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/masa.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/paleta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/paleta.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/prisa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/prisa.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/asound\/risa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/asound\/risa.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/14\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/14\/index.html",
+		"oF": 0
+		},
+	"\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		}
 	},
 "hooks": [

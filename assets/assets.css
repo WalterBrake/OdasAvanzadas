@@ -281,6 +281,9 @@ input[type=number] {
   width: 120px;
   height: 120px;
 }
+embed {
+  pointer-events: none;
+}
 .row {
   display: flex;
   justify-content: center;
