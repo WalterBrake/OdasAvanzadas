@@ -6,6 +6,7 @@
 @wrongcol: #DB3E34;
 @beige: #FDF4CE;
 
+
 *{padding: 0; margin: 0;}
 
 .fullflexcenter{
@@ -150,12 +151,19 @@ input[type=number] {
     .audiotextBtn{
         margin: 4px;
         max-width: 40px;
+        height: 60px;
+        .fullflexcenter;
         embed, img { width: 100%;}
         img{cursor:pointer;}
     }
     .audiotextTxt {
         .fullflexcenter;
         flex-wrap: wrap;
+        strong {
+            font-weight: normal;
+            color: var(--main);
+            font-family: 'barnacle_boyregular';
+        }
         .on {
             transition: all .3s;
             opacity: 1;
@@ -294,8 +302,8 @@ embed {
     &.hover{
         transition: .2s all;
         transform: scale(1.4);
-
     }
+
 }
 
 
@@ -328,15 +336,34 @@ embed {
 
 
 .devmode{
-    position: absolute;
+    position: fixed;
     left: 0; bottom: 0;
-    width: 40%;
     z-index: 9999;
-    .fullflexcenter;
-    background: @main;
-    opacity: 0.5;
+    background: @accent;
+    opacity: 0.9;
+    div{
+        margin: 5px;
+    }
     button {
         margin: 5px;
+        border: none;
+        padding: 2px;
+        border-radius: 4px;
     }
 }
 
+
+
+
+.clickable {
+    position: relative;
+    cursor: pointer;
+    .anim{
+        position: absolute;
+        left: 5%; top: 2%;
+        width: 90%;
+        height: 90%;
+        z-index: 9;
+    }
+
+}

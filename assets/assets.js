@@ -22,12 +22,19 @@ var app = new Vue({
                 oks: 0,
                 errors: 0,
                 answers: 0,
-            }
-
+            },
+            temporals: []
         }
     },
     methods: {
         reset () { location.reload() },
+        notfoundimg () {
+            document.addEventListener("DOMContentLoaded", function(event) {
+                document.querySelectorAll('img').forEach(function(img){
+                   img.onerror = function(){this.src='../../assets/aanim/notfound.svg';};
+                })
+             });
+        },
         particleAnimation(e, num, time, size, onecolor) {
             if(e) {
                 render.play();
@@ -36,23 +43,33 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev){
+        
             var _this = this
-
             if($ev.oks){ this.finalData.oks += $ev.oks }
             if($ev.errors){ this.finalData.errors += $ev.errors }
             if($ev.answers){ this.finalData.answers += $ev.answers }
             if($ev.score){ this.finalData.score += $ev.score }
             if($ev.scoresum){ this.finalData.scoresum += $ev.scoresum }
-
+            
             var fwIt = 0
             var fw = setInterval(function () {
                 fwIt++
                 app.particleAnimation({clientX:window.innerWidth/(Math.random()*4), clientY:window.innerHeight/(Math.random()*4)}, 30, null, null)
                 if(fwIt == 30) {
                     clearInterval(fw)
+                    //Stop all howlers
+                    for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     _this.currentScene++
+                    _this.temporals = []
+                    _this.notfoundimg()
                 }
             }, 50)
-        }
+        },
+        debugg(e){
+            console.log(e)
+        },
+    },
+    mounted () {
+        this.notfoundimg()
     }
 })

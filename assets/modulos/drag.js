@@ -62,14 +62,12 @@ Vue.component('drag', {
             _this.playDropSound()
         },
         playDragSound(){
-            console.log('playDrag')
             if(this.dragsound){
                 var sound = new Howl({ src: [this.dragsound] })
                 sound.play()
             }
         },
         playDropSound(){
-            console.log('playDrop')
             if(this.dropsound){
                 var sound = new Howl({ src: [this.dropsound] })
                 sound.play()

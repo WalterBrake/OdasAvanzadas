@@ -41,6 +41,8 @@ Vue.component('scorebox', {
             var interval = setInterval(function(){
                 if(_this.scorerender < _this.score ){
                     _this.scorerender += 1
+                }else if(_this.scorerender > _this.score ){
+                    _this.scorerender -= 1
                 } else {
                     clearInterval(interval)
                     if(_this.showmax && _this.scorerender == _this.showmax){

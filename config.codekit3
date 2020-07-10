@@ -56,6 +56,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/aanim\/notfound.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/aanim\/notfound.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/aanim\/ScoreIcon.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -269,6 +279,22 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/lottie\/DragNDrop.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/assets\/lottie\/DragNDrop-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/assets\/lottie\/Seleccionar.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/assets\/lottie\/Seleccionar-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/assets\/modulos\/activity.js": {
 		"ft": 64,
 		"ma": 0,
@@ -305,6 +331,16 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/assets\/modulos\/choose-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/modulos\/clickable.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/clickable-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -996,6 +1032,51 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES1T1\/14\/index.html",
+		"oF": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/16\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/16\/asound\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/16\/asound\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/16\/asound\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/16\/asound\/instruccion3.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/16\/asound\/instruccion4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/16\/asound\/instruccion4.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/16\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
 	"\/README.md": {

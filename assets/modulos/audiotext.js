@@ -1,27 +1,37 @@
 Vue.component('audiotext', {
-    props: ['text', 'audio'],
+    props: ['text', 'audio', 'autoplay'],
     data() {
         return {
             playing: false,
             textrender: [],
             wordcount: 0,
             speedtime: 0,
+            sound: null
         }
     },
     template: `
         <div class="audiotext">
             <div class="audiotextBtn">
-                <img v-if="!playing" src="../../assets/aanim/Dialog.svg" class="animate__animated animate__pulse" @click="playit">
-                <embed v-if="playing" src="../../assets/aanim/Dialog_a.svg" class="animate__animated animate__rubberBand"></embed>
+                <div @click="stop" v-if="playing" ><embed src="../../assets/aanim/Dialog_a.svg" class="animate__animated animate__rubberBand"></embed></div>
+                <img v-else src="../../assets/aanim/Dialog.svg" class="animate__animated animate__pulse" @click="play">
             </div>
             <div class="audiotextTxt">
-                <div v-for="txt in textrender" :class="txt.on ? 'on' : 'off' ">{{txt.txt}} &nbsp;</div>
+                <template v-for="txt in textrender" >
+                    <div :class="txt.on ? 'on' : 'off' " v-html="txt.txt"></div>&nbsp;
+                </template>
             </div>
         </div>
     `,
     methods: {
+        stop(){
+            this.playing = false
+            this.sound.stop()
+            for(txt in this.textrender){
+                this.textrender[txt].on = true
+            }
+        },
         textanimation (duration) {
-            for(w in this.textrender) { this.textrender[w].on = false }
+            
             var _this = this
             var speedtime = (duration*1000) / (_this.textrender.length)
             var counted = 0
@@ -34,22 +44,14 @@ Vue.component('audiotext', {
                 }
             }, speedtime/1.5)
         },
-        playit () {
+        play () {
             var _this = this
             if(_this.playing){
                 return false
             }
+            for(w in this.textrender) { this.textrender[w].on = false; }
             _this.playing = true
-            var sound = new Howl({
-                src: [this.audio],
-                autoplay: true,
-                onload: function () {
-                    _this.textanimation(sound.duration())
-                },
-                onend: function () {
-                    _this.playing = false
-                }
-            });
+            _this.sound.play()
         },
         separatetxt () {
             var _this = this
@@ -58,10 +60,35 @@ Vue.component('audiotext', {
             for(var w in words){
                 _this.textrender.push({txt:words[w], on: false})
             }
+        },
+        loadAudio() {
+            var _this = this
+            _this.sound = new Howl({
+                src: [this.audio],
+                autoplay: false,
+                onplay: function () {
+                    _this.textanimation(_this.sound.duration())
+                },
+                
+                onend: function () {
+                    _this.playing = false
+                    _this.$emit('completed')
+                },
+                onstop: function () {
+                    _this.playing = false
+                }
+            });
         }
     },
     mounted () {
         this.separatetxt()
-        this.playit()
+        this.loadAudio()
+        if(this.autoplay){
+            this.play()
+        } else {
+            for(txt in this.textrender){
+                this.textrender[txt].on = true
+            }
+        }
     }
 })
