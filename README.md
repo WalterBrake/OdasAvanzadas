@@ -179,9 +179,11 @@ Objetos que se les da click. Se coloca alrededor de cualquier elemento. (El obje
 
 Atributos | DROPZONE
 --------- | ------
-**isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
+**:isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
 **`v-model="temporals[0]"`** | Se enumera según el número de opciones que habrá.
 **particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
+
+Ejemplo de múltiples objetos click:
 
 ```html
 <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[0]"><img src=""></clickable>
@@ -191,3 +193,22 @@ Atributos | DROPZONE
 ```
 
 ### audiotext
+
+El mismo componente que se usa para dar las instrucciones animadas con audio se puede utilizar dentro de la actividad.
+
+```html
+<audiotext :autoplay="false" text="<strong>Necesitamos:</strong> 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3"></audiotext>
+```
+
+Atributos | AUDIOTEXT
+--------- | ------
+**:autoplay="true"** | Si suena en automático al cargar o se queda en espera de click.
+**text="..."** | Texto que se animará cuando ocurra el play.
+**audio="..."** | Ruta del sonido.
+**ref="referencia1"** | Se puede utilizar para que se mande a llamar desde algún otro componente. (Ver ejemplo **/ES1T1/16/** que llama como segunda instrucción en automático).
+
+
+```html
+<audiotext :autoplay="false" text="Necesitamos: 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+```
+

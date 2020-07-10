@@ -387,7 +387,7 @@
 
 <tbody>
 <tr>
-	<td><strong>isok=&#8220;true&#8221;</strong> </td>
+	<td><strong>:isok=&#8220;true&#8221;</strong> </td>
 	<td> &#8220;True&#8221; OK es seleccionado. &#8220;False&#8221; OK es NO seleccionado.</td>
 </tr>
 <tr>
@@ -401,6 +401,8 @@
 </tbody>
 </table>
 
+<p>Ejemplo de múltiples objetos click:</p>
+
 <pre><code class="html">&lt;clickable particle-color=&quot;#E7CED8&quot; :isok=&quot;true&quot; v-model=&quot;temporals[0]&quot;&gt;&lt;img src=&quot;&quot;&gt;&lt;/clickable&gt;
 &lt;clickable particle-color=&quot;#E7CED8&quot; :isok=&quot;true&quot; v-model=&quot;temporals[1]&quot;&gt;&lt;img src=&quot;&quot;&gt;&lt;/clickable&gt;
 &lt;clickable particle-color=&quot;#E7CED8&quot; :isok=&quot;true&quot; v-model=&quot;temporals[2]&quot;&gt;&lt;img src=&quot;&quot;&gt;&lt;/clickable&gt;
@@ -408,6 +410,47 @@
 </code></pre>
 
 <h3 id="audiotext">audiotext</h3>
+
+<p>El mismo componente que se usa para dar las instrucciones animadas con audio se puede utilizar dentro de la actividad.</p>
+
+<pre><code class="html">&lt;audiotext :autoplay=&quot;false&quot; text=&quot;&lt;strong&gt;Necesitamos:&lt;/strong&gt; 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel.&quot; audio=&quot;asound/instruccion2.mp3&quot;&gt;&lt;/audiotext&gt;
+</code></pre>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Atributos </th>
+	<th> AUDIOTEXT</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><strong>:autoplay=&#8220;true&#8221;</strong> </td>
+	<td> Si suena en automático al cargar o se queda en espera de click.</td>
+</tr>
+<tr>
+	<td><strong>text=&#8220;&#8230;&#8221;</strong> </td>
+	<td> Texto que se animará cuando ocurra el play.</td>
+</tr>
+<tr>
+	<td><strong>audio=&#8220;&#8230;&#8221;</strong> </td>
+	<td> Ruta del sonido.</td>
+</tr>
+<tr>
+	<td><strong>ref=&#8220;referencia1&#8221;</strong> </td>
+	<td> Se puede utilizar para que se mande a llamar desde algún otro componente. (Ver ejemplo <strong>/ES1T1/16/</strong> que llama como segunda instrucción en automático).</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="html">&lt;audiotext :autoplay=&quot;false&quot; text=&quot;Necesitamos: 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel.&quot; audio=&quot;asound/instruccion2.mp3&quot; ref=&quot;instructions2&quot;&gt;&lt;/audiotext&gt;
+</code></pre>
 
 </body>
 </html>
