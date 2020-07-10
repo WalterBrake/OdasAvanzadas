@@ -1,5 +1,8 @@
 # OdasAvanzadas
 
+- [Clonar repositorio de Github](#clonar-repositorio-de-github)
+- [Servidor Local](#servidor-local)
+- [Estructura HTML](#estructura-html)
 
 ## Clonar repositorio de Github
 
@@ -23,10 +26,12 @@ Cuando se modifican los archivos se habilita el **Commit**, donde se ingresa el 
 Luego de hacer el commit se hace un **Push Origin** para publicar el cambio | ![Github](readme/07.png)
 
 
-## Servidor Local (mac) para correr el proyecto
+## Servidor Local
 
+Para poder correr los htmls debe hacerse desde un servidor (local o remoto). En mac viene integrado un servidor php que se puede correr desde la terminal.
 
 Navegar hacia el proyecto en la terminal
+
 ```shell
 cd ruta/hacia/la/carpeta
 ```
@@ -45,7 +50,7 @@ php -S localhost:8000
 En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el interactivo.
 
 
-##  Estructura del HTML
+##  Estructura HTML
 ```
 - <html>
   - <head>
@@ -91,7 +96,7 @@ Atributo | Acción
 | **:score="50"** | El puntaje que gana por actividad (* Ignorar).
 | **:temporals="temporals"** | Detecta clicks y los guarda(* Ignorar)
 | **:alloks-sound** | Ruta del audio que suena al terminar con todo OK.
-| **alloks** | Si se coloca, todas las respuestas deben esta **OK** para avanzar.
+| **alloks** | Si se coloca, todas las respuestas deben estar **OK** para avanzar.
 | **scene-color="#ffdd00"** | Colocar de partículas con las que abre la escena.
 | **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
 | **:devmode="true"** | Habilita un panel para hacer debuggin de las acciones.
