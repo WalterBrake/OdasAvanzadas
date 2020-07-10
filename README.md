@@ -47,14 +47,14 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 
 ##  Estructura del HTML
 ```
-- **<html>**
-  - **<head>**
-    - **<title>** - Cambiar título.
-    - **<style>** - Estilos opcionales.
-  - **<body>**
-    - **<scene>** - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
-      - **<info>** - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
-      - **<activity>** - Contiene toda la actividad.
+- <html>
+  - <head>
+    - <title> - Cambiar título.
+    - <style> - Estilos opcionales.
+  - <body>
+    - <scene> - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
+      - <info> - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
+      - <activity> - Contiene toda la actividad.
 ```
 
 
