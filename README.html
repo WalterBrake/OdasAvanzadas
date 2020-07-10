@@ -259,7 +259,7 @@
 
 <p>Se coloca alrededor del objeto que se quiera arrastrar. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).</p>
 
-<pre><code class="html">&lt;drag initclass=&quot;arrastrable&quot; dropzone=&quot;.contenedor&quot; data=&quot;elemento&quot;&gt;
+<pre><code class="html">&lt;drag initclass=&quot;arrastrable&quot; dropzone=&quot;.caja&quot; data=&quot;elemento&quot;&gt;
     &lt;div&gt;Arrastrarme&lt;/div&gt;
 &lt;/drag&gt;
 </code></pre>
@@ -273,7 +273,7 @@
 <thead>
 <tr>
 	<th>Atributos </th>
-	<th> Acción</th>
+	<th> DRAG</th>
 </tr>
 </thead>
 
@@ -321,12 +321,51 @@
 </tbody>
 </table>
 
-<p>El <strong>drag</strong> depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá.</p>
+<p>El <strong>drag</strong> depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá. Puede ser de cualquier tipo pero debe usar la misma clase declarada en el atributo &#8220;dropzone&#8221; del componente drag. Su relación sobre si es correcto/incorrecto depende también del atributo &#8220;data&#8221;. Si en ambos es el mismo, lo tomará como OK.</p>
 
-<pre><code class="html">&lt;drag dropzone=&quot;.contenedor&quot; data=&quot;elemento&quot;&gt;
+<pre><code class="html">&lt;drag dropzone=&quot;.caja&quot; data=&quot;elemento&quot;&gt;
     &lt;div&gt;Arrastrarme&lt;/div&gt;
 &lt;/drag&gt;
+&lt;div class=&quot;caja&quot; data=&quot;elemento&quot;&gt;&lt;/div&gt;
 </code></pre>
+
+<p>El <strong>dropzone</strong> tiene atributos que se ejecutan al momento de que el drag es soltado sobre él.</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Atributos </th>
+	<th> DROPZONE</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><strong>oksound=&#8220;&#8221;</strong> </td>
+	<td> Ruta del sonido al momento de recibir un drag y ser OK.</td>
+</tr>
+<tr>
+	<td><strong>errorsound=&#8220;&#8221;</strong> </td>
+	<td> Ruta del sonido al momento de recibir un drag y ser ERROR.</td>
+</tr>
+<tr>
+	<td><strong>data=&#8220;&#8221;</strong> </td>
+	<td> Debe corresponder con el drag que se podrá soltar. Si es igual es OK. Si no es ERROR.</td>
+</tr>
+<tr>
+	<td><strong>droptimes=&#8220;&#8221;</strong> </td>
+	<td> Veces que se pueden soltar drags hasta que el dropzone se deshabilite. Opciones: </td>
+	<td> <strong>multiple</strong> (infinito) </td>
+	<td> <strong>once</strong> (una vez) </td>
+	<td> <strong>untilok</strong> (cuando sea OK se deshabilita)</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="clickable">clickable</h3>
 

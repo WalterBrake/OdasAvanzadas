@@ -3,7 +3,6 @@ Vue.component('drag', {
         'dropzone', // item sobre el que se hace drop
         'dragsound', // sonido al iniciar drag
         'dropsound', // sonido al ser soltado
-        'dropsound-attr', // sonido en drop obtenido desde el dropzone
         'data', // valor a comparar
         'returnIfError', //regresa si error
         'returnToPosition', // regresa aunque haya drop

@@ -130,12 +130,12 @@ Componente Drag & Drop.
 Se coloca alrededor del objeto que se quiera arrastrar. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).
 
 ```html
-<drag initclass="arrastrable" dropzone=".contenedor" data="elemento">
+<drag initclass="arrastrable" dropzone=".caja" data="elemento">
     <div>Arrastrarme</div>
 </drag>
 ```
 
-Atributos | Acción
+Atributos | DRAG
 --------- | ------
 **initclass=""** | Clase que tendrá el objeto, en caso de tener que darle estilo. (Trae también la clase ".drag").
 **dropzone=""** | Clase del objeto en que se depositará.
@@ -148,13 +148,24 @@ Atributos | Acción
 **drag-error-class=""** | Clase que se asigna al drag cuando se suelta y es ERROR. (* Requiere tener drag-ok-class).
 **particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
 
-El **drag** depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá.
+El **drag** depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá. Puede ser de cualquier tipo pero debe usar la misma clase declarada en el atributo "dropzone" del componente drag. Su relación sobre si es correcto/incorrecto depende también del atributo "data". Si en ambos es el mismo, lo tomará como OK.
 
 ```html
-<drag dropzone=".contenedor" data="elemento">
+<drag dropzone=".caja" data="elemento">
     <div>Arrastrarme</div>
 </drag>
+<div class="caja" data="elemento"></div>
 ```
+
+El **dropzone** tiene  atributos que se ejecutan al momento de que el drag es soltado sobre él.
+
+Atributos | DROPZONE
+--------- | ------
+**oksound=""** | Ruta del sonido al momento de recibir un drag y ser OK.
+**errorsound=""** | Ruta del sonido al momento de recibir un drag y ser ERROR.
+**data=""** | Debe corresponder con el drag que se podrá soltar. Si es igual es OK. Si no es ERROR.
+**droptimes=""** | Veces que se pueden soltar drags hasta que el dropzone se deshabilite. Opciones: | **multiple** (infinito) | **once** (una vez) | **untilok** (cuando sea OK se deshabilita)
+
 
 
 ### clickable
