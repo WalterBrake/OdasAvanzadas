@@ -171,12 +171,23 @@ Atributos | DROPZONE
 
 Objetos que se les da click. Se coloca alrededor de cualquier elemento. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).
 
+```html
+<clickable particle-color="#E7CED8" :isok="true" v-model="temporals[0]">
+    <img src="">
+</clickable>
+```
+
 Atributos | DROPZONE
 --------- | ------
 **isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
 **`v-model="temporals[0]"`** | Se enumera según el número de opciones que habrá.
 **particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
 
-
+```html
+<clickable particle-color="#E7CED8" :isok="true" v-model="temporals[0]"><img src=""></clickable>
+<clickable particle-color="#E7CED8" :isok="true" v-model="temporals[1]"><img src=""></clickable>
+<clickable particle-color="#E7CED8" :isok="true" v-model="temporals[2]"><img src=""></clickable>
+<clickable particle-color="#E7CED8" :isok="true" v-model="temporals[3]"><img src=""></clickable>
+```
 
 ### audiotext
