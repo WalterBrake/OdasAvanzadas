@@ -95,7 +95,7 @@ Si se tienen muchas actividades(pantallas) se vería así:
     <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
 ```
 
-Atributos | Acción
+Atributos | SCENE
 --------- | ------
 | **:ansers="3"** | Es el número de respuestas que hay en el interactivo.
 | **:score="50"** | El puntaje que gana por actividad (* Ignorar).
@@ -109,7 +109,7 @@ Atributos | Acción
 
 ### info
 
-Atributos | Acción
+Atributos | INFO
 --------- | ------
 | **title="..."** | Título de la actividad
 | **text="..."** | Instrucción
@@ -167,7 +167,16 @@ Atributos | DROPZONE
 **droptimes=""** | Veces que se pueden soltar drags hasta que el dropzone se deshabilite: "**multiple**" (infinito), "**once**" (una vez), "**untilok**" (cuando sea OK se deshabilita).
 
 
-
 ### clickable
+
+Objetos que se les da click. Se coloca alrededor de cualquier elemento. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).
+
+Atributos | DROPZONE
+--------- | ------
+**isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
+`**v-model="temporals[0]"**` | Se enumera según el número de opciones que habrá.
+**particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
+
+
 
 ### audiotext
