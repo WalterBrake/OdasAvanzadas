@@ -69,7 +69,7 @@ La escena de incio siempre es "0" y la final es el número consecutivo según el
 
 ```html
     <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
-    <scene v-if="currentScene==1" :key="1"></scene>
+    <scene v-if="currentScene==1" :key="1" @completed="sceneCompleted"></scene>
     <scene v-if="currentScene==2" :key="3" end-scene :final-data="finalData"></scene>
 ```
 
@@ -77,22 +77,24 @@ Si se tienen muchas actividades(pantallas) se vería así:
 
 ```html
     <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
-    <scene v-if="currentScene==1" :key="1"></scene>
-    <scene v-if="currentScene==2" :key="2"></scene>
-    <scene v-if="currentScene==3" :key="3"></scene>
+    <scene v-if="currentScene==1" :key="1" @completed="sceneCompleted"></scene>
+    <scene v-if="currentScene==2" :key="2" @completed="sceneCompleted"></scene>
+    <scene v-if="currentScene==3" :key="3" @completed="sceneCompleted"></scene>
     <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
 ```
 
 #### Atributos
 
-- **:ansers="3"** - Es el número de respuestas que hay en el interactivo.
-- **:score="50"** - El puntaje que gana por actividad (* Ignorar).
-- **:temporals="temporals"** - Detecta clicks y los guarda(* Ignorar)
-- **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
-- **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
-- **scene-color="#ffdd00"** - Colocar de partículas con las que abre la escena.
-- **@completed="sceneCompleted"** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
-- **:devmode="true"** - Habilita un panel para hacer debuggin de las acciones.
+Atributo | Acción
+--------- | ------
+| **:ansers="3"** | Es el número de respuestas que hay en el interactivo.
+| **:score="50"** | El puntaje que gana por actividad (* Ignorar).
+| **:temporals="temporals"** | Detecta clicks y los guarda(* Ignorar)
+| **:alloks-sound** | Ruta del audio que suena al terminar con todo OK.
+| **alloks** | Si se coloca, todas las respuestas deben esta **OK** para avanzar.
+| **scene-color="#ffdd00"** | Colocar de partículas con las que abre la escena.
+| **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
+| **:devmode="true"** | Habilita un panel para hacer debuggin de las acciones.
 
 
 ### info

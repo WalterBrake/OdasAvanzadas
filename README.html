@@ -123,31 +123,69 @@
 <p>La escena de incio siempre es &#8220;0&#8221; y la final es el número consecutivo según el número de actividades, además de que se usa el atributo <strong>start-scene</strong> o <strong>end-scene</strong> para la escena inicial y la final:</p>
 
 <pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
-    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot; @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;3&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
 </code></pre>
 
 <p>Si se tienen muchas actividades(pantallas) se vería así:</p>
 
 <pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
-    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
-    &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;2&quot;&gt;&lt;/scene&gt;
-    &lt;scene v-if=&quot;currentScene==3&quot; :key=&quot;3&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot; @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;2&quot; @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==3&quot; :key=&quot;3&quot; @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==4&quot; :key=&quot;4&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
 </code></pre>
 
 <h4 id="atributos">Atributos</h4>
 
-<ul>
-<li><strong>:ansers=&#8220;3&#8221;</strong> - Es el número de respuestas que hay en el interactivo.</li>
-<li><strong>:score=&#8220;50&#8221;</strong> - El puntaje que gana por actividad (* Ignorar).</li>
-<li><strong>:temporals=&#8220;temporals&#8221;</strong> - Detecta clicks y los guarda(* Ignorar)</li>
-<li><strong>alloks</strong> - Si se coloca, todas las respuestas deben esta <strong>OK</strong> para avanzar.</li>
-<li><strong>:alloks-sound</strong> - Ruta del audio que suena al terminar con todo OK.</li>
-<li><strong>scene-color=&#8220;#ffdd00&#8221;</strong> - Colocar de partículas con las que abre la escena.</li>
-<li><strong>@completed=&#8220;sceneCompleted&#8221;</strong> - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).</li>
-<li><strong>:devmode=&#8220;true&#8221;</strong> - Habilita un panel para hacer debuggin de las acciones.</li>
-</ul>
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Atributo </th>
+	<th> Acción</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <strong>:ansers=&#8220;3&#8221;</strong> </td>
+	<td> Es el número de respuestas que hay en el interactivo.</td>
+</tr>
+<tr>
+	<td> <strong>:score=&#8220;50&#8221;</strong> </td>
+	<td> El puntaje que gana por actividad (* Ignorar).</td>
+</tr>
+<tr>
+	<td> <strong>:temporals=&#8220;temporals&#8221;</strong> </td>
+	<td> Detecta clicks y los guarda(* Ignorar)</td>
+</tr>
+<tr>
+	<td> <strong>:alloks-sound</strong> </td>
+	<td> Ruta del audio que suena al terminar con todo OK.</td>
+</tr>
+<tr>
+	<td> <strong>alloks</strong> </td>
+	<td> Si se coloca, todas las respuestas deben esta <strong>OK</strong> para avanzar.</td>
+</tr>
+<tr>
+	<td> <strong>scene-color=&#8220;#ffdd00&#8221;</strong> </td>
+	<td> Colocar de partículas con las que abre la escena.</td>
+</tr>
+<tr>
+	<td> <strong>@completed=&#8220;sceneCompleted&#8221;</strong> </td>
+	<td> Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).</td>
+</tr>
+<tr>
+	<td> <strong>:devmode=&#8220;true&#8221;</strong> </td>
+	<td> Habilita un panel para hacer debuggin de las acciones.</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="info">info</h3>
 
