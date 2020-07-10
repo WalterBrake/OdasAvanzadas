@@ -11,11 +11,20 @@
 <li><a href="#clonar-repositorio-de-github">Clonar repositorio de Github</a></li>
 <li><a href="#servidor-local">Servidor Local</a></li>
 <li><a href="#estructura-html">Estructura HTML</a></li>
-<li><a href="#configuracion-de-componentes">Configuración de componentes</a></li>
-<li><a href="#componentes-de-actividad">Componentes de actividad</a></li>
-<li><a href="#scene"><Scene></a></li>
-<li><a href="#info"></a></li>
-<li><a href="#activity"></a></li>
+<li><a href="#configuracion-de-componentes">Configuración de componentes</a>
+
+<ul>
+<li><a href="#scene">Scene</a></li>
+<li><a href="#info">Info</a></li>
+<li><a href="#activity">Activity</a></li>
+</ul></li>
+<li><a href="#componentes-de-actividad">Componentes de actividad</a>
+
+<ul>
+<li><a href="#drag">Drag</a></li>
+<li><a href="#clickable">Clickable</a></li>
+<li><a href="#audiotext">Audiotext</a></li>
+</ul></li>
 </ul>
 
 <h2 id="clonarrepositoriodegithub">Clonar repositorio de Github</h2>
@@ -202,15 +211,53 @@
 
 <h3 id="info">info</h3>
 
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Atributo </th>
+	<th> Acción</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <strong>title=&#8220;&#8230;&#8221;</strong> </td>
+	<td> Título de la actividad</td>
+</tr>
+<tr>
+	<td> <strong>text=&#8220;&#8230;&#8221;</strong> </td>
+	<td> Instrucción</td>
+</tr>
+<tr>
+	<td> <strong>textaudio=&#8220;&#8230;&#8221;</strong> </td>
+	<td> Ruta del audio de la instrucción</td>
+</tr>
+<tr>
+	<td> <strong>type=&#8220;dragdrop&#8221;</strong> </td>
+	<td> Icono animado abajo a la derecha: dragdrop </td>
+	<td> seleccionar</td>
+</tr>
+<tr>
+	<td> <strong>@completedinstructions=&#8220;$refs.instructions2.play()&#8221;</strong> </td>
+	<td> Se puede usar para llamar una función al término del audio de instrucción. (Ver ejemplo <strong>/ES1T1/16/</strong> que llama a una segunda instrucción.)</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="activity">activity</h3>
 
 <h2 id="componentesdeactividad">Componentes de actividad</h2>
 
-<h3 id="audiotext">audiotext</h3>
-
 <h3 id="drag">drag</h3>
 
 <h3 id="clickable">clickable</h3>
+
+<h3 id="audiotext">audiotext</h3>
 
 </body>
 </html>

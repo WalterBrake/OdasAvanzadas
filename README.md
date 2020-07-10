@@ -4,11 +4,13 @@
 - [Servidor Local](#servidor-local)
 - [Estructura HTML](#estructura-html)
 - [Configuración de componentes](#configuracion-de-componentes)
+    - [Scene](#scene)
+    - [Info](#info)
+    - [Activity](#activity)
 - [Componentes de actividad](#componentes-de-actividad)
-- [<Scene>](#scene)
-- [](#info)
-- [](#activity)
-
+    - [Drag](#drag)
+    - [Clickable](#clickable)
+    - [Audiotext](#audiotext)
 ## Clonar repositorio de Github
 
 ### Configuración
@@ -108,13 +110,22 @@ Atributo | Acción
 
 
 ### info
-  
+
+Atributo | Acción
+--------- | ------
+| **title="..."** | Título de la actividad
+| **text="..."** | Instrucción
+| **textaudio="..."** | Ruta del audio de la instrucción
+| **type="dragdrop"** | Icono animado abajo a la derecha: dragdrop | seleccionar
+| **@completedinstructions="$refs.instructions2.play()"** | Se puede usar para llamar una función al término del audio de instrucción. (Ver ejemplo **/ES1T1/16/** que llama a una segunda instrucción.)
+
 ### activity
 
 ## Componentes de actividad
 
-### audiotext
 
 ### drag
 
 ### clickable
+
+### audiotext
