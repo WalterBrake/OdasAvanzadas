@@ -47,11 +47,14 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 
 ##  Estructura del HTML
 
-- :arrow_forward: **<html>**
-  - 	:arrow_forward:	:arrow_forward: **<head>**
-      - 	:arrow_forward: :arrow_forward:	:arrow_forward: **<title>** - Cambiar título
-      - 	:arrow_forward: :arrow_forward:	:arrow_forward: **<style>** - Estilos opcionales
-  - 	:arrow_forward:	:arrow_forward: **<body>**
+- **<html>**
+  - **<head>**
+    - **<title>** - Cambiar título.
+    - **<style>** - Estilos opcionales.
+  - **<body>**
+    - **<scene>** - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
+      - **<info>** - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
+      - **<activity>** - Contiene toda la actividad.
 
 
 
