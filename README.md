@@ -6,7 +6,8 @@
 - [Configuración de componentes](#configuracion-de-componentes)
 - [Componentes de actividad](#componentes-de-actividad)
 - [<Scene>](#scene)
-- [](#)
+- [](#info)
+- [](#activity)
 
 ## Clonar repositorio de Github
 
