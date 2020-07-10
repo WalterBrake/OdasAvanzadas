@@ -158,8 +158,6 @@
     &lt;scene v-if=&quot;currentScene==4&quot; :key=&quot;4&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
 </code></pre>
 
-<h4 id="atributos">Atributos</h4>
-
 <table>
 <colgroup>
 <col />
@@ -168,7 +166,7 @@
 
 <thead>
 <tr>
-	<th>Atributo </th>
+	<th>Atributos </th>
 	<th> Acción</th>
 </tr>
 </thead>
@@ -204,7 +202,7 @@
 </tr>
 <tr>
 	<td> <strong>:devmode=&#8220;true&#8221;</strong> </td>
-	<td> Habilita un panel para hacer debuggin de las acciones.</td>
+	<td> Habilita un panel para hacer debug de las acciones.</td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +217,7 @@
 
 <thead>
 <tr>
-	<th>Atributo </th>
+	<th>Atributos </th>
 	<th> Acción</th>
 </tr>
 </thead>
@@ -251,9 +249,84 @@
 
 <h3 id="activity">activity</h3>
 
+<p>Sin configuración, sólo es importante que agrupe a la actividad.</p>
+
 <h2 id="componentesdeactividad">Componentes de actividad</h2>
 
 <h3 id="drag">drag</h3>
+
+<p>Componente Drag &amp; Drop.</p>
+
+<p>Se coloca alrededor del objeto que se quiera arrastrar. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).</p>
+
+<pre><code class="html">&lt;drag initclass=&quot;arrastrable&quot; dropzone=&quot;.contenedor&quot; data=&quot;elemento&quot;&gt;
+    &lt;div&gt;Arrastrarme&lt;/div&gt;
+&lt;/drag&gt;
+</code></pre>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Atributos </th>
+	<th> Acción</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><strong>initclass=&#8220;&#8221;</strong> </td>
+	<td> Clase que tendrá el objeto, en caso de tener que darle estilo. (Trae también la clase &#8220;.drag&#8221;).</td>
+</tr>
+<tr>
+	<td><strong>dropzone=&#8220;&#8221;</strong> </td>
+	<td> Clase del objeto en que se depositará.</td>
+</tr>
+<tr>
+	<td><strong>data=&#8220;cualquierTexto&#8221;</strong> </td>
+	<td> El dropzone también lo tiene. Si se suelta en el dropzone y ambos tienen el mismo valor se toma como OK.</td>
+</tr>
+<tr>
+	<td><strong>dragsound=&#8220;&#8221;</strong> </td>
+	<td> Ruta del sonido al momento de iniciar el drag.</td>
+</tr>
+<tr>
+	<td><strong>dropsound=&#8220;&#8221;</strong> </td>
+	<td> Ruta del sonido al momento de soltar el objeto.</td>
+</tr>
+<tr>
+	<td><strong>dropzone-ok-class=&#8220;&#8221;</strong> </td>
+	<td> Clase que se añade al dropzone al soltar si es OK.</td>
+</tr>
+<tr>
+	<td><strong>dropzone-error-class=&#8220;&#8221;</strong> </td>
+	<td> Clase que se añade al dropzone al soltar si es ERROR.</td>
+</tr>
+<tr>
+	<td><strong>drag-ok-class=&#8220;&#8221;</strong> </td>
+	<td> Clase que se asigna al drag cuando se suelta y es OK. (* Requiere tener drag-error-class).</td>
+</tr>
+<tr>
+	<td><strong>drag-error-class=&#8220;&#8221;</strong> </td>
+	<td> Clase que se asigna al drag cuando se suelta y es ERROR. (* Requiere tener drag-ok-class).</td>
+</tr>
+<tr>
+	<td><strong>particle-color=&#8220;&#8221;</strong> </td>
+	<td> Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.</td>
+</tr>
+</tbody>
+</table>
+
+<p>El <strong>drag</strong> depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá.</p>
+
+<pre><code class="html">&lt;drag dropzone=&quot;.contenedor&quot; data=&quot;elemento&quot;&gt;
+    &lt;div&gt;Arrastrarme&lt;/div&gt;
+&lt;/drag&gt;
+</code></pre>
 
 <h3 id="clickable">clickable</h3>
 

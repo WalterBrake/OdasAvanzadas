@@ -95,9 +95,7 @@ Si se tienen muchas actividades(pantallas) se vería así:
     <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
 ```
 
-#### Atributos
-
-Atributo | Acción
+Atributos | Acción
 --------- | ------
 | **:ansers="3"** | Es el número de respuestas que hay en el interactivo.
 | **:score="50"** | El puntaje que gana por actividad (* Ignorar).
@@ -106,12 +104,12 @@ Atributo | Acción
 | **alloks** | Si se coloca, todas las respuestas deben estar **OK** para avanzar.
 | **scene-color="#ffdd00"** | Colocar de partículas con las que abre la escena.
 | **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
-| **:devmode="true"** | Habilita un panel para hacer debuggin de las acciones.
+| **:devmode="true"** | Habilita un panel para hacer debug de las acciones.
 
 
 ### info
 
-Atributo | Acción
+Atributos | Acción
 --------- | ------
 | **title="..."** | Título de la actividad
 | **text="..."** | Instrucción
@@ -121,10 +119,43 @@ Atributo | Acción
 
 ### activity
 
+Sin configuración, sólo es importante que agrupe a la actividad.
+
 ## Componentes de actividad
 
-
 ### drag
+
+Componente Drag & Drop.
+
+Se coloca alrededor del objeto que se quiera arrastrar. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).
+
+```html
+<drag initclass="arrastrable" dropzone=".contenedor" data="elemento">
+    <div>Arrastrarme</div>
+</drag>
+```
+
+Atributos | Acción
+--------- | ------
+**initclass=""** | Clase que tendrá el objeto, en caso de tener que darle estilo. (Trae también la clase ".drag").
+**dropzone=""** | Clase del objeto en que se depositará.
+**data="cualquierTexto"** | El dropzone también lo tiene. Si se suelta en el dropzone y ambos tienen el mismo valor se toma como OK.
+**dragsound=""** | Ruta del sonido al momento de iniciar el drag.
+**dropsound=""** | Ruta del sonido al momento de soltar el objeto.
+**dropzone-ok-class=""** | Clase que se añade al dropzone al soltar si es OK.
+**dropzone-error-class=""** | Clase que se añade al dropzone al soltar si es ERROR.
+**drag-ok-class=""** | Clase que se asigna al drag cuando se suelta y es OK. (* Requiere tener drag-error-class).
+**drag-error-class=""** | Clase que se asigna al drag cuando se suelta y es ERROR. (* Requiere tener drag-ok-class).
+**particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
+
+El **drag** depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá.
+
+```html
+<drag dropzone=".contenedor" data="elemento">
+    <div>Arrastrarme</div>
+</drag>
+```
+
 
 ### clickable
 
