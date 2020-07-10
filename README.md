@@ -60,7 +60,7 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 
 ### Configuración de componentes
 
-#### <scene>
+#### scene
   
 Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **key** que corresponde con la posición en que se encuentra. 
 
@@ -71,10 +71,14 @@ La escena de incio siempre es "0":
 ```
 
 
-#### <info>
+#### info
   
-#### <activity>
+#### activity
 
 ### Componentes de actividad
 
-#### <scene>
+#### audiotext
+
+#### drag
+
+#### select
