@@ -1079,6 +1079,13 @@
 		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
+	"\/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/README.html",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cB": 0,
 		"cS": 0,
@@ -1096,6 +1103,17 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/readme\/01.png": {
+		"ft": 32768,
+		"iS": 194187,
+		"oA": 0,
+		"oAP": "\/readme\/01.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		}
 	},
 "hooks": [
