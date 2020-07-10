@@ -59,9 +59,9 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 ```
 
 
-### Configuración de componentes
+## Configuración de componentes
 
-#### scene
+### scene
   
 Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **:key** que corresponde con la posición en que se encuentra. 
 
@@ -83,25 +83,26 @@ Si se tienen muchas actividades(pantallas) se vería así:
     <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
 ```
 
-##### Atributos
-    - **:ansers="3"** - Es el número de respuestas que hay en el interactivo.
-    - **:score="50"** - El puntaje que gana por actividad (* Ignorar).
-    - **:temporals="temporals"** - Detecta clicks y los guarda(* Ignorar)
-    - **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
-    - **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
-    - **scene-color="#ffdd00"** - Colocar de partículas con las que abre la escena.
-    - **@completed="sceneCompleted"** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
-    - **:devmode="true"** - Habilita un panel para hacer debuggin de las acciones.
+#### Atributos
+
+- **:ansers="3"** - Es el número de respuestas que hay en el interactivo.
+- **:score="50"** - El puntaje que gana por actividad (* Ignorar).
+- **:temporals="temporals"** - Detecta clicks y los guarda(* Ignorar)
+- **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
+- **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
+- **scene-color="#ffdd00"** - Colocar de partículas con las que abre la escena.
+- **@completed="sceneCompleted"** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
+- **:devmode="true"** - Habilita un panel para hacer debuggin de las acciones.
 
 
-#### info
+### info
   
-#### activity
+### activity
 
-### Componentes de actividad
+## Componentes de actividad
 
-#### audiotext
+### audiotext
 
-#### drag
+### drag
 
-#### clickable
+### clickable

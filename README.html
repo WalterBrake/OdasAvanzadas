@@ -114,9 +114,9 @@
         - &lt;activity&gt; - Contiene toda la actividad.
 </code></pre>
 
-<h3 id="configuracióndecomponentes">Configuración de componentes</h3>
+<h2 id="configuracióndecomponentes">Configuración de componentes</h2>
 
-<h4 id="scene">scene</h4>
+<h3 id="scene">scene</h3>
 
 <p>Cada pantalla es una escena. <strong>Siempre</strong> debe iniciar y terminar con escenas vacias. Cada una tiene un <strong>v-if</strong> y un <strong>:key</strong> que corresponde con la posición en que se encuentra.</p>
 
@@ -136,29 +136,30 @@
     &lt;scene v-if=&quot;currentScene==4&quot; :key=&quot;4&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
 </code></pre>
 
-<h5 id="atributos">Atributos</h5>
+<h4 id="atributos">Atributos</h4>
 
-<pre><code>- **:ansers=&quot;3&quot;** - Es el número de respuestas que hay en el interactivo.
-- **:score=&quot;50&quot;** - El puntaje que gana por actividad (* Ignorar).
-- **:temporals=&quot;temporals&quot;** - Detecta clicks y los guarda(* Ignorar)
-- **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
-- **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
-- **scene-color=&quot;#ffdd00&quot;** - Colocar de partículas con las que abre la escena.
-- **@completed=&quot;sceneCompleted&quot;** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
-- **:devmode=&quot;true&quot;** - Habilita un panel para hacer debuggin de las acciones.
-</code></pre>
+<ul>
+<li><strong>:ansers=&#8220;3&#8221;</strong> - Es el número de respuestas que hay en el interactivo.</li>
+<li><strong>:score=&#8220;50&#8221;</strong> - El puntaje que gana por actividad (* Ignorar).</li>
+<li><strong>:temporals=&#8220;temporals&#8221;</strong> - Detecta clicks y los guarda(* Ignorar)</li>
+<li><strong>alloks</strong> - Si se coloca, todas las respuestas deben esta <strong>OK</strong> para avanzar.</li>
+<li><strong>:alloks-sound</strong> - Ruta del audio que suena al terminar con todo OK.</li>
+<li><strong>scene-color=&#8220;#ffdd00&#8221;</strong> - Colocar de partículas con las que abre la escena.</li>
+<li><strong>@completed=&#8220;sceneCompleted&#8221;</strong> - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).</li>
+<li><strong>:devmode=&#8220;true&#8221;</strong> - Habilita un panel para hacer debuggin de las acciones.</li>
+</ul>
 
-<h4 id="info">info</h4>
+<h3 id="info">info</h3>
 
-<h4 id="activity">activity</h4>
+<h3 id="activity">activity</h3>
 
-<h3 id="componentesdeactividad">Componentes de actividad</h3>
+<h2 id="componentesdeactividad">Componentes de actividad</h2>
 
-<h4 id="audiotext">audiotext</h4>
+<h3 id="audiotext">audiotext</h3>
 
-<h4 id="drag">drag</h4>
+<h3 id="drag">drag</h3>
 
-<h4 id="clickable">clickable</h4>
+<h3 id="clickable">clickable</h3>
 
 </body>
 </html>
