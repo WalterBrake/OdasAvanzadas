@@ -3,6 +3,10 @@
 - [Clonar repositorio de Github](#clonar-repositorio-de-github)
 - [Servidor Local](#servidor-local)
 - [Estructura HTML](#estructura-html)
+- [Configuración de componentes](#configuracion-de-componentes)
+- [Componentes de actividad](#componentes-de-actividad)
+- [<Scene>](#scene)
+- [](#)
 
 ## Clonar repositorio de Github
 
