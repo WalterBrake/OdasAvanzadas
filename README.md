@@ -15,9 +15,26 @@ Buscar **OdasAvanzadas**, seleccionar y click en "CLONE"
 
 ![Github](readme/03.png)
 
+Abrir carpeta dando click derecho sobre el repositorio y "Reveal in Finder"
+
+![Github](readme/04.png)
+
 
 ## Servidor Local (mac) para correr el proyecto
 
+
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+
+```html
+<drag><p>PRobando...</p></drag>
+
+```
 
 
 ## Componentes
