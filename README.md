@@ -44,11 +44,15 @@ php -S localhost:8000
 
 En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el interactivo.
 
-## Estructura de nombres
+
+##  Estructura del HTML
+
+- :arrow_forward: **<html>**
+  - 	:arrow_forward:	:arrow_forward: **<head>**
+      - 	:arrow_forward: :arrow_forward:	:arrow_forward: **<title>** - Cambiar título
+      - 	:arrow_forward: :arrow_forward:	:arrow_forward: **<style>** - Estilos opcionales
+  - 	:arrow_forward:	:arrow_forward: **<body>**
 
 
-
-
-## Componentes
 
 ### Drag (& drop)
