@@ -26,13 +26,13 @@ Luego de hacer el commit se hace un **Push Origin** para publicar el cambio | ![
 ## Servidor Local (mac) para correr el proyecto
 
 
-![](readme/terminal.png =50x)
+![](readme/terminal.png | width=100)
 Navegar hacia el proyecto en la terminal
 ```shell
 cd ruta/hacia/la/carpeta
 ```
 
-![](readme/terminal.png =50x)
+![](readme/terminal.png | width=100)
 Correr un servidor local con el comando
 ```console
 php -S localhost:8000
