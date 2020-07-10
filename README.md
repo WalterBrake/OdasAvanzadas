@@ -62,14 +62,31 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 
 #### scene
   
-Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **key** que corresponde con la posición en que se encuentra. 
+Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **:key** que corresponde con la posición en que se encuentra. 
 
 La escena de incio siempre es "0":
 
 ```html
-  <scene v-if="currentScene==0" :key="0">
+    <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 ```
 
+Se añade el atributo **start-scene** o **end-scene** para la escena inicial y la final.
+
+```html
+    <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+    <scene v-if="currentScene==1" :key="1"></scene>
+    <scene v-if="currentScene==2" :key="3" end-scene :final-data="finalData"></scene>
+```
+
+Si se tienen muchas actividades (pantallas) se vería así:
+
+```html
+    <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+    <scene v-if="currentScene==1" :key="1"></scene>
+    <scene v-if="currentScene==2" :key="2"></scene>
+    <scene v-if="currentScene==3" :key="3"></scene>
+    <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
+```
 
 #### info
   
@@ -81,4 +98,4 @@ La escena de incio siempre es "0":
 
 #### drag
 
-#### select
+#### clickable

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="odasavanzadas">OdasAvanzadas</h1>
+
+<h2 id="clonarrepositoriodegithub">Clonar repositorio de Github</h2>
+
+<h3 id="configuración">Configuración</h3>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Instrucción </th>
+	<th> &#8212;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Descargar Github </td>
+	<td> <img src="readme/01.png" alt="Github" /></td>
+</tr>
+<tr>
+	<td>Add &gt; Clone Repository </td>
+	<td> <img src="readme/02.png" alt="Github" /></td>
+</tr>
+<tr>
+	<td>Buscar <strong>OdasAvanzadas</strong>, seleccionar y click en &#8220;CLONE&#8221; </td>
+	<td> <img src="readme/03.png" alt="Github" /></td>
+</tr>
+<tr>
+	<td>Abrir carpeta dando click derecho sobre el repositorio y &#8220;Reveal in Finder&#8221; </td>
+	<td> <img src="readme/04.png" alt="Github" /></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="publicarcambios">Publicar cambios</h3>
+
+<p>Para publicar cambios se realizan &#8220;Commit&#8221;, que implica colocar un título (y descripción * opcional) para saber qué se realizó.</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th>Instrucción </th>
+	<th> &#8212;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Al comenzar a trabajar y antes de hacer cambios &#8220;mayores&#8221; realizar un <strong>Fetch Origin</strong> para verificar la sincronización. Si hay datos por actualizar aparecerá el botón <strong>Pull from Origin</strong>, que realizará la actualización. </td>
+	<td> <img src="readme/05.png" alt="Github" /></td>
+</tr>
+<tr>
+	<td>Cuando se modifican los archivos se habilita el <strong>Commit</strong>, donde se ingresa el summary y luego se da click al botón <strong>Commit to gh-pages</strong></td>
+	<td> <img src="readme/06.png" alt="Github" /></td>
+</tr>
+<tr>
+	<td>Luego de hacer el commit se hace un <strong>Push Origin</strong> para publicar el cambio </td>
+	<td> <img src="readme/07.png" alt="Github" /></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="servidorlocalmacparacorrerelproyecto">Servidor Local (mac) para correr el proyecto</h2>
+
+<p>Navegar hacia el proyecto en la terminal</p>
+
+<pre><code class="shell">cd ruta/hacia/la/carpeta
+</code></pre>
+
+<figure>
+<img src="readme/08.gif" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<p>Correr un servidor local con el comando</p>
+
+<pre><code class="console">php -S localhost:8000
+</code></pre>
+
+<figure>
+<img src="readme/09.png" alt="" />
+<figcaption></figcaption>
+</figure>
+
+<p>En el navegador se va <strong>localhost:8000/materia/pagina</strong> y deberá cargar el interactivo.</p>
+
+<h2 id="estructuradelhtml">Estructura del HTML</h2>
+
+<pre><code>- &lt;html&gt;
+  - &lt;head&gt;
+    - &lt;title&gt; - Cambiar título.
+    - &lt;style&gt; - Estilos opcionales.
+  - &lt;body&gt;
+    - &lt;scene&gt; - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
+      - &lt;info&gt; - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
+      - &lt;activity&gt; - Contiene toda la actividad.
+</code></pre>
+
+<h3 id="configuracióndecomponentes">Configuración de componentes</h3>
+
+<h4 id="scene">scene</h4>
+
+<p>Cada pantalla es una escena. <strong>Siempre</strong> debe iniciar y terminar con escenas vacias. Cada una tiene un <strong>v-if</strong> y un <strong>:key</strong> que corresponde con la posición en que se encuentra.</p>
+
+<p>La escena de incio siempre es &#8220;0&#8221;:</p>
+
+<pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
+</code></pre>
+
+<p>Se añade el atributo <strong>start-scene</strong> o <strong>end-scene</strong> para la escena inicial y la final.</p>
+
+<pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;3&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
+</code></pre>
+
+<p>Si se tienen muchas actividades (pantallas) se vería así:</p>
+
+<pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;2&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==3&quot; :key=&quot;3&quot;&gt;&lt;/scene&gt;
+    &lt;scene v-if=&quot;currentScene==4&quot; :key=&quot;4&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
+</code></pre>
+
+<h4 id="info">info</h4>
+
+<h4 id="activity">activity</h4>
+
+<h3 id="componentesdeactividad">Componentes de actividad</h3>
+
+<h4 id="audiotext">audiotext</h4>
+
+<h4 id="drag">drag</h4>
+
+<h4 id="clickable">clickable</h4>
+
+</body>
+</html>
+
