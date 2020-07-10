@@ -26,13 +26,14 @@ Luego de hacer el commit se hace un **Push Origin** para publicar el cambio | ![
 ## Servidor Local (mac) para correr el proyecto
 
 
-![](readme/terminal.png | width=100)
+<img src="https://github.com/ealbinu/OdasAvanzadas/raw/gh-pages/readme/terminal.png" width="140" />
 Navegar hacia el proyecto en la terminal
 ```shell
 cd ruta/hacia/la/carpeta
 ```
+![](readme/08.gif)
 
-![](readme/terminal.png | width=100)
+<img src="https://github.com/ealbinu/OdasAvanzadas/raw/gh-pages/readme/terminal.png" width="140" />
 Correr un servidor local con el comando
 ```console
 php -S localhost:8000
