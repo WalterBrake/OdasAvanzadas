@@ -177,7 +177,7 @@ Objetos que se les da click. Se coloca alrededor de cualquier elemento. (El obje
 </clickable>
 ```
 
-Atributos | DROPZONE
+Atributos | CLICKABLE
 --------- | ------
 **:isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
 **`v-model="temporals[0]"`** | Se enumera según el número de opciones que habrá.
