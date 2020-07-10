@@ -58,4 +58,16 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
 ```
 
 
-### Drag (& drop)
+### Configuración de componentes
+
+#### <scene>
+  
+Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **key** que corresponde con la posición en que se encuentra. (La escena de incio siempre es "0"  [**<scene v-if="currentScene==0" :key="0">**]).
+  
+#### <info>
+  
+#### <activity>
+
+### Componentes de actividad
+
+#### <scene>
