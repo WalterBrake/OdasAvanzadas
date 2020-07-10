@@ -114,7 +114,7 @@ Atributos | Acción
 | **title="..."** | Título de la actividad
 | **text="..."** | Instrucción
 | **textaudio="..."** | Ruta del audio de la instrucción
-| **type="dragdrop"** | Icono animado abajo a la derecha: dragdrop | seleccionar
+| **type="dragdrop"** | Icono animado abajo a la derecha: "**dragdrop**", "**seleccionar**"
 | **@completedinstructions="$refs.instructions2.play()"** | Se puede usar para llamar una función al término del audio de instrucción. (Ver ejemplo **/ES1T1/16/** que llama a una segunda instrucción.)
 
 ### activity
@@ -164,7 +164,7 @@ Atributos | DROPZONE
 **oksound=""** | Ruta del sonido al momento de recibir un drag y ser OK.
 **errorsound=""** | Ruta del sonido al momento de recibir un drag y ser ERROR.
 **data=""** | Debe corresponder con el drag que se podrá soltar. Si es igual es OK. Si no es ERROR.
-**droptimes=""** | Veces que se pueden soltar drags hasta que el dropzone se deshabilite. Opciones: | **multiple** (infinito) | **once** (una vez) | **untilok** (cuando sea OK se deshabilita)
+**droptimes=""** | Veces que se pueden soltar drags hasta que el dropzone se deshabilite: "**multiple**" (infinito), "**once**" (una vez), "**untilok**" (cuando sea OK se deshabilita).
 
 
 
