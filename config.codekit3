@@ -1079,6 +1079,12 @@
 		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
+	"\/readme": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/readme",
+		"oF": 0
+		},
 	"\/README.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -1103,83 +1109,6 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
-		},
-	"\/readme\/01.png": {
-		"ft": 32768,
-		"iS": 194187,
-		"oA": 0,
-		"oAP": "\/readme\/01.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/02.png": {
-		"ft": 32768,
-		"iS": 202346,
-		"oA": 0,
-		"oAP": "\/readme\/02.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/03.png": {
-		"ft": 32768,
-		"iS": 158949,
-		"oA": 0,
-		"oAP": "\/readme\/03.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/04.png": {
-		"ft": 32768,
-		"iS": 95330,
-		"oA": 0,
-		"oAP": "\/readme\/04.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/05.png": {
-		"ft": 32768,
-		"iS": 491841,
-		"oA": 0,
-		"oAP": "\/readme\/05.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/06.png": {
-		"ft": 32768,
-		"iS": 474480,
-		"oA": 0,
-		"oAP": "\/readme\/06.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/readme\/07.png": {
-		"ft": 32768,
-		"iS": 548055,
-		"oA": 0,
-		"oAP": "\/readme\/07.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		}
 	},
 "hooks": [
@@ -3173,7 +3102,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules, \/readme",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"uglifyDefinesString": "",
