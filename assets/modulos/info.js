@@ -17,7 +17,6 @@ Vue.component('info', {
                 </div>
             </div>
             <button class="reset button" @click="reset">Reiniciar</button>
-            
         </div>
     `,
     methods: {

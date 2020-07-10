@@ -1121,8 +1121,8 @@
 		"oA": 0,
 		"oAP": "\/readme\/02.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1132,8 +1132,8 @@
 		"oA": 0,
 		"oAP": "\/readme\/03.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1143,17 +1143,32 @@
 		"oA": 0,
 		"oAP": "\/readme\/04.png",
 		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/readme\/05.png": {
+		"ft": 32768,
+		"iS": 491841,
+		"oA": 0,
+		"oAP": "\/readme\/05.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/readme\/06.png": {
+		"ft": 32768,
+		"iS": 474480,
+		"oA": 0,
+		"oAP": "\/readme\/06.png",
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
-		},
-	"\/readme\/04.png~": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/readme\/04.png~",
-		"oF": 0
 		}
 	},
 "hooks": [
