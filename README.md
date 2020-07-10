@@ -174,7 +174,7 @@ Objetos que se les da click. Se coloca alrededor de cualquier elemento. (El obje
 Atributos | DROPZONE
 --------- | ------
 **isok="true"** | "True" OK es seleccionado. "False" OK es NO seleccionado.
-`**v-model="temporals[0]"**` | Se enumera según el número de opciones que habrá.
+**`v-model="temporals[0]"`** | Se enumera según el número de opciones que habrá.
 **particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
 
 
