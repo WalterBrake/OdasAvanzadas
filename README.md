@@ -27,17 +27,21 @@ Luego de hacer el commit se hace un **Push Origin** para publicar el cambio | ![
 
 
 <img src="https://github.com/ealbinu/OdasAvanzadas/raw/gh-pages/readme/terminal.png" width="140" />
+
 Navegar hacia el proyecto en la terminal
 ```shell
 cd ruta/hacia/la/carpeta
 ```
+
 ![](readme/08.gif)
 
 <img src="https://github.com/ealbinu/OdasAvanzadas/raw/gh-pages/readme/terminal.png" width="140" />
+
 Correr un servidor local con el comando
 ```console
 php -S localhost:8000
 ```
+
 ![](readme/09.png)
 
 ```shell
