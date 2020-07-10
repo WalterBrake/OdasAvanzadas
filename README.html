@@ -108,9 +108,10 @@
     - &lt;title&gt; - Cambiar título.
     - &lt;style&gt; - Estilos opcionales.
   - &lt;body&gt;
-    - &lt;scene&gt; - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
-      - &lt;info&gt; - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
-      - &lt;activity&gt; - Contiene toda la actividad.
+    - &lt;app&gt; - Agrupa todo
+        - &lt;scene&gt; - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
+        - &lt;info&gt; - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
+        - &lt;activity&gt; - Contiene toda la actividad.
 </code></pre>
 
 <h3 id="configuracióndecomponentes">Configuración de componentes</h3>
@@ -119,25 +120,32 @@
 
 <p>Cada pantalla es una escena. <strong>Siempre</strong> debe iniciar y terminar con escenas vacias. Cada una tiene un <strong>v-if</strong> y un <strong>:key</strong> que corresponde con la posición en que se encuentra.</p>
 
-<p>La escena de incio siempre es &#8220;0&#8221;:</p>
-
-<pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
-</code></pre>
-
-<p>Se añade el atributo <strong>start-scene</strong> o <strong>end-scene</strong> para la escena inicial y la final.</p>
+<p>La escena de incio siempre es &#8220;0&#8221; y la final es el número consecutivo según el número de actividades, además de que se usa el atributo <strong>start-scene</strong> o <strong>end-scene</strong> para la escena inicial y la final:</p>
 
 <pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;3&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
 </code></pre>
 
-<p>Si se tienen muchas actividades (pantallas) se vería así:</p>
+<p>Si se tienen muchas actividades(pantallas) se vería así:</p>
 
 <pre><code class="html">    &lt;scene v-if=&quot;currentScene==0&quot; :key=&quot;0&quot; start-scene @completed=&quot;sceneCompleted&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==1&quot; :key=&quot;1&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==2&quot; :key=&quot;2&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==3&quot; :key=&quot;3&quot;&gt;&lt;/scene&gt;
     &lt;scene v-if=&quot;currentScene==4&quot; :key=&quot;4&quot; end-scene :final-data=&quot;finalData&quot;&gt;&lt;/scene&gt;
+</code></pre>
+
+<h5 id="atributos">Atributos</h5>
+
+<pre><code>- **:ansers=&quot;3&quot;** - Es el número de respuestas que hay en el interactivo.
+- **:score=&quot;50&quot;** - El puntaje que gana por actividad (* Ignorar).
+- **:temporals=&quot;temporals&quot;** - Detecta clicks y los guarda(* Ignorar)
+- **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
+- **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
+- **scene-color=&quot;#ffdd00&quot;** - Colocar de partículas con las que abre la escena.
+- **@completed=&quot;sceneCompleted&quot;** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
+- **:devmode=&quot;true&quot;** - Habilita un panel para hacer debuggin de las acciones.
 </code></pre>
 
 <h4 id="info">info</h4>

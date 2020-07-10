@@ -52,9 +52,10 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
     - <title> - Cambiar título.
     - <style> - Estilos opcionales.
   - <body>
-    - <scene> - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
-      - <info> - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
-      - <activity> - Contiene toda la actividad.
+    - <app> - Agrupa todo
+        - <scene> - Divide las pantallas, Se usa en inicio, en cada actividad y el final.
+        - <info> - La información de la actividad, titulo, instrucciones, puntaje y tipo de actividad.
+        - <activity> - Contiene toda la actividad.
 ```
 
 
@@ -64,13 +65,7 @@ En el navegador se va **localhost:8000/materia/pagina** y deberá cargar el inte
   
 Cada pantalla es una escena. **Siempre** debe iniciar y terminar con escenas vacias. Cada una tiene un **v-if** y un **:key** que corresponde con la posición en que se encuentra. 
 
-La escena de incio siempre es "0":
-
-```html
-    <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
-```
-
-Se añade el atributo **start-scene** o **end-scene** para la escena inicial y la final.
+La escena de incio siempre es "0" y la final es el número consecutivo según el número de actividades, además de que se usa el atributo **start-scene** o **end-scene** para la escena inicial y la final:
 
 ```html
     <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
@@ -78,7 +73,7 @@ Se añade el atributo **start-scene** o **end-scene** para la escena inicial y l
     <scene v-if="currentScene==2" :key="3" end-scene :final-data="finalData"></scene>
 ```
 
-Si se tienen muchas actividades (pantallas) se vería así:
+Si se tienen muchas actividades(pantallas) se vería así:
 
 ```html
     <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
@@ -87,6 +82,17 @@ Si se tienen muchas actividades (pantallas) se vería así:
     <scene v-if="currentScene==3" :key="3"></scene>
     <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
 ```
+
+##### Atributos
+    - **:ansers="3"** - Es el número de respuestas que hay en el interactivo.
+    - **:score="50"** - El puntaje que gana por actividad (* Ignorar).
+    - **:temporals="temporals"** - Detecta clicks y los guarda(* Ignorar)
+    - **alloks** - Si se coloca, todas las respuestas deben esta **OK** para avanzar.
+    - **:alloks-sound** - Ruta del audio que suena al terminar con todo OK.
+    - **scene-color="#ffdd00"** - Colocar de partículas con las que abre la escena.
+    - **@completed="sceneCompleted"** - Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
+    - **:devmode="true"** - Habilita un panel para hacer debuggin de las acciones.
+
 
 #### info
   

@@ -39,7 +39,7 @@
         
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
-        <scene v-if="currentScene==1" :key="1" ref="scene1"
+        <scene v-if="currentScene==1" :key="1"
             :answers="13" :score="50"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
@@ -76,7 +76,7 @@
         </scene>
         
         
-        <scene v-if="currentScene==2" :key="2" ref="scene1"
+        <scene v-if="currentScene==2" :key="2"
         :answers="5" :score="80"
         :temporals="temporals"
         alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
