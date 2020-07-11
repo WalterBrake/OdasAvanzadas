@@ -1,4 +1,4 @@
-Vue.component('clickable', {
+Vue.component('clickableoptions', {
     props: [
         'value',// v-model | tracking de clickables en la escena
         'clickSound', // sonido al dar click
@@ -9,7 +9,7 @@ Vue.component('clickable', {
         'particleColor', // color de particulas
         'initclass', // class de inicio
         'isok', // es ok?,
-        'blockIfError' // Si es error no permitirá que sea seleccionado
+        'val' // Valor único usado cuando es de múltiple opción
     ],
     data() {
         return {
@@ -35,18 +35,12 @@ Vue.component('clickable', {
             if(this.clickSound!=undefined){
                 var sound = new Howl({ src: [this.clickSound], autoplay:true })
             }
-            var okerrorsound = null
             if(this.clickErrorSound!=undefined && this.isok != this.status){
-                okerrorsound = new Howl({ src: [this.clickErrorSound]})
+                var sound = new Howl({ src: [this.clickErrorSound], autoplay:true })
             }
             else if(this.clickOkSound!=undefined && this.isok == this.status){
-                okerrorsound = new Howl({ src: [this.clickOkSound]})
+                var sound = new Howl({ src: [this.clickOkSound], autoplay:true })
             }
-            setTimeout(function () {
-                if(okerrorsound){
-                    okerrorsound.play()
-                }
-            }, 800)
 
         },
         isOkOrError (e) {
@@ -61,15 +55,8 @@ Vue.component('clickable', {
                 //ERROR
                 s_error.play()
                 this.setClassAnimation('error', this.$refs.clickable)
-                this.blockIfErrorFn()
                 this.$emit('input', false)
                 //EventBus.$emit('clicked', 'error')
-            }
-        },
-        blockIfErrorFn(){
-            if(!this.isok) {
-                this.status = false
-                return false
             }
         },
         setClassAnimation(name, obj) {

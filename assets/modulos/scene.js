@@ -11,6 +11,7 @@ Vue.component('scene', {
         'startScene', // Es la escena de inicio
         'endScene', // Es la escena del final
         'finalData', //Resultados finales sólo para endScene
+        'hidescorebox', // No mostrar la caja de score de la derecha
         'temporals',
     ],
     data() {
@@ -45,7 +46,7 @@ Vue.component('scene', {
             </div>
             <template v-if="startScene==undefined && endScene==undefined">
                 <slot></slot>
-                <div class="scenebar">
+                <div class="scenebar" v-if="hidescorebox==undefined">
                     <scorebox :showmax="score" :score="scoresum"></scorebox>
                 </div>
                 <div v-if="devmode" class="devmode">

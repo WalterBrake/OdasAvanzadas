@@ -367,3 +367,30 @@ embed {
     }
 
 }
+
+
+
+.w100{
+    width: 100%;
+}
+
+
+.numborder(@col){
+    -webkit-text-stroke: 4px @col;
+    text-shadow:
+       4px 4px 0 @col*.9,
+     -1px -1px 0 @col*.9,
+      1px -1px 0 @col*.9,
+      -1px 1px 0 @col*.9,
+       1px 1px 0 @col*.9;
+}
+
+.number {
+    font-family: 'barnacle_boyregular';
+    font-size: 60px;
+    color: #fff;
+    &.c1 { .numborder(@main); }
+    &.c2 { .numborder(@sec); }
+    &.c3 { .numborder(@clear); }
+    &.c4 { .numborder(@accent); }
+}

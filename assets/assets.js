@@ -43,7 +43,12 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev){
-        
+            if($ev == false){
+                this.currentScene++
+                this.temporals = []
+                this.notfoundimg()
+                return false
+            }
             var _this = this
             if($ev.oks){ this.finalData.oks += $ev.oks }
             if($ev.errors){ this.finalData.errors += $ev.errors }
@@ -64,6 +69,8 @@ var app = new Vue({
                     _this.notfoundimg()
                 }
             }, 50)
+
+
         },
         debugg(e){
             console.log(e)

@@ -488,4 +488,28 @@ embed {
   height: 90%;
   z-index: 9;
 }
+.w100 {
+  width: 100%;
+}
+.number {
+  font-family: 'barnacle_boyregular';
+  font-size: 60px;
+  color: #fff;
+}
+.number.c1 {
+  -webkit-text-stroke: 4px #5EB246;
+  text-shadow: 4px 4px 0 #55a03f, -1px -1px 0 #55a03f, 1px -1px 0 #55a03f, -1px 1px 0 #55a03f, 1px 1px 0 #55a03f;
+}
+.number.c2 {
+  -webkit-text-stroke: 4px #005093;
+  text-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
+}
+.number.c3 {
+  -webkit-text-stroke: 4px #AAE1FA;
+  text-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
+}
+.number.c4 {
+  -webkit-text-stroke: 4px #EB8B2E;
+  text-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
+}
 /*# sourceMappingURL=assets.css.map */

@@ -11,6 +11,7 @@
     - [Drag](#drag)
     - [Clickable](#clickable)
     - [Audiotext](#audiotext)
+- [Tips](#tips)
 ## Clonar repositorio de Github
 
 ### Configuración
@@ -105,7 +106,7 @@ Atributos | SCENE
 | **scene-color="#ffdd00"** | Colocar de partículas con las que abre la escena.
 | **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
 | **:devmode="true"** | Habilita un panel para hacer debug de las acciones.
-
+| **hidescorebox** | Oculta la caja de Score que a parece a la derecha
 
 ### info
 
@@ -116,6 +117,8 @@ Atributos | INFO
 | **textaudio="..."** | Ruta del audio de la instrucción
 | **type="dragdrop"** | Icono animado abajo a la derecha: "**dragdrop**", "**seleccionar**"
 | **@completedinstructions="$refs.instructions2.play()"** | Se puede usar para llamar una función al término del audio de instrucción. (Ver ejemplo **/ES1T1/16/** que llama a una segunda instrucción.)
+| **:autoplay="true/false"** | Las instrucciones se reproducen al cargar. Si no se coloca el atributo por default es **true**.
+
 
 ### activity
 
@@ -212,3 +215,19 @@ Atributos | AUDIOTEXT
 <audiotext :autoplay="false" text="Necesitamos: 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
 ```
 
+
+
+
+## Tips
+
+### Escena sin puntaje
+
+```html
+<scene v-if="currentScene==1" :key="1" :answers="1" :score="50" :temporals="temporals" scene-color="#CAE1A0" @completed="sceneCompleted" hidescorebox :devmode="false">
+    <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3"></info>
+    <activity>
+        <!-- Este botón carga la siguiente escena. *sceneCompleted(false)* anula la calificación y carga la escena -->
+        <div class="row"><button class="button buttonstart" @click="sceneCompleted(false)">Siguiente</button></div>
+    </activity>
+</scene>
+```

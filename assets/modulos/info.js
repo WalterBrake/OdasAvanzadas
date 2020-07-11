@@ -1,5 +1,5 @@
 Vue.component('info', {
-    props: ['title', 'text', 'textaudio', 'type'],
+    props: ['title', 'text', 'textaudio', 'type', 'autoplay'],
     data () {
         return {
             score: 0
@@ -8,7 +8,7 @@ Vue.component('info', {
     template: `
         <div class="info">
             <h1>{{title}}</h1>
-            <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="true" @completed="$emit('completedinstructions')"></audiotext></h2>
+            <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
             <div class="bottom">
                 <scorebox :score="score"></scorebox>
                 <div class="instype">
