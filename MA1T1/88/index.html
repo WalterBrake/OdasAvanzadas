@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        .pregunta { font-weight: bold; font-size: 2rem; }
+        .pregunta { font-weight: bold; font-size: 1.6rem; }
         .buttonstart{margin: 20px; font-size: 2rem;}
-        .row .clickable{ margin: 40px;}
+        .row .clickable{ margin: 10px 40px;}
+        .row .clickable img {height: 100px; }
     </style>
     </head>
 <body>
@@ -19,12 +20,13 @@
         
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
+
         <scene v-if="currentScene==1" :key="1"
-            :answers="1" :score="50"
+            :answers="1" :score="60"
             :temporals="temporals"
             scene-color="#CAE1A0"
             @completed="sceneCompleted"
-            :hidescorebox="true"
+            hidescorebox
             :devmode="false">
             <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3"></info>
             <activity>
@@ -33,6 +35,7 @@
             </activity>
         </scene>
  
+
         <scene v-if="currentScene==2" :key="2"
             :answers="1" :score="10"
             :temporals="temporals"
@@ -42,24 +45,126 @@
             :devmode="false">
             <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
-                <div class="row"><img src="aimg/ilustracion.png" class="w100"></div>
-
-                <div class="row pregunta">
-                    <audiotext text="¿Cuántas leoncitas hay?" audio="asound/leoncitas.mp3" :autoplay="true"></audiotext>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuántas leoncitas hay?" audio="asound/leoncitas.mp3" :autoplay="true"></audiotext></div>
+                <div class="row">
+                    <clickable block-if-error :isok="false"  click-sound="asound/2.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">2</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true" click-sound="asound/3.mp3"><div class="number c1">3</div></clickable>
+                    <clickable block-if-error  :isok="false"  click-sound="asound/4.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c3">4</div></clickable>
                 </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==3" :key="3"
+            :answers="1" :score="10"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuántos ratoncitos hay?" audio="asound/ratoncitos.mp3" :autoplay="true"></audiotext></div>
+                <div class="row">
+                    <clickable block-if-error :isok="false"  click-sound="asound/7.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">7</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true" click-sound="asound/8.mp3"><div class="number c1">8</div></clickable>
+                    <clickable block-if-error  :isok="false"  click-sound="asound/9.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c3">9</div></clickable>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==4" :key="4"
+            :answers="1" :score="10"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuántos jabalíes hay?" audio="asound/jabalies.mp3" :autoplay="true"></audiotext></div>
                 <div class="row">
                     <clickable v-model="temporals[0]" :isok="true" click-sound="asound/2.mp3"><div class="number c1">2</div></clickable>
                     <clickable block-if-error :isok="false"  click-sound="asound/3.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">3</div></clickable>
                     <clickable block-if-error  :isok="false"  click-sound="asound/4.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c3">4</div></clickable>
                 </div>
-                
+            </activity>
+        </scene>
+        
+        
+        <scene v-if="currentScene==5" :key="5"
+            :answers="1" :score="10"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuántos monos hay?" audio="asound/monos.mp3" :autoplay="true"></audiotext></div>
+                <div class="row">
+                    <clickable block-if-error :isok="false"  click-sound="asound/5.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">5</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true" click-sound="asound/4.mp3"><div class="number c1">4</div></clickable>
+                    <clickable block-if-error  :isok="false"  click-sound="asound/6.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c3">6</div></clickable>
+                </div>
+            </activity>
+        </scene>
+        
+        
+        <scene v-if="currentScene==6" :key="6"
+            :answers="1" :score="10"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuántos animales hay en total hay?" audio="asound/animales.mp3" :autoplay="true"></audiotext></div>
+                <div class="row">
+                    <clickable block-if-error :isok="false"  click-sound="asound/10.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">10</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true" click-sound="asound/22.mp3"><div class="number c1">22</div></clickable>
+                    <clickable block-if-error  :isok="false"  click-sound="asound/23.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c3">23</div></clickable>
+                </div>
+            </activity>
+        </scene>
+        
+        
+        <scene v-if="currentScene==7" :key="7"
+            :answers="1" :score="10"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
+                <div class="row pregunta"><audiotext text="¿Cuál es el animal que más se repite en la imagen?" audio="asound/repite.mp3" :autoplay="true"></audiotext></div>
+                <div class="row">
+                    <clickable v-model="temporals[0]" :isok="true">
+                        <img src="aimg/raton.svg">
+                    </clickable>
+                    <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3">
+                        <img src="aimg/leoncita.svg">
+                    </clickable>
+                    <clickable block-if-error  :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3">
+                        <img src="aimg/jabali.svg">
+                    </clickable>
+                </div>
             </activity>
         </scene>
         
     
 
 
-        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==8" :key="8" end-scene :final-data="finalData"></scene>
     
 
     

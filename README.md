@@ -220,7 +220,28 @@ Atributos | AUDIOTEXT
 
 ## Tips
 
+
+### Cargar una escena que no sea la primera
+
+Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener que estar esperando a la de comenzar se pueden cambiar los número en los **v-if="currentScene == 0"**. El primero en cargar siempre será el 0, por lo que asignando la primer escena a un numero cualquiera y añadiendo un cero a la escena que se quiera ver funcionará.
+
+```html
+<scene v-if="currentScene==999" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+<!-- se coloca cero en la escena que se quiere ver al principio -->
+<scene v-if="currentScene==0" :key="1">
+    <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3"></info>
+    <activity>
+        <div class="row"><img src="aimg/ilustracion.png" class="w100"></div>
+        <div class="row"><button class="button buttonstart" @click="sceneCompleted(false)">Siguiente</button></div>
+    </activity>
+</scene>
+```
+
+
 ### Escena sin puntaje
+
+Se usa "hidescorebox" en la escena y se coloca un boton que cargue la siguiente escena.
 
 ```html
 <scene v-if="currentScene==1" :key="1" :answers="1" :score="50" :temporals="temporals" scene-color="#CAE1A0" @completed="sceneCompleted" hidescorebox :devmode="false">
@@ -231,3 +252,5 @@ Atributos | AUDIOTEXT
     </activity>
 </scene>
 ```
+
+
