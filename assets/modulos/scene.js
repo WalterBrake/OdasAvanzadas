@@ -25,7 +25,6 @@ Vue.component('scene', {
     },
     watch: {
         temporals (newP, oldP) {
-            console.log(newP, oldP)
             this.checkTemporals()
         }
     },
@@ -84,6 +83,7 @@ Vue.component('scene', {
             this.oks++
             this.currentAnswers++
             this.endedFn()
+            console.log('Testing ok')
         },
         errorFn() {
             this.errors++
@@ -91,7 +91,7 @@ Vue.component('scene', {
             this.endedFn()
         },
         endedFn () {
-            console.log(this.alloks, this.oks, this.answers)
+            //console.log(this.alloks, this.oks, this.answers)
             if(this.alloks != undefined) {
                 if(this.oks == this.answers && this.oks>0) {
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
@@ -134,6 +134,9 @@ Vue.component('scene', {
 
     },
     mounted () {
+        this.oks = 0
+        this.errors = 0
+        this.currentAnswers = 0
         EventBus.$on('isok', this.okFn)
         EventBus.$on('iserror', this.errorFn)
         EventBus.$on('clicked', this.checkClicks)

@@ -224,7 +224,7 @@ Atributos | AUDIOTEXT
 
 
 
-### Cargar una escena al inicio que no sea la de comenzar
+### Cargar una escena en específico al inicio
 
 Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener que estar esperando a la de comenzar se pueden cambiar los número en los **v-if="currentScene == 0"**. El primero en cargar siempre será el 0, por lo que asignando la primer escena a un numero cualquiera y añadiendo un cero a la escena que se quiera ver funcionará.
 

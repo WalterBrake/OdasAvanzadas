@@ -44,6 +44,7 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev){
+            console.log($ev)
             if($ev == false){
                 this.currentScene++
                 this.temporals = []
@@ -65,6 +66,7 @@ var app = new Vue({
                     clearInterval(fw)
                     //Stop all howlers
                     //for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                    EventBus = new Vue()
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
