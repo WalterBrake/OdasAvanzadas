@@ -46,7 +46,7 @@ Vue.component('clickable', {
                 if(okerrorsound){
                     okerrorsound.play()
                 }
-            }, 800)
+            }, 600)
 
         },
         isOkOrError (e) {

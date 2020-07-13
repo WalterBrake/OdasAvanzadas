@@ -20,6 +20,7 @@ var app = new Vue({
             score: 0,
             scoreInScene: 1,
             currentScene: 0,
+            decimalSum: 0,
             finalData:{
                 score: 0,
                 scoresum: 0,
@@ -27,14 +28,16 @@ var app = new Vue({
                 errors: 0,
                 answers: 0,
             },
-            temporals: []
+            temporals: [],
+            scoreByScenes: []
         }
     },
     watch: {
         scenesCount (n, o){
-            console.log(n,o)
-            this.scoreInScene = Math.round(this.score / this.scenesCount )
-            console.log(this.scoreInScene)
+            var individual = this.score / this.scenesCount
+            var individualR = Math.floor(individual)
+            this.decimalSum = (individual * this.scenesCount) - (individualR * this.scenesCount)
+            this.scoreInScene = individualR
         }
     },
     methods: {
@@ -66,7 +69,7 @@ var app = new Vue({
             if($ev.answers){ this.finalData.answers += $ev.answers }
             if($ev.score){ this.finalData.score += $ev.score }
             if($ev.scoresum){ this.finalData.scoresum += $ev.scoresum }
-            
+
             var fwIt = 0
             var fw = setInterval(function () {
                 fwIt++
@@ -76,12 +79,13 @@ var app = new Vue({
                     //Stop all howlers
                     //for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     EventBus = new Vue()
-                    
-                    
-                    
+                    if(_this.currentScene == _this.scenesCount-1) {
+                        _this.scoreInScene += _this.decimalSum
+                    }
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
+
                 }
             }, 100)
 
@@ -94,6 +98,6 @@ var app = new Vue({
     mounted () {
         this.notfoundimg()
         var h = parseInt(window.location.hash ? window.location.hash.replace('#s', '') : 100)
-        this.score = h
+        this.score = h ? h : 100
     }
 })
