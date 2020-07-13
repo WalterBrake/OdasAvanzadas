@@ -106,9 +106,18 @@ Atributos | SCENE
 | **alloks** | Si se coloca, todas las respuestas deben estar **OK** para avanzar.
 | **scene-color="#ffdd00"** | Colocar de partículas con las que abre la escena.
 | **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
-| **:devmode="true"** | Habilita un panel para hacer debug de las acciones.
 | **hidescorebox** | Oculta la caja de Score que a parece a la derecha
+| **:devmode="true"** | Habilita un panel para hacer debug de las acciones. << Primeras versiones. **![Nueva version]()
 
+#### DevMode 
+
+El último script del html declara el DEVMode en true/false. Desde ahí se habilita para todas las escenas.
+
+```html
+<script>
+    app.$devmode = false
+</script>
+```
 ### info
 
 Atributos | INFO
