@@ -12,6 +12,7 @@
     - [Clickable](#clickable)
     - [Audiotext](#audiotext)
 - [Tips](#tips)
+- [EJEMPLOS](#ejemplos)
 ## Clonar repositorio de Github
 
 ### Configuración
@@ -222,6 +223,7 @@ Atributos | AUDIOTEXT
 ## Tips
 
 
+
 ### Cargar una escena al inicio que no sea la de comenzar
 
 Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener que estar esperando a la de comenzar se pueden cambiar los número en los **v-if="currentScene == 0"**. El primero en cargar siempre será el 0, por lo que asignando la primer escena a un numero cualquiera y añadiendo un cero a la escena que se quiera ver funcionará.
@@ -256,3 +258,13 @@ Se usa "hidescorebox" en la escena y se coloca un boton que cargue la siguiente 
 ```
 
 
+
+## EJEMPLOS
+
+### Drag básico
+
+![https://interactivos.tk/_EJEMPLOS/drag-basico.html]
+
+### Clickable básico
+
+![https://interactivos.tk/_EJEMPLOS/clickable-basico.html]

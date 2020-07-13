@@ -40,18 +40,18 @@
 		"oAP": "\/_EJEMPLOS\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/_EJEMPLOS\/clickable.html": {
+	"\/_EJEMPLOS\/clickable-basico.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/clickable.html",
+		"oAP": "\/_EJEMPLOS\/clickable-basico.html",
 		"oF": 0
 		},
-	"\/_EJEMPLOS\/drag.html": {
+	"\/_EJEMPLOS\/drag-basico.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/drag.html",
+		"oAP": "\/_EJEMPLOS\/drag-basico.html",
 		"oF": 0
 		},
 	"\/assets\/aanim\/Dialog.svg": {
