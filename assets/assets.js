@@ -96,7 +96,7 @@ var app = new Vue({
             window.onmessage = function (event) {
                 window.top.postMessage(JSON.stringify(_this.finalData), "interactivo")
             }
-        }
+        },
         debugg(e){
             console.log(e)
         },
