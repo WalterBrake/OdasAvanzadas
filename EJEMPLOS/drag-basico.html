@@ -22,13 +22,9 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
 
-        <scene v-if="currentScene==1" :key="1"
-            :answers="1" :score="50"
-            :temporals="temporals"
-            alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
-            scene-color="#ED1C25"
-            @completed="sceneCompleted"
-            :devmode="$devmode">
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
             <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
 
@@ -43,7 +39,7 @@
                     </div>
                 </div>
             </activity>
-        </scene>
+        </scene> <!-- end scene -->
 
         <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
     
@@ -74,6 +70,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.currentScene = 0
+        app.scenesCount = 1
         app.$devmode = true
     </script>
 </body>

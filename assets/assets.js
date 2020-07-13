@@ -16,6 +16,9 @@ var app = new Vue({
     data () {
         return {
             $devmode: false,
+            scenesCount: 0,
+            score: 0,
+            scoreInScene: 1,
             currentScene: 0,
             finalData:{
                 score: 0,
@@ -25,6 +28,13 @@ var app = new Vue({
                 answers: 0,
             },
             temporals: []
+        }
+    },
+    watch: {
+        scenesCount (n, o){
+            console.log(n,o)
+            this.scoreInScene = Math.round(this.score / this.scenesCount )
+            console.log(this.scoreInScene)
         }
     },
     methods: {
@@ -66,6 +76,9 @@ var app = new Vue({
                     //Stop all howlers
                     //for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     EventBus = new Vue()
+                    
+                    
+                    
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
@@ -80,5 +93,7 @@ var app = new Vue({
     },
     mounted () {
         this.notfoundimg()
+        var h = parseInt(window.location.hash ? window.location.hash.replace('#s', '') : 100)
+        this.score = h
     }
 })

@@ -108,6 +108,7 @@ Atributos | SCENE
 | **@completed="sceneCompleted"** | Colocar en las escenas que tienen una escena siguiente (No se coloca en la escena final).
 | **hidescorebox** | Oculta la caja de Score que a parece a la derecha
 | **:devmode="true"** | Habilita un panel para hacer debug de las acciones. << Primeras versiones. **![Nueva version]()
+| **app.scenesCount = 1** | En el Script de abajo se deberá declarar el número de escenas en el interactivo (sin contar start ni end) (nueva versión).
 
 #### DevMode 
 
@@ -235,6 +236,8 @@ Atributos | AUDIOTEXT
 
 ### Cargar una escena en específico al inicio
 
+**NUEVA VERSIÓN ABAJO**
+
 Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener que estar esperando a la de comenzar se pueden cambiar los número en los **v-if="currentScene == 0"**. El primero en cargar siempre será el 0, por lo que asignando la primer escena a un numero cualquiera y añadiendo un cero a la escena que se quiera ver funcionará.
 
 ```html
@@ -251,6 +254,15 @@ Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener 
 </scene>
 ```
 
+### Cargar una escena en específico al inicio * [NUEVA VERSIÓN]
+
+En el script hasta abajo del html se encuentra declarado **app.currentScene**, que permite elegir la primer escena. **ES IMPORTANTE QUE...** al publicar se debe quedar en 0.
+
+```html
+<script>
+    app.currentScene = 0
+</script>
+```
 
 ### Escena sin puntaje
 
