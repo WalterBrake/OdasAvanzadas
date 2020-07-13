@@ -37,7 +37,7 @@
 
 
         <scene v-if="currentScene==1" :key="1"
-            :answers="4" :score="50"
+            :answers="4" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3"
             scene-color="#56A03F"
@@ -103,5 +103,10 @@
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
 </body>
 </html>
