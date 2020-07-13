@@ -306,6 +306,9 @@ embed {
   position: relative;
   z-index: 999;
 }
+.row .wrap {
+  flex-wrap: wrap;
+}
 .item {
   display: flex;
   justify-content: center;

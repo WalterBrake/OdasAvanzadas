@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junto elementos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .ficha{
+            width: 100px;
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==99" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+
+        <scene v-if="currentScene==0" :key="1"
+            :answers="4" :score="50"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
+            scene-color="#ED1C25"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Junto elementos" text="¿Jugamos con fichas de colores? Coloca las fichas que se te indican en el recuadro correspondiente." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row wrap mb-1">
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                </div>
+            </activity>
+        </scene>
+
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+</body>
+</html>

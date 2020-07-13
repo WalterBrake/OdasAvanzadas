@@ -1099,6 +1099,61 @@
 		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
+	"\/MA1T1\/100\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/100\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/100\/aimg\/rojo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/100\/aimg\/rojo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/100\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/100\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/100\/asound\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/100\/asound\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/100\/asound\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/100\/asound\/instruccion3.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/100\/asound\/instruccion4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/100\/asound\/instruccion4.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/100\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/100\/index.html",
+		"oF": 0
+		},
 	"\/MA1T1\/88\/aimg\/ilustracion.png": {
 		"ft": 32768,
 		"iS": 775129,
