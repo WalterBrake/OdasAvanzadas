@@ -133,7 +133,7 @@ Componente Drag & Drop.
 Se coloca alrededor del objeto que se quiera arrastrar. (El objeto a arrastrar siempre debe ser una etiqueta, como img o div, no puede ser texto sólo).
 
 ```html
-<drag initclass="arrastrable" dropzone=".caja" data="elemento">
+<drag initclass="arrastrable" dropzone=".caja" data="elemento" stay-if-ok>
     <div>Arrastrarme</div>
 </drag>
 ```
@@ -154,10 +154,10 @@ Atributos | DRAG
 El **drag** depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá. Puede ser de cualquier tipo pero debe usar la misma clase declarada en el atributo "dropzone" del componente drag. Su relación sobre si es correcto/incorrecto depende también del atributo "data". Si en ambos es el mismo, lo tomará como OK.
 
 ```html
-<drag dropzone=".caja" data="elemento">
+<drag dropzone=".caja" data="okay" stay-if-ok>
     <div>Arrastrarme</div>
 </drag>
-<div class="caja" data="elemento"></div>
+<div class="caja" data="okay" droptimes="untilok"></div>
 ```
 
 El **dropzone** tiene  atributos que se ejecutan al momento de que el drag es soltado sobre él.
@@ -221,11 +221,12 @@ Atributos | AUDIOTEXT
 ## Tips
 
 
-### Cargar una escena que no sea la primera
+### Cargar una escena al inicio que no sea la de comenzar
 
 Si se esta en desarrollo y se necesita cargar una escena muchas veces sin tener que estar esperando a la de comenzar se pueden cambiar los número en los **v-if="currentScene == 0"**. El primero en cargar siempre será el 0, por lo que asignando la primer escena a un numero cualquiera y añadiendo un cero a la escena que se quiera ver funcionará.
 
 ```html
+<!-- se pone un numero aleatorio en vez del cero dentro del v-if -->
 <scene v-if="currentScene==999" :key="0" start-scene @completed="sceneCompleted"></scene>
 
 <!-- se coloca cero en la escena que se quiere ver al principio -->

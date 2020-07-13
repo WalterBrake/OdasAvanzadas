@@ -14,12 +14,17 @@ Vue.component('drag', {
         'dragErrorClass', // coloca clase al drag si es error
         'particleColor', // color de particulas
         'initclass', // class de inicio
+        'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta
     ],
     data() {
         return {
             posx: 0,
             posy: 0,
-            draggable: null
+            dragPosX: 0,
+            dragPosY: 0,
+            draggable: null,
+            canvas: null,
+            ctx: null,
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -35,6 +40,8 @@ Vue.component('drag', {
             _this.posx = _this.$refs.drag.offsetLeft
             _this.posy = _this.$refs.drag.offsetTop
             _this.$refs.drag.children[0].classList.add('animate__animated')
+
+
             _this.draggable = Draggable.create(_this.$refs.drag, {
                 type: 'x,y',
                 bounds: '.activity',
@@ -42,6 +49,7 @@ Vue.component('drag', {
                 onDrag: function(e) { _this.Drag(e) },
                 onDragEnd: function(e) { _this.DragEnd(e) }
             })
+            _this.dragLineFnInit()
         },
         DragStart (e) {
             var _this = this
@@ -49,10 +57,13 @@ Vue.component('drag', {
             _this.setClassAnimation('start')
             s_select.play()
             _this.playDragSound()
+            _this.dragPosX = e.clientX
+            _this.dragPosY = e.clientY
         },
         Drag (e) {
             var _this = this
             _this.HitTestFn(e, false)
+            _this.dragLineFn(e)
         },
         DragEnd (e) {
             var _this = this
@@ -159,6 +170,7 @@ Vue.component('drag', {
                 _this.dragStatusClass('error')
                 EventBus.$emit('iserror')
                 _this.setClassAnimation('error')
+
             }
         },
         dropzoneCanBeDropped (dropzone) {
@@ -219,11 +231,73 @@ Vue.component('drag', {
         },
         backToInitPos(){
             TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
+            this.dragLineClear()
         },
         dropzoneSound(dropzone, attr) {
             if(dropzone.getAttribute(attr)){
                 var sound = new Howl({ src: [dropzone.getAttribute(attr)] })
                 sound.play()
+            }
+        },
+        dragLineDraw(e) {
+            console.log(e)
+            var line = {}
+            line.x = this.dragPosX
+            line.y = this.dragPosY
+            line.color = this.particleColor
+            line.lineWith = 4
+            line.draw = function () {
+                ctx.beginPath()
+                ctx.lineWidth = line.lineWith
+                ctx.strokeStyle = line.color
+                ctx.moveTo(line.x, line.y)
+                ctx.lineTo(e.clientX, e.clientY)
+                ctx.stroke()
+            }
+            return line
+        },
+        dragLineFnInit() {
+            if(this.dragLine!=undefined) {
+                this.canvas = document.createElement('canvas')
+                this.canvas.setAttribute('class', 'dragLineCanvas');
+                //document.body.appendChild(this.canvas)
+                var parentEl = document.getElementsByClassName('scene')[0]
+                parentEl.appendChild(this.canvas)
+                this.canvas.width = parentEl.clientWidth * 2;
+                this.canvas.height = parentEl.clientHeight * 2;
+                this.canvas.style.width = parentEl.clientWidth + 'px';
+                this.canvas.style.height = parentEl.clientHeight + 'px';
+                
+                this.canvas.getContext('2d').scale(2, 2);
+                this.ctx = this.canvas.getContext('2d')
+            }
+        },
+        dragLineFn(e) {
+            if(this.dragLine!=undefined) {
+                this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height)
+                this.ctx.beginPath()
+                this.ctx.lineWidth = 2
+                this.ctx.strokeStyle = this.particleColor
+                this.ctx.arc(this.dragPosX, this.dragPosY, 20, 0, 2*Math.PI)
+                this.ctx.stroke()
+                this.ctx.beginPath()
+                this.ctx.arc(this.dragPosX, this.dragPosY, 10, 0, 2*Math.PI)
+                this.ctx.stroke()
+                this.ctx.beginPath()
+                this.ctx.lineWidth = 6
+                this.ctx.strokeStyle = this.particleColor
+                this.ctx.lineCap = 'round'
+                this.ctx.setLineDash([5, 10])
+                this.ctx.moveTo(this.dragPosX, this.dragPosY)
+                this.ctx.lineTo(e.clientX, e.clientY)
+                this.ctx.stroke()
+                
+
+            }
+        },
+        dragLineClear(){
+            if(this.dragLine!=undefined) {
+                this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height)
             }
         }
     },

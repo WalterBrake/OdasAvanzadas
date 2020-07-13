@@ -355,6 +355,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/conexion.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/conexion-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/drag.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1261,6 +1271,88 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA1T1\/88\/index.html",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/aimg\/i1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/94\/aimg\/i1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/94\/aimg\/i2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/94\/aimg\/i2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/94\/aimg\/i3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/94\/aimg\/i3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/94\/aimg\/i4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T1\/94\/aimg\/i4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T1\/94\/asound\/10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/asound\/10.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/asound\/5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/asound\/5.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/asound\/6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/asound\/6.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/asound\/9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/asound\/9.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/94\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/94\/index.html",
 		"oF": 0
 		},
 	"\/readme": {

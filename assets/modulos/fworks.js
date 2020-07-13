@@ -4,9 +4,9 @@ var canv = document.createElement('canvas');
 canv.setAttribute('class', 'fireworks');
 document.body.appendChild(canv);
 
-
 var canvasEl = document.querySelector('.fireworks');
 var ctx = canvasEl.getContext('2d');
+
 var numberOfParticules = 10;
 var pointerX = 0;
 var pointerY = 0;
@@ -53,25 +53,7 @@ function createParticule(x,y, maxsize, onecolor) {
   return p;
 }
 
-function createCircle(x,y) {
-  var p = {};
-  p.x = x;
-  p.y = y;
-  p.color = '#FFF';
-  p.radius = 0.1;
-  p.alpha = .5;
-  p.lineWidth = 6;
-  p.draw = function() {
-    ctx.globalAlpha = p.alpha;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
-    ctx.lineWidth = p.lineWidth;
-    ctx.strokeStyle = p.color;
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-  }
-  return p;
-}
+
 
 function renderParticule(anim) {
   for (var i = 0; i < anim.animatables.length; i++) {
@@ -83,7 +65,6 @@ function animateParticules(x, y, numParticles, maxtime, maxsize, onecolor) {
   var numberParticles = numParticles ? numParticles : numberOfParticules
   var maximumTime = maxtime ? maxtime : 1800
   var maximumSize = maxsize ? maxsize : 20
-  var circle = createCircle(x, y);
   var particules = [];
   for (var i = 0; i < numberParticles; i++) {
     particules.push(createParticule(x, y, maximumSize, onecolor));

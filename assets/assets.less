@@ -40,7 +40,7 @@ body {
     cursor:pointer;
 }
 
-.fireworks {
+.fireworks, .dragLineCanvas {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -50,6 +50,9 @@ body {
     z-index: 2001;
 }
 
+.dragLineCanvas{
+    position: absolute;
+}
 
 h1{
   font-family: 'barnacle_boyregular';
@@ -401,3 +404,28 @@ embed {
     &.c3 { .numborder(@clear); }
     &.c4 { .numborder(@accent); }
 }
+
+
+
+.conectorbg(@col){
+    background: @col;
+    box-shadow:
+       4px 4px 0 @col*.9,
+     -1px -1px 0 @col*.9,
+      1px -1px 0 @col*.9,
+      -1px 1px 0 @col*.9,
+       1px 1px 0 @col*.9;
+}
+
+.conector {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: @main;
+    border: 4px solid #fff;
+    &.c1{  .conectorbg(@main); }
+    &.c2{ .conectorbg(@sec); }
+    &.c3{ .conectorbg(@clear); }
+    &.c4{ .conectorbg(@accent); }
+}
+
