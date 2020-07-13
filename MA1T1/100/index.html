@@ -9,37 +9,182 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        .ficha{
-            width: 100px;
+        .dropzones{
+            width: 100%;
+        }
+        .dropzones .number{
+            font-size: 2.4rem;
+            -webkit-text-stroke-width: 1px !important;
+        }
+        .dropzone{
+            flex-basis: 50%;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px;
+            height: 200px;
+            margin: 10px;
+        }
+        .fichasdrag{ width: 60%; }
+        .fichasdrag img{ width: 100%; }
+        .fichasdrag .drag{ width: 60px; height: 60px;}
+
+        /* ESCENA 2 */
+        .ficha{ width: 60px; }
+        .ficha:nth-child(1){ transform: translateY(-30px); }
+        .ficha:nth-child(2){ transform: translateY(-30px); }
+        .ficha:nth-child(3){ transform: translateY(-70px); }
+        .ficha:nth-child(4){ transform: translateY(-20px); }
+        .ficha:nth-child(5){ transform: translateY(-10px); }
+        .ficha:nth-child(6){ transform: translateY(-30px); }
+        .ficha:nth-child(7){ transform: translateY(-30px); }
+        .ficha:nth-child(8){ transform: translateY(-70px); }
+        .ficha:nth-child(9){ transform: translateY(-20px); }
+        .ficha:nth-child(10){ transform: translateY(-10px); }
+
+        .respuestas div {
+            margin: 20px;
         }
     </style>
     </head>
 <body>
     <div id="app">
         
-        <scene v-if="currentScene==99" :key="0" start-scene @completed="sceneCompleted"></scene>
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
 
-        <scene v-if="currentScene==0" :key="1"
-            :answers="4" :score="50"
+        <scene v-if="currentScene==1" :key="1"
+            :answers="10" :score="50"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
             scene-color="#ED1C25"
             @completed="sceneCompleted"
-            :devmode="false">
-            <info type="seleccionar" title="Junto elementos" text="¿Jugamos con fichas de colores? Coloca las fichas que se te indican en el recuadro correspondiente." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            :devmode="$devmode">
+            <info type="dragdrop" title="Junto elementos" text="¿Jugamos con fichas de colores? Coloca las fichas que se te indican en el recuadro correspondiente." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row wrap mb-1">
+                <div class="row dropzones mb-1">
+                    <div class="dropzone" droptimes="multiple" data="azul" droplimit="6" errorsound="../../assets/asound/vuelveaintentar_nina.mp3">
+                        <p class="number c1">6 fichas azules</p>
+                    </div>
+                    <div class="dropzone" droptimes="multiple" data="rojo" droplimit="4" errorsound="../../assets/asound/vuelveaintentar_nina.mp3">
+                        <p class="number c1">4 fichas rojas</p>
+                    </div>
+                </div>
+                <div class="row wrap fichasdrag">
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==2" :key="2"
+            :answers="1" :score="50"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
+            scene-color="#ED1C25"
+            @completed="sceneCompleted"
+            :devmode="$devmode">
+            <info type="seleccionar" title="Junto elementos" text="Si juntas las 6 fichas azules y 4 fichas rojas, ¿cuántas fichas son en total?" textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row wrap">
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
                     <div class="ficha"><img src="aimg/rojo.svg"></div>
                     <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                </div>
+                <div class="row respuestas">
+                    <clickable block-if-error  :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c1">12</div></clickable>
+                    <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c1">11</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true"><div class="number c1">10</div></clickable>
+                </div>
+            </activity>
+        </scene>
+
+
+
+        <scene v-if="currentScene==3" :key="3"
+            :answers="8" :score="50"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
+            scene-color="#ED1C25"
+            @completed="sceneCompleted"
+            :devmode="$devmode">
+            <info type="dragdrop" title="Junto elementos" text="Coloca las fichas que se te indican en el recuadro correspondiente. " textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row dropzones mb-1">
+                    <div class="dropzone" droptimes="multiple" data="azul" droplimit="5" errorsound="../../assets/asound/vuelveaintentar_nina.mp3">
+                        <p class="number c1">5 fichas azules</p>
+                    </div>
+                    <div class="dropzone" droptimes="multiple" data="rojo" droplimit="3" errorsound="../../assets/asound/vuelveaintentar_nina.mp3">
+                        <p class="number c1">3 fichas rojas</p>
+                    </div>
+                </div>
+                <div class="row wrap fichasdrag">
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="rojo" dropzone=".dropzone" stay-if-ok><img src="aimg/rojo.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                    <drag data="azul" dropzone=".dropzone" stay-if-ok><img src="aimg/azul.svg"></drag>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==4" :key="4"
+            :answers="1" :score="50"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
+            scene-color="#ED1C25"
+            @completed="sceneCompleted"
+            :devmode="$devmode">
+            <info type="seleccionar" title="Junto elementos" text="Si juntas las 5 fichas azules y 3 fichas rojas, ¿cuántas fichas son en total?" textaudio="asound/instruccion4.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row wrap">
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/azul.svg"></div>
                     <div class="ficha"><img src="aimg/rojo.svg"></div>
                     <div class="ficha"><img src="aimg/rojo.svg"></div>
                     <div class="ficha"><img src="aimg/azul.svg"></div>
                     <div class="ficha"><img src="aimg/azul.svg"></div>
                     <div class="ficha"><img src="aimg/azul.svg"></div>
+                    <div class="ficha"><img src="aimg/rojo.svg"></div>
                     <div class="ficha"><img src="aimg/azul.svg"></div>
-                    <div class="ficha"><img src="aimg/azul.svg"></div>
-                    <div class="ficha"><img src="aimg/azul.svg"></div>
+                </div>
+                <div class="row respuestas">
+                    <clickable block-if-error  :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c1">9</div></clickable>
+                    <clickable v-model="temporals[0]" :isok="true"><div class="number c1">8</div></clickable>
+                    <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c1">11</div></clickable>
                 </div>
             </activity>
         </scene>
@@ -47,7 +192,7 @@
 
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
@@ -60,7 +205,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+    
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
@@ -75,5 +220,8 @@
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
+    <script>
+        app.$devmode = true
+    </script>
 </body>
 </html>

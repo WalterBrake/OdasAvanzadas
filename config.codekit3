@@ -16,6 +16,44 @@
 		"oAP": "\/.gitattributes",
 		"oF": 0
 		},
+	"\/_EJEMPLOS\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/_EJEMPLOS\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_EJEMPLOS\/asound\/a.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/_EJEMPLOS\/asound\/a.mp3",
+		"oF": 0
+		},
+	"\/_EJEMPLOS\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/_EJEMPLOS\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/_EJEMPLOS\/clickable.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/_EJEMPLOS\/clickable.html",
+		"oF": 0
+		},
+	"\/_EJEMPLOS\/drag.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/_EJEMPLOS\/drag.html",
+		"oF": 0
+		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,

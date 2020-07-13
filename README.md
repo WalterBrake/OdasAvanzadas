@@ -168,6 +168,7 @@ Atributos | DROPZONE
 **errorsound=""** | Ruta del sonido al momento de recibir un drag y ser ERROR.
 **data=""** | Debe corresponder con el drag que se podrá soltar. Si es igual es OK. Si no es ERROR.
 **droptimes=""** | Veces que se pueden soltar drags hasta que el dropzone se deshabilite: "**multiple**" (infinito), "**once**" (una vez), "**untilok**" (cuando sea OK se deshabilita).
+**:droplimit="4"** | Solo se pueden depositar "x" número de objetos. Después arroja ERROR. (Necesita **droptimes="multiple"**)
 
 
 ### clickable

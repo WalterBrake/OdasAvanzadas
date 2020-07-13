@@ -24,12 +24,13 @@ Vue.component('scene', {
         }
     },
     watch: {
-        temporals (newP) {
+        temporals (newP, oldP) {
+            console.log(newP, oldP)
             this.checkTemporals()
         }
     },
     template: `
-        <section class="scene" v-if="appearok">
+        <section class="scene" v-if="appearok" ref="sceneac">
             <div v-if="startScene!=undefined" class="startScene">
                 <button @click="comenzarFn" :disabled="comenzarBtnClicked" class="button">comenzar</button>
             </div>
@@ -90,8 +91,9 @@ Vue.component('scene', {
             this.endedFn()
         },
         endedFn () {
+            console.log(this.alloks, this.oks, this.answers)
             if(this.alloks != undefined) {
-                if(this.oks == this.answers) {
+                if(this.oks == this.answers && this.oks>0) {
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
                     if(this.alloksSound){
                         var sound = new Howl({ src: [this.alloksSound] })

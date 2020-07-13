@@ -15,6 +15,7 @@ var app = new Vue({
     el: '#app',
     data () {
         return {
+            $devmode: false,
             currentScene: 0,
             finalData:{
                 score: 0,
@@ -63,12 +64,12 @@ var app = new Vue({
                 if(fwIt == 30) {
                     clearInterval(fw)
                     //Stop all howlers
-                    for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                    //for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
                 }
-            }, 50)
+            }, 100)
 
 
         },

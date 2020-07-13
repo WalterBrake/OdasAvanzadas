@@ -26,6 +26,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background: @beige;
     min-height: 100%;
+    user-select: none;
 }
 
 .button{
@@ -294,7 +295,7 @@ embed {
     .fullflexcenter;
     &.z-index{ position: relative; z-index: 999; }
 }
-.row .wrap{
+.row.wrap{
     flex-wrap: wrap;
 }
 
@@ -407,6 +408,7 @@ embed {
     &.c2 { .numborder(@sec); }
     &.c3 { .numborder(@clear); }
     &.c4 { .numborder(@accent); }
+    &.c5 { .numborder(@wrongcol); }
 }
 
 
@@ -431,5 +433,6 @@ embed {
     &.c2{ .conectorbg(@sec); }
     &.c3{ .conectorbg(@clear); }
     &.c4{ .conectorbg(@accent); }
+    &.c5{ .conectorbg(@wrongcol); }
 }
 

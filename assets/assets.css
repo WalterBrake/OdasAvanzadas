@@ -17,6 +17,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: #FDF4CE;
   min-height: 100%;
+  user-select: none;
 }
 .button {
   border: none;
@@ -306,7 +307,7 @@ embed {
   position: relative;
   z-index: 999;
 }
-.row .wrap {
+.row.wrap {
   flex-wrap: wrap;
 }
 .item {
@@ -546,6 +547,10 @@ embed {
   -webkit-text-stroke: 4px #EB8B2E;
   text-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
 }
+.number.c5 {
+  -webkit-text-stroke: 4px #DB3E34;
+  text-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
+}
 .conector {
   width: 20px;
   height: 20px;
@@ -568,5 +573,9 @@ embed {
 .conector.c4 {
   background: #EB8B2E;
   box-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
+}
+.conector.c5 {
+  background: #DB3E34;
+  box-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
 }
 /*# sourceMappingURL=assets.css.map */

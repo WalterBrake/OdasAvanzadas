@@ -14,7 +14,7 @@ Vue.component('drag', {
         'dragErrorClass', // coloca clase al drag si es error
         'particleColor', // color de particulas
         'initclass', // class de inicio
-        'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta
+        'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
     ],
     data() {
         return {
@@ -158,6 +158,7 @@ Vue.component('drag', {
                 app.particleAnimation(e, 100, null, null)
                 EventBus.$emit('isok')
                 _this.setClassAnimation('ok')
+                _this.droppedtimesAdd(dropzone)
             } else {
                 //## ERROR
                 s_error.play()
@@ -175,11 +176,34 @@ Vue.component('drag', {
         },
         dropzoneCanBeDropped (dropzone) {
             if(dropzone.getAttribute('droptimes') == 'multiple') {
-                return true
+                var droplimit = dropzone.getAttribute('droplimit')
+                if(droplimit) {
+                    var droppedtimes = dropzone.getAttribute('droppedtimes')
+                    if(droppedtimes){
+                        if(droppedtimes < droplimit){
+                            return true
+                        }  else {
+                            return false
+                        }
+                    } else {
+                        return true
+                    }
+                } else {
+                    return true
+                }
             } else if(dropzone.getAttribute('droptimes') == 'once') {
                 return dropzone.classList.contains('dropzoneused') ? false : true
             } else if(dropzone.getAttribute('droptimes') == 'untilok') {
                 return dropzone.classList.contains(this.dropzoneOkClass) ? false : true
+            }
+        },
+        droppedtimesAdd (dropzone){
+            var droppedtimes = dropzone.getAttribute('droppedtimes')
+            if(droppedtimes){
+                var sum = parseInt(droppedtimes)+1
+                dropzone.setAttribute('droppedtimes', sum)
+                } else {
+                    dropzone.setAttribute('droppedtimes', 1)
             }
         },
         dropzoneStatusClass(status, dropzone){
