@@ -44,7 +44,6 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev){
-            console.log($ev)
             if($ev == false){
                 this.currentScene++
                 this.temporals = []

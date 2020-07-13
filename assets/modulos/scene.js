@@ -83,7 +83,6 @@ Vue.component('scene', {
             this.oks++
             this.currentAnswers++
             this.endedFn()
-            console.log('Testing ok')
         },
         errorFn() {
             this.errors++
