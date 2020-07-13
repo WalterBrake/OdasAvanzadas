@@ -110,6 +110,8 @@ Atributos | SCENE
 | **:devmode="true"** | Habilita un panel para hacer debug de las acciones. << Primeras versiones. **![Nueva version]()
 | **app.scenesCount = 1** | En el Script de abajo se deberá declarar el número de escenas en el interactivo (sin contar start ni end) (nueva versión).
 
+
+
 #### DevMode 
 
 El último script del html declara el DEVMode en true/false. Desde ahí se habilita para todas las escenas.
@@ -161,6 +163,7 @@ Atributos | DRAG
 **drag-ok-class=""** | Clase que se asigna al drag cuando se suelta y es OK. (* Requiere tener drag-error-class).
 **drag-error-class=""** | Clase que se asigna al drag cuando se suelta y es ERROR. (* Requiere tener drag-ok-class).
 **particle-color=""** | Color de las particulas que salen cuando es OK. De preferencia elegir el mismo color del objeto.
+**append-to-dropzone | Si al soltar es OK añade el contenido del DRAG al dropzone (ejemplo: MA1T1/114)
 
 El **drag** depende de un objeto externo que se convierte en el DROPZONE y es a donde caerá. Puede ser de cualquier tipo pero debe usar la misma clase declarada en el atributo "dropzone" del componente drag. Su relación sobre si es correcto/incorrecto depende también del atributo "data". Si en ambos es el mismo, lo tomará como OK.
 

@@ -15,6 +15,7 @@ Vue.component('drag', {
         'particleColor', // color de particulas
         'initclass', // class de inicio
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
+        'appendToDropzone' // Se añade al contenedor del dropzone
     ],
     data() {
         return {
@@ -99,7 +100,9 @@ Vue.component('drag', {
             }
             _this.$refs.drag.children[0].classList.add(theclass)
             setTimeout(function () {
-                _this.$refs.drag.children[0].classList.remove(theclass)
+                if(_this.$refs.drag.children[0]){
+                    _this.$refs.drag.children[0].classList.remove(theclass)
+                }
             }, 1000)
         },
         HitTestFn (e, isdrop) {
@@ -159,6 +162,7 @@ Vue.component('drag', {
                 EventBus.$emit('isok')
                 _this.setClassAnimation('ok')
                 _this.droppedtimesAdd(dropzone)
+                _this.appendToDropzoneFn(dropzone, e)
             } else {
                 //## ERROR
                 s_error.play()
@@ -172,6 +176,14 @@ Vue.component('drag', {
                 EventBus.$emit('iserror')
                 _this.setClassAnimation('error')
 
+            }
+        },
+        appendToDropzoneFn(dropzone, e){
+            if(this.appendToDropzone != undefined){
+                var obj = this.$refs.drag.children[0]
+                dropzone.append(obj)
+
+                TweenLite.to(this.$refs.drag, .5, {x:0, y:0});
             }
         },
         dropzoneCanBeDropped (dropzone) {
