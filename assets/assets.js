@@ -85,12 +85,18 @@ var app = new Vue({
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
-
+                    if(_this.currentScene == _this.scenesCount+1) {
+                        _this.ended()
+                    }
                 }
             }, 100)
-
-
         },
+        ended () {
+            var _this = this
+            window.onmessage = function (event) {
+                window.top.postMessage(JSON.stringify(_this.finalData), "interactivo")
+            }
+        }
         debugg(e){
             console.log(e)
         },
