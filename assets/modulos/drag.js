@@ -57,8 +57,8 @@ Vue.component('drag', {
             _this.setClassAnimation('start')
             s_select.play()
             _this.playDragSound()
-            _this.dragPosX = e.clientX
-            _this.dragPosY = e.clientY
+            _this.dragPosX = e.clientX + window.scrollX
+            _this.dragPosY = e.clientY + window.scrollY
         },
         Drag (e) {
             var _this = this
@@ -287,14 +287,17 @@ Vue.component('drag', {
                 //document.body.appendChild(this.canvas)
                 var parentEl = document.getElementsByClassName('scene')[0]
                 parentEl.appendChild(this.canvas)
-                this.canvas.width = parentEl.clientWidth * 2;
-                this.canvas.height = parentEl.clientHeight * 2;
-                this.canvas.style.width = parentEl.clientWidth + 'px';
-                this.canvas.style.height = parentEl.clientHeight + 'px';
-                
-                this.canvas.getContext('2d').scale(2, 2);
+                this.updateCanvas()
                 this.ctx = this.canvas.getContext('2d')
             }
+        },
+        updateCanvas () {
+            var parentEl = document.getElementsByClassName('scene')[0]
+            this.canvas.width = parentEl.clientWidth * 2;
+            this.canvas.height = parentEl.clientHeight * 2;
+            this.canvas.style.width = parentEl.clientWidth + 'px';
+            this.canvas.style.height = parentEl.clientHeight + 'px';
+            this.canvas.getContext('2d').scale(2, 2);
         },
         dragLineFn(e) {
             if(this.dragLine!=undefined) {
@@ -313,7 +316,7 @@ Vue.component('drag', {
                 this.ctx.lineCap = 'round'
                 this.ctx.setLineDash([5, 10])
                 this.ctx.moveTo(this.dragPosX, this.dragPosY)
-                this.ctx.lineTo(e.clientX, e.clientY)
+                this.ctx.lineTo(e.clientX + window.scrollX, e.clientY + window.scrollY)
                 this.ctx.stroke()
                 
 
@@ -327,5 +330,6 @@ Vue.component('drag', {
     },
     mounted () {
         this.init()
+        window.addEventListener('resize', this.updateCanvas)
     }
 })

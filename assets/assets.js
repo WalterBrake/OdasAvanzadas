@@ -85,6 +85,8 @@ var app = new Vue({
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
+
+                    console.log(_this.currentScene, _this.scenesCount+1)
                     if(_this.currentScene == _this.scenesCount+1) {
                         _this.ended()
                     }
@@ -93,9 +95,9 @@ var app = new Vue({
         },
         ended () {
             var _this = this
-            window.onmessage = function (event) {
-                window.top.postMessage(JSON.stringify(_this.finalData), "*")
-            }
+            console.log('ended')
+            var endData = JSON.stringify(_this.finalData)
+            window.top.postMessage(endData, "*")
         },
         debugg(e){
             console.log(e)
