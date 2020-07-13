@@ -16,44 +16,6 @@
 		"oAP": "\/.gitattributes",
 		"oF": 0
 		},
-	"\/_EJEMPLOS\/aimg\/azul.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/_EJEMPLOS\/aimg\/azul.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/_EJEMPLOS\/asound\/a.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/asound\/a.mp3",
-		"oF": 0
-		},
-	"\/_EJEMPLOS\/asound\/instruccion.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/asound\/instruccion.mp3",
-		"oF": 0
-		},
-	"\/_EJEMPLOS\/clickable-basico.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/clickable-basico.html",
-		"oF": 0
-		},
-	"\/_EJEMPLOS\/drag-basico.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/_EJEMPLOS\/drag-basico.html",
-		"oF": 0
-		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -498,6 +460,44 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CNAME",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/EJEMPLOS\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/EJEMPLOS\/asound\/a.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/asound\/a.mp3",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/clickable-basico.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/clickable-basico.html",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/drag-basico.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/drag-basico.html",
 		"oF": 0
 		},
 	"\/ES1T1\/13\/aimg\/a1.svg": {

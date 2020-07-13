@@ -263,8 +263,8 @@ Se usa "hidescorebox" en la escena y se coloca un boton que cargue la siguiente 
 
 ### Drag básico
 
-![https://interactivos.tk/_EJEMPLOS/drag-basico.html]
+https://interactivos.tk/EJEMPLOS/drag-basico.html
 
 ### Clickable básico
 
-![https://interactivos.tk/_EJEMPLOS/clickable-basico.html]
+https://interactivos.tk/EJEMPLOS/clickable-basico.html
