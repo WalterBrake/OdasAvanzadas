@@ -1590,6 +1590,154 @@
 		"oAP": "\/MA1T1\/116\/index.html",
 		"oF": 0
 		},
+	"\/MA1T1\/123\/aimg\/n1.png": {
+		"ft": 32768,
+		"iS": 44439,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/n1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/n2.png": {
+		"ft": 32768,
+		"iS": 66272,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/n2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/n3.png": {
+		"ft": 32768,
+		"iS": 42453,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/n3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/n4.png": {
+		"ft": 32768,
+		"iS": 57054,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/n4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/n5.png": {
+		"ft": 32768,
+		"iS": 52983,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/n5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/p1.png": {
+		"ft": 32768,
+		"iS": 326697,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/p1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/p2.png": {
+		"ft": 32768,
+		"iS": 356056,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/p2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/p3.png": {
+		"ft": 32768,
+		"iS": 390999,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/p3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/aimg\/p4.png": {
+		"ft": 32768,
+		"iS": 367913,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/aimg\/p4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T1\/123\/asound\/10pal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/10pal.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/asound\/15pal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/15pal.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/asound\/18pal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/18pal.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/asound\/24pal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/24pal.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/asound\/9pal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/9pal.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/MA1T1\/123\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/123\/index.html",
+		"oF": 0
+		},
 	"\/MA1T1\/88\/aimg\/ilustracion.png": {
 		"ft": 32768,
 		"iS": 775129,
