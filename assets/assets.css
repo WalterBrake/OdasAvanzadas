@@ -593,4 +593,16 @@ embed {
   background: #DB3E34;
   box-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
 }
+.conector.c6 {
+  background: #EB118B;
+  box-shadow: 4px 4px 0 #d40f7d, -1px -1px 0 #d40f7d, 1px -1px 0 #d40f7d, -1px 1px 0 #d40f7d, 1px 1px 0 #d40f7d;
+}
+.conector.c7 {
+  background: #D8E02C;
+  box-shadow: 4px 4px 0 #c2ca28, -1px -1px 0 #c2ca28, 1px -1px 0 #c2ca28, -1px 1px 0 #c2ca28, 1px 1px 0 #c2ca28;
+}
+.conector.c8 {
+  background: #C0A7D0;
+  box-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
+}
 /*# sourceMappingURL=assets.css.map */

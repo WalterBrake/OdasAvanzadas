@@ -304,12 +304,14 @@ Vue.component('drag', {
             }
         },
         updateCanvas () {
-            var parentEl = document.getElementsByClassName('scene')[0]
-            this.canvas.width = parentEl.clientWidth * 2;
-            this.canvas.height = parentEl.clientHeight * 2;
-            this.canvas.style.width = parentEl.clientWidth + 'px';
-            this.canvas.style.height = parentEl.clientHeight + 'px';
-            this.canvas.getContext('2d').scale(2, 2);
+            if(this.dragLine!=undefined) {
+                var parentEl = document.getElementsByClassName('scene')[0]
+                this.canvas.width = parentEl.clientWidth * 2;
+                this.canvas.height = parentEl.clientHeight * 2;
+                this.canvas.style.width = parentEl.clientWidth + 'px';
+                this.canvas.style.height = parentEl.clientHeight + 'px';
+                this.canvas.getContext('2d').scale(2, 2);
+            }
         },
         dragLineFn(e) {
             if(this.dragLine!=undefined) {

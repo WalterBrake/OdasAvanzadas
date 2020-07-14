@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conozco la naturaleza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .palabras, .imagenes {
+        }
+        .imagenes .dropzone img {
+            width: 100%;
+        }
+        .imagenes .dropzone {
+            width: 33%;
+        } 
+    .row.palabras {
+        text-align: center;
+        justify-content: space-evenly !important;
+    }
+    .palabras .number {
+        -webkit-text-stroke-width: 2px;
+        font-size: 2rem;
+    }
+    .palabras .drag {
+        width: 60px; height: 60px;
+        margin: 0 auto;
+    }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#5EB247">
+            <info type="dragdrop" title="Conozco la naturaleza" text="¿Conoces los elementos que hay en la naturaleza? Relaciona las columnas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 palabras mb-1 wrap">
+                    <template v-for="item in [
+                        {txt: 'Playa', col: 'c1', c: '#5EB247'},
+                        {txt: 'Árbol', col: 'c2', c: '#155093'},
+                        {txt: 'Flor', col: 'c3', c: '#AAE1FA'},
+                        {txt: 'Bosque', col: 'c4', c: '#EB8B2F'},
+                        {txt: 'Montaña', col: 'c5', c: '#DB3E34'},
+                        {txt: 'Río', col: 'c6', c: '#EB118B'},
+                    ]">
+                        <div :class="'number '+item.col">{{item.txt}}
+                            <drag dropzone=".dropzone" :data="item.txt" stay-if-ok drag-line :particle-color="item.c">
+                                <div :class="'conector '+item.col "></div>
+                            </drag>
+                        </div>
+                    </template>
+                </div>
+                <div class="row w100 wrap imagenes">
+                    <div v-for="item in [
+                        {img: 'aimg/i1.svg', data: 'Árbol', sound: 'asound/arbol.mp3' },
+                        {img: 'aimg/i2.svg', data: 'Río', sound: 'asound/rio.mp3' },
+                        {img: 'aimg/i3.svg', data: 'Flor', sound: 'asound/flor.mp3' },
+                        {img: 'aimg/i4.svg', data: 'Montaña', sound: 'asound/montana.mp3' },
+                        {img: 'aimg/i5.svg', data: 'Bosque', sound: 'asound/bosque.mp3' },
+                        {img: 'aimg/i6.svg', data: 'Playa', sound: 'asound/playa.mp3' },
+                    ]" class="dropzone" :data="item.data" droptimes="untilok" :oksound="item.sound" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><img :src="item.img"></div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
