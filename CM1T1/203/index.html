@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conozco mis emociones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .ninos {width: 30%;}
+        .textos { width: 30%; }
+        .emociones { width: 30%; }
+        
+        .nino{
+            background: #fff;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .ninos img { width: 60%; }
+
+        
+        .droptext {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            background: #EB118B;
+            color:#fff;
+            border: 2px solid #EB118B;
+        }
+        .droptext.hover{ background: var(--accent) }
+
+        .drag:first-child{ margin-left: -40px; }
+        .drag:last-child{ margin-right: -40px; }
+
+        .dropemo { margin: 60px 20px; padding: 10px; }
+        .dropemo .number{
+            border: 2px solid #EB118B;
+            border-radius: 20px;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 1.8rem;
+            -webkit-text-stroke-width: 2px;
+        }
+
+
+        .droptext.enojo { background: var(--wrongcol); }
+        .droptext.tristeza { background: var(--main); }
+        .droptext.alegria { background: var(--sec); }
+        
+        .dropemo.enojo .number { background: var(--wrongcol); }
+        .dropemo.tristeza .number { background: var(--main); }
+        .dropemo.alegria .number { background: var(--sec); }
+        
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#5EB247">
+            <info type="dragdrop" title="Conozco mis emociones" text="¿Por qué te sientes así? ¿Cuál es ese sentimiento? Relaciona las columnas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+               
+
+                <div class="row w100">
+                    <div class="textos">
+                        <div class="droptext" data="tristeza" droptimes="untilok"><p>Es el sentimiento que tengo cuando mi mascota está enferma.</p></div>
+                        <div class="droptext" data="enojo" droptimes="untilok"><p>Es el sentimiento que tengo cuando alguien no respeta a los demás.</p></div>
+                        <div class="droptext" data="alegria" droptimes="untilok"><p>Es el sentimiento que tengo cuando termino mi tarea.</p></div>
+                    </div>
+                    
+                    <div class="ninos">
+                        <div class="row nino">
+                            <drag dropzone=".droptext" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo">
+                                <div class="conector c5"></div>
+                            </drag>
+                            <img src="aimg/i1.svg">
+                            <drag dropzone=".dropemo" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo">
+                                <div class="conector c5"></div>
+                            </drag>
+                        </div>
+                        <div class="row nino">
+                            <drag dropzone=".droptext" data="alegria" stay-if-ok drag-line particle-color="#015093" dropzone-ok-class="alegria">
+                                <div class="conector c2"></div>
+                            </drag>
+                            <img src="aimg/i2.svg">
+                            <drag dropzone=".dropemo" data="alegria" stay-if-ok drag-line particle-color="#015093"  dropzone-ok-class="alegria">
+                                <div class="conector c2"></div>
+                            </drag>
+                        </div>
+                        <div class="row nino">
+                            <drag dropzone=".droptext" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza">
+                                <div class="conector c1"></div>
+                            </drag>
+                            <img src="aimg/i3.svg">
+                            <drag dropzone=".dropemo" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza">
+                                <div class="conector c1"></div>
+                            </drag>
+                        </div>
+
+                    </div>
+
+                    <div class="emociones">
+                        <div class="dropemo" data="alegria" droptimes="untilok"><div class="number c6">alegria</div></div>
+                        <div class="dropemo" data="tristeza" droptimes="untilok"><div class="number c6">tristeza</div></div>
+                        <div class="dropemo" data="enojo" droptimes="untilok"><div class="number c6">enojo</div></div>
+                    </div>
+                </div>
+
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
