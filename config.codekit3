@@ -1738,45 +1738,52 @@
 		"oAP": "\/MA1T1\/123\/index.html",
 		"oF": 0
 		},
-	"\/MA1T1\/128\/aimg\/sector1.svg": {
+	"\/MA1T1\/128\/aimg\/i1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA1T1\/128\/aimg\/sector1.svg",
+		"oAP": "\/MA1T1\/128\/aimg\/i1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA1T1\/128\/aimg\/sector2.svg": {
+	"\/MA1T1\/128\/aimg\/i2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA1T1\/128\/aimg\/sector2.svg",
+		"oAP": "\/MA1T1\/128\/aimg\/i2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA1T1\/128\/aimg\/sector3.svg": {
+	"\/MA1T1\/128\/aimg\/i3.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA1T1\/128\/aimg\/sector3.svg",
+		"oAP": "\/MA1T1\/128\/aimg\/i3.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA1T1\/128\/aimg\/sector4.svg": {
+	"\/MA1T1\/128\/aimg\/i4.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA1T1\/128\/aimg\/sector4.svg",
+		"oAP": "\/MA1T1\/128\/aimg\/i4.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/MA1T1\/128\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T1\/128\/asound\/instruccion.mp3",
+		"oF": 0
 		},
 	"\/MA1T1\/128\/index.html": {
 		"cB": 0,

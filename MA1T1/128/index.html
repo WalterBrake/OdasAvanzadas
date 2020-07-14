@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuento colecciones</title>
+    <title>Escribo números</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        .dropzone img{
-            width: 120px;
-            margin: 20px;
+        .clickable {
+            width: 200px;
         }
-        .kid img{
+        .clickable .number {
+            font-size: 3rem;
+            text-align: center;
+        }
+        .clickable img {
             width: 100%;
+        }
+        .many img{
+            width: 26px;
+            margin: 2px;
         }
     </style>
     </head>
@@ -25,22 +32,114 @@
 
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="4" scene-color="#5EB247">
-            <info type="dragdrop" title="Cuento colecciones" text="Cuenta las paletas que hay en cada recipiente, y coloca al niño que tiene el número que le corresponde. " textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        :answers="7" scene-color="#EC118C">
+            <info type="seleccionar" title="Escribo números" text="Mira las opciones y selecciona todas las que representen el número 30." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row mb-1">
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="9" oksound="asound/9pal.mp3"><img src="aimg/p1.png"></div>
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="15" oksound="asound/15pal.mp3"><img src="aimg/p2.png"></div>
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="18" oksound="asound/18pal.mp3"><img src="aimg/p3.png"></div>
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="24" oksound="asound/24pal.mp3"><img src="aimg/p4.png"></div>
-                </div>
+                <div class="row wrap">
+                    <!--1 manzanas-->
+                    <clickable :isok="false">
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg">
+                            <img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg">
+                            <img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg">
+                            <img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg">
+                            <img src="aimg/i4.svg"><img src="aimg/i4.svg"><img src="aimg/i4.svg">
+                        </div>
+                    </clickable>
 
-                <div class="row">
-                    <drag initclass="kid" data="15" dropzone=".dropzone" stay-if-ok ><img src="aimg/n1.png"></drag>
-                    <drag initclass="kid" data="18" dropzone=".dropzone" stay-if-ok><img src="aimg/n2.png"></drag>
-                    <drag initclass="kid" data="9" dropzone=".dropzone" stay-if-ok><img src="aimg/n3.png"></drag>
-                    <drag initclass="kid" data="10" dropzone=".dropzone" stay-if-ok><img src="aimg/n4.png"></drag>
-                    <drag initclass="kid" data="24" dropzone=".dropzone" stay-if-ok><img src="aimg/n5.png"></drag>
+                    <!--2-->
+                    <clickable :isok="false"><div class="number c1">4+5+20=</div></clickable>
+                    
+                    <!--3-->
+                    <clickable :isok="true" v-model="temporals[0]"><div class="number c2">6+14+10=</div></clickable>
+                    
+                    <!--4 perritos-->
+                    <clickable :isok="true" v-model="temporals[1]">
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                            <img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg"><img src="aimg/i2.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--5-->
+                    <clickable :isok="true" v-model="temporals[2]"><div class="number c3">30</div></clickable>
+
+                    <!--6-->
+                    <clickable :isok="true" v-model="temporals[3]">
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--7-->
+                    <clickable :isok="false"><div class="number c4">38</div></clickable>
+
+                    <!--8-->
+                    <clickable :isok="false"><div class="number c5">3+13+15=</div></clickable>
+
+                    <!--9-->
+                    <clickable :isok="true" v-model="temporals[4]">
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--10-->
+                    <clickable :isok="false"><div class="number c6">20</div></clickable>
+
+                    
+                    <!--11-->
+                    <clickable :isok="false">
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--12-->
+                    <clickable :isok="true" v-model="temporals[5]"><div class="number c7">10+10+10=</div></clickable>
+                    
+                    <!--13-->
+                    <clickable :isok="false" >
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--14-->
+                    <clickable :isok="false" >
+                        <div class="row wrap w100 many">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                            <img src="aimg/i3.svg"><img src="aimg/i3.svg">
+                        </div>
+                    </clickable>
+                    
+                    <!--15-->
+                    <clickable :isok="true" v-model="temporals[6]"><div class="number c8">9+10+11=</div></clickable>
+                    
+                    <!--16-->
+                    <clickable :isok="false"><div class="number c1">3</div></clickable>
+                    
+                    
+                    
+                    
                 </div>
             </activity>
         </scene> <!-- end scene -->
@@ -73,9 +172,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = false
+        app.$devmode = true
     </script>
 </body>
 </html>

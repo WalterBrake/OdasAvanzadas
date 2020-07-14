@@ -551,6 +551,18 @@ embed {
   -webkit-text-stroke: 4px #DB3E34;
   text-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
 }
+.number.c6 {
+  -webkit-text-stroke: 4px #EB118B;
+  text-shadow: 4px 4px 0 #d40f7d, -1px -1px 0 #d40f7d, 1px -1px 0 #d40f7d, -1px 1px 0 #d40f7d, 1px 1px 0 #d40f7d;
+}
+.number.c7 {
+  -webkit-text-stroke: 4px #D8E02C;
+  text-shadow: 4px 4px 0 #c2ca28, -1px -1px 0 #c2ca28, 1px -1px 0 #c2ca28, -1px 1px 0 #c2ca28, 1px 1px 0 #c2ca28;
+}
+.number.c8 {
+  -webkit-text-stroke: 4px #C0A7D0;
+  text-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
+}
 .conector {
   width: 20px;
   height: 20px;
