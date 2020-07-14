@@ -10,8 +10,11 @@
 :root {
   --main: #5EB246;
   --sec: #005093;
-  --accent: #EB8B2E;
   --clear: #AAE1FA;
+  --accent: #EB8B2E;
+  --rightcol: #5EB246;
+  --wrongcol: #DB3E34;
+  --beige: #FDF4CE;
 }
 body {
   font-family: 'Montserrat', sans-serif;

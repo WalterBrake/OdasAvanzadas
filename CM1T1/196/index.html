@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .dropzone {
+            width: 23%;
+            margin: 1%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            height: 80px;
+            color:#fff;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropzone h1{
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        .dropzone.rojo {background: var(--wrongcol); }
+        .dropzone.verde {background: var(--main); }
+        .dropzone.naranja {background: var(--accent); }
+        .dropzone.azul {background: var(--sec); }
+        .ac{ position: relative; }
+        .animales {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .animales .drag{
+            width: 100%;
+        }
+        .animales .drag img{
+            width: 90%;
+        }
+        @media (max-width: 680px){
+            .animales .an .drag{ height: 100%; }      
+        }
+        .animales .an{position: absolute;}
+        .animales .an:nth-child(1){ left: 26%; top: 20%; width: 10%; }
+        .animales .an:nth-child(2){ left: 72%; top: 70%; width: 14%; }
+        .animales .an:nth-child(3){ left: 35%; top: 4%; width: 5%; }
+        .animales .an:nth-child(4){ left: 53%; top: 13%; width: 14%; }
+        .animales .an:nth-child(5){ left: 88%; top: 15%; width: 10%; }
+        .animales .an:nth-child(6){ left: 50%; top: 80%; width: 10%; }
+        .animales .an:nth-child(7){ left: 90%; top: 60%; width: 8%; }
+        .animales .an:nth-child(8){ left: 53%; top: 34%; width: 14%; }
+        .animales .an:nth-child(9){ left: 42%; top: 12%; width: 8%; }
+        .animales .an:nth-child(10){ left: 61%; top: 60%; width: 9%; }
+        .animales .an:nth-child(11){ left: 74%; top: 35%; width: 12%; }
+        .animales .an:nth-child(12){ left: 38%; top: 64%; width: 8%; }
+        .animales .an:nth-child(13){ left: 32%; top: 40%; width: 12%; }
+        .okDrop img{
+            transform: scale(0.7);
+        }
+
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="13" scene-color="#63ABD1">
+            <info type="dragdrop" title="Titulo" text="¡Mira cuántos animales hay en la naturaleza! Coloca cada uno dentro de la caja correspondiente de acuerdo a su característica." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="dropzone rojo" data="rojo" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><h1>Vuelan</h1></div>
+                    <div class="dropzone verde" data="verde"  droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><h1>Se arrastran</h1></div>
+                    <div class="dropzone naranja" data="nara"  droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><h1>Se encuentran en el agua</h1></div>
+                    <div class="dropzone azul" data="azul"  droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><h1>Con cuatro patas o más</h1></div>
+                </div>
+                <div class="row w100 ac">
+                    <img src="aimg/bg.svg" class="w100">
+                    <div class="animales">
+                        <template v-for="item in [
+                            {img: 'i1.svg', data: 'azul'},
+                            {img: 'i2.svg', data: 'nara'},
+                            {img: 'i3.svg', data: 'rojo'},
+                            {img: 'i4.svg', data: 'azul'},
+                            {img: 'i5.svg', data: 'azul'},
+                            {img: 'i6.svg', data: 'azul'},
+                            {img: 'i7.svg', data: 'azul'},
+                            {img: 'i8.svg', data: 'verde'},
+                            {img: 'i9.svg', data: 'verde'},
+                            {img: 'i10.svg', data: 'nara'},
+                            {img: 'i11.svg', data: 'nara'},
+                            {img: 'i12.svg', data: 'rojo'},
+                            {img: 'i13.svg', data: 'rojo'},
+                        ]">
+                            <div class="an animate__animated animate__bounce"><drag dropzone=".dropzone" :data="item.data" drag-ok-class="okDrop" stay-if-ok><img :src="'aimg/'+item.img"></drag></div>
+                        </template>
+
+                    </div>
+                </div>
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
