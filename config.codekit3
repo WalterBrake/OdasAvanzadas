@@ -16,6 +16,13 @@
 		"oAP": "\/.gitattributes",
 		"oF": 0
 		},
+	"\/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1037,6 +1044,143 @@
 		"oAP": "\/CM1T1\/206\/index.html",
 		"oF": 0
 		},
+	"\/CN4T1\/194\/aimg\/nina.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/194\/aimg\/nina.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/194\/aimg\/nina2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/194\/aimg\/nina2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/194\/aimg\/nino.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/194\/aimg\/nino.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/194\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/194\/index.html",
+		"oF": 0
+		},
+	"\/CN4T1\/263\/aimg\/chichen.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/chichen.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/maya.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/maya.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/mexica.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/mexica.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/monte.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/monte.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/sol.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/sol.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/tenoch.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/tenoch.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/teotihuacana.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/teotihuacana.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/tolteca.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/tolteca.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/tula.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/tula.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/263\/aimg\/zapotecas.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/263\/aimg\/zapotecas.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/CNAME": {
 		"cB": 0,
 		"ft": 8192,
@@ -1719,11 +1863,1587 @@
 		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
-	"\/ES2T1\/_15\/index.html": {
+	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Inst_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_15\/index.html",
+		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Inst_Coloca.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Evitar.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Evitar.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Recuerda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Recuerda.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/15\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/15\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector8.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector8.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/aimg\/sector9.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_16\/aimg\/sector9.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst2_Ahora.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst2_Ahora.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst3_Terminar.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst3_Terminar.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst_Qué.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Inst_Qué.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Diseñada.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Diseñada.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Frase.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Frase.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Sirve.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/asound\/Reconozco los anuncios publicitarios Es2°T1_Int_Sirve.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_16\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_16\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/aimg\/sector6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_21\/aimg\/sector6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Inst_Todas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Inst_Todas.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int1_Niño.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int1_Niño.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int2_Niña.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int2_Niña.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int3_Alta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int3_Alta.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int4_Lentes.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int4_Lentes.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int5_Amigos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/asound\/Identifico personas Es2°T1_Int5_Amigos.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_21\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_21\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_25\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Inst_Ayuda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Inst_Ayuda.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Cuento.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Cuento.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Fábula.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Fábula.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Instructivos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Instructivos.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Leyenda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Leyenda.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Poema.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Poema.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Recetas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Recetas.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_25\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_25\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_42\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Inst_Recuerdas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Inst_Recuerdas.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dale.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dale.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dio.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dio.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pierdes.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pierdes.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pino.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pino.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Tino.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Tino.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Venda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Venda.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Yo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Yo.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_42\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_42\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_44\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_44\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_44\/aimg\/sector2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_44\/aimg\/sector2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_44\/aimg\/sector3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_44\/aimg\/sector3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_44\/aimg\/sector4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_44\/aimg\/sector4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_44\/aimg\/sector5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_44\/aimg\/sector5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_44\/asound\/Adivino la respuesta Es2°T1_Inst_Jugamos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_44\/asound\/Adivino la respuesta Es2°T1_Inst_Jugamos.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_44\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_44\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_48\/asound\/Me divierto con los poemas Es2°T1_Inst_Coloca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_48\/asound\/Me divierto con los poemas Es2°T1_Inst_Coloca.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_48\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_48\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector11.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector11.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector12.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector12.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector8.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector8.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/aimg\/sector9.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_52\/aimg\/sector9.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Inst_Cuando.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Inst_Cuando.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Admir.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Admir.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_AdmirExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_AdmirExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Coma.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Coma.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_ComaExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_ComaExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Guión.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Guión.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_GuiónExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_GuiónExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Interro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_Interro.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_InterroExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_InterroExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoApa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoApa.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoApaExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoApaExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoFin.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoFin.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoFinExp.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/asound\/Practico la escritura Es2°T1_Int_PtoFinExp.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_52\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_52\/index.html",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/aimg\/sector6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES2T1\/_53\/aimg\/sector6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Inst2_Ahora.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Inst2_Ahora.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Inst_Lee.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Inst_Lee.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_ADormir.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_ADormir.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_Mamá.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_Mamá.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_MamáNiña.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_MamáNiña.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_PorFin.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_PorFin.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_QueFueEso (REPETIDO-BORRARPLEASE).mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_QueFueEso (REPETIDO-BORRARPLEASE).mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_QueFueEso.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_QueFueEso.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_SeráGato.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/asound\/Leo en voz alta Es2°T1_Int_SeráGato.mp3",
+		"oF": 0
+		},
+	"\/ES2T1\/_53\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T1\/_53\/index.html",
+		"oF": 0
+		},
+	"\/ES3T1\/26\/aimg\/evita.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/evita.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/evitar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/evitar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/informa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/informa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/informar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/informar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/llevar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/llevar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/llevo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/llevo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/poner.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/poner.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/puso.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/puso.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/respetar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/respetar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/aimg\/respetara.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/26\/aimg\/respetara.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/26\/asound\/Escribo verbos en infinitivo Es3°T1_Inst_Completa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/26\/asound\/Escribo verbos en infinitivo Es3°T1_Inst_Completa.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/26\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/26\/index.html",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/aimg\/au.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/au.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/bi.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/bi.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/blio.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/blio.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/ca.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/ca.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/co.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/co.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/dio.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/dio.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/fi.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/fi.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/gla.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/gla.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/gra.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/gra.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/he.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/he.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/libros.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/libros.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/me.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/me.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/men.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/men.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/re.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/re.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/re2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/re2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/ro.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/ro.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/sual.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/sual.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/ta.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/ta.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/te.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/te.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/to.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/to.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/vi.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/vi.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/aimg\/vis.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/30\/aimg\/vis.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Inst_Coloca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Inst_Coloca.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Audiovisual.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Audiovisual.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Biblioteca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Biblioteca.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Hemerográfico.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Hemerográfico.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Investigar.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Investigar.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Monografía.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Monografía.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Periódico.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Periódico.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Reglamento.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Reglamento.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Revista.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Revista.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/30\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/30\/index.html",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/aimg\/1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/8.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/8.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/aliteracion.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/aliteracion.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/metafora.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/metafora.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/onomatopeya.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/onomatopeya.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/aimg\/rima.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/17\/aimg\/rima.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/17\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/index.html",
+		"oF": 0
+		},
+	"\/ES4T1\/26\/aimg\/clip.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/clip.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/hoja.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/hoja.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/ingredientes.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/ingredientes.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/modo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/modo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/mosquito.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/mosquito.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/postit.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/postit.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/procedimiento.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/procedimiento.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/aimg\/titulo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/26\/aimg\/titulo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/26\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/26\/index.html",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/aimg\/cama.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/cama.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/corazon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/corazon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/espejo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/espejo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/guitarra.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/guitarra.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/lentes.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/lentes.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/index.html",
+		"oF": 0
+		},
+	"\/GE4T1\/231\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/aimg\/morado.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/morado.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/aimg\/naranja.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/naranja.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/aimg\/rojo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/rojo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/aimg\/turquesa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/turquesa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/aimg\/verde.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/231\/aimg\/verde.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/231\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T1\/231\/index.html",
 		"oF": 0
 		},
 	"\/MA1T1\/100\/aimg\/azul.svg": {
@@ -2635,6 +4355,1753 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA1T1\/94\/index.html",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/aimg\/1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/100.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/100.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/1000.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/1000.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/10974.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/10974.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/1111.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/1111.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/1974.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/1974.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/2413.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/2413.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/25.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/25.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/amarillo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/amarillo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/morado.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/morado.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/aimg\/verde.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/113\/aimg\/verde.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/index.html",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/aimg\/175.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/175.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/180.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/180.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/190.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/190.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/200.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/200.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/235.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/235.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/280.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/280.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/35.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/35.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/360.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/360.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/45.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/45.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/700.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/700.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/aimg\/780.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/127\/aimg\/780.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst2_Subió.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst2_Subió.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst3_Menos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst3_Menos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst4_Aumento.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst4_Aumento.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst5_Angel.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst5_Angel.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst_Juguetería.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst_Juguetería.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$10.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$15.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$15.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$20.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$20.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$40.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$40.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$45.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$45.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$80.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_$80.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_1Canicas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_1Canicas.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_2Canicas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_2Canicas.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_3Canicas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_3Canicas.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_4Canicas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_4Canicas.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Balón.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Balón.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bebé.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bebé.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bolsa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bolsa.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Muñeca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Muñeca.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Patineta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Patineta.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Tableta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Tableta.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/127\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/127\/index.html",
+		"oF": 0
+		},
+	"\/MA4T1\/111\/aimg\/az.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/az.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/azul-claro.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/azul-claro.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/azul-h.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/azul-h.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/azul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/azul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/blanca.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/blanca.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/borrador.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/borrador.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/borradores.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/borradores.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojinamarillo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojinamarillo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojinazul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojinazul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojines.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojines.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojinmorado.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojinmorado.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojinrosa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojinrosa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/cojinverde.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/cojinverde.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/comic1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/comic1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/comic2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/comic2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/comic3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/comic3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/escribe.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/escribe.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojas.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojas.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojasamarillo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojasamarillo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojasazul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojasazul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojaslila.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojaslila.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojasrojo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojasrojo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojasrosa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojasrosa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/hojasverde.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/hojasverde.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/lapices.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/lapices.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/leyendas.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/leyendas.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/leyendas2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/leyendas2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/libros.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/libros.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/naranja-h.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/naranja-h.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/naranja.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/naranja.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/ortografia.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/ortografia.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/pinocho.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/pinocho.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/quimica.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/quimica.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/quimica2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/quimica2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/rojo-h.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/rojo-h.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/rojo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/rojo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/rosa-h.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/rosa-h.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/rosa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/rosa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/aimg\/verde.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/111\/aimg\/verde.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/111\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T1\/111\/index.html",
+		"oF": 0
+		},
+	"\/MA4T1\/133\/aimg\/circulo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/circulo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/cuadrado.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/cuadrado.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/dibujo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/dibujo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron-1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron-1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron-2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron-2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron-3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron-3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/patron3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/patron3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/rectangulo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/rectangulo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/rombo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/rombo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/trapecio.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/trapecio.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/aimg\/triangulo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/133\/aimg\/triangulo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/133\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T1\/133\/index.html",
+		"oF": 0
+		},
+	"\/MA4T1\/180\/aimg\/CN4T1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/180\/aimg\/CN4T1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/180\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T1\/180\/index.html",
+		"oF": 0
+		},
+	"\/MA4T1\/185\/aimg\/agua.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/185\/aimg\/agua.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/185\/aimg\/huevo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/185\/aimg\/huevo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/185\/aimg\/mantequilla.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/185\/aimg\/mantequilla.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/185\/aimg\/vela.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/185\/aimg\/vela.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/185\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T1\/185\/index.html",
+		"oF": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/01-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/01-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/02-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/02-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/03-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/03-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/04-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/04-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/05-90.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/05-90.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/06-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/06-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/07-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/07-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/08-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/08-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/09-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/09-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/10-40.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/10-40.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/11-80.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/11-80.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/12-40.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/12-40.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/13-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/13-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/14-60.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/14-60.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/15-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/15-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/16-60.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/16-60.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-amarillo\/17-100.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-amarillo\/17-100.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/01-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/01-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/02-80.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/02-80.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/03-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/03-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/04-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/04-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/05-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/05-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/06-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/06-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/07-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/07-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/08-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/08-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/09-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/09-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/10-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/10-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/11-40.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/11-40.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/12-90.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/12-90.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/13-40.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/13-40.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/14-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/14-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/15-100.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/15-100.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/16-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/16-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/17-60.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/17-60.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-azul\/18-80.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-azul\/18-80.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/01-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/01-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/02-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/02-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/03-10.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/03-10.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/04-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/04-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/05-70.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/05-70.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/06-20.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/06-20.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/07-80.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/07-80.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/08-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/08-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/09-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/09-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/10-30.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/10-30.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/11-100.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/11-100.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/12-90.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/12-90.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/13-40.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/13-40.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/14-50.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/14-50.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/15-80.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/15-80.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/16-60.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/16-60.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/camino-morado\/17-90.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/camino-morado\/17-90.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/fondo-texto.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/fondo-texto.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/fondo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/fondo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/rana.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/rana.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/rana2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/rana2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/aimg\/rana3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T1\/98\/aimg\/rana3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T1\/98\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T1\/98\/index.html",
 		"oF": 0
 		},
 	"\/readme": {
