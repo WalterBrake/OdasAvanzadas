@@ -6,6 +6,7 @@
 @wrongcol: #DB3E34;
 @beige: #FDF4CE;
 
+
 *{padding: 0; margin: 0;}
 
 .fullflexcenter{
@@ -17,14 +18,18 @@
 :root {
     --main: @main;
     --sec: @sec;
-    --accent: @accent;
     --clear: @clear;
+    --accent: @accent;
+    --rightcol: @rightcol;
+    --wrongcol: @wrongcol;
+    --beige: @beige;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     background: @beige;
     min-height: 100%;
+    user-select: none;
 }
 
 .button{
@@ -39,7 +44,7 @@ body {
     cursor:pointer;
 }
 
-.fireworks {
+.fireworks, .dragLineCanvas {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -49,6 +54,9 @@ body {
     z-index: 2001;
 }
 
+.dragLineCanvas{
+    position: absolute;
+}
 
 h1{
   font-family: 'barnacle_boyregular';
@@ -150,12 +158,19 @@ input[type=number] {
     .audiotextBtn{
         margin: 4px;
         max-width: 40px;
+        height: 60px;
+        .fullflexcenter;
         embed, img { width: 100%;}
         img{cursor:pointer;}
     }
     .audiotextTxt {
         .fullflexcenter;
         flex-wrap: wrap;
+        strong {
+            font-weight: normal;
+            color: var(--main);
+            font-family: 'barnacle_boyregular';
+        }
         .on {
             transition: all .3s;
             opacity: 1;
@@ -217,6 +232,7 @@ input[type=number] {
         width: 96%;
     }
 }
+
 
 .startScene, .endScene{
     background:@main;
@@ -282,6 +298,9 @@ embed {
     .fullflexcenter;
     &.z-index{ position: relative; z-index: 999; }
 }
+.row.wrap{
+    flex-wrap: wrap;
+}
 
 .item{
     .fullflexcenter;
@@ -294,8 +313,8 @@ embed {
     &.hover{
         transition: .2s all;
         transform: scale(1.4);
-
     }
+
 }
 
 
@@ -328,15 +347,101 @@ embed {
 
 
 .devmode{
-    position: absolute;
+    position: fixed;
     left: 0; bottom: 0;
-    width: 40%;
     z-index: 9999;
-    .fullflexcenter;
-    background: @main;
-    opacity: 0.5;
-    button {
+    background: @accent;
+    opacity: 0.9;
+    div{
         margin: 5px;
     }
+    button {
+        margin: 5px;
+        border: none;
+        padding: 2px;
+        border-radius: 4px;
+    }
+}
+
+
+
+
+.clickable {
+    position: relative;
+    cursor: pointer;
+    .anim{
+        position: absolute;
+        left: 5%; top: 2%;
+        width: 90%;
+        height: 90%;
+        z-index: 9;
+    }
+
+}
+
+
+
+.w100{ width: 100%; }
+.w90{ width: 90%; }
+.w80{ width: 80%; }
+.w70{ width: 70%; }
+.w60{ width: 60%; }
+.w50{ width: 50%; }
+.w40{ width: 40%; }
+.w30{ width: 30%; }
+.w20{ width: 20%; }
+.w10{ width: 10%; }
+
+
+.numborder(@col){
+    -webkit-text-stroke: 4px @col;
+    text-shadow:
+       4px 4px 0 @col*.9,
+     -1px -1px 0 @col*.9,
+      1px -1px 0 @col*.9,
+      -1px 1px 0 @col*.9,
+       1px 1px 0 @col*.9;
+}
+
+.number {
+    font-family: 'barnacle_boyregular';
+    font-size: 60px;
+    color: #fff;
+    &.c1 { .numborder(@main); }
+    &.c2 { .numborder(@sec); }
+    &.c3 { .numborder(@clear); }
+    &.c4 { .numborder(@accent); }
+    &.c5 { .numborder(@wrongcol); }
+    &.c6 { .numborder(#EB118B); }
+    &.c7 { .numborder(#D8E02C); }
+    &.c8 { .numborder(#C0A7D0); }
+}
+
+
+
+.conectorbg(@col){
+    background: @col;
+    box-shadow:
+       4px 4px 0 @col*.9,
+     -1px -1px 0 @col*.9,
+      1px -1px 0 @col*.9,
+      -1px 1px 0 @col*.9,
+       1px 1px 0 @col*.9;
+}
+
+.conector {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: @main;
+    border: 4px solid #fff;
+    &.c1{  .conectorbg(@main); }
+    &.c2{ .conectorbg(@sec); }
+    &.c3{ .conectorbg(@clear); }
+    &.c4{ .conectorbg(@accent); }
+    &.c5{ .conectorbg(@wrongcol); }
+    &.c6 { .conectorbg(#EB118B); }
+    &.c7 { .conectorbg(#D8E02C); }
+    &.c8 { .conectorbg(#C0A7D0); }
 }
 

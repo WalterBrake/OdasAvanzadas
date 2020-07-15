@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sé a qué se parece</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .inst{
+
+        }
+        .drag img{width: 100%;  }
+        .drag{
+            width: 46px;
+            height: auto;
+            margin: 5px;
+        }
+        .objetos{
+            border: 2px solid var(--main);
+            border-radius: 20px;
+            padding: 10px;
+            height: 100%;
+            margin: 10px;
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .area{
+            border: 2px solid var(--sec);
+            border-radius: 20px;
+            padding: 2px;
+            height: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .area .row{
+            padding: 10px;
+        }
+        .dropzone{
+            margin: 2px;
+            border-radius: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,.5);
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .parece{ width: 40px;}
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#5EB247">
+            <info type="dragdrop" title="Sé a qué se parecen" text="Observa las figuras que aparecen del lado izquierdo. ¿Conoces esos objetos?, ¡míralos bien!" textaudio="asound/instruccion.mp3" :autoplay="true"  @completedinstructions="$refs.instructions2.play()"></info>
+            <activity>
+                <div class="row mb-1">
+                    <audiotext :autoplay="false" text="Coloca cada uno de esos objetos en la columna de la figura que más se parezca." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+                </div>
+
+                <div class="row">
+                    <div class="objetos">
+                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i1.png"></drag>
+                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i2.png"></drag>
+                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i3.png"></drag>
+                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i4.png"></drag>
+                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i5.png"></drag>
+                        <drag data="tri" dropzone=".dropzone" stay-if-ok><img src="aimg/i6.png"></drag>
+                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i7.png"></drag>
+                        <drag data="tri" dropzone=".dropzone" stay-if-ok><img src="aimg/i8.png"></drag>
+                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i9.png"></drag>
+                    </div>
+                    <div class="area">
+                        <div class="row">Parece un <img src="aimg/cuadrado.png" class="parece"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="cuad"></div>
+                    </div>
+                    <div class="area">
+                        <div class="row">Parece un <img src="aimg/circulo.png"  class="parece"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="circ"></div>
+                    </div>
+                    <div class="area">
+                        <div class="row">Parece un <img src="aimg/triangulo.png"  class="parece"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="tri"></div>
+                    </div>
+                </div>
+                
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

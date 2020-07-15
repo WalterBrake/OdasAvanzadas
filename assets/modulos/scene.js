@@ -11,6 +11,8 @@ Vue.component('scene', {
         'startScene', // Es la escena de inicio
         'endScene', // Es la escena del final
         'finalData', //Resultados finales sólo para endScene
+        'hidescorebox', // No mostrar la caja de score de la derecha
+        'temporals',
     ],
     data() {
         return {
@@ -18,11 +20,16 @@ Vue.component('scene', {
             currentAnswers: 0,
             oks: 0,
             errors: 0,
-            comenzarBtnClicked: false
+            comenzarBtnClicked: false,
+        }
+    },
+    watch: {
+        temporals (newP, oldP) {
+            this.checkTemporals()
         }
     },
     template: `
-        <section class="scene" v-if="appearok">
+        <section class="scene" v-if="appearok" ref="sceneac">
             <div v-if="startScene!=undefined" class="startScene">
                 <button @click="comenzarFn" :disabled="comenzarBtnClicked" class="button">comenzar</button>
             </div>
@@ -39,21 +46,31 @@ Vue.component('scene', {
             </div>
             <template v-if="startScene==undefined && endScene==undefined">
                 <slot></slot>
-                <div class="scenebar">
+                <div class="scenebar" v-if="hidescorebox==undefined">
                     <scorebox :showmax="score" :score="scoresum"></scorebox>
                 </div>
                 <div v-if="devmode" class="devmode">
-                    <button @click="okFn">okFn</button>
-                    <button @click="errorFn">errorFn</button>
-                    <button @click="oks=answers; endedFn()">endAll Ok</button>
-                    <button @click="oks=answers-1; errors=1; currentAnswers=answers; endedFn()">endOne Bad</button>
+                    <div class="row">
+                        <div>Oks: {{oks}}</div>
+                        <div>Errors: {{errors}}</div>
+                        <div>Answers: {{answers}}</div>
+                        <div>Current: {{currentAnswers}}</div>
+                        <div>Temporals: {{temporals}}</div>
+                    </div>
+                    <div class="row">
+                        <button @click="okFn">okFn</button>
+                        <button @click="errorFn">errorFn</button>
+                        <button @click="oks=answers; endedFn()">endAll Ok</button>
+                        <button @click="oks=answers-1; errors=1; currentAnswers=answers; endedFn()">endOne Bad</button>
+                    </div>
                 </div>
             </template>
         </section>
     `,
     computed: {
         scoresum () {
-            return Math.round((this.score / this.answers) * this.oks)
+            var currentScore = Math.round((this.score / this.answers) * (this.oks))
+            return currentScore
         }
     },
     methods: {
@@ -73,11 +90,11 @@ Vue.component('scene', {
             this.endedFn()
         },
         endedFn () {
+            //console.log(this.alloks, this.oks, this.answers)
             if(this.alloks != undefined) {
-                if(this.oks == this.answers) {
+                if(this.oks == this.answers && this.oks>0) {
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
                     if(this.alloksSound){
-                        console.log('allok')
                         var sound = new Howl({ src: [this.alloksSound] })
                         app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
                         setTimeout(function(){
@@ -93,7 +110,19 @@ Vue.component('scene', {
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
                 }
             }
-            
+        },
+        checkTemporals () {
+            this.oks = 0
+            this.errors = 0
+
+            for(t in this.temporals){
+                var tem = this.temporals[t]
+                if(tem){
+                    this.okFn()
+                } else {
+                    this.errorFn()
+                }
+            }
         },
         appear() {
             var _this = this
@@ -104,13 +133,16 @@ Vue.component('scene', {
 
     },
     mounted () {
+        this.oks = 0
+        this.errors = 0
+        this.currentAnswers = 0
         EventBus.$on('isok', this.okFn)
         EventBus.$on('iserror', this.errorFn)
+        EventBus.$on('clicked', this.checkClicks)
         if(app){
             this.appear()
         } else {
             this.appearok = true
         }
-        console.log(this.startScene)
     }
 })

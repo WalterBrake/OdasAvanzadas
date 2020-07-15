@@ -11,7 +11,7 @@ Vue.component('scorebox', {
             <embed src="../../assets/aanim/ScoreIcon.svg"> 
             <div v-if="scorerender != score">{{scorerender}}</div>
             <div class="animate__animated animate__bounceIn" v-if="scorerender == score">{{scorerender}}</div>
-            <div v-if="showmax && !ended">&nbsp;/ {{showmax}}</div>
+            <div v-if="showmax && !ended">&nbsp;/ {{Math.round(showmax)}}</div>
         </div>
     `,
     watch: {
@@ -23,7 +23,7 @@ Vue.component('scorebox', {
         percentage () {
             if((this.showmax/4) > this.score ) {
                 return 'low'
-            } else if(this.showmax-(this.showmax/3) > this.score ) {
+            } else if(this.showmax-(this.showmax/3) > Math.round(this.score) ) {
                 return 'mid'
             } else {
                 return ''
@@ -39,8 +39,10 @@ Vue.component('scorebox', {
                 _this.scorerender = Math.round(starting)
             }
             var interval = setInterval(function(){
-                if(_this.scorerender < _this.score ){
+                if(_this.scorerender < Math.round(_this.score) ){
                     _this.scorerender += 1
+                }else if(_this.scorerender > Math.round(_this.score) ){
+                    _this.scorerender -= 1
                 } else {
                     clearInterval(interval)
                     if(_this.showmax && _this.scorerender == _this.showmax){

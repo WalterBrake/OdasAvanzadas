@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifico los números</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .dropzone{ margin: 20px; }
+        .dropzone img {
+            width: 120px;
+        }
+        .dropzone.hover {
+            transition: .2s all;
+            transform: scale(1.4);
+        }
+        .number {
+            width: 100px !important;
+            text-align: center;
+            border: 2px dashed #A19B84;
+            margin: 10px;
+            border-radius: 20px;;
+        }
+        .drag{
+            height: 40px; width: 40px;
+            margin: 0 auto;
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+
+        <scene v-if="currentScene==1" :key="1"
+            :answers="4" :score="scoreInScene"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3"
+            scene-color="#56A03F"
+            @completed="sceneCompleted"
+            :devmode="false">
+            <info type="seleccionar" title="Identifico los números" text="Relaciona cada conjunto con el número correspondiente" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row mb-1">
+                    <div class="dropzone" data="5" droptimes="untilok" oksound="asound/5.mp3"  errorsound="../../assets/asound/vuelveaintentar_nino.mp3"><img src="aimg/i1.svg"></div>
+                    <div class="dropzone" data="6" droptimes="untilok" oksound="asound/6.mp3"  errorsound="../../assets/asound/vuelveaintentar_nino.mp3"><img src="aimg/i2.svg"></div>
+                    <div class="dropzone" data="9" droptimes="untilok" oksound="asound/9.mp3"  errorsound="../../assets/asound/vuelveaintentar_nino.mp3"><img src="aimg/i3.svg"></div>
+                    <div class="dropzone" data="10" droptimes="untilok" oksound="asound/10.mp3" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"><img src="aimg/i4.svg"></div>
+                </div>
+                <div class="row w100 numbers">
+                        <div class="number c1">
+                            <drag dropzone=".dropzone" data="6" stay-if-ok drag-line particle-color="#5EB247"><div class="conector c1"></div></drag>
+                            6
+                        </div>
+                        <div class="number c2">
+                            <drag dropzone=".dropzone" data="5" stay-if-ok drag-line particle-color="#015093"><div class="conector c2"></div></drag>
+                            5
+                        </div>
+                        <div class="number c3">
+                            <drag dropzone=".dropzone" data="10" stay-if-ok drag-line particle-color="#AAE0FA"><div class="conector c3"></div></drag>
+                            10
+                        </div>
+                        <div class="number c4">
+                            <drag dropzone=".dropzone" data="9" stay-if-ok drag-line particle-color="#EC8B2E"><div class="conector c4"></div></drag>
+                            9
+                        </div>
+                </div>
+            </activity>
+        </scene>
+
+
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

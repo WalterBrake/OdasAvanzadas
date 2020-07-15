@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparo la receta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .clickable, .drag{
+            background: var(--main);
+            padding: 4px;
+            border-radius: 10px;
+            margin: 4px;
+        }
+        .row img {
+            min-width: 60px; min-height: 60px;
+            display: block;
+        }
+        .inst .audiotext{
+            max-width: 60%;
+        }
+        .basket{
+            width: 240px;
+            height: 240px;
+        }
+        .okDrag{
+            width: 40px;
+            height: 40px;
+        }
+        .okDrag img {transform: scale(.5); }
+
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <scene v-if="currentScene==1" :key="1"
+            :answers="13" :score="50"
+            :temporals="temporals"
+            alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            scene-color="#F8DEE8"
+            @completed="sceneCompleted"
+            :devmode="false">
+
+            <info type="seleccionar" title="Preparo la receta" text="Vamos a preparar una canasta de fruta, ¿me ayudas? Selecciona los ingredientes que se mencionan." textaudio="asound/instruccion.mp3" @completedinstructions="$refs.instructions2.play()"></info>
+            
+            <activity>
+                <div class="row mb-1 inst">
+                    <audiotext :autoplay="false" text="<strong>Necesitamos:</strong> 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+                </div>
+                
+                <div class="row">
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[0]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[1]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[2]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[3]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[4]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[5]"><img src="">Y</clickable>
+                </div>
+                <div class="row">
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[6]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[7]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[8]"><img src="">Y</clickable>
+                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[9]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
+                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[10]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
+                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[11]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
+                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[12]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
+                </div>
+                
+            </activity>
+        </scene>
+        
+        
+        <scene v-if="currentScene==2" :key="2"
+        :answers="5" :score="80"
+        :temporals="temporals"
+        alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+        scene-color="#F8DEE8"
+        @completed="sceneCompleted"
+        :devmode="false">
+        
+            <info type="dragdrop" title="Preparo la receta" text="Ya que seleccionaste los ingredientes, ahora colócalos dentro de la canasta. ¿Estás listo? ¡Vamos a comenzar!" textaudio="asound/instruccion3.mp3" @completedinstructions="$refs.instructions4.play()"></info>
+
+            <activity>
+
+                <div class="row mb-1 inst">
+                        <audiotext :autoplay="false" text="Primero, coloca los gajos de naranja en la canasta. Luego, añade el plátano y arriba las fresas y las uvas. Por último, rocía un chorrito de miel. <strong>Y&nbsp;listo&nbsp;¡A&nbsp;disfrutar!</strong>" audio="asound/instruccion4.mp3" ref="instructions4"></audiotext>
+                </div>
+
+                <div class="row">
+
+                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+
+                </div>
+
+                <div class="row mt-auto ">
+                    <div class="basket" data="m" droptimes="multiple">
+                        <img src="aimg/basket.svg">
+                    </div>
+                </div>
+                
+            </activity>    
+        
+        </scene>
+
+
+
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+</body>
+</html>
