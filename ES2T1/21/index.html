@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifico personas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        /* STYLES */
+        .kidswrp{
+            position: relative;
+        }
+        .kids{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+        .clickable img{
+            width: 100%;
+        }
+        .clickable{
+            width: 15%;
+        }
+        .pregunta {font-size: 1.4rem; margin-bottom: 20px;}
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+        <info type="dragdrop" title="Identifico personas" text="Todas las personas somos diferentes y valiosas. Lee la descripción y selecciona al niño o niña que corresponda. " textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.in2.play()"></info>
+        <activity>
+                <div class="row pregunta">
+                    <audiotext text="Es un niño de estatura baja, con cabello rizado y de color café oscuro. Su piel es morena. Es sonriente, amable y muy estudioso." audio="asound/instruccion2.mp3" :autoplay="false" ref="in2"></audiotext>
+                </div>
+                <div class="row w100 kidswrp">
+                    <img src="aimg/bg.svg" class="bg w100">
+                    <div class="row w100 kids">
+                        <clickable block-if-error :isok="true"  click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" v-model="temporals[0]"><img src="aimg/luis.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/alberto.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/monica.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/fidel.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/sonia.svg"></clickable>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+        <info type="dragdrop" title="Identifico personas" text="Todas las personas somos diferentes y valiosas. Lee la descripción y selecciona al niño o niña que corresponda. " textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row pregunta">
+                    <audiotext text="Es una niña a quien le gusta ayudar a los demás, siempre está contenta y todos la quieren mucho. Tiene cabello largo, de color café claro y usa fleco." audio="asound/instruccion3.mp3" :autoplay="true"></audiotext>
+                </div>
+                <div class="row w100 kidswrp">
+                    <img src="aimg/bg.svg" class="bg w100">
+                    <div class="row w100 kids">
+                        <clickable block-if-error :isok="false"  click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/luis.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/alberto.svg"></clickable>
+                        <clickable block-if-error :isok="true" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" v-model="temporals[0]"><img src="aimg/monica.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/fidel.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/sonia.svg"></clickable>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+        <info type="dragdrop" title="Identifico personas" text="Todas las personas somos diferentes y valiosas. Lee la descripción y selecciona al niño o niña que corresponda. " textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row pregunta">
+                    <audiotext text="Es la niña más alta de su salón, su cabello es de color negro, usa aretes y sandalias. Su sonrisa es preciosa y es hermana de Luis." audio="asound/instruccion4.mp3" :autoplay="true"></audiotext>
+                </div>
+                <div class="row w100 kidswrp">
+                    <img src="aimg/bg.svg" class="bg w100">
+                    <div class="row w100 kids">
+                        <clickable block-if-error :isok="false"  click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/luis.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/alberto.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/monica.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/fidel.svg"></clickable>
+                        <clickable block-if-error :isok="true" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" v-model="temporals[0]"><img src="aimg/sonia.svg"></clickable>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+        <info type="dragdrop" title="Identifico personas" text="Todas las personas somos diferentes y valiosas. Lee la descripción y selecciona al niño o niña que corresponda. " textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row pregunta">
+                    <audiotext text="Él usa lentes pues tiene un problema de visión, su cabello es rubio, le gusta usar ropa deportiva pues se siente muy cómodo con ella. Su piel es blanca y es muy amigo de Luis." audio="asound/instruccion5.mp3" :autoplay="true"></audiotext>
+                </div>
+                <div class="row w100 kidswrp">
+                    <img src="aimg/bg.svg" class="bg w100">
+                    <div class="row w100 kids">
+                        <clickable block-if-error :isok="false"  click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/luis.svg"></clickable>
+                        <clickable block-if-error :isok="true" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" v-model="temporals[0]"><img src="aimg/alberto.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/monica.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/fidel.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/sonia.svg"></clickable>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+        <info type="dragdrop" title="Identifico personas" text="Todas las personas somos diferentes y valiosas. Lee la descripción y selecciona al niño o niña que corresponda. " textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row pregunta">
+                    <audiotext text="Él y Mónica son muy amigos, siempre hacen la tarea juntos. Mónica lo apoya pues, aunque es muy independiente, es un niño con capacidades diferentes." audio="asound/instruccion6.mp3" :autoplay="true"></audiotext>
+                </div>
+                <div class="row w100 kidswrp">
+                    <img src="aimg/bg.svg" class="bg w100">
+                    <div class="row w100 kids">
+                        <clickable block-if-error :isok="false"  click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/luis.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/alberto.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/monica.svg"></clickable>
+                        <clickable block-if-error :isok="true" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" v-model="temporals[0]"><img src="aimg/fidel.svg"></clickable>
+                        <clickable block-if-error :isok="false" click-error-sound="../../assets/asound/vuelveaintentar_hombre.mp3" ><img src="aimg/sonia.svg"></clickable>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==6" :key="6" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 5
+        app.$devmode = false
+    </script>
+</body>
+</html>

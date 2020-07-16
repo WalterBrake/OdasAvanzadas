@@ -16,15 +16,50 @@
         .textos {
             width: 60%;
         }
-        .drag { width: 100%; }
         .palabras .number {
             font-size: 2rem;
             -webkit-text-stroke-width: 2px;
+            text-align: center;
+            width: 100%;
         }
         .textos .dropzone {
             margin: 20px;
             font-size: 0.9rem;
-            padding: 10px;
+            padding: 20px;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+        .textos .dropzone.hover {
+            transform: scale(1.1);
+        }
+        .anuncio {
+            width: 33%;
+            position: relative;
+        }
+        .anuncio .clickables {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .anuncio .clickables .clickable {
+            width: 70%;
+            margin: 10px;
+        }
+        .anim {
+            transform: scale(2);
+        }
+
+        @media (max-width:600px){
+            .palabras .number{font-size: 1.4rem;}
+            .textos .dropzone{ font-size: 0.8rem; }
         }
     </style>
     </head>
@@ -35,51 +70,104 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="3" scene-color="#ED1C25">
             <info type="dragdrop" title="Reconozco los anuncios publicitarios" text="¿Qué función tiene cada elemento de un anuncio publicitario? Relaciona las columnas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100">
                     <div class="palabras">
                         <div class="palabra row">
-                            <div class="number c5">Eslogan</div>
-                            <drag dropzone=".dropzone" data="eslogan" stay-if-ok drag-line><div class="conector c5"></div></drag>
+                            <div class="number c8">Eslogan</div>
+                            <drag dropzone=".dropzone" data="eslogan" stay-if-ok drag-line particle-color="#C0A8D0"><div class="conector c8"></div></drag>
                         </div>
                         <div class="palabra row">
-                            <div class="number c3">Imagen</div>
-                            <drag dropzone=".dropzone" data="imagen" stay-if-ok append-to-dropzone><div class="conector c5"></div></drag>
+                            <div class="number c4">Imagen</div>
+                            <drag dropzone=".dropzone" data="imagen" stay-if-ok drag-line particle-color="#EC8B2E"><div class="conector c4"></div></drag>
                         </div>
                         <div class="palabra row">
                             <div class="number c1">Título o encabezado</div>
-                            <drag dropzone=".dropzone" data="titulo" stay-if-ok append-to-dropzone><div class="conector c5"></div></drag>
+                            <drag dropzone=".dropzone" data="titulo" stay-if-ok drag-line particle-color="#5EB247"><div class="conector c1"></div></drag>
                         </div>
                     </div>
                     <div class="textos">
-                        <div class="dropzone" data="imagen">
-                            <audiotext text="Es diseñada para llamar la atención sobre el producto que se anuncia" audio="asound/eslogan.mp3" :autoplay="false"></audiotext>
+                        <div class="dropzone" data="imagen" droptimes="untilok">
+                            <audiotext text="Es diseñada para llamar la atención sobre el producto que se anuncia" audio="asound/imagen.mp3" :autoplay="false"></audiotext>
                         </div>
-                        <div class="dropzone" data="imagen">
-                            <audiotext text="Es diseñada para llamar la atención sobre el producto que se anuncia" audio="asound/eslogan.mp3" :autoplay="false"></audiotext>
+                        <div class="dropzone" data="eslogan" droptimes="untilok">
+                            <audiotext text="También llamada frase publicitaria. Es una frase original, directa, corta y fácil de recordar." audio="asound/eslogan.mp3" :autoplay="false"></audiotext>
                         </div>
-                        <div class="dropzone" data="imagen">
-                            <audiotext text="Es diseñada para llamar la atención sobre el producto que se anuncia" audio="asound/eslogan.mp3" :autoplay="false"></audiotext>
+                        <div class="dropzone" data="titulo" droptimes="untilok">
+                            <audiotext text="Nos sirve para saber de qué se trata el anuncio." audio="asound/titulo.mp3" :autoplay="false"></audiotext>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="conector c1"></div>
-                    <div class="conector c2"></div>
-                    <div class="conector c3"></div>
-                    <div class="conector c4"></div>
-                    <div class="conector c5"></div>
-                    <div class="conector c6"></div>
-                    <div class="conector c7"></div>
-                    <div class="conector c8"></div>
+            </activity>
+        </scene> <!-- end scene -->
+       
+       
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="3" scene-color="#ED1C25">
+            <info type="seleccionar" title="Reconozco los anuncios publicitarios" text="Ahora, ¿cuál es el encabezado en los siguientes anuncios publicitarios? Selecciónalo." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="anuncio">
+                        <img src="aimg/i1.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="true" v-model="temporals[0]"><img src="aimg/i1a.svg"></clickable>
+                            <clickable :isok="false"><img src="aimg/i1b.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="anuncio">
+                        <img src="aimg/i2.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="true" v-model="temporals[1]"><img src="aimg/i2a.svg"></clickable>
+                            <clickable :isok="false"><img src="aimg/i2b.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="anuncio">
+                        <img src="aimg/i3.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="true" v-model="temporals[2]"><img src="aimg/i3a.svg"></clickable>
+                            <clickable :isok="false"><img src="aimg/i3b.svg"></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="3" scene-color="#ED1C25">
+            <info type="seleccionar" title="Reconozco los anuncios publicitarios" text="Para terminar, selecciona el eslogan en cada anuncio publicitario." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="anuncio">
+                        <img src="aimg/i1.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="false"><img src="aimg/i1a.svg"></clickable>
+                            <clickable :isok="true" v-model="temporals[0]"><img src="aimg/i1b.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="anuncio">
+                        <img src="aimg/i2.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="false"><img src="aimg/i2a.svg"></clickable>
+                            <clickable :isok="true" v-model="temporals[1]"><img src="aimg/i2b.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="anuncio">
+                        <img src="aimg/i3.svg" class="main">
+                        <div class="clickables">
+                            <clickable :isok="false"><img src="aimg/i3a.svg"></clickable>
+                            <clickable :isok="true" v-model="temporals[2]"><img src="aimg/i3b.svg"></clickable>
+                        </div>
+                    </div>
                 </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
     
 
     
@@ -108,8 +196,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>
