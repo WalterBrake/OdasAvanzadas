@@ -1181,6 +1181,13 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/CN4T1\/263\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/263\/index.html",
+		"oF": 0
+		},
 	"\/CNAME": {
 		"cB": 0,
 		"ft": 8192,
@@ -1863,25 +1870,25 @@
 		"oAP": "\/ES1T1\/16\/index.html",
 		"oF": 0
 		},
-	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Inst_Coloca.mp3": {
+	"\/ES2T1\/15\/asound\/cierre.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Inst_Coloca.mp3",
+		"oAP": "\/ES2T1\/15\/asound\/cierre.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Evitar.mp3": {
+	"\/ES2T1\/15\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Evitar.mp3",
+		"oAP": "\/ES2T1\/15\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Recuerda.mp3": {
+	"\/ES2T1\/15\/asound\/reglas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/15\/asound\/Identifico las reglas Es2°T1_Int_Recuerda.mp3",
+		"oAP": "\/ES2T1\/15\/asound\/reglas.mp3",
 		"oF": 0
 		},
 	"\/ES2T1\/15\/index.html": {
@@ -3059,7 +3066,7 @@
 		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Biblioteca.mp3",
 		"oF": 0
 		},
-	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Hemerográfico.mp3": {
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Hemerográfico.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -3073,14 +3080,14 @@
 		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Investigar.mp3",
 		"oF": 0
 		},
-	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Monografía.mp3": {
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Monografía.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Monografía.mp3",
 		"oF": 0
 		},
-	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Periódico.mp3": {
+	"\/ES3T1\/30\/asound\/Escribo correctamente Es3°T1_Int_Periódico.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -4487,161 +4494,161 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int4_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int5_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int6_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op1.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op1.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op2.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op2.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3": {
+	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -4775,7 +4782,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst2_Subió.mp3": {
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst2_Subió.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -4803,7 +4810,7 @@
 		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst5_Angel.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst_Juguetería.mp3": {
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Inst_Juguetería.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -4880,14 +4887,14 @@
 		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_4Canicas.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Balón.mp3": {
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Balón.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Balón.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bebé.mp3": {
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bebé.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -4901,7 +4908,7 @@
 		"oAP": "\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Bolsa.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Muñeca.mp3": {
+	"\/MA3T1\/127\/asound\/Comparo precios Ma3°T1_Int_Muñeca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,

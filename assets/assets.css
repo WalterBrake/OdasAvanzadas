@@ -605,4 +605,9 @@ embed {
   background: #C0A7D0;
   box-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
 }
+@media (max-width: 800px) {
+  .mobile100 {
+    flex-direction: column;
+  }
+}
 /*# sourceMappingURL=assets.css.map */

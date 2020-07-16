@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico las reglas</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .drag {
+            width: 100%;
+            height: 40px;
+        }
+        .drag .number {
+            font-size: 1.8rem;
+            -webkit-text-stroke-width: 2px;
+        }
+        .dropzones{ width: 60%; margin: 1% 2%; }
+        @media (max-width:600px){
+            .dropzones { width: 96%; }
+        }
+        .dropzone{
+            width: 30%;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            height: 40px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropzone .number {
+            font-size: 1.4rem;
+            -webkit-text-stroke-width: 2px;
+        }
+
+        .c1 .dropzone  { background: #56A03F; }
+        .c2 .dropzone  { background: #EC8B2E; }
+        .c3 .dropzone  { background: #AD97BB; }
     </style>
     </head>
 <body>
@@ -18,12 +48,45 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#ED1C25">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+        <info type="dragdrop" title="Identifico las reglas" text="Coloca cada parte del enunciado en el lugar correspondiente y descubre las reglas del salón. Guíate por los colores." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="palabras">
+                        <template v-for="item in [
+                            {data: 'v3', col: 'c1', txt: 'las paredes.'},
+                            {data: 'p1', col: 'c8', txt: 'Evitar'},
+                            {data: 'n3', col: 'c4', txt: 'basura.'},
+                            {data: 'n1', col: 'c4', txt: 'Evitar'},
+                            {data: 'p3', col: 'c8', txt: 'en el salón.'},
+                            {data: 'v2', col: 'c1', txt: 'ensuciar'},
+                            {data: 'n2', col: 'c4', txt: 'tirar'},
+                            {data: 'v1', col: 'c1', txt: 'Evitar'},
+                            {data: 'p2', col: 'c8', txt: 'correr'},
+                        ]">
+                            <drag dropzone=".dropzone" stay-if-ok append-to-dropzone drag-ok-class="dropped" :data="item.data"><div :class="'number ' + item.col">{{item.txt}}</div></drag>
+                        </template>
+                    </div>
+                    <div class="dropzones">
+                        <div class="row w100 c1">
+                            <div class="dropzone" data="v1" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="v2" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="v3" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                        </div>
+                        <div class="row w100 c2">
+                            <div class="dropzone" data="n1" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="n2" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="n3" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                        </div>
+                        <div class="row w100 c3">
+                            <div class="dropzone" data="p1" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="p2" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                            <div class="dropzone" data="p3" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3"></div>
+                        </div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +122,7 @@
     <script>
         app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>

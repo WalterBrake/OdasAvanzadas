@@ -98,7 +98,9 @@ Vue.component('drag', {
                     theclass = 'animate__flash'
                     break
             }
-            _this.$refs.drag.children[0].classList.add(theclass)
+            if(_this.$refs.drag.children[0]){
+                _this.$refs.drag.children[0].classList.add(theclass)
+            }
             setTimeout(function () {
                 if(_this.$refs.drag.children[0]){
                     _this.$refs.drag.children[0].classList.remove(theclass)
