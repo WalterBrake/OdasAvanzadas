@@ -294,6 +294,14 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/assets\/lottie\/Relacionar.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/assets\/lottie\/Relacionar-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/assets\/lottie\/Seleccionar.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -2146,143 +2154,143 @@
 		"oAP": "\/ES2T1\/21\/index.html",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/aimg\/sector1.svg": {
+	"\/ES2T1\/25\/aimg\/bg.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/ES2T1\/_25\/aimg\/sector1.svg",
+		"oAP": "\/ES2T1\/25\/aimg\/bg.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Inst_Ayuda.mp3": {
+	"\/ES2T1\/25\/asound\/cuento.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Inst_Ayuda.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/cuento.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Cuento.mp3": {
+	"\/ES2T1\/25\/asound\/fabula.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Cuento.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/fabula.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Fábula.mp3": {
+	"\/ES2T1\/25\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Fábula.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Instructivos.mp3": {
+	"\/ES2T1\/25\/asound\/instructivos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Instructivos.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/instructivos.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Leyenda.mp3": {
+	"\/ES2T1\/25\/asound\/leyenda.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Leyenda.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/leyenda.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Poema.mp3": {
+	"\/ES2T1\/25\/asound\/poema.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Poema.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/poema.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Recetas.mp3": {
+	"\/ES2T1\/25\/asound\/recetas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/asound\/Cuidamos la biblioteca Es2°T1_Int_Recetas.mp3",
+		"oAP": "\/ES2T1\/25\/asound\/recetas.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_25\/index.html": {
+	"\/ES2T1\/25\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_25\/index.html",
+		"oAP": "\/ES2T1\/25\/index.html",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/aimg\/sector1.svg": {
+	"\/ES2T1\/42\/aimg\/il.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/ES2T1\/_42\/aimg\/sector1.svg",
+		"oAP": "\/ES2T1\/42\/aimg\/il.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Inst_Recuerdas.mp3": {
+	"\/ES2T1\/42\/asound\/dale.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Inst_Recuerdas.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/dale.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dale.mp3": {
+	"\/ES2T1\/42\/asound\/dio.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dale.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/dio.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dio.mp3": {
+	"\/ES2T1\/42\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Dio.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pierdes.mp3": {
+	"\/ES2T1\/42\/asound\/pierdes.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pierdes.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/pierdes.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pino.mp3": {
+	"\/ES2T1\/42\/asound\/pino.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Pino.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/pino.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Tino.mp3": {
+	"\/ES2T1\/42\/asound\/tino.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Tino.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/tino.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Venda.mp3": {
+	"\/ES2T1\/42\/asound\/venda.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Venda.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/venda.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Yo.mp3": {
+	"\/ES2T1\/42\/asound\/yo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/asound\/Cantamos coplas Es2°T1_Int_Yo.mp3",
+		"oAP": "\/ES2T1\/42\/asound\/yo.mp3",
 		"oF": 0
 		},
-	"\/ES2T1\/_42\/index.html": {
+	"\/ES2T1\/42\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T1\/_42\/index.html",
+		"oAP": "\/ES2T1\/42\/index.html",
 		"oF": 0
 		},
 	"\/ES2T1\/_44\/aimg\/sector1.svg": {
