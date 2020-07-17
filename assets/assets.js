@@ -29,6 +29,7 @@ var app = new Vue({
                 answers: 0,
             },
             temporals: [],
+            temps: {},
             scoreByScenes: []
         }
     },
