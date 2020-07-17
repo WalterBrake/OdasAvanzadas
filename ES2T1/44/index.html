@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivino la respuesta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        /* STYLES */
+        .adivinanzas{
+            width: 40%;
+        }
+        .adiv{
+            background: #fff;
+            margin: 4px;
+            border-radius: 20px;
+            padding: 14px 10px;
+            max-width: 260px;
+        }
+        .adiv p{max-width: 200px; font-size: 0.9rem;}
+        .drag{
+            width: 30px;
+            height: 20px;
+            margin-right: -40px;
+        }
+        .dropzone {
+            width: 100%;
+        }
+        .dropzone img{
+            width: 100%;
+            max-width: 180px;
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_ninomp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="5" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Adivino la respuesta" text="¿Jugamos? Relaciona cada adivinanza con su respuesta." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+               <div class="row w100">
+                   <div class="adivinanzas">
+                       <div class="row w100 adiv">
+                            <p>Ruedo y ruedo y en los bolsillos me quedo.</p>
+                            <drag dropzone=".dropzone" data="moneda" stay-if-ok drag-line particle-color="#5EB247"><div class="conector c1"></div></drag>
+                       </div>
+                       <div class="row w100 adiv">
+                            <p>Rompe y no tiene manos, corre y no tiene pies, sopla y no tiene boca, ¿qué te parece que es?.</p>
+                            <drag dropzone=".dropzone" data="viento" stay-if-ok drag-line particle-color="#015093"><div class="conector c2"></div></drag>
+                       </div>
+                       <div class="row w100 adiv">
+                            <p>Redondo, redondo como un pandero, quien me encuentra en verano debe usar sombrero.</p>
+                            <drag dropzone=".dropzone" data="sol" stay-if-ok drag-line particle-color="#AAE0FA"><div class="conector c3"></div></drag>
+                       </div>
+                       <div class="row w100 adiv">
+                            <p>En minuto una vez, en momento dos y en memorama tres. ¿Quién es?.</p>
+                            <drag dropzone=".dropzone" data="letram" stay-if-ok drag-line particle-color="#EC8B2E"><div class="conector c4"></div></drag>
+                       </div>
+                       <div class="row w100 adiv">
+                            <p>En el principio de Roma estoy, vivo al centro de París y al final del mar voy.</p>
+                            <drag dropzone=".dropzone" data="letrar" stay-if-ok drag-line particle-color="#DA3F34"><div class="conector c5"></div></drag>
+                       </div>
+                   </div>
+                   <div class="imgs">
+                    <div class="dropzone" data="viento" droptimes="untilok"><img src="aimg/viento.svg"></div>
+                    <div class="dropzone" data="letram" droptimes="untilok"><img src="aimg/letram.svg"></div>
+                    <div class="dropzone" data="letrar" droptimes="untilok"><img src="aimg/letrar.svg"></div>
+                    <div class="dropzone" data="moneda" droptimes="untilok"><img src="aimg/moneda.svg"></div>
+                    <div class="dropzone" data="sol" droptimes="untilok"><img src="aimg/sol.svg"></div>
+                   </div>
+               </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

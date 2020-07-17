@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me divierto con los poemas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        /* STYLES */
+       .drag{
+           width: auto;
+           padding: 10px;
+       }
+       .txt {
+            background: #EEF8E8;
+            border-radius: 40px;
+            font-size: 1.4rem;
+        }
+        .txt .col {
+            width: 40%;
+            margin: 5%;
+        }
+        .dropzone {
+            background: #fff;
+            padding: 4px;
+            border-radius: 10px;
+            display: inline-block;
+            min-width: 160px;
+            text-align: center;
+            min-height: 30px;
+        }
+        .dropzone .number{
+            display: inline-block;
+        }
+        @media (max-width: 600px){
+            .txt{ font-size: 1rem; }
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#CBE5BA">
+
+            <info type="dragdrop" title="Me divierto con los poemas" text="Coloca la palabra que falta para completar cada copla." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap">
+                    <drag dropzone=".dropzone" data="ardilla" stay-if-ok append-to-dropzone><div class="number small c7">ardilla</div></drag>
+                    <drag dropzone=".dropzone" data="cucurruquear" stay-if-ok  append-to-dropzone><div class="number small c6">cucurruquear</div></drag>
+                    <drag dropzone=".dropzone" data="gorro" stay-if-ok  append-to-dropzone><div class="number small c5">gorro</div></drag>
+                    <drag dropzone=".dropzone" data="suelo" stay-if-ok  append-to-dropzone><div class="number small c8">suelo</div></drag>
+                </div>
+                <div class="row w100 wrap txt">
+                    <div class="col">
+                        Por aquel camino<br>
+                        va corriendo un zorro.<br>
+                        —¡Ay, qué linda cola! —dije,<br>
+                        y él saludó con el  <div class="dropzone" droptimes="untilok" data="gorro">&nbsp;</div>.
+                    </div>
+                    <div class="col">
+                        Si busca al tecolote,<br>
+                        en el monte lo ha de hallar;<br>
+                        al pasar la medianoche<br>
+                        empieza a <div class="dropzone" droptimes="untilok" data="cucurruquear">&nbsp;</div>.
+                    </div>
+                    <div class="col">
+                        Recostada allá en el cerro<br>
+                        estaba una pobre <div class="dropzone" droptimes="untilok" data="ardilla">&nbsp;</div>,<br>
+                        que se lastimó la cadera,<br>
+                        que se lastimó la rodilla.<br>
+                    </div>
+                    <div class="col">
+                        Estaba la guacamaya<br>
+                        parada sobre el frío <div class="dropzone" droptimes="untilok" data="suelo">&nbsp;</div>,<br>
+                        sacudiendo las alas<br>
+                        para levantar el vuelo.<br>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
