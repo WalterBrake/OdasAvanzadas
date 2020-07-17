@@ -3,13 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Ubico sentimientos y objetos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .enunciados{
+            margin: 20px;
+        }
+        .enunciados div{
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 2px;
+            font-size: 0.9rem;
+        }
+        .enunciados .number.small{
+            font-size: 1.4rem;
+            margin-right: 10px;
+            margin-left: -10px;
+        }
+        .drag{
+            width: auto; height: auto;
+            padding: 5px;
+            width: 20%;
+        }
+        .drag img{
+            width: 100%;
+        }
+        .croquis{
+            position: relative;
+        }
+
+        .drops{
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+        }
+        .drop{
+            box-sizing: border-box;
+            width: 20%; height: 20%;
+            position: absolute;
+            border-radius: 20px;
+        }
+        .drop:nth-child(1){ right: 12%; bottom: 16%;}
+        .drop:nth-child(2){ left: 40%; top: 16%;}
+        .drop:nth-child(3){ left: 12%; top: 16%;}
+        .drop:nth-child(4){ left: 40%; bottom: 16%;}
+        .drop:nth-child(5){ left: 12%; bottom: 16%;}
+        .drop:nth-child(6){ right: 12%; bottom: 40%;}
+        .drop:nth-child(7){ left: 12%; bottom: 40%;}
+        .drop:nth-child(8){ right: 12%; top: 16%;}
+        .drop.hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 680px){
+            .enunciados div{
+                font-size: 0.8rem;
+                padding: 4px;
+            }
+        }
     </style>
     </head>
 <body>
@@ -18,12 +73,48 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="8" scene-color="#BAE5FB">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Ubico sentimientos y objetos" text="Coloca las figuras en las ubicaciones que se indiquen en los enunciados." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity> 
+                <div class="row w100">
+                    <div class="izq w50">
+                        <div class="croquis w100">
+                            <img src="aimg/calle.svg" class="w100">
+                            <div class="drops">
+                                <div class="drop" droptimes="untilok" data="1"></div>
+                                <div class="drop" droptimes="untilok" data="2"></div>
+                                <div class="drop" droptimes="untilok" data="3"></div>
+                                <div class="drop" droptimes="untilok" data="4"></div>
+                                <div class="drop" droptimes="untilok" data="5"></div>
+                                <div class="drop" droptimes="untilok" data="6"></div>
+                                <div class="drop" droptimes="untilok" data="7"></div>
+                                <div class="drop" droptimes="untilok" data="8"></div>
+                            </div>
+                        </div>
+                        <div class="row w100 wrap">
+                            <drag dropzone=".drop" data="1" stay-if-ok append-to-dropzone><img src="aimg/cazul.svg"></drag>
+                            <drag dropzone=".drop" data="2" stay-if-ok append-to-dropzone><img src="aimg/biciv.svg"></drag>
+                            <drag dropzone=".drop" data="3" stay-if-ok append-to-dropzone><img src="aimg/crojo.svg"></drag>
+                            <drag dropzone=".drop" data="4" stay-if-ok append-to-dropzone><img src="aimg/camion.svg"></drag>
+                            <drag dropzone=".drop" data="5" stay-if-ok append-to-dropzone><img src="aimg/nina.svg"></drag>
+                            <drag dropzone=".drop" data="6" stay-if-ok append-to-dropzone><img src="aimg/cblanco.svg"></drag>
+                            <drag dropzone=".drop" data="7" stay-if-ok append-to-dropzone><img src="aimg/bicin.svg"></drag>
+                            <drag dropzone=".drop" data="8" stay-if-ok append-to-dropzone><img src="aimg/hombre.svg"></drag>
+                        </div>
+                    </div>
+                    <div class="enunciados w50">
+                            <div><span class="number c1 small">1.</span> El automóvil azul se encuentra en el cruce de la calle "Arrecife" y la calle "Libertad". </div>
+                            <div><span class="number c1 small">2.</span> La bicicleta verde se encuentra en la calle "Coral", entre la calle "Libertad" y la calle "Perla". </div>
+                            <div><span class="number c1 small">3.</span> El automóvil rojo se encuentra en el cruce de la calle "Coral" y la calle "Perla". </div>
+                            <div><span class="number c1 small">4.</span> El autobús escolar se encuentra en la calle "Arrecife", entre la calle "Perla" y la calle "Libertad". </div>
+                            <div><span class="number c1 small">5.</span> La niña se encuentra esperando el autobús escolar en la esquina de la calle "Perla" y la calle "Arrecife". </div>
+                            <div><span class="number c1 small">6.</span> El automóvil blanco se encuentra en la calle "Libertad", entre la calle "Arrecife" y la calle "Coral". </div>
+                            <div><span class="number c1 small">7.</span> La bicicleta anaranjada se encuentra en la calle "Perla", entre la calle "Arrecife" y la calle "Coral". </div>
+                            <div><span class="number c1 small">8.</span> El hombre se encuentra en la esquina de la calle "Coral" y la calle "Libertad".</div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +150,7 @@
     <script>
         app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>

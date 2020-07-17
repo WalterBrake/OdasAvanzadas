@@ -1072,21 +1072,101 @@
 		"oAP": "\/CM1T1\/206\/index.html",
 		"oF": 0
 		},
-	"\/CM2T1\/251\/aimg\/sector1.svg": {
+	"\/CM2T1\/251\/aimg\/bicin.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CM2T1\/251\/aimg\/sector1.svg",
+		"oAP": "\/CM2T1\/251\/aimg\/bicin.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CM2T1\/251\/asound\/Ubico los sentimientos y objetos CN2°T1_Inst_Coloca.mp3": {
+	"\/CM2T1\/251\/aimg\/biciv.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/biciv.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/calle.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/calle.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/camion.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/camion.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/cazul.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/cazul.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/cblanco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/cblanco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/crojo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/crojo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/hombre.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/hombre.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/aimg\/nina.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/251\/aimg\/nina.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/251\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/251\/asound\/Ubico los sentimientos y objetos CN2°T1_Inst_Coloca.mp3",
+		"oAP": "\/CM2T1\/251\/asound\/instruccion.mp3",
 		"oF": 0
 		},
 	"\/CM2T1\/251\/index.html": {
