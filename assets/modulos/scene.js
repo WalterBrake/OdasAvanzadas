@@ -13,6 +13,7 @@ Vue.component('scene', {
         'finalData', //Resultados finales sólo para endScene
         'hidescorebox', // No mostrar la caja de score de la derecha
         'temporals',
+        'temps',
     ],
     data() {
         return {
@@ -56,6 +57,7 @@ Vue.component('scene', {
                         <div>Answers: {{answers}}</div>
                         <div>Current: {{currentAnswers}}</div>
                         <div>Temporals: {{temporals}}</div>
+                        <div>Temps: {{temps}}</div>
                     </div>
                     <div class="row">
                         <button @click="okFn">okFn</button>

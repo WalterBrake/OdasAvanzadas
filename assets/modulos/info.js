@@ -9,6 +9,7 @@ Vue.component('info', {
         <div class="info">
             <h1>{{title}}</h1>
             <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
+            <slot></slot>
             <div class="bottom">
                 <scorebox :score="score"></scorebox>
                 <div class="instype">

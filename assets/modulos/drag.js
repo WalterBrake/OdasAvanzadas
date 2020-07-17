@@ -15,7 +15,8 @@ Vue.component('drag', {
         'particleColor', // color de particulas
         'initclass', // class de inicio
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
-        'appendToDropzone' // Se añade al contenedor del dropzone
+        'appendToDropzone', // Se añade al contenedor del dropzone,
+        'disableok',
     ],
     data() {
         return {
@@ -161,10 +162,13 @@ Vue.component('drag', {
                 _this.dragStatusClass('ok')
                 _this.stayIfOkFn()
                 app.particleAnimation(e, 100, null, null)
-                EventBus.$emit('isok')
+
                 _this.setClassAnimation('ok')
                 _this.droppedtimesAdd(dropzone)
                 _this.appendToDropzoneFn(dropzone, e)
+                if(_this.disableok==undefined){
+                    EventBus.$emit('isok')
+                }
             } else {
                 //## ERROR
                 s_error.play()

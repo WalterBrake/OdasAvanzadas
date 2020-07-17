@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sé más sobre las decenas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .infoimg {
+            width: 120px;
+        }
+        .info h2 {
+            font-size: 1.2rem;
+        }
+        .dropzones {
+            position: relative;
+        }
+        .dropzone {
+            background: #fff;
+            border-radius: 20px;
+            padding: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 180px;
+        }
+        .numin {
+            background: #5EB247;
+            width: 100px;
+            text-align: center;
+            border-radius: 10px;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            z-index: 1;
+        }
+        .card {
+            width: 60px;
+            height: 80px;
+            border: 2px solid #CCA677;
+            background: #fff;
+            border-radius: 10px;
+            margin: 2px;
+        }
+        .card.r {
+            background: #EF1E23;
+        }
+        .card.b {
+            background: #008FD5;
+        }
+
+        .drag{
+            width: 100px;
+            height: 120px;
+            margin: 20px;
+        }
+        .drag .card{
+            width: 100px;
+            height: 120px;
+        }
+        .cardcont {
+            position: relative;
+            height: 160px;
+            width: 100px;
+        }
+        .cardcont > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+        }
+        .dropped{
+            display: none !important;
+        }
+        .button{
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .dropzone.red{ border: 6px solid #EF1E23; border-bottom: none; border-radius: 10px 10px 0 0; background: #F9E7E5; }
+        .dropzone.blue{ border: 6px solid #008FD5; border-top: none; border-radius: 0 0 10px 10px; background: #E5ECF4; }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" hidescorebox :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="200" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Sé más sobre las decenas" text="Coloca las tarjetas rojas (decenas) y azules (unidades) en los espacios indicados, para formar los números  de los recuadros verdes." textaudio="asound/instruccion.mp3" :autoplay="true">
+                <img src="aimg/cards.svg" class="infoimg">
+            </info>
+            <activity>
+                <div class="dropzones w100">
+                    <div class="numin"><div class="number small c1">42</div></div>
+                    <div class="row dropzone red w100">
+                        <div class="card r"></div>
+                        <div class="card r"></div>
+                        <div class="card r"></div>
+                        <div class="card r"></div>
+                    </div>
+                    <div class="row dropzone blue w100">
+                        <div class="card b"></div>
+                        <div class="card b"></div>
+                    </div>
+                </div>
+                    <button class="button" @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="8" scene-color="#ED1C25" ref="scene2">
+            <info type="dragdrop" title="Sé más sobre las decenas" text="Forma el número 62" textaudio="asound/instruccion2.mp3" :autoplay="true">
+                <img src="aimg/cards.svg" class="infoimg">
+            </info>
+            <activity>
+                <div class="row">
+                    <div class="cardcont"><div v-for="n in 7">
+                        <drag dropzone=".dropzone" data="cardr" append-to-dropzone particle-color="#EF1F23" drag-ok-class="dropped"><div class="card r"></div></drag>
+                    </div></div>
+                    <div class="cardcont"><div v-for="n in 3">
+                        <drag dropzone=".dropzone" data="cardb" append-to-dropzone particle-color="#028FD5" drag-ok-class="dropped"><div class="card b"></div></drag>
+                    </div></div>
+                </div>
+                <div class="dropzones w100">
+                    <div class="numin"><div class="number small c1">62</div></div>
+                    <div class="row dropzone red w100" data="cardr" droptimes="multiple" droplimit="6">
+                    </div>
+                    <div class="row dropzone blue w100" data="cardb" droptimes="multiple" droplimit="2">
+                    </div>
+                </div>
+            </activity>
+        </scene>
+        <!-- end scene -->
+
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#ED1C25" ref="scene2">
+            <info type="dragdrop" title="Sé más sobre las decenas" text="Forma el número 36" textaudio="asound/instruccion3.mp3" :autoplay="true">
+                <img src="aimg/cards.svg" class="infoimg">
+            </info>
+            <activity>
+                <div class="row">
+                    <div class="cardcont"><div v-for="n in 4">
+                        <drag dropzone=".dropzone" data="cardr" append-to-dropzone particle-color="#EF1F23" drag-ok-class="dropped"><div class="card r"></div></drag>
+                    </div></div>
+                    <div class="cardcont"><div v-for="n in 7">
+                        <drag dropzone=".dropzone" data="cardb" append-to-dropzone particle-color="#028FD5" drag-ok-class="dropped"><div class="card b"></div></drag>
+                    </div></div>
+                </div>
+                <div class="dropzones w100">
+                    <div class="numin"><div class="number small c1">36</div></div>
+                    <div class="row dropzone red w100" data="cardr" droptimes="multiple" droplimit="3">
+                    </div>
+                    <div class="row dropzone blue w100" data="cardb" droptimes="multiple" droplimit="6">
+                    </div>
+                </div>
+            </activity>
+        </scene>
+        <!-- end scene -->
+
+        
+
+
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 2
+        app.$devmode = false
+    </script>
+</body>
+</html>
