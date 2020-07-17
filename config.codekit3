@@ -5016,29 +5016,28 @@
 		"oAP": "\/MA2T1\/140\/index.html",
 		"oF": 0
 		},
-	"\/MA2T1\/_145\/aimg\/sector1.png": {
-		"ft": 32768,
-		"iS": 325156,
-		"oA": 0,
-		"oAP": "\/MA2T1\/_145\/aimg\/sector1.png",
+	"\/MA2T1\/145\/aimg\/il.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA2T1\/145\/aimg\/il.svg",
 		"oF": 0,
-		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
-		"q": 100
+		"plM": 3758088159,
+		"prP": 0
 		},
-	"\/MA2T1\/_145\/asound\/Ordeno los numeros Ma2°T1_Inst_Observa.mp3": {
+	"\/MA2T1\/145\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T1\/_145\/asound\/Ordeno los numeros Ma2°T1_Inst_Observa.mp3",
+		"oAP": "\/MA2T1\/145\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA2T1\/_145\/index.html": {
+	"\/MA2T1\/145\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T1\/_145\/index.html",
+		"oAP": "\/MA2T1\/145\/index.html",
 		"oF": 0
 		},
 	"\/MA3T1\/113\/aimg\/1.svg": {

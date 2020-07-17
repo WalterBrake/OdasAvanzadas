@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordeno los números</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .pregunta{
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pregunta .dropzone{
+            display: inline-block;
+            background: #fff;
+            border-radius: 10px;
+            padding: 6px;
+            min-height: 30px;
+            min-width: 100px;
+        }
+        .drag{
+            width: auto;
+            height: auto;
+            padding: 10px;
+        }
+        .number{
+            display: inline-block;
+        }
+        .clickable{
+            margin: 10px 20px;
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="row w100 wrap">
+                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c5">{{it.num}}</div></drag>
+                </div>
+                <div class="row w100">
+                    <div class="pregunta w80">
+                        Arrastra el número de los carros que se encuentran adelante y atrás del
+                        carro 87 y suéltalos aquí: <div class="dropzone" data="86" droptimes="untilok">&nbsp;</div> y <div class="dropzone" data="88" droptimes="untilok">&nbsp;</div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="row w100 wrap">
+                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c6">{{it.num}}</div></drag>
+                </div>
+                <div class="row w100">
+                    <div class="pregunta w80">
+                        Arrastra y suelta el número del carro que llegó primero <div class="dropzone" data="79" droptimes="untilok">&nbsp;</div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="row w100 wrap">
+                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c7">{{it.num}}</div></drag>
+                </div>
+                <div class="row w100">
+                    <div class="pregunta w80">
+                        Arrastra el número de carro que llegó antes que el 85 y suéltalo aquí <div class="dropzone" data="84" droptimes="untilok">&nbsp;</div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="row w100 wrap">
+                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c8">{{it.num}}</div></drag>
+                </div>
+                <div class="row w100">
+                    <div class="pregunta w80">
+                        Arrastra el número de carro que va adelante del 89 y suéltalo aquí <div class="dropzone" data="88" droptimes="untilok">&nbsp;</div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="seleccionar" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="row w100">
+                    <div class="pregunta w80">
+                        Si llegaran 10 carros más, ¿qué número le pondrían al último?
+                    </div>
+                </div>
+                <div class="row w100 wrap">
+                    <clickable :isok="false" block-if-error><div class="number c1">5</div></clickable>
+                    <clickable :isok="false" block-if-error><div class="number c2">99</div></clickable>
+                    <clickable :isok="true" block-if-error v-model="temporals[0]"><div class="number c3">100</div></clickable>
+                    <clickable :isok="false" block-if-error><div class="number c4">90</div></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==6" :key="6" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.temps = [
+            {num: 90},
+            {num: 89},
+            {num: 88},
+            {num: 87},
+            {num: 86},
+            {num: 85},
+            {num: 84},
+            {num: 83},
+            {num: 82},
+            {num: 81},
+            {num: 80},
+            {num: 79},
+        ]
+        app.currentScene = 0
+        app.scenesCount = 5
+        app.$devmode = false
+    </script>
+</body>
+</html>
