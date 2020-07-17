@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo en voz alta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        /* STYLES */
+        .story{
+            justify-content: center;
+            max-width: 860px;
+        }
+        .story .cuad{
+            width: 28%;
+            position: relative;
+        }
+        .story img.comic{
+            border: 2px solid #000;
+            width: 100%;
+        }
+        .dialogaudio{ position: absolute; }
+        .dialogaudio.playing .audiotextBtn{ display: none; }
+        .dialogaudio.playing { width: 100%; }
+
+        .dialogaudio .audiotextBtn{ width: 60px; margin: 0 auto; }
+        .d2 .dialogaudio {
+            bottom: 1%;
+            left: 2%;
+            width: 60%;
+        }
+        .d4 .dialogaudio:nth-child(2) {
+            top: 20%;
+            left: 1%;
+            width: 70%;
+        }
+        .d4 .dialogaudio:nth-child(3) {
+            bottom: 6%;
+            right: 2%;
+            width: 60%;
+        }
+        .d5 .dialogaudio:nth-child(2) {
+            top: 1%;
+            left: 2%;
+            width: 70%;
+        }
+        .d5 .dialogaudio:nth-child(3) {
+            top: 1%;
+            right: 4%;
+            width: 40%;
+        }
+        .d5 .dialogaudio:nth-child(3) .audiotextBtn{ margin: 0 0 0 auto; }
+        .d5 .dialogaudio:nth-child(3):not(.playing){
+            width: 60px;
+        }
+       .buttonstart{
+           font-size: 1.4rem;
+           margin-top: 10px;
+       }
+       .pregunta{
+           margin: 20px 0 10px 0;
+           text-align: center;
+       }
+       .respuestas{
+           justify-content: space-between;
+       }
+       .clickable{
+           width: 25%;
+           text-align: center;
+           padding: 10px;
+           background: #fff;
+           border-radius: 10px;
+       }
+       @media (max-width:680px){
+            .number.small{
+                font-size: 1.3rem !important;
+                -webkit-text-stroke-width: 1px !important;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#B89FCC">
+
+            <info type="seleccionar" title="Leo en voz alta" text="Lee la historieta." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap story">
+                    <div class="cuad"><img src="aimg/i1.png" class="comic"></div>
+                    <div class="cuad d2"><img src="aimg/i2.png" class="comic">
+                        <dialogaudio audio="asound/adormir.mp3" :autoplay="false" show-while-play><img src="aimg/i2-dialogo.svg"></dialogaudio>
+                    </div>
+                    <div class="cuad"><img src="aimg/i3.png" class="comic"></div>
+                </div>
+                <div class="row w100 wrap story">
+                    <div class="cuad d4"><img src="aimg/i4.png" class="comic">
+                        <dialogaudio audio="asound/quefue.mp3" :autoplay="false" show-while-play><img src="aimg/i4-dialogo1.svg"></dialogaudio>
+                        <dialogaudio audio="asound/seragato.mp3" :autoplay="false" show-while-play><img src="aimg/i4-dialogo2.svg"></dialogaudio>
+                    </div>
+                    <div class="cuad d5"><img src="aimg/i5.png" class="comic">
+                        <dialogaudio audio="asound/porfin.mp3" :autoplay="false" show-while-play><img src="aimg/i5-dialogo1.svg"></dialogaudio>
+                        <dialogaudio audio="asound/mama.mp3" :autoplay="false" show-while-play><img src="aimg/i5-dialogo2.svg"></dialogaudio>
+                    </div>
+                    <div class="cuad"><img src="aimg/i6.png" class="comic"></div>
+                </div>
+                <div class="row"><button class="button buttonstart" @click="sceneCompleted(false)">Siguiente</button></div>
+
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="3" scene-color="#B89FCC">
+
+            <info type="seleccionar" title="Leo en voz alta" text="Lee la historieta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row"><button class="button buttonstart" @click="currentScene=1">Volver a leer</button></div>
+                
+                <div class="row w100 pregunta number small c2">¿Qué personajes aparecen en el cuento?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable :isok="true" v-model="temporals[0]"><div class="txt ">Dos ratoncitos y su mamá.</div></clickable>
+                    <clickable :isok="false" ><div class="txt ">Dos ratoncitos y su papá.</div></clickable>
+                    <clickable :isok="false" ><div class="txt ">Dos ratoncitos, su mamá y su abuelo.</div></clickable>
+                </div>
+               
+                <div class="row w100 pregunta number small c5">¿Qué le sucedió a los dos ratoncitos?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable :isok="false" ><div class="txt ">Salieron a pasear con su mamá y se perdieron.</div></clickable>
+                    <clickable :isok="true" v-model="temporals[1]"><div class="txt ">Se perdieron por haber salido a dar un paseo muy tarde.</div></clickable>
+                    <clickable :isok="false" ><div class="txt ">Se perdieron porque corrieron mucho hasta llegar a una zona lejana.</div></clickable>
+                </div>
+                
+                <div class="row w100 pregunta number small c4">¿Cuál fue la lección que aprendieron los ratoncitos?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable :isok="false" ><div class="txt ">Que deben abrigarse para salir por la noche solos.</div></clickable>
+                    <clickable :isok="true" v-model="temporals[2]"><div class="txt ">Que deben obedecer a su mamá y no salir de casa sin avisar.</div></clickable>
+                    <clickable :isok="false" ><div class="txt ">Que pueden salir a jugar por la noche.</div></clickable>
+                </div>
+
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

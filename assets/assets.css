@@ -144,6 +144,9 @@ input[type=number] {
 .info .reset {
   margin-left: auto;
 }
+.audiotextBtn {
+  cursor: pointer;
+}
 .audiotext {
   display: flex;
   justify-content: center;

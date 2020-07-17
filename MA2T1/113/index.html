@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        /* STYLES */
-       
+        
     </style>
     </head>
 <body>
@@ -22,9 +21,9 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-            <activity>
-               
+        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        <activity>
+                
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,7 +46,7 @@
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
     <script src="../../assets/modulos/embedsvg.js"></script>
-    <script src="../../assets/modulos/conexion.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -60,7 +59,7 @@
     <script>
         app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = false
+        app.$devmode = true
     </script>
 </body>
 </html>
