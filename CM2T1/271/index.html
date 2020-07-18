@@ -9,7 +9,46 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        /* STYLES */
+       .drag{
+           width: 100%;
+           height: 50px;
+       }
+       .drag img{height: 100%; }
+
+       .piece{
+           width: 100%;
+           height: 50px;
+           margin: 10px 0;
+       }
+       .piece img {
+           height: 100%;
+           margin-left: -10px;
+       }
+       .pieceind{
+           width: 50%;
+           height: 50px;
+       }
+       .dropzone{
+           height: 50px;
+           min-width: 40%;
+           
+           text-align: right;
+           border-radius: 20px;
+           background: linear-gradient(to right, #fff, rgba(0,0,0,0));
+       }
+       .drags{
+           width: 30%;
+       }
+       .drops {
+           width: 70%;
+       }
+
+       @media (max-width: 680px){
+           .drag, .pieceind, .dropzone{
+               height: 36px;
+           }
+       }
     </style>
     </head>
 <body>
@@ -19,11 +58,39 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Practico la escritura" text="Relaciona las columnas haciendo coincidir cada derecho con su respectiva obligación." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+               <div class="row w100 wrap">
+                    <div class="drags">
+                        <template v-for="i in [
+                            {name: 'azul'},
+                            {name: 'morado'},
+                            {name: 'verde'},
+                            {name: 'amarillo'},
+                            {name: 'rosa'},
+                            {name: 'naranja'},
+                        ]">
+                            <drag dropzone=".dropzone" :data="i.name" stay-if-ok append-to-dropzone><img :src="'aimg/a'+i.name+'.svg'"></drag>
+                        </template>
+                    </div>
+                    <div class="drops">
+                        <template v-for="i in [
+                            {name: 'morado'},
+                            {name: 'amarillo'},
+                            {name: 'azul'},
+                            {name: 'naranja'},
+                            {name: 'verde'},
+                            {name: 'rosa'},
+                        ]">
+                            <div class="piece row">
+                                <div class="dropzone" :data="i.name" droptimes="untilok"></div>
+                                <div class="pieceind"><img :src="'aimg/b'+i.name+'.svg'"></div>
+                            </div>
+                        </template>
+                    </div>
+               </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +126,7 @@
     <script>
         app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>
