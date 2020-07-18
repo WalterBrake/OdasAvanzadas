@@ -2,11 +2,6 @@
   padding: 0;
   margin: 0;
 }
-.fullflexcenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 :root {
   --main: #5EB246;
   --sec: #005093;
@@ -15,6 +10,19 @@
   --rightcol: #5EB246;
   --wrongcol: #DB3E34;
   --beige: #FDF4CE;
+  --c1: #5EB246;
+  --c2: #005093;
+  --c3: #AAE1FA;
+  --c4: #EB8B2E;
+  --c5: #DB3E34;
+  --c6: #F460AB;
+  --c7: #C1CA27;
+  --c8: #C0A7D0;
+}
+.fullflexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -536,70 +544,47 @@ embed {
   font-family: 'barnacle_boyregular';
   font-size: 60px;
   color: #fff;
+  -webkit-text-stroke-width: 4px;
+}
+.number.small {
+  font-size: 2rem;
+  -webkit-text-stroke-width: 2px;
+}
+.number.smaller {
+  font-size: 1.4rem;
+  -webkit-text-stroke-width: 1px;
 }
 .number.c1 {
-  -webkit-text-stroke: 4px #5EB246;
+  -webkit-text-stroke-color: #5EB246;
   text-shadow: 4px 4px 0 #55a03f, -1px -1px 0 #55a03f, 1px -1px 0 #55a03f, -1px 1px 0 #55a03f, 1px 1px 0 #55a03f;
 }
-.number.c1.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #5EB246;
-}
 .number.c2 {
-  -webkit-text-stroke: 4px #005093;
+  -webkit-text-stroke-color: #005093;
   text-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
 }
-.number.c2.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #005093;
-}
 .number.c3 {
-  -webkit-text-stroke: 4px #AAE1FA;
+  -webkit-text-stroke-color: #AAE1FA;
   text-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
 }
-.number.c3.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #AAE1FA;
-}
 .number.c4 {
-  -webkit-text-stroke: 4px #EB8B2E;
+  -webkit-text-stroke-color: #EB8B2E;
   text-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
 }
-.number.c4.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #EB8B2E;
-}
 .number.c5 {
-  -webkit-text-stroke: 4px #DB3E34;
+  -webkit-text-stroke-color: #DB3E34;
   text-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
 }
-.number.c5.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #DB3E34;
-}
 .number.c6 {
-  -webkit-text-stroke: 4px #F460AB;
+  -webkit-text-stroke-color: #F460AB;
   text-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
 }
-.number.c6.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #F460AB;
-}
 .number.c7 {
-  -webkit-text-stroke: 4px #C1CA27;
+  -webkit-text-stroke-color: #C1CA27;
   text-shadow: 4px 4px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
 }
-.number.c7.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #C1CA27;
-}
 .number.c8 {
-  -webkit-text-stroke: 4px #C0A7D0;
+  -webkit-text-stroke-color: #C0A7D0;
   text-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
-}
-.number.c8.small {
-  font-size: 2rem;
-  -webkit-text-stroke: 2px #C0A7D0;
 }
 .conector {
   width: 20px;

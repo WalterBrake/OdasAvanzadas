@@ -3,13 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Escribo verbos en infinitivo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .regla{
+            font-size: 1.2rem;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .regla .dropzone{
+            display: inline-block;
+            min-width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .regla .dropzone .number { display: inline; }
+        .regla:nth-child(1) .dropzone{ background: var(--c1); }
+        .regla:nth-child(2) .dropzone{ background: var(--c2); }
+        .regla:nth-child(3) .dropzone{ background: var(--c3); }
+        .regla:nth-child(4) .dropzone{ background: var(--c4); }
+        .regla:nth-child(5) .dropzone{ background: var(--c5); }
+
+        .drag{
+            width: auto; height: auto;
+            max-width: 160px;
+            padding: 10px 4px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        @media (max-width: 680px){
+            .regla{
+                font-size: 1rem;
+            }
+        }
     </style>
     </head>
 <body>
@@ -19,11 +51,38 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="5" scene-color="#ED1C25">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Escribo verbos en infinitivo" text="Completa las siguientes reglas. Coloca el verbo que está en infinitivo donde corresponda." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap">
+                    <div class="reglas w50">
+                        <div class="regla"><div class="dropzone" data="Poner" droptimes="untilok">&nbsp;</div> en modo silencio tu celular al ingresar a la biblioteca.</div>
+                        <div class="regla"><div class="dropzone" data="Respetar" droptimes="untilok">&nbsp;</div> el orden y acomodo de los libros.</div>
+                        <div class="regla"><div class="dropzone" data="Informar" droptimes="untilok">&nbsp;</div> al encargado el material que se está utilizando.</div>
+                        <div class="regla"><div class="dropzone" data="Evitar" droptimes="untilok">&nbsp;</div> escribir en los libros.</div>
+                        <div class="regla"><div class="dropzone" data="Llevar" droptimes="untilok">&nbsp;</div> un registro de los libros prestados.</div>
+                    
+                    </div>
+                    <div class="palabras w50">
+                        <div class="row wrap">
+                            <template v-for="i in [
+                                {name: 'Poner', col:'c1'},
+                                {name: 'Puso', col:'c1'},
+                                {name: 'Respetará', col:'c2'},
+                                {name: 'Respetar', col:'c2'},
+                                {name: 'Informar', col:'c3'},
+                                {name: 'Informa', col:'c3'},
+                                {name: 'Evitar', col:'c4'},
+                                {name: 'Evita', col:'c4'},
+                                {name: 'Llevó', col:'c5'},
+                                {name: 'Llevar', col:'c5'},
+                            ]">
+                                <div class="w50"><drag dropzone=".dropzone" :data="i.name" stay-if-ok append-to-dropzone><div :class="'number smaller '+i.col">{{i.name}}</div></drag></div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -57,9 +116,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.currentScene = 1
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>

@@ -9,11 +9,6 @@
 
 *{padding: 0; margin: 0;}
 
-.fullflexcenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;;
-}
 
 :root {
     --main: @main;
@@ -23,7 +18,26 @@
     --rightcol: @rightcol;
     --wrongcol: @wrongcol;
     --beige: @beige;
+    
+    --c1: @main;
+    --c2: @sec;
+    --c3: @clear;
+    --c4: @accent;
+    --c5: @wrongcol;
+    --c6: #F460AB;
+    --c7: #C1CA27;
+    --c8: #C0A7D0;
 }
+
+
+
+
+.fullflexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -397,23 +411,29 @@ embed {
 
 
 .numborder(@col){
-    -webkit-text-stroke: 4px @col;
+    -webkit-text-stroke-color: @col;
     text-shadow:
        4px 4px 0 @col*.9,
      -1px -1px 0 @col*.9,
       1px -1px 0 @col*.9,
       -1px 1px 0 @col*.9,
        1px 1px 0 @col*.9;
-       &.small{
-           font-size: 2rem;
-        -webkit-text-stroke: 2px @col;
-       }
+       
 }
 
 .number {
     font-family: 'barnacle_boyregular';
     font-size: 60px;
     color: #fff;
+    -webkit-text-stroke-width: 4px;
+    &.small{
+        font-size: 2rem;
+        -webkit-text-stroke-width: 2px;
+    }
+    &.smaller{
+        font-size: 1.4rem;
+        -webkit-text-stroke-width: 1px;
+    }
     &.c1 { .numborder(@main); }
     &.c2 { .numborder(@sec); }
     &.c3 { .numborder(@clear); }
