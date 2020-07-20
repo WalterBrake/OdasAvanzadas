@@ -60,7 +60,7 @@ Vue.component('dialogaudio', {
     mounted () {
         this.loadAudio()
         if(this.autoplay){
-            this.play()
+            this.playstop()
         }
     }
 })

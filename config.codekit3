@@ -440,6 +440,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/inputable.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/inputable-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/inputbox.js": {
 		"ft": 64,
 		"ma": 0,
@@ -3441,6 +3451,233 @@
 		"oAP": "\/ES3T1\/26\/index.html",
 		"oF": 0
 		},
+	"\/ES3T1\/29\/aimg\/1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/aimg\/8.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/29\/aimg\/8.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/29\/asound\/a1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/a1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/a2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/a2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/a3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/a3.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/b1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/b1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/b2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/b2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/c1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/c1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/c2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/c2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/c3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/c3.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/d1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/d1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/d2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/d2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/e1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/e1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/e2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/e2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/f1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/f1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/f2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/f2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/f3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/f3.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/g1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/g1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/h1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/h1.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/h2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/h2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/asound\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/asound\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/29\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/29\/index.html",
+		"oF": 0
+		},
 	"\/ES3T1\/30\/aimg\/au.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -3731,6 +3968,90 @@
 		"oAP": "\/ES3T1\/30\/index.html",
 		"oF": 0
 		},
+	"\/ES3T1\/39\/aimg\/coronavirus.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/coronavirus.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/limpiador.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/limpiador.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/manos.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/manos.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/nino.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/nino.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/personas.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/personas.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/tos.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/tos.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/aimg\/virus.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES3T1\/39\/aimg\/virus.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES3T1\/39\/asound\/Aprendo que es un folleto Es3°T1_Inst_Ahora.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/39\/asound\/Aprendo que es un folleto Es3°T1_Inst_Ahora.mp3",
+		"oF": 0
+		},
+	"\/ES3T1\/39\/asound\/Aprendo que es un folleto Es3°T1_Inst_Coloca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/39\/asound\/Aprendo que es un folleto Es3°T1_Inst_Coloca.mp3",
+		"oF": 0
+		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4002,6 +4323,46 @@
 		"oAP": "\/ES4T1\/32\/index.html",
 		"oF": 0
 		},
+	"\/ES5T1\/26\/aimg\/piramide.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES5T1\/26\/aimg\/piramide.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES5T1\/35\/aimg\/anuncio.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES5T1\/35\/aimg\/anuncio.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES5T1\/35\/aimg\/propaganda.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES5T1\/35\/aimg\/propaganda.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE4T1\/227\/aimg\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE4T1\/227\/aimg\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/GE4T1\/231\/aimg\/azul.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4068,6 +4429,83 @@
 		"oA": 0,
 		"oAP": "\/GE4T1\/231\/index.html",
 		"oF": 0
+		},
+	"\/HI4T1\/254\/aimg\/hombre.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/254\/aimg\/hombre.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3",
+		"oF": 0
+		},
+	"\/HI4T1\/256\/aimg\/cazadores.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/cazadores.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/256\/aimg\/escritura.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/escritura.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/256\/aimg\/fuego.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/fuego.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/256\/aimg\/maiz.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/maiz.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/256\/aimg\/olmeca.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/olmeca.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T1\/256\/aimg\/tolteca.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T1\/256\/aimg\/tolteca.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/MA1T1\/100\/aimg\/azul.svg": {
 		"ft": 2097152,
@@ -5118,6 +5556,308 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA2T1\/145\/index.html",
+		"oF": 0
+		},
+	"\/MA3T1\/102\/aimg\/crucigrama-letras.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/102\/aimg\/crucigrama-letras.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/102\/aimg\/crucigrama.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/102\/aimg\/crucigrama.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/102\/aimg\/fondo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/102\/aimg\/fondo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/102\/aimg\/fondo2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/102\/aimg\/fondo2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/102\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/102\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/aimg\/circuito.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/106\/aimg\/circuito.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3",
 		"oF": 0
 		},
 	"\/MA3T1\/113\/aimg\/1.svg": {

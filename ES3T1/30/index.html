@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Escribo correctamente</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .palabras .drag{ width: 80px; height: 80px; margin: 5px; text-align: center; }
+        .palabras .drag img{width: 100%;}
+
+        .drop{
+            width: 80px; height: 80px;
+            background: #fff;
+            margin: 5px;
+            border-radius: 10px;
+            display: flex; justify-content: center; align-items: center;
+            box-sizing: border-box;
+        }
+        .drop.hover{ transform: scale(1.1); }
+        .drop img{ width: 100%; }
     </style>
     </head>
 <body>
@@ -19,16 +31,215 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="8" scene-color="#D4E5F7">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Escribo correctamente" text="Coloca en orden las sílabas para descubrir las palabras que se forman." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+
+                    <div class="row palabras mr-auto">
+                        <template v-for="it in [
+                            { name: 'to' },
+                            { name: 'gla' },
+                            { name: 'men' },
+                            { name: 're' },
+                        ]">
+                            <drag dropzone=".drop1" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c1">{{it.name}}</div> </drag>
+                        </template>
+                    </div>
+                    <div class="row palabras respuestas mr-auto" audio="asound/reglamento.mp3">
+                        <template v-for="it in [
+                            { name: 're' },
+                            { name: 'gla' },
+                            { name: 'men' },
+                            { name: 'to' },
+                        ]">
+                            <div class="drop drop1" :data="it.name" droptimes="untilok">  </div>
+                        </template>
+                    </div>
+                    
+                    <div class="row palabras ml-auto">
+                        <template v-for="it in [
+                            { name: 'te' },
+                            { name: 'ca' },
+                            { name: 'bi' },
+                            { name: 'blio' },
+                        ]">
+                            <drag dropzone=".drop2" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c2">{{it.name}}</div> </drag>
+                        </template>
+                    </div>
+                    <div class="row palabras respuestas ml-auto" audio="asound/biblioteca.mp3">
+                        <template v-for="it in [
+                            { name: 'bi' },
+                            { name: 'blio' },
+                            { name: 'te' },
+                            { name: 'ca' },
+                        ]">
+                            <div class="drop drop2" :data="it.name" droptimes="untilok">  </div>
+                        </template>
+                    </div>
+
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="7" scene-color="#C5382F">
+
+            <info type="dragdrop" title="Escribo correctamente" text="Coloca en orden las sílabas para descubrir las palabras que se forman." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+
+                <div class="row palabras ml-auto">
+                    <template v-for="it in [
+                        { name: 'au' },
+                        { name: 'vi' },
+                        { name: 'sual' },
+                        { name: 'dio' },
+                    ]">
+                        <drag dropzone=".drop1" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c3">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas ml-auto" audio="asound/audiovisual.mp3">
+                    <template v-for="it in [
+                        { name: 'au' },
+                        { name: 'dio' },
+                        { name: 'vi' },
+                        { name: 'sual' },
+                    ]">
+                        <div class="drop drop1" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
+                <div class="row palabras mr-auto">
+                    <template v-for="it in [
+                        { name: 'vis' },
+                        { name: 'ta' },
+                        { name: 're' },
+                    ]">
+                        <drag dropzone=".drop2" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c4">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas mr-auto" audio="asound/revista.mp3">
+                    <template v-for="it in [
+                        { name: 're' },
+                        { name: 'vis' },
+                        { name: 'ta' },
+                    ]">
+                        <div class="drop drop2" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="10" scene-color="#E0D8EB">
+
+            <info type="dragdrop" title="Escribo correctamente" text="Coloca en orden las sílabas para descubrir las palabras que se forman." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+
+                <div class="row palabras mr-auto">
+                    <template v-for="it in [
+                        { name: 'grá' },
+                        { name: 'ro' },
+                        { name: 'fi' },
+                        { name: 'co' },
+                        { name: 'me' },
+                        { name: 'he' },
+                    ]">
+                        <drag dropzone=".drop1" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c5">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas mr-auto" audio="asound/hemerografico.mp3">
+                    <template v-for="it in [
+                        { name: 'he' },
+                        { name: 'me' },
+                        { name: 'ro' },
+                        { name: 'grá' },
+                        { name: 'fi' },
+                        { name: 'co' },
+                    ]">
+                        <div class="drop drop1" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
+                <div class="row palabras ml-auto">
+                    <template v-for="it in [
+                        { name: 'di' },
+                        { name: 'pe' },
+                        { name: 'co' },
+                        { name: 'rió' },
+                    ]">
+                        <drag dropzone=".drop2" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c6">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas ml-auto" audio="asound/periodico.mp3">
+                    <template v-for="it in [
+                        { name: 'pe' },
+                        { name: 'rió' },
+                        { name: 'di' },
+                        { name: 'co' },
+                    ]">
+                        <div class="drop drop2" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#D4E5F7">
+
+            <info type="dragdrop" title="Escribo correctamente" text="Coloca en orden las sílabas para descubrir las palabras que se forman." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+
+                <div class="row palabras ml-auto">
+                    <template v-for="it in [
+                        { name: 'ves' },
+                        { name: 'gar' },
+                        { name: 'in' },
+                        { name: 'ti' },
+                    ]">
+                        <drag dropzone=".drop1" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c7">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas ml-auto" audio="asound/investigar.mp3">
+                    <template v-for="it in [
+                        { name: 'in' },
+                        { name: 'ves' },
+                        { name: 'ti' },
+                        { name: 'gar' },
+                    ]">
+                        <div class="drop drop1" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
+                <div class="row palabras mr-auto">
+                    <template v-for="it in [
+                        { name: 'gra' },
+                        { name: 'a' },
+                        { name: 'mo' },
+                        { name: 'fí' },
+                        { name: 'no' },
+                    ]">
+                        <drag dropzone=".drop2" :data="it.name" stay-if-ok append-to-dropzone> <div class="number small c8">{{it.name}}</div> </drag>
+                    </template>
+                </div>
+                <div class="row palabras respuestas mr-auto" audio="asound/monografia.mp3">
+                    <template v-for="it in [
+                        { name: 'mo' },
+                        { name: 'no' },
+                        { name: 'gra' },
+                        { name: 'fí' },
+                        { name: 'a' },
+                    ]">
+                        <div class="drop drop2" :data="it.name" droptimes="untilok">  </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
@@ -46,6 +257,7 @@
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
     <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
@@ -58,8 +270,22 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
-        app.$devmode = true
+        app.scenesCount = 4
+        app.$devmode = false
+
+        setInterval(function () {
+            var res = document.querySelectorAll('.respuestas')
+            for(i=0; i < res.length; i++){
+                var drops = res[i].querySelectorAll('.drop').length
+                var used = res[i].querySelectorAll('.dropzoneused').length
+                console.log('testing')
+                if(drops == used && res[i].getAttribute('audio')){
+                    var audio = res[i].getAttribute('audio')
+                    new Howl({ src: [audio], autoplay: true })
+                    res[i].removeAttribute('audio')
+                }
+            }
+        }, 1000)
     </script>
 </body>
 </html>

@@ -2,6 +2,12 @@
   padding: 0;
   margin: 0;
 }
+html {
+  background: #FDF4CE;
+}
+body {
+  display: none;
+}
 :root {
   --main: #5EB246;
   --sec: #005093;
@@ -629,5 +635,56 @@ embed {
   .mobile100 {
     flex-direction: column;
   }
+}
+.inputable {
+  background: #fff;
+  padding: 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.inputable input {
+  padding: 4px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.4rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.inputable input:hover,
+.inputable input:focus {
+  outline: none;
+}
+.inputable.c1 {
+  background: #5EB246;
+  box-shadow: 4px 4px 0 #55a03f, -1px -1px 0 #55a03f, 1px -1px 0 #55a03f, -1px 1px 0 #55a03f, 1px 1px 0 #55a03f;
+}
+.inputable.c2 {
+  background: #005093;
+  box-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
+}
+.inputable.c3 {
+  background: #AAE1FA;
+  box-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
+}
+.inputable.c4 {
+  background: #EB8B2E;
+  box-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
+}
+.inputable.c5 {
+  background: #DB3E34;
+  box-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
+}
+.inputable.c6 {
+  background: #F460AB;
+  box-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
+}
+.inputable.c7 {
+  background: #C1CA27;
+  box-shadow: 4px 4px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
+}
+.inputable.c8 {
+  background: #C0A7D0;
+  box-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
 }
 /*# sourceMappingURL=assets.css.map */

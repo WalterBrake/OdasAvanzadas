@@ -9,6 +9,10 @@
 
 *{padding: 0; margin: 0;}
 
+html{background: @beige;}
+body{
+    display: none;
+}
 
 :root {
     --main: @main;
@@ -476,4 +480,36 @@ embed {
     .mobile100{
         flex-direction: column;
     }
+}
+
+
+
+
+
+
+.inputable{
+	background: #fff;
+	padding: 4px;
+    border-radius: 10px;
+    box-sizing: border-box;
+	input{
+        padding: 4px;
+        width: 100%;
+        border-radius: 10px;
+		border: none;
+		font-size: 1.4rem;
+        text-align: center;
+        box-sizing: border-box;
+		&:hover, &:focus {
+			outline: none;
+		}
+    }
+    &.c1{  .conectorbg(@main); }
+    &.c2{ .conectorbg(@sec); }
+    &.c3{ .conectorbg(@clear); }
+    &.c4{ .conectorbg(@accent); }
+    &.c5{ .conectorbg(@wrongcol); }
+    &.c6 { .conectorbg(#F460AB); }
+    &.c7 { .conectorbg(#C1CA27); }
+    &.c8 { .conectorbg(#C0A7D0); }
 }

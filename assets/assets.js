@@ -108,3 +108,9 @@ var app = new Vue({
         this.score = h ? h : 100
     }
 })
+
+
+
+setTimeout(function() {
+    document.getElementsByTagName('body')[0].style.display = "block"
+}, 250)
