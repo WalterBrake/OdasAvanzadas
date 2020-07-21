@@ -3,13 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Obtengo resultados iguales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .info h2 {font-size: 1rem; }
+        .row { height: 80%; }
+        .col {
+            background: #fff;
+            height: 100%;
+            width: 30%;
+            text-align: center;
+            border-radius: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .col p { height: 20%; margin-bottom: auto; }
+        .col .cell {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 4px 0;
+            display: flex;
+        }
+        .col .cell .number { width: 50%; }
+        .col .cell .dropzone {
+            width: 50%;
+            background: #f5f5f5;
+            height: 100%;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .col .cell .dropzone .number { width: 100%; }
+        .col .cell .dropzone.blue { background: #3490D5; }
+        .col .cell .dropzone.green {
+            background: #72BF45;
+        }
+        .opciones {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .drag {
+            width: auto;
+            height: auto;
+            margin: 4px;
+        }
+        .drag .number{
+            padding: 1px 10px;
+            background: #fff;
+            border-radius: 40px;
+        }
+        @media (max-width:680px){
+            .number.small{
+                font-size: 1.2rem;
+            }
+            .col{
+                width: 35%;
+            }
+            .opciones {
+                width: 30%;
+            }
+        }
     </style>
     </head>
 <body>
@@ -19,11 +81,51 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="10" scene-color="#ED1C25">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Obtengo resultados iguales" text="Coloca en el recuadro verde, el par de multiplicaciones que tienen diferentes números  y el mismo resultado. Después coloca en el recuadro azul, las que tienen los mismos números en diferente orden y el mismo resultado. Observa el primer ejemplo en cada recuadro." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col green">
+                        <p>Diferentes números y el mismo resultado.</p>
+                        <div class="cell"><div class="number small c1">9x5</div><div class="dropzone green" droptimes="untilok" data=""><div class="number small c1">3x15</div></div></div>
+                        <div class="cell" v-for="i in [
+                        { val: '2x15', tx:'6x5' },
+                        { val: '14x2', tx:'7x4' },
+                        { val: '9x2', tx:'3x6' },
+                        { val: '10x4', tx:'8x5' },
+                        { val: '10x3', tx:'6x5' },
+                        ]"><div class="number small c1">{{i.tx}}</div><div class="dropzone green" droptimes="untilok" :data="i.val"></div></div>
+        
+                    </div>
+                    <div class="opciones">
+                        <drag v-for="i in [
+                        { val: '2x15' },
+                        { val: '9x2' },
+                        { val: '7x6' },
+                        { val: '10x3' },
+                        { val: '10x4' },
+                        { val: '3x2' },
+                        { val: '9x10' },
+                        { val: '2x10' },
+                        { val: '4x5' },
+                        { val: '14x2' },
+                            ]"
+                         dropzone=".dropzone" stay-if-ok append-to-dropzone :data="i.val" ><div class="number small c4">{{i.val}}</div></drag>
+                    </div>
+                    <div class="col blue">
+                        <p>Mismos números en diferente orden y el mismo resultado.</p>
+                        <div class="cell"><div class="dropzone blue" droptimes="untilok" data=""><div class="number small c2">4x20</div></div><div class="number small c2">20x4</div></div>
+                        <div class="cell" v-for="i in [
+                        { val: '9x10', tx:'10x9' },
+                        { val: '3x2', tx:'2x3' },
+                        { val: '7x6', tx:'6x7' },
+                        { val: '4x5', tx:'5x4' },
+                        { val: '2x10', tx:'10x2' },
+                        ]"><div class="dropzone blue" droptimes="untilok" :data="i.val"></div><div class="number small c2">{{i.tx}}</div></div>
+
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -57,9 +159,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.currentScene = 1
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>
