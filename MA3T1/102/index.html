@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        h2{
+        h2.h21, h2.h22{
             font-family: 'barnacle_boyregular';
             font-size: 1.6rem;
             margin: 10px;
@@ -62,7 +62,7 @@
             border-radius: 6px;
         }
         @media (max-width:680px){
-            h2{
+            h2.h21, h2.h22{
                 font-size: 1rem;
                 display: none;
             }
@@ -106,7 +106,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="15" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Juego con sumas y restas" text="Resuelve las siguientes sumas y restas mentalmente y selecciona tu respuesta en el crucigrama." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="input" title="Juego con sumas y restas" text="Resuelve las siguientes sumas y restas mentalmente y selecciona tu respuesta en el crucigrama." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100 wmob">
                     <div class="preguntas">

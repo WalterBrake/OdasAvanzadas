@@ -16,6 +16,7 @@ Vue.component('info', {
                     <lottie-player v-if="type=='dragdrop'" src="../../assets/lottie/DragNDrop.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
                     <lottie-player v-if="type=='seleccionar'" src="../../assets/lottie/Seleccionar.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
                     <lottie-player v-if="type=='relacionar'" src="../../assets/lottie/Relacionar.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
+                    <lottie-player v-if="type=='input'" src="../../assets/lottie/Input.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
                 </div>
             </div>
             <button class="reset button" @click="reset">Reiniciar</button>
