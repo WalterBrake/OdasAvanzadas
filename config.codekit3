@@ -5588,276 +5588,82 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA3T1\/102\/aimg\/fondo2.svg": {
+	"\/MA3T1\/102\/aimg\/pez.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA3T1\/102\/aimg\/fondo2.svg",
+		"oAP": "\/MA3T1\/102\/aimg\/pez.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA3T1\/102\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3": {
+	"\/MA3T1\/102\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T1\/102\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3",
+		"oAP": "\/MA3T1\/102\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/106\/aimg\/circuito.svg": {
+	"\/MA3T1\/102\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/102\/index.html",
+		"oF": 0
+		},
+	"\/MA3T1\/104\/aimg\/crucigrama-letras.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA3T1\/106\/aimg\/circuito.svg",
+		"oAP": "\/MA3T1\/104\/aimg\/crucigrama-letras.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3": {
+	"\/MA3T1\/104\/aimg\/crucigrama.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/104\/aimg\/crucigrama.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/104\/aimg\/fondo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/104\/aimg\/fondo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/104\/aimg\/fondo2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/104\/aimg\/fondo2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/104\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3",
+		"oAP": "\/MA3T1\/104\/asound\/Juego con sumas y restas Ma3°T1_Inst_Resuelve.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3": {
+	"\/MA3T1\/104\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3",
+		"oAP": "\/MA3T1\/104\/index.html",
 		"oF": 0
 		},
 	"\/MA3T1\/113\/aimg\/1.svg": {
@@ -5990,6 +5796,55 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/MA3T1\/113\/asound\/1111.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/1111.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/1121.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/1121.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/1434.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/1434.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/1974.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/1974.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/2974.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/2974.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/4210-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/4210-1.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/113\/asound\/4320-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/113\/asound\/4320-2.mp3",
+		"oF": 0
+		},
 	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_O.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -6004,39 +5859,11 @@
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Inst_Valores.mp3",
 		"oF": 0
 		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op1.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op2.mp3",
-		"oF": 0
-		},
 	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int2_Op3.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op1.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op2.mp3",
 		"oF": 0
 		},
 	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int3_Op3.mp3": {
@@ -6128,27 +5955,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int7_Op3.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1434.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_1974.mp3",
-		"oF": 0
-		},
-	"\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA3T1\/113\/asound\/Sigo desarmando números Ma3ºT1_Int_2974.mp3",
 		"oF": 0
 		},
 	"\/MA3T1\/113\/index.html": {
@@ -6430,6 +6236,261 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T1\/127\/index.html",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/aimg\/circuito.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T1\/_106\/aimg\/circuito.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst2_AldoSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst3_NidiaSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst4_JazminSaltos.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Inst_Lee.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#10.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#12.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#14.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#16.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#18.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#2.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#20.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#22.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#24.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#26.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#28.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#30.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#32.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#34.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#36.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#38.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#4.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#40.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#42.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#44.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#46.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#48.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#50.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#52.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#54.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#56.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#58.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#6.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#60.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Int_#8.mp3",
+		"oF": 0
+		},
+	"\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T1\/_106\/asound\/Completo series con operaciones Ma3ºT1_Sit_Circuito.mp3",
 		"oF": 0
 		},
 	"\/MA4T1\/111\/aimg\/az.svg": {

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego con sumas y restas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        h2{
+            font-family: 'barnacle_boyregular';
+            font-size: 1.6rem;
+            margin: 10px;
+        }
+        .h21{ color: var(--main); }
+        .h22{ color: var(--sec); }
+        .q{
+            padding: 1px 10px;
+            border-radius: 8px;
+            display: inline-block;
+            color: #AD97BB;
+        }
+        .cruci{ position: relative; }
+        .boxes{
+            position: absolute;
+            left: 20%; top: 20%;
+            width: 60%; height: 60%;
+
+        }
+        .box{
+            width: 11.1%;
+            height: 11.1%;
+            box-sizing: border-box;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .box.bl{
+            background: #AD97BB;
+            position: relative;
+            border-radius: 4px;
+            transform: scale(0.5);
+        }
+        .inputable{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .inputable input{ height: 100%; }
+        .preguntas{
+            margin-right: 10px;
+            text-align: center;
+        }
+        .pregunta{
+            background: #fff;
+            padding: 4px;
+            margin: 2px;
+            border-radius: 6px;
+        }
+        @media (max-width:680px){
+            h2{
+                font-size: 1rem;
+                display: none;
+            }
+            .wmob{
+                flex-direction: column;
+            }
+            .preguntas{
+                width: 100%;
+                display:  flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .pregunta{flex-direction: column; }
+            .pregunta .number.small{
+                font-size: 1rem;
+                -webkit-text-stroke-width: 1px;
+            }
+            .pregunta .number.small:first-child{
+                font-size: 0.8rem;
+                display: block;
+            }
+            .cruci{
+                width: 100%;
+            }
+            .boxes{
+                left: 10%; top: 10%;
+                width: 80%; height: 80%;
+            }
+            .box .number.small{
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="15" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Juego con sumas y restas" text="Resuelve las siguientes sumas y restas mentalmente y selecciona tu respuesta en el crucigrama." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wmob">
+                    <div class="preguntas">
+                        <h2 class="h21 w100">Verticales</h2>
+                        <div class="pregunta" v-for="it in [
+                            { l: 'A.', p: '46+24' },
+                            { l: 'B.', p: '45+35' },
+                            { l: 'C.', p: '22+28' },
+                            { l: 'D.', p: '24+11' },
+                            { l: 'E.', p: '50+45' },
+                        ]">
+                            <span class="number small c1 mr-1">{{it.l}}</span> <span class="number small c4">{{it.p}}</span>
+                        </div>
+                        <h2 class="h22 w100">Horizontales</h2>
+                        <div class="pregunta" v-for="it in [
+                            { l: 'A.', p: '56-16' },
+                            { l: 'B.', p: '72-20' },
+                            { l: 'C.', p: '82-22' },
+                            { l: 'D.', p: '50-25' },
+                            { l: 'E.', p: '25-10' },
+                        ]">
+                            <span class="number small c2 mr-1">{{it.l}}</span> <span class="number small c4">{{it.p}}</span>
+                        </div>
+                    </div><!--preguntas-->
+                    <div class="cruci w70">
+                        <img src="aimg/pez.svg" class="w100">
+                        <div class="boxes row wrap">
+                            <template v-for="(it, ind) in 82">
+                                <div v-if="ind==0"></div>
+
+                                <div class="box t" v-else-if="ind==3"><div class="number small c1">A</div></div>
+                                <div class="box t" v-else-if="ind==22"><div class="number small c1">B</div></div>
+                                <div class="box t" v-else-if="ind==41"><div class="number small c1">C</div></div>
+                                <div class="box t" v-else-if="ind==52"><div class="number small c1">D</div></div>
+                                <div class="box t" v-else-if="ind==63"><div class="number small c1">E</div></div>
+                                
+                                <div class="box t" v-else-if="ind==19"><div class="number small c2">A</div></div>
+                                <div class="box t" v-else-if="ind==49"><div class="number small c2">B</div></div>
+                                <div class="box t" v-else-if="ind==57"><div class="number small c2">C</div></div>
+                                <div class="box t" v-else-if="ind==68"><div class="number small c2">D</div></div>
+                                <div class="box t" v-else-if="ind==79"><div class="number small c2">E</div></div>
+                                
+
+                                <div class="box" v-else-if="ind==12"><inputable initclass="c8" isok="7"><div class="number small c8">7</div></inputable></div>
+                                <div class="box" v-else-if="ind==20"><inputable initclass="c8" isok="4"><div class="number small c8">4</div></inputable></div>
+                                <div class="box" v-else-if="ind==21"><inputable initclass="c8" isok="0"><div class="number small c8">0</div></inputable></div>
+                                <div class="box" v-else-if="ind==31"><inputable initclass="c8" isok="8"><div class="number small c8">8</div></inputable></div>
+                                <div class="box" v-else-if="ind==40"><inputable initclass="c8" isok="0"><div class="number small c8">0</div></inputable></div>
+                                <div class="box" v-else-if="ind==50"><inputable initclass="c8" isok="5"><div class="number small c8">5</div></inputable></div>
+                                <div class="box" v-else-if="ind==51"><inputable initclass="c8" isok="2"><div class="number small c8">2</div></inputable></div>
+                                <div class="box" v-else-if="ind==58"><inputable initclass="c8" isok="6"><div class="number small c8">6</div></inputable></div>
+                                <div class="box" v-else-if="ind==59"><inputable initclass="c8" isok="0"><div class="number small c8">0</div></inputable></div>
+                                <div class="box" v-else-if="ind==61"><inputable initclass="c8" isok="3"><div class="number small c8">3</div></inputable></div>
+                                <div class="box" v-else-if="ind==69"><inputable initclass="c8" isok="2"><div class="number small c8">2</div></inputable></div>
+                                <div class="box" v-else-if="ind==70"><inputable initclass="c8" isok="5"><div class="number small c8">5</div></inputable></div>
+                                <div class="box" v-else-if="ind==72"><inputable initclass="c8" isok="9"><div class="number small c8">9</div></inputable></div>
+                                <div class="box" v-else-if="ind==80"><inputable initclass="c8" isok="1"><div class="number small c8">1</div></inputable></div>
+                                <div class="box" v-else-if="ind==81"><inputable initclass="c8" isok="5"><div class="number small c8">5</div></inputable></div>
+
+
+                                <div class="box bl" v-else-if="ind==60"></div>
+                                <div class="box" v-else></div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
