@@ -1,5 +1,5 @@
 Vue.component('dialogaudio', {
-    props: ['text', 'audio', 'autoplay', 'showOnPlay', 'showWhilePlay'],
+    props: ['text', 'audio', 'autoplay', 'showOnPlay', 'showWhilePlay', 'alwaysVisible'],
     data() {
         return {
             playing: false,
@@ -55,12 +55,18 @@ Vue.component('dialogaudio', {
             if(this.showWhilePlay!=undefined) {
                 this.visibleContent = this.playing
             }
+            if(this.alwaysVisible!=undefined) {
+                this.visibleContent = true
+            }
         }
     },
     mounted () {
         this.loadAudio()
         if(this.autoplay){
             this.playstop()
+        }
+        if(this.alwaysVisible!=undefined) {
+            this.visibleContent = true
         }
     }
 })

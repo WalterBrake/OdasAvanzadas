@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Sigo desarmando números</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .info h2 {
+            font-size: 1.2rem;
+        }
+        .dialogaudio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .dialogaudio .audiotextBtn {
+            width: 15%;
+            max-width: 36px;
+        }
+        .dialog-content {
+            width: 85%;
+        }
+        .dialog-content img {
+            width: 100%;
+            max-height: 30px;
+        }
+        .option {
+            padding: 1px 10px 10px 10px;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .option .dialogaudio { width: 80px; height: 60px; margin: 0 auto; }
+        .option .audiotextBtn { width: 100%; }
+        .option .clickable img{ width: 30px; margin: 1px; }
+        .option .clickable{
+            background: #fff; padding: 6px 20px; border-radius: 10px;
+        }
+        @media (max-width:680px){
+            .option .clickable img{ width: 20px; }
+        }
     </style>
     </head>
 <body>
@@ -19,16 +53,263 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.valores.playstop()">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible>
+                    <img src="aimg/1.svg">
+                    <img src="aimg/10.svg">
+                    <img src="aimg/100.svg">
+                    <img src="aimg/1000.svg">
+                </dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100"><div class="number c1">1 974</div></div>
+                        <div class="option">
+                            <dialogaudio audio="asound/1974.mp3"></dialogaudio>
+                            <clickable :isok="true" v-model="temporals[0]">
+                                <img v-for="i in 1" src="aimg/morado.svg">
+                                <img v-for="i in 9" src="aimg/verde.svg">
+                                <img v-for="i in 7" src="aimg/azul.svg">
+                                <img v-for="i in 4" src="aimg/amarillo.svg">
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/1434.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <img v-for="i in 1" src="aimg/morado.svg">
+                                <img v-for="i in 4" src="aimg/verde.svg">
+                                <img v-for="i in 3" src="aimg/azul.svg">
+                                <img v-for="i in 4" src="aimg/amarillo.svg">
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/2974.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <img v-for="i in 2" src="aimg/morado.svg">
+                                <img v-for="i in 9" src="aimg/verde.svg">
+                                <img v-for="i in 7" src="aimg/azul.svg">
+                                <img v-for="i in 4" src="aimg/amarillo.svg">
+                            </clickable>
+                        </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100 mb-1"><div class="number c1">4 111</div></div>
+                        <div class="option">
+                            <dialogaudio audio="asound/4000200101.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">4 000 + 200 + 10 + 1</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/4000300202.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">4 000 + 300 + 20 + 2</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/4000100101.mp3"></dialogaudio>
+                            <clickable :isok="true" v-model="temporals[0]">
+                                <div class="number small c2">4 000 + 100 + 10 + 1</div>
+                            </clickable>
+                        </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100"><div class="number c1">1 111</div></div>
+                    <div class="option">
+                        <dialogaudio audio="asound/1121.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 1" src="aimg/morado.svg">
+                            <img v-for="i in 1" src="aimg/verde.svg">
+                            <img v-for="i in 2" src="aimg/azul.svg">
+                            <img v-for="i in 1" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/1111.mp3"></dialogaudio>
+                        <clickable :isok="true" v-model="temporals[0]">
+                            <img v-for="i in 1" src="aimg/morado.svg">
+                            <img v-for="i in 1" src="aimg/verde.svg">
+                            <img v-for="i in 1" src="aimg/azul.svg">
+                            <img v-for="i in 1" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/2111.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 2" src="aimg/morado.svg">
+                            <img v-for="i in 1" src="aimg/verde.svg">
+                            <img v-for="i in 1" src="aimg/azul.svg">
+                            <img v-for="i in 1" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100 mb-1"><div class="number c1">13 974</div></div>
+                        <div class="option">
+                            <dialogaudio audio="asound/100003000900704.mp3"></dialogaudio>
+                            <clickable :isok="true" v-model="temporals[0]">
+                                <div class="number small c2">10 000 + 3 000 + 900 + 70 + 4</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/200004000900704.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">20 000 + 4 000 + 900 + 70 + 4</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/100003000900605.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">10 000 + 3 000 + 900 + 60 + 5</div>
+                            </clickable>
+                        </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100"><div class="number c1">2 413</div></div>
+                    <div class="option">
+                        <dialogaudio audio="asound/2926.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 2" src="aimg/morado.svg">
+                            <img v-for="i in 9" src="aimg/verde.svg">
+                            <img v-for="i in 2" src="aimg/azul.svg">
+                            <img v-for="i in 6" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/2413.mp3"></dialogaudio>
+                        <clickable :isok="true" v-model="temporals[0]">
+                            <img v-for="i in 2" src="aimg/morado.svg">
+                            <img v-for="i in 4" src="aimg/verde.svg">
+                            <img v-for="i in 1" src="aimg/azul.svg">
+                            <img v-for="i in 3" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/2431.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 2" src="aimg/morado.svg">
+                            <img v-for="i in 4" src="aimg/verde.svg">
+                            <img v-for="i in 3" src="aimg/azul.svg">
+                            <img v-for="i in 1" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100 mb-1"><div class="number c1">1 964</div></div>
+                        <div class="option">
+                            <dialogaudio audio="asound/2000800604.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">2 000 + 800 + 60 + 4</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/1000900605.mp3"></dialogaudio>
+                            <clickable block-if-error :isok="false">
+                                <div class="number small c2">1 000 + 900 + 60 + 5</div>
+                            </clickable>
+                        </div>
+                        <div class="option">
+                            <dialogaudio audio="asound/1000900604.mp3"></dialogaudio>
+                            <clickable :isok="true" v-model="temporals[0]">
+                                <div class="number small c2">1 000 + 900 + 60 + 4</div>
+                            </clickable>
+                        </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Sigo desarmando números" text="Observa los siguientes números y selecciona su representación correcta." textaudio="asound/instruccion.mp3" :autoplay="false">
+                <dialogaudio audio="asound/valores.mp3" ref="valores" always-visible><img src="aimg/1.svg"><img src="aimg/10.svg"><img src="aimg/100.svg"><img src="aimg/1000.svg"></dialogaudio>
+            </info>
+            <activity>
+                    <div class="row w100"><div class="number c1">10 974</div></div>
+                    <div class="option">
+                        <dialogaudio audio="asound/10974.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 10" src="aimg/morado.svg">
+                            <img v-for="i in 9" src="aimg/verde.svg">
+                            <img v-for="i in 7" src="aimg/azul.svg">
+                            <img v-for="i in 4" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/10434.mp3"></dialogaudio>
+                        <clickable :isok="true" v-model="temporals[0]">
+                            <img v-for="i in 10" src="aimg/morado.svg">
+                            <img v-for="i in 4" src="aimg/verde.svg">
+                            <img v-for="i in 3" src="aimg/azul.svg">
+                            <img v-for="i in 4" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+                    <div class="option">
+                        <dialogaudio audio="asound/11974.mp3"></dialogaudio>
+                        <clickable block-if-error :isok="false">
+                            <img v-for="i in 11" src="aimg/morado.svg">
+                            <img v-for="i in 9" src="aimg/verde.svg">
+                            <img v-for="i in 7" src="aimg/azul.svg">
+                            <img v-for="i in 4" src="aimg/amarillo.svg">
+                        </clickable>
+                    </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==8" :key="8" end-scene :final-data="finalData"></scene>
     
 
     
@@ -58,8 +339,8 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
-        app.$devmode = true
+        app.scenesCount = 7
+        app.$devmode = false
     </script>
 </body>
 </html>

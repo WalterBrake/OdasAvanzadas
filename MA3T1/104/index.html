@@ -80,7 +80,7 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="10" scene-color="#ED1C25">
 
             <info type="dragdrop" title="Obtengo resultados iguales" text="Coloca en el recuadro verde, el par de multiplicaciones que tienen diferentes números  y el mismo resultado. Después coloca en el recuadro azul, las que tienen los mismos números en diferente orden y el mismo resultado. Observa el primer ejemplo en cada recuadro." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
