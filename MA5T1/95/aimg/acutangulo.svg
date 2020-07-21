@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 569 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,-3649.6,-4708.42)">
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,232.731,369.273)">
+                <path d="M0,-98.213C-4.697,-98.213 -8.504,-94.406 -8.504,-89.709L-8.504,-8.504C-8.504,-3.808 -4.697,0 0,0L115.22,0C119.917,0 123.724,-3.808 123.724,-8.504L123.724,-89.709C123.724,-94.406 119.917,-98.213 115.22,-98.213L0,-98.213Z" style="fill:rgb(255,247,0);fill-rule:nonzero;stroke:rgb(226,218,63);stroke-width:1px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,267.413,274.858)">
+                <path d="M0,45.523L45.523,45.523L22.762,0L0,45.523Z" style="fill:rgb(255,247,220);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,269.773,320.382)">
+                <path d="M0,-4.771L-2.36,0L2.735,0C4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,310.579,320.382)">
+                <path d="M0,-4.771L2.36,0L-2.735,0C-4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,293.169,277.112)">
+                <path d="M0,3.719L-2.991,-2.361L-5.951,3.719C-2.482,6.08 0,3.719 0,3.719Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,-18.72,-1.7053e-13)">
+                <text x="251.322px" y="349.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11px;fill:rgb(35,31,32);">S<tspan x="256.835px 262.897px 267.288px 271.747px 275.411px 279.031px 284.511px 288.901px 293.36px 298.751px 304.847px 310.953px 317.016px 319.646px 325.653px 330.044px 334.503px 343.634px 346.254px 352.448px 357.927px " y="349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px ">us tres ángulos miden</tspan></text>
+                <text x="274.178px" y="360.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11px;fill:rgb(35,31,32);">m<tspan x="283.309px 288.788px 294.884px 300.891px 305.282px 309.741px 315.935px 321.414px 325.873px 331.573px 337.272px " y="360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px ">enos de 90º</tspan></text>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <text x="259.891px" y="334.931px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:10px;fill:rgb(189,86,160);">A<tspan x="267.446px 272.96px 279.718px 283.962px 290.033px 296.791px 303.579px 310.338px 313.781px " y="334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px ">cutángulo</tspan></text>
+        </g>
+    </g>
+</svg>

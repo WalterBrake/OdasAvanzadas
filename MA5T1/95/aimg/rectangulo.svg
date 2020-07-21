@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 569 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,-2968.23,-4708.42)">
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,69.2008,369.273)">
+                <path d="M0,-98.213C-4.697,-98.213 -8.504,-94.406 -8.504,-89.709L-8.504,-8.504C-8.504,-3.808 -4.697,0 0,0L115.22,0C119.917,0 123.724,-3.808 123.724,-8.504L123.724,-89.709C123.724,-94.406 119.917,-98.213 115.22,-98.213L0,-98.213Z" style="fill:rgb(255,247,0);fill-rule:nonzero;stroke:rgb(226,218,63);stroke-width:1px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,103.617,320.296)">
+                <path d="M0,-46.047L0,0L45.792,0L0,-46.047Z" style="fill:rgb(255,247,220);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,0,-129.581)">
+                <rect x="103.617" y="445.058" width="4.819" height="4.819" style="fill:rgb(255,233,158);stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <g transform="matrix(1,0,0,1,-12.96,-1.7053e-13)">
+                <text x="79.708px" y="349.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11px;fill:rgb(35,31,32);">T<tspan x="85.234px 87.999px 93.623px 99.864px 105.489px 107.077px 113.284px 119.525px 121.751px 127.287px 133.528px 139.78px 145.987px 148.763px 154.916px 158.524px 164.864px 171.071px " y="349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px 349.635px ">iene un ángulo que</tspan></text>
+                <text x="178.922px" y="349.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11px;fill:rgb(35,31,32);">m<tspan x="188.125px 190.817px 197.084px " y="349.635px 349.635px 349.635px ">ide</tspan></text>
+                <text x="102.031px" y="360.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11px;fill:rgb(35,31,32);">e<tspan x="107.495px 112.805px 118.269px " y="360.635px 360.635px 360.635px ">xac</tspan>ta<tspan x="132.45px 141.654px 147.205px 153.318px 156.989px 162.541px 164.694px 170.466px 176.238px 180.206px " y="360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px 360.635px ">mente 90º.</tspan></text>
+            </g>
+        </g>
+        <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
+            <text x="97.081px" y="334.931px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:10px;fill:rgb(146,124,69);">R<tspan x="104.179px 110.237px 115.757px 120.008px 126.085px 132.851px 139.646px 146.411px 149.861px " y="334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px 334.931px ">ectángulo</tspan></text>
+        </g>
+    </g>
+</svg>
