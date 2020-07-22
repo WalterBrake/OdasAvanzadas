@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Comparo precios</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .col{
+            width: 25%; box-sizing: border-box; border: 2px solid var(--beige); border-radius: 6px; text-align: center; height: 100%; background: #B7CF92;
+            display: flex; justify-content: center; align-items: center;
+            padding: 4px;
+        }
+        .col img {width: 80%; margin: 0 auto; max-height: 50px; }
+        .col h3{ color: #fff; font-family: 'barnacle_boyregular'; }
+        .col.head { background: var(--main); padding: 6px;}
+        .col.head:last-child { background: var(--sec);}
+        .col:last-child{ background: #7393AC; }
+        .dropzone.hover{ background: var(--accent); }
+        .opciones{margin-top: auto;}
+        .clickable>img{width: 100%; max-height: 60px; }
+        .dialogaudio{width: 40px; margin: 0 auto; }
+        .clickable .number { text-align:center; padding: 10px 20px; }
+        @media (max-width:680px){
+            .clickable .number.small { font-size: 1.4rem; padding: 10px; }
+
+        }
     </style>
     </head>
 <body>
@@ -18,17 +36,301 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#B7CE92">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Comparo precios" text="El dueño de la juguetería “Chicos y Chavos” está revisando unas fotos de su aparador de 2019 y del actual aparador; ayúdale a completar la tabla colocando la opción correcta." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col head"><h3>Producto</h3></div>
+                    <div class="col head"><h3>Precio 2019</h3></div>
+                    <div class="col head"><h3>Precio 2020</h3></div>
+                    <div class="col head"><h3>Diferencia</h3></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/muneca.svg"></dialogaudio></div>
+                    <div class="col"><div class="number small c1">$235</div></div>
+                    <div class="col"><div class="number small c1">$280</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$45"></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/bebe.svg"></div>
+                    <div class="col"><div class="number small c1">$175</div></div>
+                    <div class="col"><div class="number small c1">$190</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$15"></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/balon.svg"></div>
+                    <div class="col"><div class="number small c1">$360</div></div>
+                    <div class="col"><div class="number small c1">$400</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$40"></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/canicas.svg"></div>
+                    <div class="col"><div class="number small c1">$35</div></div>
+                    <div class="col"><div class="number small c1">$45</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$10"></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/patineta.svg"></div>
+                    <div class="col"><div class="number small c1">$180</div></div>
+                    <div class="col"><div class="number small c1">$200</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$20"></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/tablet.svg"></div>
+                    <div class="col"><div class="number small c1">$700</div></div>
+                    <div class="col"><div class="number small c1">$780</div></div>
+                    <div class="col dropzone" droptimes="untilok" data="$80"></div>
+                </div>
+                <div class="row w100 opciones">
+                    <div v-for="i in [
+                    '40',
+                    '45',
+                    '15',
+                    '80',
+                    '20',
+                    '10',
+                    ]"><drag :data="'$'+i" dropzone=".dropzone" stay-if-ok append-to-dropzone :dragsound="'asound/'+i+'.mp3'"><div class="number small c2">${{i}}</div></drag>
+
+                </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#B7CE92">
+
+            <info type="seleccionar" title="Comparo precios" text="¿Qué producto subió $80 de un año a otro?" textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col head"><h3>Producto</h3></div>
+                    <div class="col head"><h3>Precio 2019</h3></div>
+                    <div class="col head"><h3>Precio 2020</h3></div>
+                    <div class="col head"><h3>Diferencia</h3></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/muneca.svg"></dialogaudio></div>
+                    <div class="col"><div class="number small c1">$235</div></div>
+                    <div class="col"><div class="number small c1">$280</div></div>
+                    <div class="col dropzone"><div class="number small c2">$45</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/bebe.svg"></div>
+                    <div class="col"><div class="number small c1">$175</div></div>
+                    <div class="col"><div class="number small c1">$190</div></div>
+                    <div class="col dropzone"><div class="number small c2">$15</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/balon.svg"></div>
+                    <div class="col"><div class="number small c1">$360</div></div>
+                    <div class="col"><div class="number small c1">$400</div></div>
+                    <div class="col dropzone"><div class="number small c2">$40</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/canicas.svg"></div>
+                    <div class="col"><div class="number small c1">$35</div></div>
+                    <div class="col"><div class="number small c1">$45</div></div>
+                    <div class="col dropzone"><div class="number small c2">$10</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/patineta.svg"></div>
+                    <div class="col"><div class="number small c1">$180</div></div>
+                    <div class="col"><div class="number small c1">$200</div></div>
+                    <div class="col dropzone"><div class="number small c2">$20</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/tablet.svg"></div>
+                    <div class="col"><div class="number small c1">$700</div></div>
+                    <div class="col"><div class="number small c1">$780</div></div>
+                    <div class="col dropzone"><div class="number small c2">$80</div></div>
+                </div>
+                <div class="row w100 opciones">
+                    <div><clickable :isok="true" v-model="temporals[0]"><img src="aimg/tablet.svg"></clickable><dialogaudio audio="asound/tableta.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/balon.svg"></clickable><dialogaudio audio="asound/balon.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/canicas.svg"></clickable><dialogaudio audio="asound/canicas.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/patineta.svg"></clickable><dialogaudio audio="asound/patineta.mp3"></dialogaudio></div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#B7CE92">
+
+            <info type="seleccionar" title="Comparo precios" text="¿Qué producto tuvo menos aumento?" textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col head"><h3>Producto</h3></div>
+                    <div class="col head"><h3>Precio 2019</h3></div>
+                    <div class="col head"><h3>Precio 2020</h3></div>
+                    <div class="col head"><h3>Diferencia</h3></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/muneca.svg"></dialogaudio></div>
+                    <div class="col"><div class="number small c1">$235</div></div>
+                    <div class="col"><div class="number small c1">$280</div></div>
+                    <div class="col dropzone"><div class="number small c2">$45</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/bebe.svg"></div>
+                    <div class="col"><div class="number small c1">$175</div></div>
+                    <div class="col"><div class="number small c1">$190</div></div>
+                    <div class="col dropzone"><div class="number small c2">$15</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/balon.svg"></div>
+                    <div class="col"><div class="number small c1">$360</div></div>
+                    <div class="col"><div class="number small c1">$400</div></div>
+                    <div class="col dropzone"><div class="number small c2">$40</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/canicas.svg"></div>
+                    <div class="col"><div class="number small c1">$35</div></div>
+                    <div class="col"><div class="number small c1">$45</div></div>
+                    <div class="col dropzone"><div class="number small c2">$10</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/patineta.svg"></div>
+                    <div class="col"><div class="number small c1">$180</div></div>
+                    <div class="col"><div class="number small c1">$200</div></div>
+                    <div class="col dropzone"><div class="number small c2">$20</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/tablet.svg"></div>
+                    <div class="col"><div class="number small c1">$700</div></div>
+                    <div class="col"><div class="number small c1">$780</div></div>
+                    <div class="col dropzone"><div class="number small c2">$80</div></div>
+                </div>
+                <div class="row w100 opciones">
+                    <div><clickable :isok="false" block-if-error><img src="aimg/balon.svg"></clickable><dialogaudio audio="asound/balon.mp3"></dialogaudio></div>
+                    <div><clickable :isok="true" v-model="temporals[0]"><img src="aimg/canicas.svg"></clickable><dialogaudio audio="asound/canicas.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/bebe.svg"></clickable><dialogaudio audio="asound/bebe.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/muneca.svg"></clickable><dialogaudio audio="asound/muneca.mp3"></dialogaudio></div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#B7CE92">
+
+            <info type="seleccionar" title="Comparo precios" text="¿Qué producto aumentó $45?" textaudio="asound/instruccion4.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col head"><h3>Producto</h3></div>
+                    <div class="col head"><h3>Precio 2019</h3></div>
+                    <div class="col head"><h3>Precio 2020</h3></div>
+                    <div class="col head"><h3>Diferencia</h3></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/muneca.svg"></dialogaudio></div>
+                    <div class="col"><div class="number small c1">$235</div></div>
+                    <div class="col"><div class="number small c1">$280</div></div>
+                    <div class="col dropzone"><div class="number small c2">$45</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/bebe.svg"></div>
+                    <div class="col"><div class="number small c1">$175</div></div>
+                    <div class="col"><div class="number small c1">$190</div></div>
+                    <div class="col dropzone"><div class="number small c2">$15</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/balon.svg"></div>
+                    <div class="col"><div class="number small c1">$360</div></div>
+                    <div class="col"><div class="number small c1">$400</div></div>
+                    <div class="col dropzone"><div class="number small c2">$40</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/canicas.svg"></div>
+                    <div class="col"><div class="number small c1">$35</div></div>
+                    <div class="col"><div class="number small c1">$45</div></div>
+                    <div class="col dropzone"><div class="number small c2">$10</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/patineta.svg"></div>
+                    <div class="col"><div class="number small c1">$180</div></div>
+                    <div class="col"><div class="number small c1">$200</div></div>
+                    <div class="col dropzone"><div class="number small c2">$20</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/tablet.svg"></div>
+                    <div class="col"><div class="number small c1">$700</div></div>
+                    <div class="col"><div class="number small c1">$780</div></div>
+                    <div class="col dropzone"><div class="number small c2">$80</div></div>
+                </div>
+                <div class="row w100 opciones">
+                    <div><clickable :isok="false" block-if-error><img src="aimg/bebe.svg"></clickable><dialogaudio audio="asound/bebe.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/patineta.svg"></clickable><dialogaudio audio="asound/patineta.mp3"></dialogaudio></div>
+                    <div><clickable :isok="true" v-model="temporals[0]"><img src="aimg/muneca.svg"></clickable><dialogaudio audio="asound/muneca.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><img src="aimg/balon.svg"></clickable><dialogaudio audio="asound/balon.mp3"></dialogaudio></div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#B7CE92">
+
+            <info type="seleccionar" title="Comparo precios" text="Ángel tiene 500 pesos y quiere comprar un balón; con el cambio también quiere comprar bolsas de canicas, ¿cuántas bolsas de canicas puede comprar?" textaudio="asound/instruccion5.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col head"><h3>Producto</h3></div>
+                    <div class="col head"><h3>Precio 2019</h3></div>
+                    <div class="col head"><h3>Precio 2020</h3></div>
+                    <div class="col head"><h3>Diferencia</h3></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/muneca.svg"></dialogaudio></div>
+                    <div class="col"><div class="number small c1">$235</div></div>
+                    <div class="col"><div class="number small c1">$280</div></div>
+                    <div class="col dropzone"><div class="number small c2">$45</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/bebe.svg"></div>
+                    <div class="col"><div class="number small c1">$175</div></div>
+                    <div class="col"><div class="number small c1">$190</div></div>
+                    <div class="col dropzone"><div class="number small c2">$15</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/balon.svg"></div>
+                    <div class="col"><div class="number small c1">$360</div></div>
+                    <div class="col"><div class="number small c1">$400</div></div>
+                    <div class="col dropzone"><div class="number small c2">$40</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/canicas.svg"></div>
+                    <div class="col"><div class="number small c1">$35</div></div>
+                    <div class="col"><div class="number small c1">$45</div></div>
+                    <div class="col dropzone"><div class="number small c2">$10</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/patineta.svg"></div>
+                    <div class="col"><div class="number small c1">$180</div></div>
+                    <div class="col"><div class="number small c1">$200</div></div>
+                    <div class="col dropzone"><div class="number small c2">$20</div></div>
+                </div>
+                <div class="row w100">
+                    <div class="col"><img src="aimg/tablet.svg"></div>
+                    <div class="col"><div class="number small c1">$700</div></div>
+                    <div class="col"><div class="number small c1">$780</div></div>
+                    <div class="col dropzone"><div class="number small c2">$80</div></div>
+                </div>
+                <div class="row w100 opciones">
+                    <div><clickable :isok="true" v-model="temporals[0]"><div class="number small c4">2 bolsas</div></clickable><dialogaudio audio="asound/2canicas.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><div class="number small c4">1 bolsa</div></clickable><dialogaudio audio="asound/1canicas.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><div class="number small c4">4 bolsas</div></clickable><dialogaudio audio="asound/4canicas.mp3"></dialogaudio></div>
+                    <div><clickable :isok="false" block-if-error><div class="number small c4">3 bolsas</div></clickable><dialogaudio audio="asound/3canicas.mp3"></dialogaudio></div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==6" :key="6" end-scene :final-data="finalData"></scene>
     
 
     
@@ -58,8 +360,8 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
-        app.$devmode = true
+        app.scenesCount = 5
+        app.$devmode = false
     </script>
 </body>
 </html>
