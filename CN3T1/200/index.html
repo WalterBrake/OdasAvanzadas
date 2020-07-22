@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorro mi aparato circulatorio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .cuerpo { height: 100%; position: relative; }
+        .cuerpoimg { height: 100%; }
+        .clickable { width: 20%; position: absolute; }
+        .clickable img{ width: 100%; }
+        .clickable.cor { left: 40%; top: 34%; }
+        .clickable.ven { right: 10%; top: 40%; }
+        .clickable.art { left: 20%; bottom: 20%; }
+        .exp{
+            position: absolute;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 80%;
+        }
+        .exp img.icon{
+            position: absolute; right: 4px; top: 4px; width: 26%;
+        }
+        .exp.cor { right: 90%; top: 0; width: 50%; border: 4px solid  #CB4026; }
+        .exp.ven { left: 90%; top: 10%; width: 50%; border: 4px solid  #006E9A; }
+        .exp.art { right: 90%; bottom: 5%; width: 50%; border: 4px solid  #9C5E6A; }
+        .audiotextBtn img {max-width: 40px;}
+        @media ( max-width:680px ){
+
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25" ref="scene">
+            <info type="dragdrop" title="Recorro mi aparato circulatorio" text="Selecciona el corazón y descubre la función que realiza en el aparato circulatorio." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row cuerpo">
+                    <img src="aimg/cuerpo.svg" class="cuerpoimg">
+                    <clickable initclass="cor" :isok="true" v-model="temporals[0]" @wasclicked="temps = 'a'"><img src="aimg/corazon.svg"></clickable>
+                    <clickable initclass="ven" :isok="false" block-if-error><img src="aimg/venas.svg"></clickable>
+                    <clickable initclass="art" :isok="false" block-if-error><img src="aimg/arterias.svg"></clickable>
+                    <div class="exp cor animate__animated animate__bounceIn" v-if="temps=='a'">
+                        <audiotext audio="asound/corazon.mp3" text="Mi función es bombear la sangre por todo el cuerpo y me ubico en la parte media del tórax." :autoplay="true"></audiotext>
+                        <img src="aimg/corazon.svg" class="icon">
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25" ref="scene">
+            <info type="dragdrop" title="Recorro mi aparato circulatorio" text="Selecciona las venas y descubre la función que realiza en el aparato circulatorio" textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row cuerpo">
+                    <img src="aimg/cuerpo.svg" class="cuerpoimg">
+                    <clickable initclass="cor" :isok="false" block-if-error><img src="aimg/corazon.svg"></clickable>
+                    <clickable initclass="ven" :isok="true" v-model="temporals[0]" @wasclicked="temps = 'b'"><img src="aimg/venas.svg"></clickable>
+                    <clickable initclass="art" :isok="false" block-if-error><img src="aimg/arterias.svg"></clickable>
+                    <div class="exp cor animate__animated animate__bounceIn">
+                        <audiotext audio="asound/corazon.mp3" text="Mi función es bombear la sangre por todo el cuerpo y me ubico en la parte media del tórax." :autoplay="false"></audiotext>
+                        <img src="aimg/corazon.svg" class="icon">
+                    </div>
+                    <div class="exp ven animate__animated animate__bounceIn" v-if="temps=='b'">
+                        <audiotext audio="asound/venas.mp3" text="Hacemos circular la sangre hacia el corazón junto con las sustancias de desecho." :autoplay="true"></audiotext>
+                        <img src="aimg/venas.svg" class="icon">
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25" ref="scene">
+            <info type="dragdrop" title="Recorro mi aparato circulatorio" text="Selecciona las arterias y descubre la función que realiza en el aparato circulatorio" textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row cuerpo">
+                    <img src="aimg/cuerpo.svg" class="cuerpoimg">
+                    <clickable initclass="cor" :isok="false" block-if-error><img src="aimg/corazon.svg"></clickable>
+                    <clickable initclass="ven" :isok="false" block-if-error><img src="aimg/venas.svg"></clickable>
+                    <clickable initclass="art" :isok="true" v-model="temporals[0]" @wasclicked="temps = 'c'"><img src="aimg/arterias.svg"></clickable>
+                    <div class="exp cor animate__animated animate__bounceIn">
+                        <audiotext audio="asound/corazon.mp3" text="Mi función es bombear la sangre por todo el cuerpo y me ubico en la parte media del tórax." :autoplay="false"></audiotext>
+                        <img src="aimg/corazon.svg" class="icon">
+                    </div>
+                    <div class="exp ven animate__animated animate__bounceIn">
+                        <audiotext audio="asound/venas.mp3" text="Hacemos circular la sangre hacia el corazón junto con las sustancias de desecho." :autoplay="false"></audiotext>
+                        <img src="aimg/venas.svg" class="icon">
+                    </div>
+                    <div class="exp art animate__animated animate__bounceIn" v-if="temps=='c'">
+                        <audiotext audio="asound/arterias.mp3" text="Transportamos toda la sangre a todas las partes del cuerpo junto con los nutrientes que el organismo necesita." :autoplay="true"></audiotext>
+                        <img src="aimg/arterias.svg" class="icon">
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.temps = ''
+        app.currentScene = 0
+        app.scenesCount = 3
+        app.$devmode = false
+    </script>
+</body>
+</html>

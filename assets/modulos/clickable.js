@@ -13,11 +13,12 @@ Vue.component('clickable', {
     ],
     data() {
         return {
-            status: false
+            status: false,
+            alreadyOk: false
         }
     },
     template: `
-        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') + (status?'clicked':'') " @click="clicked">
+        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') +' '+ (status?'clicked':'') " @click="clicked">
             <slot></slot>
             <embed class="anim" v-if="status" src="../../assets/aanim/Select.svg" />
         </div>
@@ -25,6 +26,9 @@ Vue.component('clickable', {
 
     methods: {
         clicked (e) {
+            if(this.alreadyOk) {
+                return false
+            }
             var click = this.$refs.clickable
             this.status = !this.status
             this.clicksoundsFn()
@@ -54,9 +58,11 @@ Vue.component('clickable', {
                 //OK
                 //EventBus.$emit('clicked', 'ok')
                 this.$emit('input', true)
+                this.$emit('wasclicked')
                 this.setClassAnimation('ok', this.$refs.clickable)
                 if(e){app.particleAnimation({clientX: event.clientX, clientY: event}, 100, null, null, this.particleColor)}
                 setTimeout(function(){s_ok.play()},100)
+                this.alreadyOk = true
             } else {
                 //ERROR
                 s_error.play()

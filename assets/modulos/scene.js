@@ -22,11 +22,17 @@ Vue.component('scene', {
             oks: 0,
             errors: 0,
             comenzarBtnClicked: false,
+            timeoutSounds: null
         }
     },
     watch: {
         temporals (newP, oldP) {
             this.checkTemporals()
+        }
+    },
+    computed: {
+        getOks () {
+            return this.oks
         }
     },
     template: `
@@ -95,22 +101,37 @@ Vue.component('scene', {
             //console.log(this.alloks, this.oks, this.answers)
             if(this.alloks != undefined) {
                 if(this.oks == this.answers && this.oks>0) {
-                    this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
-                    if(this.alloksSound){
-                        var sound = new Howl({ src: [this.alloksSound] })
-                        app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
-                        setTimeout(function(){
-                            s_win.play()
-                        },200)
-                        setTimeout(function(){
-                            sound.play()
-                        },600)
-                    }
+                    //Checar que todos los sonidos hayan terminado para terminar la escena
+                    this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 300)
+
                 }
             } else {
-                if(this.currentAnswers == this.answers) {
+                if(this.currentAnswers == this.answers) { //Todas las preguntas contestadas...
                     this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
                 }
+            }
+        },
+        checkIfSoundsArePlaying(){
+            var allmuted = true
+            for(var hw in Howler._howls){
+                if(Howler._howls[hw].playing()){ allmuted = false }
+            }
+            if(allmuted){
+                clearInterval(this.timeoutSounds)
+                this.endRun()
+            }
+        },
+        endRun(){
+            this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
+            if(this.alloksSound){
+                var sound = new Howl({ src: [this.alloksSound] })
+                app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
+                setTimeout(function(){
+                    s_win.play()
+                },200)
+                setTimeout(function(){
+                    sound.play()
+                },600)
             }
         },
         checkTemporals () {

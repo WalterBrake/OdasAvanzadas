@@ -30,7 +30,8 @@ var app = new Vue({
             },
             temporals: [],
             temps: {},
-            scoreByScenes: []
+            scoreByScenes: [],
+
         }
     },
     watch: {
@@ -70,7 +71,13 @@ var app = new Vue({
             if($ev.answers){ this.finalData.answers += $ev.answers }
             if($ev.score){ this.finalData.score += $ev.score }
             if($ev.scoresum){ this.finalData.scoresum += $ev.scoresum }
+            
 
+            this.changeSceneTransition()
+            
+        },
+        changeSceneTransition(){
+            var _this = this
             var fwIt = 0
             var fw = setInterval(function () {
                 fwIt++
