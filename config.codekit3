@@ -4652,6 +4652,13 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES5T1\/26\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T1\/26\/index.html",
+		"oF": 0
+		},
 	"\/ES5T1\/35\/aimg\/anuncio.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4672,6 +4679,13 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES5T1\/35\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T1\/35\/index.html",
+		"oF": 0
+		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4681,6 +4695,13 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/GE4T1\/227\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T1\/227\/index.html",
+		"oF": 0
 		},
 	"\/GE4T1\/231\/aimg\/azul.svg": {
 		"ft": 2097152,
@@ -4759,11 +4780,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3",
+		"oF": 0
+		},
+	"\/HI4T1\/254\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T1\/254\/index.html",
 		"oF": 0
 		},
 	"\/HI4T1\/256\/aimg\/cazadores.svg": {
@@ -4825,6 +4853,13 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/HI4T1\/256\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T1\/256\/index.html",
+		"oF": 0
 		},
 	"\/MA1T1\/100\/aimg\/azul.svg": {
 		"ft": 2097152,
@@ -8221,11 +8256,11 @@
 		"oAP": "\/MA5T1\/108\/asound\/Icon\r",
 		"oF": 0
 		},
-	"\/MA5T1\/108\/Icon\r": {
+	"\/MA5T1\/108\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/108\/Icon\r",
+		"oAP": "\/MA5T1\/108\/index.html",
 		"oF": 0
 		},
 	"\/MA5T1\/111\/aimg\/1.svg": {
@@ -8302,11 +8337,11 @@
 		"oAP": "\/MA5T1\/111\/asound\/Icon\r",
 		"oF": 0
 		},
-	"\/MA5T1\/111\/Icon\r": {
+	"\/MA5T1\/111\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/111\/Icon\r",
+		"oAP": "\/MA5T1\/111\/index.html",
 		"oF": 0
 		},
 	"\/MA5T1\/89\/aimg\/Icon\r": {
@@ -8333,11 +8368,11 @@
 		"oAP": "\/MA5T1\/89\/asound\/Icon\r",
 		"oF": 0
 		},
-	"\/MA5T1\/89\/Icon\r": {
+	"\/MA5T1\/89\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/89\/Icon\r",
+		"oAP": "\/MA5T1\/89\/index.html",
 		"oF": 0
 		},
 	"\/MA5T1\/95\/aimg\/acu.svg": {
@@ -8544,18 +8579,11 @@
 		"oAP": "\/MA5T1\/95\/asound\/Icon\r",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/Icon\r": {
+	"\/MA5T1\/95\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/95\/Icon\r",
-		"oF": 0
-		},
-	"\/MA5T1\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/Icon\r",
+		"oAP": "\/MA5T1\/95\/index.html",
 		"oF": 0
 		},
 	"\/readme": {
