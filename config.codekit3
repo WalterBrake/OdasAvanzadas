@@ -1658,93 +1658,113 @@
 		"oAP": "\/CN3T1\/200\/index.html",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/aimg\/sector1.svg": {
+	"\/CN3T1\/209\/aimg\/caminar.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN3T1\/209\/aimg\/sector1.svg",
+		"oAP": "\/CN3T1\/209\/aimg\/caminar.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN3T1\/209\/aimg\/sector2.svg": {
+	"\/CN3T1\/209\/aimg\/campamento.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN3T1\/209\/aimg\/sector2.svg",
+		"oAP": "\/CN3T1\/209\/aimg\/campamento.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN3T1\/209\/aimg\/sector3.svg": {
+	"\/CN3T1\/209\/aimg\/convivencia.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN3T1\/209\/aimg\/sector3.svg",
+		"oAP": "\/CN3T1\/209\/aimg\/convivencia.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN3T1\/209\/aimg\/sector4.svg": {
+	"\/CN3T1\/209\/aimg\/extranos.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN3T1\/209\/aimg\/sector4.svg",
+		"oAP": "\/CN3T1\/209\/aimg\/extranos.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Inst_Selecciona.mp3": {
+	"\/CN3T1\/209\/aimg\/jugar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN3T1\/209\/aimg\/jugar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN3T1\/209\/aimg\/secretos.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN3T1\/209\/aimg\/secretos.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN3T1\/209\/asound\/caminar.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Inst_Selecciona.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/caminar.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Caminar.mp3": {
+	"\/CN3T1\/209\/asound\/campamento.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Caminar.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/campamento.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Campamento.mp3": {
+	"\/CN3T1\/209\/asound\/convivencia.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Campamento.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/convivencia.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Convivencia.mp3": {
+	"\/CN3T1\/209\/asound\/extranos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Convivencia.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/extranos.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Extraños.mp3": {
+	"\/CN3T1\/209\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Extraños.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Jugar.mp3": {
+	"\/CN3T1\/209\/asound\/jugar.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Jugar.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/jugar.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Secretos.mp3": {
+	"\/CN3T1\/209\/asound\/secretos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/209\/asound\/Expreso mis emociones CN3°T1_Int_Secretos.mp3",
+		"oAP": "\/CN3T1\/209\/asound\/secretos.mp3",
 		"oF": 0
 		},
 	"\/CN3T1\/209\/index.html": {

@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Expreso mis emociones</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
+        .clickable{
+            margin: 1%;
+        }
+        .number.small{
+            -webkit-text-stroke-width: 1px;
+            font-size: 1.2rem;
+            text-align: center;
+            height: 100px;
+        }
         @media (max-width:680px){
 
         }
@@ -22,12 +30,17 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="3" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Expreso mis emociones" text="Selecciona los dibujos que muestren situaciones de riesgo." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row">
-
+                <div class="row w100 wrap">
+                    <clickable initclass="w30" block-if-error :isok="false" click-sound="asound/convivencia.mp3"><img src="aimg/convivencia.svg"><div class="number small c1">Tener convivencia familiar</div></clickable>
+                    <clickable initclass="w30" block-if-error :isok="true" v-model="temporals[0]" click-sound="asound/caminar.mp3"><img src="aimg/caminar.svg"><div class="number small c2">Caminar en lugares oscuros y solitarios</div></clickable>
+                    <clickable initclass="w30" block-if-error :isok="true" v-model="temporals[1]" click-sound="asound/secretos.mp3"><img src="aimg/secretos.svg"><div class="number small c3">Guardar secretos</div></clickable>
+                    <clickable initclass="w30" block-if-error :isok="true" v-model="temporals[2]" click-sound="asound/extranos.mp3"><img src="aimg/extranos.svg"><div class="number small c4">Aceptar cosas de extraños</div></clickable>
+                    <clickable initclass="w30" block-if-error :isok="false" click-sound="asound/campamento.mp3"><img src="aimg/campamento.svg"><div class="number small c5">Ir de campamento</div></clickable>
+                    <clickable initclass="w30" block-if-error :isok="false" click-sound="asound/jugar.mp3"><img src="aimg/jugar.svg"><div class="number small c6">Jugar con amigos</div></clickable>
                 </div>            
             </activity>
         </scene> <!-- end scene -->

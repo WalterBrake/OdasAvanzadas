@@ -11,14 +11,14 @@ body {
 :root {
   --main: #5EB246;
   --sec: #005093;
-  --clear: #AAE1FA;
+  --clear: #7ED4F7;
   --accent: #EB8B2E;
   --rightcol: #5EB246;
   --wrongcol: #DB3E34;
   --beige: #FDF4CE;
   --c1: #5EB246;
   --c2: #005093;
-  --c3: #AAE1FA;
+  --c3: #7ED4F7;
   --c4: #EB8B2E;
   --c5: #DB3E34;
   --c6: #F460AB;
@@ -569,8 +569,8 @@ embed {
   text-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
 }
 .number.c3 {
-  -webkit-text-stroke-color: #AAE1FA;
-  text-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
+  -webkit-text-stroke-color: #7ED4F7;
+  text-shadow: 4px 4px 0 #71bfde, -1px -1px 0 #71bfde, 1px -1px 0 #71bfde, -1px 1px 0 #71bfde, 1px 1px 0 #71bfde;
 }
 .number.c4 {
   -webkit-text-stroke-color: #EB8B2E;
@@ -608,8 +608,8 @@ embed {
   box-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
 }
 .conector.c3 {
-  background: #AAE1FA;
-  box-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
+  background: #7ED4F7;
+  box-shadow: 4px 4px 0 #71bfde, -1px -1px 0 #71bfde, 1px -1px 0 #71bfde, -1px 1px 0 #71bfde, 1px 1px 0 #71bfde;
 }
 .conector.c4 {
   background: #EB8B2E;
@@ -664,8 +664,8 @@ embed {
   box-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
 }
 .inputable.c3 {
-  background: #AAE1FA;
-  box-shadow: 4px 4px 0 #99cbe1, -1px -1px 0 #99cbe1, 1px -1px 0 #99cbe1, -1px 1px 0 #99cbe1, 1px 1px 0 #99cbe1;
+  background: #7ED4F7;
+  box-shadow: 4px 4px 0 #71bfde, -1px -1px 0 #71bfde, 1px -1px 0 #71bfde, -1px 1px 0 #71bfde, 1px 1px 0 #71bfde;
 }
 .inputable.c4 {
   background: #EB8B2E;
