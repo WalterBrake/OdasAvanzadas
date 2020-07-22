@@ -4491,6 +4491,104 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES4T1\/17\/asound\/aliteracion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/aliteracion.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/cabellos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/cabellos.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/caminar.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/caminar.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/consiste.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/consiste.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/metafora.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/metafora.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/onomatopeya.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/onomatopeya.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/palabras.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/palabras.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/recuerda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/recuerda.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/repeticion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/repeticion.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/rima.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/rima.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/semejanza.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/semejanza.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/suena.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/suena.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/17\/asound\/toc.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/17\/asound\/toc.mp3",
+		"oF": 0
+		},
 	"\/ES4T1\/17\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4578,6 +4676,13 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES4T1\/26\/asound\/Utilizo recetarios Es4°T1_Inst_Coloca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/26\/asound\/Utilizo recetarios Es4°T1_Inst_Coloca.mp3",
+		"oF": 0
+		},
 	"\/ES4T1\/26\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4635,11 +4740,137 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Inst_Relaciona.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Inst_Relaciona.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Anillo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Anillo.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Araña.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Araña.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Botella.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Botella.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Cama.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Cama.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Chamarra.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Chamarra.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Conejo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Conejo.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Corazón.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Corazón.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Dientes.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Dientes.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Espejo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Espejo.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Estrella.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Estrella.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Guitarra.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Guitarra.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Lentes.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Lentes.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Martillo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Martillo.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Montaña.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Montaña.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Rama.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Rama.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Razón.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Razón.mp3",
+		"oF": 0
+		},
 	"\/ES4T1\/32\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES4T1\/32\/index.html",
+		"oF": 0
+		},
+	"\/ES4T1\/36\/asound\/Interpreto los trayectos Es4°T1_Inst_Coloca.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/36\/asound\/Interpreto los trayectos Es4°T1_Inst_Coloca.mp3",
 		"oF": 0
 		},
 	"\/ES5T1\/26\/aimg\/piramide.svg": {
@@ -4780,7 +5011,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/254\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
