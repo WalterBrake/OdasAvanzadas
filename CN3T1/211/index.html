@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>¿De qué se alimentan los seres vivos?</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .drag{ width: 100%; margin: 10px; background: #F9FAFA; border-radius: 10px; }
+        .drag img{width: 80%;}
+        .drag.dropped{background: rgba(0,0,0,0.2);}
+        .drop {
+            border: 4px solid #F9FAFA;
+            width:23%;
+            margin: 1%;
+            background: var(--main); border-radius: 10px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
+            padding: 10px;
+        }
+        .drag2 .drag{background:#5EB247; }
 
+        .drop .number.small {
+            text-align: center;
+            font-size: 1.2rem;
+            -webkit-text-stroke-width: 1px;
+        }
+        .drop img {width: 70%; margin: 5%; }
+        .drop2 img { height: 60%; width: auto; }
+        .drop.dused { background: #F9FAFA; }
+        
+        .drop.hover{ border: 4px solid var(--accent); }
+        
         @media (max-width:680px){
 
         }
@@ -22,18 +47,48 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="4" scene-color="#015093">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="¿De qué se alimentan los seres vivos?" text="Coloca el grupo al que pertenecen los animales de cada recuadro." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row">
+                <div class="row w100 cards wrap">
+                    <div class="drop" droptimes="untilok" data="omn"><div class="number small c1">Omnívoros</div></div>
+                    <div class="drop" droptimes="untilok" data="ins"><div class="number small c1">Insectívoros</div></div>
+                    <div class="drop" droptimes="untilok" data="car"><div class="number small c1">Carnívoros</div></div>
+                    <div class="drop" droptimes="untilok" data="her"><div class="number small c1">Hervíboros</div></div>
+                </div>
+                <div class="row w100 animate__animated animate__bounceIn">
+                    <drag dropzone=".drop" data="car" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/tigre.jpg"></drag>
+                    <drag dropzone=".drop" data="her" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/vaca.jpg"></drag>
+                    <drag dropzone=".drop" data="ins" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/rana.jpg"></drag>
+                    <drag dropzone=".drop" data="omn" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/oso.jpg"></drag>
+                </div>            
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#015093">
 
+            <info type="dragdrop" title="¿De qué se alimentan los seres vivos?" text="Coloca los  ejemplos de alimentos debajo de cada uno de los animales con su tipo de alimentación. " textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 cards wrap">
+                    <div class="drop dused" droptimes="untilok" data="omn"><div class="number small c1">Omnívoros</div><img src="aimg/oso.jpg"></div>
+                    <div class="drop dused" droptimes="untilok" data="ins"><div class="number small c1">Insectívoros</div><img src="aimg/rana.jpg"></div>
+                    <div class="drop dused" droptimes="untilok" data="car"><div class="number small c1">Carnívoros</div><img src="aimg/tigre.jpg"></div>
+                    <div class="drop dused" droptimes="untilok" data="her"><div class="number small c1">Hervíboros</div><img src="aimg/vaca.jpg"></div>
+                </div>
+                <div class="row w100 animate__animated animate__bounceIn drag2">
+                    <drag dropzone=".drop" initclass="drop2" data="her" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/plantas.png"></drag>
+                    <drag dropzone=".drop" initclass="drop2" data="omn" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/todo.svg"></drag>
+                    <drag dropzone=".drop" initclass="drop2" data="car" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/carne.svg"></drag>
+                    <drag dropzone=".drop" initclass="drop2" data="ins" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/insectos.svg"></drag>
                 </div>            
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -63,7 +118,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>

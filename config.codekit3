@@ -1774,103 +1774,103 @@
 		"oAP": "\/CN3T1\/209\/index.html",
 		"oF": 0
 		},
-	"\/CN3T1\/211\/aimg\/sector1.jpg": {
-		"ft": 16384,
-		"iS": 828725,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/CN3T1\/211\/aimg\/sector1.jpg",
+	"\/CN3T1\/211\/aimg\/carne.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN3T1\/211\/aimg\/carne.svg",
 		"oF": 0,
-		"oIPL": 0,
 		"opt": 0,
-		"q": 100
+		"plM": 3758088159,
+		"prP": 0
 		},
-	"\/CN3T1\/211\/aimg\/sector2.jpg": {
+	"\/CN3T1\/211\/aimg\/insectos.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN3T1\/211\/aimg\/insectos.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN3T1\/211\/aimg\/oso.jpg": {
 		"ft": 16384,
 		"iS": 644505,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/CN3T1\/211\/aimg\/sector2.jpg",
+		"oAP": "\/CN3T1\/211\/aimg\/oso.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/CN3T1\/211\/aimg\/sector2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN3T1\/211\/aimg\/sector2.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN3T1\/211\/aimg\/sector3.jpg": {
-		"ft": 16384,
-		"iS": 605033,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/CN3T1\/211\/aimg\/sector3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/CN3T1\/211\/aimg\/sector4.jpg": {
-		"ft": 16384,
-		"iS": 599995,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/CN3T1\/211\/aimg\/sector4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/CN3T1\/211\/aimg\/sector4.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN3T1\/211\/aimg\/sector4.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN3T1\/211\/aimg\/sector5.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN3T1\/211\/aimg\/sector5.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN3T1\/211\/aimg\/sector6.png": {
+	"\/CN3T1\/211\/aimg\/plantas.png": {
 		"ft": 32768,
 		"iS": 66554,
 		"oA": 0,
-		"oAP": "\/CN3T1\/211\/aimg\/sector6.png",
+		"oAP": "\/CN3T1\/211\/aimg\/plantas.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/CN3T1\/211\/asound\/De qué se alimentan los seres vivos CN3°T1_Inst_Coloca.mp3": {
+	"\/CN3T1\/211\/aimg\/rana.jpg": {
+		"ft": 16384,
+		"iS": 828725,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN3T1\/211\/aimg\/rana.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN3T1\/211\/aimg\/tigre.jpg": {
+		"ft": 16384,
+		"iS": 605033,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN3T1\/211\/aimg\/tigre.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN3T1\/211\/aimg\/todo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN3T1\/211\/aimg\/todo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN3T1\/211\/aimg\/vaca.jpg": {
+		"ft": 16384,
+		"iS": 599995,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN3T1\/211\/aimg\/vaca.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN3T1\/211\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/211\/asound\/De qué se alimentan los seres vivos CN3°T1_Inst_Coloca.mp3",
+		"oAP": "\/CN3T1\/211\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CN3T1\/211\/asound\/De qué se alimentan los seres vivos CN3°T1_Inst_Coloca2.mp3": {
+	"\/CN3T1\/211\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN3T1\/211\/asound\/De qué se alimentan los seres vivos CN3°T1_Inst_Coloca2.mp3",
+		"oAP": "\/CN3T1\/211\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/CN3T1\/211\/index.html": {
