@@ -66,6 +66,7 @@ var app = new Vue({
                 this.currentScene++
                 this.temporals = []
                 this.notfoundimg()
+                for(var hw in Howler._howls){Howler._howls[hw].stop()}
                 return false
             }
             var _this = this
@@ -88,7 +89,7 @@ var app = new Vue({
                 if(fwIt == 30) {
                     clearInterval(fw)
                     //Stop all howlers
-                    //for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                    for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     EventBus = new Vue()
                     if(_this.currentScene == _this.scenesCount-1) {
                         _this.scoreInScene += _this.decimalSum

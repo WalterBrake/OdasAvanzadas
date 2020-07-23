@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Divido agrupando</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
+        .recuerda .audiotext{
+            background: #FCDDD6;
+            border-radius: 30px 10px 30px 10px;
+            padding: 0 10px 10px 10px;
+            font-size: 0.9rem;
+        }
+        .recuerda .audiotext strong {color:#F14A5E;}
+        .nextbtn{ font-size: 1.8rem; margin: 20px; }
+        .pregunta{ font-size: 1.6rem; }
+        .click{
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+            width: 40%;
+        }
+        .clickable {
+            width: auto; height: auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .audiotextBtn{width: 32px; margin: 0 auto;}
         @media (max-width:680px){
         }
     </style>
@@ -20,17 +41,148 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.rec.play()"></info>
             <activity>
-                
+                <div class="row w100 recuerda">
+                    <audiotext audio="asound/recuerda.mp3" text="Recuerda que una de las formas de resolver problemas de reparto es mediante el agrupamiento. Para agrupar, necesitamos conocer el número de elementos que vamos a repartir entre el número de grupos que se van a formar. Para verificar si el agrupamiento fue el correcto, podemos utilizar la suma repetida o la multiplicación." :autoplay="false" ref="rec"></audiotext>
+                </div>
+                <div class="row">
+                    <button class="button nextbtn" @click="sceneCompleted(false)">Siguiente</button>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247" >
+
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row  w100 pregunta">
+                    <audiotext audio="asound/instruccion2.mp3" text="La maestra Ana tiene 24 lápices de colores y quiere meter 4 lápices por caja, ¿cuántas cajas va a necesitar?" :autoplay="true"></audiotext>
+                </div>
+                <div class="row wrap w100 mt-1">
+                    <template v-for="i in [
+                    ['6cajas', '6 cajas', true],
+                    ['5cajas', '5 cajas', false],
+                    ['7cajas', '7 cajas', false],
+                    ['9cajas', '9 cajas', false],
+                    ]">
+                        <div class="click">
+                            <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
+                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                        </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247" >
+
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <audiotext audio="asound/instruccion3.mp3" text="La maestra Ana tiene 20 borradores y tiene 4 cajas para organizarlos, ¿cuántos borradores habrán en cada caja?" :autoplay="true"></audiotext>
+                </div>
+                <div class="row wrap w100  mt-1">
+                    <template v-for="i in [
+                    ['6borradores', '6 borradores', false],
+                    ['8borradores', '8 borradores', false],
+                    ['5borradores', '5 borradores', true],
+                    ['4borradores', '4 borradores', false],
+                    ]">
+                        <div class="click">
+                            <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
+                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                        </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247" >
+
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <audiotext audio="asound/instruccion4.mp3" text="La maestra Ana tiene 12 libros, y quiere meter 4 libros por caja, ¿cuántas cajas va a necesitar?" :autoplay="true"></audiotext>
+                </div>
+                <div class="row wrap w100  mt-1">
+                    <template v-for="i in [
+                    ['1cajas', '1 caja', false],
+                    ['5cajas', '5 cajas', false],
+                    ['4cajas', '4 cajas', false],
+                    ['3cajas', '3 cajas', true],
+                    ]">
+                        <div class="click">
+                            <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
+                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                        </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247" >
+
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <audiotext audio="asound/instruccion5.mp3" text="La maestra Ana tiene 18 cojines para leer y tiene 2 cajas para organizarlos, ¿cuántos paquetes de cojines habrán en cada caja?" :autoplay="true"></audiotext>
+                </div>
+                <div class="row wrap w100  mt-1">
+                    <template v-for="i in [
+                    ['9cojines', '9 cojines', true],
+                    ['12cojines', '12 cojines', false],
+                    ['4cojines', '4 cojines', false],
+                    ['8cojines', '8 cojines', false],
+                    ]">
+                        <div class="click">
+                            <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
+                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                        </div>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247" >
+
+            <info type="seleccionar" title="Divido agrupando" text="La maestra Ana se encuentra organizando diversos materiales del salón, y para ello quiere utilizar cajas tomando en cuenta el número de elementos que hay de cada material. Ayúdala a organizar los materiales." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <audiotext audio="asound/instruccion6.mp3" text="La maestra Ana tiene 6 paquetes de hojas de colores y tiene 3 cajas para organizarlos, ¿cuántos paquetes de hojas habrán en cada caja?" :autoplay="true"></audiotext>
+                </div>
+                <div class="row wrap w100  mt-1">
+                    <template v-for="i in [
+                    ['4paquetes', '4 paquetes de hojas', false],
+                    ['3paquetes', '3 paquetes de hojas', false],
+                    ['2paquetes', '2 paquetes de hojas', true],
+                    ['6paquetes', '6 paquetes de hojas', false],
+                    ]">
+                        <div class="click">
+                            <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
+                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                        </div>
+                    </template>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==7" :key="7" end-scene :final-data="finalData"></scene>
     
 
     
@@ -59,8 +211,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 5
         app.$devmode = false
     </script>
 </body>
