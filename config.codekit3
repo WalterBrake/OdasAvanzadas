@@ -4676,11 +4676,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/ES4T1\/26\/asound\/intruccion.mp3": {
+	"\/ES4T1\/26\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/26\/asound\/intruccion.mp3",
+		"oAP": "\/ES4T1\/26\/asound\/instruccion.mp3",
 		"oF": 0
 		},
 	"\/ES4T1\/26\/index.html": {
@@ -4689,6 +4689,26 @@
 		"oA": 0,
 		"oAP": "\/ES4T1\/26\/index.html",
 		"oF": 0
+		},
+	"\/ES4T1\/32\/aimg\/anillo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/anillo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/arana.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/arana.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/ES4T1\/32\/aimg\/cama.svg": {
 		"ft": 2097152,
@@ -4720,6 +4740,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/ES4T1\/32\/aimg\/estrella.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/estrella.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/ES4T1\/32\/aimg\/guitarra.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4740,123 +4770,123 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Inst_Relaciona.mp3": {
+	"\/ES4T1\/32\/asound\/anillo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Inst_Relaciona.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/anillo.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Anillo.mp3": {
+	"\/ES4T1\/32\/asound\/arana.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Anillo.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/arana.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Araña.mp3": {
+	"\/ES4T1\/32\/asound\/botella.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Araña.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/botella.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Botella.mp3": {
+	"\/ES4T1\/32\/asound\/cama.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Botella.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/cama.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Cama.mp3": {
+	"\/ES4T1\/32\/asound\/chamarra.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Cama.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/chamarra.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Chamarra.mp3": {
+	"\/ES4T1\/32\/asound\/conejo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Chamarra.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/conejo.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Conejo.mp3": {
+	"\/ES4T1\/32\/asound\/corazon.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Conejo.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/corazon.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Corazón.mp3": {
+	"\/ES4T1\/32\/asound\/dientes.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Corazón.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/dientes.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Dientes.mp3": {
+	"\/ES4T1\/32\/asound\/espejo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Dientes.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/espejo.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Espejo.mp3": {
+	"\/ES4T1\/32\/asound\/estrella.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Espejo.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/estrella.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Estrella.mp3": {
+	"\/ES4T1\/32\/asound\/guitarra.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Estrella.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/guitarra.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Guitarra.mp3": {
+	"\/ES4T1\/32\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Guitarra.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Lentes.mp3": {
+	"\/ES4T1\/32\/asound\/lentes.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Lentes.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/lentes.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Martillo.mp3": {
+	"\/ES4T1\/32\/asound\/martillo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Martillo.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/martillo.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Montaña.mp3": {
+	"\/ES4T1\/32\/asound\/montana.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Montaña.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/montana.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Rama.mp3": {
+	"\/ES4T1\/32\/asound\/rama.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Rama.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/rama.mp3",
 		"oF": 0
 		},
-	"\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Razón.mp3": {
+	"\/ES4T1\/32\/asound\/razon.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/32\/asound\/Repito Trabalenguas Es4°T1_Int_Razón.mp3",
+		"oAP": "\/ES4T1\/32\/asound\/razon.mp3",
 		"oF": 0
 		},
 	"\/ES4T1\/32\/index.html": {

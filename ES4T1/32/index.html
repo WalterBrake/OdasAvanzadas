@@ -3,15 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Utilizo recetarios </title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
+        .drag {
+            width: auto;
+            height: auto;
+            margin: 10px;
         }
+        .ilustraciones .row {
+            margin: 2px 0;
+            background: var(--c8);
+            padding: 6px 5px;
+            border-radius: 10px;
+        }
+        .ilustraciones .ilu {
+            height: 50px;
+        }
+        .ilustraciones .ilu img {
+            height: 100%;
+            max-width: 60px;
+        }
+        .ilustraciones .number {
+            width: 40%;
+            padding: 4px 20px;
+        }
+        .ilustraciones .drop {
+            background: #fff;
+            height: 50px;
+            min-width: 120px;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .ilustraciones .drop .number {
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            display: flex; justify-content: center; align-items: center;
+            height: 100%;
+        }
+        .ilustraciones .drop.okdrop{
+            background: var(--c6);
+        }
+
+        @media (max-width: 680px) {
+            .number.small {
+                font-size: 1.6rem;
+            }
+            .ilustraciones .ilu {
+                height: 40px;
+            }
+            .ilustraciones .ilu img {
+                max-width: 50px;
+            }
+            .ilustraciones .drop {
+                height: 40px;
+                min-width: 80px;
+            }
+        }
+
     </style>
     </head>
 <body>
@@ -21,14 +74,28 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="8" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Utilizo recetarios" text="Relaciona la palabra que rima con el nombre de cada ilustración." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="ilustraciones w70">
+                        <template v-for="i in temps">
+                            <div class="row w100">
+                                <div class="ilu"><img :src=" 'aimg/' + i.rima + '.svg' "></div>
+                                <div class="number small c8">{{i.rtext}}</div>
+                                <div class="drop" droptimes="untilok" :data="i.rima" :oksound="'asound/'+i.rima+'.mp3'"></div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="palabras w30 animate__animated animate__jello">
+                        <template v-for="i in _.shuffle(temps)">
+                            <drag dropzone=".drop" :data="i.rima" :dragsound="'asound/'+i.val+'.mp3'" append-to-dropzone dropzone-ok-class="okdrop" drop><div class="number small c8">{{i.text}}</div></drag>
+                        </template>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
-
 
         <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
     
@@ -37,6 +104,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -59,7 +127,17 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.temps = [
+            {rima: 'estrella', rtext: 'Estrella', val: 'botella', text:'Botella'},
+            {rima: 'cama', rtext: 'Cama', val: 'rama', text:'Rama'},
+            {rima: 'corazon', rtext: 'Corazón', val: 'razon', text:'Razón'},
+            {rima: 'anillo', rtext: 'Anillo', val: 'martillo', text:'Martillo'},
+            {rima: 'lentes', rtext: 'Lentes', val: 'dientes', text:'Dientes'},
+            {rima: 'guitarra', rtext: 'Guitarra', val: 'chamarra', text:'Chamarra'},
+            {rima: 'espejo', rtext: 'Espejo', val: 'conejo', text:'Conejo'},
+            {rima: 'arana', rtext: 'Araña', val: 'montana', text: 'Montaña'},
+        ]
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>

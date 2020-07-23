@@ -43,6 +43,9 @@ var app = new Vue({
         }
     },
     methods: {
+        randomizeArray(rand){
+            return rand.sort(function(){return 0.5 - Math.random()})
+        },
         reset () { location.reload() },
         notfoundimg () {
             document.addEventListener("DOMContentLoaded", function(event) {
