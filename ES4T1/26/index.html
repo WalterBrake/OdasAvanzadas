@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Utilizo recetarios</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .pregunta p {
+            font-size: 1.4rem;
+        }
+        .drop {
+            background: #fff;
+            display: inline-block;
+            min-height: 34px;
+            min-width: 120px;
+            margin: 0 5px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 1px 8px;
+        }
+        .drop .number.small {
+            font-size: 1.8rem;
+            display: inline;
+        }
 
+        .drop.c1 {background: var(--main);}
+        .drop.c2 {background: var(--sec);}
+
+        .drag {
+            width: auto;
+            height: auto;
+            margin: 10px 20px;
+        }
+        .drag .number {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1px 8px;
+        }
+        .pregunta{
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            background: #fff;
+        }
         @media (max-width:680px){
         }
     </style>
@@ -23,14 +59,60 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Utilizo recetarios" text="Coloca la palabra que completa el enunciado." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 pregunta"><p>Una receta es un texto de tipo <span class="drop c1" droptimes="untilok" data="instructivo">&nbsp;</span></p></div>
+                <div class="row w100 respuestas">
+                    <drag dropzone=".drop" data="narrativo" append-to-dropzone><div class="number small c1">narrativo</div></drag>
+                    <drag dropzone=".drop" data="instructivo" append-to-dropzone><div class="number small c1">instructivo</div></drag>
+                </div>
+                <div class="row w100 pregunta mt-1"><p>Un <span class="drop c2" droptimes="untilok" data="recetario">&nbsp;</span> es un conjunto de recetas, puede ser de cocina o de remedios caseros.</p></div>
+                <div class="row w100 respuestas">
+                    <drag dropzone=".drop" data="recetario" append-to-dropzone><div class="number small c2">recetario</div></drag>
+                    <drag dropzone=".drop" data="cancionero" append-to-dropzone><div class="number small c2">cancionera</div></drag>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Utilizo recetarios" text="Coloca la palabra que completa el enunciado." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 pregunta"><p>La <span class="drop c1" droptimes="untilok" data="funcion">&nbsp;</span> de un recetario es  <span class="drop c1" droptimes="untilok" data="organizar">&nbsp;</span> de acuerdo a un tema o criterio.</p></div>
+                <div class="row w100 respuestas">
+                    <drag dropzone=".drop" data="caracteristica" append-to-dropzone><div class="number small c1">característica</div></drag>
+                    <drag dropzone=".drop" data="funcion" append-to-dropzone><div class="number small c1">función</div></drag>
+                    <drag dropzone=".drop" data="analizar" append-to-dropzone><div class="number small c1">analizar</div></drag>
+                    <drag dropzone=".drop" data="organizar" append-to-dropzone><div class="number small c1">organizar</div></drag>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Utilizo recetarios" text="Coloca la palabra que completa el enunciado." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 pregunta"><p>La terminación de los verbos en <span class="drop c1" droptimes="untilok" data="infinitivo">&nbsp;</span> es -ar, -er, -ir</p></div>
+                <div class="row w100 respuestas">
+                    <drag dropzone=".drop" data="infinitivo" append-to-dropzone><div class="number small c1">infinitivo</div></drag>
+                    <drag dropzone=".drop" data="imperativo" append-to-dropzone><div class="number small c1">imperativo</div></drag>
+                </div>
+                <div class="row w100 pregunta mt-1"><p>Los remedios <span class="drop c2" droptimes="untilok" data="caseros">&nbsp;</span> son tratamientos naturales que sirven para prevenir y calmar cualquier malestar o enfermedad.</p></div>
+                <div class="row w100 respuestas">
+                    <drag dropzone=".drop" data="recetarios" append-to-dropzone><div class="number small c2">recetarios</div></drag>
+                    <drag dropzone=".drop" data="caseros" append-to-dropzone><div class="number small c2">caseros</div></drag>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
     
 
     
@@ -59,8 +141,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 3
         app.$devmode = false
     </script>
 </body>
