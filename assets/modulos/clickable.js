@@ -9,7 +9,8 @@ Vue.component('clickable', {
         'particleColor', // color de particulas
         'initclass', // class de inicio
         'isok', // es ok?,
-        'blockIfError' // Si es error no permitirá que sea seleccionado
+        'blockIfError', // Si es error no permitirá que sea seleccionado,
+        'simpleOk', //No checa, sólo manda isOK
     ],
     data() {
         return {
@@ -57,7 +58,11 @@ Vue.component('clickable', {
             if(this.isok == this.status){
                 //OK
                 //EventBus.$emit('clicked', 'ok')
-                this.$emit('input', true)
+                if(this.simpleOk != undefined){
+                    EventBus.$emit('isok')
+                } else {
+                    this.$emit('input', true)
+                }
                 this.$emit('wasclicked')
                 this.setClassAnimation('ok', this.$refs.clickable)
                 if(e){app.particleAnimation({clientX: event.clientX, clientY: event}, 100, null, null, this.particleColor)}

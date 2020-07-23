@@ -9495,165 +9495,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag1_Hola.mp3": {
+	"\/MA4T1\/133\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag1_Hola.mp3",
+		"oAP": "\/MA4T1\/133\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag2_AlObs.mp3": {
+	"\/MA4T1\/133\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag2_AlObs.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag2_MuyBn.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag2_MuyBn.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag3_Nature.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag3_Nature.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag3_Shh.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag3_Shh.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag4_Patrones.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag4_Patrones.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag5_Edificio.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag5_Edificio.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag6_AsíComo.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1__Diag6_AsíComo.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag10_LoLograste.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag10_LoLograste.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag2_FasesLuna.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag2_FasesLuna.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag6_##.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag6_##.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag6_CNúmero.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag6_CNúmero.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag7_Observa.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag7_Observa.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag7_Podemos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag7_Podemos.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_A.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_A.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_Ayudame.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_Ayudame.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_B.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag8_B.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag9_Azules.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag9_Azules.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag9_Rojos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Diag9_Rojos.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Inst6_Ayuda.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Inst6_Ayuda.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Inst_Busque.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Inst_Busque.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Int_12y13.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Int_12y13.mp3",
-		"oF": 0
-		},
-	"\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Int_15y6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/133\/asound\/Identifico la sucesión MA4°T1_Int_15y6.mp3",
+		"oAP": "\/MA4T1\/133\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/MA4T1\/133\/index.html": {

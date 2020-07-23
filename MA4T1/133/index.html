@@ -3,12 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico cuerpos geométricos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .truck{
+            position: relative;
+        }
+        .figs{
+            background: #fff;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .drag{width: auto; max-width: 48px; margin: 0 10px;}
+        .drag img{
+            width: 100%;
+        }
+        .truckimg {
+	position: relative;
+	z-index: 9;
+}
+    .drop {
+        min-width: 40px;
+        min-height: 40px;
+        position: absolute;
+        z-index: 2;
+    }
+    .drop img {
+        width: 100%;
+        height: 100%;
+    }
+    .drop:nth-child(1) {
+        width: 7%;
+        height: 23%;
+        left: 36.8%;
+        top: 23%;
+    }
+    .drop:nth-child(2) {
+        width: 13%;
+        height: 17%;
+        left: 19%;
+        top: 3%;
+    }
+    .drop:nth-child(3) {
+        width: 10.5%;
+        height: 22%;
+        left: 48.5%;
+        top: 24.5%;
+    }
+    .drop:nth-child(4) {
+        width: 10.5%;
+        height: 22%;
+        left: 72.5%;
+        top: 24.5%;
+    }
+    .drop:nth-child(5) {
+        width: 20.5%;
+        height: 43%;
+        left: 11.2%;
+        top: 48%;
+    }
+    .drop:nth-child(6) {
+        width: 15.5%;
+        height: 32.5%;
+        left: 14.3%;
+        top: 65%;
+    }
+    .drop:nth-child(7) {
+        width: 15.5%;
+        height: 32.5%;
+        left: 53%;
+        top: 65%;
+    }
+    .drop:nth-child(8) {
+        width: 15.5%;
+        height: 32.5%;
+        left: 70.5%;
+        top: 65%;
+    }
+    .drop:nth-child(9) {
+        width: 20.5%;
+        height: 29%;
+        left: 11.2%;
+        top: 19.5%;
+    }
+    .drop:nth-child(10) {
+        width: 57.5%;
+        height: 57%;
+        left: 31.2%;
+        top: 19.5%;
+    }
+    .drop:nth-child(11) {
+        width: 57.5%;
+        height: 16%;
+        left: 32.2%;
+        top: 77%;
+    }
+    .drop:nth-child(10),
+    .drop:nth-child(11) {
+        overflow: hidden;
+        z-index: 1;
+    }
+    .drop:nth-child(10) img,
+    .drop:nth-child(11) img {
+        width: 100%;
+        height: auto;
+    }
+    .preguntas {
+        margin: 5px;
+    }
+    .preguntas img {
+        max-height: 46px;
+        margin: 0 10px;
+    }
+    .preguntas .inputable {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .preguntas .inputable input {
+        width: 100%;
+        height: 100%;
+    }
+    .preguntas .desplegable {
+        width: 50%;
+        padding: 10px;
+        margin: 0 20px;
+        border-bottom: 4px dashed var(--main);
+        cursor: pointer;
+        box-sizing: border-box;
+        display: flex;
+    }
+    .preguntas .clickables {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 20px;
+    }
+    .preguntas .clickables .clickable {
+        margin: 4px 10px;
+    }
+    .preguntas .clickables .clickable .number.small {
+        font-size: 1.6rem;
+    }
+    .preguntas .clickables.ok .clickable {
+        display: none;
+    }
+    .preguntas .clickables.ok .clickable.clicked {
+        display: block;
+    }
+    .preguntas .clickables.ok .clickable.clicked .number.small {
+        font-size: 2.6rem;
+    }
+    .preguntas .clickables.ok .clickable.clicked .anim {
+        display: none;
+    }
+
 
         @media (max-width:680px){
         }
@@ -21,16 +175,75 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="11" scene-color="#9375B4">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Identifico cuerpos geométricos" text="Coloca las figuras geométricas sobre el dibujo en los espacios correspondientes." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 truck">
+                    <img src="aimg/dibujo.svg" class="w80 truckimg">
+                    <div class="drops">
+                        <div class="drop" droptimes="untilok" data="rosa"></div>
+                        <div class="drop" droptimes="untilok" data="azul"></div>
+                        <div class="drop" droptimes="untilok" data="morado"></div>
+                        <div class="drop" droptimes="untilok" data="morado"></div>
+                        <div class="drop" droptimes="untilok" data="morado"></div>
+                        <div class="drop" droptimes="untilok" data="anaranjado"></div>
+                        <div class="drop" droptimes="untilok" data="anaranjado"></div>
+                        <div class="drop" droptimes="untilok" data="anaranjado"></div>
+                        <div class="drop" droptimes="untilok" data="verde"></div>
+                        <div class="drop" droptimes="untilok" data="cafe"></div>
+                        <div class="drop" droptimes="untilok" data="cafe"></div>
+                    </div>
+                </div>
+                <div class="row w100  wrap figs">
+                    <drag dropzone=".drop" data="rosa" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rombo.svg"></drag>
+                    <drag dropzone=".drop" data="azul" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/triangulo.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="verde" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/trapecio.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rectangulo.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rectangulo.svg"></drag>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+    
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="12" scene-color="#9375B4">
+
+            <info type="input" title="Identifico cuerpos geométricos" text="Ahora, indica cuántas figuras geométricas de cada tipo, hay en el dibujo y cómo se llaman." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                        <div v-for="(i, index) in [
+                        {item:'trapecio', q: 1, n: 'Trapecio'},
+                        {item:'circulo', q: 3, n: 'Círculo' },
+                        {item:'rectangulo', q: 2, n: 'Rectángulo' },
+                        {item:'cuadrado', q: 3, n: 'Cuadrado' },
+                        {item:'triangulo', q: 1, n: 'Triángulo' },
+                        {item:'rombo', q: 1, n: 'Rombo' },
+                    ]"
+                         class="row w100 preguntas">
+                            <div class="img w10"><img :src="'aimg/'+i.item+'.svg'"></div>
+                            <inputable :isok="i.q" initclass="c1"><div class="number small c1">{{i.q}}</div></inputable>
+                            <div class="desplegable" @click="temps[i.item] = true" v-if="temps[i.item] == null"></div>
+                            <div class="clickables row" v-if="temps[i.item] != null" :class="temps[i.item]" >
+                                <template v-for="op in ['Rombo', 'Triángulo', 'Cuadrado', 'Círculo', 'Trapecio', 'Rectángulo']">
+                                    <clickable @wasclicked="temps[i.item]='ok'" v-if="op == i.n" :isok="op == i.n" simple-ok><div class="number small c1">{{op}}</div></clickable>
+                                    <clickable v-else :isok="op == i.n"><div class="number small c1">{{op}}</div></clickable>
+                                </template>
+                            </div>
+                        </div>
+
+
+
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -48,6 +261,7 @@
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
     <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
@@ -59,8 +273,14 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.$set(app.temps, 'trapecio', null)
+        app.$set(app.temps, 'circulo', null)
+        app.$set(app.temps, 'rectangulo', null)
+        app.$set(app.temps, 'triangulo', null)
+        app.$set(app.temps, 'rombo', null)
+        app.$set(app.temps, 'cuadrado', null)
+        app.currentScene = 0
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>
