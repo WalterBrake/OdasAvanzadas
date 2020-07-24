@@ -3,14 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Me alimento con una dieta correcta</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .area {
+            text-align: center;
+            box-sizing: border-box;
+            padding: 6px;
+        }
+        .area .drop {
+            background: #fff;
+            border-radius: 20px;
+            width: 100%;
+            min-height: 100px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            padding: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .area .drop.okdrop {
+            background: var(--accent);
+            color: #fff;
+        }
+        .dragop {
+            max-width: 25%;
+            display: flex;
+            flex-direction: column;
+        }
+        .dragop .dialogaudio {
+            height: 30%;
+            width: 60px;
+            margin: 0 auto;
+        }
+        .dragop .audiotextBtn {
+            width: 32px;
+            margin: 0 auto;
+        }
+        .dragop .drag {
+            width: auto;
+            margin: 0 10px;
+        }
+        .dragop .drag div {
+            height: 100%;
+            box-sizing: border-box;
+            background: #fff;
+            border: 4px solid var(--c1);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        .drop.okdrop {
+            flex-direction: column;
+        }
+        .drop{
+            min-width: 80px; height: 40px;
+            background: #fff;
+            margin: 5px;
+            border-radius: 10px;
+            border: 4px solid var(--c6);
+            box-shadow: 6px 6px 0px var(--c7);
+        }
+        .drag{
+            width: auto;
+            height: auto;
+            margin: 2px 10px;
+        }
+        .drop {
+            padding: 10px;
+        }
+        .drop .number {
+            width: 100%;
+            text-align: center;
+        }
+        .area2 {
+            height: auto;
+            width: 25%;
+        }
+        .area2 .drop{
+            padding: 6px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .area2 .dropzone{
+            background: var(--c8);
+            width: 100%;
+            min-height: 100px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-top: 6px;
+        }
+        .area2 .number.small {
+            font-size: 1.6rem;
+        }
+
 
         @media (max-width:680px){
+            .area {
+                width: 50%;
+            }
+            .area2 {
+                width: 50%;
+            }
         }
     </style>
     </head>
@@ -21,22 +126,171 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="3" scene-color="#F460AB">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text="Coloca la definición correcta de los conceptos de la alimentación sana. Consulta las páginas 11 a 17 de tu libro de texto SEP." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row wrap w100">
+                    <div class="w30 area">
+                        <div class="number small c2">Alimentación</div>
+                        <div class="drop" data="alimentacion" droptimes="untilok"  oksound="asound/alimentacion.mp3"></div>
+                    </div>
+                    <div class="w30 area">
+                        <div class="number small c2">Dieta</div>
+                        <div class="drop" data="dieta" droptimes="untilok" oksound="asound/dieta.mp3"></div>
+                    </div>
+                    <div class="w30 area">
+                        <div class="number small c2">Nutrición</div>
+                        <div class="drop" data="nutricion" droptimes="untilok" oksound="asound/nutricion.mp3"></div>
+                    </div>
+                </div>    
+                <div class="row w100">
+                    <div class="w30 wrap dragop">
+                        <dialogaudio audio="asound/eselproceso.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="nutricion" append-to-dropzone dropzone-ok-class="okdrop"><div>Es el proceso por el cual el organismo obtiene de los alimentos los nutrimentos que necesita.</div></drag>
+                    </div>
+                    <div class="w30 dragop">
+                        <dialogaudio audio="asound/eslaaccion.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="alimentacion" append-to-dropzone  dropzone-ok-class="okdrop"><div>Es la acción por la cual ingerimos alimentos y bebidas.</div></drag>
+                    </div>
+                    <div class="w30 dragop">
+                        <dialogaudio audio="asound/eslavariedad.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="dieta" append-to-dropzone  dropzone-ok-class="okdrop"><div>Es la varidad y cantidad de alimentos que consumimos de manera cotidiana.</div></drag>
+                    </div>
+                </div>  
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="12" scene-color="#F460AB">
+
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca y ordena las partes de la oración para completar correctamente la definición de "Nutrimentos".' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap">
+                    <template v-for="i in temps.nutrimentos">
+                        <div class="drop" droptimes="untilok" :data="i.v"></div>
+                    </template>
+                </div>
+                <div class="row w100 wrap mt-1">
+                    <template v-for="i in _.shuffle(temps.nutrimentos)">
+                        <drag dropzone=".drop" :data="i.v" :dragsound="'asound/'+i.v+'.mp3'" append-to-dropzone>
+                            <div class="number small c7">{{i.t}}</div>
+                        </drag>
+                    </template>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="12" scene-color="#F460AB">
+
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca la definición correcta de las clasificaciones de los nutrimentos que se presentan a continuación.' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row wrap w100">
+                    <div class="area area2">
+                        <div class="number small c2">Proteínas</div>
+                        <div class="drop" data="proteinas" droptimes="untilok"  oksound="asound/proteinas.mp3"></div>
+                    </div>
+                    <div class="area area2">
+                        <div class="number small c2">Carbohidratos</div>
+                        <div class="drop" data="carbohidratos" droptimes="untilok" oksound="asound/carbohidratos.mp3"></div>
+                    </div>
+                    <div class="area area2">
+                        <div class="number small c2">Lípidos o grasas</div>
+                        <div class="drop" data="lipidos" droptimes="untilok" oksound="asound/lipidos.mp3"></div>
+                    </div>
+                    <div class="area area2">
+                        <div class="number small c2">Vitaminas y minerales</div>
+                        <div class="drop" data="vitaminas" droptimes="untilok" oksound="asound/vitaminas.mp3"></div>
+                    </div>
+                </div>    
+                <div class="row wrap w100">
+                    <div class="dragop">
+                        <dialogaudio audio="asound/proporcionanenergia.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="carbohidratos" append-to-dropzone  dropzone-ok-class="okdrop"><div>Proporcionan energía.</div></drag>
+                    </div>
+                    <div class="dragop">
+                        <dialogaudio audio="asound/ayudanamantener.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="vitaminas" append-to-dropzone  dropzone-ok-class="okdrop"><div>Ayudan a mantener un crecimiento y un desarollo saludable</div></drag>
+                    </div>
+                    <div class="dragop">
+                        <dialogaudio audio="asound/aportanenergia.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="lipidos" append-to-dropzone  dropzone-ok-class="okdrop"><div>Aportan energía y es recomendable no consumirlos en abundancia.</div></drag>
+                    </div>
+                    <div class="dragop">
+                        <dialogaudio audio="asound/provienedealimentos.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="proteinas" append-to-dropzone dropzone-ok-class="okdrop"><div>Provienen de alimentos de origen animal.</div></drag>
+                    </div>
+                </div>  
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="20" scene-color="#F460AB">
+
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca la definición correcta de las clasificaciones de los nutrimentos que se presentan a continuación.' textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row wrap w100">
+                    <div class="area area2">
+                        <div class="number small c2">Proteínas</div>
+                        <div class="drop"><div>Provienen de alimentos de origen animal. <div class="dropzone" data="proteinas" droptimes="untilok"  oksound="asound/proteinas.mp3"></div></div></div>
+                    </div>
+                    <div class="area area2">
+                        <div class="number small c2">Carbohidratos</div>
+                        <div class="drop"><div>Proporcionan energía.</div><div class="dropzone" data="carbohidratos" droptimes="untilok" oksound="asound/carbohidratos.mp3"></div></div>
+                    </div>
+                    <div class="area area2">
+                        <div class="number small c2">Lípidos o grasas</div>
+                        <div class="drop"><div>Aportan energía y es recomendable no consumirlos en abundancia. <div class="dropzone" data="lipidos" droptimes="untilok" oksound="asound/lipidos.mp3"></div></div></div>
+                    </div>
+                    <div class="area area2 ">
+                        <div class="number small c2">Vitaminas y minerales</div>
+                        <div class="drop"><div>Ayudan a mantener un crecimiento y un desarollo saludable. <div class="dropzone" data="vitaminas" droptimes="untilok" oksound="asound/vitaminas.mp3"></div></div></div>
+                    </div>
+                </div>    
+                <div class="row wrap w100">
+                    <template v-for="i in _.shuffle([
+                        {d:'proteinas', t:'carne'},
+                        {d:'proteinas', t:'huevos'},
+                        {d:'proteinas', t:'leche'},
+                        {d:'proteinas', t:'salmón'},
+                        {d:'proteinas', t:'queso'},
+                        {d:'carbohidratos', t:'maíz'},
+                        {d:'carbohidratos', t:'arroz'},
+                        {d:'carbohidratos', t:'avena'},
+                        {d:'carbohidratos', t:'papa'},
+                        {d:'carbohidratos', t:'pan'},
+                        {d:'lipidos', t:'cacahuate'},
+                        {d:'lipidos', t:'ajonjolí'},
+                        {d:'lipidos', t:'girasol'},
+                        {d:'lipidos', t:'aceite'},
+                        {d:'lipidos', t:'margarina'},
+                        {d:'vitaminas', t:'naranja'},
+                        {d:'vitaminas', t:'elote'},
+                        {d:'vitaminas', t:'manzana'},
+                        {d:'vitaminas', t:'pera'},
+                        {d:'vitaminas', t:'plátano'},
+                    ])">
+                        <drag dropzone=".dropzone" :data="i.d" append-to-dropzone><div class="number small c8">{{i.t}}</div></drag>
+                    </template>
+                </div>  
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -59,8 +313,22 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.temps.nutrimentos = [
+            {v: 'son', t: 'Son'},
+            {v: 'las', t: 'las'},
+            {v: 'sustancias', t: 'sustancias'},
+            {v: 'basicas', t: 'básicas'},
+            {v: 'que', t: 'que'},
+            {v: 'el', t: 'el'},
+            {v: 'organismo', t: 'organismo'},
+            {v: 'necesita', t: 'necesita'},
+            {v: 'para', t: 'para'},
+            {v: 'su', t: 'su'},
+            {v: 'buen', t: 'buen'},
+            {v: 'funcionamiento', t: 'funcionamiento.'},
+        ]
+        app.currentScene = 0
+        app.scenesCount = 4
         app.$devmode = false
     </script>
 </body>
