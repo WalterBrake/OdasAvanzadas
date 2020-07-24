@@ -3,14 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Comparo el perímetro y el área</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .bloqueIntro{
+            width: 380px;
+            height: 240px;
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+        .button.next{
+            font-size: 2rem;
+            margin: 20px;
+        }
+        .reticula {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .figura {
+            position: relative;
+        }
+        .figura .cuadr {
+            position: relative;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .figura .fig {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.3;
+            filter:grayscale(100%);
+        }
+        .number{text-align: center;}
+        .figura .fig.f1 {
+            width: 25%; left: 6.3%; top: 7.6%;
+        }
+        .figura .fig.f2 {
+            width: 25%; left: 37.6%; top: 7.6%;
+        }
+        .figura .fig.f3 {
+            width: 19%; left: 68.7%; top: 7.6%;
+        }
+        .figura .fig.f4 {
+            width: 25%; left: 6.3%; top: 37.8%;
+        }
+        .figura .fig.f5 {
+            width: 31.4%; left: 37.7%; top: 37.8%;
+        }
+        .figura .fig.f6 {
+            width: 38%; left: 12.5%; top: 75.8%;
+        }
+        .figura .fig.f7 {
+            width: 19%; left: 75%; top: 60.8%;
+        }
+        hr{
+            border-top: 4px dashed var(--accent);
+            margin: 20px auto;
+            width: 60%;
+        }
+        .clickable{
+            background: #fff;
+            border-radius: 10px;
+            padding: 2px 4px;
+            margin: 2px 10px;
+            box-sizing: border-box;
+        }
+        .pregunta{
+            max-width: 700px;
+            margin: 10px;
+            box-shadow: 8px 8px 0px #8AC26B;
+            box-sizing: border-box;
+            background: #fff;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .number{font-size: 2.8rem;}
+
+        .reticula .clickable.fig{
+            padding: 0;
+            margin: 0;
+        }
+        .question{
+            width: 100%;
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 10px;
+        }
+
+        .reticula.f1 .figura .fig.f1{ opacity: 1; filter: none;}
+        .reticula.f2 .figura .fig.f2{ opacity: 1; filter: none;}
+        .reticula.f3 .figura .fig.f3{ opacity: 1; filter: none;}
+        .reticula.f4 .figura .fig.f4{ opacity: 1; filter: none;}
+        .reticula.f5 .figura .fig.f5{ opacity: 1; filter: none;}
+        .reticula.f6 .figura .fig.f6{ opacity: 1; filter: none;}
+        .reticula.f7 .figura .fig.f7{ opacity: 1; filter: none;}
+
+        .medidas .fi {
+            margin: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .medidas .fi strong { font-family: 'barnacle_boyregular'; font-weight: normal; }
+        .medidas .f1 { background: #94D6DF; }
+        .medidas .f2 { background: #D7A6CB; }
+        .medidas .f3 { background: #FCC088; }
+        .medidas .f4 { background: #BFB291; }
+        .medidas .f5 { background: #FBBEA7; }
+        .medidas .f6 { background: #AC95C6; }
+        .medidas .f7 { background: #75BAE6; }
+
 
         @media (max-width:680px){
+            hr{margin: 10px auto;}
+            .number{
+                font-size: 2rem;
+                -webkit-text-stroke-width: 2px;
+            }
+            .number.small{
+                font-size: 1.4rem;
+            }
+            .medidas .fi{
+                flex-wrap: wrap;
+            }
+            .medidas .fi .w50{ width: 100%; }
         }
     </style>
     </head>
@@ -20,17 +142,295 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Comparo el perímetro y el área" text="Recuerda: para calcular el área de figuras en una cuadrícula puedes contar los cuadros uno a uno, y el perímetro corresponde al contorno de éstas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
+                <div class="row">
+                    <div class="bloqueIntro">
+                        <lottie-player src="aimg/areaperimetro.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
+                    </div>
+                </div>
+                <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+                <div class="row w100 pregunta">
+                    <div class="reticula f1 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [18, 16, 20]" simple-ok block-if-error :isok="i==16"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [6, 9, 8]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row w100 pregunta">
+                    <div class="reticula f2 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [13, 12, 10]" simple-ok block-if-error :isok="i==12"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [9, 8, 10]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row w100 pregunta">
+                    <div class="reticula f3 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [19, 15, 17]" simple-ok block-if-error :isok="i==17"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [11, 10, 9]" simple-ok block-if-error :isok="i==10"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row w100 pregunta">
+                    <div class="reticula f4 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [20, 16, 18]" simple-ok block-if-error :isok="i==18"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [10, 8, 7]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row w100 pregunta">
+                    <div class="reticula f5 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [22, 20, 18]" simple-ok block-if-error :isok="i==20"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [10, 9, 11]" simple-ok block-if-error :isok="i==9"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row w100 pregunta">
+                    <div class="reticula f7 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [13, 12, 10]" simple-ok block-if-error :isok="i==12"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [9, 7, 10]" simple-ok block-if-error :isok="i==7"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row w100 pregunta">
+                    <div class="reticula f6 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [18, 20, 19]" simple-ok block-if-error :isok="i==18"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [6, 7, 9]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="row w100 pregunta">
+                    <div class="reticula f6 w30" >
+                        <reticula></reticula>
+                    </div>
+                    <div class="opciones w50">
+                        <div class="number c1">Perímetro</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [18, 20, 19]" simple-ok block-if-error :isok="i==18"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                        <hr>
+                        <div class="number c1">Área</div>
+                        <div class="row w100">
+                            <clickable initclass="w30" v-for="i in [8, 7, 9]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+                <div class="row w100 question">¿Qué figura tiene mayor perímetro?</div>
                 
+                <div class="row w100 pregunta">
+                    <div class="reticula f1 f2 f3 f4 f5 f6 f7 w60" >
+                        <div class="figura w100">
+                            <img src="aimg/cuadricula.svg" class="w100 cuadr">
+                            <clickable initclass="fig f1" simple-ok block-if-error :isok="false"><img src="aimg/acua.svg"></clickable>
+                            <clickable initclass="fig f2" simple-ok block-if-error :isok="false"><img src="aimg/morado.svg"></clickable>
+                            <clickable initclass="fig f3" simple-ok block-if-error :isok="false"><img src="aimg/naranja.svg"></clickable>
+                            <clickable initclass="fig f4" simple-ok block-if-error :isok="false"><img src="aimg/cafe.svg"></clickable>
+                            <clickable initclass="fig f5" simple-ok block-if-error :isok="true"><img src="aimg/rosa.svg"></clickable>
+                            <clickable initclass="fig f6" simple-ok block-if-error :isok="false"><img src="aimg/violeta.svg"></clickable>
+                            <clickable initclass="fig f7" simple-ok block-if-error :isok="false"><img src="aimg/azul.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="medidas w40">
+                        <div class="row fi f1"><div class="w50">Perímetro = <strong>16</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f2"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f3"><div class="w50">Perímetro = <strong>17</strong></div> <div class="w50">Área = <strong>10</strong></div></div>
+                        <div class="row fi f4"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f5"><div class="w50">Perímetro = <strong>20</strong></div> <div class="w50">Área = <strong>9</strong></div></div>
+                        <div class="row fi f7"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>7</strong></div></div>
+                        <div class="row fi f6"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+                <div class="row w100 question">¿Qué figuras tienen perímetros y áreas iguales?</div>
+                
+                <div class="row w100 pregunta">
+                    <div class="reticula f1 f2 f3 f4 f5 f6 f7 w60" >
+                        <div class="figura w100">
+                            <img src="aimg/cuadricula.svg" class="w100 cuadr">
+                            <clickable initclass="fig f1" simple-ok block-if-error :isok="false"><img src="aimg/acua.svg"></clickable>
+                            <clickable initclass="fig f2" simple-ok block-if-error :isok="false"><img src="aimg/morado.svg"></clickable>
+                            <clickable initclass="fig f3" simple-ok block-if-error :isok="false"><img src="aimg/naranja.svg"></clickable>
+                            <clickable initclass="fig f4" simple-ok block-if-error :isok="true"><img src="aimg/cafe.svg"></clickable>
+                            <clickable initclass="fig f5" simple-ok block-if-error :isok="false"><img src="aimg/rosa.svg"></clickable>
+                            <clickable initclass="fig f6" simple-ok block-if-error :isok="true"><img src="aimg/violeta.svg"></clickable>
+                            <clickable initclass="fig f7" simple-ok block-if-error :isok="false"><img src="aimg/azul.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="medidas w40">
+                        <div class="row fi f1"><div class="w50">Perímetro = <strong>16</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f2"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f3"><div class="w50">Perímetro = <strong>17</strong></div> <div class="w50">Área = <strong>10</strong></div></div>
+                        <div class="row fi f4"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f5"><div class="w50">Perímetro = <strong>20</strong></div> <div class="w50">Área = <strong>9</strong></div></div>
+                        <div class="row fi f7"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>7</strong></div></div>
+                        <div class="row fi f6"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+                <div class="row w100 question">¿Qué figura tiene mayor área?</div>
+                
+                <div class="row w100 pregunta">
+                    <div class="reticula f1 f2 f3 f4 f5 f6 f7 w60" >
+                        <div class="figura w100">
+                            <img src="aimg/cuadricula.svg" class="w100 cuadr">
+                            <clickable initclass="fig f1" simple-ok block-if-error :isok="false"><img src="aimg/acua.svg"></clickable>
+                            <clickable initclass="fig f2" simple-ok block-if-error :isok="false"><img src="aimg/morado.svg"></clickable>
+                            <clickable initclass="fig f3" simple-ok block-if-error :isok="true"><img src="aimg/naranja.svg"></clickable>
+                            <clickable initclass="fig f4" simple-ok block-if-error :isok="false"><img src="aimg/cafe.svg"></clickable>
+                            <clickable initclass="fig f5" simple-ok block-if-error :isok="false"><img src="aimg/rosa.svg"></clickable>
+                            <clickable initclass="fig f6" simple-ok block-if-error :isok="false"><img src="aimg/violeta.svg"></clickable>
+                            <clickable initclass="fig f7" simple-ok block-if-error :isok="false"><img src="aimg/azul.svg"></clickable>
+                        </div>
+                    </div>
+                    <div class="medidas w40">
+                        <div class="row fi f1"><div class="w50">Perímetro = <strong>16</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f2"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f3"><div class="w50">Perímetro = <strong>17</strong></div> <div class="w50">Área = <strong>10</strong></div></div>
+                        <div class="row fi f4"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                        <div class="row fi f5"><div class="w50">Perímetro = <strong>20</strong></div> <div class="w50">Área = <strong>9</strong></div></div>
+                        <div class="row fi f7"><div class="w50">Perímetro = <strong>12</strong></div> <div class="w50">Área = <strong>7</strong></div></div>
+                        <div class="row fi f6"><div class="w50">Perímetro = <strong>18</strong></div> <div class="w50">Área = <strong>8</strong></div></div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==10" :key="10" end-scene :final-data="finalData"></scene>
     
 
     
@@ -57,10 +457,16 @@
     <script src="../../assets/modulos/info.js"></script>
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
+    <script>
+        Vue.component('reticula', {
+            template: `<div class="figura w100"><img src="aimg/cuadricula.svg" class="w100 cuadr"><img src="aimg/acua.svg" class="fig f1"><img src="aimg/morado.svg" class="fig f2"><img src="aimg/naranja.svg" class="fig f3"><img src="aimg/cafe.svg" class="fig f4"><img src="aimg/rosa.svg" class="fig f5"><img src="aimg/violeta.svg" class="fig f6"><img src="aimg/azul.svg" class="fig f7"></div>`
+        })
+    </script>
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        
+        app.currentScene = 0
+        app.scenesCount = 9
         app.$devmode = false
     </script>
 </body>

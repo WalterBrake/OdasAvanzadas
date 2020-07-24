@@ -10301,6 +10301,14 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/MA5T1\/108\/aimg\/areaperimetro.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/MA5T1\/108\/aimg\/areaperimetro-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/MA5T1\/108\/aimg\/azul.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -10458,39 +10466,32 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst2_Cuantas.mp3": {
+	"\/MA5T1\/108\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst2_Cuantas.mp3",
+		"oAP": "\/MA5T1\/108\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst3_Ahora.mp3": {
+	"\/MA5T1\/108\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst3_Ahora.mp3",
+		"oAP": "\/MA5T1\/108\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst_Selecciona.mp3": {
+	"\/MA5T1\/108\/asound\/instruccion2b.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Inst_Selecciona.mp3",
+		"oAP": "\/MA5T1\/108\/asound\/instruccion2b.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Recuerda.mp3": {
+	"\/MA5T1\/108\/asound\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/108\/asound\/Comparo el perímetro y el área Ma5°T1_Recuerda.mp3",
-		"oF": 0
-		},
-	"\/MA5T1\/108\/asound\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/108\/asound\/Icon\r",
+		"oAP": "\/MA5T1\/108\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/108\/index.html": {
