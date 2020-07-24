@@ -3,16 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Aprecio construcciones culturales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
-
+        .number.small{
+            font-size: 1.8rem;
+            margin: 10px;
         }
+        .drag{
+            width: auto; height: auto;
+        }
+        .drop {
+            background: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            border: 4px solid #B7DEA2;
+        }
+        .culturas,
+        .lugares {
+            text-align: center;
+        }
+        .culturas .lugar,
+        .lugares .lugar {
+            height: 100%;
+        }
+        .culturas .drop,
+        .lugares .drop {
+            margin-left: auto;
+            height: 80px;
+            max-width: 160px;
+        }
+        .culturas .drop img,
+        .lugares .drop img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .lugar{
+            background: #F2F8EE;
+            margin: 6px 0;
+            border-radius: 10px;
+            padding: 4px;
+        }
+        .culturas img,
+        .lugares img {
+            max-height: 100px;
+        }
+
+        @media (max-width: 680px) {
+            .drop {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+            .number.small {
+                font-size: 1.2rem;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+
     </style>
     </head>
 <body>
@@ -21,14 +71,41 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="5" scene-color="#70BF44">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="relacionar" title="Aprecio construcciones culturales" text="Coloca la imagen de cada construcción o ciudad representativa al lado de la cultura a la que pertenece." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row">
+                <div class="row w100">
+                    <div class="w30 culturas">
+                        <template v-for="item in [
+                                {val: 'sol', img: 'teotihuacana'},
+                                {val: 'chichen', img: 'maya'},
+                                {val: 'tula', img: 'tolteca'},
+                                {val: 'monte', img: 'zapoteca'},
+                                {val: 'tenoch', img: 'mexica'},
+                            ]">
+                            <drag dropzone=".drop" :data="item.val" stay-if-ok append-to-dropzone>
+                                <img :src="'aimg/'+item.img+'.svg'" class="w100">
+                            </drag>
+                        </template>
+                    </div>
+                    <div class="w70 lugares">
+                        <template v-for="item in [
+                                {val: 'sol'},
+                                {val: 'chichen'},
+                                {val: 'tula'},
+                                {val: 'monte'},
+                                {val: 'tenoch'},
+                            ]">
+                            <div class="row lugar">
+                                <div class="drop w50" :data="item.val" droptimes="untilok"></div>
+                                <div class="w50"><img :src="'aimg/'+item.val+'.svg'"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
 
-                </div>            
             </activity>
         </scene> <!-- end scene -->
 
