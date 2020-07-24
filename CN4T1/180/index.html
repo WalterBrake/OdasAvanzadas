@@ -3,14 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Como saludablemente</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .drag{
+            width: auto; height: auto;
+            margin: 6px;
+        }
+        .frase {
+            box-sizing: border-box;
+            margin: 20px;
+            background: #EAF6FD;
+            border: 4px solid #4AB4EF;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 1.4rem;
+        }
+        .frase p {
+            margin: 10px;
+            line-height: 1.4;
+        }
+        .frase strong {color: #4BB4EF; font-family: 'barnacle_boyregular'; }
+        .drop{
+            display: inline-block;
+            background: #fff;
+            border-radius: 10px;
+            min-height: 30px;
+            min-width: 100px;
+            padding: 0 10px;
+        }
+        .number.small{
+            font-size: 1.6rem;
+        }
+        .drop .number.small{
+            display: inline;
+            font-size: 1.4rem;
+        }
+
+        .alimentos .drag {
+            width: 60px;
+        }
+        .plato {
+            position: relative;
+        }
+        .plato .drop2 {
+            position: absolute;
+            min-width: 80px;
+            min-height: 80px;
+        }
+        .plato .drop2:nth-child(1) {
+            left: 15%;
+            top: 2%;
+            width: 70%;
+            height: 38%;
+        }
+        .plato .drop2:nth-child(2) {
+            left: 0;
+            top: 43%;
+            width: 50%;
+            height: 56%;
+        }
+        .plato .drop2:nth-child(3) {
+            left: 50%;
+            top: 43%;
+            width: 50%;
+            height: 56%;
+        }
+        .okdrag img{
+            transform:scale(0.7);
+        }
 
         @media (max-width:680px){
+            .drop{
+                min-height: 20px;
+            }
+            .frase{
+                margin: 4px;
+                padding: 4px;
+                font-size: 1rem;
+            }
         }
     </style>
     </head>
@@ -21,16 +95,63 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="10" scene-color="#4BB4EF">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Como saludablemente" text='Coloca las palabras en los espacios para completar el texto sobre el "Plato del bien comer".' textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 wrap">
+                    <template v-for="i in ['alimentos', 'Cereales', 'saludables', 'grupos', 'balanceada',  'proteínas',  'nutrimental', 'dieta', 'verduras', 'correcta', ]">
+                        <drag dropzone=".drop" :data="i" append-to-dropzone><div class="number small c6">{{i}}</div></drag>
+                    </template>
+                </div>
+                <div class="w100 frase">
+                    <p>El Plato del Bien Comer es una guía <span class="drop" droptimes="untilok" data="nutrimental">&nbsp;</span> que nos muestra cómo llevar una dieta <span class="drop" droptimes="untilok" data="balanceada">&nbsp;</span> e ilustra los tres grupos de <span class="drop" droptimes="untilok" data="alimentos">&nbsp;</span> que debemos consumir según las características y nutrimentos que nos aportan.</p>
+                    <p>Los tres <span class="drop" droptimes="untilok" data="grupos">&nbsp;</span> de alimentos son los siguientes.</p>
+                    <p><strong>1.</strong> Frutas y <span class="drop" droptimes="untilok" data="verduras">&nbsp;</span>.</p>
+                    <p><strong>2.</strong> <span class="drop" droptimes="untilok" data="Cereales">&nbsp;</span> y tubérculos.</p>
+                    <p><strong>3.</strong> Leguminosas y <span class="drop" droptimes="untilok" data="proteínas">&nbsp;</span> de orígen animal.</p>
+                    <p>Al consumir una combinación de estos alimentos cada día podemos lograr que nuestra <span class="drop" droptimes="untilok" data="dieta">&nbsp;</span> diaria sea <span class="drop" droptimes="untilok" data="correcta">&nbsp;</span> y balanceada, y de esta manera mantenernos <span class="drop" droptimes="untilok" data="saludables">&nbsp;</span>.</p>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#4BB4EF">
+
+            <info type="dragdrop" title="Como saludablemente" text='Ya que sabes qué es el "Plato del bien comer", coloca los alimentos dentro del grupo al que pertenezcan.' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap alimentos">
+                    <template v-for="i in [
+                        {i: 'col', d:'fv'},
+                        {i: 'frijol', d:'lp'},
+                        {i: 'naranja', d:'fv'},
+                        {i: 'pan', d:'ct'},
+                        {i: 'platano', d:'fv'},
+                        {i: 'pollo', d:'lp'},
+                        {i: 'queso', d:'lp'},
+                        {i: 'sandia', d:'fv'},
+                        {i: 'tortilla', d:'ct'},
+                    ]">
+                        <drag dropzone=".drop2" :data="i.d" stay-if-ok drag-ok-class="okdrag">
+                            <img :src="'aimg/'+i.i+'.svg'" class="w100">
+                        </drag>
+                    </template>
+                </div>
+                <div class="row w50 plato">
+                    <img src="aimg/plato.svg" class="w100">
+                    <div class="drops">
+                        <div class="drop2" data="fv" droptimes="multiple"></div>
+                        <div class="drop2" data="lp" droptimes="multiple"></div>
+                        <div class="drop2" data="ct" droptimes="multiple"></div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -59,8 +180,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>

@@ -1880,28 +1880,128 @@
 		"oAP": "\/CN3T1\/211\/index.html",
 		"oF": 0
 		},
-	"\/CN4T1\/180\/aimg\/CN4T1.svg": {
+	"\/CN4T1\/180\/aimg\/col.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN4T1\/180\/aimg\/CN4T1.svg",
+		"oAP": "\/CN4T1\/180\/aimg\/col.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN4T1\/180\/asound\/Como saludablemente CN4°T1_Inst2_YaQue.mp3": {
+	"\/CN4T1\/180\/aimg\/frijol.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/frijol.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/leche.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/leche.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/naranja.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/naranja.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/pan.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/pan.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/platano.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/platano.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/plato.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/plato.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/pollo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/pollo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/queso.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/queso.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/sandia.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/sandia.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/aimg\/tortilla.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/tortilla.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN4T1\/180\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T1\/180\/asound\/Como saludablemente CN4°T1_Inst2_YaQue.mp3",
+		"oAP": "\/CN4T1\/180\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CN4T1\/180\/asound\/Como saludablemente CN4°T1_Inst_Coloca.mp3": {
+	"\/CN4T1\/180\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T1\/180\/asound\/Como saludablemente CN4°T1_Inst_Coloca.mp3",
+		"oAP": "\/CN4T1\/180\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/CN4T1\/180\/index.html": {
