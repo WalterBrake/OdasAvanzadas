@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Aprendo cuándo se pobló América</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
+        .number.small{
+            font-size: 1.8rem;
+            margin: 10px;
         }
+        .drag{
+            width: auto; height: auto;
+        }
+        .drop {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 6px 0;
+            border: 4px solid #EEBB77;
+        }
+        @media (max-width: 680px) {
+            .drop {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+            .number.small {
+                font-size: 1.2rem;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+
     </style>
     </head>
 <body>
@@ -20,12 +42,45 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#5EB247">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="relacionar" title="Aprendo cuándo se pobló América" text="Relaciona las columnas y valida tu conocimiento sobre la teoría del Estrecho de Bering." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="w50">
+                        <template v-for="item in [
+                                {val: 'Asia.', text: '¿De cuál continente se cree que fueron originarios los primeros habitantes que poblaron el continente americano?.'},
+                                {val: 'Glaciación.', text: '¿Cómo se llamó el periodo en el que disminuyó tanto la temperatura que la Tierra se congeló principalmente en el norte y sur de los continentes?.'},
+                                {val: 'Estrecho de Bering.', text: '¿Cómo se llama el lugar en el que casi se unen Asia y América, y es por donde se cree que cruzaron los primeros pobladores?.'},
+                                {val: 'La caza y la recolección.', text: '¿Cuáles eran las actividades que realizaban los primeros pobladores para sobrevivir?.'},
+                                {val: 'Nómadas.', text: '¿Cómo se les llama a los grupos que continuamente se desplazan de un lugar a otro?.'},
+                                {val: 'De los años 40000 al 6000 a.C.', text:'¿Qué años comprendió el proceso de las primeras migraciones hacia América?.'},
+                            ]">
+                                <div class="row drop" :data="item.val" droptimes="untilok">
+                                    <p>{{item.text}}</p>
+                                </div>
+                        </template>
+                    </div>
+                    <div class="w50">
+                        <template v-for="item in [
+                                {txt: 'Nómadas.', col: 'c1', c: '#5EB247'},
+                                {txt: 'Estrecho de Bering.', col: 'c2', c: '#155093'},
+                                {txt: 'Asia.', col: 'c3', c: '#AAE1FA'},
+                                {txt: 'De los años 40000 al 6000 a.C.', col: 'c4', c: '#EB8B2F'},
+                                {txt: 'Glaciación.', col: 'c5', c: '#DB3E34'},
+                                {txt: 'La caza y la recolección.', col: 'c6', c: '#EB118B'},
+                            ]">
+                                <div class="row w100">
+                                    <drag initclass="w30" dropzone=".drop" :data="item.txt" stay-if-ok drag-line :particle-color="item.c">
+                                        <div :class="'conector '+item.col "></div>
+                                    </drag>
+                                    <div :class="'number small w70 '+item.col">{{item.txt}}</div>
+                                </div>
+                        </template>
+                    </div>
+                </div>
+
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +114,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>
