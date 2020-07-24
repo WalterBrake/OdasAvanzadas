@@ -3,12 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Clasifico materiales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .titulos div{
+            background: #06B6C6;
+        }
+        .preguntas img {
+            max-height: 46px;
+            margin: 0 10px;
+        }
+        .preguntas .desplegable {
+            padding: 10px;
+            margin: 0 10px;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .preguntas .clickables {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 10px;
+        }
+        .preguntas .clickables .clickable {
+            margin: 4px 10px;
+        }
+        .preguntas .clickables .clickable .number.small {
+            font-size: 1.6rem;
+        }
+        .preguntas .clickables.ok .clickable {
+            display: none;
+        }
+        .preguntas .clickables.ok .clickable.clicked {
+            display: block;
+        }
+        .preguntas .clickables.ok .clickable.clicked .number.small {
+            font-size: 2.6rem;
+        }
+        .preguntas .clickables.ok .clickable.clicked .anim {
+            display: none;
+        }
+        .titulos div {
+	background: #06B6C6;
+	color: #fff;
+	margin: 5px;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	font-size: 1.2rem;
+}
+.preguntas {
+	margin: 10px 0;
+}
+.preguntas .img,
+.preguntas .proceso {
+	padding: 10px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	margin: 5px;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.preguntas .proceso {
+	background: #fff;
+}
+.preguntas.c1 .img {
+	background: var(--main);
+}
+.preguntas.c1 .proceso {
+	border: 2px solid var(--main);
+}
+.preguntas.c1 .desplegable {
+	border-bottom: 4px dashed var(--main);
+}
+.preguntas.c2 .img {
+	background: var(--sec);
+}
+.preguntas.c2 .proceso {
+	border: 2px solid var(--sec);
+}
+.preguntas.c2 .desplegable {
+	border-bottom: 4px dashed var(--sec);
+}
+.preguntas.c3 .img {
+	background: var(--clear);
+}
+.preguntas.c3 .proceso {
+	border: 2px solid var(--clear);
+}
+.preguntas.c3 .desplegable {
+	border-bottom: 4px dashed var(--clear);
+}
+.preguntas.c4 .img {
+	background: var(--accent);
+}
+.preguntas.c4 .proceso {
+	border: 2px solid var(--accent);
+}
+.preguntas.c4 .desplegable {
+	border-bottom: 4px dashed var(--accent);
+}
+
 
         @media (max-width:680px){
         }
@@ -21,11 +123,34 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="4" scene-color="#E9BB5D">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Clasifico materiales" text="¿Qué les sucede a los objetos con el proceso que se menciona? Selecciona tu respuesta en las opciones del menú desplegable." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 titulos">
+                    <div class="w20">Objeto</div>
+                    <div class="w20">Proceso</div>
+                    <div class="w60">Transformación</div>
+                </div>
+                    <div v-for="(i, index) in [
+                        {item:'mantequilla', p: 'Calentarla.', n: 'Se derrite.'},
+                        {item:'huevo', p: 'Hervirlo en agua por 10 minutos.', n: 'Se hace sólido.'},
+                        {item:'agua', p: 'Hervirla 30 minutos.', n: 'Se evapora.' },
+                        {item:'vela', p: 'Dejarla encendida.', n: 'Se derrite.' },
+                    ]"
+                         :class="'row w100 preguntas c' + (index+1)">
+                            <div class="img w20"><img :src="'aimg/'+i.item+'.svg'"></div>
+                            <div class="proceso w20">{{i.p}}</div>
+                            <div class="w60">
+                                <div class="desplegable w100" @click="temps[i.item] = true" v-if="temps[i.item] == null"></div>
+                                <div class="clickables row w100" v-if="temps[i.item] != null" :class="temps[i.item]" >
+                                    <template v-for="op in ['Se evapora.', 'Se derrite.', 'Se hace sólido.']">
+                                        <clickable @wasclicked="temps[i.item]='ok'" v-if="op == i.n" :isok="op == i.n" simple-ok><div :class="'number small c'+(index+1)">{{op}}</div></clickable>
+                                        <clickable v-else :isok="op == i.n"><div :class="'number small c'+(index+1)">{{op}}</div></clickable>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +184,11 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.$set(app.temps, 'mantequilla', null)
+        app.$set(app.temps, 'huevo', null)
+        app.$set(app.temps, 'agua', null)
+        app.$set(app.temps, 'vela', null)
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>
