@@ -3,15 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Reconozco nuestras diferencias</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .introkids .w50{
+            box-sizing: border-box;
+            margin: 20px;
+        }
+        .button{
+            margin: 20px;
+            font-size: 2rem;
+        }
+        .area {
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .area .drop {
+            background: #fff;
+            border-radius: 20px;
+            width: 100%;
+            height: 140px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .area .drop.okdrop {
+            background: var(--accent);
+            color: #fff;
+        }
+        .dragop {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .dragop .dialogaudio {
+            height: 30%;
+            width: 60px;
+            margin: 0 auto;
+        }
+        .dragop .audiotextBtn {
+            width: 40px;
+            margin: 0 auto;
+        }
+        .dragop .drag {
+            width: auto;
+            height: 70%;
+            margin: 0 20px;
+        }
+        .dragop .drag div {
+            height: 100%;
+            box-sizing: border-box;
+            background: #fff;
+            border: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .drop.okdrop {
+            flex-direction: column;
+        }
+        .opt2 {
+            margin: 5px;
+        }
+        .opt2 .drag {
+            width: auto;
+            height: auto;
+        }
+        .opt2 .drag .number {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .number.small {
+            font-size: 1.4rem;
+            -webkit-text-stroke-width: 1px;
+        }
+
 
         @media (max-width:680px){
-
         }
     </style>
     </head>
@@ -21,19 +100,88 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#EC8B2E">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Reconozco nuestras diferencias" text='Los caracteres sexuales son las características sexuales de los hombres y las mujeres. Además, estos se dividen en "Primarios" y "Secundarios".' textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
+                <div class="row introkids">
+                    <div class="w50"><img src="aimg/nino.svg" class="w100 animate__animated animate__bounceInLeft animate__delay-1s"></div>
+                    <div class="w50"><img src="aimg/nina.svg" class="w100 animate__animated animate__bounceInRight animate__delay-2s"></div>
+                </div> 
                 <div class="row">
+                    <button class="button" @click="sceneCompleted(false)">Siguiente</button>
+                </div>           
+            </activity>
+        </scene> <!-- end scene -->
+      
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#EC8B2E">
 
-                </div>            
+            <info type="dragdrop" title="Reconozco nuestras diferencias" text='Coloca la definición que corresponda de "Caracter Sexual Primario" y "Caracter Sexual Secundario".' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="w50 area">
+                        <div class="number small c1">Caracteres Sexuales Primarios</div>
+                        <div class="drop" data="primarios" droptimes="untilok"  oksound="asound/primarios.mp3"></div>
+                    </div>
+                    <div class="w50 area">
+                        <div class="number small c2">Caracteres Sexuales Secundarios</div>
+                        <div class="drop" data="secundarios" droptimes="untilok" oksound="asound/secundarios.mp3"></div>
+                    </div>
+                </div>    
+                <div class="row w100">
+                    <div class="w50 dragop">
+                        <dialogaudio audio="asound/conjunto.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="secundarios" append-to-dropzone dropzone-ok-class="okdrop"><div>Conjunto de órganos reproductores interiores y exteriores.</div></drag>
+                    </div>
+                    <div class="w50 dragop">
+                        <dialogaudio audio="asound/caracteristicas.mp3"></dialogaudio>
+                        <drag dropzone=".drop" data="primarios" append-to-dropzone  dropzone-ok-class="okdrop"><div>Son las características que no intervienen en la reproducción pero hacen físicamente diferentes al hombre y a la mujer.</div></drag>
+                    </div>
+                </div>     
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="10" scene-color="#EC8B2E">
+
+            <info type="dragdrop" title="Reconozco nuestras diferencias" text='Coloca los órganos correspondientes a un hombre y a una mujer.' textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="w50 area">
+                        <div class="number small c1">Hombre</div>
+                        <div class="drop" data="h" droptimes="multiple"></div>
+                    </div>
+                    <div class="w50 area">
+                        <div class="number small c2">Mujer</div>
+                        <div class="drop" data="m" droptimes="multiple"></div>
+                    </div>
+                </div>    
+                <div class="row w100 wrap">
+                    <div v-for="i in [
+                        {d:'m', t: 'Ovarios', v:'ovarios'},
+                        {d:'h', t: 'Conductos deferentes', v:'conductos'},
+                        {d:'h', t: 'Pene', v:'pene'},
+                        {d:'m', t: 'Útero', v:'utero'},
+                        {d:'h', t: 'Vesícula seminal', v:'vesicula'},
+                        {d:'m', t: 'Tubas uterinos', v:'tubas'},
+                        {d:'m', t: 'Vulva', v:'vulca'},
+                        {d:'h', t: 'Testículos', v:'testiculos'},
+                        {d:'h', t: 'Próstata', v:'prostata'},
+                        {d:'m', t: 'Vagina', v:'vagina'},
+                    ]" class="opt2">
+                        <drag dropzone=".drop" :data="i.d" :dragsound="'asound/'+i.v+'.mp3'" append-to-dropzone dropzone-ok-class="okdrop"><div class="number small c4">{{i.t}}</div></drag>
+                    </div>
+                </div>     
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
     
 
     
@@ -63,7 +211,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>
