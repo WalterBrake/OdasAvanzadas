@@ -3,12 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Represento fracciones equivalentes</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .activity{ background-image: url('aimg/nino.svg'); background-position: bottom; background-repeat: no-repeat; background-size: contain;}
+        .fraccion {
+            border: 4px solid var(--c8);
+            width: 80px;
+            height: 120px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 2.4rem;
+            background: #fff;
+            font-family: 'barnacle_boyregular';
+            color: var(--c8);
+            box-shadow: 8px 8px 0 #8B8CBD;
+            margin: 0 auto;
+        }
+        .col{ text-align:  center; }
+        .fraccion hr {
+            width: 80%;
+            border-top: 4px solid var(--c8);
+        }
+        .drop {
+            background: #fff;
+            border-radius: 10px;
+            width: 90%;
+            margin: 10% 5%;
+            height: 94px;
+            box-shadow: 8px 8px 0 #8B8CBD;
+        }
+        .opciones .drag,
+        .drop .drag {
+            width: auto;
+            height: auto;
+            margin: 4px 6px;
+        }
+        .opciones .fraccion,
+        .drop .fraccion {
+            font-size: 1.8rem;
+            width: 40px;
+            height: 80px;
+            color: #6BC5AB;
+            box-shadow: 4px 4px 0 #6BC5AB;
+        }
+        .drop {
+            display: flex;
+        }
+        .drop .fraccion {
+            margin-top: 6px;
+            width: 24%;
+            box-shadow: none;
+            font-size: 1.2rem;
+        }
 
         @media (max-width:680px){
         }
@@ -21,11 +74,42 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="12" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Represento fracciones equivalentes" text="Observa las siguientes fracciones y coloca en los recuadros fracciones equivalentes." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="col w30">
+                        <div class="fraccion">1<hr>4</div>
+                        <div class="drop" droptimes="multiple" data="1-4"></div>
+                    </div>
+                    <div class="col w30">
+                        <div class="fraccion">2<hr>5</div>
+                        <div class="drop" droptimes="multiple" data="2-5"></div>
+                    </div>
+                    <div class="col w30">
+                        <div class="fraccion">3<hr>8</div>
+                        <div class="drop" droptimes="multiple" data="3-8"></div>
+                    </div>
+                </div>
+                <div class="row w100 wrap opciones">
+                    <drag v-for="i in [
+                    {data: '3-8', a: '12', b:'32'},
+                    {data: '2-5', a: '4', b:'10'},
+                    {data: '1-4', a: '5', b:'20'},
+                    {data: '1-4', a: '4', b:'16'},
+                    {data: '3-8', a: '9', b:'24'},
+                    {data: '3-8', a: '6', b:'16'},
+                    {data: '2-5', a: '6', b:'15'},
+                    {data: '2-5', a: '10', b:'25'},
+                    {data: '1-4', a: '3', b:'12'},
+                    {data: '3-8', a: '15', b:'40'},
+                    {data: '1-4', a: '2', b:'8'},
+                        {data: '2-5', a: '8', b:'20'},
+                        ]" :data="i.data" dropzone=".drop" :dragsound="'asound/' +i.a+'-'+i.b+ '.mp3'" append-to-dropzone>
+                        <div class="fraccion">{{i.a}}<hr>{{i.b}}</div>
+                    </drag>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -59,7 +143,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>
