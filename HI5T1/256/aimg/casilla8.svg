@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1003 794" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-5521.21,-6860.31)">
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1.00853,0,0,-1.01261,510.209,384.111)">
+                <path d="M0,-120.749L-138.486,-120.749C-138.486,-112.827 -144.908,-106.405 -152.83,-106.405L-158.5,-106.381L-158.5,0L-48.768,0C-21.834,0 0,-21.835 0,-48.769L0,-120.749Z" style="fill:rgb(249,179,221);fill-rule:nonzero;stroke:rgb(236,0,140);stroke-width:2.02px;"/>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1,0,0,1,-12.6,-5.4)">
+                <g transform="matrix(0.995969,0,0,1,1.48405,0)">
+                    <text x="368.161px" y="419.993px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">T<tspan x="373.148px " y="419.993px ">e</tspan>xas se c<tspan x="414.515px 420.797px 426.99px " y="419.993px 419.993px 419.993px ">onv</tspan>ir<tspan x="439.722px " y="419.993px ">t</tspan>ió</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.83297,0)">
+                    <path d="M456.982,419.993L456.982,415.593L458.831,415.593L458.831,419.993L460.201,419.993L460.201,414.568L456.97,414.568L456.97,414.345C456.97,413.633 457.282,413.053 458.229,413.053C458.741,413.053 459.176,413.198 459.421,413.343L459.733,412.307C459.421,412.107 458.775,411.962 458.229,411.962C456.625,411.962 455.611,412.853 455.611,414.312L455.611,414.568L454.876,414.568L454.876,415.593L455.611,415.593L455.611,419.993L456.982,419.993Z" style="fill:rgb(35,31,32);"/>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.85762,0)">
+                    <text x="460.833px" y="419.993px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">nalment<tspan x="501.077px " y="419.993px ">e</tspan></text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.48405,0)">
+                    <text x="368.161px" y="441.261px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">en un estado más de los</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.48405,0)">
+                    <text x="368.161px" y="483.79px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">en 1845.</text>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1.00853,0,0,-1.01261,496.423,443.712)">
+                <path d="M0,-19.843L-131.162,-19.843C-135.839,-19.843 -139.666,-16.017 -139.666,-11.339L-139.666,-8.504C-139.666,-3.827 -135.839,0 -131.162,0L0,0C4.678,0 8.504,-3.827 8.504,-8.504L8.504,-11.339C8.504,-16.017 4.678,-19.843 0,-19.843Z" style="fill:white;fill-rule:nonzero;stroke:rgb(170,225,250);stroke-width:1.24px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

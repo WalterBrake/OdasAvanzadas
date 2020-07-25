@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 467 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-16589.6,-2072.91)">
+        <g transform="matrix(5.55556,0,0,5.55556,14527.5,0)">
+            <g transform="matrix(1,0,0,1,445.651,376.601)">
+                <path d="M0,25.662L-65.018,25.662C-68.308,25.662 -71.002,22.969 -71.002,19.679L-71.002,5.985C-71.002,2.693 -68.308,0 -65.018,0L0,0C3.291,0 5.983,2.693 5.983,5.985L5.983,19.679C5.983,22.969 3.291,25.662 0,25.662Z" style="fill:rgb(172,210,239);fill-rule:nonzero;stroke:rgb(0,143,212);stroke-width:0.69px;"/>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,14527.5,0)">
+            <text x="381.338px" y="387.009px" style="font-family:'AmericanTypewriter-Semibold', 'American Typewriter', serif;font-weight:600;font-size:8.925px;fill:rgb(35,31,32);">9 038 000 km</text>
+            <text x="441.631px" y="384.036px" style="font-family:'AmericanTypewriter-Semibold', 'American Typewriter', serif;font-weight:600;font-size:5.203px;fill:rgb(35,31,32);">2</text>
+            <text x="390.723px" y="398.777px" style="font-family:'AmericanTypewriter-Semibold', 'American Typewriter', serif;font-weight:600;font-size:11.899px;fill:rgb(35,31,32);">Oceanía</text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1503 781" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-4076.71,-6118.53)">
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1.00853,0,0,-1.01261,235.85,250.468)">
+                <path d="M0,-118.643L-144.394,-118.643L-144.394,-48.255C-144.394,-21.605 -122.789,0 -96.138,0L103.581,0L103.581,-107.305L11.354,-107.289C5.083,-107.289 0,-112.372 0,-118.643Z" style="fill:rgb(255,240,189);fill-rule:nonzero;stroke:rgb(255,212,0);stroke-width:2px;"/>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1,0,0,1,-12.6,-5.4)">
+                <g transform="matrix(0.995969,0,0,1,0.457305,0)">
+                    <text x="113.447px" y="293.635px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">M<tspan x="122.76px " y="293.635px ">i</tspan>entr<tspan x="145.449px " y="293.635px ">a</tspan>s que An<tspan x="192.264px " y="293.635px ">t</tspan>onio L<tspan x="225.568px " y="293.635px ">ó</tspan>pez de Santa Anna fue</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,0.457305,0)">
+                    <text x="113.447px" y="314.904px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">captur<tspan x="144.735px " y="314.904px ">a</tspan>do y estuv<tspan x="199.481px " y="314.904px ">o</tspan> prisioner<tspan x="251.163px " y="314.904px ">o</tspan></text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.04468,0)">
+                    <path d="M261.422,314.904L261.422,310.504L263.271,310.504L263.271,314.904L264.641,314.904L264.641,309.479L261.411,309.479L261.411,309.257C261.411,308.544 261.723,307.965 262.67,307.965C263.182,307.965 263.617,308.109 263.862,308.254L264.174,307.218C263.862,307.018 263.216,306.873 262.67,306.873C261.066,306.873 260.052,307.764 260.052,309.223L260.052,309.479L259.317,309.479L259.317,310.504L260.052,310.504L260.052,314.904L261.422,314.904Z" style="fill:rgb(35,31,32);"/>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,1.06932,0)">
+                    <text x="265.274px" y="314.904px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">rmó el</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,0.457305,0)">
+                    <text x="113.447px" y="357.433px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">en 1836.</text>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1.00853,0,0,-1.01261,323.388,318.332)">
+                <path d="M0,-19.842L-212.154,-19.842C-216.832,-19.842 -220.658,-16.015 -220.658,-11.338L-220.658,-8.504C-220.658,-3.826 -216.832,0 -212.154,0L0,0C4.678,0 8.504,-3.826 8.504,-8.504L8.504,-11.338C8.504,-16.015 4.678,-19.842 0,-19.842Z" style="fill:white;fill-rule:nonzero;stroke:rgb(170,225,250);stroke-width:1px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

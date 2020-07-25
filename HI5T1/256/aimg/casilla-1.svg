@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 960 696" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-3835.24,-5363)">
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1.00853,0,0,-1.01261,46.73,199.262)">
+                <path d="M0,63.915L0,-19.842L151.144,-19.848L151.144,83.763L19.714,83.758C8.826,83.757 0,74.873 0,63.915Z" style="fill:rgb(254,216,179);fill-rule:nonzero;stroke:rgb(246,139,30);stroke-width:1.99px;"/>
+            </g>
+        </g>
+        <g transform="matrix(5.55556,0,0,5.55556,3631.89,4783.46)">
+            <g transform="matrix(1,0,0,1,-12.6,-5.4)">
+                <g transform="matrix(0.995969,0,0,1,0.261754,0)">
+                    <text x="64.936px" y="146.256px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">La Marina de Guerra Nacional</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,0.261754,0)">
+                    <text x="64.936px" y="167.525px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">c<tspan x="69.836px " y="167.525px ">o</tspan>nsiguió que los españoles</text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,0.261754,0)">
+                    <text x="64.936px" y="188.793px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">capitular<tspan x="107.597px " y="188.793px ">a</tspan>n en noviembr<tspan x="183.006px " y="188.793px ">e</tspan></text>
+                </g>
+                <g transform="matrix(0.995969,0,0,1,0.261754,0)">
+                    <text x="64.936px" y="210.062px" style="font-family:'MyriadPro-Semibold', 'Myriad Pro', sans-serif;font-weight:600;font-size:11.139px;fill:rgb(35,31,32);">de <tspan x="150.937px " y="210.062px ">.</tspan></text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
