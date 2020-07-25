@@ -3,12 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Estudio las relaciones de México</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .nota {
+            font-size: 0.8rem;
+            text-align: center;
+            background: #DED7B5;
+            border-radius: 10px;
+        }
+        .nota .audiotext { flex-direction: row; }
+        .box{
+            width: 33%;
+            border-radius: 10px;
+            border: 2px solid var(--c7);
+            background: #fff;
+            box-sizing: border-box;
+            background: #fff;
+            padding: 2px;
+            position: relative;
+            min-height: 100px;
+            text-align: center;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box.img{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .box.empty{
+            background: transparent;
+            border: none
+        }
+        .box.x2{
+            width: 66%;
+        }
+        .box .desplegar {
+            display: inline-block;
+            width: auto;
+            min-width: 40%;
+            max-width: 98%;
+            margin: 0 1%;
+            box-sizing: border-box;
+        }
+        .desplegar .options {
+            flex-wrap: wrap;
+        }
+        .desplegar .options .option .number.small{
+            font-size: 1.3rem;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        .box {
+	flex-grow: 1;
+}
+.box.img {
+	max-width: 20%;
+}
+.desplegar .deployer:before {
+	background: #fff;
+}
+.rw1 {
+	align-items: flex-start;
+}
+.rw1 .box:nth-child(1) {
+	background: #FED8B2;
+	border-color: #F89334;
+	border-radius: 20px 0 0 20px;
+}
+.rw1 .box:nth-child(2) {
+	border-color: #BD55A0;
+	border-radius: 0;
+}
+.rw1 .box:nth-child(3) {
+	background: #ADD3F0;
+	border-color: #0294D8;
+	border-radius: 0 20px 0 0;
+	padding-bottom: 10px;
+}
+.rw2 {
+	align-items: flex-end;
+}
+.rw2 .box:nth-child(1) {
+	background: #FFF0BE;
+	border-color: #FFD500;
+	border-radius: 20px 0 0 0;
+	width: 53%;
+}
+.rw2 .box:nth-child(2) {
+	background: #C9BADB;
+	border-color: #714D9F;
+	border-radius: 0 0 20px 0;
+	padding-top: 10px;
+}
+.rw3 {
+	align-items: flex-end;
+}
+.rw3 .box:nth-child(1) {
+	background: #D6CDB8;
+	border-color: #917C44;
+	border-radius: 0 0 0 20px;
+	padding-top: 30px;
+}
+.rw3 .box:nth-child(2) {
+	border-color: #06B6C6;
+	border-radius: 0;
+}
+.rw3 .box:nth-child(3) {
+	background: #F7C1D8;
+	border-color: #EB1F91;
+	border-radius: 0 20px 0 0;
+	padding-bottom: 10px;
+}
+.rw4 {
+	align-items: flex-end;
+}
+.rw4 .box:nth-child(1) {
+	border-color: #A18D6A;
+	border-radius: 20px 0 0 20px;
+}
+.rw4 .box:nth-child(2) {
+	background: #F4F3C0;
+	border-color: #E4DC35;
+	border-radius: 0;
+	padding-bottom: 10px;
+}
+.rw4 .box:nth-child(3) {
+	border-color: #73C04B;
+	border-radius: 0;
+	padding-top: 120px;
+}
+
 
         @media (max-width:680px){
         }
@@ -21,11 +152,84 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        :answers="12" scene-color="#6EA7BA">
+            <info type="seleccionar" title="Estudio las relaciones de México" text="Selecciona la respuesta correcta en cada casilla para completar la línea del tiempo." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
+                <div class="nota"><audiotext audio="asound/nota.mp3" text="Nuestro país vivió momentos en los que luchó militarmente contra los intereses extranjeros sobre el territorio y la economía." :autoplay="false"></audiotext></div>
                 
+                <div class="row rw1 w100">
+                    <div class="box orange">
+                        <p>
+                            La Marina de Guerra Nacional consiguió que los españoles capitularan en noviembre de 
+                            <desplegar :key="0" answer="1825" show-ok modal-options :options="['1835', '1925', '1825']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
+                            .
+                        </p>
+                    </div>
+                    <div class="box img" style="background-image:url(aimg/barco.svg)"></div>
+                    <div class="box">
+                        <p>
+                            Una nueva expedición
+                            <desplegar :key="1" answer="española" show-ok modal-options :options="['francesa', 'turca', 'española']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
+                            llegó a
+                            <desplegar :key="2" answer="Tamaulipas" show-ok modal-options :options="['Durango', 'Tamaulipas', 'Veracruz']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar> 
+                            para intentar una segunda 
+                            <desplegar :key="3" answer="reconquista de México" show-ok modal-options :options="['coronación de Maximiliano', 'reconquista de México', 'liberación de esclavos']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>  
+                            en 1829.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row rw2 w100">
+                    <div class="box x2">
+                        <p>Mientras que Antonio López de Santa Anna fue capturado y estuvo prisionero firmó el 
+                        <desplegar :key="4" answer="acuerdo para  la independencia de Texas" show-ok modal-options :options="['tratado de paz en México', 'acuerdo para  la independencia de Texas', 'contrato de devolución de Texas']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                        en 1836.</p>
+                    </div>
+                    <div class="box">
+                        <p>
+                            Más de 30 mil extranjeros y aproximadamente 3 mil mexicanos llegaron a vivir en
+                            <desplegar :key="5" answer="Texas" show-ok modal-options :options="['Nueva York', 'Los Ángeles', 'Texas']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            en el año de
+                            <desplegar :key="6" answer="1834" show-ok modal-options :options="['1824','1934','1834']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            .
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row rw3 w100">
+                    <div class="box">
+                        <p>
+                            <desplegar :key="7" answer="Francia" show-ok modal-options :options="['Bélgica', 'Francia', 'Italia']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            mandó tropas al fuerte de San Juan de Ulúa para bloquear el comercio en
+                            <desplegar :key="8" answer="1838" show-ok modal-options :options="['1834', '1838', '1883']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                        </p>
+                    </div>
+                    <div class="box img" style="background-image:url(aimg/frontera.svg)"></div>
+                    <div class="box">
+                        <p>
+                            Texas se convirtió finalmente en un estado más de los 
+                            <desplegar :key="9" answer="Estados Unidos de América" show-ok modal-options :options="['España', 'Francia', 'Estados Unidos de América']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            en 1845.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row rw4 w100">
+                    
+                    <div class="box img" style="background-image:url(aimg/firma.svg)"></div>
+                    <div class="box">
+                        <p>
+                            Se firmó el Tratado 
+                            <desplegar :key="10" answer="Guadalupe-Hidalgo" show-ok modal-options :options="['Santa Ana-Washington', 'Guadalupe-Hidalgo', 'San Luis']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            en el que México aceptó la pérdida de Nuevo México y California en 
+                            <desplegar :key="11" answer="1848" show-ok modal-options :options="['1848', '1858', '1884']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            .
+                        </p>
+                    </div>
+                    <div class="box img" style="background-image:url(aimg/mexico.svg)"></div>
+
+                </div>
+
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,6 +251,8 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +265,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>

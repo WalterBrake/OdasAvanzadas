@@ -388,6 +388,26 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/desplegable.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/desplegable-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/modulos\/desplegar.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/desplegar-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/dialog.js": {
 		"ft": 64,
 		"ma": 0,
@@ -464,6 +484,16 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/assets\/modulos\/inputbox-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/modulos\/number.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/number-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -6399,18 +6429,58 @@
 		"oAP": "\/HI4T1\/263\/index.html",
 		"oF": 0
 		},
-	"\/HI5T1\/256\/asound\/Estudio las relaciones de México Hi5°T1_Inst_Selecc.mp3": {
+	"\/HI5T1\/256\/aimg\/barco.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI5T1\/256\/aimg\/barco.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI5T1\/256\/aimg\/firma.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI5T1\/256\/aimg\/firma.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI5T1\/256\/aimg\/frontera.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI5T1\/256\/aimg\/frontera.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI5T1\/256\/aimg\/mexico.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI5T1\/256\/aimg\/mexico.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI5T1\/256\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/256\/asound\/Estudio las relaciones de México Hi5°T1_Inst_Selecc.mp3",
+		"oAP": "\/HI5T1\/256\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/HI5T1\/256\/asound\/Estudio las relaciones de México Hi5°T1_Intro_Nuestro.mp3": {
+	"\/HI5T1\/256\/asound\/nota.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/256\/asound\/Estudio las relaciones de México Hi5°T1_Intro_Nuestro.mp3",
+		"oAP": "\/HI5T1\/256\/asound\/nota.mp3",
 		"oF": 0
 		},
 	"\/HI5T1\/256\/index.html": {
@@ -10964,6 +11034,23 @@
 		"oAP": "\/MA5T1\/95\/index.html",
 		"oF": 0
 		},
+	"\/MA6T1\/113\/aimg\/ejemplo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/113\/aimg\/ejemplo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/113\/aimg\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/Icon\r",
+		"oF": 0
+		},
 	"\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst2_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -10978,12 +11065,89 @@
 		"oAP": "\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst_Recuerda.mp3",
 		"oF": 0
 		},
+	"\/MA6T1\/113\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/Icon\r",
+		"oF": 0
+		},
 	"\/MA6T1\/113\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/113\/index.html",
 		"oF": 0
+		},
+	"\/MA6T1\/115\/1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/MA6T1\/115\/asound\/Dibujo la otra mitad MA°6 T1_Inst_Observa.mp3": {
 		"cB": 0,
@@ -10992,12 +11156,106 @@
 		"oAP": "\/MA6T1\/115\/asound\/Dibujo la otra mitad MA°6 T1_Inst_Observa.mp3",
 		"oF": 0
 		},
+	"\/MA6T1\/115\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/115\/Icon\r",
+		"oF": 0
+		},
 	"\/MA6T1\/115\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/115\/index.html",
 		"oF": 0
+		},
+	"\/MA6T1\/116\/aimg\/casa1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/casa1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/casa2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/casa2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/escuela.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/escuela.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/hospital.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/hospital.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/116\/aimg\/Icon\r",
+		"oF": 0
+		},
+	"\/MA6T1\/116\/aimg\/ingeniero.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/ingeniero.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/parque.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/parque.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/116\/aimg\/restaurante.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/116\/aimg\/restaurante.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Inst2_IngRuiz.mp3": {
 		"cB": 0,
@@ -11020,12 +11278,36 @@
 		"oAP": "\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Intr_Ayuda.mp3",
 		"oF": 0
 		},
+	"\/MA6T1\/116\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/116\/Icon\r",
+		"oF": 0
+		},
 	"\/MA6T1\/116\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/116\/index.html",
 		"oF": 0
+		},
+	"\/MA6T1\/96\/aimg\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/96\/aimg\/Icon\r",
+		"oF": 0
+		},
+	"\/MA6T1\/96\/aimg\/parque.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/96\/aimg\/parque.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/MA6T1\/96\/asound\/Describo cuerpos geométricos MA°6T1_Inst_Describo.mp3": {
 		"cB": 0,
@@ -11034,11 +11316,25 @@
 		"oAP": "\/MA6T1\/96\/asound\/Describo cuerpos geométricos MA°6T1_Inst_Describo.mp3",
 		"oF": 0
 		},
+	"\/MA6T1\/96\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/96\/Icon\r",
+		"oF": 0
+		},
 	"\/MA6T1\/96\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/96\/index.html",
+		"oF": 0
+		},
+	"\/MA6T1\/Icon\r": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/Icon\r",
 		"oF": 0
 		},
 	"\/readme": {
