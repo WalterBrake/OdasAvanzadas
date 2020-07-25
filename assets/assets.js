@@ -109,6 +109,10 @@ var app = new Vue({
             var endData = JSON.stringify(_this.finalData)
             window.top.postMessage(endData, "*")
         },
+        cleanstr(str){
+            var st = str.toLowerCase().replace(/\s/g,'')
+            return st.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        },
         debugg(e){
             console.log(e)
         },

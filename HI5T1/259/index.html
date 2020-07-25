@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Exploro el pasado</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
+        .pregunta{
+            font-size: 2rem;
+        }
+        .clickable{
+            width: auto;
+            margin: 20px;
+        }
         @media (max-width:680px){
         }
     </style>
@@ -21,16 +27,128 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.p1.play()"></info>
             <activity>
-                
+                <div class="row w100 pregunta"><audiotext text="¿En qué lugar de Hidalgo se celebró por primera vez el Grito de Independencia como fiesta cívica?" audio="asound/pre1.mp3" ref="p1"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Huichapan','Acatlán','Jaltocán','Metztitlán']" :key="i" :isok="i == 'Huichapan'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
             </activity>
         </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué medio de transporte utilizaban los viajeros y era jalado por caballos?" audio="asound/pre2.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Triciclo','Carretas','Coche','Diligencia']" :key="i" :isok="i == 'Diligencia'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Cómo se le llama al reclutamiento forzoso de campesinos para servir al ejército?" audio="asound/pre3.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Teva','Leva','Meva','Liva']" :key="i" :isok="i == 'Leva'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué medio de transporte se utilizaba para trasladar las mercancías?" audio="asound/pre4.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Diligencias','Triciclo','Carretas','Coche']" :key="i" :isok="i == 'Carretas'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Cómo se llamaba a aquellos lugares donde los viajeros pasaban la noche?" audio="asound/pre5.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Posadas','Hoteles','Conventos','Asilos']" :key="i" :isok="i == 'Posadas'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué país europeo mandó tropas al Golfo de México para bloquear el comercio?" audio="asound/pre6.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Estados Unidos','Inglaterra','España','Francia']" :key="i" :isok="i == 'Francia'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué oficio tenía el comerciante que provocó un grave conflicto entre México y Francia?" audio="asound/pre7.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Pintor','Mecánico','Pastelero','Herrero']" :key="i" :isok="i == 'Pastelero'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Cuál es la nacionalidad de los extranjeros que atacaron el fuerte de San Juan de Ulúa y el puerto de Veracruz?" audio="asound/pre8.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Estadounidenses','Ingleses','Españoles','Franceses']" :key="i" :isok="i == 'Franceses'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué nombre recibían las personas que se dedicaban al asalto de viajeros y de mercancías?" audio="asound/pre9.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Bandidos','Ladrones','Banqueros','Misioneros']" :key="i" :isok="i == 'Bandidos'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta"><audiotext text="¿Qué acontecimientos sucedían con frecuencia en los caminos, que causaban daño a las personas, los comerciantes y las comunicaciones?" audio="asound/pre10.mp3" :autoplay="true"></audiotext></div>
+                <div class="row w100 respuesta">
+                    <clickable v-for="i in ['Incendios','Choques','Terremotos','Asaltos']" :key="i" :isok="i == 'Asaltos'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==11" :key="11" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +165,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +178,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 10
         app.$devmode = false
     </script>
 </body>
