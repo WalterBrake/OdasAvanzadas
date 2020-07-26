@@ -2,6 +2,7 @@ Vue.component('number', {
     props: [
         'initclass', // clase inicial
         'small', // tamano pequeno
+        'smaller', // tamano mas pequeno
         'c', // valor que se compara con el campo answer de options
         'randomc', //color aleatorio
     ],
@@ -15,6 +16,7 @@ Vue.component('number', {
             'number ' +
             (initclass!=undefined?initclass:'') + ' ' +
             (small!=undefined?'small':'') + ' ' +
+            (smaller!=undefined?'smaller':'') + ' ' +
             (c!=undefined?'c'+c:'') + ' ' +
             ranc
             " >

@@ -3,15 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Estudio los grupos políticos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
+        .drop {
+            background: #fff;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin: 2px 0;
         }
+        .drop:nth-child(1),
+        .drop:nth-child(5),
+        .drop:nth-child(9) {
+            box-shadow: 6px 6px 0 var(--c1);
+            border: 1px solid var(--c1);
+        }
+        .drop:nth-child(2),
+        .drop:nth-child(6) {
+            box-shadow: 6px 6px 0 var(--c2);
+            border: 1px solid var(--c2);
+        }
+        .drop:nth-child(3),
+        .drop:nth-child(7) {
+            box-shadow: 6px 6px 0 var(--c3);
+            border: 1px solid var(--c3);
+        }
+        .drop:nth-child(4),
+        .drop:nth-child(8) {
+            box-shadow: 6px 6px 0 var(--c4);
+            border: 1px solid var(--c4);
+        }
+        .drag {
+            width: auto;
+            height: auto;
+            display: inline-block;
+        }
+        .palabras .number {
+            background: #fff;
+            border-radius: 10px;
+            padding: 8px 5px;
+            display: flex;
+            margin: 2px 1px 2px 20px;
+        }
+        .palabras .number .conector {
+            margin-right: 10px;
+        }
+        .hist {
+	        position: relative;
+            min-height: 240px;
+        }
+        .dialogaudio .audiotextBtn {
+            position: absolute;
+            z-index: 9;
+            left: 3%;
+            top: 3%;
+            width: 40px;
+        }
+        .audio2 {
+            position: absolute;
+            left: 35%;
+            top: 0;
+        }
+
+        .button{
+            margin: 20px;
+            font-size: 2rem;
+        }
+
+
+        @media (max-width: 680px) {
+            .drop {
+                padding: 6px;
+                font-size: 0.8rem;
+            }
+            .number.smaller {
+                font-size: 1.2rem;
+            }
+        }
+
     </style>
     </head>
 <body>
@@ -20,23 +93,78 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="9" scene-color="#E2D0B8">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="relacionar" title="Estudio los grupos políticos" text="Las leyes promulgadas entre 1855 y 1857 afectaron los intereses de distintos grupos políticos de México." textaudio="asound/intro.mp3" :autoplay="true" @completedinstructions="$refs.inst.play()">
+                <audiotext audio="asound/instruccion.mp3" text="Relaciona las descripciones con su concepto." :autoplay="false" ref="inst"></audiotext>
+            </info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="textos w60">
+                        <template v-for="i in [
+                        { d: '1', t: 'Ley que buscaba propiciar el progreso económico, y puso en circulación bienes capitales de las corporaciones civiles y eclesiásticas.'},
+                        { d: '2', t: 'Organizaciones cuyos miembros son los únicos que pueden decidir sobre ellas en asuntos que traten del gobierno y la administración.'},
+                        { d: '3', t: 'Ley que reguló el cobro de los servicios realizados por la religión católica, como los bautismos, los matrimonios, etcétera. '},
+                        { d: '4', t: 'Personas que poseían grandes extensiones de tierra.'},
+                        { d: '5', t: 'Ley que quitó los privilegios a los miembros de la Iglesia y el ejército, y estableció la igualdad de los ciudadanos.'},
+                        { d: '6', t: 'Partido cuyos principales miembros eran militares, terratenientes, o pertenecían a la iglesia.'},
+                        { d: '7', t: 'Ley de carácter federal que buscaba modernizar el país.'},
+                        { d: '8', t: 'Privilegios otorgados a ciertos grupos o personas por su posición o cargo en el gobierno.'},
+                        { d: '9', t: 'Partido cuyos miembros propusieron una serie de reformas para transformar la situación y la economía del país.'},
+                        ]">
+                            <div class="drop" droptimes="untilok" :data="i.d">{{i.t}}</div>
+                        </template>
+                    </div>
+                    <div class="palabras w40">
+                        <template v-for="i in _.shuffle([
+                        { d: '8', t: 'Fuero'},
+                        { d: '3', t: 'Ley Iglesias'},
+                        { d: '9', t: 'Liberales'},
+                        { d: '5', t: 'Ley Juárez'},
+                        { d: '6', t: 'Conservadores'},
+                        { d: '7', t: 'Constitución de 1857'},
+                        { d: '1', t: 'Ley Lerdo'},
+                        { d: '4', t: 'Terratenientes'},
+                        { d: '2', t: 'Corporaciones'}, 
+                        ])">
+                            <number smaller c="6">
+                                <drag dropzone=".drop" :data="i.d" stay-if-ok drag-line particle-color="#DB569A"><div class="conector c6"></div></drag>
+                                {{i.t}}
+                            </number>
+                        </template>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#E2D0B8">
+
+            <info type="relacionar" title="Estudio los grupos políticos" text="Las leyes promulgadas entre 1855 y 1857 afectaron los intereses de distintos grupos políticos de México." textaudio="asound/intro.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="w50 hist"><dialogaudio audio="asound/03.mp3" @completed="temps = true" ref="audio3" show-on-play><img src="aimg/l.png" class="w100 animate__animated animate__fadeInLeft"></dialogaudio></div>
+                    <div class="w50 hist"><dialogaudio audio="asound/01.mp3" @completed="$refs.audio2.playstop()" :autoplay="true" show-on-play>
+                        <img src="aimg/r.png" class="w100 animate__animated animate__fadeInRight">
+                        <div class="audio2"><dialogaudio audio="asound/02.mp3" ref="audio2" @completed="$refs.audio3.playstop()"></dialogaudio></div>
+                    </dialogaudio></div>
+                </div>
+                <button class="button" v-if="temps" @click="sceneCompleted(false)">Finalizar</button>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +175,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +188,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.temps = false
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>

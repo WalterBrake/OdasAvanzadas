@@ -160,6 +160,7 @@ input[type=number] {
 }
 .audiotextBtn {
   cursor: pointer;
+  max-width: 60px;
 }
 .audiotext {
   display: flex;

@@ -7332,39 +7332,72 @@
 		"oAP": "\/HI5T1\/259\/index.html",
 		"oF": 0
 		},
-	"\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Inst_Relaciona.mp3": {
+	"\/HI5T1\/262\/aimg\/HI5T1.png": {
+		"ft": 32768,
+		"iS": 673966,
+		"oA": 0,
+		"oAP": "\/HI5T1\/262\/aimg\/HI5T1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T1\/262\/aimg\/l.png": {
+		"ft": 32768,
+		"iS": 381243,
+		"oA": 0,
+		"oAP": "\/HI5T1\/262\/aimg\/l.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T1\/262\/aimg\/r.png": {
+		"ft": 32768,
+		"iS": 336166,
+		"oA": 0,
+		"oAP": "\/HI5T1\/262\/aimg\/r.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T1\/262\/asound\/01.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Inst_Relaciona.mp3",
+		"oAP": "\/HI5T1\/262\/asound\/01.mp3",
 		"oF": 0
 		},
-	"\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_1857.mp3": {
+	"\/HI5T1\/262\/asound\/02.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_1857.mp3",
+		"oAP": "\/HI5T1\/262\/asound\/02.mp3",
 		"oF": 0
 		},
-	"\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_Arriba.mp3": {
+	"\/HI5T1\/262\/asound\/03.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_Arriba.mp3",
+		"oAP": "\/HI5T1\/262\/asound\/03.mp3",
 		"oF": 0
 		},
-	"\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_Señores.mp3": {
+	"\/HI5T1\/262\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Int_Señores.mp3",
+		"oAP": "\/HI5T1\/262\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Intro_Leyes.mp3": {
+	"\/HI5T1\/262\/asound\/intro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T1\/262\/asound\/Estudio los grupos políticos Hi5°T1_Intro_Leyes.mp3",
+		"oAP": "\/HI5T1\/262\/asound\/intro.mp3",
 		"oF": 0
 		},
 	"\/HI5T1\/262\/index.html": {
