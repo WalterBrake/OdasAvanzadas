@@ -3,12 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Conozco la extensión territorial</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .map {
+            position: relative;
+        }
+        .map .drags .dragpos {
+            width: 20%;
+            height: 20%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .map .drags .dragpos:nth-child(1) {
+            left: 60%;
+            top: 37%;
+            width: 30%;
+        }
+        .map .drags .dragpos:nth-child(2) {
+            left: 7%;
+            top: 13%;
+            width: 35%;
+            height: 70%;
+        }
+        .map .drags .dragpos:nth-child(3) {
+            left: 38%;
+            top: 48%;
+            width: 30%;
+            height: 26%;
+        }
+        .map .drags .dragpos:nth-child(4) {
+            left: 20%;
+            top: 85%;
+            width: 63%;
+            height: 14%;
+        }
+        .map .drags .dragpos:nth-child(5) {
+            left: 50%;
+            top: 14%;
+            height: 23%;
+            width: 46%;
+        }
+        .map .drags .dragpos:nth-child(6) {
+            left: 70%;
+            top: 70%;
+            width: 30%;
+        }
+        .map .drags .dragpos img {
+            width: 100%;
+            max-width: 140px;
+        }
+        .drag {
+            width: 100%;
+            height: auto;
+        }
+        .drop {
+            width: 30%;
+            background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+            margin: 2px 10px;
+            border-radius: 10px;
+            padding: 4px;
+            display: flex;
+        }
+        .drop .number {
+            margin-right: 2%;
+        }
+        .drop img {
+            max-width: 120px;
+        }
 
         @media (max-width:680px){
         }
@@ -21,11 +91,25 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Conozco la extensión territorial" text="Observa el mapa de la extensión territorial de los continentes." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.ins2.play()">
+                <audiotext audio="asound/instruccion2.mp3" text="Coloca el nombre de los continentes de mayor a menor en los recuadros numerados, según la extensión territorial." ref="ins2"></audiotext>
+            </info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="map w60">
+                        <img src="aimg/mapano.svg" class="w100">
+                        <div class="drags">
+                            <div v-for="i in ['Asia', 'América', 'África', 'Antártida', 'Europa', 'Oceanía']" :key="i" class="dragpos">
+                                <drag :data="i" dropzone=".drop" append-to-dropzone><img :src="'aimg/'+cleanstr(i)+'.svg'"></drag>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w100 wrap">
+                    <div v-for="(i, index) in [ 'Asia','América', 'África', 'Antártida', 'Europa', 'Oceanía']" :key="i" :data="i" class="drop" droptimes="untilok"><number small :c="index+1">{{index+1}}.</number></div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,6 +131,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +144,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>

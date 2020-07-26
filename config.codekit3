@@ -6237,12 +6237,25 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/GE5T1\/219\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/GE5T1\/219\/aimg\/Icon\r",
-		"oF": 0
+	"\/GE5T1\/219\/aimg\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE5T1\/219\/aimg\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/GE5T1\/219\/aimg\/mapano.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/GE5T1\/219\/aimg\/mapano.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/GE5T1\/219\/aimg\/oceania.svg": {
 		"ft": 2097152,
@@ -6254,18 +6267,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/GE5T1\/219\/asound\/Conozco la extensión territorial GE°5T1_Inst2_Coloca.mp3": {
+	"\/GE5T1\/219\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T1\/219\/asound\/Conozco la extensión territorial GE°5T1_Inst2_Coloca.mp3",
+		"oAP": "\/GE5T1\/219\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/219\/asound\/Conozco la extensión territorial GE°5T1_Inst_Observa.mp3": {
+	"\/GE5T1\/219\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T1\/219\/asound\/Conozco la extensión territorial GE°5T1_Inst_Observa.mp3",
+		"oAP": "\/GE5T1\/219\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/GE5T1\/219\/index.html": {
