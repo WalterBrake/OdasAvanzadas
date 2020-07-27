@@ -6470,13 +6470,6 @@
 		"oAP": "\/GE5T1\/224\/index.html",
 		"oF": 0
 		},
-	"\/GE6T1\/221\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/GE6T1\/221\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/GE6T1\/221\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -6487,18 +6480,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/GE6T1\/221\/asound\/Conozco los continentes Ge 6º T1_Inst2_Selecciona.mp3": {
+	"\/GE6T1\/221\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE6T1\/221\/asound\/Conozco los continentes Ge 6º T1_Inst2_Selecciona.mp3",
+		"oAP": "\/GE6T1\/221\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/GE6T1\/221\/asound\/Conozco los continentes Ge 6º T1_Inst_Coloca.mp3": {
+	"\/GE6T1\/221\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE6T1\/221\/asound\/Conozco los continentes Ge 6º T1_Inst_Coloca.mp3",
+		"oAP": "\/GE6T1\/221\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/GE6T1\/221\/index.html": {

@@ -3,40 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Conozco los continentes</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
+        .map {
+            position: relative;
+        }
+        .drop {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15%;
+            height: 8%;
+            background: #fff;
+            border-radius: 10px;
+            border: 2px solid var(--c8);
+            box-shadow: 6px 6px 0 var(--c8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .drop .number {
+            width: 100%;
+            text-align: center;
+        }
+        .drop:nth-child(1) {
+            left: 10%;
+            top: 30%;
+        }
+        .drop:nth-child(2) {
+            left: 46%;
+            top: 15%;
+        }
+        .drop:nth-child(3) {
+            left: 41%;
+            top: 50%;
+        }
+        .drop:nth-child(4) {
+            left: 64%;
+            top: 35%;
+        }
+        .drop:nth-child(5) {
+            left: 76%;
+            top: 70%;
+        }
+        .drop:nth-child(6) {
+            left: 35%;
+            top: 84%;
+        }
+        .pregunta{
+            padding: 20px 0; 
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        @media (max-width: 680px) {
+            .drop .number.smaller {
+                font-size: 1rem;
+                font-weight: bold;
+            }
         }
     </style>
     </head>
 <body>
     <div id="app">
-        
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
-        
+        <scene v-if="currentScene==10" :key="10" end-scene :final-data="finalData"></scene>
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Conozco los continentes" text="Coloca los nombres de los continentes sobre el mapa del mundo." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="map w100">
+                        <img src="aimg/mapa.svg"  class="w100">
+                        <div class="drops">
+                            <div class="drop" v-for="i in ['América', 'Europa', 'África', 'Asia', 'Oceanía', 'Antártida']" :data="i" droptimes="untilok"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w100 wrap">
+                    <drag v-for="i in _.shuffle(['América', 'Europa', 'África', 'Asia', 'Oceanía', 'Antártida'])" :data="i" dropzone=".drop" append-to-dropzone><number smaller randomc>{{i}}</number></drag>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+       
+        <!-- ### scene -->
+        <scene v-for="(scene,index) in [
+        {ans:'África', p: '¿En qué continente se ubica el Río Nilo y el Río Congo?'},
+        {ans:'Asia', p: '¿En qué continente se encuentran los países: Tailandia, India, Bangladesh y Malasia?'},
+        {ans:'América', p: '¿Cuál continente cuenta con un mayor porcentaje de población urbana y con grandes regiones industriales?'},
+        {ans:'Europa', p: '¿Cuál continente cuenta con una de las más grandes depresiones en la región de los Alpes?'},
+        {ans:'Asia', p: '¿Cuál continente cuenta con la mayor industria automotriz?'},
+        {ans:'Oceanía', p: 'Australia y Nueva Zelanda son países pluriculturales por la cantidad de inmigrantes que reciben, ¿en qué continente se encuentran dichos países?'},
+        {ans:'América', p: '¿Cuál continente exporta, mundialmente, el mayor porcentaje de productos agrícolas?'},
+        {ans:'Antártida', p: '¿En qué continente existen reservas congeladas de agua dulce?'},
+        ]" v-if="currentScene==(index+2)" :key="(index+2)" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+            <info type="seleccionar" title="Conozco los continentes" text="Selecciona el continente que corresponda de acuerdo a la pregunta que aparezca en pantalla." textaudio="asound/instruccion2.mp3" :autoplay="index+2==2"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    {{scene.p}}
+                </div>
+                <div class="row w100">
+                    <div class="map w100">
+                        <img src="aimg/mapa.svg"  class="w100">
+                        <div class="drops">
+                            <clickable initclass="drop" simple-ok v-for="i in ['América', 'Europa', 'África', 'Asia', 'Oceanía', 'Antártida']" :isok="i==scene.ans"><number smaller c="8">{{i}}</number></div>
+                        </div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
-
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        
+       
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +138,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +151,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 9
         app.$devmode = false
     </script>
 </body>
