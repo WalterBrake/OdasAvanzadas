@@ -3,12 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Multiplico por diferentes números</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .button.next{ font-size: 2rem; margin: 20px;}
+        .frac {
+            padding: 10px;
+            background: var(--c7);
+            font-family: 'barnacle_boyregular';
+            color: #fff;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: center;
+            margin: 4px;
+        }
+        .frac div {
+            width: 20%;
+        }
+        .frac hr {
+            border-top: 2px solid #fff;
+        }
+        .frac .drop {
+            background: #fff;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .drop .number{ width: 100%; }
+        .drag {
+            width: auto;
+            height: auto;
+            padding: 10px;
+            margin: 10px;
+            min-width: 200px;
+        }
 
         @media (max-width:680px){
         }
@@ -20,17 +53,88 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" :key="1" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Multiplico por diferentes números" text="Recuerda que, para multiplicar un número entero por una fracción, debes multiplicarlo por el numerador y dividirlo entre el denominador." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="w30"><img src="aimg/nina.svg" class="w100"></div>
+                    <div class="w80"><lottie-player src="aimg/ejemplo.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player>
+                    </div>
+                </div>
+                <button class="next button" @click="sceneCompleted(false)">Siguiente</button>
+
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Multiplico por diferentes números" text="Coloca en la casilla el resultado de cada operación matemática." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="col w70 wm100">
+                        <div class="row frac">
+                            <div>500</div> <div class="sim">x</div> <div class="f">8<hr>5</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="800"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>25</div> <div class="sim">x</div> <div class="f">1<hr>10</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="2.5"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>100</div> <div class="sim">x</div> <div class="f">2<hr>5</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="40"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>10</div> <div class="sim">x</div> <div class="f">0.40</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="4"></div>
+                        </div>
+                    </div>
+                    <div class="col w30 wm100 row wrap">
+                        <drag v-for="i in [40, 2.5, 4, 800]" dropzone=".drop" :data="i" append-to-dropzone><number small randomc>{{i}}</number></drag>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+       
+       
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Multiplico por diferentes números" text="Coloca en la casilla el resultado de cada operación matemática." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="col w70 wm100">
+                        <div class="row frac">
+                            <div>35</div> <div class="sim">x</div> <div class="f">1<hr>5</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="7"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>30</div> <div class="sim">x</div> <div class="f">2<hr>3</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="20"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>250</div> <div class="sim">x</div> <div class="f">4<hr>5</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="200"></div>
+                        </div>
+                        <div class="row frac">
+                            <div>12</div> <div class="sim">x</div> <div class="f">1<hr>3</div> <div class="sim">=</div>
+                            <div class="drop" droptimes="untilok" :data="4"></div>
+                        </div>
+                    </div>
+                    <div class="col w30 wm100 row wrap">
+                        <drag v-for="i in [4, 200, 20, 7]" dropzone=".drop" :data="i" append-to-dropzone><number small randomc>{{i}}</number></drag>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +151,9 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +166,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>

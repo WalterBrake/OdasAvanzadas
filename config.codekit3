@@ -11905,6 +11905,80 @@
 		"oAP": "\/MA5T1\/95\/index.html",
 		"oF": 0
 		},
+	"\/MA6T1\/113\/aimg\/02.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/02.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/03.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/03.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/04.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/04.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/05.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/05.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/06.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/06.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/07.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/07.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/08.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/08.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/ej.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T1\/113\/aimg\/ej.eps",
+		"oF": 0
+		},
+	"\/MA6T1\/113\/aimg\/ej.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/113\/aimg\/ej.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/113\/aimg\/ejemplo.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/MA6T1\/113\/aimg\/ejemplo-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/MA6T1\/113\/aimg\/ejemplo.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -11922,18 +11996,28 @@
 		"oAP": "\/MA6T1\/113\/aimg\/Icon\r",
 		"oF": 0
 		},
-	"\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst2_Coloca.mp3": {
+	"\/MA6T1\/113\/aimg\/nina.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/113\/aimg\/nina.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/113\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst2_Coloca.mp3",
+		"oAP": "\/MA6T1\/113\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst_Recuerda.mp3": {
+	"\/MA6T1\/113\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/113\/asound\/Multiplico por diferentes números Ma6°T1_Inst_Recuerda.mp3",
+		"oAP": "\/MA6T1\/113\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/113\/Icon\r": {
