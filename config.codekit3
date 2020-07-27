@@ -12034,81 +12034,121 @@
 		"oAP": "\/MA6T1\/113\/index.html",
 		"oF": 0
 		},
-	"\/MA6T1\/115\/1.svg": {
+	"\/MA6T1\/115\/aimg\/drag1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/1.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drag1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/2.svg": {
+	"\/MA6T1\/115\/aimg\/drag2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/2.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drag2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/3.svg": {
+	"\/MA6T1\/115\/aimg\/drag3.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/3.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drag3.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/4.svg": {
+	"\/MA6T1\/115\/aimg\/drag4.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/4.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drag4.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/5.svg": {
+	"\/MA6T1\/115\/aimg\/drag5.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/5.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drag5.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/6.svg": {
+	"\/MA6T1\/115\/aimg\/drop1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/6.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drop1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/7.svg": {
+	"\/MA6T1\/115\/aimg\/drop2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA6T1\/115\/7.svg",
+		"oAP": "\/MA6T1\/115\/aimg\/drop2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/115\/asound\/Dibujo la otra mitad MA°6 T1_Inst_Observa.mp3": {
+	"\/MA6T1\/115\/aimg\/drop3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/aimg\/drop3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/aimg\/drop4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/aimg\/drop4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/aimg\/drop5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/aimg\/drop5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/aimg\/drop6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/aimg\/drop6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T1\/115\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/115\/asound\/Dibujo la otra mitad MA°6 T1_Inst_Observa.mp3",
+		"oAP": "\/MA6T1\/115\/asound\/instruccion.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/115\/Icon\r": {

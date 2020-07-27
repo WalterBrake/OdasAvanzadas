@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Dibujo la otra mitad</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .drop {
+            width: 22%;
+            position: relative;
+        }
+        .drop img {
+            width: 100%;
+        }
+        .drop img:nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        .drag {
+            width: 20%;
+            height: auto;
+        }
+        .drag img {
+            width: 100%;
+        }
 
         @media (max-width:680px){
         }
@@ -21,11 +41,28 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="5" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Dibujo la otra mitad" text="Observa las figuras y coloca juntas las que completan su simetría." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row wrap w100">
+                    <template v-for="i in _.shuffle([
+                        {type: 'drag', im: 'aimg/drag1.svg', d:1},
+                        {type: 'drag', im: 'aimg/drag2.svg', d:2},
+                        {type: 'drag', im: 'aimg/drag3.svg', d:3},
+                        {type: 'drag', im: 'aimg/drag4.svg', d:4},
+                        {type: 'drag', im: 'aimg/drag5.svg', d:5},
+                        {type: 'drop', im: 'aimg/drop1.svg', d:1},
+                        {type: 'drop', im: 'aimg/drop2.svg', d:2},
+                        {type: 'drop', im: 'aimg/drop3.svg', d:3},
+                        {type: 'drop', im: 'aimg/drop4.svg', d:4},
+                        {type: 'drop', im: 'aimg/drop5.svg', d:5},
+                        {type: 'drop', im: 'aimg/drop6.svg', d:6},
+                    ])">
+                        <div v-if="i.type=='drop'" :data="i.d" class="drop" droptimes="untilok"><img :src="i.im" ></div>
+                        <drag v-if="i.type=='drag'" :data="i.d" dropzone=".drop" append-to-dropzone><img :src="i.im" ></drag>
+                    </template>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -37,6 +74,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -59,7 +97,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>
