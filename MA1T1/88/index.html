@@ -22,7 +22,7 @@
 
 
         <scene v-if="currentScene==1" :key="1"
-            :answers="1" :score="60"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             scene-color="#CAE1A0"
             @completed="sceneCompleted"
@@ -37,12 +37,12 @@
  
 
         <scene v-if="currentScene==2" :key="2"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
             @completed="sceneCompleted"
-            :devmode="false">
+            :devmode=":s">
             <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
@@ -57,7 +57,7 @@
 
 
         <scene v-if="currentScene==3" :key="3"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
@@ -77,7 +77,7 @@
 
 
         <scene v-if="currentScene==4" :key="4"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
@@ -97,7 +97,7 @@
         
         
         <scene v-if="currentScene==5" :key="5"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
@@ -117,7 +117,7 @@
         
         
         <scene v-if="currentScene==6" :key="6"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
@@ -137,7 +137,7 @@
         
         
         <scene v-if="currentScene==7" :key="7"
-            :answers="1" :score="10"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#56A03F"
@@ -191,5 +191,10 @@
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 7
+        app.$devmode = false
+    </script>
 </body>
 </html>

@@ -40,7 +40,7 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
         <scene v-if="currentScene==1" :key="1"
-            :answers="13" :score="50"
+            :answers="13" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#F8DEE8"
@@ -77,7 +77,7 @@
         
         
         <scene v-if="currentScene==2" :key="2"
-        :answers="5" :score="80"
+        :answers="5" :score="scoreInScene"
         :temporals="temporals"
         alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
         scene-color="#F8DEE8"
@@ -141,5 +141,10 @@
     <script src="../../assets/modulos/activity.js"></script>
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 0
+        app.scenesCount = 2
+        app.$devmode = false
+    </script>
 </body>
 </html>

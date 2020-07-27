@@ -3,13 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Aprendo qué es un folleto</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+        .folleto {
+            position: relative;
+        }
+        .drop {
+            position: absolute;
+            width: 84%;
+            left: 8%;
+            border-radius: 10px;
+            border: 2px solid var(--main);
+            box-sizing: border-box;
+            height: 20%;
+            background: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3px 3px 0 var(--main);
+        }
+        .drop img {
+            max-width: 80%;
+            margin: 0 auto;
+            max-height: 90%;
+        }
+        .drop.okDrop {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        .drag {
+            width: auto;
+            height: auto;
+            margin: 5px;
+            max-width: 40%;
+        }
+        .drop.f1:nth-child(1) {
+            top: 10%;
+            height: 5%;
+        }
+        .drop.f1:nth-child(2) {
+            top: 16%;
+            height: 28%;
+        }
+        .drop.f1:nth-child(3) {
+            top: 53.1%;
+            height: 7%;
+        }
+        .drop.f1:nth-child(4) {
+            top: 65%;
+            height: 10%;
+        }
+        .drop.f2:nth-child(1) {
+            top: 2%;
+            height: 6%;
+        }
+        .drop.f2:nth-child(2) {
+            top: 8%;
+            height: 28%;
+        }
+        .drop.f2:nth-child(3) {
+            top: 60%;
+            height: 7%;
+        }
+        .drop.f3:nth-child(1) {
+            top: 3%;
+            height: 25%;
+            width: 40%;
+            left: 55%;
+        }
+        .drop.f3:nth-child(2) {
+            top: 30%;
+            height: 11%;
+            width: 60%;
+            left: 4%;
+        }
+        .drop.f3:nth-child(3) {
+            top: 56%;
+            height: 20%;
+            width: 40%;
+            left: 4%;
+        }
+        .drop.f3:nth-child(4) {
+            top: 82%;
+            height: 14%;
+        }
+
+        .drag.dragword {
+            max-width: 100%;
+        }
+        .drag.dragword div {
+            background: #fff;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .dropwords {
+            background: #F2D577;
+            border: 4px solid #eeaa22;
+            min-height: 120px;
+            margin: 20px 10px;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropwords div {
+            background: #eeaa22;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 20px;
+        }
+
         @media (max-width:680px){
         }
     </style>
@@ -21,22 +136,132 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="6" scene-color="#ED1C25">
+        :answers="4" scene-color="#EBF6E7">
 
-            <info type="dragdrop" title="TITULO" text="instruccion" textaudio="asound/instruccion.mp3" :autoplay="true" ></info>
+            <info type="dragdrop" title="Aprendo qué es un folleto" text="Coloca los elementos que faltan en cada parte del folleto." textaudio="asound/instruccion.mp3" :autoplay="true" ></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="folleto w40">
+                        <img src="aimg/1_folleto.svg" class="w100">
+                        <div class="drops">
+                            <div class="drop f1" v-for="i in 4" :data="i" droptimes="untilok" :key="i"></div>
+                        </div>
+                    </div>
+                    <div class="row wrap drags w60">
+                        <drag v-for="(i, index) in _.shuffle([
+                        { d: 1, im: '1_coronavirus'},
+                        { d: 2, im: '1_ilustracion'},
+                        { d: 3, im: '1_quees'},
+                        { d: 4, im: '1_etiqueta'},
+                        {d: 0, im: 'it-1'},
+                        {d: 0, im: 'it-2'},
+                        {d: 0, im: '3_limpia'},
+                        {d: 0, im: 'it-4'},
+                        {d: 0, im: 'it-5'},
+                        ])" :key="index" dropzone=".drop" :data="i.d" append-to-dropzone dropzone-ok-class="okDrop"><img :src="'aimg/'+i.im+'.svg'" class="w100"></drag>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="3" scene-color="#EBF6E7">
+
+            <info type="dragdrop" title="Aprendo qué es un folleto" text="Coloca los elementos que faltan en cada parte del folleto." textaudio="asound/instruccion.mp3" :autoplay="false" ></info>
+            <activity>
+                <div class="row w100">
+                    <div class="folleto w40">
+                        <img src="aimg/2_folleto.svg" class="w100">
+                        <div class="drops">
+                            <div class="drop f2" v-for="i in 3" :data="i" droptimes="untilok"></div>
+                        </div>
+                    </div>
+                    <div class="row wrap drags w60">
+                        <drag v-for="(i, index) in _.shuffle([
+                        { d: 1, im: '2_etiqueta1'},
+                        { d: 2, im: '2_ilustracion'},
+                        { d: 3, im: '2_etiqueta2'},
+                        {d: 0, im: 'it-2'},
+                        {d: 0, im: 'it-3'},
+                        {d: 0, im: 'it-5'},
+                        {d: 0, im: 'it-6'},
+                        {d: 0, im: 'it-7'},
+                        { d: 0, im: '3_ilustracion'},
+                        ])" :key="index" dropzone=".drop" :data="i.d" append-to-dropzone dropzone-ok-class="okDrop"><img :src="'aimg/'+i.im+'.svg'" class="w100"></drag>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#EBF6E7">
+
+            <info type="dragdrop" title="Aprendo qué es un folleto" text="Coloca los elementos que faltan en cada parte del folleto." textaudio="asound/instruccion.mp3" :autoplay="false" ></info>
+            <activity>
+                <div class="row w100">
+                    <div class="folleto w40">
+                        <img src="aimg/3_folleto.svg" class="w100">
+                        <div class="drops">
+                            <div class="drop f3" v-for="i in 4" :data="i" droptimes="untilok"></div>
+                        </div>
+                    </div>
+                    <div class="row wrap drags w60">
+                        <drag v-for="(i, index) in _.shuffle([
+                        { d: 1, im: '3_ilustracion'},
+                        { d: 2, im: '3_texto'},
+                        { d: 3, im: '3_limpia'},
+                        { d: 4, im: '3_texto2'},
+                        {d: 0, im: 'it-1'},
+                        {d: 0, im: 'it-2'},
+                        {d: 0, im: 'it-5'},
+                        {d: 0, im: 'it-7'},
+                        { d: 0, im: '1_ilustracion'},
+                        ])" :key="index" dropzone=".drop" :data="i.d" append-to-dropzone dropzone-ok-class="okDrop"><img :src="'aimg/'+i.im+'.svg'" class="w100"></drag>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="5" scene-color="#EBF6E7">
+
+            <info type="dragdrop" title="Aprendo qué es un folleto" text="Ahora, coloca en la caja amarilla las características del folleto." textaudio="asound/instruccion2.mp3" :autoplay="true" ></info>
+            <activity>
+                <div class="row w100">
+                    <div class="w50">
+                        <img src="aimg/completo.png" class="w100">
+                    </div>
+                    <div class="w50">
+                        <drag v-for="(i,index) in _.shuffle([
+                        { d: 0, tx: 'Menciona una invitación a un evento cultural.'},
+                        { d: 1, tx: 'Tiene imágenes ilustrativas.'},
+                        { d: 1, tx: 'La información es clara.'},
+                        { d: 0, tx: 'Se utiliza para promover un producto.'},
+                        { d: 1, tx: 'El título y los subtítulos se diferencian del texto.'},
+                        { d: 1, tx: 'El diseño es llamativo.'},
+                        { d: 1, tx: 'Brinda información sobre un tema específico.'},
+                        { d: 0, tx: 'Utiliza gráficas.'},
+                        ])" initclass="dragword" :key="index" dropzone=".dropwords" :data="i.d" append-to-dropzone dropzone-ok-class="okDrop"><div :class="'c'+index">{{i.tx}}</div></drag>
+                    </div>
+                </div>
+                <div class="row w100 mt-auto">
+                    <div class="dropwords w100" droptimes="multiple" :data="1"></div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -61,8 +286,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 4
         app.$devmode = false
     </script>
 </body>

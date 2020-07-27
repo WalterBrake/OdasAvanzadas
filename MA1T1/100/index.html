@@ -54,7 +54,7 @@
 
 
         <scene v-else-if="currentScene==1" :key="1"
-            :answers="10" :score="50"
+            :answers="10" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
             scene-color="#ED1C25"
@@ -92,7 +92,7 @@
 
 
         <scene v-else-if="currentScene==2" :key="2"
-            :answers="1" :score="50"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
             scene-color="#ED1C25"
@@ -123,7 +123,7 @@
 
 
         <scene v-else-if="currentScene==3" :key="3"
-            :answers="8" :score="50"
+            :answers="8" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
             scene-color="#ED1C25"
@@ -161,7 +161,7 @@
 
 
         <scene v-else-if="currentScene==4" :key="4"
-            :answers="1" :score="50"
+            :answers="1" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3"
             scene-color="#ED1C25"
@@ -221,6 +221,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.currentScene = 0
+        app.scenesCount = 4
         app.$devmode = false
     </script>
 </body>
