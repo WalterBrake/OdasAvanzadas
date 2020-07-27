@@ -12144,6 +12144,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/MA6T1\/115\/aimg\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T1\/115\/aimg\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/MA6T1\/115\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -12205,13 +12215,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/116\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/116\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/MA6T1\/116\/aimg\/ingeniero.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -12252,25 +12255,25 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Inst2_IngRuiz.mp3": {
+	"\/MA6T1\/116\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Inst2_IngRuiz.mp3",
+		"oAP": "\/MA6T1\/116\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Inst_Coloca.mp3": {
+	"\/MA6T1\/116\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Inst_Coloca.mp3",
+		"oAP": "\/MA6T1\/116\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Intr_Ayuda.mp3": {
+	"\/MA6T1\/116\/asound\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/116\/asound\/Utilizo sistemas de referencia Ma6°T1_Intr_Ayuda.mp3",
+		"oAP": "\/MA6T1\/116\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/116\/Icon\r": {

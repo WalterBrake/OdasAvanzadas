@@ -3,12 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Utilizo sistemas de referencia</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .drag {
+            width: auto;
+            height: auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .drag img {
+            width: 100%;
+        }
+        .refdot {
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 4px;
+        }
+
+        .mapa{
+            position: relative;
+        }
+        .puntos, .puntos2{
+            position: relative;
+            z-index: 2;
+        }
+        .drop, .drop2{
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .drop:nth-child(1){ left: 65%; top: 64%; }
+        .drop:nth-child(2){ left: 55%; top: 15%; }
+        .drop:nth-child(3){ left: 18%; top: 31%; }
+        .drop:nth-child(4){ left: 46%; top: 44%; }
+        .drop:nth-child(5){ left: 36%; top: 64%; }
+        .drop:nth-child(6){ left: 18%; top: 64%; }
+
+
+        .puntos2 .drag {
+            background: transparent;
+            margin: 4px 10px;
+        }
+        .puntos2 .drag .number {
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .drop2 {
+            width: 11%;
+            height: 8%;
+            background: #fff;
+            border-radius: 6px;
+            border: 2px solid #118ACB;
+            box-shadow: 4px 4px 0 #3E7A9E;
+        }
+        .drop2 .number.small {
+            font-size: 1.3rem;
+            width: 100%;
+            text-align: center;
+        }
+        .drop2:nth-child(1) {
+            left: 16%;
+            top: 18%;
+        }
+        .drop2:nth-child(2) {
+            left: 54%;
+            top: 18%;
+        }
+        .drop2:nth-child(3) {
+            left: 19.5%;
+            top: 31%;
+        }
+        .drop2:nth-child(4) {
+            left: 40%;
+            top: 32%;
+        }
+        .drop2:nth-child(5) {
+            left: 19.5%;
+            top: 46%;
+        }
+        .drop2:nth-child(6) {
+            left: 66.4%;
+            top: 32%;
+        }
+        .drop2:nth-child(7) {
+            left: 54%;
+            top: 45%;
+        }
+
 
         @media (max-width:680px){
         }
@@ -20,17 +112,91 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Utilizo sistemas de referencia" text="Coloca los lugares de acuerdo a los puntos de referencia de cada uno." textaudio="asound/instruccion2.mp3" :autoplay="true" @completedinstructions="$refs.i2.play()">
+                <audiotext text="Ayuda al arquitecto Pérez que está diseñando un fraccionamiento, y quiere ubicar los diferentes lugares sobre un plano cuadriculado del terreno a construir." audio="asound/instruccion.mp3" :autoplay="false" ref="i2"></audiotext>
+            </info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="puntos w30">
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="1" append-to-dropzone><img src="aimg/parque.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(F, 2)</number></div>
+                        </div>
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="2" append-to-dropzone><img src="aimg/hospital.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(E, 7)</number></div>
+                        </div>
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="3" append-to-dropzone><img src="aimg/restaurante.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(A, 5)</number></div>
+                        </div>
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="4" append-to-dropzone><img src="aimg/escuela.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(D, 4)</number></div>
+                        </div>
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="5" append-to-dropzone><img src="aimg/casa1.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(C, 2)</number></div>
+                        </div>
+                        <div class="row refdot">
+                            <div class="w40"><drag dropzone=".drop" data="6" append-to-dropzone><img src="aimg/casa2.svg" ></drag></div>
+                            <div class="w60"><number small randomc>(A, 2)</number></div>
+                        </div>
+                    </div>
+                    <div class="mapa w70">
+                        <img src="aimg/mapa.svg" class="w100">
+                        <div class="drops">
+                            <div class="drop" droptimes="untilok" data="1"></div>
+                            <div class="drop" droptimes="untilok" data="2"></div>
+                            <div class="drop" droptimes="untilok" data="3"></div>
+                            <div class="drop" droptimes="untilok" data="4"></div>
+                            <div class="drop" droptimes="untilok" data="5"></div>
+                            <div class="drop" droptimes="untilok" data="6"></div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="7" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Utilizo sistemas de referencia" text="El ingeniero Ruiz también necesita ayuda ya que reforzará diferentes puntos en un edificio que está construyendo. Coloca la referencia en la casilla del punto que corresponda." textaudio="asound/instruccion3.mp3" :autoplay="true">
+            </info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="mapa w80 wm100">
+                        <img src="aimg/ingeniero.svg" class="w100">
+                        <div class="drops2">
+                            <div class="drop2" droptimes="untilok" data="1"></div>
+                            <div class="drop2" droptimes="untilok" data="2"></div>
+                            <div class="drop2" droptimes="untilok" data="3"></div>
+                            <div class="drop2" droptimes="untilok" data="4"></div>
+                            <div class="drop2" droptimes="untilok" data="5"></div>
+                            <div class="drop2" droptimes="untilok" data="6"></div>
+                            <div class="drop2" droptimes="untilok" data="7"></div>
+                        </div>
+                    </div>
+                    <div class="puntos2 row wrap w20 wm100">
+                        <drag dropzone=".drop2" data="3" append-to-dropzone><number small randomc>(F, 6)</number></drag>
+                        <drag dropzone=".drop2" data="1" append-to-dropzone><number small randomc>(E, 8)</number></drag>
+                        <drag dropzone=".drop2" data="4" append-to-dropzone><number small randomc>(K, 5)</number></drag>
+                        <drag dropzone=".drop2" data="6" append-to-dropzone><number small randomc>(N, 5)</number></drag>
+                        <drag dropzone=".drop2" data="5" append-to-dropzone><number small randomc>(F, 4)</number></drag>
+                        <drag dropzone=".drop2" data="2" append-to-dropzone><number small randomc>(K, 8)</number></drag>
+                        <drag dropzone=".drop2" data="7" append-to-dropzone><number small randomc>(K, 4)</number></drag>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +213,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +226,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
+        app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
     </script>
