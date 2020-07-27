@@ -1224,11 +1224,31 @@
 		"oAP": "\/CM2T1\/251\/index.html",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/aimg\/sector1.svg": {
+	"\/CM2T1\/259\/aimg\/gusto.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CM2T1\/259\/aimg\/sector1.svg",
+		"oAP": "\/CM2T1\/259\/aimg\/gusto.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/259\/aimg\/oido.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/259\/aimg\/oido.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/259\/aimg\/olfato.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/259\/aimg\/olfato.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -1294,46 +1314,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CM2T1\/259\/aimg\/sector2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CM2T1\/259\/aimg\/sector2.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CM2T1\/259\/aimg\/sector3.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CM2T1\/259\/aimg\/sector3.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CM2T1\/259\/aimg\/sector4.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CM2T1\/259\/aimg\/sector4.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CM2T1\/259\/aimg\/sector5.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CM2T1\/259\/aimg\/sector5.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/CM2T1\/259\/aimg\/sector6.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1374,88 +1354,108 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Coloca.mp3": {
+	"\/CM2T1\/259\/aimg\/tacto.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/259\/aimg\/tacto.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/259\/aimg\/vista.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CM2T1\/259\/aimg\/vista.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CM2T1\/259\/asound\/gusto.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Coloca.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/gusto.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Gusto.mp3": {
+	"\/CM2T1\/259\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Gusto.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Oído.mp3": {
+	"\/CM2T1\/259\/asound\/oido.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Oído.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/oido.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Olfato.mp3": {
+	"\/CM2T1\/259\/asound\/olfato.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Olfato.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/olfato.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Sentidos.mp3": {
+	"\/CM2T1\/259\/asound\/sentidos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Sentidos.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/sentidos.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Tacto.mp3": {
+	"\/CM2T1\/259\/asound\/tacto.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Tacto.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/tacto.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Vista.mp3": {
+	"\/CM2T1\/259\/asound\/tgusto.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Inst_Vista.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/tgusto.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Distinguir.mp3": {
+	"\/CM2T1\/259\/asound\/toido.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Distinguir.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/toido.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Olores.mp3": {
+	"\/CM2T1\/259\/asound\/tolfato.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Olores.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/tolfato.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Sabor.mp3": {
+	"\/CM2T1\/259\/asound\/ttacto.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Sabor.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/ttacto.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Sonidos.mp3": {
+	"\/CM2T1\/259\/asound\/tvista.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Sonidos.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/tvista.mp3",
 		"oF": 0
 		},
-	"\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Ver.mp3": {
+	"\/CM2T1\/259\/asound\/vista.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T1\/259\/asound\/Identifico mis sentidos CM2°T1_Int_Ver.mp3",
+		"oAP": "\/CM2T1\/259\/asound\/vista.mp3",
 		"oF": 0
 		},
 	"\/CM2T1\/259\/index.html": {

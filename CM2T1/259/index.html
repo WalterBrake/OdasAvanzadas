@@ -3,13 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico mis sentidos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        
+    .drop {
+        margin: 10px auto;
+        width: 90%;
+        height: 40px;
+        background: #fff;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .drop .number {
+        width: 100%;
+    }
+    .drop2 {
+        min-height: 100px;
+        height: auto;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+    .sentido:nth-child(1) .drop {
+        border: 2px solid #B7E0DC;
+        box-shadow: 4px 4px 0 #B7E0DC;
+    }
+    .sentido:nth-child(2) .drop {
+        border: 2px solid #D8CBD7;
+        box-shadow: 4px 4px 0 #D8CBD7;
+    }
+    .sentido:nth-child(3) .drop {
+        border: 2px solid #CFE8D0;
+        box-shadow: 4px 4px 0 #CFE8D0;
+    }
+    .sentido:nth-child(4) .drop {
+        border: 2px solid #F9F3AB;
+        box-shadow: 4px 4px 0 #F9F3AB;
+    }
+    .sentido:nth-child(5) .drop {
+        border: 2px solid #F8C3CF;
+        box-shadow: 4px 4px 0 #F8C3CF;
+    }
+    .drag {
+        width: auto;
+        height: auto;
+        margin: 10px;
+    }
+    .drag2 {
+        width: 19%;
+        margin: 0.5%;
+        box-sizing: border-box;
+        height: 100%;
+    }
+    .drag2 div {
+        background: #fff;
+        padding: 4px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     </style>
     </head>
 <body>
@@ -19,11 +82,29 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="10" scene-color="#ED1C25">
 
-        <info type="dragdrop" title="TITULO" text="Texto de instrucciones" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-        <activity>
-                
+            <info type="dragdrop" title="Identifico mis sentidos" text="Coloca en cada una de las ilustraciones con el sentido y la función que le corresponden." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                    <div class="row w100 mb-auto">
+                        <template v-for="i in temps">
+                            <div class="sentido w30">
+                                <img :src="'aimg/'+i.img+'.svg'" class="w100">
+                                <div class="drop" :data="i.img" droptimes="untilok"></div>
+                                <div class="drop drop2" :data="'t'+i.img" droptimes="untilok" :oksound="'asound/t'+i.img+'.mp3'"></div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="row w100 wrap">
+                        <template v-for="i in _.shuffle(temps)">
+                            <drag dropzone=".drop" :data="i.img" append-to-dropzone :dragsound="'asound/'+i.img+'.mp3'"><number small c="1">{{i.sen}}</number></drag>
+                        </template>
+                    </div>
+                    <div class="row w100 wrap">
+                        <template v-for="i in _.shuffle(temps)">
+                            <drag initclass="drag2" dropzone=".drop" :data="'t'+i.img" append-to-dropzone><div>{{i.func}}</div></drag>
+                        </template>
+                    </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -35,6 +116,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -45,6 +127,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -57,9 +140,16 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps = [
+            {img: 'vista', sen: 'Vista', func: 'Sirve para ver lo que hay a mi alrededor: personas, animales, plantas y objetos.'},
+            {img: 'gusto', sen: 'Gusto', func: 'Sirve para distinguir el sabor de los alimentos: dulces, salados, agrios o amargos.'},
+            {img: 'oido', sen: 'Oído', func: 'Oído Sirve para oír los sonidos como la música, las voces y los ruídos.'},
+            {img: 'tacto', sen: 'Tacto', func: 'Sirve para distinguir la temperatura y la textura de los objetos.'},
+            {img: 'olfato', sen: 'Olfato', func: 'Sirve para percibir los olores de la comida, las flores y los perfumes.'},
+        ]
         app.currentScene = 0
         app.scenesCount = 1
-        app.$devmode = true
+        app.$devmode = false
     </script>
 </body>
 </html>
