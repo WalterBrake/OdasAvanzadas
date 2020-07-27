@@ -3,14 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico cómo es mi estilo de vida</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .drop {
+            text-align: center;
+            margin: 10px;
+        }
+        .drop .img {
+            max-width: 160px;
+            margin: 0 auto;
+        }
+        .drop .face.selected {
+            display: none;
+        }
+        .drop.okDrop .face.selected.ok {
+            display: block;
+        }
+        .drop.okDrop .face.placeholder.ok {
+            display: none;
+        }
+
+        .drop.hover .img{
+            transform: scale(1.2);
+        }
+        .drag{
+            width: auto; height: auto;
+            max-width: 100px;
+            margin: 2px 20px;
+        }
+
+        .pregunta {
+            background: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            margin: 4px;
+            box-sizing: border-box;
+        }
+        .pregunta .texto {
+            box-sizing: border-box;
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        .pregunta .resp .desplegar .options {
+            flex-direction: column;
+        }
+        .pregunta .resp .desplegar .options .option {
+            background: var(--sec);
+            color: #fff;
+            border-radius: 10px;
+            padding: 6px;
+            margin: 2px 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .pregunta .resp .desplegar .options .option.ok {
+            background: var(--main);
+        }
+
+        .desplegar .options.showok.ok .option:not(.invoker){
+            display: none;
+        }
 
         @media (max-width:680px){
+            .drop{margin: 1px;}
+            .drop .img{
+                max-width: 80px;
+            }
+            .drag{
+                max-width: 80px;
+            }
         }
     </style>
     </head>
@@ -21,16 +86,72 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Identifico cómo es mi estilo de vida" text="Observa las imágenes y coloca el emoji correspondiente si la acción de los recuadros representa un estilo de vida saludable o no." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 wrap">
+                    <template v-for="i in [
+                    { im: '1.svg', d:'feliz'},
+                    { im: '2.svg', d:'triste'},
+                    { im: '3.svg', d:'triste'},
+                    { im: '4.svg', d:'feliz'},
+                    { im: '5.svg', d:'feliz'},
+                    { im: '6.svg', d:'feliz'},
+                    ]">
+                        <div class="drop w30" :data="i.d" droptimes="untilok">
+                            <img :src="'aimg/'+i.im" class="img">
+                            <div class="faces row">
+                                <img src="aimg/feliz.svg" :class="'face w20 selected '+(i.d=='feliz'?'ok':'')">
+                                <img src="aimg/feliz2.svg" :class="'face w20 placeholder '+(i.d=='feliz'?'ok':'')">
+                                <img src="aimg/triste.svg" :class="'face w20 selected '+(i.d=='triste'?'ok':'')">
+                                <img src="aimg/triste2.svg" :class="'face w20 placeholder '+(i.d=='triste'?'ok':'')">
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="row w100 wrap">
+                    <drag data="feliz" dropzone=".drop" return-to-position dropzone-ok-class="okDrop"><img src="aimg/feliz.svg" class="w100"></drag>
+                    <drag data="triste" dropzone=".drop" return-to-position dropzone-ok-class="okDrop"><img src="aimg/triste.svg" class="w100"></drag>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+
+            <info type="seleccionar" title="Identifico cómo es mi estilo de vida" text="Selecciona tu respuesta para responder a las siguientes preguntas:" textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 wrap pregunta">
+                    <div class="texto w60">¿Por qué es importante llevar un estilo de vida saludable?</div>
+                    <div class="resp w40">
+                        <desplegar :key="0" answer="Para poder realizar todas las actividades de la vida diaria sin problemas." show-ok :options="['Para poder realizar todas las actividades de la vida diaria sin problemas.', 'Para no envejecer nunca.', 'Para crecer más rápido.']"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </div>
+                <div class="row w100 wrap pregunta">
+                    <div class="texto w60">¿Cuál es el hábito saludable que te gusta realizar más?</div>
+                    <div class="resp w40">
+                        <desplegar :key="0" answer="" show-ok :options="[{answer:'', text:'Jugar con mis amigos(as).'}, {answer:'', text:'Hacer deporte.'}, {answer:'', text:'Pasear con mis familia.'}, {answer:'', text:'Jugar con mi mascota.'}]"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </div>
+                <div class="row w100 wrap pregunta">
+                    <div class="texto w60">¿Qué efecto tiene consumir comida chatarra y refrescos en exceso?</div>
+                    <div class="resp w40">
+                        <desplegar :key="0" answer="Puedo tener sobrepeso y enfermar." show-ok :options="['Solo me gustarán las cosas dulces.', 'Puedo tener sobrepeso y enfermar.', 'No voy a querer comer otra cosa.']"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </div>
+                <div class="row w100 wrap pregunta">
+                    <div class="texto w60">¿A qué hora es adecuado dormir?</div>
+                    <div class="resp w40">
+                        <desplegar :key="0" answer="Entre 8:00 y 9:00 de la noche." show-ok :options="['A las 6 de la tarde.', 'Entre 8:00 y 9:00 de la noche.', 'Después de la media noche.']"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +168,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +181,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>

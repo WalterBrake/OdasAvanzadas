@@ -48,6 +48,7 @@ Vue.component('desplegar', {
                 return false
             }
             if(optionAnswer == this.answer) {
+                
                 // OK
                 this.selected = optionAnswer
                 EventBus.$emit('isok')
@@ -55,6 +56,11 @@ Vue.component('desplegar', {
                 this.setClassAnimation('ok', this.$refs[ref][0])
                 s_ok.play()
                 this.status = 'ok'
+                var _this = this
+                setTimeout(function (){
+                    _this.$refs[ref][0].classList.add('invoker')
+                    console.log(_this.$refs[ref])
+                }, 200)
             } else {
                 //ERROR
                 s_error.play()

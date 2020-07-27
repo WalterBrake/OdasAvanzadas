@@ -2720,51 +2720,61 @@
 		"oAP": "\/CN5T1\/181\/index.html",
 		"oF": 0
 		},
-	"\/CN6T1\/184\/aimg\/arte.svg": {
+	"\/CN6T1\/184\/aimg\/1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/arte.svg",
+		"oAP": "\/CN6T1\/184\/aimg\/1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/beber.svg": {
+	"\/CN6T1\/184\/aimg\/2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/beber.svg",
+		"oAP": "\/CN6T1\/184\/aimg\/2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/comer.svg": {
+	"\/CN6T1\/184\/aimg\/3.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/comer.svg",
+		"oAP": "\/CN6T1\/184\/aimg\/3.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/deporte.svg": {
+	"\/CN6T1\/184\/aimg\/4.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/deporte.svg",
+		"oAP": "\/CN6T1\/184\/aimg\/4.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/dormir.svg": {
+	"\/CN6T1\/184\/aimg\/5.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/dormir.svg",
+		"oAP": "\/CN6T1\/184\/aimg\/5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/184\/aimg\/6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/184\/aimg\/6.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -2817,35 +2827,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/verduras.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN6T1\/184\/aimg\/verduras.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst1_Observa.mp3": {
+	"\/CN6T1\/184\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst1_Observa.mp3",
+		"oAP": "\/CN6T1\/184\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst2_Selecciona.mp3": {
+	"\/CN6T1\/184\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst2_Selecciona.mp3",
-		"oF": 0
-		},
-	"\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst_Observa.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T1\/184\/asound\/Identifico cómo es mi estilo de vida CN°6T1_Inst_Observa.mp3",
+		"oAP": "\/CN6T1\/184\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/CN6T1\/184\/index.html": {
