@@ -3,12 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Describo cuerpos geométricos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .col {
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .col .row.title {
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .col .row {
+            font-size: 0.8rem;
+            margin: 5px;
+            padding: 4px;
+        }
+        .col .row .desplegar {
+            margin-left: 4px;
+        }
+        .col .row .options {
+            flex-direction: column;
+        }
+        .col .row .options .number {
+            width: 100%;
+            text-align: center;
+        }
+        .hex {border: 8px solid var(--c5);}
+        .hex .title { color: var(--c5);}
+        .hex .deployer {border-color: var(--c5);}
+        .hex .deployer:before {background: var(--c5);}
+        
+        .pir {border: 8px solid var(--main);}
+        .pir .title { color: var(--main);}
+        .pir .deployer {border-color: var(--main);}
+        .pir .deployer:before {background: var(--main);}
+        
+        .tri {border: 8px solid var(--accent);}
+        .tri .title { color: var(--accent);}
+        .tri .deployer {border-color: var(--accent);}
+        .tri .deployer:before {background: var(--accent);}
+        
+        .pen {border: 8px solid var(--c8);}
+        .pen .title { color: var(--c8);}
+        .pen .deployer {border-color: var(--c8);}
+        .pen .deployer:before {background: var(--c8);}
 
         @media (max-width:680px){
         }
@@ -21,16 +69,131 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        :answers="4" scene-color="#ED1C25">
+            <info type="seleccionar" title="Describo cuerpos geométricos" text="Observa las figuras geométricas resaltadas en la ilustración, a cada una le corresponde un recuadro del mismo color. Después selecciona tu respuesta para completar lo que se indica en los recuadros." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 mobile100">
+                    <div class="w70 wm100"><div class="w100"><img src="aimg/parque.svg" class="w100"></div></div>
+                    <div class="w30 wm100">
+                        <div class="col hex">
+                            <div class="row title">Prisma hexagonal de color rojo</div>
+                            <div class="row">
+                                Número de caras:
+                                <div class="w40"><desplegar :key="0" :answer="8" show-ok modal-options :options="[9, 8, 10]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de vértices:
+                                <div class="w40"><desplegar :key="1" :answer="12" show-ok modal-options :options="[18, 12, 9]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de aristas:
+                                <div class="w40"><desplegar :key="2" :answer="18" show-ok modal-options :options="[14, 18, 12]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row wrap">
+                                Figuras de sus caras:
+                                <div class="w100"><desplegar :key="3" answer="Hexágonos y rectángulos" show-ok modal-options :options="['Pentágono y triángulos', 'Hexágonos y rectángulos', 'Triángulos y rectángulos', 'Cuadrado y triángulos']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+            <info type="seleccionar" title="Describo cuerpos geométricos" text="Observa las figuras geométricas resaltadas en la ilustración, a cada una le corresponde un recuadro del mismo color. Después selecciona tu respuesta para completar lo que se indica en los recuadros." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="w70 wm100"><div class="w100"><img src="aimg/parque.svg" class="w100"></div></div>
+                    <div class="w30 wm100">
+                        <div class="col pir">
+                            <div class="row title">Pirámide cuadrangular de color verde</div>
+                            <div class="row">
+                                Número de caras:
+                                <div class="w40"><desplegar :key="0" :answer="5" show-ok modal-options :options="[8, 6, 5]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de vértices:
+                                <div class="w40"><desplegar :key="1" :answer="5" show-ok modal-options :options="[8,9,5]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de aristas:
+                                <div class="w40"><desplegar :key="2" :answer="8" show-ok modal-options :options="[5, 9, 8]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row wrap">
+                                Figuras de sus caras:
+                                <div class="w100"><desplegar :key="3" answer="Cuadrado y triángulos" show-ok modal-options :options="['Pentágono y triángulos', 'Hexágonos y rectángulos', 'Triángulos y rectángulos', 'Cuadrado y triángulos']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+            <info type="seleccionar" title="Describo cuerpos geométricos" text="Observa las figuras geométricas resaltadas en la ilustración, a cada una le corresponde un recuadro del mismo color. Después selecciona tu respuesta para completar lo que se indica en los recuadros." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="w70 wm100"><div class="w100"><img src="aimg/parque.svg" class="w100"></div></div>
+                    <div class="w30 wm100">
+                        <div class="col tri">
+                            <div class="row title">Prisma triangular de color anaranjado</div>
+                            <div class="row">
+                                Número de caras:
+                                <div class="w40"><desplegar :key="0" :answer="5" show-ok modal-options :options="[6, 8, 5]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de vértices:
+                                <div class="w40"><desplegar :key="1" :answer="6" show-ok modal-options :options="[4,5,6]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de aristas:
+                                <div class="w40"><desplegar :key="2" :answer="9" show-ok modal-options :options="[8, 9, 10]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row wrap">
+                                Figuras de sus caras:
+                                <div class="w100"><desplegar :key="3" answer="Triángulos y rectángulos" show-ok modal-options :options="['Pentágono y triángulos', 'Hexágonos y rectángulos', 'Triángulos y rectángulos', 'Cuadrado y triángulos']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+            <info type="seleccionar" title="Describo cuerpos geométricos" text="Observa las figuras geométricas resaltadas en la ilustración, a cada una le corresponde un recuadro del mismo color. Después selecciona tu respuesta para completar lo que se indica en los recuadros." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 mobile100">
+                    <div class="w70 wm100"><div class="w100"><img src="aimg/parque.svg" class="w100"></div></div>
+                    <div class="w30 wm100">
+                        <div class="col pen">
+                            <div class="row title">Pirámide pentagonal de color morado</div>
+                            <div class="row">
+                                Número de caras:
+                                <div class="w40"><desplegar :key="0" :answer="6" show-ok modal-options :options="[8, 5, 6]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de vértices:
+                                <div class="w40"><desplegar :key="1" :answer="6" show-ok modal-options :options="[6, 9, 8]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row">
+                                Número de aristas:
+                                <div class="w40"><desplegar :key="2" :answer="10" show-ok modal-options :options="[12, 10, 11]"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                            <div class="row wrap">
+                                Figuras de sus caras:
+                                <div class="w100"><desplegar :key="3" answer="Pentágono y triángulos" show-ok modal-options :options="['Pentágono y triángulos', 'Hexágonos y rectángulos', 'Triángulos y rectángulos', 'Cuadrado y triángulos']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +210,8 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +224,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.currentScene = 0
+        app.scenesCount = 4
         app.$devmode = false
     </script>
 </body>

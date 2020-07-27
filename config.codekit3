@@ -12163,13 +12163,6 @@
 		"oAP": "\/MA6T1\/116\/index.html",
 		"oF": 0
 		},
-	"\/MA6T1\/96\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/96\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/MA6T1\/96\/aimg\/parque.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -12180,18 +12173,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/96\/asound\/Describo cuerpos geométricos MA°6T1_Inst_Describo.mp3": {
+	"\/MA6T1\/96\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T1\/96\/asound\/Describo cuerpos geométricos MA°6T1_Inst_Describo.mp3",
-		"oF": 0
-		},
-	"\/MA6T1\/96\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/96\/Icon\r",
+		"oAP": "\/MA6T1\/96\/asound\/instruccion.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/96\/index.html": {
