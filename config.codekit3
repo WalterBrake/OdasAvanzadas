@@ -2279,7 +2279,7 @@
 		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Conejo.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Delfín.mp3": {
+	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Delfín.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2293,7 +2293,7 @@
 		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Ganso.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_León.mp3": {
+	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_León.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2314,7 +2314,7 @@
 		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Pez.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Víbora.mp3": {
+	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Víbora.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2699,14 +2699,14 @@
 		"oAP": "\/CN5T1\/178\/index.html",
 		"oF": 0
 		},
-	"\/CN5T1\/181\/asound\/Conozco en qué consiste la fecundación CN°5 T1_Inst1_Coloca.mp3": {
+	"\/CN5T1\/181\/asound\/Conozco en qué consiste la fecundación CN°5 T1_Inst1_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN5T1\/181\/asound\/Conozco en qué consiste la fecundación CN°5 T1_Inst1_Coloca.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/181\/asound\/Conozco en qué consiste la fecundación CN°5 T1_Inst2_Coloca.mp3": {
+	"\/CN5T1\/181\/asound\/Conozco en qué consiste la fecundación CN°5 T1_Inst2_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -2960,14 +2960,14 @@
 		"oAP": "\/CN6T1\/187\/index.html",
 		"oF": 0
 		},
-	"\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst1_Coloca.mp3": {
+	"\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst1_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst1_Coloca.mp3",
 		"oF": 0
 		},
-	"\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst2_Coloca.mp3": {
+	"\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst2_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -3024,6 +3024,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/EJEMPLOS\/drag-basico.html",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/STARTER.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/STARTER.html",
 		"oF": 0
 		},
 	"\/ES1T1\/13\/aimg\/a1.svg": {
@@ -5335,6 +5342,13 @@
 		"oAP": "\/ES3T1\/39\/asound\/Aprendo que es un folleto Es3°T1_Inst_Coloca.mp3",
 		"oF": 0
 		},
+	"\/ES3T1\/39\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T1\/39\/index.html",
+		"oF": 0
+		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -5877,28 +5891,28 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Cierre_ Ahora.mp3": {
+	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Cierre_ Ahora.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Cierre_ Ahora.mp3",
 		"oF": 0
 		},
-	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst2_ Coloca.mp3": {
+	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst2_ Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst2_ Coloca.mp3",
 		"oF": 0
 		},
-	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst_Coloca.mp3": {
+	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst_Coloca.mp3",
 		"oF": 0
 		},
-	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst_Nota.mp3": {
+	"\/ES5T1\/26\/asound\/Conozco una nota periodística Es5°T1_Inst_Nota.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -5953,112 +5967,112 @@
 		"oAP": "\/ES6T1\/29\/index.html",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Aquien.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Aquien.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Aquien.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_LaMiss.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_LaMiss.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_LaMiss.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Pues.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Pues.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Pues.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaM.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaM.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaM.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaN.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaN.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaN.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_Vamos.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_Vamos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_Vamos.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_EnEse.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_EnEse.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_EnEse.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_SiQuisiera.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_SiQuisiera.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_SiQuisiera.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_UnRep.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_UnRep.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_UnRep.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_EnQue.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_EnQue.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_EnQue.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_Periódicos.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_Periódicos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_Periódicos.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Internet.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Internet.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Internet.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Museo.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Museo.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Museo.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_PorSupuesto.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_PorSupuesto.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_PorSupuesto.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag6_YClaro.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag6_YClaro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag6_YClaro.mp3",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -6337,14 +6351,14 @@
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag4_Espectaculos.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag5_Económicos.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag5_Económicos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag5_Económicos.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag6_Póliticos.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Diag6_Póliticos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -6372,28 +6386,28 @@
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Aleteo.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara_2.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara_2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Cámara_2.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Corazón.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Corazón.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Corazón.mp3",
 		"oF": 0
 		},
-	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Corazón_2.mp3": {
+	"\/GE5T1\/224\/asound\/Valoro el paisaje Ge5°T1_Fx_Corazón_2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -6585,7 +6599,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -7406,14 +7420,14 @@
 		"oAP": "\/HI5T1\/262\/index.html",
 		"oF": 0
 		},
-	"\/HI6T1\/257\/asound\/Reconozco al México Moderno Hi6° T1_Intro_Desp.mp3": {
+	"\/HI6T1\/257\/asound\/Reconozco al México Moderno Hi6° T1_Intro_Desp.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/HI6T1\/257\/asound\/Reconozco al México Moderno Hi6° T1_Intro_Desp.mp3",
 		"oF": 0
 		},
-	"\/HI6T1\/257\/asound\/Reconozco México Moderno Hi6° T1_Inst_Selecc.mp3": {
+	"\/HI6T1\/257\/asound\/Reconozco México Moderno Hi6° T1_Inst_Selecc.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -11113,98 +11127,98 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dado4.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dado4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dado4.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados1.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados1.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados2.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados2.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados3.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Dados3.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Inst_Multiplica.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Inst_Multiplica.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Inst_Multiplica.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Intro_Ranas.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Intro_Ranas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Intro_Ranas.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana1.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana1.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana2.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana2.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana3.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana3.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana4.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana4.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana5.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Rana5.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto1.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto1.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto2.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto2.mp3",
 		"oF": 0
 		},
-	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto3.mp3": {
+	"\/MA4T1\/_98\/asound\/Multiplico rápidamente Ma4°T1_Salto3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -11502,7 +11516,7 @@
 		"oAP": "\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_Ana.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_José.mp3": {
+	"\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_José.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -11856,28 +11870,28 @@
 		"oAP": "\/MA5T1\/95\/asound\/Icon\r",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Ángulos.mp3": {
+	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Ángulos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Ángulos.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Hola.mp3": {
+	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Hola.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Hola.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Lados.mp3": {
+	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Lados.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Lados.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Observa.mp3": {
+	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Observa.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
