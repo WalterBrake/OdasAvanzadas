@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Conozco en qué consiste la fecundación</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .dropper {
+            font-size: 0.9rem;
+            background: #fff;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin: 6px;
+        }
+        .drop {
+            background: #9999CC;
+            min-height: 80px;
+            border-radius: 10px;
+            margin: 5px;
+            border: 2px solid var(--main);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .drop img {
+            max-height: 80px;
+        }
+        .drag {
+            width: auto;
+            height: auto;
+        }
+        .drag img {
+            max-height: 100px;
+        }
 
         @media (max-width:680px){
         }
@@ -21,22 +49,56 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="5" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Conozco en qué consiste la fecundación" text="Coloca la imagen que ilustre cada oración." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="col oraciones w30">
+                        <drag v-for="i in _.shuffle(temps)" :data="i.v" dropzone=".drop" append-to-dropzone><img :src="'aimg/'+i.v+'.svg'" class="w100"></drag>
+                    </div>
+                    <div class="col drops w70">
+                        <div class="row dropper" v-for="i in _.shuffle(temps)">
+                            <div class="drop w20" :data="i.v" droptimes="untilok"></div>
+                            <div class="w80">{{i.t}}</div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="5" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Conozco en qué consiste la fecundación" text="Coloca la imagen que ilustre cada oración." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="col oraciones w30">
+                        <drag v-for="i in _.shuffle(temps)" :data="i.v" dropzone=".drop"><number c="8">{{i.v}}</number></drag>
+                    </div>
+                    <div class="col drops w70">
+                        <div class="row dropper" v-for="i in _.shuffle(temps)">
+                            <div class="drop w20" :data="i.v" droptimes="untilok">
+                                <img :src="'aimg/'+i.v+'.svg'" class="w100">
+                            </div>
+                            <div class="w80">{{i.t}}</div>
+                        </div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +109,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +122,15 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps = [
+            {v: '1', t: 'Cada 28 días se libera del ovario un óvulo y pasa a la trompa de Falopio.'},
+            {v: '2', t: 'El óvulo se encuentra con un espermatozoide en la trompa de Falopio y se produce la fecundación.'},
+            {v: '3', t: 'Como resultado de la fecundación, se forma un cigoto.'},
+            {v: '4', t: 'El cigoto se divide varias veces para formar al embrión.'},
+            {v: '5', t: 'El embrión llega al útero y se adhiere a su pared, ahí pasa de 38 a 40 semanas hasta el parto.'},
+        ]
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>
