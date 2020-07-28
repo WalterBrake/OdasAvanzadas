@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpreto los trayectos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .croquis {
+            position: relative;
+        }
+        .croquis .drops {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .croquis .drops .rowy {
+            height: 6%;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .croquis .drops .rowy .drop {
+            width: 10%;
+            height: 92%;
+            background: rgba(0, 200, 0, 0.2);
+        }
+        .players {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 92%;
+            height: 92%;
+        }
+        .players .player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 6%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .players .player img {
+            width: 120%;
+        }
+        .player.activo img{
+            width: 240%;
+        }
+        .ins .row {
+            background: #fff;
+            border-radius: 10px;
+            margin: 4px;
+            border: 2px solid #D3D5D5;
+            padding: 10px;
+            box-shadow: 4px 4px 0 #D3D5D5;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .ins .row img {
+            max-height: 80px;
+        }
+        .ins .row.active {
+            background: var(--accent);
+            border: 2px solid var(--sec);
+            box-shadow: 4px 4px 0 var(--sec);
+            color: #fff;
+        }
+        .arrows {
+            position: absolute;
+            bottom: -13%;
+            left: .5;
+            width: 29%;
+            padding: 4px 0;
+            text-align: center;
+            background: #EC8B2E;
+            border-radius: 10px 10px 0 0;
+            border: 2px solid #586B5E;
+        }
+        .arrows img{ cursor: pointer; }
+
+        .player img {
+            position: relative;
+            z-index: 1;
+        }
+        .player.activo:after {
+            content: "";
+            width: 160%;
+            height: 40%;
+            background: var(--accent);
+            position: absolute;
+            left: -40%;
+            bottom: -14%;
+            z-index: 0;
+            border-radius: 50%;
+        }
+        .player.win:after {
+            content: "";
+            width: 100%;
+            height: 40%;
+            background: var(--main);
+            position: absolute;
+            left: -5%;
+            bottom: -14%;
+            z-index: 0;
+            border-radius: 50%;
+        }
+        .player.win img {
+            width: 150%;
+        }
+
+        @media (max-width:680px){
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="4" scene-color="#ED1C25">
+
+            <info type="seleccionar" title="Interpreto los trayectos" text="Coloca a las personas en su destino siguiendo los trayectos que se indican. Para esto, usa las teclas de dirección de tu computadora para que las personas se dirijan a su destino." textaudio="asound/instruccion.mp3" :autoplay="true" ></info>
+            <activity>
+                <div class="row w100">
+                    <div class="w50 croquis" ref="croquis">
+                        <img src="aimg/croquis.svg" class="w100">
+                        <div class="players">
+                            <player :activo="temps == 'a'" key="a" :initx="5" :inity="10" :maxx="9" :maxy="13" :okwhen="[7,4]"><img src="aimg/jorge.svg" class="w100"></player>
+                            <player :activo="temps == 'b'" key="b" :initx="1" :inity="4" :maxx="9" :maxy="13" :okwhen="[5,10]"><img src="aimg/sofia.svg" class="w100"></player>
+                            <player :activo="temps == 'd'" key="d" :initx="7" :inity="8" :maxx="9" :maxy="13" :okwhen="[3,2]"><img src="aimg/monica.svg" class="w100"></player>
+                            <player :activo="temps == 'c'" key="c" :initx="5" :inity="2" :maxx="9" :maxy="13" :okwhen="[7,8]"><img src="aimg/mario.svg" class="w100"></player>
+                        </div>
+                    </div>
+                    <div class="row wrap w50 ins">
+                        <div :class="'row w100 ' + (temps=='a'?'active': '')" @click="temps = 'a' ">
+                            <img src="aimg/jorge.svg" class="w30">
+                            <div>Jorge camina, desde el restaurante, tres cuadras hacia el norte sobre la calle "Madero". Da vuelta hacia el este y camina media cuadra.</div>
+                        </div>
+                        <div :class="'row w100 ' + (temps=='b'?'active': '')" @click="temps = 'b' ">
+                            <img src="aimg/sofia.svg">
+                            <div>Sofía camina, desde el banco, media cuadra hacia el este sobre la avenida "Juárez". Da vuelta hacia el sur y camina tres cuadras sobre la calle "Morelos". Da vuelta hacia el este sobre la avenida "Liceo" y camina dos cuadras. </div>
+                        </div>
+                        <div :class="'row w100 ' + (temps=='d'?'active': '')" @click="temps = 'd' ">
+                            <img src="aimg/monica.svg">
+                            <div>Mónica camina, desde la casa, una cuadra y media hacia el oeste, sobre la avenida "Aldama". Da vuelta hacia el norte y camina tres cuadras sobre la calle "Hidalgo". Da vuelta hacia el oeste y camina media cuadra sobre la avenida "Moctezuma". </div>
+                        </div>
+                        <div :class="'row w100 ' + (temps=='c'?'active': '')" @click="temps = 'c' ">
+                            <img src="aimg/mario.svg">
+                            <div>Mario camina, desde la papelería, una cuadra y media hacia el este, sobre la avenida "Moctezuma". Da vuelta hacia el sur y camina tres cuadras sobre la calle "Garza García". Da vuelta hacia el oeste y camina media cuadra sobre la avenida "Aldama". </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/player.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.temps = 'a'
+        app.$set(app , 'temps', 'a')
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

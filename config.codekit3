@@ -498,6 +498,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/player.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/player-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/scene.js": {
 		"ft": 64,
 		"ma": 0,
@@ -6184,11 +6194,108 @@
 		"oAP": "\/ES4T1\/32\/index.html",
 		"oF": 0
 		},
-	"\/ES4T1\/36\/asound\/Interpreto los trayectos Es4°T1_Inst_Coloca.mp3": {
+	"\/ES4T1\/36\/aimg\/btnDown.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/btnDown.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/btnLeft.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/btnLeft.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/btnRight.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/btnRight.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/btnUp.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/btnUp.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/croquis.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/croquis.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/jorge.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/jorge.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/mario.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/mario.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/monica.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/monica.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/aimg\/sofia.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/sofia.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/36\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T1\/36\/asound\/Interpreto los trayectos Es4°T1_Inst_Coloca.mp3",
+		"oAP": "\/ES4T1\/36\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES4T1\/36\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T1\/36\/index.html",
 		"oF": 0
 		},
 	"\/ES5T1\/26\/aimg\/piramide.svg": {
