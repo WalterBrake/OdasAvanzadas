@@ -2251,74 +2251,173 @@
 		"oAP": "\/CN4T1\/194\/index.html",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Inst_Coloca.mp3": {
+	"\/CN5T1\/168\/aimg\/i1.jpg": {
+		"ft": 16384,
+		"iS": 75176,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i2.jpg": {
+		"ft": 16384,
+		"iS": 117006,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i3.jpg": {
+		"ft": 16384,
+		"iS": 132148,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i4.jpg": {
+		"ft": 16384,
+		"iS": 104352,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i5.jpg": {
+		"ft": 16384,
+		"iS": 115653,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i6.jpg": {
+		"ft": 16384,
+		"iS": 128440,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i7.jpg": {
+		"ft": 16384,
+		"iS": 92105,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i7.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i8.jpg": {
+		"ft": 16384,
+		"iS": 98435,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i8.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/aimg\/i9.jpg": {
+		"ft": 16384,
+		"iS": 72647,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T1\/168\/aimg\/i9.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T1\/168\/asound\/i1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Inst_Coloca.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i1.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Borrego.mp3": {
+	"\/CN5T1\/168\/asound\/i2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Borrego.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i2.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Cocodrilo.mp3": {
+	"\/CN5T1\/168\/asound\/i3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Cocodrilo.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i3.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Conejo.mp3": {
+	"\/CN5T1\/168\/asound\/i4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Conejo.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i4.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Delfín.mp3": {
+	"\/CN5T1\/168\/asound\/i5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Delfín.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i5.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Ganso.mp3": {
+	"\/CN5T1\/168\/asound\/i6.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Ganso.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i6.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_León.mp3": {
+	"\/CN5T1\/168\/asound\/i7.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_León.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i7.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Oso.mp3": {
+	"\/CN5T1\/168\/asound\/i8.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Oso.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i8.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Pez.mp3": {
+	"\/CN5T1\/168\/asound\/i9.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Pez.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/i9.mp3",
 		"oF": 0
 		},
-	"\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Víbora.mp3": {
+	"\/CN5T1\/168\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T1\/168\/asound\/Reconozco tipos de seres vivos CN°5T1_Int_Víbora.mp3",
+		"oAP": "\/CN5T1\/168\/asound\/instruccion.mp3",
 		"oF": 0
 		},
 	"\/CN5T1\/168\/index.html": {
