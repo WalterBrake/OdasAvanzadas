@@ -11613,32 +11613,55 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/111\/aimg\/Icon\r": {
+	"\/MA5T1\/111\/aimg\/f4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA5T1\/111\/aimg\/f4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA5T1\/111\/aimg\/f5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA5T1\/111\/aimg\/f5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA5T1\/111\/aimg\/f6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA5T1\/111\/aimg\/f6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA5T1\/111\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/111\/aimg\/Icon\r",
+		"oAP": "\/MA5T1\/111\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_Ana.mp3": {
+	"\/MA5T1\/111\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_Ana.mp3",
+		"oAP": "\/MA5T1\/111\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_José.mp3": {
+	"\/MA5T1\/111\/asound\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_José.mp3",
-		"oF": 0
-		},
-	"\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_Luis.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/111\/asound\/Conozco el resultado Ma5ºT1_Inst_Luis.mp3",
+		"oAP": "\/MA5T1\/111\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/111\/index.html": {

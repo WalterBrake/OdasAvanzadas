@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Conozco el resultado</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .clickable {
+            width: auto;
+            margin: 20px;
+        }
+
 
         @media (max-width:680px){
         }
@@ -21,16 +26,48 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="1" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Conozco el resultado" text="Don Luis quiere dividir 140 tornillos en 7 bolsas, ¿cuántos tornillos debe tener cada bolsa? Selecciona la respuesta correcta:" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <clickable simple-ok block-if-error :isok="true"><img src="aimg/20.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/30.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/40.svg" class="w100"></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="seleccionar" title="Conozco el resultado" text="José vende caramelos y los empaca en cajas de 20. Si tiene 180 caramelos, ¿cuántas cajas necesita para almacenarlos? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/1.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/2.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="true"><img src="aimg/3.svg" class="w100"></clickable>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="seleccionar" title="Conozco el resultado" text="Ana tiene 24 girasoles y los quiere acomodar en 4 floreros. ¿Cuántos girasoles debe poner en cada florero para que tengan la misma cantidad de flores? Selecciona la respuesta correcta." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/f4.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="true"><img src="aimg/f6.svg" class="w100"></clickable>
+                    <clickable simple-ok block-if-error :isok="false"><img src="aimg/f5.svg" class="w100"></clickable>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==4" :key="4" end-scene :final-data="finalData"></scene>
     
 
     
@@ -60,7 +97,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 3
         app.$devmode = false
     </script>
 </body>
