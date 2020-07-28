@@ -3,12 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico las formas de relieve</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .map {
+            position: relative;
+        }
+        .drop {
+            position: absolute;
+            width: 30%;
+            height: 10%;
+            background: #fff;
+            border-radius: 10px;
+            left: 0;
+            top: 0;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .drop .number.smaller {
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .drop .infobtn {
+            position: absolute;
+            right: -10px;
+            top: -20px;
+            background: #000;
+            color: #fff;
+            font-family: 'barnacle_boyregular';
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            cursor: pointer;
+            z-index: 2;
+            border: 2px solid #fff;
+        }
+        .drop .info {
+            position: absolute;
+            font-size: 0.8rem;
+            left: 100%;
+            width: 80%;
+            border-radius: 10px;
+            padding: 5px;
+            color: #fff;
+            margin: 0;
+            border: 2px solid #fff;
+            z-index: 9;
+        }
+        .drop.open .infobtn {
+            background: #666 !important;
+        }
+        .drop:nth-child(1) {
+            border-color: var(--accent);
+            box-shadow: 4px 4px 0 var(--accent);
+            left: 50%;
+            top: 40%;
+        }
+        .drop:nth-child(1) .infobtn {
+            background: var(--accent);
+        }
+        .drop:nth-child(1) .info {
+            background: var(--accent);
+        }
+        .drop:nth-child(1) .info {
+            left: 0;
+            top: 100%;
+            width: 100%;
+        }
+        .drop:nth-child(2) {
+            border-color: var(--c5);
+            box-shadow: 4px 4px 0 var(--c5);
+            left: 14%;
+            top: 20%;
+        }
+        .drop:nth-child(2) .infobtn {
+            background: var(--c5);
+        }
+        .drop:nth-child(2) .info {
+            background: var(--c5);
+        }
+        .drop:nth-child(3) {
+            border-color: var(--c8);
+            box-shadow: 4px 4px 0 var(--c8);
+            left: 74%;
+            top: 68%;
+        }
+        .drop:nth-child(3) .infobtn {
+            background: var(--c8);
+        }
+        .drop:nth-child(3) .info {
+            background: var(--c8);
+        }
+        .drop:nth-child(3) .info {
+            left: 0;
+            top: 100%;
+            width: 100%;
+        }
+        .drop:nth-child(4) {
+            border-color: var(--clear);
+            box-shadow: 4px 4px 0 var(--clear);
+            left: 34%;
+            top: 74%;
+        }
+        .drop:nth-child(4) .infobtn {
+            background: var(--clear);
+        }
+        .drop:nth-child(4) .info {
+            background: var(--clear);
+        }
+        .drop:nth-child(4) .info {
+            left: 0;
+            top: 100%;
+            width: 100%;
+            color: var(--sec);
+        }
+        .drop:nth-child(5) {
+            border-color: var(--main);
+            box-shadow: 4px 4px 0 var(--main);
+            left: -5%;
+            top: 0;
+        }
+        .drop:nth-child(5) .infobtn {
+            background: var(--main);
+        }
+        .drop:nth-child(5) .info {
+            background: var(--main);
+        }
+        .drop:nth-child(6) {
+            border-color: var(--sec);
+            box-shadow: 4px 4px 0 var(--sec);
+            left: 2%;
+            top: 55%;
+        }
+        .drop:nth-child(6) .infobtn {
+            background: var(--sec);
+        }
+        .drop:nth-child(6) .info {
+            background: var(--sec);
+        }
+        .drop:nth-child(6) .info {
+            left: 0;
+            top: 100%;
+            width: 100%;
+        }
+        .drag {
+            width: auto;
+            height: auto;
+            margin: 2px 10px;
+        }
+        .drag .number.smaller {
+            font-size: 1.2rem;
+        }
+
 
         @media (max-width:680px){
         }
@@ -21,11 +176,28 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Identifico las formas de relieve" text="Coloca el nombre de cada sistema montañoso sobre el mapa. Lee su descripción." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="map w80">
+                        <img src="aimg/mapa.svg" class="w100">
+                        <div class="drops">
+                            <div v-for="i in temps" droptimes="untilok" :data="i.val" :class="'drop '+(i.open?'open':'')">
+                                <div class="infobtn" @click="i.open = !i.open">
+                                    <span v-if="!i.open">?</span><span v-else>x</span>
+                                </div>
+                                <div v-if="i.open" class="info">{{i.d}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrap w100">
+                    <drag v-for="i in _.shuffle(temps)" dropzone=".drop" :data="i.val" append-to-dropzone>
+                        <number smaller c="6">{{i.n}}</number>
+                    </drag>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -37,6 +209,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +220,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,6 +233,14 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps= [
+            { open: false, val:'a', n:'Sierra Madre Oriental', d: 'Cordillera que recorre del noreste de Nuevo León hasta el sureste de los estados de Hidalgo y Puebla. ' },
+            { open: false, val:'b', n:'Sierra Madre Occidental', d:'Sistema montañoso que se extiende desde el noreste de Sonora hasta el norte de Jalisco.' },
+            { open: false, val:'c', n:'Sierra Madre de Chiapas', d:'Cadena montañosa ubicada al sureste de México, abarca los países de Honduras, El Salvador, Guatemala y el estado de Chiapas.' },
+            { open: false, val:'d', n:'Sierra Madre del Sur', d:'Cordillera montañosa que se extiende por la zona occidental del país y que abarca desde el estado de Jalisco hasta Oaxaca.' },
+            { open: false, val:'e', n:'Sierra de Baja California', d:'Sistema montañoso que se distribuye a lo largo del estado de Baja California.' },
+            { open: false, val:'f', n:'Sistema Volcánico Transversal', d:'Cadena de volcanes, también llamado Eje Neovolcánico, que se extiende desde el estado de Jalisco hasta el estado de Veracruz.' },
+        ]
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
