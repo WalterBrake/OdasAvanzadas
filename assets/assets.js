@@ -10,6 +10,7 @@ var s_win = new Howl({ src: ['../../assets/asound/win.mp3'] })
 /* ################ */
 /* VUE INIT */
 var EventBus = new Vue()
+var ScenesBus = new Vue()
 
 var app = new Vue({
     el: '#app',
@@ -28,10 +29,10 @@ var app = new Vue({
                 errors: 0,
                 answers: 0,
             },
+            scenePointsCounter: 0,
             temporals: [],
             temps: {},
             scoreByScenes: [],
-
         }
     },
     watch: {
@@ -63,10 +64,11 @@ var app = new Vue({
         },
         sceneCompleted($ev){
             if($ev == false){
-                this.currentScene++
+                //this.currentScene++
                 this.temporals = []
                 this.notfoundimg()
                 for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                this.changeSceneTransition(5)
                 return false
             }
             var _this = this
@@ -80,24 +82,22 @@ var app = new Vue({
             this.changeSceneTransition()
             
         },
-        changeSceneTransition(){
+        changeSceneTransition(speed){
+            let speedpart = speed ? speed : 30
             var _this = this
             var fwIt = 0
             var fw = setInterval(function () {
                 fwIt++
                 app.particleAnimation({clientX:window.innerWidth/(Math.random()*4), clientY:window.innerHeight/(Math.random()*4)}, 30, null, null)
-                if(fwIt == 30) {
+                if(fwIt == speedpart) {
                     clearInterval(fw)
                     //Stop all howlers
                     for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     EventBus = new Vue()
-                    if(_this.currentScene == _this.scenesCount-1) {
-                        _this.scoreInScene += _this.decimalSum
-                    }
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
-
+                    
                     if(_this.currentScene == _this.scenesCount+1) {
                         _this.ended()
                     }
@@ -116,11 +116,19 @@ var app = new Vue({
         debugg(e){
             console.log(e)
         },
+        scenePointsFn () {
+            this.scenePointsCounter+=1
+            console.log('scount:', this.scenesCount, 'points:',this.scenePointsCounter)
+            if(this.scenesCount == this.scenePointsCounter) {
+                this.scoreInScene += this.decimalSum
+            }
+        }
     },
     mounted () {
         this.notfoundimg()
         var h = parseInt(window.location.hash ? window.location.hash.replace('#s', '') : 100)
         this.score = h ? h : 100
+        ScenesBus.$on('scenePoints', this.scenePointsFn)
     }
 })
 

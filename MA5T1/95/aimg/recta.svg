@@ -4,12 +4,12 @@
     <g transform="matrix(1,0,0,1,-3148.35,-4723)">
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,103.617,320.296)">
-                <path d="M0,-46.047L0,0L45.792,0L0,-46.047Z" style="fill:rgb(255,247,220);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <path d="M0,-46.047L0,0L45.792,0L0,-46.047Z" style="fill:rgb(200,247,255);fill-rule:nonzero;stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,0,-129.581)">
-                <rect x="103.617" y="445.058" width="4.819" height="4.819" style="fill:rgb(255,233,158);stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <rect x="103.617" y="445.058" width="4.819" height="4.819" style="fill:rgb(158,233,255);stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
     </g>

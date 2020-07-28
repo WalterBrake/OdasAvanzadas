@@ -167,5 +167,11 @@ Vue.component('scene', {
         } else {
             this.appearok = true
         }
+    },
+    created() {
+        if(this.hidescorebox==undefined && this.startScene==undefined && this.endScene==undefined){
+            console.log('this scene add points')
+            ScenesBus.$emit('scenePoints')
+        }
     }
 })

@@ -3,14 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico diferentes triángulos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .button.next{
+            font-size: 2rem;
+        }
+        .introrec, .introrec2{
+            background: #BFE4EB;
+            padding: 10px;
+            text-align: center;
+            margin: 1%;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .introrec img, .introrec2 img{ max-height: 100px;}
+        .introrec2{ background: #F8DE8C; }
+        .clickable {
+            width: auto;
+            box-sizing: border-box;
+            background: #fff;
+            margin: 4px;
+            padding: 10px;
+            border-radius: 10px;
+            width: 16%;
+        }
+        .clickable img {
+            max-height: 40px;
+        }
+        .clickable:nth-child(1),
+        .clickable:nth-child(2),
+        .clickable:nth-child(3) {
+            background: #BFE4EB;
+        }
+        .clickable:nth-child(4),
+        .clickable:nth-child(5),
+        .clickable:nth-child(6) {
+            background: #F8DE8C;
+        }
+        .maintri {max-height: 280px;}
 
         @media (max-width:680px){
+            .number.small{font-size: 1.6rem;}
+            .number.smaller{font-size: 1rem;}
         }
     </style>
     </head>
@@ -20,17 +58,109 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#9DCE77">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Identifico diferentes triángulos" text="¡Hola!, hoy aprenderemos a diferenciar triángulos. Los triángulos son figuras planas con tres lados." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100 mb-1">
+                    <img src="aimg/equi.svg">
+                    <img src="aimg/iso.svg">
+                    <img src="aimg/esca.svg">
+                </div>
+                <button class="button next" @click="sceneCompleted(false)">Continuar</button>
+                <div class="row w100 mt-1">
+                    <img src="aimg/recta.svg">
+                    <img src="aimg/acu.svg">
+                    <img src="aimg/obtu.svg">
+                </div>
             </activity>
         </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#9DCE77">
+        
+        <info type="seleccionar" title="Identifico diferentes triángulos" text="Y se pueden clasificar de acuerdo a sus lados." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+            <div class="row wrap w100 mb-1">
+                <div class="w30 introrec animate__animated animate__backInDown animate__delay-1s">
+                    <img src="aimg/equi.svg">
+                    <number small c="2">Equilátero</number>
+                    <number smaller c="2">3 lados iguales</number>
+                </div>
+                <div class="w30 introrec animate__animated animate__backInDown animate__delay-2s">
+                    <img src="aimg/iso.svg">
+                    <number small c="2">Isósceles</number>
+                    <number smaller c="2">2 lados iguales</number>
+                </div>
+                <div class="w30 introrec animate__animated animate__backInDown animate__delay-3s">
+                    <img src="aimg/esca.svg">
+                    <number small c="2">Escaleno</number>
+                    <number smaller c="2">Ningun lado igual</number>
+                </div>
+            </div>
+            <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#9DCE77">
+        
+        <info type="seleccionar" title="Identifico diferentes triángulos" text="Y de acuerdo a sus ángulos internos." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+            <div class="row wrap w100 mb-1">
+                <div class="w30 introrec2 animate__animated animate__backInDown animate__delay-1s">
+                    <img src="aimg/recta.svg">
+                    <number small c="2">Rectángulo</number>
+                    <number smaller c="2">Tiene un ángulo que mide exactamente 90º</number>
+                </div>
+                <div class="w30 introrec2 animate__animated animate__backInDown animate__delay-2s">
+                    <img src="aimg/acu.svg">
+                    <number small c="2">Acutángulo</number>
+                    <number smaller c="2">Sus 3 ángulos miden menos de 90º</number>
+                </div>
+                <div class="w30 introrec2 animate__animated animate__backInDown animate__delay-3s">
+                    <img src="aimg/obtu.svg">
+                    <number small c="2">Obtusángulo</number>
+                    <number smaller c="2">Tiene un ángulo mayor de 90º y menos de 180º</number>
+                </div>
+            </div>
+            <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <template v-for="(scene, index) in [
+            { im: 'i1', r1: 'esca', r2:'recta' },
+            { im: 'i2', r1: 'iso', r2:'acu' },
+            { im: 'i3', r1: 'esca', r2:'obtu' },
+            { im: 'i4', r1: 'equi', r2:'acu' },
+            { im: 'i5', r1: 'esca', r2:'obtu' },
+            { im: 'i6', r1: 'iso', r2:'acu' },
+            { im: 'i7', r1: 'iso', r2:'recta' },
+        ]">
+            <scene v-if="currentScene==index+4" :key="index+4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+            :answers="2" scene-color="#9DCE77">
+            
+            <info type="seleccionar" title="Identifico diferentes triángulos" text="Observa los ángulos y lados de los triángulos que vayan apareciendo. Selecciona el tipo de triángulo que es según sus lados en los botones amarillos y el tipo de triángulo según sus ángulos en los botones azules:" textaudio="asound/instruccion4.mp3" :autoplay="index==0?true:false"></info>
+            <activity>
+                <div class="row w100 mb-1">
+                    <img class="w40 animate__animated animate__backInDown animate__delay-1s maintri" :src="'aimg/'+scene.im+'.svg'">
+                </div>
+                <div class="row w100">
+                    <template v-for="i in ['equi', 'iso', 'esca', 'recta', 'acu', 'obtu']">
+                        <clickable simple-ok block-if-error :isok="i == scene.r1 || i == scene.r2"><img :src="'aimg/' + i + '.svg'" class="w100"></clickable>
+                    </template>
+                </div>
+                </activity>
+            </scene> <!-- end scene -->
+        </template>
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==11" :key="11" end-scene :final-data="finalData" ref="endscene"></scene>
     
 
     
@@ -47,6 +177,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -60,7 +191,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 7
         app.$devmode = false
     </script>
 </body>

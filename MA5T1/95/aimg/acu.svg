@@ -4,22 +4,22 @@
     <g transform="matrix(1,0,0,1,-3830.84,-4725.09)">
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,267.413,274.858)">
-                <path d="M0,45.523L45.523,45.523L22.762,0L0,45.523Z" style="fill:rgb(255,247,220);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <path d="M0,45.523L45.523,45.523L22.762,0L0,45.523Z" style="fill:rgb(200,247,255);fill-rule:nonzero;stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,269.773,320.382)">
-                <path d="M0,-4.771L-2.36,0L2.735,0C4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <path d="M0,-4.771L-2.36,0L2.735,0C4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(158,233,255);fill-rule:nonzero;stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,310.579,320.382)">
-                <path d="M0,-4.771L2.36,0L-2.735,0C-4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <path d="M0,-4.771L2.36,0L-2.735,0C-4,-3.601 0,-4.771 0,-4.771Z" style="fill:rgb(158,233,255);fill-rule:nonzero;stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
         <g transform="matrix(4.16667,0,0,4.16667,2723.92,3587.6)">
             <g transform="matrix(1,0,0,1,293.169,277.112)">
-                <path d="M0,3.719L-2.991,-2.361L-5.951,3.719C-2.482,6.08 0,3.719 0,3.719Z" style="fill:rgb(255,233,158);fill-rule:nonzero;stroke:rgb(255,223,105);stroke-width:0.85px;"/>
+                <path d="M0,3.719L-2.991,-2.361L-5.951,3.719C-2.482,6.08 0,3.719 0,3.719Z" style="fill:rgb(158,233,255);fill-rule:nonzero;stroke:rgb(105,223,255);stroke-width:0.85px;"/>
             </g>
         </g>
     </g>

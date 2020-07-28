@@ -12066,51 +12066,11 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/acutangulo.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/acutangulo.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/MA5T1\/95\/aimg\/equi-acu.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/equi-acu.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/MA5T1\/95\/aimg\/equi.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/MA5T1\/95\/aimg\/equi.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/MA5T1\/95\/aimg\/equilatero.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/equilatero.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/MA5T1\/95\/aimg\/esca-obtu.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/esca-obtu.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -12126,68 +12086,71 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/escaleno-rectangulo.svg": {
+	"\/MA5T1\/95\/aimg\/I1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/escaleno-rectangulo.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/I1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/escaleno.svg": {
+	"\/MA5T1\/95\/aimg\/i2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/escaleno.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/i2.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/95\/aimg\/Icon\r",
-		"oF": 0
-		},
-	"\/MA5T1\/95\/aimg\/iso-acu.svg": {
+	"\/MA5T1\/95\/aimg\/i3.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/iso-acu.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/i3.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/iso-acu2.svg": {
+	"\/MA5T1\/95\/aimg\/i4.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/iso-acu2.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/i4.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/iso-obtu.svg": {
+	"\/MA5T1\/95\/aimg\/i5.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/iso-obtu.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/i5.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/aimg\/iso-obtu2.svg": {
+	"\/MA5T1\/95\/aimg\/i6.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/iso-obtu2.svg",
+		"oAP": "\/MA5T1\/95\/aimg\/i6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA5T1\/95\/aimg\/i7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA5T1\/95\/aimg\/i7.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -12198,16 +12161,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/MA5T1\/95\/aimg\/iso.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/MA5T1\/95\/aimg\/isosceles.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/MA5T1\/95\/aimg\/isosceles.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -12253,39 +12206,32 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/95\/asound\/Icon\r": {
+	"\/MA5T1\/95\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/95\/asound\/Icon\r",
+		"oAP": "\/MA5T1\/95\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Ángulos.mp3": {
+	"\/MA5T1\/95\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Ángulos.mp3",
+		"oAP": "\/MA5T1\/95\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Hola.mp3": {
+	"\/MA5T1\/95\/asound\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Hola.mp3",
+		"oAP": "\/MA5T1\/95\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Lados.mp3": {
+	"\/MA5T1\/95\/asound\/instruccion4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Lados.mp3",
-		"oF": 0
-		},
-	"\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Observa.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/95\/asound\/Identifico diferentes triángulos Ma5ºT1_Observa.mp3",
+		"oAP": "\/MA5T1\/95\/asound\/instruccion4.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/95\/index.html": {
