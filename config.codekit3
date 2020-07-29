@@ -3119,18 +3119,78 @@
 		"oAP": "\/CN6T1\/187\/index.html",
 		"oF": 0
 		},
+	"\/CN6T1\/193\/aimg\/1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/aimg\/2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/aimg\/3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/aimg\/4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/aimg\/5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/aimg\/6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/193\/aimg\/6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/193\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T1\/193\/asound\/instruccion.mp3",
+		"oF": 0
+		},
 	"\/CN6T1\/193\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN6T1\/193\/asound\/instruccion2.mp3",
-		"oF": 0
-		},
-	"\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst1_Coloca.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T1\/193\/asound\/Sé qué son los fósiles CN°6T1_Inst1_Coloca.mp3",
 		"oF": 0
 		},
 	"\/CN6T1\/193\/index.html": {
@@ -7787,18 +7847,88 @@
 		"oAP": "\/HI5T1\/262\/index.html",
 		"oF": 0
 		},
-	"\/HI6T1\/257\/asound\/Reconozco al México Moderno Hi6° T1_Intro_Desp.mp3": {
+	"\/HI6T1\/257\/aimg\/HI6T1-257-07.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/HI6T1-257-07.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/i1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/i1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/i2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/i2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/i3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/i3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/i4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/i4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/i5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/i5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/aimg\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI6T1\/257\/aimg\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI6T1\/257\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI6T1\/257\/asound\/Reconozco al México Moderno Hi6° T1_Intro_Desp.mp3",
+		"oAP": "\/HI6T1\/257\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/HI6T1\/257\/asound\/Reconozco México Moderno Hi6° T1_Inst_Selecc.mp3": {
+	"\/HI6T1\/257\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI6T1\/257\/asound\/Reconozco México Moderno Hi6° T1_Inst_Selecc.mp3",
+		"oAP": "\/HI6T1\/257\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/HI6T1\/257\/index.html": {

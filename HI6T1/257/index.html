@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Reconozco al México Moderno</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
+        .button.next{margin: 20px; font-size: 2rem;}
+        .map{position:relative;}
+        .imgs{position: absolute; left: 0; top:0; height: 100%; width: 100%;}
+        .pregunta{
+            font-size: 1.6rem;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .respuestas .clickable{
+            box-sizing: border-box;
+            margin: 5px;
+            text-align: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .respuestas .clickable:nth-child(1) {
+            border: 2px solid var(--main);
+            box-shadow: 4px 4px 0 var(--main);
+        }
+        .respuestas .clickable:nth-child(2) {
+            border: 2px solid var(--sec);
+            box-shadow: 4px 4px 0 var(--sec);
+        }
+        .respuestas .clickable:nth-child(3) {
+            border: 2px solid var(--accent);
+            box-shadow: 4px 4px 0 var(--accent);
+        }
+        .respuestas .clickable .number{width: 100%;}
         @media (max-width:680px){
+            .pregunta{
+                font-size: 1.2rem;
+            }
+            .pregunta img{
+                max-width: 80px;
+            }
         }
     </style>
     </head>
@@ -20,17 +54,125 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" :key="1" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Reconozco al México Moderno" text="Después de La Revolución, México se enfrentó a la reconstrucción y, en las siguientes décadas, fortaleció sus instituciones, creció económicamente y la cultura tuvo nuevas formas de expresión, pero también surgieron grandes retos." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
+                <div class="row w100">
+                    <div class="map w60">
+                        <img src="aimg/mapa.svg" class="w100">
+                        <div class="imgs row wrap">
+                            <img src="aimg/i1.svg" class="w30 animate__animated animate__zoomInLeft animate__delay-1s">
+                            <img src="aimg/i2.svg" class="w30 animate__animated animate__zoomInDown animate__delay-2s">
+                            <img src="aimg/i3.svg" class="w30 animate__animated animate__zoomInRight animate__delay-3s">
+                            <img src="aimg/i4.svg" class="w30 animate__animated animate__zoomInLeft animate__delay-4s">
+                            <img src="aimg/i5.svg" class="w30 animate__animated animate__zoomInUp animate__delay-5s">
+                            <img src="aimg/i6.svg" class="w30 animate__animated animate__zoomInRight animate__delay-6s">
+
+                        </div>
+                    </div>
+                </div>
+                <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Reconozco al México Moderno" text="Selecciona la respuesta correcta a cada pregunta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <img src="aimg/i1.svg">
+                    ¿Quienes fueron los principales muralistas de la época?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: false, t: 'Mariano Azuela, Frida Kahlo y Octavio Paz.'},
+                        {r: true, t: 'Diego Rivera, David Alfaro Siqueiros y José Clemente Orozco.'},
+                        {r: false, t: 'José Emilio Pacheco, José Revueltas y Leonora Carrington.'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
+                
+                <div class="row w100 pregunta">
+                    <img src="aimg/i3.svg">
+                    ¿Cuál fue la causa por la que Lázaro Cárdenas decidió expropiar el petróleo?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: false, t: 'El precio era muy alto en el extranjero.'},
+                        {r: false, t: 'Algunos obreros no cumplían con sus horarios de trabajo en las compañías.'},
+                        {r: true, t: 'La compañías petroleras no querían mejorar las condiciones de trabajo y el sueldo de los obreros.'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
+                
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Reconozco al México Moderno" text="Selecciona la respuesta correcta a cada pregunta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <img src="aimg/i5.svg">
+                    ¿Qué frase expresa la importancia del voto femenino a nivel federal en 1953?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: false, t: 'La ley debe aplicarse a todos por igual.'},
+                        {r: true, t: 'Con su participación promueve que haya una sociedad más justa.'},
+                        {r: false, t: 'Solo las mujeres tienen derecho a votar.'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
+                
+                <div class="row w100 pregunta">
+                    <img src="aimg/i6.svg">
+                    ¿En que año se creó el Instituto Federal Electoral?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: true, t: '1920'},
+                        {r: false, t: '1990'},
+                        {r: false, t: '1989'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
+                
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="2" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Reconozco al México Moderno" text="Selecciona la respuesta correcta a cada pregunta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
+            <activity>
+                <div class="row w100 pregunta">
+                    <img src="aimg/i2.svg">
+                    ¿Qué movimiento se originó en el estado de Chiapas en 1994 y exigía al gobierno el reconocimiento y respeto a los derechos de los indígenas?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: false, t: 'PRD'},
+                        {r: true, t: 'EZLN'},
+                        {r: false, t: 'Manifestantes de Tlatelolco'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
+                
+                <div class="row w100 pregunta">
+                    <img src="aimg/i4.svg">
+                    ¿Qué candidato del PRI a la presidencia fue asesinado en Tijuana en el año de 1994?</div>
+                <div class="row w100 wrap respuestas">
+                    <clickable v-for="(i, index) in [
+                        {r: false, t: 'Álvaro Obregón'},
+                        {r: false, t: 'José Francisco Ruíz Massieu'},
+                        {r: true, t: 'Luis Donaldo Colosio'},
+                    ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
+                </div>
                 
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==5" :key="5" end-scene :final-data="finalData"></scene>
     
 
     
@@ -47,6 +189,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -60,7 +203,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 3
         app.$devmode = false
     </script>
 </body>
