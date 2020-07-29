@@ -3,15 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Identifico problemas de salud</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-
-        @media (max-width:680px){
+        .left,
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
+        .left .box,
+        .right .box {
+            text-align: center;
+            height: 25%;
+            margin: 0 auto -14px;
+        }
+        .left .box img,
+        .right .box img {
+            max-height: 100px;
+            max-width: 150px;
+        }
+        .left .box:last-child,
+        .right .box:last-child {
+            margin-bottom: 0;
+        }
+        .center {
+            text-align: center;
+        }
+    
+        .drag {
+            height: auto;
+            width: auto;
+            margin: 10px;
+        }
+        
+        .drag div {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: var(--c6);
+        }
+
+        .center .drag img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        @media (max-width: 680px) {
+            .left .box,
+            .right .box {
+                height: auto;
+            }
+            .drag {
+                height: auto;
+            }
+        }
+        .okDrag img {
+            transform: scale(0.6);
+        }
+        .okDrag div > div {
+            display: none;
+        }
+        .cuerpowrapper {
+            position: relative;
+        }
+        .bodyparts {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            margin-left: -15%;
+        }
+        .bodyparts .drop {
+            position: absolute;
+            width: 10%;
+            height: 10%;
+        }
+        .bodyparts .drop:nth-child(1) {
+            left: 32%;
+            top: 34.5%;
+            width: 36%;
+            height: 7%;
+            z-index: 2;
+        }
+        .bodyparts .drop:nth-child(2) {
+            left: 39%;
+            top: 45%;
+            width: 10%;
+            height: 8%;
+            z-index: 1;
+        }
+        .bodyparts .drop:nth-child(3) {
+            left: 48%;
+            top: 38%;
+            width: 16%;
+            height: 6%;
+            z-index: 2;
+        }
+        .bodyparts .drop:nth-child(4) {
+            left: 36%;
+            top: 50%;
+            width: 17%;
+            height: 8%;
+            z-index: 1;
+        }
+        .bodyparts .drop:nth-child(5) {
+            left: 48%;
+            top: 31%;
+            width: 20%;
+            height: 30%;
+            z-index: 1;
+        }
+        .bodyparts .drop:nth-child(6) {
+            left: 28%;
+            top: 5%;
+            width: 44%;
+            height: 11%;
+            z-index: 1;
+        }
+        .bodyparts .drop:nth-child(7) {
+            left: 30%;
+            top: 45%;
+            width: 38%;
+            height: 11%;
+            z-index: 0;
+        }
+
+
     </style>
     </head>
 <body>
@@ -21,11 +143,64 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="7" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Identifico problemas de salud" text="Lee con atención los efectos del consumo de tabaco y alcohol en el cuerpo. Adicionalmente, coloca los órganos en el espacio correspondiente, sobre el dibujo del cuerpo." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="col left w20">
+                        <div class="box w100" v-for="i in [
+                            { n: 'l1', d:false, if: 1},
+                            { n: 'l2', d:'pulmones', if: 1},
+                            { n: 'l3', d:'rinon', if:2 },
+                            { n: 'l4', d:false, if:3  },
+                            { n: 'l5', d:false, if:3 },
+                            { n: 'l6', d:'corazon', if:3 },
+                            ]" :class="'box w100 animate__animated animate__fadeInDown '" :data="i.d" droptimes="untilok" v-if="temps.a+1 > i.if"><img :src="'aimg/'+i.n+'.svg'"></div>
+                        </div>
+                    <div class="col center w60">
+                        <div class="cuerpowrapper">
+                            <img class="w30 cuerpo" src="aimg/cuerpono.svg">
+                            <div class="bodyparts w30">
+                                <div class="drop" v-for="i in [
+                                    {d:'pulmones', if:1}, 
+                                    {d:'rinon', if:2},
+                                    {d:'corazon', if:3},
+                                    {d:'higado', if:4},
+                                    {d:'esofagoestomago', if:5},
+                                    {d:'cerebro', if:6},
+                                    {d:'intestinos', if:7},
+                                ]" :data="i.d" droptimes="untilok" v-if="temps.a+1 > i.if"></div>
+                            </div>
+                        </div>
+                        <div class="parts row w100">
+                            <drag v-for="i in _.shuffle([
+                            {n: 'Pulmones', d:'pulmones', w:'a'},
+                            {n: 'Riñón', d:'rinon', w:'a'},
+                            {n: 'Corazón', d:'corazon', w:'a'},
+                            {n: 'Hígado', d:'higado', w:'a'},
+                            {n: 'Esófago y estómago', d:'esofagoestomago', w:'a'},
+                            {n: 'Cerebro', d:'cerebro', w:'a'},
+                            {n: 'Intestinos', d:'intestinos', w:'a'},
+                            ])" :key="i.d" dropzone=".drop" :data="i.d" stay-if-ok append-to-dropzone drag-ok-class="okDrag" @isok="temps[i.w] += 1">
+                            <div :class="i.d">
+                                <img :src="'aimg/'+i.d+'.svg'" class="w100">
+                                <!--<div>{{i.n}}</div>-->
+                            </div>
+                        </drag>
+                        </div>
+                    </div>
+                    <div class="col right w20">
+                        <div v-for="i in [
+                        { n: 'r1', d:false, if: 4},
+                        { n: 'r2', d:'higado', if: 4},
+                        { n: 'r3', d:'esofagoestomago', if:5 },
+                        { n: 'r4', d:'cerebro', if:6},
+                        { n: 'r5', d:false, if:6},
+                        { n: 'r6', d:'intestinos', if:7 },
+                        ]" :class="'box w100 animate__animated animate__fadeInDown ' + (i.d?'drop':'')" :data="i.d" droptimes="untilok" v-if="temps.a+1 > i.if" ><img :src="'aimg/'+i.n+'.svg'"></div>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -37,6 +212,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +223,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,6 +236,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.$set(app.temps, 'a', 1)
+        app.$set(app.temps, 'b', 1)
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
