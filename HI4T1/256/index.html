@@ -3,12 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Desecho lo que mi cuerpo no necesita</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .button {
+            background: var(--c5);
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .line {
+            background: var(--c5);
+            width: 10px;
+            height: 100%;
+        }
+        .col {
+            width: 50%;
+            text-align: center;
+        }
+        .col img {
+            width: 50%;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .col .text {
+            margin: 20px 0;
+            color: var(--c5);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .col .date {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .col .date:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 10px;
+            background: var(--c5);
+            position: absolute;
+            top: 40%;
+        }
+        .col.left .date {
+            text-align: right;
+            margin-right: 30px;
+        }
+        .col.left .date:after {
+            right: -38px;
+        }
+        .col.left {
+            padding-top: 2%;
+        }
+        .col.right {
+            padding-top: 10%;
+        }
+        .col.right .date {
+            text-align: left;
+            margin-left: 30px;
+        }
+        .col.right .date:after {
+            left: -38px;
+        }
+
+        .animate__zoomOut{
+            position: absolute;
+        }
+        .state {
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+        .state .col.right {
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+
 
         @media (max-width:680px){
         }
@@ -20,12 +92,81 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#ED1C25">
             <activity>
+                <div class="info w100 mb-auto">
+                    <h1>Poblamiento</h1>
+                    <h2>de América y del actual territorio mexicano</h2>
+                </div>
+
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==1 ? 'animate__zoomInDown' : 'animate__zoomOut')">
+                    <div class="col left">
+                        <div class="date animate__animated animate__lightSpeedInUp"><number small c="5">4000 a.C.</number></div>
+                        <div class="text">Primeras migraciones de cazadores recolectores hacia América.</div>
+                        <div class="img"><img src="aimg/cazadores.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <div class="date animate__animated animate__lightSpeedInRight"><number small c="5">35000 a.C.</number></div>
+                        <div class="text">Uso del fuego.</div>
+                        <div class="img"><img src="aimg/fuego.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                </div>
                 
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==2 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">
+                        <div class="date animate__animated animate__lightSpeedInLeft"><number small c="5">10000 a.C.</number></div>
+                        <div class="text">Descubrimiento de la agricultura.</div>
+                        <div class="img"><img src="aimg/agricultura.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <div class="date animate__animated animate__lightSpeedInRight"><number small c="5">5000 a.C.</number></div>
+                        <div class="text">Domesticación del maíz.</div>
+                        <div class="img"><img src="aimg/maiz.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                </div>
+                
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==3 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">
+                        <div class="date animate__animated animate__lightSpeedInLeft"><number small c="5">1300 a.C.</number></div>
+                        <div class="text">Auge de la cultura olmeca. </div>
+                        <div class="img"><img src="aimg/olmeca.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <div class="date animate__animated animate__lightSpeedInRight "><number small c="5">700 a.C.</number></div>
+                        <div class="text">Desarrollo de la escritura en Mesoamérica.</div>
+                        <div class="img"><img src="aimg/escritura.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                </div>
+                
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==4 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">
+                        <div class="date animate__animated animate__lightSpeedInLeft "><number small c="5">900 a 1200 d. C.</number></div>
+                        <div class="text">Auge de la cultura tolteca.</div>
+                        <div class="img"><img src="aimg/tolteca.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <!--
+                        <div class="date animate__animated animate__lightSpeedInRight animate__delay-3s"><number small c="5">700 a.C.</number></div>
+                        <div class="text">Desarrollo de la escritura en Mesoamérica.</div>
+                        <div class="img"><img src="aimg/escritura.svg" class="w100 animate__animated animate__jello animate__slower animate__infinite"></div>
+                            -->
+                    </div>
+                </div>
+                
+                <div class="row w100">
+                    <button class="button mr-auto" v-if="temps>1" @click="temps--">Anterior</button>
+                    <button class="button ml-auto" v-if="temps<4" @click="temps++">Siguiente</button>
+                </div>
+
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,6 +188,9 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +203,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.temps = 1
+        app.currentScene = 1
         app.scenesCount = 1
         app.$devmode = false
     </script>
