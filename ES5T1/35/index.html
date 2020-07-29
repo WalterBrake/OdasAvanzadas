@@ -3,13 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Observamos anuncios publicitarios</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .button {
+            color: #fff;
+        }
+        .info h1{
+            font-size: 1.8rem;
+        }
+        .nota {
+            background: #FBDDD4;
+            box-sizing: border-box;
+            padding: 6px;
+            font-size: 0.7rem;
+            border-radius: 2px 20px 2px 20px;
+            border: 2px solid #C27F89;
+        }
+        .nota span { color: var(--c5); font-weight: bold;}
+        .information {
+            text-align: center;
+        }
+        .information .prop {
+            background: #C52E47;
+        }
+        .information .anun {
+            background: #642F67;
+        }
+        .information .w50 {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .information .w50 img {
+            max-height: 320px;
+        }
+        .information .w50 .title {
+            font-size: 1.3rem;
+            margin: 10px 0;
+            font-family: 'barnacle_boyregular';
+            color: #FDDB60;
+        }
+        .information .w50 .puntos {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+        }
+        .information .w50 .punto {
+            top: 0;
+        }
+        .information .w50 .punto.animate__backOutLeft {
+            position: absolute;
+        }
+        @media (max-width: 680px) {
+            .information .w50 img {
+                max-height: 200px;
+            }
+            .puntos {
+                height: 80px;
+            }
+            .punto {
+                font-size: 0.9rem;
+            }
+        }
+        .navs {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+        .navs .nav {
+            margin: 0.5% 1%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .navs .nav.on {
+            background: var(--accent);
+        }
+        .navs .nav.off {
+            background: rgba(255, 255, 255, 0.5);
+        }
 
+        
         @media (max-width:680px){
         }
     </style>
@@ -20,12 +105,45 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#ED1C25">
             <activity>
-                
+                <div class="info w100 mb-auto">
+                    <h1>ANUNCIOS PUBLICITARIOS VERSUS PROPAGANDA</h1>
+                    <h2>Características y funciones</h2>
+                </div>
+                <div class="row nota mb-auto">
+                    <p>
+                        <strong>Te cuento que...</strong> las empresas recurren a los <span>anuncios publicitarios</span> para promover sus <strong>productos o servicios</strong>. En estos anuncios generalmente se muestra el producto y se describen sus cualidades para hacerlo atractivo a los posibles compradores. Los anuncios publicitarios forman parte de nuestra vida cotidiana y los podemos encontrar en todos los medios posibles.
+                    </p>
+                </div>
+
+                <!---->
+                <div class="row w100 information">
+                    <div class="w50 prop">
+                        <img src="aimg/propaganda.svg" class="w80">
+                        <div class="title">PROPAGANDA</div>
+                        <div class="puntos">
+                            <div :class="'punto animate__animated ' + (temps==1?'animate__bounceInRight':'animate__backOutLeft')">Utiliza imágenes atractivas para llamar la atención.</div>
+                            <div :class="'punto animate__animated ' + (temps==2?'animate__bounceInRight':'animate__backOutLeft')">Usa un eslogan creativo y llamativo.</div>
+                            <div :class="'punto animate__animated ' + (temps==3?'animate__bounceInRight':'animate__backOutLeft')">Busca influir para obtener apoyo o rechazo con respecto a su mensaje.</div>
+                        </div>
+                    </div>
+                    <div class="w50 anun">
+                        <img src="aimg/anuncio.svg" class="w80">
+                        <div class="title">ANUNCIO PUBLICITARIO</div>
+                        <div class="puntos">
+                            <div :class="'punto animate__animated ' + (temps==1?'animate__bounceInRight':'animate__backOutLeft')">Informa sobre los beneficios de un producto o servicio.</div>
+                            <div :class="'punto animate__animated ' + (temps==2?'animate__bounceInRight':'animate__backOutLeft')">Emplea frases que pretenden convencer o persuadir al público.</div>
+                            <div :class="'punto animate__animated ' + (temps==3?'animate__bounceInRight':'animate__backOutLeft')">Busca influenciar la decisión de compra.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w100 navs">  
+                    <div :class="'nav ' + (temps==1?'on':'off')" @click="temps=1"></div>
+                    <div :class="'nav ' + (temps==2?'on':'off')" @click="temps=2"></div>
+                    <div :class="'nav ' + (temps==3?'on':'off')" @click="temps=3"></div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,6 +165,9 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +180,13 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.temps = 1
+        setInterval(function () {
+            app.temps = app.temps == 3 ? 0 : app.temps
+            app.temps++
+        }, 7000)
+
+        app.currentScene = 1
         app.scenesCount = 1
         app.$devmode = false
     </script>
