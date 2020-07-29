@@ -3,12 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Sé qué son los fósiles</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .texts .desc {
+            background: #fff;
+            margin: 2px;
+            border-radius: 10px;
+        }
+        .texts .desc .card {
+            height: 80px;
+            border: 2px solid var(--main);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .texts .desc .card img {
+            width: 120%;
+        }
+        .texts .desc .txt {
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 0.8rem;
+        }
+        .dragimg {
+            box-sizing: border-box;
+            width: 48%;
+            height: auto;
+            margin: 1%;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .dragimg img {
+            max-width: 100%;
+        }
+
+        .drag {
+            width: auto;
+            height: auto;
+        }
+        .descnum {
+            background: #fff;
+            border-radius: 10px;
+            margin: 1%;
+            width: 90%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            padding: 6px;
+            border: 2px solid var(--main);
+            box-shadow: 4px 4px 0 var(--main);
+        }
+        .descnum .txt {
+            font-size: 0.7rem;
+        }
+
 
         @media (max-width:680px){
         }
@@ -21,22 +77,58 @@
         
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
+        :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Sé qué son los fósiles" text="Coloca las imágenes con la tarjeta que corresponde a cada fase del proceso de fosilización de un dinosaurio." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                
+                <div class="row w100">
+                    <div class="imgs w40 row wrap">
+                        <drag initclass="dragimg" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone><img :src="'aimg/'+i.val+'.svg'" class="w100"></drag>
+                    </div>
+                    <div class="texts w60">
+                        <div class="desc row w100" v-for="i in _.shuffle(temps)">
+                            <div class="card w20 drop" :data="i.val" :key="i.val" droptimes="untilok"></div>
+                            <div class="txt w80">{{i.txt}}</div>
+                        </div>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Sé qué son los fósiles" text="Coloca las tarjetas en orden, de acuerdo al proceso de fosilización de un dinosaurio." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <activity>
+                <div class="row w100">
+                    <div class="nums w50">
+                        <div class="descnum row w100" v-for="i in temps">
+                            <div class="txt w10"><number small c="1">{{i.val}}</number></div>
+                            <div class="card w90 drop" :data="i.val" :key="i.val" droptimes="untilok"></div>
+                        </div>
+                    </div>
+                    <div class="texts w50 row wrap">
+                        <drag initclass="w100" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone>
+                            <div class="row desc">
+                                <div class="card w20"><img :src="'aimg/'+i.val+'.svg'" class="w100"></div>
+                                <div class="txt w80">{{i.txt}}</div>
+                            </div>
+                        </drag>
+                    </div>
+                </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -47,6 +139,7 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,8 +152,16 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps = [
+            { val:'1', txt:'Los huesos son cubiertos por sedimentos producto de la erosión de las rocas que los protegen y evitan su desintegración.'},
+            { val:'2', txt:'Las partes blandas de los dinosaurios se des componen con gran rapidez o son devoradas por animales carroñeros.'},
+            { val:'3', txt:'Los minerales son disueltos por la lluvia, lo que hace posible su penetración a través del tejido.'},
+            { val:'4', txt:'Cuando el agua se evapora, los minerales se precipitan en los huesos del tejido esponjoso y lo endurecen permitiendo su conservación.'},
+            { val:'5', txt:'Otra forma es que los minerales disueltos sustituyan totalmente la estructura ósea de los dinosaurios conservando los huesos.'},
+            { val:'6', txt:'Finalmente, las rocas que contienen los fósiles son erosionadas y el resto quedan al descubierto.'},
+        ]
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>
