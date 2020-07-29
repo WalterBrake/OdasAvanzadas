@@ -158,6 +158,11 @@ input[type=number] {
 .info .reset {
   margin-left: auto;
 }
+@media (min-width: 961px) {
+  .info.w100 {
+    max-width: 100%;
+  }
+}
 .audiotextBtn {
   cursor: pointer;
   max-width: 60px;
