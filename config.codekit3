@@ -3274,109 +3274,172 @@
 		"oAP": "\/CN6T1\/184\/index.html",
 		"oF": 0
 		},
-	"\/CN6T1\/187\/aimg\/aparato.svg": {
+	"\/CN6T1\/187\/aimg\/i1.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/aparato.svg",
+		"oAP": "\/CN6T1\/187\/aimg\/i1.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/187\/aimg\/arterias.svg": {
+	"\/CN6T1\/187\/aimg\/i10.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/arterias.svg",
+		"oAP": "\/CN6T1\/187\/aimg\/i10.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/187\/aimg\/capilares.svg": {
+	"\/CN6T1\/187\/aimg\/i11.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/capilares.svg",
+		"oAP": "\/CN6T1\/187\/aimg\/i11.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/187\/aimg\/corazon.svg": {
+	"\/CN6T1\/187\/aimg\/i12.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/corazon.svg",
+		"oAP": "\/CN6T1\/187\/aimg\/i12.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/187\/aimg\/Icon\r": {
+	"\/CN6T1\/187\/aimg\/i2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i8.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i8.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i9.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i9.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/i9_2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i9_2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/info.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/info.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/187\/aimg\/Icon\r",
+		"oAP": "\/CN6T1\/187\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/CN6T1\/187\/aimg\/nino.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/nino.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN6T1\/187\/aimg\/sangre.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/sangre.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN6T1\/187\/aimg\/venas.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/CN6T1\/187\/aimg\/venas.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Cierre_Recuerda.mp3": {
+	"\/CN6T1\/187\/asound\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Cierre_Recuerda.mp3",
+		"oAP": "\/CN6T1\/187\/asound\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Inst2_Coloca.mp3": {
+	"\/CN6T1\/187\/asound\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Inst2_Coloca.mp3",
+		"oAP": "\/CN6T1\/187\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Inst_Para.mp3": {
+	"\/CN6T1\/187\/asound\/instruccion4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Inst_Para.mp3",
-		"oF": 0
-		},
-	"\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Intro_Aparato.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T1\/187\/asound\/Conozco el aparato circulatorio CN6°T1_Intro_Aparato.mp3",
+		"oAP": "\/CN6T1\/187\/asound\/instruccion4.mp3",
 		"oF": 0
 		},
 	"\/CN6T1\/187\/index.html": {
