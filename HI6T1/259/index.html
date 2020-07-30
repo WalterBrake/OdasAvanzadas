@@ -3,12 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Observo la evolución del ser humano </title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
+        .button {
+            background: var(--c5);
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .line {
+            background: #958B8A;
+            width: 2px;
+            height: 100%;
+        }
+        .col {
+            width: 50%;
+            text-align: center;
+        }
+        .col img {
+        }
+        .animate__zoomOut{
+            position: absolute;
+        }
+
+        .number {
+            margin-bottom: 10px;
+        }
+        .text {
+            margin: 2px 10px;
+            background: #C6382F;
+            color: #fff;
+            border-radius: 10px;
+            padding: 3px;
+        }
+        .text:last-child {
+            background: transparent;
+            color: #C6382F;
+        }
+        .state img{
+            max-width: 400px;
+        }
+
+        .btns{
+            position: relative;
+            z-index: 3;
+        }
+        @media (max-width: 680px) {
+            .number.small {
+                font-size: 1.3rem;
+            }
+            .number.smaller {
+                font-size: 1rem;
+            }
+            .text {
+                font-size: 0.8rem;
+            }
+        }
+
 
         @media (max-width:680px){
         }
@@ -20,12 +74,109 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-
-            <info type="dragdrop" title="TITULO" text="INSTRUCCIONES" textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="6" scene-color="#ED1C25">
             <activity>
+                <div class="info w100 mb-auto">
+                    <h1>Los primeros seres humanos</h1>
+                </div>
+
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==1 ? 'animate__zoomInDown' : 'animate__zoomOut')">
+                    <div class="col left">                        
+                            <img src="aimg/1.svg" class="w100">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <number small c="5">AUSTRALOPITHECUS</number>
+                        <div class="text">Su caminar era erguido.</div>
+                        <div class="text">Tenían dedos pulgares para manipular objetos.</div>
+                        <div class="img"><img src="aimg/2.svg" class="w80 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                        <div class="text">Localización al sur de África.</div>
+                    </div>
+                </div>
                 
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==2 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">                        
+                        <img src="aimg/3.svg" class="w100">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <number small c="5">HOMO HABILIS</number>
+                        <number smaller c="5">Homo (hombres)</number>
+                        <div class="text">Fabricaban instrumentos de piedra.</div>
+                        <div class="img"><img src="aimg/4.svg" class="w80 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                        <div class="text">Localización: África.</div>
+                    </div>
+                </div>
+                
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==3 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">                        
+                        <img src="aimg/5.svg" class="w100">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <number small c="5">HOMO ERECTUS</number>
+                        <div class="text">Habitaban en cuevas y campamentos.</div>
+                        <div class="text">Descubrieron el fuego.</div>
+                        <div class="img"><img src="aimg/6.svg" class="w80 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                        <div class="text">Localización: emigran hacia Europa, Asia y Oceanía.</div>
+                    </div>
+                </div>
+                
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==4 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">                        
+                        <img src="aimg/7.svg" class="w100">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <number small c="5">HOMBRE DE NEANDERTHAL</number>
+                        <div class="text">Llevaban una dieta carnívora.</div>
+                        <div class="text">Enterraban a sus muertos.</div>
+                        <div class="text">Sabían representar la realidad en pinturas y esculturas.</div>
+                        <div class="img"><img src="aimg/8.svg" class="w80 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                        <div class="text">Localización: Europa, Asia y África.</div>
+                    </div>
+                </div>
+                
+                <!---->
+                <div :class="'state row w100 animate__animated ' + (temps==5 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="col left">                        
+                        <img src="aimg/7b.svg" class="w100">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col right">
+                        <number small c="5">HOMO SAPIENS-SAPIENS</number>
+                        <number smaller c="5">(Cromañón)</number>
+                        <div class="text">Especie a la que pertenecemos los hombres de hoy.</div>
+                        <div class="text">Dominaban las técnicas de caza.</div>
+                        <div class="text">Practicaban los ritos religiosos.</div>
+                        <div class="img"><img src="aimg/8.svg" class="w80 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                        <div class="text">Localización: Europa, Asia y África.</div>
+                    </div>
+                </div>
+                <!---->
+                <div :class="'state mb-auto w100 animate__animated ' + (temps==6 ? 'animate__zoomInUp' : 'animate__zoomOut')">
+                    <div class="craneos row w100">
+                        <img src="aimg/9.svg" class="w50">
+                    </div>
+                    <div class="row">
+                        <number smaller c="5">Hombre</number>
+                        <number c="4">.</number>
+                        <number smaller c="5">Chimpancé</number>
+                        <number c="4">.</number>
+                        <number smaller c="5">Gorila</number>
+                    </div>
+                </div>
+                
+                <div class="row w100 mt-auto btns">
+                    <button class="button mr-auto" v-if="temps>1" @click="temps--">Anterior</button>
+                    <button class="button ml-auto" v-if="temps<6" @click="temps++">Siguiente</button>
+                </div>
+
             </activity>
         </scene> <!-- end scene -->
 
@@ -47,6 +198,9 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -59,7 +213,8 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.temps = 5
+        app.currentScene = 1
         app.scenesCount = 1
         app.$devmode = false
     </script>
