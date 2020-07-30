@@ -86,7 +86,7 @@
             <info type="seleccionar" title="Sé contar elementos" text="Observa la imagen y, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row"><img src="aimg/ilustracion.png" class="w80"></div>
-                <div class="row pregunta"><audiotext text="¿Cuántos jabalíes hay?" audio="asound/jabalies.mp3" :autoplay="true"></audiotext></div>
+                <div class="row pregunta"><audiotext text="¿Cuántos jabalís hay?" audio="asound/jabalies.mp3" :autoplay="true"></audiotext></div>
                 <div class="row">
                     <clickable v-model="temporals[0]" :isok="true" click-sound="asound/2.mp3"><div class="number c1">2</div></clickable>
                     <clickable block-if-error :isok="false"  click-sound="asound/3.mp3" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><div class="number c2">3</div></clickable>
