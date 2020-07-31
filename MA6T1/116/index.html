@@ -41,6 +41,9 @@
             left: 0;
             top: 0;
         }
+        .info h2{
+            font-size: 1.1rem;	
+        }
 
         .drop:nth-child(1){ left: 65%; top: 64%; }
         .drop:nth-child(2){ left: 55%; top: 15%; }
@@ -115,8 +118,8 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Utilizo sistemas de referencia" text="Coloca los lugares de acuerdo a los puntos de referencia de cada uno." textaudio="asound/instruccion2.mp3" :autoplay="true" @completedinstructions="$refs.i2.play()">
-                <audiotext text="Ayuda al arquitecto Pérez que está diseñando un fraccionamiento, y quiere ubicar los diferentes lugares sobre un plano cuadriculado del terreno a construir." audio="asound/instruccion.mp3" :autoplay="false" ref="i2"></audiotext>
+            <info type="dragdrop" title="Utilizo sistemas de referencia" text="Ayuda al arquitecto Pérez que está diseñando un fraccionamiento, y quiere ubicar los diferentes lugares sobre un plano cuadriculado del terreno a construir." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.i2.play()">
+                <audiotext text="Coloca los lugares de acuerdo a los puntos de referencia de cada uno." audio="asound/instruccion2.mp3" :autoplay="false" ref="i2"></audiotext>
             </info>
             <activity>
                 <div class="row w100">

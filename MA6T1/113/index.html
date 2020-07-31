@@ -69,7 +69,7 @@
         </scene> <!-- end scene -->
         
         <!-- ### scene -->
-        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks  @completed="sceneCompleted" :devmode="$devmode"
         :answers="4" scene-color="#ED1C25">
 
             <info type="dragdrop" title="Multiplico por diferentes números" text="Coloca en la casilla el resultado de cada operación matemática." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
