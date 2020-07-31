@@ -41,7 +41,7 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
         
         <!-- ### scene -->
-        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_ninomp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="5" scene-color="#ED1C25">
 
             <info type="dragdrop" title="Adivino la respuesta" text="¿Jugamos? Relaciona cada adivinanza con su respuesta." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
@@ -53,7 +53,7 @@
                             <drag dropzone=".dropzone" data="moneda" stay-if-ok drag-line particle-color="#5EB247"><div class="conector c1"></div></drag>
                        </div>
                        <div class="row w100 adiv">
-                            <p>Rompe y no tiene manos, corre y no tiene pies, sopla y no tiene boca, ¿qué te parece que es?.</p>
+                            <p>Rompe y no tiene manos, corre y no tiene pies, sopla y no tiene boca, ¿qué te parece que es?</p>
                             <drag dropzone=".dropzone" data="viento" stay-if-ok drag-line particle-color="#015093"><div class="conector c2"></div></drag>
                        </div>
                        <div class="row w100 adiv">
@@ -61,7 +61,7 @@
                             <drag dropzone=".dropzone" data="sol" stay-if-ok drag-line particle-color="#AAE0FA"><div class="conector c3"></div></drag>
                        </div>
                        <div class="row w100 adiv">
-                            <p>En minuto una vez, en momento dos y en memorama tres. ¿Quién es?.</p>
+                            <p>En minuto una vez, en momento dos y en memorama tres. ¿Quién es?</p>
                             <drag dropzone=".dropzone" data="letram" stay-if-ok drag-line particle-color="#EC8B2E"><div class="conector c4"></div></drag>
                        </div>
                        <div class="row w100 adiv">

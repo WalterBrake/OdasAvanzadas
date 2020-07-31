@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITULO</title>
+    <title>Entiendo mis derechos y obligaciones</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
@@ -43,6 +43,11 @@
        .drops {
            width: 70%;
        }
+       .title{
+        color: #A5966A;
+        font-family: 'barnacle_boyregular';
+
+    }
 
        @media (max-width: 680px){
            .drag, .pieceind, .dropzone{
@@ -60,7 +65,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Practico la escritura" text="Relaciona las columnas haciendo coincidir cada derecho con su respectiva obligación." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Entiendo mis derechos y obligaciones" text="Relaciona las columnas haciendo coincidir cada derecho con su respectiva obligación." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                <div class="row w100 wrap">
                     <div class="drags">
@@ -76,6 +81,10 @@
                         </template>
                     </div>
                     <div class="drops">
+                        <div class="row">
+                            <div class="title w50">Tengo derecho a:</div>
+                            <div class="title w50">Tengo la obligación de:</div>
+                        </div>
                         <template v-for="i in [
                             {name: 'morado'},
                             {name: 'amarillo'},

@@ -120,7 +120,7 @@
         <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="3" scene-color="#B89FCC">
 
-            <info type="seleccionar" title="Leo en voz alta" text="Lee la historieta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Leo en voz alta" text="Ahora, selecciona la respuesta de cada pregunta." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row"><button class="button buttonstart" @click="currentScene=1">Volver a leer</button></div>
                 

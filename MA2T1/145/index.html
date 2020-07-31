@@ -16,12 +16,15 @@
         }
         .pregunta .dropzone{
             display: inline-block;
-            background: #fff;
+            background: #9E9998;
             border-radius: 10px;
             padding: 6px;
             min-height: 30px;
-            min-width: 100px;
+            max-width: 100px;
+            margin-bottom: -10px;
+            min-width: 80px;
         }
+
         .drag{
             width: auto;
             height: auto;
@@ -33,6 +36,65 @@
         .clickable{
             margin: 10px 20px;
         }
+        .track {
+            position: relative;
+        }
+        .track .cars .car {
+            position: absolute;
+            width: 11%;
+        }
+        .track .cars .car .drag {
+            width: 100%;
+        }
+        .track .cars .car:nth-child(1) {
+            left: 9%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(2) {
+            left: 22%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(3) {
+            left: 34%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(4) {
+            left: 48%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(5) {
+            left: 62%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(6) {
+            left: 75%;
+            bottom: -2%;
+        }
+        .track .cars .car:nth-child(7) {
+            left: 75%;
+            bottom: 35%;
+        }
+        .track .cars .car:nth-child(8) {
+            left: 62%;
+            bottom: 35%;
+        }
+        .track .cars .car:nth-child(9) {
+            left: 48%;
+            bottom: 35%;
+        }
+        .track .cars .car:nth-child(10) {
+            left: 34%;
+            bottom: 35%;
+        }
+        .track .cars .car:nth-child(11) {
+            left: 22%;
+            bottom: 35%;
+        }
+        .track .cars .car:nth-child(12) {
+            left: 9%;
+            bottom: 35%;
+        }
+
     </style>
     </head>
 <body>
@@ -46,14 +108,21 @@
 
             <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
-                <div class="row w100 wrap">
-                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c5">{{it.num}}</div></drag>
+                <div class="track row w100 mb-1">
+                    <img src="aimg/il.svg" class="w80">
+                    <div class="cars">
+                        <div class="car"  v-for="it in temps">
+                            <drag dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone>
+                                <img class="w100" :src="'aimg/'+it.num+'.svg'">
+                            </drag>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="row w100">
                     <div class="pregunta w80">
                         Arrastra el número de los carros que se encuentran adelante y atrás del
-                        carro 87 y suéltalos aquí: <div class="dropzone" data="86" droptimes="untilok">&nbsp;</div> y <div class="dropzone" data="88" droptimes="untilok">&nbsp;</div>
+                        carro 87 y suéltalos aquí: <br><div class="dropzone" data="86" droptimes="untilok"></div> y <div class="dropzone" data="88" droptimes="untilok"></div>
                     </div>
                 </div>
             </activity>
@@ -65,13 +134,19 @@
 
             <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
-                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
-                <div class="row w100 wrap">
-                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c6">{{it.num}}</div></drag>
+                <div class="track row w100 mb-1">
+                    <img src="aimg/il.svg" class="w80">
+                    <div class="cars">
+                        <div class="car"  v-for="it in temps">
+                            <drag dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone>
+                                <img class="w100" :src="'aimg/'+it.num+'.svg'">
+                            </drag>
+                        </div>
+                    </div>
                 </div>
                 <div class="row w100">
                     <div class="pregunta w80">
-                        Arrastra y suelta el número del carro que llegó primero <div class="dropzone" data="79" droptimes="untilok">&nbsp;</div>
+                        Arrastra y suelta el número del carro que llegó primero <div class="dropzone" data="79" droptimes="untilok"></div>
                     </div>
                 </div>
             </activity>
@@ -84,13 +159,19 @@
 
             <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
-                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
-                <div class="row w100 wrap">
-                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c7">{{it.num}}</div></drag>
+                <div class="track row w100 mb-1">
+                    <img src="aimg/il.svg" class="w80">
+                    <div class="cars">
+                        <div class="car"  v-for="it in temps">
+                            <drag dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone>
+                                <img class="w100" :src="'aimg/'+it.num+'.svg'">
+                            </drag>
+                        </div>
+                    </div>
                 </div>
                 <div class="row w100">
                     <div class="pregunta w80">
-                        Arrastra el número de carro que llegó antes que el 85 y suéltalo aquí <div class="dropzone" data="84" droptimes="untilok">&nbsp;</div>
+                        Arrastra el número de carro que llegó antes que el 85 y suéltalo aquí <div class="dropzone" data="84" droptimes="untilok"></div>
                     </div>
                 </div>
             </activity>
@@ -103,13 +184,19 @@
 
             <info type="dragdrop" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
-                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
-                <div class="row w100 wrap">
-                    <drag v-for="it in temps" dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone><div class="number small c8">{{it.num}}</div></drag>
+                <div class="track row w100 mb-1">
+                    <img src="aimg/il.svg" class="w80">
+                    <div class="cars">
+                        <div class="car"  v-for="it in temps">
+                            <drag dropzone=".dropzone" :key="it.num" :data="it.num" append-to-dropzone>
+                                <img class="w100" :src="'aimg/'+it.num+'.svg'">
+                            </drag>
+                        </div>
+                    </div>
                 </div>
                 <div class="row w100">
                     <div class="pregunta w80">
-                        Arrastra el número de carro que va adelante del 89 y suéltalo aquí <div class="dropzone" data="88" droptimes="untilok">&nbsp;</div>
+                        Arrastra el número de carro que va adelante del 89 y suéltalo aquí <div class="dropzone" data="88" droptimes="untilok"></div>
                     </div>
                 </div>
             </activity>
@@ -122,7 +209,14 @@
 
             <info type="seleccionar" title="Ordeno los números" text="Observa la fila de carros a los que les pusieron un número según el orden en que llegaron, después selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
-                <div class="row w100 mb-1"><img src="aimg/il.svg" class="w80"></div>
+                <div class="track row w100 mb-1">
+                    <img src="aimg/il.svg" class="w80">
+                    <div class="cars">
+                        <div class="car"  v-for="it in temps">
+                                <img class="w100" :src="'aimg/'+it.num+'.svg'">
+                        </div>
+                    </div>
+                </div>
                 <div class="row w100">
                     <div class="pregunta w80">
                         Si llegaran 10 carros más, ¿qué número le pondrían al último?

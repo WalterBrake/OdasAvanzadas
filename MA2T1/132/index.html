@@ -47,6 +47,13 @@
             margin: 0 20px;
         }
         .ima{max-width: 740px;}
+        .box {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
     </style>
     </head>
 <body>
@@ -63,17 +70,22 @@
                 <div class="row w100">
                     
                     <div class="figura">
-                        <div class="fig" @click="temps.a = true"><img src="aimg/i1.svg"></div>
+                        <div class="fig" @click="temps.a = true"><img src="aimg/i1.svg">
+                            <div class="box" v-if="!temps.a"><div class="number small c8">?</div></div>
+                        </div>
                         <div class="opciones" :class="temps.a ? 'visible' : ''">
                             <clickable block-if-error :isok="false"><div class="number small c8">Círculo</div></clickable>
                             <clickable block-if-error :isok="false"><div class="number small c8">Cuadrado</div></clickable>
                             <clickable block-if-error :isok="false"><div class="number small c8">Rectángulo</div></clickable>
                             <clickable block-if-error :isok="true" v-model="temporals[0]"><div class="number small c8">Triángulo</div></clickable>
                         </div>
+                        
                     </div>
                     
                     <div class="figura">
-                        <div class="fig" @click="temps.b = true"><img src="aimg/i2.svg"></div>
+                        <div class="fig" @click="temps.b = true"><img src="aimg/i2.svg">
+                            <div class="box" v-if="!temps.b"><div class="number small c8">?</div></div>
+                        </div>
                         <div class="opciones" :class="temps.b ? 'visible' : ''">
                             <clickable block-if-error :isok="true" v-model="temporals[1]"><div class="number small c1">Círculo</div></clickable>
                             <clickable block-if-error :isok="false"><div class="number small c1">Cuadrado</div></clickable>
@@ -83,7 +95,9 @@
                     </div>
 
                     <div class="figura">
-                        <div class="fig" @click="temps.c = true"><img src="aimg/i3.svg"></div>
+                        <div class="fig" @click="temps.c = true"><img src="aimg/i3.svg">
+                            <div class="box" v-if="!temps.c"><div class="number small c8">?</div></div>
+                        </div>
                         <div class="opciones" :class="temps.c ? 'visible' : ''">
                             <clickable block-if-error :isok="false"><div class="number small c4">Círculo</div></clickable>
                             <clickable block-if-error :isok="true" v-model="temporals[2]"><div class="number small c4">Cuadrado</div></clickable>
@@ -93,7 +107,9 @@
                     </div>
 
                     <div class="figura">
-                        <div class="fig" @click="temps.d = true"><img src="aimg/i4.svg"></div>
+                        <div class="fig" @click="temps.d = true"><img src="aimg/i4.svg">
+                            <div class="box" v-if="!temps.d"><div class="number small c8">?</div></div>
+                        </div>
                         <div class="opciones" :class="temps.d ? 'visible' : ''">
                             <clickable block-if-error :isok="false"><div class="number small c2">Círculo</div></clickable>
                             <clickable block-if-error :isok="false"><div class="number small c2">Cuadrado</div></clickable>
