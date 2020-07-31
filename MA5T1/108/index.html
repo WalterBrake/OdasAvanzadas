@@ -298,30 +298,6 @@
                         <hr>
                         <div class="number c1">Área</div>
                         <div class="row w100">
-                            <clickable initclass="w30" v-for="i in [6, 7, 9]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
-                        </div>
-                    </div>
-                </div>
-            </activity>
-        </scene> <!-- end scene -->
-
-        <!-- ### scene -->
-        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Comparo el perímetro y el área" text="¿Cuántas unidades tiene cada figura de área y perímetro? Selecciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
-        <activity>
-                <div class="row w100 pregunta">
-                    <div class="reticula f6 w30" >
-                        <reticula></reticula>
-                    </div>
-                    <div class="opciones w50">
-                        <div class="number c1">Perímetro</div>
-                        <div class="row w100">
-                            <clickable initclass="w30" v-for="i in [18, 20, 19]" simple-ok block-if-error :isok="i==18"><div class="number small c2">{{i}}</div></clickable>
-                        </div>
-                        <hr>
-                        <div class="number c1">Área</div>
-                        <div class="row w100">
                             <clickable initclass="w30" v-for="i in [8, 7, 9]" simple-ok block-if-error :isok="i==8"><div class="number small c2">{{i}}</div></clickable>
                         </div>
                     </div>
@@ -330,7 +306,7 @@
         </scene> <!-- end scene -->
         
         <!-- ### scene -->
-        <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="1" scene-color="#ED1C25">
         <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
         <activity>
@@ -364,7 +340,7 @@
         
         
         <!-- ### scene -->
-        <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
         <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
         <activity>
@@ -397,7 +373,7 @@
         </scene> <!-- end scene -->
         
         <!-- ### scene -->
-        <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="1" scene-color="#ED1C25">
         <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
         <activity>
@@ -430,7 +406,7 @@
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==10" :key="10" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==9" :key="9" end-scene :final-data="finalData"></scene>
         
 
     </div>
@@ -464,7 +440,7 @@
     <script>
         
         app.currentScene = 0
-        app.scenesCount = 9
+        app.scenesCount = 8
         app.$devmode = false
     </script>
 </body>

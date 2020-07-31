@@ -31,7 +31,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.p1.play()"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿En qué lugar de Hidalgo se celebró por primera vez el Grito de Independencia como fiesta cívica?" audio="asound/pre1.mp3" ref="p1"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Huichapan','Acatlán','Jaltocán','Metztitlán']" :key="i" :isok="i == 'Huichapan'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -43,7 +43,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué medio de transporte utilizaban los viajeros y era jalado por caballos?" audio="asound/pre2.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Triciclo','Carretas','Coche','Diligencia']" :key="i" :isok="i == 'Diligencia'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -55,7 +55,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Cómo se le llama al reclutamiento forzoso de campesinos para servir al ejército?" audio="asound/pre3.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Teva','Leva','Meva','Liva']" :key="i" :isok="i == 'Leva'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -67,7 +67,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué medio de transporte se utilizaba para trasladar las mercancías?" audio="asound/pre4.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Diligencias','Triciclo','Carretas','Coche']" :key="i" :isok="i == 'Carretas'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -79,7 +79,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Cómo se llamaba a aquellos lugares donde los viajeros pasaban la noche?" audio="asound/pre5.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Posadas','Hoteles','Conventos','Asilos']" :key="i" :isok="i == 'Posadas'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -92,7 +92,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué país europeo mandó tropas al Golfo de México para bloquear el comercio?" audio="asound/pre6.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Estados Unidos','Inglaterra','España','Francia']" :key="i" :isok="i == 'Francia'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -104,7 +104,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué oficio tenía el comerciante que provocó un grave conflicto entre México y Francia?" audio="asound/pre7.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Pintor','Mecánico','Pastelero','Herrero']" :key="i" :isok="i == 'Pastelero'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -116,7 +116,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Cuál es la nacionalidad de los extranjeros que atacaron el fuerte de San Juan de Ulúa y el puerto de Veracruz?" audio="asound/pre8.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Estadounidenses','Ingleses','Españoles','Franceses']" :key="i" :isok="i == 'Franceses'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -128,7 +128,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué nombre recibían las personas que se dedicaban al asalto de viajeros y de mercancías?" audio="asound/pre9.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Bandidos','Ladrones','Banqueros','Misioneros']" :key="i" :isok="i == 'Bandidos'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>
@@ -140,7 +140,7 @@
             <info type="seleccionar" title="Exploro el pasado" text="Selecciona la respuesta correcta de acuerdo a los hechos históricos de las primeras décadas del siglo XIX." textaudio="asound/instruccion.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 pregunta"><audiotext text="¿Qué acontecimientos sucedían con frecuencia en los caminos, que causaban daño a las personas, los comerciantes y las comunicaciones?" audio="asound/pre10.mp3" :autoplay="true"></audiotext></div>
-                <div class="row w100 respuesta">
+                <div class="row w100 wrap respuesta">
                     <clickable v-for="i in ['Incendios','Choques','Terremotos','Asaltos']" :key="i" :isok="i == 'Asaltos'"  simple-ok block-if-error :click-sound="'asound/'+cleanstr(i)+'.mp3'"><number small c="1">{{i}}</number></clickable>
                 </div>
             </activity>

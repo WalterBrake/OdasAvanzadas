@@ -23,13 +23,14 @@
         .introrec img, .introrec2 img{ max-height: 100px;}
         .introrec2{ background: #F8DE8C; }
         .clickable {
-            width: auto;
+            width: 28%;
             box-sizing: border-box;
             background: #fff;
             margin: 4px;
             padding: 10px;
             border-radius: 10px;
-            width: 16%;
+            text-align: center;
+            font-size: 0.9rem;
         }
         .clickable img {
             max-height: 40px;
@@ -49,6 +50,9 @@
         @media (max-width:680px){
             .number.small{font-size: 1.6rem;}
             .number.smaller{font-size: 1rem;}
+            .clickable{
+                font-size: 0.8rem;
+            }
         }
     </style>
     </head>
@@ -145,14 +149,17 @@
             <scene v-if="currentScene==index+4" :key="index+4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
             :answers="2" scene-color="#9DCE77">
             
-            <info type="seleccionar" title="Identifico diferentes triángulos" text="Observa los ángulos y lados de los triángulos que vayan apareciendo. Selecciona el tipo de triángulo que es según sus lados en los botones amarillos y el tipo de triángulo según sus ángulos en los botones azules:" textaudio="asound/instruccion4.mp3" :autoplay="index==0?true:false"></info>
+            <info type="seleccionar" title="Identifico diferentes triángulos" text="Observa los ángulos y lados de los triángulos que vayan apareciendo. Selecciona el tipo de triángulo que es según sus lados y el tipo de triángulo según sus ángulos:" textaudio="asound/instruccion4.mp3" :autoplay="index==0?true:false"></info>
             <activity>
                 <div class="row w100 mb-1">
                     <img class="w40 animate__animated animate__backInDown animate__delay-1s maintri" :src="'aimg/'+scene.im+'.svg'">
                 </div>
-                <div class="row w100">
-                    <template v-for="i in ['equi', 'iso', 'esca', 'recta', 'acu', 'obtu']">
-                        <clickable simple-ok block-if-error :isok="i == scene.r1 || i == scene.r2"><img :src="'aimg/' + i + '.svg'" class="w100"></clickable>
+                <div class="row wrap w100">
+                    <template v-for="i in [['equi', 'Equilátero'], ['iso', 'Isósceles'], ['esca', 'Escaleno'], ['recta', 'Rectángulo'], ['acu', 'Acutángulo'], ['obtu', 'Obtusángulo']]">
+                        <clickable simple-ok block-if-error :isok="i[0] == scene.r1 || i[0] == scene.r2">
+                            <img :src="'aimg/' + i[0] + '.svg'" class="w100">
+                            <div>{{i[1]}}</div>
+                        </clickable>
                     </template>
                 </div>
                 </activity>

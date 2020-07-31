@@ -19,8 +19,8 @@
             background: #EAF6FD;
             border: 4px solid #4AB4EF;
             border-radius: 20px;
-            padding: 20px;
-            font-size: 1.4rem;
+            padding: 10px;
+            font-size: 1.2rem;
         }
         .frase p {
             margin: 10px;
@@ -36,7 +36,7 @@
             padding: 0 10px;
         }
         .number.small{
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
         .drop .number.small{
             display: inline;
@@ -118,7 +118,7 @@
 
         <!-- ### scene -->
         <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="9" scene-color="#4BB4EF">
+        :answers="10" scene-color="#4BB4EF">
 
             <info type="dragdrop" title="Como saludablemente" text='Ya que sabes qué es el "Plato del bien comer", coloca los alimentos dentro del grupo al que pertenezcan.' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
@@ -133,6 +133,7 @@
                         {i: 'queso', d:'lp'},
                         {i: 'sandia', d:'fv'},
                         {i: 'tortilla', d:'ct'},
+                        {i: 'pez', d:'lp'},
                     ]">
                         <drag dropzone=".drop2" :data="i.d" stay-if-ok drag-ok-class="okdrag">
                             <img :src="'aimg/'+i.i+'.svg'" class="w100">

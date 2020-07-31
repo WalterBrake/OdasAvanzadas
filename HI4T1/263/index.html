@@ -78,6 +78,19 @@
             <activity>
                 <div class="row w100">
                     <div class="w30 culturas">
+                        <template v-for="item in _.shuffle([
+                                {val: 'sol', img: 'teotihuacana'},
+                                {val: 'chichen', img: 'maya'},
+                                {val: 'tula', img: 'tolteca'},
+                                {val: 'monte', img: 'zapoteca'},
+                                {val: 'tenoch', img: 'mexica'},
+                            ])">
+                            <drag dropzone=".drop" :data="item.val" stay-if-ok append-to-dropzone>
+                                <img :src="'aimg/'+item.val+'.svg'" class="w100">
+                            </drag>
+                        </template>
+                    </div>
+                    <div class="w70 lugares">
                         <template v-for="item in [
                                 {val: 'sol', img: 'teotihuacana'},
                                 {val: 'chichen', img: 'maya'},
@@ -85,22 +98,9 @@
                                 {val: 'monte', img: 'zapoteca'},
                                 {val: 'tenoch', img: 'mexica'},
                             ]">
-                            <drag dropzone=".drop" :data="item.val" stay-if-ok append-to-dropzone>
-                                <img :src="'aimg/'+item.img+'.svg'" class="w100">
-                            </drag>
-                        </template>
-                    </div>
-                    <div class="w70 lugares">
-                        <template v-for="item in [
-                                {val: 'sol'},
-                                {val: 'chichen'},
-                                {val: 'tula'},
-                                {val: 'monte'},
-                                {val: 'tenoch'},
-                            ]">
                             <div class="row lugar">
                                 <div class="drop w50" :data="item.val" droptimes="untilok"></div>
-                                <div class="w50"><img :src="'aimg/'+item.val+'.svg'"></div>
+                                <div class="w50"><img :src="'aimg/'+item.img+'.svg'"></div>
                             </div>
                         </template>
                     </div>
@@ -117,6 +117,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>

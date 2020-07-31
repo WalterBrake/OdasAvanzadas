@@ -2027,6 +2027,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/CN4T1\/180\/aimg\/pez.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN4T1\/180\/aimg\/pez.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/CN4T1\/180\/aimg\/platano.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -8124,6 +8134,13 @@
 		"oAP": "\/HI5T1\/259\/asound\/iva.mp3",
 		"oF": 0
 		},
+	"\/HI5T1\/259\/asound\/jaltocan.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T1\/259\/asound\/jaltocan.mp3",
+		"oF": 0
+		},
 	"\/HI5T1\/259\/asound\/ladrones.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -8136,6 +8153,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/HI5T1\/259\/asound\/leva.mp3",
+		"oF": 0
+		},
+	"\/HI5T1\/259\/asound\/liva.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T1\/259\/asound\/liva.mp3",
 		"oF": 0
 		},
 	"\/HI5T1\/259\/asound\/mecanico.mp3": {
