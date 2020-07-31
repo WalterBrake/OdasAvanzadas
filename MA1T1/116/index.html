@@ -60,36 +60,33 @@
 
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nina.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="9" scene-color="#5EB247">
-            <info type="dragdrop" title="Sé a qué se parecen" text="Observa las figuras que aparecen del lado izquierdo. ¿Conoces esos objetos?, ¡míralos bien!" textaudio="asound/instruccion.mp3" :autoplay="true"  @completedinstructions="$refs.instructions2.play()"></info>
+        :answers="10" scene-color="#5EB247">
+            <info type="dragdrop" title="Sé a qué se parecen" text="Observa las figuras que aparecen del lado izquierdo. ¿Conoces esos objetos?, ¡míralos bien!" textaudio="asound/instruccion.mp3" :autoplay="true"  @completedinstructions="$refs.instructions2.play()">
+                <audiotext :autoplay="false" text="Coloca cada uno de esos objetos en la columna de la figura que más se parezca." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+            </info>
             <activity>
-                <div class="row mb-1">
-                    <audiotext :autoplay="false" text="Coloca cada uno de esos objetos en la columna de la figura que más se parezca." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
-                </div>
 
                 <div class="row">
                     <div class="objetos">
-                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i1.png"></drag>
-                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i2.png"></drag>
-                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i3.png"></drag>
-                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i4.png"></drag>
-                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i5.png"></drag>
-                        <drag data="tri" dropzone=".dropzone" stay-if-ok><img src="aimg/i6.png"></drag>
-                        <drag data="circ" dropzone=".dropzone" stay-if-ok><img src="aimg/i7.png"></drag>
-                        <drag data="tri" dropzone=".dropzone" stay-if-ok><img src="aimg/i8.png"></drag>
-                        <drag data="cuad" dropzone=".dropzone" stay-if-ok><img src="aimg/i9.png"></drag>
+                        <drag v-for="(i, index) in [
+                        1, 0, 0, 1, 2,
+                        0, 2, 0, 0, 2,
+                        3, 2, 3, 2, 0,
+                        1
+                        ]"
+                            :data="i" dropzone=".dropzone" stay-if-ok><img :src="'aimg/i'+(index+1)+'.png'"></drag>
                     </div>
                     <div class="area">
                         <div class="row">Parece un <img src="aimg/cuadrado.png" class="parece"></div>
-                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="cuad"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" :data="1"></div>
                     </div>
                     <div class="area">
                         <div class="row">Parece un <img src="aimg/circulo.png"  class="parece"></div>
-                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="circ"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" :data="2"></div>
                     </div>
                     <div class="area">
                         <div class="row">Parece un <img src="aimg/triangulo.png"  class="parece"></div>
-                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" data="tri"></div>
+                        <div class="dropzone" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_mujer.mp3" :data="3"></div>
                     </div>
                 </div>
                 

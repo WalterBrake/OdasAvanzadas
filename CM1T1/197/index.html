@@ -12,10 +12,11 @@
         .palabras, .imagenes {
         }
         .imagenes .dropzone img {
-            width: 100%;
+            width: 45%;
         }
         .imagenes .dropzone {
-            width: 33%;
+            width: 100%;
+            text-align: center;
         } 
     .row.palabras {
         text-align: center;
@@ -24,10 +25,16 @@
     .palabras .number {
         -webkit-text-stroke-width: 2px;
         font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        margin: 6px 0;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
     }
     .palabras .drag {
-        width: 60px; height: 60px;
-        margin: 0 auto;
+        width: 30px; height: 30px;
+        margin-left: auto;
     }
     </style>
     </head>
@@ -41,7 +48,8 @@
         :answers="6" scene-color="#5EB247">
             <info type="relacionar" title="Conozco la naturaleza" text="¿Conoces los elementos que hay en la naturaleza? Relaciona las columnas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row w100 palabras mb-1 wrap">
+                <div class="row w100">
+                <div class="w50 palabras mb-1 wrap">
                     <template v-for="item in [
                         {txt: 'Playa', col: 'c1', c: '#5EB247'},
                         {txt: 'Árbol', col: 'c2', c: '#155093'},
@@ -51,13 +59,11 @@
                         {txt: 'Río', col: 'c6', c: '#EB118B'},
                     ]">
                         <div :class="'number '+item.col">{{item.txt}}
-                            <drag dropzone=".dropzone" :data="item.txt" stay-if-ok drag-line :particle-color="item.c">
-                                <div :class="'conector '+item.col "></div>
-                            </drag>
+                            <drag dropzone=".dropzone" :data="item.txt" stay-if-ok drag-line :particle-color="item.c"><div :class="'conector '+item.col "></div></drag>
                         </div>
                     </template>
                 </div>
-                <div class="row w100 wrap imagenes">
+                <div class="row w50 wrap imagenes">
                     <div v-for="item in [
                         {img: 'aimg/i1.svg', data: 'Árbol', sound: 'asound/arbol.mp3' },
                         {img: 'aimg/i2.svg', data: 'Río', sound: 'asound/rio.mp3' },
@@ -67,6 +73,7 @@
                         {img: 'aimg/i6.svg', data: 'Playa', sound: 'asound/playa.mp3' },
                     ]" class="dropzone" :data="item.data" droptimes="untilok" :oksound="item.sound" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><img :src="item.img"></div>
                 </div>
+            </div>
             </activity>
         </scene> <!-- end scene -->
 

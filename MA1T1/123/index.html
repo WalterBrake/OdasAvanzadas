@@ -25,14 +25,15 @@
 
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="4" scene-color="#5EB247">
+        :answers="5" scene-color="#5EB247">
             <info type="dragdrop" title="Cuento colecciones" text="Cuenta las paletas que hay en cada recipiente, y coloca al niño que tiene el número que le corresponde. " textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row mb-1">
                     <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="9" oksound="asound/9pal.mp3"><img src="aimg/p1.png"></div>
                     <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="15" oksound="asound/15pal.mp3"><img src="aimg/p2.png"></div>
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="18" oksound="asound/18pal.mp3"><img src="aimg/p3.png"></div>
-                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="24" oksound="asound/24pal.mp3"><img src="aimg/p4.png"></div>
+                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="24" oksound="asound/24pal.mp3"><img src="aimg/p3.png"></div>
+                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="18" oksound="asound/18pal.mp3"><img src="aimg/p4.png"></div>
+                    <div class="dropzone" droptimes="untilok" errorsound="../../assets/asound/vuelveaintentar_nino.mp3" data="10" oksound="asound/10pal.mp3"><img src="aimg/p5.png"></div>
                 </div>
 
                 <div class="row">

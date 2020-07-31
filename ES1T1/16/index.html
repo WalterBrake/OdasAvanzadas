@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
         .clickable, .drag{
-            background: var(--main);
-            padding: 4px;
-            border-radius: 10px;
             margin: 4px;
+            width: auto;
+            height: auto;
         }
+        .drag img{width: 60px; }
         .row img {
-            min-width: 60px; min-height: 60px;
+            min-width: 0px;
             display: block;
         }
         .inst .audiotext{
@@ -31,6 +31,110 @@
             height: 40px;
         }
         .okDrag img {transform: scale(.5); }
+        .inst {
+            background: #fff;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .inst .audiotextBtn {
+            max-width: 40px;
+        }
+        .inst .audiotextBtn * {
+            min-width: 100%;
+        }
+
+        .cocina {
+            background-image: url("aimg/mesa.svg");
+            background-size: 100%;
+            background-position: bottom left;
+            width: 100%;
+            height: 80%;
+            position: relative;
+        }
+        .cocina .row {
+            width: 50%;
+            margin-left: 1%;
+            height: 40%;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            bottom: 35%;
+            left: 0;
+        }
+        .cocina .row .clickable {
+            width: 12%;
+            margin: 1px 5px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 40%;
+        }
+        .cocina .row .clickable img {
+            width: 180%;
+            max-width: 180%;
+            min-width: 140%;
+        }
+        .uva{
+            min-width: 200% !important;
+        }
+
+        .fresa{
+            min-width: 80% !important;
+        }
+
+        .durazno{
+            min-width: 130% !important;
+        }
+
+        .sandia{
+            min-width: 200% !important;
+        }
+        .naranja{
+            min-width: 180% !important;
+        }
+        .clickable img{
+            pointer-events: none;
+        }
+
+
+        .frutas2 > div {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .frutas2 > div .drag {
+            margin: 0 auto;
+            width: auto;
+        }
+        .fresa2 {
+            max-width: 40px;
+        }
+
+
+        @media (max-width: 1024px) {
+            .cocina .row {
+                bottom: 28%;
+            }
+        }
+        @media (max-width: 630px) {
+            .cocina {
+                background-size: 130%;
+            }
+            .cocina .row {
+                bottom: 26%;
+                width: 70%;
+            }
+        }
+        @media (max-width: 500px) {
+            .cocina .row {
+                bottom: 26%;
+                width: 70%;
+                height: 30%;
+            }
+        }
+
+       
 
     </style>
     </head>
@@ -40,7 +144,7 @@
         <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
 
         <scene v-if="currentScene==1" :key="1"
-            :answers="13" :score="scoreInScene"
+            :answers="9" :score="scoreInScene"
             :temporals="temporals"
             alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
             scene-color="#F8DEE8"
@@ -50,26 +154,27 @@
             <info type="seleccionar" title="Preparo la receta" text="Vamos a preparar una canasta de fruta, ¿me ayudas? Selecciona los ingredientes que se mencionan." textaudio="asound/instruccion.mp3" @completedinstructions="$refs.instructions2.play()"></info>
             
             <activity>
-                <div class="row mb-1 inst">
+                <div class="row w100 mb-1 inst">
                     <audiotext :autoplay="false" text="<strong>Necesitamos:</strong> 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
                 </div>
                 
-                <div class="row">
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[0]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[1]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[2]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[3]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[4]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[5]"><img src="">Y</clickable>
-                </div>
-                <div class="row">
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[6]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[7]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="true" v-model="temporals[8]"><img src="">Y</clickable>
-                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[9]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
-                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[10]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
-                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[11]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
-                    <clickable particle-color="#E7CED8" :isok="false" v-model="temporals[12]" click-error-sound="../../assets/asound/vuelveaintentar_mujer.mp3"><img src="">N</clickable>
+                <div class="cocina">
+                    <div class="row wrap mr-auto">
+                        <clickable v-for="i in _.shuffle([
+                            {n:'platano', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'naranja', d: 1},
+                            {n:'fresa', d: 1},
+                            {n:'fresa', d: 1},
+                            {n:'miel', d: 1},
+                            {n:'pina', d: 0},
+                            {n:'sandia', d: 0},
+                            {n:'durazno', d: 0},
+                        ])" simple-ok :isok="i.d"><img :src="'aimg/'+i.n+'.svg'" :class="i.n"></clickable>
+                    </div>
                 </div>
                 
             </activity>
@@ -92,13 +197,13 @@
                         <audiotext :autoplay="false" text="Primero, coloca los gajos de naranja en la canasta. Luego, añade el plátano y arriba las fresas y las uvas. Por último, rocía un chorrito de miel. <strong>Y&nbsp;listo&nbsp;¡A&nbsp;disfrutar!</strong>" audio="asound/instruccion4.mp3" ref="instructions4"></audiotext>
                 </div>
 
-                <div class="row">
+                <div class="row w100 frutas2">
 
-                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
-                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
-                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
-                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
-                    <div><drag initclass="mayus" dropzone=".basket" data="m" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="#"></drag></div>
+                    <div><drag initclass="fresa2" dropzone=".basket" @isok="temps++" :data="temps==2?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/fresa.svg"></drag></div>
+                    <div><drag initclass="platano2" dropzone=".basket" @isok="temps++" :data="temps==1?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/platano.svg"></drag></div>
+                    <div><drag initclass="miel2" dropzone=".basket" @isok="temps++" :data="temps==4?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/miel2.svg"></drag></div>
+                    <div><drag initclass="uvas2" dropzone=".basket" @isok="temps++" :data="temps==3?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/uvas.svg"></drag></div>
+                    <div><drag initclass="naranja2" dropzone=".basket" @isok="temps++" :data="temps==0?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/naranja.svg"></drag></div>
 
                 </div>
 
@@ -121,6 +226,7 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -142,6 +248,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.$set(app, 'temps', 0)
         app.currentScene = 0
         app.scenesCount = 2
         app.$devmode = false

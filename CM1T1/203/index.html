@@ -69,43 +69,49 @@
                
 
                 <div class="row w100">
-                    <div class="textos">
-                        <div class="droptext" data="tristeza" droptimes="untilok"><p>Es el sentimiento que tengo cuando mi mascota está enferma.</p></div>
-                        <div class="droptext" data="enojo" droptimes="untilok"><p>Es el sentimiento que tengo cuando alguien no respeta a los demás.</p></div>
-                        <div class="droptext" data="alegria" droptimes="untilok"><p>Es el sentimiento que tengo cuando termino mi tarea.</p></div>
-                    </div>
                     
                     <div class="ninos">
                         <div class="row nino">
-                            <drag dropzone=".droptext" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo">
-                                <div class="conector c5"></div>
-                            </drag>
                             <img src="aimg/i1.svg">
-                            <drag dropzone=".dropemo" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo">
+                            <drag dropzone=".droptext" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo" @isok="temps.a=true">
+                                <div class="conector c5"></div>
+                            </drag>
+                            
+                        </div>
+                        <div class="row nino">
+                            <img src="aimg/i2.svg">
+                            <drag dropzone=".droptext" data="alegria" stay-if-ok drag-line particle-color="#015093" dropzone-ok-class="alegria" @isok="temps.b=true">
+                                <div class="conector c2"></div>
+                            </drag>
+                            
+                        </div>
+                        <div class="row nino">
+                            <img src="aimg/i3.svg">
+                            <drag dropzone=".droptext" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza" @isok="temps.c=true">
+                                <div class="conector c1"></div>
+                            </drag>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="textos">
+                        <div class="droptext row" data="tristeza" droptimes="untilok"><p>Es el sentimiento que tengo cuando mi mascota está enferma.</p>
+                            <drag dropzone=".dropemo" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza" v-if="temps.c">
+                                <div class="conector c1"></div>
+                            </drag>
+                        </div>
+                        <div class="droptext row" data="enojo" droptimes="untilok"><p>Es el sentimiento que tengo cuando alguien no respeta a los demás.</p>
+                            <drag dropzone=".dropemo" data="enojo" stay-if-ok drag-line particle-color="#DA3F34" dropzone-ok-class="enojo" v-if="temps.a">
                                 <div class="conector c5"></div>
                             </drag>
                         </div>
-                        <div class="row nino">
-                            <drag dropzone=".droptext" data="alegria" stay-if-ok drag-line particle-color="#015093" dropzone-ok-class="alegria">
-                                <div class="conector c2"></div>
-                            </drag>
-                            <img src="aimg/i2.svg">
-                            <drag dropzone=".dropemo" data="alegria" stay-if-ok drag-line particle-color="#015093"  dropzone-ok-class="alegria">
+                        <div class="droptext row" data="alegria" droptimes="untilok"><p>Es el sentimiento que tengo cuando termino mi tarea.</p>
+                            <drag dropzone=".dropemo" data="alegria" stay-if-ok drag-line particle-color="#015093"  dropzone-ok-class="alegria" v-if="temps.b">
                                 <div class="conector c2"></div>
                             </drag>
                         </div>
-                        <div class="row nino">
-                            <drag dropzone=".droptext" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza">
-                                <div class="conector c1"></div>
-                            </drag>
-                            <img src="aimg/i3.svg">
-                            <drag dropzone=".dropemo" data="tristeza" stay-if-ok drag-line particle-color="#5EB247"  dropzone-ok-class="tristeza">
-                                <div class="conector c1"></div>
-                            </drag>
-                        </div>
-
                     </div>
-
+                    
                     <div class="emociones">
                         <div class="dropemo" data="alegria" droptimes="untilok"><div class="number c6">alegria</div></div>
                         <div class="dropemo" data="tristeza" droptimes="untilok"><div class="number c6">tristeza</div></div>
@@ -145,6 +151,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.$set(app.temps, 'a', false)
+        app.$set(app.temps, 'b', false)
+        app.$set(app.temps, 'c', false)
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false

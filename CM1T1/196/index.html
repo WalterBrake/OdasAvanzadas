@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo</title>
+    <title>Observo los animales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
@@ -76,7 +76,7 @@
         <!-- ### scene -->
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="13" scene-color="#63ABD1">
-            <info type="dragdrop" title="Titulo" text="¡Mira cuántos animales hay en la naturaleza! Coloca cada uno dentro de la caja correspondiente de acuerdo a su característica." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Observa los animales" text="¡Mira cuántos animales hay en la naturaleza! Coloca cada uno dentro de la caja correspondiente de acuerdo a su característica." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100">
                     <div class="dropzone rojo" data="rojo" droptimes="multiple" errorsound="../../assets/asound/vuelveaintentar_hombre.mp3"><h1>Vuelan</h1></div>
