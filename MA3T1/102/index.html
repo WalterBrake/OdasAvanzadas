@@ -41,7 +41,7 @@
             border-radius: 4px;
             transform: scale(0.5);
         }
-        .inputable{
+        .inputable {
             width: 100%;
             height: 100%;
             padding: 0;
@@ -51,6 +51,7 @@
             display: flex; justify-content: center; align-items: center;
         }
         .inputable input{ height: 100%; }
+       
         .preguntas{
             margin-right: 10px;
             text-align: center;
@@ -95,6 +96,39 @@
                 font-size: 1.2rem;
             }
         }
+
+        .desplegar {
+            width: 100%;
+            height: 100%;
+        }
+        .desplegar .deployer {
+            background: #fff;
+            box-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
+            border-radius: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border-bottom: none;
+        }
+        .desplegar .deployer:before {
+            display: none;
+        }
+        .desplegar.ok {
+            background: var(--c8);
+            box-shadow: 4px 4px 0 #ad96bb, -1px -1px 0 #ad96bb, 1px -1px 0 #ad96bb, -1px 1px 0 #ad96bb, 1px 1px 0 #ad96bb;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .desplegar .options.modaloptions {
+            background: var(--c8);
+            box-shadow: 6px 6px 0 #AD97BB;
+            flex-wrap: wrap;
+        }
+        .desplegar .options.modaloptions .option {
+            width: 20%;
+        }
+
+
     </style>
     </head>
 <body>
@@ -135,6 +169,7 @@
                         <img src="aimg/pez.svg" class="w100">
                         <div class="boxes row wrap">
                             <template v-for="(it, ind) in 82">
+
                                 <div v-if="ind==0"></div>
 
                                 <div class="box t" v-else-if="ind==3"><div class="number small c1">A</div></div>
@@ -149,8 +184,30 @@
                                 <div class="box t" v-else-if="ind==68"><div class="number small c2">D</div></div>
                                 <div class="box t" v-else-if="ind==79"><div class="number small c2">E</div></div>
                                 
+                                <div class="box" v-else-if="ind==13"><div class="inputable c8 okInput"><div class="number small c8">4</div></div></div>
+                                <div class="box" v-else-if="ind==32"><div class="inputable c8 okInput"><div class="number small c8">9</div></div></div>
+                                <div class="box" v-else-if="ind==42"><div class="inputable c8 okInput"><div class="number small c8">9</div></div></div>
+                                <div class="box" v-else-if="ind==67"><div class="inputable c8 okInput"><div class="number small c8">3</div></div></div>
+                                <div class="box" v-else-if="ind==78"><div class="inputable c8 okInput"><div class="number small c8">2</div></div></div>
+                                
 
-                                <div class="box" v-else-if="ind==12"><inputable initclass="c8" isok="7"><div class="number small c8">7</div></inputable></div>
+                                <div class="box" v-else-if="ind==12"><desplegar :key="0" answer="7" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==20"><desplegar :key="1" answer="4" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==21"><desplegar :key="2" answer="0" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==31"><desplegar :key="3" answer="8" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==40"><desplegar :key="4" answer="0" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==50"><desplegar :key="5" answer="5" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==51"><desplegar :key="6" answer="2" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==58"><desplegar :key="7" answer="6" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==59"><desplegar :key="8" answer="0" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==61"><desplegar :key="9" answer="3" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==69"><desplegar :key="10" answer="2" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==70"><desplegar :key="11" answer="5" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==72"><desplegar :key="12" answer="9" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==80"><desplegar :key="13" answer="1" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+                                <div class="box" v-else-if="ind==81"><desplegar :key="14" answer="5" show-ok modal-options :options="temps"><template v-slot:option="{option}"><number small c="8">{{option.text}}</number></template></desplegar></div>
+
+<!--
                                 <div class="box" v-else-if="ind==20"><inputable initclass="c8" isok="4"><div class="number small c8">4</div></inputable></div>
                                 <div class="box" v-else-if="ind==21"><inputable initclass="c8" isok="0"><div class="number small c8">0</div></inputable></div>
                                 <div class="box" v-else-if="ind==31"><inputable initclass="c8" isok="8"><div class="number small c8">8</div></inputable></div>
@@ -165,10 +222,11 @@
                                 <div class="box" v-else-if="ind==72"><inputable initclass="c8" isok="9"><div class="number small c8">9</div></inputable></div>
                                 <div class="box" v-else-if="ind==80"><inputable initclass="c8" isok="1"><div class="number small c8">1</div></inputable></div>
                                 <div class="box" v-else-if="ind==81"><inputable initclass="c8" isok="5"><div class="number small c8">5</div></inputable></div>
-
-
+-->
                                 <div class="box bl" v-else-if="ind==60"></div>
                                 <div class="box" v-else></div>
+
+                                
                             </template>
                         </div>
                     </div>
@@ -194,6 +252,8 @@
     <!-- fireworks -->
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/inputable.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
@@ -207,6 +267,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.$set(app, 'temps', [0,1,2,3,4,5,6,7,8,9])
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false

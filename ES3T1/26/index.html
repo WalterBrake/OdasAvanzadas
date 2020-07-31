@@ -33,14 +33,15 @@
         .drag{
             width: auto; height: auto;
             max-width: 160px;
-            padding: 10px 4px;
-            margin: 10px 0;
+            padding: 4px 4px;
+            margin: 4px 0;
             box-sizing: border-box;
         }
         @media (max-width: 680px){
             .regla{
                 font-size: 1rem;
             }
+            .number.smaller{ font-size: 1rem;}
         }
     </style>
     </head>
@@ -69,14 +70,24 @@
                             <template v-for="i in [
                                 {name: 'Poner', col:'c1'},
                                 {name: 'Puso', col:'c1'},
+                                {name: 'Evitamos', col:'c1'},
+                                {name: 'Evitando', col:'c1'},
                                 {name: 'Respetará', col:'c2'},
                                 {name: 'Respetar', col:'c2'},
+                                {name: 'Llevé', col:'c2'},
+                                {name: 'Llevaré', col:'c2'},
                                 {name: 'Informar', col:'c3'},
                                 {name: 'Informa', col:'c3'},
+                                {name: 'Llevába', col:'c3'},
+                                {name: 'Llevaría', col:'c3'},
                                 {name: 'Evitar', col:'c4'},
                                 {name: 'Evita', col:'c4'},
+                                {name: 'Informé', col:'c4'},
+                                {name: 'Informaría', col:'c4'},
                                 {name: 'Llevó', col:'c5'},
                                 {name: 'Llevar', col:'c5'},
+                                {name: 'Ponemos', col:'c5'},
+                                {name: 'Pondremos', col:'c5'},
                             ]">
                                 <div class="w50"><drag dropzone=".dropzone" :data="i.name" stay-if-ok append-to-dropzone><div :class="'number smaller '+i.col">{{i.name}}</div></drag></div>
                             </template>

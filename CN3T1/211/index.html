@@ -9,32 +9,76 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
-        .drag{ width: 100%; margin: 10px; background: #F9FAFA; border-radius: 10px; }
-        .drag img{width: 80%;}
-        .drag.dropped{background: rgba(0,0,0,0.2);}
+        
         .drop {
-            border: 4px solid #F9FAFA;
-            width:23%;
-            margin: 1%;
-            background: var(--main); border-radius: 10px;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column; justify-content: center; align-items: center;
-            padding: 10px;
-        }
-        .drag2 .drag{background:#5EB247; }
+	border: 4px solid #F9FAFA;
+	width: 40%;
+	margin: 1% auto;
+	background: #FAFAFA;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+.drop .number {
+	position: absolute;
+	z-index: 2;
+}
+.drag {
+	width: 50%;
+	margin: 10px;
+	background: #F9FAFA;
+	border-radius: 10px;
+}
+.drag img {
+	width: 80;
+}
+.drag.dropped {
+	background: rgba(0, 0, 0, 0.2);
+}
+.drag2 .drag {
+	background: #5EB247;
+}
+.drag .number.small {
+	text-align: center;
+	font-size: 1.2rem;
+	-webkit-text-stroke-width: 1px;
+}
+.drop img {
+	width: 70%;
+	margin: 5%;
+}
+.drop2 {
+	box-sizing: border-box;
+	width: 24%;
+	margin: 0.5%;
+}
+.drop2:after {
+	content: "";
+	background: var(--main);
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+}
+.drop2 img:nth-child(3) {
+	background: var(--main);
+	padding: 10px;
+	margin-top: 50px;
+	border-radius: 10px;
+	margin-bottom: -20px;
+}
+.dragop2 img {
+	width: 40%;
+}
+.drop2 img {
+	width: 50%;
+}
+.drop.hover {
+	border: 4px solid var(--accent);
+}
 
-        .drop .number.small {
-            text-align: center;
-            font-size: 1.2rem;
-            -webkit-text-stroke-width: 1px;
-        }
-        .drop img {width: 70%; margin: 5%; }
-        .drop2 img { height: 60%; width: auto; }
-        .drop.dused { background: #F9FAFA; }
-        
-        .drop.hover{ border: 4px solid var(--accent); }
-        
          
     </style>
     </head>
@@ -49,18 +93,20 @@
 
             <info type="dragdrop" title="¿De qué se alimentan los seres vivos?" text="Coloca el grupo al que pertenecen los animales de cada recuadro." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
-                <div class="row w100 cards wrap">
-                    <div class="drop" droptimes="untilok" data="omn"><div class="number small c1">Omnívoros</div></div>
-                    <div class="drop" droptimes="untilok" data="ins"><div class="number small c1">Insectívoros</div></div>
-                    <div class="drop" droptimes="untilok" data="car"><div class="number small c1">Carnívoros</div></div>
-                    <div class="drop" droptimes="untilok" data="her"><div class="number small c1">Hervíboros</div></div>
-                </div>
-                <div class="row w100 animate__animated animate__bounceIn">
-                    <drag dropzone=".drop" data="car" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/tigre.jpg"></drag>
-                    <drag dropzone=".drop" data="her" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/vaca.jpg"></drag>
-                    <drag dropzone=".drop" data="ins" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/rana.jpg"></drag>
-                    <drag dropzone=".drop" data="omn" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><img src="aimg/oso.jpg"></drag>
-                </div>            
+                <div class="row w100">
+                    <div class="w50 cards ">
+                        <div class="drop" droptimes="untilok" data="omn"><img src="aimg/oso.jpg"></div>
+                        <div class="drop" droptimes="untilok" data="ins"><img src="aimg/rana.jpg"></div>
+                        <div class="drop" droptimes="untilok" data="car"><img src="aimg/tigre.jpg"></div>
+                        <div class="drop" droptimes="untilok" data="her"><img src="aimg/vaca.jpg"></div>
+                    </div>
+                    <div class="w50 animate__animated animate__bounceIn">
+                        <drag dropzone=".drop" data="car" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><div class="number small c1">Carnívoros</div></drag>
+                        <drag dropzone=".drop" data="her" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><div class="number small c1">Hervíboros</div></drag>
+                        <drag dropzone=".drop" data="ins" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><div class="number small c1">Insectívoros</div></drag>
+                        <drag dropzone=".drop" data="omn" stay-if-ok append-to-dropzone dropzone-ok-class="dused" drag-ok-class="dropped"><div class="number small c1">Omnívoros</div></drag>
+                    </div>     
+                </div>       
             </activity>
         </scene> <!-- end scene -->
         
@@ -71,16 +117,16 @@
             <info type="dragdrop" title="¿De qué se alimentan los seres vivos?" text="Coloca los  ejemplos de alimentos debajo de cada uno de los animales con su tipo de alimentación. " textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100 cards wrap">
-                    <div class="drop dused" droptimes="untilok" data="omn"><div class="number small c1">Omnívoros</div><img src="aimg/oso.jpg"></div>
-                    <div class="drop dused" droptimes="untilok" data="ins"><div class="number small c1">Insectívoros</div><img src="aimg/rana.jpg"></div>
-                    <div class="drop dused" droptimes="untilok" data="car"><div class="number small c1">Carnívoros</div><img src="aimg/tigre.jpg"></div>
-                    <div class="drop dused" droptimes="untilok" data="her"><div class="number small c1">Hervíboros</div><img src="aimg/vaca.jpg"></div>
+                    <div class="drop drop2 dused" droptimes="untilok" data="omn"><div class="number small c1">Omnívoros</div><img src="aimg/oso.jpg"></div>
+                    <div class="drop drop2 dused" droptimes="untilok" data="ins"><div class="number small c1">Insectívoros</div><img src="aimg/rana.jpg"></div>
+                    <div class="drop drop2 dused" droptimes="untilok" data="car"><div class="number small c1">Carnívoros</div><img src="aimg/tigre.jpg"></div>
+                    <div class="drop drop2 dused" droptimes="untilok" data="her"><div class="number small c1">Hervíboros</div><img src="aimg/vaca.jpg"></div>
                 </div>
                 <div class="row w100 animate__animated animate__bounceIn drag2">
-                    <drag dropzone=".drop" initclass="drop2" data="her" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/plantas.png"></drag>
-                    <drag dropzone=".drop" initclass="drop2" data="omn" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/todo.svg"></drag>
-                    <drag dropzone=".drop" initclass="drop2" data="car" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/carne.svg"></drag>
-                    <drag dropzone=".drop" initclass="drop2" data="ins" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/insectos.svg"></drag>
+                    <drag dropzone=".drop" initclass="dragop2" data="her" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/plantas.png"></drag>
+                    <drag dropzone=".drop" initclass="dragop2" data="omn" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/todo.svg"></drag>
+                    <drag dropzone=".drop" initclass="dragop2" data="car" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/carne.svg"></drag>
+                    <drag dropzone=".drop" initclass="dragop2" data="ins" stay-if-ok append-to-dropzone drag-ok-class="dropped"><img src="aimg/insectos.svg"></drag>
                 </div>            
             </activity>
         </scene> <!-- end scene -->
@@ -115,7 +161,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 0
+        app.currentScene = 1
         app.scenesCount = 2
         app.$devmode = false
     </script>

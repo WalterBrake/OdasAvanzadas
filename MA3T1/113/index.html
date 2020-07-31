@@ -280,7 +280,7 @@
                     <div class="row w100"><div class="number c1">10 974</div></div>
                     <div class="option">
                         <dialogaudio audio="asound/10974.mp3"></dialogaudio>
-                        <clickable block-if-error :isok="false">
+                        <clickable :isok="true" simple-ok>
                             <img v-for="i in 10" src="aimg/morado.svg">
                             <img v-for="i in 9" src="aimg/verde.svg">
                             <img v-for="i in 7" src="aimg/azul.svg">
@@ -289,7 +289,7 @@
                     </div>
                     <div class="option">
                         <dialogaudio audio="asound/10434.mp3"></dialogaudio>
-                        <clickable :isok="true" v-model="temporals[0]">
+                        <clickable :isok="false" block-if-error>
                             <img v-for="i in 10" src="aimg/morado.svg">
                             <img v-for="i in 4" src="aimg/verde.svg">
                             <img v-for="i in 3" src="aimg/azul.svg">
