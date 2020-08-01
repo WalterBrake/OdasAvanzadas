@@ -782,4 +782,96 @@ embed {
   border-radius: 20px;
   box-shadow: 6px 6px 0 var(--main);
 }
+/* VIDEOPLAYER */
+.videoplayer {
+  max-width: 560px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.videoplayer .plyr {
+  border-radius: 18px;
+}
+.videoplayer video {
+  width: 101%;
+}
+.videoplayer.c1 {
+  --plyr-color-main: var(--c1);
+  border: 2px solid var(--c1);
+  box-shadow: 8px 8px 0 var(--c1);
+}
+.videoplayer.c1 .plyr__control:hover {
+  border: 1px solid var(--c1);
+  box-shadow: 4px 4px 0 var(--c1);
+  --plyr-video-control-color-hover: var(--c1);
+}
+.videoplayer.c2 {
+  --plyr-color-main: var(--c2);
+  border: 2px solid var(--c2);
+  box-shadow: 8px 8px 0 var(--c2);
+}
+.videoplayer.c2 .plyr__control:hover {
+  border: 1px solid var(--c2);
+  box-shadow: 4px 4px 0 var(--c2);
+  --plyr-video-control-color-hover: var(--c2);
+}
+.videoplayer.c3 {
+  --plyr-color-main: var(--c3);
+  border: 2px solid var(--c3);
+  box-shadow: 8px 8px 0 var(--c3);
+}
+.videoplayer.c3 .plyr__control:hover {
+  border: 1px solid var(--c3);
+  box-shadow: 4px 4px 0 var(--c3);
+  --plyr-video-control-color-hover: var(--c3);
+}
+.videoplayer.c4 {
+  --plyr-color-main: var(--c4);
+  border: 2px solid var(--c4);
+  box-shadow: 8px 8px 0 var(--c4);
+}
+.videoplayer.c4 .plyr__control:hover {
+  border: 1px solid var(--c4);
+  box-shadow: 4px 4px 0 var(--c4);
+  --plyr-video-control-color-hover: var(--c4);
+}
+.videoplayer.c5 {
+  --plyr-color-main: var(--c5);
+  border: 2px solid var(--c5);
+  box-shadow: 8px 8px 0 var(--c5);
+}
+.videoplayer.c5 .plyr__control:hover {
+  border: 1px solid var(--c5);
+  box-shadow: 4px 4px 0 var(--c5);
+  --plyr-video-control-color-hover: var(--c5);
+}
+.videoplayer.c6 {
+  --plyr-color-main: var(--c6);
+  border: 2px solid var(--c6);
+  box-shadow: 8px 8px 0 var(--c6);
+}
+.videoplayer.c6 .plyr__control:hover {
+  border: 1px solid var(--c6);
+  box-shadow: 4px 4px 0 var(--c6);
+  --plyr-video-control-color-hover: var(--c6);
+}
+.videoplayer.c7 {
+  --plyr-color-main: var(--c7);
+  border: 2px solid var(--c7);
+  box-shadow: 8px 8px 0 var(--c7);
+}
+.videoplayer.c7 .plyr__control:hover {
+  border: 1px solid var(--c7);
+  box-shadow: 4px 4px 0 var(--c7);
+  --plyr-video-control-color-hover: var(--c7);
+}
+.videoplayer.c8 {
+  --plyr-color-main: var(--c8);
+  border: 2px solid var(--c8);
+  box-shadow: 8px 8px 0 var(--c8);
+}
+.videoplayer.c8 .plyr__control:hover {
+  border: 1px solid var(--c8);
+  box-shadow: 4px 4px 0 var(--c8);
+  --plyr-video-control-color-hover: var(--c8);
+}
 /*# sourceMappingURL=assets.css.map */

@@ -595,3 +595,35 @@ embed {
 	border-radius: 20px;
 	box-shadow: 6px 6px 0 var(--main);
 }
+
+
+
+
+/* VIDEOPLAYER */
+
+.videocolor (@col){
+	--plyr-color-main: @col;
+	border: 2px solid @col;
+	box-shadow: 8px 8px 0 @col;
+	.plyr__control:hover{
+		border: 1px solid @col;
+		box-shadow: 4px 4px 0 @col;
+		--plyr-video-control-color-hover: @col;
+	}
+}
+
+.videoplayer {
+    max-width: 560px;
+	border-radius: 20px;
+	overflow: hidden;
+    .plyr{ border-radius: 18px;}
+    video{ width: 101%;}
+	&.c1{ .videocolor(var(--c1));}
+	&.c2{ .videocolor(var(--c2));}
+	&.c3{ .videocolor(var(--c3));}
+	&.c4{ .videocolor(var(--c4));}
+	&.c5{ .videocolor(var(--c5));}
+	&.c6{ .videocolor(var(--c6));}
+	&.c7{ .videocolor(var(--c7));}
+	&.c8{ .videocolor(var(--c8));}
+}
