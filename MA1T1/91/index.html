@@ -19,6 +19,39 @@
         --plyr-control-radius: 10px;
         }
         .next{font-size: 2rem; margin: 20px;}
+
+        
+        img.zoominImg{
+	        position: absolute;
+            z-index: 1;
+            animation: zoominImgKey 3s;
+            animation-delay: 1s;
+            transform: scale(1.1);
+            animation-fill-mode: forwards;
+        }
+
+
+        @keyframes zoominImgKey {
+            0% {
+                transform: scale(1.1);
+                opacity: 1;
+                z-index: 1;
+                bottom: 0;
+            }
+            99% {
+                transform: scale(3);
+                opacity: 0;
+                bottom: 25%;
+                z-index: 1;
+            }
+            100% {
+                z-index: -1;
+            }
+        }
+        .clickable{
+            margin: 20px 40px;
+        }
+
         @media (max-width: 680px){}
     </style>
     </head>
@@ -29,30 +62,67 @@
 
 
         <scene v-if="currentScene==1" :key="1" hidescorebox
-            :answers="4" scene-color="#56A03F" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
+            :answers="4" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
             <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
             <activity>
                 <div class="row w100 info"><h1>Cuénto cuántas frutas son</h1></div>
                 <div class="row w100">
-                    <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8"></videoplayer>
+                    <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8" @completed="temps.a=true"></videoplayer>
                 </div>
-                <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+                <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="sceneCompleted(false)">Siguiente</button>
             </activity>
         </scene>
+
         <!---->
-        <scene v-if="currentScene==2" :key="2"
-            :answers="4" scene-color="#56A03F" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
-            <info type="seleccionar" title="Cuento cuántas frutas son" text="¿Cuántos limones hay en la caja? Elige la respuesta correcta." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
-
+        <scene v-for="i in [
+            { in: 2,
+                img: 'limones.svg', p: '¿Cuántos limones hay en la caja? Elige la respuesta correcta.', s: 'ilimones.mp3',
+                r: [['5', true, '5.mp3'], ['7', false, '7.mp3']]},
+            { in: 3,
+                img: 'melones.svg', p: '¿Cuántos melones hay en la caja? Elige la respuesta correcta.', s: 'imelones.mp3',
+                r: [['5', false, '5.mp3'], ['2', true, '2.mp3']]},
+            { in: 4,
+                img: 'manzanas.svg', p: '¿Cuántas manzanas hay en la caja? Elige la respuesta correcta.', s: 'imanzanas.mp3',
+                r: [['4', true, '4.mp3'], ['3', false, '3.mp3']]},
+            { in: 5,
+                img: 'naranjas.svg', p: '¿Cuántas naranjas hay en la caja? Elige la respuesta correcta.', s: 'inaranjas.mp3',
+                r: [['6', false, '6.mp3'], ['4', true, '4.mp3']]},
+            { in: 6,
+                img: 'peras.svg', p: '¿Cuántas peras hay en la caja? Elige la respuesta correcta.', s: 'iperas.mp3',
+                r: [['8', false, '8.mp3'], ['6', true, '6.mp3']]},
+            { in: 7,
+                img: 'todas.svg', p: '¿Qué caja tiene la misma cantidad que la caja de manzanas? Elige la respuesta correcta.', s: 'icantidad.mp3',
+                r: [['limones', false, 'limones.mp3'], ['naranjas', true, 'naranjas.mp3']]},
+        ]" v-if="currentScene==i.in" :key="i.in"
+            :answers="1" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuento cuántas frutas son" :text="i.p" :textaudio="'asound/'+i.s" :autoplay="true"></info>
             <activity>
-                
+                <img src="aimg/bg.svg" class="w100 zoominImg">
+                <div class="row w100"><div :class="i.in!=7?'w40':'w60'"><img :src="'aimg/'+i.img" class="w100"></div></div>
+                <div class="row wrap animate__animated animate__delay-3s	animate__bounceIn">
+                    <clickable simple-ok block-if-error :isok="i.r[0][1]" :click-sound="'asound/'+i.r[0][2]"><number randomc>{{i.r[0][0]}}</number></clickable>
+                    <clickable simple-ok block-if-error :isok="i.r[1][1]" :click-sound="'asound/'+i.r[1][2]"><number randomc>{{i.r[1][0]}}</number></clickable>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==8" :key="8" hidescorebox
+            :answers="4" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info"><h1>Cuénto cuántas frutas son</h1></div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v2" :autoplay="true" c="8" @completed="temps.a=true"></videoplayer>
+                </div>
+                <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="sceneCompleted(false)">Finalizar</button>
             </activity>
         </scene>
 
 
 
 
-        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==9" :key="9" end-scene :final-data="finalData"></scene>
     
 
     
@@ -71,6 +141,7 @@
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
     <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
@@ -83,8 +154,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.currentScene = 1
-        app.scenesCount = 1
+        app.$set(app.temps, 'a', false)
+        app.currentScene = 0
+        app.scenesCount = 6
         app.$devmode = false
     </script>
 </body>

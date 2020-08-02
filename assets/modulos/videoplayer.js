@@ -20,10 +20,14 @@ Vue.component('videoplayer', {
         </div>
     `,
     mounted() {
+        var _this = this
         const player = new Plyr('video', {
             controls: ['play','progress', 'fullscreen'],
             //iconUrl: '../../assets/aanim/plyr.svg'
         })
+        player.on('ended', event => {
+            _this.$emit('completed')
+        });
     }
 })
 
