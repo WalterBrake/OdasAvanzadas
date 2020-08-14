@@ -84,7 +84,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="10" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Identifico mis sentidos" text="Coloca en cada una de las ilustraciones con el sentido y la función que le corresponden." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Identifico mis sentidos" text="Coloca el sentido y la función que le corresponde a cada una de las ilustraciones." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                     <div class="row w100">
                         <template v-for="i in temps">

@@ -14,7 +14,7 @@
             background: #fff;
             padding: 10px;
             border-radius: 10px;
-            margin: 10px;
+            margin: 14px 10px;
         }
         .regla .dropzone{
             display: inline-block;
@@ -42,6 +42,11 @@
                 font-size: 1rem;
             }
             .number.smaller{ font-size: 1rem;}
+        }
+        hr{
+            border: none;
+            border-top:4px solid #fff;
+            margin: 2px 0;
         }
     </style>
     </head>
@@ -72,24 +77,29 @@
                                 {name: 'Puso', col:'c1'},
                                 {name: 'Evitamos', col:'c1'},
                                 {name: 'Evitando', col:'c1'},
+                                {div:true},
                                 {name: 'Respetará', col:'c2'},
                                 {name: 'Respetar', col:'c2'},
                                 {name: 'Llevé', col:'c2'},
                                 {name: 'Llevaré', col:'c2'},
+                                {div:true},
                                 {name: 'Informar', col:'c3'},
                                 {name: 'Informa', col:'c3'},
-                                {name: 'Llevába', col:'c3'},
+                                {name: 'Llevaba', col:'c3'},
                                 {name: 'Llevaría', col:'c3'},
+                                {div:true},
                                 {name: 'Evitar', col:'c4'},
                                 {name: 'Evita', col:'c4'},
                                 {name: 'Informé', col:'c4'},
                                 {name: 'Informaría', col:'c4'},
+                                {div:true},
                                 {name: 'Llevó', col:'c5'},
                                 {name: 'Llevar', col:'c5'},
                                 {name: 'Ponemos', col:'c5'},
                                 {name: 'Pondremos', col:'c5'},
                             ]">
-                                <div class="w50"><drag dropzone=".dropzone" :data="i.name" stay-if-ok append-to-dropzone><div :class="'number smaller '+i.col">{{i.name}}</div></drag></div>
+                                <hr v-if="i.div" class="w100">
+                                <div v-else class="w50"><drag dropzone=".dropzone" :data="i.name" stay-if-ok append-to-dropzone><div :class="'number smaller '+i.col">{{i.name}}</div></drag></div>
                             </template>
                         </div>
                     </div>
