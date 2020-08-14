@@ -210,7 +210,7 @@
                     <div class="opciones w50">
                         <div class="number c1">Perímetro</div>
                         <div class="row w100">
-                            <clickable initclass="w30" v-for="i in [19, 15, 17]" simple-ok block-if-error :isok="i==17"><div class="number small c2">{{i}}</div></clickable>
+                            <clickable initclass="w30" v-for="i in [19, 15, 14]" simple-ok block-if-error :isok="i==14"><div class="number small c2">{{i}}</div></clickable>
                         </div>
                         <hr>
                         <div class="number c1">Área</div>
@@ -342,7 +342,7 @@
         <!-- ### scene -->
         <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="false"></info>
         <activity>
                 <div class="row w100 question">¿Qué figuras tienen perímetros y áreas iguales?</div>
                 
@@ -375,7 +375,7 @@
         <!-- ### scene -->
         <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Comparo el perímetro y el área" text="Ahora, selecciona en la cuadrícula la figura de acuerdo con lo que se indica." textaudio="asound/instruccion3.mp3" :autoplay="false"></info>
         <activity>
                 <div class="row w100 question">¿Qué figura tiene mayor área?</div>
                 
