@@ -160,14 +160,14 @@
 
         <!-- ### scene -->
         <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="1" scene-color="#ED1C25">
+        :answers="3" scene-color="#ED1C25">
             <info type="seleccionar" title="Identifico los materiales de consulta" text="Con base en la historieta, selecciona las respuestas correctas." textaudio="asound/instruccion2.mp3" :autoplay="true" @completedinstructions=""></info>
             <activity>
                 <div class="row w100"><div class="title">Además de libros, ¿qué otro tipo de material tienen en la biblioteca de tu escuela o del aula?</div></div>
                 <div class="row w100 opts">
                     <clickable :isok="true" v-model="temporals[0]"><div class="number small c1">Revistas y películas</div></clickable>
-                    <clickable :isok="true" v-model="temporals[0]"><div class="number small c1">Juegos de mesa</div></clickable>
-                    <clickable :isok="true" v-model="temporals[0]"><div class="number small c1">Periódicos y revistas</div></clickable>
+                    <clickable :isok="true" v-model="temporals[1]"><div class="number small c1">Juegos de mesa</div></clickable>
+                    <clickable :isok="true" v-model="temporals[2]"><div class="number small c1">Periódicos y revistas</div></clickable>
                 </div>
             </activity>
         </scene><!--end scene-->
@@ -177,7 +177,7 @@
         :answers="1" scene-color="#ED1C25">
             <info type="seleccionar" title="Identifico los materiales de consulta" text="Con base en la historieta, selecciona las respuestas correctas." textaudio="asound/instruccion2.mp3" :autoplay="false" @completedinstructions=""></info>
             <activity>
-                <div class="row w100"><div class="title">Además de libros, ¿qué otro tipo de material tienen en la biblioteca de tu escuela o del aula?</div></div>
+                <div class="row w100"><div class="title">¿Cuál sería un ejemplo de regla para prestar materiales de la biblioteca? </div></div>
                 <div class="row w100 opts">
                     <clickable :isok="true" v-model="temporals[0]"><div class="number small c2">Presentar mi credencial para solicitar un libro</div></clickable>
                     <clickable :isok="false" block-if-error><div class="number small c2">Poner mis huellas digitales en un formato</div></clickable>
