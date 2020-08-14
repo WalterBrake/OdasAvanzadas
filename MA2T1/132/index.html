@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sé más sobre las decenas</title>
+    <title>Encuentro figuras</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/font/stylesheet.css">
@@ -65,7 +65,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="4" scene-color="#BC55A2">
 
-            <info type="seleccionar" title="Sé más sobre las decenas" text="Selecciona el nombre de cada una de las figuras geométricas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Encuentro figuras" text="Selecciona el nombre de cada una de las figuras geométricas." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100">
                     
@@ -161,7 +161,7 @@
             <info type="seleccionar" title="Sé más sobre las decenas" text="Observa el siguiente dibujo y seleciona la respuesta correcta." textaudio="asound/instruccion2.mp3" :autoplay="false"></info>
             <activity>
                 <div class="row w100 ima"><img src="aimg/i5.svg" class="w100"></div>
-                <div class="row w100 pregunta">¿Cuántos cuadros hay?</div>
+                <div class="row w100 pregunta">¿Cuántos cuadrados hay?</div>
                 <div class="row respuestas w100">
                     <clickable block-if-error :isok="true" v-model="temporals[0]"><div class="number c1">23</div></clickable>
                     <clickable block-if-error :isok="false"><div class="number c1">4</div></clickable>
