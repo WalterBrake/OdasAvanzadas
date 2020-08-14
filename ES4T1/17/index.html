@@ -80,7 +80,7 @@
                 </div>
                 <div class="row w100 wrap opciones mt-auto">
                     <template v-for="i in temps" v-if="i.type!='ti'">
-                        <drag :initclass="i.type" dropzone=".drop" :data="i.text" :dragsound="'asound/'+i.val+'.mp3'" append-to-dropzone><p>{{i.text}}</p></drag>
+                        <drag :initclass="i.type" dropzone=".drop" :data="i.text"  append-to-dropzone><p>{{i.text}}</p></drag>
                     </template>
                 </div>
                 <div class="row w100 wrap tabla mt-auto">
@@ -89,7 +89,7 @@
                     <div class=" head"><p>Ejemplo</p></div>
                     <template v-for="i in temps">
                         <div :class="'box ' + i.col" v-if="i.type=='ti'"><p>{{i.text}}</p></div>
-                        <div v-else :class="'drop ' + i.type + ' ' + i.col" :data="i.text" droptimes="untilok"></div>
+                        <div v-else :class="'drop ' + i.type + ' ' + i.col" :data="i.text" droptimes="untilok" :oksound="'asound/'+i.val+'.mp3'"></div>
                     </template>
                 </div>
             </activity>
