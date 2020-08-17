@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .activity{
+            width: 775px;
+            height: 1020px;
+        }
+
+        .draw-editor{
+            background: #dCd4aE;
+            width: 775px;
+            height: 1020px;
+        }
+
+        .draw-editor{
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .drawEditorCanvas.over{
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .botonera{
+            position: fixed;
+            right: 4px;
+            top: 4px;
+            width: 120px; height: auto;
+            padding: 10px;
+            background: var(--main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        /* -- */
+        .colors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+        }
+        .colors .color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .colors .color:hover {
+            transform: scale(1.1);
+        }
+        .colors .color:active {
+            transform: scale(1.4);
+        }
+        @media (max-width: 960px) {
+            .activity {
+                width: 100%;
+                height: auto !important;
+                padding-top: 100px;
+            }
+            .activity .draw-editor.imgloaded {
+                width: 100%;
+                height: auto !important;
+            }
+            .activity .draw-editor.imgloaded .drawEditorCanvas  {
+                width: 100% !important;
+                height: auto !important;
+            }
+            .botonera {
+                width: 100%;
+                flex-direction: row;
+                box-sizing: border-box;
+                top: 0;
+                border-radius: 0 0 10px 10px;
+                right: 0;
+                padding: 2px 4px;
+            }
+        }
+
+        .button{
+            margin: 8px 4px;
+        }
+
+        .sizes {
+            display: flex;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .sizes .size {
+            cursor: pointer;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            margin: 6px;
+            border: 4px solid #fff;
+        }
+        .sizes .size.size_10 {
+            width: 14px;
+            height: 14px;
+        }
+        .sizes .size.size_6 {
+            width: 8px;
+            height: 8px;
+        }
+        .sizes .size.size_2 {
+            width: 4px;
+            height: 4px;
+        }
+        .sizes .size.off {
+            background: #fff !important;
+        }
+
+        .colors .color:last-child{
+            background-image: url(aimg/goma.svg);
+        }
+
+        @media (max-width:680px){
+        }
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#5EB247">
+
+           
+            <activity>
+                
+                <draw-editor imgbg="test.jpg"></draw-editor>
+
+            </activity>
+        </scene> <!-- end scene -->
+        
+        
+        
+
+
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js" integrity="sha512-k8F8QynmFNURwbUJC8drKA+fo3YfNvjqKzStdydD6au+MzvxBoRnxH8E31RJXwDY9DrnEiPhh9wBoDSIxhkyHQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.11/paper-full.min.js" integrity="sha512-ehNJ9gpOQJn8EYlA3P1zUtfrh97G/6WNsjfPfpnMxbo6PX6UXHRj8Ny5MCd36w2eTPlvOSVuXLZmY+/VLVhI4A==" crossorigin="anonymous"></script>
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/DrawEditor.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.$set(app.temps, 'width', 600)
+        app.$set(app.temps, 'height', 600)
+        app.currentScene = 1
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>

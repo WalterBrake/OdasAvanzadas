@@ -448,6 +448,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/DrawEditor.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/DrawEditor-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/embedsvg.js": {
 		"ft": 64,
 		"ma": 0,
@@ -6535,6 +6545,26 @@
 		"oAP": "\/ES4T1\/26\/index.html",
 		"oF": 0
 		},
+	"\/ES4T1\/32\/aimg\/anillo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/anillo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/arana.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/arana.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/ES4T1\/32\/aimg\/cama.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -6560,6 +6590,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/ES4T1\/32\/aimg\/espejo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES4T1\/32\/aimg\/estrella.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/32\/aimg\/estrella.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -13993,6 +14033,34 @@
 		"oA": 0,
 		"oAP": "\/MA6T1\/Icon\r",
 		"oF": 0
+		},
+	"\/PDFVIEW\/aimg\/goma.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/PDFVIEW\/aimg\/goma.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/PDFVIEW\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/PDFVIEW\/index.html",
+		"oF": 0
+		},
+	"\/PDFVIEW\/test.jpg": {
+		"ft": 16384,
+		"iS": 82711,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/PDFVIEW\/test.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/readme": {
 		"ft": 65536,
