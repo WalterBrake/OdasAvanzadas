@@ -21,7 +21,7 @@ Vue.component('DrawEditor', {
             inputText: 'Texto',
             inputTextPoint: {x:0, y:0},
             inputTextPointScreen: {x:0, y:0},
-
+            saved: false,
         }
     },
     template: `
@@ -30,6 +30,7 @@ Vue.component('DrawEditor', {
             
             <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+returnTextSize+'px;'">
                 <div class="row">
+                    <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                     <input ref="inputTextInput" v-model="inputText" :style="'color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " />
                     <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                 </div>
@@ -47,7 +48,10 @@ Vue.component('DrawEditor', {
                 </div>
                 <div class="buttons row wrap">
                     <button class="button" @click="cleanCanvas(this)">Limpiar</button>
-                    <button class="button" @click="downloadCanvas(this)">Descargar</button>
+                    <button class="button" @click="downloadCanvas(this)">
+                        <template v-if="!saved">Finalizar</template>
+                        <template v-else>Guardar de nuevo</template>
+                    </button>
                 </div>
             </div>
         </div>
@@ -117,25 +121,26 @@ Vue.component('DrawEditor', {
             */
         },
         downloadCanvas () {
-            var file = this.canvas.toDataURL("image/png")
+            var file = this.canvas.toDataURL("image/jpeg", 0.5)
+
             /*
             this.canvas.toBlob(function(blob) {
                 saveAs(blob, "imagen.png")
             })
             */
-           /*
-           let speedpart = speed ? speed : 30
+            let fwIt = 0
+           let speedpart = 30
            var fw = setInterval(function () {
                 fwIt++
-                //app.particleAnimation({clientX:window.innerWidth/(Math.random()*4), clientY:window.innerHeight/(Math.random()*4)}, 30, null, null)
+                app.particleAnimation({clientX:window.innerWidth/(Math.random()*4), clientY:window.innerHeight/(Math.random()*4)}, 30, null, null)
                 if(fwIt == speedpart) {
                     clearInterval(fw)
                 }
             }, 100)
-            */
-            //var endData = JSON.stringify(_this.finalData)
-            //window.top.postMessage(endData, "*")
+            var endData = JSON.stringify({screen: [file]})
+            window.top.postMessage(endData, "*")
 
+            this.saved = true
             s_win.play()
         },
         cleanCanvas(){
@@ -162,18 +167,10 @@ Vue.component('DrawEditor', {
             var realPos= { x: rw, y: rh }
             return realPos
         },
-        getRealPos (event) {
-            const drawEObj = document.getElementsByClassName('draw-editor')[0]
-            this.currentSize = {width: drawEObj.clientWidth, height: drawEObj.clientHeight, }
-            let rw = ((this.realSize.width)/100) * ((event.event.layerX*100)/this.currentSize.width)
-            let rh = ((this.realSize.height)/100) * ((event.event.layerY*100)/this.currentSize.height)
-            var realPos= { x: rw, y: rh }
-            return realPos
-        },
         createInputText(point, ev){
             this.inputTextOn = true
             this.inputTextPoint = point
-            this.inputTextPointScreen = {x: ev.event.layerX - window.scrollX, y: ev.event.layerY - window.scrollY}
+            this.inputTextPointScreen = {x: ev.event.layerX, y: ev.event.layerY}
             var _this = this
             setTimeout(function(){_this.$refs.inputTextInput.focus()},100)
         },

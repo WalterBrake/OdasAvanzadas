@@ -3577,6 +3577,86 @@
 		"oAP": "\/CNAME",
 		"oF": 0
 		},
+	"\/DIBUJABLES\/aimg\/goma.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/DIBUJABLES\/aimg\/goma.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/DIBUJABLES\/aimg\/ok.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/DIBUJABLES\/aimg\/ok.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/DIBUJABLES\/aimg\/pincel.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/DIBUJABLES\/aimg\/pincel.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/DIBUJABLES\/aimg\/text.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/DIBUJABLES\/aimg\/text.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/DIBUJABLES\/index2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/DIBUJABLES\/index2.html",
+		"oF": 0
+		},
+	"\/DIBUJABLES\/test.jpg": {
+		"ft": 16384,
+		"iS": 82711,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/DIBUJABLES\/test.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/DIBUJABLES\/test2.jpg": {
+		"ft": 16384,
+		"iS": 85004,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/DIBUJABLES\/test2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/DIBUJABLES\/test3.jpg": {
+		"ft": 16384,
+		"iS": 84515,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/DIBUJABLES\/test3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/EJEMPLOS\/aimg\/azul.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -14033,86 +14113,6 @@
 		"oA": 0,
 		"oAP": "\/MA6T1\/Icon\r",
 		"oF": 0
-		},
-	"\/PDFVIEW\/3_nat_P202.jpg": {
-		"ft": 16384,
-		"iS": 84515,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/PDFVIEW\/3_nat_P202.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/PDFVIEW\/aimg\/goma.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/PDFVIEW\/aimg\/goma.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/PDFVIEW\/aimg\/ok.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/PDFVIEW\/aimg\/ok.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/PDFVIEW\/aimg\/pincel.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/PDFVIEW\/aimg\/pincel.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/PDFVIEW\/aimg\/text.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/PDFVIEW\/aimg\/text.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/PDFVIEW\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/PDFVIEW\/index.html",
-		"oF": 0
-		},
-	"\/PDFVIEW\/test.jpg": {
-		"ft": 16384,
-		"iS": 82711,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/PDFVIEW\/test.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/PDFVIEW\/test2.jpg": {
-		"ft": 16384,
-		"iS": 85004,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/PDFVIEW\/test2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
 		},
 	"\/readme": {
 		"ft": 65536,
