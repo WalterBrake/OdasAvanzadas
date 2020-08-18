@@ -200,8 +200,7 @@
 
            
             <activity>
-
-                <draw-editor :imgbg="bgimgpdf.length ? bgimgpdf : 'aimg/test.png'"></draw-editor>
+                <p>{{ (bgimgpdf.length>1 ? bgimgpdf : '/aimg/test.png') }}</p>
 
             </activity>
         </scene> <!-- end scene -->

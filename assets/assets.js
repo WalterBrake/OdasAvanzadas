@@ -130,8 +130,7 @@ var app = new Vue({
         this.score = h ? h : 100
         ScenesBus.$on('scenePoints', this.scenePointsFn)
 
-        this.bgimgpdf = window.location.hash ? window.location.hash.replace('#img=', '') : 'error'
-        console.log
+        this.bgimgpdf = window.location.hash ? window.location.hash.replace('#img=', '') : ''
     }
 })
 
