@@ -16,6 +16,7 @@ var app = new Vue({
     el: '#app',
     data () {
         return {
+            bgimgpdf: '',
             $devmode: false,
             scenesCount: 0,
             score: 0,
@@ -128,6 +129,9 @@ var app = new Vue({
         var h = parseInt(window.location.hash ? window.location.hash.replace('#s', '') : 100)
         this.score = h ? h : 100
         ScenesBus.$on('scenePoints', this.scenePointsFn)
+
+        this.bgimgpdf = window.location.hash ? window.location.hash.replace('#img=', '') : 'error'
+        console.log
     }
 })
 

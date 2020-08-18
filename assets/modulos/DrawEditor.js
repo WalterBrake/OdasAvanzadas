@@ -88,7 +88,9 @@ Vue.component('DrawEditor', {
                 //_this.ctx = _this.canvas.getContext('2d')
                 
                 var background = new Image()
+                background.crossOrigin = 'anonymous'
                 background.src = _this.imgbg
+
                 background.onload = function () {
                     _this.ctx.drawImage(background, 0, 0)
                     document.getElementsByClassName('draw-editor')[0].classList.add('imgloaded')
@@ -116,9 +118,24 @@ Vue.component('DrawEditor', {
         },
         downloadCanvas () {
             var file = this.canvas.toDataURL("image/png")
+            /*
             this.canvas.toBlob(function(blob) {
                 saveAs(blob, "imagen.png")
             })
+            */
+           /*
+           let speedpart = speed ? speed : 30
+           var fw = setInterval(function () {
+                fwIt++
+                //app.particleAnimation({clientX:window.innerWidth/(Math.random()*4), clientY:window.innerHeight/(Math.random()*4)}, 30, null, null)
+                if(fwIt == speedpart) {
+                    clearInterval(fw)
+                }
+            }, 100)
+            */
+            //var endData = JSON.stringify(_this.finalData)
+            //window.top.postMessage(endData, "*")
+
             s_win.play()
         },
         cleanCanvas(){
