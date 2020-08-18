@@ -28,8 +28,8 @@ Vue.component('DrawEditor', {
         <div class="draw-editor">
             <canvas class="drawEditorCanvas " ref="canvas" id="drawEditorCanvas" @mousedown="mouseDown" @touchstart="mouseDown"></canvas>
             
-            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; '">
-                <div class="row">
+            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+(returnTextSize)+'px;'">
+                <div :class="'row ' + rowdirection">
                     <input ref="inputTextInput" v-model="inputText" :style="'color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " />
                     <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                 </div>
@@ -47,10 +47,7 @@ Vue.component('DrawEditor', {
                 </div>
                 <div class="buttons row wrap">
                     <button class="button" @click="cleanCanvas(this)">Limpiar</button>
-                    <button class="button" @click="downloadCanvas(this)">
-                        <template v-if="!saved">Finalizar</template>
-                        <template v-else>Guardar de nuevo</template>
-                    </button>
+                    <button class="button" @click="downloadCanvas(this)">Compartir</button>
                 </div>
             </div>
         </div>
@@ -60,6 +57,13 @@ Vue.component('DrawEditor', {
             if(this.currentBrushSize==10){ return 28 }
             if(this.currentBrushSize==6){ return 20 }
             if(this.currentBrushSize==2){ return 15 }
+        },
+        rowdirection() {
+            if(this.inputTextPointScreen.x > this.currentSize.width/2){
+                return 'invert'
+            } else {
+                return 'normal'
+            }
         },
     },
     methods: {
