@@ -18,7 +18,7 @@ Vue.component('DrawEditor', {
             realSize: {width:0, height: 0},
             currentSize: {width:0, height: 0},
             inputTextOn: false,
-            inputText: 'Texto',
+            inputText: '',
             inputTextPoint: {x:0, y:0},
             inputTextPointScreen: {x:0, y:0},
             saved: false,
@@ -28,9 +28,8 @@ Vue.component('DrawEditor', {
         <div class="draw-editor">
             <canvas class="drawEditorCanvas " ref="canvas" id="drawEditorCanvas" @mousedown="mouseDown" @touchstart="mouseDown"></canvas>
             
-            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+returnTextSize+'px;'">
+            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; '">
                 <div class="row">
-                    <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                     <input ref="inputTextInput" v-model="inputText" :style="'color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " />
                     <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                 </div>
