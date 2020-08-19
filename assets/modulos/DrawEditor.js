@@ -47,7 +47,7 @@ Vue.component('DrawEditor', {
                 </div>
                 <div class="buttons row wrap">
                     <button class="button" @click="cleanCanvas(this)">Limpiar</button>
-                    <button class="button" @click="downloadCanvas(this)">Finalizar</button>
+                    <button class="button finalizar" @click="downloadCanvas(this)">Finalizar</button>
                 </div>
             </div>
         </div>
