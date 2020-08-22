@@ -29,11 +29,13 @@ var app = new Vue({
                 oks: 0,
                 errors: 0,
                 answers: 0,
+                screen: []
             },
             scenePointsCounter: 0,
             temporals: [],
             temps: {},
             scoreByScenes: [],
+            screen: []
         }
     },
     watch: {
@@ -78,7 +80,7 @@ var app = new Vue({
             if($ev.answers){ this.finalData.answers += $ev.answers }
             if($ev.score){ this.finalData.score += $ev.score }
             if($ev.scoresum){ this.finalData.scoresum += $ev.scoresum }
-            
+            this.screencapture()
 
             this.changeSceneTransition()
             
@@ -107,6 +109,7 @@ var app = new Vue({
         },
         ended () {
             var _this = this
+            _this.finalData.screen = _this.screen
             var endData = JSON.stringify(_this.finalData)
             window.top.postMessage(endData, "*")
         },
@@ -122,6 +125,27 @@ var app = new Vue({
             if(this.scenesCount == this.scenePointsCounter) {
                 this.scoreInScene += this.decimalSum
             }
+        },
+        loadScreencap(){
+            var s = document.createElement("script")
+            s.type = "text/javascript"
+            s.src = "https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+            document.head.appendChild(s)
+        },
+        screencapture () {
+            /* screenshot */
+            if(document.getElementsByClassName('activity').length>0){
+            
+                var _this = this
+                domtoimage.toPng(document.body).then(function (dataUrl) {
+                    _this.screen.push(dataUrl)
+                    /*
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                    */
+                }).catch(function (error) { console.error('oops, something went wrong!', error); });
+            }
         }
     },
     mounted () {
@@ -131,6 +155,9 @@ var app = new Vue({
         ScenesBus.$on('scenePoints', this.scenePointsFn)
 
         this.bgimgpdf = window.location.hash ? window.location.hash.replace('#img=', '') : ''
+
+
+        this.loadScreencap()
     }
 })
 

@@ -124,7 +124,7 @@ Vue.component('DrawEditor', {
             */
         },
         downloadCanvas () {
-            var file = this.canvas.toDataURL("image/jpeg", 0.5)
+            var file = this.canvas.toDataURL("image/jpeg", 0.8)
 
             /*
             this.canvas.toBlob(function(blob) {
