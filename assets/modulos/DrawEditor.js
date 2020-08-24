@@ -8,7 +8,7 @@ Vue.component('DrawEditor', {
             ctx: null,
             canvas: null,
             ctx: null,
-            tools: ['brush', 'text'],
+            tools: ['brush', 'text'], //'move'
             currentTool: 'brush',
             colors: ['#5EB246', '#005093', '#EB8B2E', '#DB3E34', '#444', '#fff'],
             currentcolor: '#5EB246',
@@ -23,6 +23,7 @@ Vue.component('DrawEditor', {
             inputTextPointScreen: {x:0, y:0},
             saved: false,
             firstAction: false,
+            selectedShape: null
         }
     },
     template: `
@@ -199,9 +200,16 @@ Vue.component('DrawEditor', {
                         segments: true,
                         stroke: true,
                         fill: true,
-                        tolerance: 5
+                        tolerance: 50
                     })
                     if(hitResult && self.currentcolor=='#fff'){ if(hitResult.type=="stroke" || hitResult.type == "fill"){ hitResult.item.remove() } }
+
+
+                    /* mover */
+                    if(hitResult && self.currentTool == 'move' ){ console.log(hitResult.type)}
+                    if(hitResult && self.currentTool == 'move' ){ if(hitResult.type=="stroke" || hitResult.type == "fill"){ self.selectedShape = hitResult.item }  }
+
+
 
                     if(self.currentcolor!='#fff' && self.currentTool=='brush'){
                         // init path
@@ -225,6 +233,11 @@ Vue.component('DrawEditor', {
                 if(self.currentcolor!='#fff' && self.currentTool=='brush' ){
                     self.path.add(realPos)
                 }
+
+                if(hitResult && self.currentTool == 'move' ){ if(hitResult.type=="stroke" || hitResult.type == "fill"){ self.selectedShape = hitResult.item }  }
+                if(self.selectedShape){
+                    self.selectedShape.position = event.point
+                }
                 //app.particleAnimation(event.event, 1, 2000, 10, self.currentcolor)
 
             }
@@ -237,6 +250,10 @@ Vue.component('DrawEditor', {
                     self.path.add(realPos)
                     if(!this.firstAction) { this.firstAction = true}
                 }
+
+
+                self.selectedShape = null
+
             }
         },
         paperStart(bgimg){
