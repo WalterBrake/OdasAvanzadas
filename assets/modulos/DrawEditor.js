@@ -22,6 +22,7 @@ Vue.component('DrawEditor', {
             inputTextPoint: {x:0, y:0},
             inputTextPointScreen: {x:0, y:0},
             saved: false,
+            firstAction: false,
         }
     },
     template: `
@@ -47,7 +48,7 @@ Vue.component('DrawEditor', {
                 </div>
                 <div class="buttons row wrap">
                     <button class="button" @click="cleanCanvas(this)">Limpiar</button>
-                    <button class="button finalizar" @click="downloadCanvas(this)">Finalizar</button>
+                    <button class="button finalizar" @click="downloadCanvas(this)" v-if="firstAction">Finalizar</button>
                 </div>
             </div>
         </div>
@@ -183,7 +184,8 @@ Vue.component('DrawEditor', {
             txt.fontSize = this.returnTextSize
             txt.content = this.inputText
             this.inputTextOn = false
-            this.inputText = 'Texto'
+            this.inputText = ''
+            if(!this.firstAction) { this.firstAction = true}
         },
         mouseDown() {
             // in order to access functions in nested tool
@@ -233,6 +235,7 @@ Vue.component('DrawEditor', {
                 if(self.currentcolor!='#fff' && self.currentTool=='brush'){
                     self.path.simplify(10)
                     self.path.add(realPos)
+                    if(!this.firstAction) { this.firstAction = true}
                 }
             }
         },
