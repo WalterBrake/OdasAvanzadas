@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1,0,0,1,-0.242792,0.0949586)">
-        <circle cx="100.243" cy="99.905" r="95.731" style="fill:rgb(173,223,235);"/>
-    </g>
-    <g transform="matrix(0.848015,0.848015,-0.848015,0.848015,75.2224,-98.3464)">
-        <clipPath id="_clip1">
-            <path d="M131.557,-15.584L72.595,43.377L190.518,161.299L249.479,102.338L131.557,-15.584Z"/>
-        </clipPath>
-        <g clip-path="url(#_clip1)">
-            <rect x="78.088" y="48.87" width="106.938" height="106.938" style="fill:url(#_Linear2);stroke:black;stroke-width:3.34px;"/>
-        </g>
-    </g>
-    <defs>
-        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(53.4688,-53.4688,53.4688,53.4688,141.924,112.706)"><stop offset="0" style="stop-color:rgb(195,220,106);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(101,192,95);stop-opacity:1"/></linearGradient>
-    </defs>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientTransform="matrix(53.4688 -53.4688 53.4688 53.4688 141.924 112.706)" gradientUnits="userSpaceOnUse" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#c3dc6a"/><stop offset="1" stop-color="#65c05f"/></linearGradient><clipPath id="b"><path clip-rule="evenodd" d="m131.557-15.584-58.962 58.961 117.923 117.922 58.961-58.961z"/></clipPath><circle cx="100.000208" cy="99.999959" fill="#addfeb" r="95.731"/><g clip-path="url(#b)" transform="matrix(.848015 .848015 -.848015 .848015 75.2224 -98.3464)"><path d="m78.088 48.87h106.938v106.938h-106.938z" fill="url(#a)" stroke="#000" stroke-width="3.34"/></g></svg>

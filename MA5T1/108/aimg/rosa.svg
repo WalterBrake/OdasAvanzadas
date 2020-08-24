@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 296 237" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-15209.2,-8083.3)">
-        <g transform="matrix(4.16667,0,0,4.16667,13619.6,7175.19)">
-            <g transform="matrix(1,0,0,1,0,-272.769)">
-                <path d="M409.852,490.715L424.025,490.715L424.025,504.888L409.852,504.888L409.852,490.715ZM409.852,504.888L424.025,504.888L424.025,519.061L409.852,519.061L409.852,504.888ZM395.679,519.062L409.852,519.062L409.852,533.235L395.679,533.235L395.679,519.062ZM409.852,519.062L424.025,519.062L424.025,533.235L409.852,533.235L409.852,519.062ZM424.025,519.062L438.198,519.062L438.198,533.235L424.025,533.235L424.025,519.062ZM381.506,533.235L395.679,533.235L395.679,547.408L381.506,547.408L381.506,533.235ZM395.679,533.235L409.852,533.235L409.852,547.408L395.679,547.408L395.679,533.235ZM424.025,533.235L438.198,533.235L438.198,547.408L424.025,547.408L424.025,533.235ZM438.198,533.235L452.371,533.235L452.371,547.408L438.198,547.408L438.198,533.235Z" style="fill:rgb(251,190,167);fill-rule:nonzero;"/>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 296 237" xmlns="http://www.w3.org/2000/svg"><path d="m409.852 490.715h14.173v14.173h-14.173zm0 14.173h14.173v14.173h-14.173zm-14.173 14.174h14.173v14.173h-14.173zm14.173 0h14.173v14.173h-14.173zm14.173 0h14.173v14.173h-14.173zm-42.519 14.173h14.173v14.173h-14.173zm14.173 0h14.173v14.173h-14.173zm28.346 0h14.173v14.173h-14.173zm14.173 0h14.173v14.173h-14.173z" fill="#fbbea7" fill-rule="nonzero" transform="matrix(4.16667 0 0 4.16667 -1589.6 -2044.64840923)"/></svg>

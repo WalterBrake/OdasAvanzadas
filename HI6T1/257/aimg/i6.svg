@@ -1,80 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Mapa_fondo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 479.06 354.33" style="enable-background:new 0 0 479.06 354.33;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{opacity:0.08;}
-	.st2{fill:#698B99;}
-	.st3{fill:#D2CDB4;stroke:#252723;stroke-width:0.75;}
-	.st4{fill:#D2CDB4;}
-	.st5{fill:#252723;}
-	.st6{fill:url(#SVGID_2_);stroke:#252723;stroke-width:0.75;}
-	.st7{fill:none;stroke:#94999A;}
-	.st8{fill:none;stroke:#262824;stroke-width:1.2;stroke-miterlimit:10;}
-	.st9{fill:#BA6055;}
-	.st10{fill:#DDDE8E;}
-	.st11{fill:#FFFFFF;}
-	.st12{fill:#5A9CAF;}
-	.st13{fill:#F0E775;}
-	.st14{clip-path:url(#SVGID_4_);}
-	.st15{fill:#EED6BE;}
-	.st16{fill:#E2B892;}
-	.st17{fill:#2C4E62;}
-	.st18{fill:#1A384C;}
-	.st19{fill:#F1BD49;}
-	.st20{fill:#B86C70;}
-	.st21{fill:#C26B39;}
-	.st22{fill:#993C39;}
-	.st23{fill:#A9ADAF;}
-	.st24{fill:#B16B39;}
-	.st25{fill:#3B2E20;}
-	.st26{fill:#4D3D38;}
-	.st27{fill:none;stroke:#FFFFFF;stroke-width:6.7902;stroke-miterlimit:10;}
-	.st28{fill:#A0B4FF;}
-	.st29{clip-path:url(#SVGID_6_);}
-	.st30{fill:#444845;}
-	.st31{fill:#313A4D;}
-	.st32{fill:#253544;}
-	.st33{fill:#921B31;}
-	.st34{fill:#D48B97;}
-	.st35{fill:#D99DC2;}
-	.st36{clip-path:url(#SVGID_8_);}
-	.st37{fill:#444863;}
-	.st38{fill:#222E50;}
-	.st39{fill:#98A237;}
-	.st40{fill:#798621;}
-	.st41{fill:#778C12;}
-	.st42{fill:#91A628;}
-	.st43{fill:#60B9FF;}
-	.st44{fill:#60363C;}
-	.st45{fill:#7A4A4D;}
-	.st46{fill:#D1E4FF;}
-	.st47{fill:#DFCB64;}
-	.st48{fill:#8EB2D3;}
-	.st49{fill:#AEC3FF;}
-	.st50{fill:#ADD8FC;}
-	.st51{fill:#E38A7A;}
-	.st52{fill:#6AB78F;}
-	.st53{fill:#D0FFAF;stroke:#252723;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st54{fill:#BCEA9E;stroke:#252723;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st55{font-family:'MyriadPro-Black';}
-	.st56{font-size:32.2493px;}
-	.st57{letter-spacing:1.65;}
-	.st58{fill:#DCA549;}
-	.st59{fill:#1B2936;}
-	.st60{fill:#425B77;}
-	.st61{fill:#314459;}
-	.st62{fill:#2F4257;}
-	.st63{fill:#101312;}
-</style>
-<g>
-	<g>
-		<circle class="st52" cx="252.35" cy="176.72" r="120.4"/>
-	</g>
-	<g>
-		
-			<image style="overflow:visible;opacity:0.75;" width="1130" height="1130" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABG0AAARtCAYAAADvbrjHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
+<svg enable-background="new 0 0 479.06 354.33" viewBox="0 0 479.06 354.33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="252.35" cy="176.72" fill="#6ab78f" r="120.4"/><image height="1130" opacity=".75" overflow="visible" transform="matrix(.24 0 0 .24 116.9022 41.1448)" width="1130" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABG0AAARtCAYAAADvbrjHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAABWJhJREFUeNrsvW1yMsuyZukgXbMa
 SY3mmtUcemB3DmXWo6mR9I9X0OecPrrNZmeEP/4RmQmsZSYTAoQEQknEwv1xMwAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1623,16 +1547,4 @@ XJ4DZc4V9u2sK/4fj0/4vcgZAAAAFlcAAABvxwky5x3WAF2P+VVFw2mPGzkDAADAgg0AAADsEkKH
 9cJxXEaGIGYAAACuB4swAACAF+KCQod1xv/PSwgPxAwAAMBrgbQBAAB4M15M7EATCBkAAID3gwUd
 AADAB4LYeS0QMgAAAJ8JizUAAABwQfL0goQBAAAABRZfAAAAsJx3kz5IFwAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAC4BP+fAAMABUV72xgDz7MAAAAASUVORK5CYII=" transform="matrix(0.24 0 0 0.24 116.9022 41.1448)">
-		</image>
-		<g>
-			<circle class="st27" cx="252.35" cy="176.72" r="120.4"/>
-		</g>
-	</g>
-	<polygon class="st53" points="172.74,172.51 331.96,172.51 324.38,247.9 183.1,247.9 	"/>
-	<polygon class="st54" points="344.52,186.4 160.18,186.4 157.18,155.87 347.52,155.87 	"/>
-	<polygon class="st53" points="157.18,155.87 192.43,121.86 316.48,121.86 347.52,155.87 	"/>
-	<rect x="212.52" y="138.62" class="st54" width="76.52" height="3.42"/>
-	<text transform="matrix(1.2093 0 0 1 221.0219 223.826)" class="st55 st56 st57">INE</text>
-</g>
-</svg>
+AAAAAAAAAAAAAAC4BP+fAAMABUV72xgDz7MAAAAASUVORK5CYII="/><g stroke-miterlimit="10"><circle cx="252.35" cy="176.72" fill="none" r="120.4" stroke="#fff" stroke-width="6.7902"/><path d="m172.74 172.51h159.22l-7.58 75.39h-141.28z" fill="#d0ffaf" stroke="#252723" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m344.52 186.4h-184.34l-3-30.53h190.34z" fill="#bcea9e" stroke="#252723" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m157.18 155.87 35.25-34.01h124.05l31.04 34.01z" fill="#d0ffaf" stroke="#252723" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m212.52 138.62h76.52v3.42h-76.52z" fill="#bcea9e" stroke="#252723" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></g><text font-family="'MyriadPro-Black'" font-size="32.2493" letter-spacing="1.65" transform="matrix(1.2093 0 0 1 221.0219 223.826)">INE</text></svg>

@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1,0,0,1,-0.242792,0.0949586)">
-        <circle cx="100.243" cy="99.905" r="95.731" style="fill:rgb(173,223,235);"/>
-    </g>
-    <g transform="matrix(1,0,0,2.11815,0,-99.2304)">
-        <clipPath id="_clip1">
-            <rect x="100" y="46.848" width="100" height="94.422"/>
-        </clipPath>
-        <g clip-path="url(#_clip1)">
-            <path d="M100,76.876C152.835,76.876 195.731,80.091 195.731,92.905C195.731,105.718 152.835,123.31 100,123.31C47.165,123.31 4.269,105.718 4.269,92.905C4.269,80.091 47.165,76.876 100,76.876Z" style="fill:url(#_Linear2);stroke:black;stroke-width:2.42px;"/>
-        </g>
-    </g>
-    <defs>
-        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-95.7312,5.53486e-15,-1.17237e-14,-45.1956,195.731,94.0585)"><stop offset="0" style="stop-color:rgb(239,141,173);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(244,171,191);stop-opacity:1"/></linearGradient>
-    </defs>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientTransform="matrix(-95.7312 0 0 -45.1956 195.731 94.0585)" gradientUnits="userSpaceOnUse" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#ef8dad"/><stop offset="1" stop-color="#f4abbf"/></linearGradient><clipPath id="b"><path clip-rule="evenodd" d="m100 46.848h100v94.422h-100z"/></clipPath><circle cx="100.000208" cy="99.999959" fill="#addfeb" r="95.731"/><g clip-path="url(#b)" transform="matrix(1 0 0 2.11815 0 -99.2304)"><path d="m100 76.876c52.835 0 95.731 3.215 95.731 16.029 0 12.813-42.896 30.405-95.731 30.405s-95.731-17.592-95.731-30.405c0-12.814 42.896-16.029 95.731-16.029z" fill="url(#a)" stroke="#000" stroke-width="2.42"/></g></svg>

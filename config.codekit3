@@ -23,6 +23,13 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/Archivo.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Archivo.zip",
+		"oF": 0
+		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1929,7 +1936,7 @@
 		"oAP": "\/CN3T1\/211\/aimg\/oso.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN3T1\/211\/aimg\/plantas.png": {
@@ -1938,8 +1945,8 @@
 		"oA": 0,
 		"oAP": "\/CN3T1\/211\/aimg\/plantas.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1951,7 +1958,7 @@
 		"oAP": "\/CN3T1\/211\/aimg\/rana.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN3T1\/211\/aimg\/tigre.jpg": {
@@ -1962,7 +1969,7 @@
 		"oAP": "\/CN3T1\/211\/aimg\/tigre.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN3T1\/211\/aimg\/todo.svg": {
@@ -1983,7 +1990,7 @@
 		"oAP": "\/CN3T1\/211\/aimg\/vaca.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN3T1\/211\/asound\/instruccion.mp3": {
@@ -2366,7 +2373,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i2.jpg": {
@@ -2377,7 +2384,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i3.jpg": {
@@ -2388,7 +2395,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i4.jpg": {
@@ -2399,7 +2406,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i5.jpg": {
@@ -2410,7 +2417,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i6.jpg": {
@@ -2421,7 +2428,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i6.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i7.jpg": {
@@ -2432,7 +2439,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i7.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i8.jpg": {
@@ -2443,7 +2450,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i8.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/aimg\/i9.jpg": {
@@ -2454,7 +2461,7 @@
 		"oAP": "\/CN5T1\/168\/aimg\/i9.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/CN5T1\/168\/asound\/i1.mp3": {
@@ -3926,8 +3933,8 @@
 		"oA": 0,
 		"oAP": "\/ES1T1\/13\/aimg\/fondo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -5199,8 +5206,8 @@
 		"oA": 0,
 		"oAP": "\/ES2T1\/53\/aimg\/i2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -5220,8 +5227,8 @@
 		"oA": 0,
 		"oAP": "\/ES2T1\/53\/aimg\/i3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -5261,8 +5268,8 @@
 		"oA": 0,
 		"oAP": "\/ES2T1\/53\/aimg\/i4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -5323,8 +5330,8 @@
 		"oA": 0,
 		"oAP": "\/ES2T1\/53\/aimg\/i6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8428,8 +8435,8 @@
 		"oA": 0,
 		"oAP": "\/HI5T1\/262\/aimg\/l.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8439,8 +8446,8 @@
 		"oA": 0,
 		"oAP": "\/HI5T1\/262\/aimg\/r.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8990,8 +8997,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/circulo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9012,8 +9019,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9023,8 +9030,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i10.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9065,8 +9072,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9086,8 +9093,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i13.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9107,8 +9114,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i14.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9128,8 +9135,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i15.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9149,8 +9156,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i16.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9170,8 +9177,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9181,8 +9188,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9192,8 +9199,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9203,8 +9210,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9214,8 +9221,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9225,8 +9232,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9236,8 +9243,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9247,8 +9254,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/116\/aimg\/i9.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9345,8 +9352,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/123\/aimg\/p1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9356,8 +9363,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/123\/aimg\/p2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9367,8 +9374,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/123\/aimg\/p3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9378,8 +9385,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/123\/aimg\/p4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9389,8 +9396,8 @@
 		"oA": 0,
 		"oAP": "\/MA1T1\/123\/aimg\/p5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
