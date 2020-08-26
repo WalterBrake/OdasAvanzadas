@@ -77,6 +77,7 @@
             max-width: 180%;
             min-width: 140%;
         }
+        .miel{max-height: 70px;}
         .uva{
             min-width: 200% !important;
         }
@@ -93,7 +94,7 @@
             min-width: 200% !important;
         }
         .naranja{
-            min-width: 180% !important;
+            min-width: 160% !important;
         }
         .clickable img{
             pointer-events: none;
@@ -162,20 +163,20 @@
                 
                 <div class="cocina">
                     <div class="row wrap mr-auto">
-                        <clickable v-for="i in _.shuffle([
+                        <clickable v-for="i in [
+                            {n:'miel', d: 1},
+                            {n:'sandia', d: 0},
                             {n:'platano', d: 1},
-                            {n:'uva', d: 1},
-                            {n:'uva', d: 1},
-                            {n:'uva', d: 1},
-                            {n:'uva', d: 1},
+                            {n:'pina', d: 0},
                             {n:'naranja', d: 1},
                             {n:'fresa', d: 1},
                             {n:'fresa', d: 1},
-                            {n:'miel', d: 1},
-                            {n:'pina', d: 0},
-                            {n:'sandia', d: 0},
                             {n:'durazno', d: 0},
-                        ])" simple-ok :isok="i.d"><img :src="'aimg/'+i.n+'.svg'" :class="i.n"></clickable>
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                            {n:'uva', d: 1},
+                        ]" simple-ok :isok="i.d"><img :src="'aimg/'+i.n+'.svg'" :class="i.n"></clickable>
                     </div>
                 </div>
                 
