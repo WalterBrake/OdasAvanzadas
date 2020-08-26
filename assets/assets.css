@@ -208,6 +208,11 @@ input[type=number] {
   transform: scale(0.8);
   opacity: 0;
 }
+.audiotext .audiotextTxt .br {
+  display: block;
+  width: 100%;
+  height: 0;
+}
 .scorebox {
   display: flex;
   justify-content: center;

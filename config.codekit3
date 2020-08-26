@@ -23,13 +23,6 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
-	"\/Archivo.zip": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Archivo.zip",
-		"oF": 0
-		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4279,11 +4272,71 @@
 		"oAP": "\/ES1T1\/14\/index.html",
 		"oF": 0
 		},
+	"\/ES1T1\/16\/aimg\/_basket.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/_basket.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/ES1T1\/16\/aimg\/basket.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/ES1T1\/16\/aimg\/basket.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/basket5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/basket5.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -4350,6 +4403,16 @@
 		"prP": 0
 		},
 	"\/ES1T1\/16\/aimg\/naranja.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/naranjas.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/naranjas.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
@@ -10305,6 +10368,16 @@
 		"prP": 0
 		},
 	"\/MA2T1\/145\/aimg\/il.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA2T1\/145\/aimg\/il_2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA2T1\/145\/aimg\/il_2.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,

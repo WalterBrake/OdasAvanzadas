@@ -29,6 +29,7 @@
         .okDrag{
             width: 40px;
             height: 40px;
+            display: none;
         }
         .okDrag img {transform: scale(.5); }
         .inst {
@@ -112,6 +113,7 @@
         }
 
 
+
         @media (max-width: 1024px) {
             .cocina .row {
                 bottom: 28%;
@@ -155,7 +157,7 @@
             
             <activity>
                 <div class="row w100 mb-1 inst">
-                    <audiotext :autoplay="false" text="<strong>Necesitamos:</strong> 1 plátano, 4 uvas, 1 naranja grande, 2 fresas, Miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+                    <audiotext :autoplay="false" text="<strong>Necesitamos:</strong> <br> 1 plátano, <br> 4 uvas, <br> 1 naranja grande, <br> 2 fresas, <br> miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
                 </div>
                 
                 <div class="cocina">
@@ -209,7 +211,12 @@
 
                 <div class="row mt-auto ">
                     <div class="basket" data="m" droptimes="multiple">
-                        <img src="aimg/basket.svg">
+                        <img src="aimg/basket.svg" v-if="temps==0">
+                        <img src="aimg/basket1.svg" v-if="temps==1">
+                        <img src="aimg/basket2.svg" v-if="temps==2">
+                        <img src="aimg/basket3.svg" v-if="temps==3">
+                        <img src="aimg/basket4.svg" v-if="temps==4">
+                        <img src="aimg/basket5.svg" v-if="temps==5">
                     </div>
                 </div>
                 

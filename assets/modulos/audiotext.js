@@ -17,7 +17,7 @@ Vue.component('audiotext', {
             </div>
             <div class="audiotextTxt">
                 <template v-for="txt in textrender" >
-                    <div :class="txt.on ? 'on' : 'off' " v-html="txt.txt"></div>&nbsp;
+                    <div :class="(txt.on ? 'on' : 'off') + ' ' + (txt.txt=='<br>' ? 'br' : '') " v-html="txt.txt"></div>&nbsp;
                 </template>
             </div>
         </div>
