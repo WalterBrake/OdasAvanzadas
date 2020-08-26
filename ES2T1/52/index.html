@@ -18,30 +18,31 @@
 
        .piece{
            width: 100%;
-           height: 60px;
+           height: 50px;
            margin: 10px 0;
        }
        .piece img {
            height: 100%;
-           margin-left: -10px;
+           max-width: 49%;
        }
+       .piece img:nth-child(2){margin-left:-18px;}
        .pieceind{
            width: 50%;
            height: 60px;
        }
        .dropzone{
            height: 60px;
-           min-width: 40%;
+           width: 100%;
            
            text-align: right;
            border-radius: 20px;
            background: linear-gradient(to right, #fff, rgba(0,0,0,0));
        }
        .drags{
-           width: 30%;
+           width: 60%;
        }
        .drops {
-           width: 70%;
+           width: 40%;
        }
 
        @media (max-width: 680px){
@@ -72,7 +73,11 @@
                             {name: 'puntofinal'},
                             {name: 'coma'},
                         ]">
-                            <drag dropzone=".dropzone" :data="i.name"  :dragsound="'asound/a'+i.name+'.mp3'" stay-if-ok append-to-dropzone><img :src="'aimg/a'+i.name+'.svg'"></drag>
+                        <div class="piece row">
+                            <div class="pieceind dropzone" :data="i.name" droptimes="untilok" :oksound="'asound/a'+i.name+'.mp3'"><img :src="'aimg/a'+i.name+'.svg'"></div>
+                            <!--<div class="dropzone" :data="i.name" droptimes="untilok" :oksound="'asound/a'+i.name+'.mp3'"></div>-->
+
+                        </div>
                         </template>
                     </div>
                     <div class="drops">
@@ -84,10 +89,8 @@
                             {name: 'admiracion'},
                             {name: 'punto'},
                         ]">
-                            <div class="piece row">
-                                <div class="dropzone" :data="i.name" droptimes="untilok" :oksound="'asound/b'+i.name+'.mp3'"></div>
-                                <div class="pieceind"><img :src="'aimg/b'+i.name+'.svg'"></div>
-                            </div>
+                        <drag dropzone=".dropzone" :data="i.name"  :dragsound="'asound/b'+i.name+'.mp3'" stay-if-ok append-to-dropzone><img :src="'aimg/b'+i.name+'.svg'"></drag>
+
                         </template>
                     </div>
                </div>
