@@ -147,6 +147,7 @@ Vue.component('drag', {
             
             if(!_this.dropzoneCanBeDropped(dropzone)){
                 _this.backToInitPos()
+                s_error.play()
                 return false
             } else {
                 dropzone.classList.add('dropzoneused')
