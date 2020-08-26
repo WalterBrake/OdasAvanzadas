@@ -70,6 +70,36 @@
             text-align: center;
         }
 
+        
+        strong.num {
+            font-family: 'barnacle_boyregular';
+            font-size: 1.4rem;
+            width: 30px;
+            height: 30px;
+            background: #7DD5F7;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+        }
+        .nota strong.num {
+            background: #5EB247;
+            display: inline-block;
+            border: 2px solid #FCF4CE;
+            box-shadow: 2px 2px 0 #FCF4CE;
+        }
+        .box {
+            position: relative;
+        }
+        .box strong.num {
+            font-weight: normal;
+            position: absolute;
+            left: -12px;
+            top: -18px;
+            border: 2px solid var(--sec);
+            box-shadow: 2px 2px 0 var(--sec);
+        }
+
+
         @media (max-width:680px){
         }
     </style>
@@ -86,36 +116,37 @@
                 <div class="info w100 mb-auto"><h1>Desecho lo que mi cuerpo no necesita</h1></div>
                 <div class="row nota mb-auto">
                     <p>
+                        <strong class="num">1.</strong>
                         <strong>Te cuento que...</strong> la función del sistema excretor es eliminar las sustancias de desecho de nuestro organismo. Está estrechamente relacionado con el aparato digestivo porque el intestino grueso es el que acumula los desechos en forma de heces para ser excretados por el ano.
                     </p>
                 </div>
                 <div class="row w100">
                     <div class="w30">
-                        <div class="box animate__animated animate__flipInY animate__delay-2s">
+                        <div class="box animate__animated animate__flipInY animate__delay-2s"><strong class="num">3.</strong>
                             <div class="txt">El aparato circulatorio lleva los nutrimentos procesados a diferentes órganos.</div>
                         </div>
                         <div class="box animate__animated animate__flipInY animate__delay-3s">
-                            <div class="img"><img src="img/corazon.svg" class="w100 animate__animated animate__heartBeat animate__infinite"></div>
+                            <div class="img"><img src="img/corazon.svg" class="w100 animate__animated animate__heartBeat animate__infinite"></div> <strong class="num">4.</strong>
                             <div class="txt">Está formado por el corazón, las venas y las arterias.</div>
                         </div>
                         <div class="box animate__animated animate__flipInY animate__delay-4s">
-                            <div class="img"><img src="img/sistema.svg" class="w100 animate__animated animate__rubberBand animate__slower animate__infinite"></div>
-                            <div class="txt">El aparato digestivo absorbe  y procesa los nutrientes de los alimentos.</div>
+                            <div class="img"><img src="img/sistema.svg" class="w100 animate__animated animate__rubberBand animate__slower animate__infinite"></div> <strong class="num">6.</strong>
+                            <div class="txt">El aparato excretor elimina las sustancias de desecho de nuestro organismo.</div>
                         </div>
                     </div>
                     <div class="cuerpo w30">
                         <img src="img/cuerpo.svg" class="w70 animate__animated animate__bounceIn animate__delay-1s">
-                        <div class="box animate__animated animate__flipInY animate__delay-4s">
+                        <div class="box animate__animated animate__flipInY animate__delay-4s"> <strong class="num">7.</strong>
                             <div class="txt">Está relacionado con el aparato  digestivo y está formado por el aparato urinario, los pulmones y la piel.</div>
                         </div>
                     </div>
                     <div class="w30">
                         <div class="box animate__animated animate__flipInY animate__delay-2s">
-                            <div class="img"><img src="img/estomago.svg" class="w100 animate__animated animate__pulse animate__slower animate__infinite"></div>
+                            <div class="img"><img src="img/estomago.svg" class="w100 animate__animated animate__pulse animate__slower animate__infinite"></div><strong class="num">2.</strong>
                             <div class="txt">El aparato digestivo absorbe  y procesa los nutrientes de los alimentos.</div>
                         </div>
                         <div class="box animate__animated animate__flipInY animate__delay-3s">
-                            <div class="img"><img src="img/intestinos.svg" class="w100 animate__animated animate__headShake animate__slower animate__infinite"></div>
+                            <div class="img"><img src="img/intestinos.svg" class="w100 animate__animated animate__headShake animate__slower animate__infinite"></div> <strong class="num">5.</strong>
                             <div class="txt">En el intestino grueso se acumulan los desechos en forma de heces.</div>
                         </div>
                     </div>
