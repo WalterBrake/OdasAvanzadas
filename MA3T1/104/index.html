@@ -90,28 +90,28 @@
                         <p>Diferentes números y el mismo resultado</p>
                         <div class="cell"><div class="number small c1">9x5</div><div class="dropzone green" droptimes="untilok" data=""><div class="number small c1">3x15</div></div></div>
                         <div class="cell" v-for="i in [
-                        { val: '2x15', tx:'6x5' },
+                        { val: '6x5', tx:'6x5' },
                         { val: '14x2', tx:'7x4' },
                         { val: '9x2', tx:'3x6' },
                         { val: '10x4', tx:'8x5' },
-                        { val: '10x3', tx:'6x5' },
+                        { val: '6x5', tx:'6x5' },
                         ]"><div class="number small c1">{{i.tx}}</div><div class="dropzone green" droptimes="untilok" :data="i.val"></div></div>
         
                     </div>
                     <div class="opciones">
                         <drag v-for="i in [
-                        { val: '2x15' },
+                        { val: '2x15', val2: '6x5' },
                         { val: '9x2' },
                         { val: '7x6' },
-                        { val: '10x3' },
+                        { val: '10x3', val2:'6x5' },
                         { val: '10x4' },
                         { val: '3x2' },
                         { val: '9x10' },
-                        { val: '2x10' },
-                        { val: '4x5' },
+                        { val: '2x10', val2:'is20' },
+                        { val: '4x5', val2: 'is20' },
                         { val: '14x2' },
                             ]"
-                         dropzone=".dropzone" stay-if-ok append-to-dropzone :data="i.val" ><div class="number small c4">{{i.val}}</div></drag>
+                         dropzone=".dropzone" stay-if-ok append-to-dropzone :data="i.val2 ? i.val2 : i.val" dropzone-ok-class="okDrop" ><div class="number small c4">{{i.val}}</div></drag>
                     </div>
                     <div class="col blue">
                         <p>Mismos números en diferente orden y el mismo resultado</p>
@@ -120,8 +120,8 @@
                         { val: '9x10', tx:'10x9' },
                         { val: '3x2', tx:'2x3' },
                         { val: '7x6', tx:'6x7' },
-                        { val: '4x5', tx:'5x4' },
-                        { val: '2x10', tx:'10x2' },
+                        { val: 'is20', tx:'5x4' },
+                        { val: 'is20', tx:'10x2' },
                         ]"><div class="dropzone blue" droptimes="untilok" :data="i.val"></div><div class="number small c2">{{i.tx}}</div></div>
 
                     </div>
