@@ -17,7 +17,7 @@
         }
         .recuerda .audiotext strong {color:#F14A5E;}
         .nextbtn{ font-size: 1.8rem; margin: 20px; }
-        .pregunta{ font-size: 1.6rem; }
+        .pregunta{ font-size: 1.2rem; }
         .click{
             padding: 10px;
             text-align: center;
@@ -28,10 +28,12 @@
             width: auto; height: auto;
             background: #fff;
             border-radius: 20px;
-            padding: 10px;
+            padding: 10px 2px;
         }
         .audiotextBtn{width: 32px; margin: 0 auto;}
+        .imags img{max-width: 40px; min-width: 30px; }
         @media (max-width:680px){
+            .imags img{max-width: 30px; min-width: 20px; }
         }
     </style>
     </head>
@@ -64,17 +66,19 @@
                 <div class="row  w100 pregunta">
                     <audiotext audio="asound/instruccion2.mp3" text="La maestra Ana tiene 24 lápices de colores y quiere meter 4 lápices por caja, ¿cuántas cajas va a necesitar?" :autoplay="true"></audiotext>
                 </div>
-                <div class="row wrap w100 mt-1">
+                <div class="row wrap w100">
                     <template v-for="i in [
-                    ['6cajas', '6 cajas', true],
-                    ['5cajas', '5 cajas', false],
-                    ['7cajas', '7 cajas', false],
-                    ['9cajas', '9 cajas', false],
+                    ['6cajas', '6 cajas', true, 6],
+                    ['5cajas', '5 cajas', false, 5],
+                    ['7cajas', '7 cajas', false, 7],
+                    ['9cajas', '9 cajas', false, 9],
                     ]">
                         <div class="click">
                             <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
-                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
-                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable :isok="i[2]" simple-ok block-if-error>
+                                <div class="number small c1">{{i[1]}}</div>
+                                <div class="imags row"><div class="col"><img v-for="i in i[3]" src="aimg/caja.svg" class="img-fluid"></div></div>
+                            </clickable>
                         </div>
                     </template>
                 </div>
@@ -89,17 +93,19 @@
                 <div class="row w100 pregunta">
                     <audiotext audio="asound/instruccion3.mp3" text="La maestra Ana tiene 20 borradores y tiene 4 cajas para organizarlos, ¿cuántos borradores habrán en cada caja?" :autoplay="true"></audiotext>
                 </div>
-                <div class="row wrap w100  mt-1">
+                <div class="row wrap w100">
                     <template v-for="i in [
-                    ['6borradores', '6 borradores', false],
-                    ['8borradores', '8 borradores', false],
-                    ['5borradores', '5 borradores', true],
-                    ['4borradores', '4 borradores', false],
+                    ['6borradores', '6 borradores', false, 6],
+                    ['8borradores', '8 borradores', false, 8],
+                    ['5borradores', '5 borradores', true, 5],
+                    ['4borradores', '4 borradores', false, 4],
                     ]">
                         <div class="click">
                             <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
-                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
-                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable :isok="i[2]" simple-ok block-if-error>
+                                <div class="number small c1">{{i[1]}}</div>
+                                <div class="imags row"><div class="col"><img v-for="i in i[3]" src="aimg/borrador.svg" class="img-fluid"></div></div>
+                            </clickable>
                         </div>
                     </template>
                 </div>
@@ -114,17 +120,19 @@
                 <div class="row w100 pregunta">
                     <audiotext audio="asound/instruccion4.mp3" text="La maestra Ana tiene 12 libros, y quiere meter 4 libros por caja, ¿cuántas cajas va a necesitar?" :autoplay="true"></audiotext>
                 </div>
-                <div class="row wrap w100  mt-1">
+                <div class="row wrap w100 ">
                     <template v-for="i in [
-                    ['1cajas', '1 caja', false],
-                    ['5cajas', '5 cajas', false],
-                    ['4cajas', '4 cajas', false],
-                    ['3cajas', '3 cajas', true],
+                    ['1cajas', '1 caja', false, 1],
+                    ['5cajas', '5 cajas', false, 5],
+                    ['4cajas', '4 cajas', false, 4],
+                    ['3cajas', '3 cajas', true, 3],
                     ]">
                         <div class="click">
                             <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
-                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
-                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable :isok="i[2]" simple-ok block-if-error>
+                                <div class="number small c1">{{i[1]}}</div>
+                                <div class="imags row"><div class="col"><img v-for="i in i[3]" src="aimg/cajalibros.svg" class="img-fluid"></div></div>
+                            </clickable>
                         </div>
                     </template>
                 </div>
@@ -139,17 +147,19 @@
                 <div class="row w100 pregunta">
                     <audiotext audio="asound/instruccion5.mp3" text="La maestra Ana tiene 18 cojines para leer y tiene 2 cajas para organizarlos, ¿cuántos paquetes de cojines habrán en cada caja?" :autoplay="true"></audiotext>
                 </div>
-                <div class="row wrap w100  mt-1">
+                <div class="row wrap w100">
                     <template v-for="i in [
-                    ['9cojines', '9 cojines', true],
-                    ['12cojines', '12 cojines', false],
-                    ['4cojines', '4 cojines', false],
-                    ['8cojines', '8 cojines', false],
+                    ['9cojines', '9 cojines', true, 9],
+                    ['12cojines', '12 cojines', false, 12],
+                    ['4cojines', '4 cojines', false, 4],
+                    ['8cojines', '8 cojines', false, 8],
                     ]">
                         <div class="click">
                             <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
-                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
-                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable :isok="i[2]" simple-ok block-if-error>
+                                <div class="number small c1">{{i[1]}}</div>
+                                <div class="imags row"><div class="col"><img v-for="i in i[3]" src="aimg/cojinazul.svg" class="img-fluid"></div></div>
+                            </clickable>
                         </div>
                     </template>
                 </div>
@@ -164,17 +174,19 @@
                 <div class="row w100 pregunta">
                     <audiotext audio="asound/instruccion6.mp3" text="La maestra Ana tiene 6 paquetes de hojas de colores y tiene 3 cajas para organizarlos, ¿cuántos paquetes de hojas habrán en cada caja?" :autoplay="true"></audiotext>
                 </div>
-                <div class="row wrap w100  mt-1">
+                <div class="row wrap w100 ">
                     <template v-for="i in [
-                    ['4paquetes', '4 paquetes de hojas', false],
-                    ['3paquetes', '3 paquetes de hojas', false],
-                    ['2paquetes', '2 paquetes de hojas', true],
-                    ['6paquetes', '6 paquetes de hojas', false],
+                    ['4paquetes', '4 paquetes de hojas', false, 4],
+                    ['3paquetes', '3 paquetes de hojas', false, 3],
+                    ['2paquetes', '2 paquetes de hojas', true, 2],
+                    ['6paquetes', '6 paquetes de hojas', false, 6],
                     ]">
                         <div class="click">
                             <dialogaudio :audio="'asound/'+i[0]+'.mp3'" ></dialogaudio>
-                            <clickable v-if="i[2]" :isok="true" v-model="temporals[0]"><div class="number small c1">{{i[1]}}</div></clickable>
-                            <clickable v-else :isok="false" block-if-error><div class="number small c1">{{i[1]}}</div></clickable>
+                            <clickable :isok="i[2]" simple-ok block-if-error>
+                                <div class="number small c1">{{i[1]}}</div>
+                                <div class="imags row"><div class="col"><img v-for="i in i[3]" src="aimg/hojasrojo.svg" class="img-fluid"></div></div>
+                            </clickable>
                         </div>
                     </template>
                 </div>
