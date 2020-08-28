@@ -218,29 +218,30 @@
 
             <info type="input" title="Identifico cuerpos geométricos" text="Ahora, indica cuántas figuras geométricas de cada tipo, hay en el dibujo y cómo se llaman." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
-                        <div v-for="(i, index) in [
-                        {item:'trapecio', q: 1, n: 'Trapecio'},
-                        {item:'circulo', q: 3, n: 'Círculo' },
-                        {item:'rectangulo', q: 2, n: 'Rectángulo' },
-                        {item:'cuadrado', q: 3, n: 'Cuadrado' },
-                        {item:'triangulo', q: 1, n: 'Triángulo' },
-                        {item:'rombo', q: 1, n: 'Rombo' },
-                    ]"
-                         class="row w100 preguntas">
-                            <div class="img w10"><img :src="'aimg/'+i.item+'.svg'"></div>
-                            <inputable :isok="i.q" initclass="c1"><div class="number small c1">{{i.q}}</div></inputable>
-                            <div class="desplegable" @click="temps[i.item] = true" v-if="temps[i.item] == null"></div>
-                            <div class="clickables row" v-if="temps[i.item] != null" :class="temps[i.item]" >
-                                <template v-for="op in ['Rombo', 'Triángulo', 'Cuadrado', 'Círculo', 'Trapecio', 'Rectángulo']">
-                                    <clickable @wasclicked="temps[i.item]='ok'" v-if="op == i.n" :isok="op == i.n" simple-ok><div class="number small c1">{{op}}</div></clickable>
-                                    <clickable v-else :isok="op == i.n"><div class="number small c1">{{op}}</div></clickable>
-                                </template>
-                            </div>
-                        </div>
+                <div class="row w100">
+                    <img src="aimg/dibujofill.svg" class="w30 truckimg">
+                </div>
+                <div class="row w100 preguntas" v-for="(i, index) in [
+                    {item: 'rombo', c: 1, op: ['rombo', 'cuadrados', 'trapecio']},
+                    {item: 'triángulo', c: 1, op: ['rombo', 'trapecio', 'triángulo']},
+                    {item: 'cuadrados', c: 3, op: ['cuadrados', 'rombo', 'rectángulos']},
+                    {item: 'círculos', c: 3, op: ['círculos', '', 'óvalos', 'rombo']},
+                    {item: 'trapecio', c: 1, op: ['trapecio', 'rectángulo', 'cuadrados']},
+                    {item: 'rectángulos', c: 2, op: ['rectángulos', 'cuadrado', 'trapecios']},
+                ]">
+                    <div class="img w20"><img :src="'aimg/'+cleanstr(i.item)+'.svg'"></div>
+                    <div class="w30">
+                        <desplegar :key="index" :answer="i.c" show-ok :options="[1, 2, 3]">
+                            <template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template>
+                        </desplegar>
+                    </div>
+                    <desplegar :key="index+6" :answer="i.item" show-ok :options="_.shuffle(i.op)">
+                        <template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template>
+                    </desplegar>
+                </div>
 
 
-
-            </activity>
+        </activity>
         </scene> <!-- end scene -->
 
 
@@ -251,6 +252,8 @@
 
     </div>
     <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -262,6 +265,8 @@
     <script src="../../assets/modulos/fworks.js"></script>
     <!-- modulos -->
     <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/inputable.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
