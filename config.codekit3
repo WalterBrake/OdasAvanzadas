@@ -3354,6 +3354,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/CN6T1\/187\/aimg\/i13.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/i13.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/CN6T1\/187\/aimg\/i2.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -3453,6 +3463,52 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/info2.png": {
+		"ft": 32768,
+		"iS": 1124016,
+		"oA": 0,
+		"oAP": "\/CN6T1\/187\/aimg\/info2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T1\/187\/aimg\/info2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/info2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/kid.eps": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T1\/187\/aimg\/kid.eps",
+		"oF": 0
+		},
+	"\/CN6T1\/187\/aimg\/kid.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/CN6T1\/187\/aimg\/kid.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/CN6T1\/187\/aimg\/venasarterias.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/CN6T1\/187\/aimg\/venasarterias-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/CN6T1\/187\/asound\/instruccion.mp3": {
 		"cB": 0,

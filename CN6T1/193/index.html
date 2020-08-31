@@ -45,7 +45,7 @@
         }
 
         .drag {
-            width: auto;
+            width: 60%;
             height: auto;
         }
         .descnum {
@@ -65,6 +65,7 @@
             font-size: 0.7rem;
         }
 
+        img{ width: 100%;}
 
         @media (max-width:680px){
         }
@@ -83,7 +84,7 @@
             <activity>
                 <div class="row w100">
                     <div class="imgs w40 row wrap">
-                        <drag initclass="dragimg" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone><img :src="'aimg/'+i.val+'.svg'" class="w100"></drag>
+                        <drag initclass="dragimg" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone><img :src="'aimg/'+i.val+'.svg'" class="w100 img-fluid"></drag>
                     </div>
                     <div class="texts w60">
                         <div class="desc row w100" v-for="i in _.shuffle(temps)">

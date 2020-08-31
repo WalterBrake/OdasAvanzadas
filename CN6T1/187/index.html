@@ -95,6 +95,12 @@
             width: 32%;
             height: 18%;
         }
+        .heart1{
+            position: absolute;
+            right: 5%;
+            top: 21%;
+            width: 17%;
+        }
         .drop.okDrop {
             background: transparent;
         }
@@ -104,9 +110,43 @@
             margin: 10px;
         }
         .parts .drag img {
-            width: 100%;
-            max-width: 100px;
+            min-height: 60px;           
         }
+
+        .apheart {
+            position: relative;
+        }
+        .dropheart {
+            position: absolute;
+            width: 35%;
+            left: 34%;
+            top: 14%;
+        }
+        .dropheart img:nth-child(2) {
+            transition: all;
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            width: 18%;
+        }
+        .dragheart {
+            position: absolute;
+            top: 17%;
+            right: 6%;
+            width: 18%;
+        }
+        .dragheart .drag {
+            width: 100%;
+        }
+
+        .venasarterias{
+            position: absolute;
+            left: 34%; top:14%;
+            width: 35%;
+        }
+
+  
+
 
         @media (max-width:680px){
         }
@@ -130,17 +170,48 @@
                         <img src="aimg/info.svg" class="100">
                         <div class="drops">
                             <div class="drop" v-for="i in 12" :key="i" :data="i" droptimes="untilok"></div>
+                            <div class="heart1"><img src="aimg/i13.svg"></div>
                         </div>
                     </div>
                     <div class="w50 parts row wrap">
-                        <drag v-for="i in 12" :key="i" dropzone=".drop" dropzone-ok-class="okDrop" :data="i" append-to-dropzone><img :src="'aimg/i'+i+'.svg'"></drag>
+                        <drag :key="1" dropzone=".drop" dropzone-ok-class="okDrop" :data="1" append-to-dropzone @isok="temps++"><img :src="'aimg/i1.svg'"></drag>
+                        <drag :key="2" dropzone=".drop" dropzone-ok-class="okDrop" :data="2" append-to-dropzone @isok="temps++" v-if="temps>0"><img :src="'aimg/i2.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="3" dropzone=".drop" dropzone-ok-class="okDrop" :data="3" append-to-dropzone @isok="temps++" v-if="temps>1"><img :src="'aimg/i3.svg'"></drag>
+                        <drag :key="4" dropzone=".drop" dropzone-ok-class="okDrop" :data="4" append-to-dropzone @isok="temps++" v-if="temps>2"><img :src="'aimg/i4.svg'" style="max-width: 160px;"></drag>
+                        <drag :key="5" dropzone=".drop" dropzone-ok-class="okDrop" :data="5" append-to-dropzone @isok="temps++" v-if="temps>3"><img :src="'aimg/i5.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="6" dropzone=".drop" dropzone-ok-class="okDrop" :data="6" append-to-dropzone @isok="temps++" v-if="temps>4"><img :src="'aimg/i6.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="12" dropzone=".drop" dropzone-ok-class="okDrop" :data="12" append-to-dropzone @isok="temps++" v-if="temps>5"><img :src="'aimg/i12.svg'" ></drag>
+                        <drag :key="7" dropzone=".drop" dropzone-ok-class="okDrop" :data="7" append-to-dropzone @isok="temps++" v-if="temps>6"><img :src="'aimg/i7.svg'" style="max-width: 160px;"></drag>
+                        <drag :key="8" dropzone=".drop" dropzone-ok-class="okDrop" :data="8" append-to-dropzone @isok="temps++" v-if="temps>7"><img :src="'aimg/i8.svg'" style="max-width: 160px;"></drag>
+                        <drag :key="9" dropzone=".drop" dropzone-ok-class="okDrop" :data="9" append-to-dropzone @isok="temps++" v-if="temps>8"><img :src="'aimg/i9.svg'"></drag>
+                        <drag :key="10" dropzone=".drop" dropzone-ok-class="okDrop" :data="10" append-to-dropzone @isok="temps++" v-if="temps>9"><img :src="'aimg/i10.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="11" dropzone=".drop" dropzone-ok-class="okDrop" :data="11" append-to-dropzone @isok="temps++" v-if="temps>10"><img :src="'aimg/i11.svg'" style="max-width: 160px;"></drag>
+                    </div>
+                </div>
+            </activity>
+        </scene> <!-- end scene -->
+        <!-- ### scene -->
+        <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#BC3938">
+
+            <info type="dragdrop" title="Conozco el aparato circulatorio" text="Coloca el corazón en su lugar." textaudio="asound/instruccion3.mp3" :autoplay="true">
+                <audiotext audio="asound/instruccion4.mp3" text="Recuerda: con ejercicio y una sana alimentación, tendrás una buena circulación sanguínea." :autoplay="false" ref="in2"></audiotext>
+            </info>
+            <activity>
+                <div class="row">
+                    <div class="apheart w50 wm70">
+                        <img src="aimg/info2.png" class="w100">
+                        <div class="dropheart" data="heart" droptimes="untilok"><img src="aimg/kid.svg" class="w100"></div>
+                        <div class="venasarterias" v-if="temps == 20"><lottie-player src="aimg/venasarterias.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player></div>
+
+                        <div class="dragheart"><drag dropzone=".dropheart" data="heart" dropzone-ok-class="okDrop" append-to-dropzone @isok="temps = 20; $refs.in2.play()"><img src="aimg/i13.svg" class="w100 animate__animated animate__heartBeat animate__infinite"></drag></div>
                     </div>
                 </div>
             </activity>
         </scene> <!-- end scene -->
 
 
-        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+        <scene v-if="currentScene==3" :key="3" end-scene :final-data="finalData"></scene>
     
 
     
@@ -169,8 +240,9 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps = 0
         app.currentScene = 0
-        app.scenesCount = 1
+        app.scenesCount = 2
         app.$devmode = false
     </script>
 </body>

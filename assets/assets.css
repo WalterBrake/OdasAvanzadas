@@ -70,6 +70,9 @@ h2 {
   font-size: 0.9rem;
   font-weight: bold;
 }
+embed {
+  min-width: 20px;
+}
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -176,6 +179,7 @@ input[type=number] {
 .audiotext .audiotextBtn {
   margin: 4px;
   max-width: 40px;
+  width: 40px;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -325,6 +329,10 @@ input[type=number] {
   align-items: center;
   width: 120px;
   height: 120px;
+}
+.drag img {
+  width: 100% !important;
+  min-width: 60px;
 }
 embed {
   pointer-events: none;
