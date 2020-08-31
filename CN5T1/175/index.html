@@ -187,7 +187,7 @@
         <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="4" scene-color="#F460AB">
 
-            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca la definición correcta de las clasificaciones de los nutrimentos que se presentan a continuación.' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca la definición correcta de las clasificaciones de los nutrimentos que se presentan a continuación.' textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row wrap w100">
                     <div class="area area2">
@@ -214,7 +214,7 @@
                     </div>
                     <div class="dragop">
                         <dialogaudio audio="asound/ayudanamantener.mp3"></dialogaudio>
-                        <drag dropzone=".drop" data="vitaminas" append-to-dropzone  dropzone-ok-class="okdrop"><div>Ayudan a mantener un crecimiento y un desarollo saludable</div></drag>
+                        <drag dropzone=".drop" data="vitaminas" append-to-dropzone  dropzone-ok-class="okdrop"><div>Ayudan a mantener un crecimiento y un desarollo saludable.</div></drag>
                     </div>
                     <div class="dragop">
                         <dialogaudio audio="asound/aportanenergia.mp3"></dialogaudio>
@@ -233,7 +233,7 @@
         <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="20" scene-color="#F460AB">
 
-            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Coloca la definición correcta de las clasificaciones de los nutrimentos que se presentan a continuación.' textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Me alimento con una dieta correcta" text='Una vez que hayas colocado la definición de las clasificaciones de los nutrimentos, coloca los ejemplos de éstas en donde corresponda.' textaudio="asound/instruccion4.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row wrap w100">
                     <div class="area area2">
@@ -327,7 +327,7 @@
             {v: 'buen', t: 'buen'},
             {v: 'funcionamiento', t: 'funcionamiento.'},
         ]
-        app.currentScene = 0
+        app.currentScene = 4
         app.scenesCount = 4
         app.$devmode = false
     </script>
