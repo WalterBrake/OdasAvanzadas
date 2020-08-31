@@ -131,8 +131,8 @@
                     ¿En qué año se creó el Instituto Federal Electoral?</div>
                 <div class="row w100 wrap respuestas">
                     <clickable v-for="(i, index) in [
-                        {r: true, t: '1920'},
-                        {r: false, t: '1990'},
+                        {r: false, t: '1920'},
+                        {r: true, t: '1990'},
                         {r: false, t: '1989'},
                     ]" :key="index" initclass="w30" simple-ok :isok="i.r"><div>{{i.t}}</div></clickable>
                 </div>
