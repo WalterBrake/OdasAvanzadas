@@ -65,8 +65,12 @@
         <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#9DCE77">
 
-            <info type="seleccionar" title="Identifico diferentes triángulos" text="¡Hola!, hoy aprenderemos a diferenciar triángulos. Los triángulos son figuras planas con tres lados." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="seleccionar" title="Identifico diferentes triángulos" text="¡Hola!, hoy aprenderemos a diferenciar triángulos. Los triángulos son figuras planas con tres lados." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.i2.play(); temps=true">
+                <audiotext text="Y se pueden clasificar de acuerdo a sus lados." audio="asound/instruccion2.mp3" :autoplay="false" ref="i2"></audiotext>
+            </info>
             <activity>
+
+                <!--
                 <div class="row w100 mb-1">
                     <img src="aimg/equi.svg">
                     <img src="aimg/iso.svg">
@@ -78,38 +82,41 @@
                     <img src="aimg/acu.svg">
                     <img src="aimg/obtu.svg">
                 </div>
-            </activity>
-        </scene> <!-- end scene -->
-        
-        <!-- ### scene -->
-        <scene v-if="currentScene==2" :key="2" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
-        :answers="2" scene-color="#9DCE77">
-        
-        <info type="seleccionar" title="Identifico diferentes triángulos" text="Y se pueden clasificar de acuerdo a sus lados." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
-        <activity>
+            -->
+
             <div class="row wrap w100 mb-1">
                 <div class="w30 introrec animate__animated animate__backInDown animate__delay-1s">
                     <img src="aimg/equi.svg">
-                    <number small c="2">Equilátero</number>
-                    <number smaller c="2">3 lados iguales</number>
+                    <div class="animate__animated animate__backInDown" v-if="temps">
+                        <number small c="2">Equilátero</number>
+                        <number smaller c="2">3 lados iguales</number>
+                    </div>
                 </div>
                 <div class="w30 introrec animate__animated animate__backInDown animate__delay-2s">
                     <img src="aimg/iso.svg">
+                    <div class="animate__animated animate__backInDown" v-if="temps">
                     <number small c="2">Isósceles</number>
                     <number smaller c="2">2 lados iguales</number>
+                    </div>
                 </div>
                 <div class="w30 introrec animate__animated animate__backInDown animate__delay-3s">
                     <img src="aimg/esca.svg">
+                    <div class="animate__animated animate__backInDown" v-if="temps">
                     <number small c="2">Escaleno</number>
                     <number smaller c="2">Ningun lado igual</number>
+                    </div>
                 </div>
             </div>
             <button class="button next" @click="sceneCompleted(false)">Siguiente</button>
+
+
             </activity>
         </scene> <!-- end scene -->
         
+ 
+        
         <!-- ### scene -->
-        <scene v-if="currentScene==3" :key="3" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        <scene v-if="currentScene==2" :key="2" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#9DCE77">
         
         <info type="seleccionar" title="Identifico diferentes triángulos" text="Y de acuerdo a sus ángulos internos." textaudio="asound/instruccion3.mp3" :autoplay="true"></info>
@@ -146,7 +153,7 @@
             { im: 'i6', r1: 'iso', r2:'acu' },
             { im: 'i7', r1: 'iso', r2:'recta' },
         ]">
-            <scene v-if="currentScene==index+4" :key="index+4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+            <scene v-if="currentScene==index+3" :key="index+3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
             :answers="2" scene-color="#9DCE77">
             
             <info type="seleccionar" title="Identifico diferentes triángulos" text="Observa los ángulos y lados de los triángulos que vayan apareciendo. Selecciona el tipo de triángulo que es según sus lados y el tipo de triángulo según sus ángulos:" textaudio="asound/instruccion4.mp3" :autoplay="index==0?true:false"></info>
@@ -167,7 +174,7 @@
         </template>
 
 
-        <scene v-if="currentScene==11" :key="11" end-scene :final-data="finalData" ref="endscene"></scene>
+        <scene v-if="currentScene==10" :key="10" end-scene :final-data="finalData" ref="endscene"></scene>
     
 
     
@@ -197,6 +204,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+        app.temps = false
         app.currentScene = 0
         app.scenesCount = 7
         app.$devmode = false

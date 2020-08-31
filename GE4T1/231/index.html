@@ -194,7 +194,7 @@
                     </div>
                 </div>
                 <div class="row wrap w100">
-                    <drag v-for="i in _.shuffle(temps)" dropzone=".drop" :data="i.val" append-to-dropzone>
+                    <drag v-for="i in temps" dropzone=".drop" :data="i.val" append-to-dropzone>
                         <number smaller c="6">{{i.n}}</number>
                     </drag>
                 </div>
@@ -233,7 +233,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.temps= [
+        app.temps = [
             { open: false, val:'a', n:'Sierra Madre Oriental', d: 'Cordillera que recorre del noreste de Nuevo León hasta el sureste de los estados de Hidalgo y Puebla. ' },
             { open: false, val:'b', n:'Sierra Madre Occidental', d:'Sistema montañoso que se extiende desde el noreste de Sonora hasta el norte de Jalisco.' },
             { open: false, val:'c', n:'Sierra Madre de Chiapas', d:'Cadena montañosa ubicada al sureste de México, abarca los países de Honduras, El Salvador, Guatemala y el estado de Chiapas.' },
