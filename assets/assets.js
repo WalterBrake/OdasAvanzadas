@@ -47,6 +47,9 @@ var app = new Vue({
         }
     },
     methods: {
+        okFn(){
+            EventBus.$emit('isok')
+        },
         randomizeArray(rand){
             return rand.sort(function(){return 0.5 - Math.random()})
         },

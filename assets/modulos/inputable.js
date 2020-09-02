@@ -33,6 +33,7 @@ Vue.component('inputable', {
                 app.particleAnimation({clientX: vpOffset.left + (vpOffset.width/2), clientY: vpOffset.top + (vpOffset.height/2)}, 100, null, null, _this.particleColor)
                 _this.setClassAnimation('ok', _this.$refs.inputable)
                 s_ok.play()
+                _this.$emit('isok')
                 EventBus.$emit('isok')
                 if(_this.oksound!=undefined){
                     var sound = new Howl({ src: [_this.oksound], autoplay:true })
