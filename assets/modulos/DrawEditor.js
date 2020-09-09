@@ -76,6 +76,7 @@ Vue.component('DrawEditor', {
             s_select.play()
             this.currentcolor = col
             app.particleAnimation(e, null, null, 60, col)
+            if(this.currentTool=='text'){this.modText()}
         },
         setSize(e, sz){
             s_select.play()
