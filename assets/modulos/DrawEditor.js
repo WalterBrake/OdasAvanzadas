@@ -23,16 +23,19 @@ Vue.component('DrawEditor', {
             inputTextPointScreen: {x:0, y:0},
             saved: false,
             firstAction: false,
-            selectedShape: null
+            selectedShape: null,
+            activeTextItem: null,
         }
     },
     template: `
         <div class="draw-editor">
             <canvas class="drawEditorCanvas " ref="canvas" id="drawEditorCanvas" @mousedown="mouseDown" @touchstart="mouseDown"></canvas>
             
-            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+(returnTextSize)+'px;'">
-                <div :class="'row ' + rowdirection">
-                    <input ref="inputTextInput" v-model="inputText" :style="'color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " />
+            <!--<div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+(returnTextSize)+'px;'">-->
+            <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'">
+                <div class="row">
+                <button class="button" :style="'background-color:'+currentcolor+';'" @click="cancelText"><img src="aimg/close.svg"></button>
+                    <input ref="inputTextInput" v-model="inputText" :style="'background-color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' "  @input="modText"/>
                     <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                 </div>
             </div>
@@ -78,6 +81,7 @@ Vue.component('DrawEditor', {
             s_select.play()
             this.currentBrushSize = sz
             app.particleAnimation(e, null, null, 60)
+            if(this.currentTool=='text'){this.modText()}
         },
         setTool(e, to){
             s_select.play()
@@ -165,37 +169,85 @@ Vue.component('DrawEditor', {
             return new paper.Tool()
         },
         getRealPos (event) {
+            let bounding = event.event.target.getBoundingClientRect()
+            let touchEV = event.event.touches ? event.event.touches[0] : event.event
+            if(!touchEV){
+                return false
+            }
+
             const drawEObj = document.getElementsByClassName('draw-editor')[0]
             this.currentSize = {width: drawEObj.clientWidth, height: drawEObj.clientHeight, }
-            let rw = ((this.realSize.width)/100) * ((event.event.layerX*100)/this.currentSize.width)
-            let rh = ((this.realSize.height)/100) * ((event.event.layerY*100)/this.currentSize.height)
-            var realPos= { x: rw, y: rh }
+            //Exponente para calcular responsive
+            let Xmult = this.realSize.width / bounding.width
+            let Ymult = this.realSize.height / bounding.height
+            //Detección en tiempo real del scroll, tamaño de caja y posición del evento
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+            let rw = touchEV.pageX - bounding.left
+            let rh = touchEV.pageY - bounding.top
+
+            let realPos= { x: rw*Xmult, y: (rh*Ymult)-(scrollTop*Ymult)} //(rh*Ymult) - (scrollTop*Ymult)
+
             return realPos
         },
-        createInputText(point, ev){
+        createInputText(point, event){
+            //var touchEV = event.event.touches ? event.event.touches[0] : event.event
             this.inputTextOn = true
             this.inputTextPoint = point
-            this.inputTextPointScreen = {x: ev.event.layerX, y: ev.event.layerY}
+            //this.inputTextPointScreen = {x: touchEV.pageX, y: touchEV.pageY}
+            this.inputTextPointScreen = {x:point.x, y:point.y-40}
             var _this = this
             setTimeout(function(){_this.$refs.inputTextInput.focus()},100)
         },
+        modText () {
+            console.log('modText')
+            if(this.activeTextItem == null) {
+                this.activeTextItem = new paper.PointText(this.inputTextPoint)
+            }
+            this.activeTextItem.fillColor = this.currentcolor
+            this.activeTextItem.fontSize = this.returnTextSize
+            this.activeTextItem.content = this.inputText
+        },
+        cancelText() {
+            this.activeTextItem.content = ''
+            this.inputTextOn = false
+            this.inputText = ''
+            this.activeTextItem = null
+        },
         createText() {
+            /*
             var txt = new paper.PointText(this.inputTextPoint)
             txt.fillColor = this.currentcolor
             txt.fontSize = this.returnTextSize
             txt.content = this.inputText
+            */
             this.inputTextOn = false
             this.inputText = ''
+            this.activeTextItem = null
             if(!this.firstAction) { this.firstAction = true}
         },
+
         mouseDown() {
             // in order to access functions in nested tool
             let self = this
-
             // create drawing tool
             this.tool = this.createTool(this.scope)
+            
+            //TEST !!!!! ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+            /*
+            self.path = self.pathCreate(self.scope)
+            self.path.add({x:0, y:0})
+            self.path.add({x:375, y:255})
+            self.path.add({x:375, y:765})
+            self.path.add({x:750, y:1020})
+            */
+            //TEST !!!!! ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
             this.tool.onMouseDown = (event) => {
                     var realPos = self.getRealPos(event)
+                    if(!realPos){
+                        return false
+                    }
                     var hitResult = this.scope.project.hitTest(realPos, {
                         segments: true,
                         stroke: true,
@@ -216,13 +268,18 @@ Vue.component('DrawEditor', {
                         self.path = self.pathCreate(self.scope)
                         // add point to path
                         self.path.add(realPos)
+
+
+
                     } else if(self.currentcolor!='#fff' && self.currentTool == 'text'){
                         self.createInputText(realPos, event)
                     }
             }
             this.tool.onMouseDrag = (event) => {
                 var realPos = self.getRealPos(event)
-                
+                if(!realPos){
+                    return false
+                }
                 var hitResult = this.scope.project.hitTest(realPos, {
                     segments: true,
                     stroke: true,
@@ -243,7 +300,9 @@ Vue.component('DrawEditor', {
             }
             this.tool.onMouseUp = (event) => {
                 var realPos = self.getRealPos(event)
-
+                if(!realPos){
+                    return false
+                }
                 // line completed
                 if(self.currentcolor!='#fff' && self.currentTool=='brush'){
                     self.path.simplify(10)
