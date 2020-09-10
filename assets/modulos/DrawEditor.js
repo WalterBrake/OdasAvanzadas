@@ -15,7 +15,7 @@ Vue.component('DrawEditor', {
             sizes: [10, 6, 2],
             currentBrushSize: 6,
             scope: null,
-            realSize: {width:0, height: 0},
+            realSize: {width:750, height: 1020},
             currentSize: {width:0, height: 0},
             inputTextOn: false,
             inputText: '',
@@ -28,20 +28,21 @@ Vue.component('DrawEditor', {
         }
     },
     template: `
-        <div class="draw-editor">
+        <div class="draw-editor" :style="'width:'+realSize.width+'px; height:'+realSize.height+'px;'">
             <canvas class="drawEditorCanvas " ref="canvas" id="drawEditorCanvas" @mousedown="mouseDown" @touchstart="mouseDown"></canvas>
             
             <!--<div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'" :style="'border-color:'+currentcolor+'; left:'+inputTextPointScreen.x+'px; top:'+inputTextPointScreen.y+'px; margin-top:-'+(returnTextSize)+'px;'">-->
             <div class="inputText" v-if="inputTextOn && currentTool=='text' && currentcolor!='#fff'">
                 <div class="row">
                 <button class="button" :style="'background-color:'+currentcolor+';'" @click="cancelText"><img src="aimg/close.svg"></button>
-                    <input ref="inputTextInput" v-model="inputText" :style="'background-color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' "  @input="modText"/>
+                    <!--<input ref="inputTextInput" v-model="inputText" :style="'background-color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " @input="modText" v-on:keyup="modText" />-->
+                    <input ref="inputTextInput" v-bind:value="inputText" :style="'background-color:'+currentcolor+';' + ' font-size:'+returnTextSize+'px;' " @input="modText" v-on:input="inputText= $event.target.value" />
                     <button :disabled="inputText.length<1" class="button" :style="'background-color:'+currentcolor+';'" @click="createText"><img src="aimg/ok.svg"></button>
                 </div>
             </div>
             
             <div class="botonera" :style="'background-color:'+currentcolor+';'">
-                <div class="tools">
+                <div class="tools row wrap">
                     <div v-for="to in tools" :style="'background-color:'+currentcolor+';'" :class="'tool tool_'+to + ' ' + (to==currentTool ? 'on':'off')" @click="setTool($event, to)"></div>
                 </div>
                 <div class="colors">
@@ -51,8 +52,8 @@ Vue.component('DrawEditor', {
                     <div v-for="sz in sizes" :style="'background-color:'+currentcolor+';'" :class="'size size_'+sz + ' ' + (sz==currentBrushSize ? 'on':'off')" @click="setSize($event, sz)"></div>
                 </div>
                 <div class="buttons row wrap">
-                    <button class="button" @click="cleanCanvas(this)">Limpiar</button>
-                    <button class="button finalizar" @click="downloadCanvas(this)" v-if="firstAction">Finalizar</button>
+                    <button class="button limpiar" @click="cleanCanvas(this)"></button>
+                    <button class="button finalizar" @click="downloadCanvas(this)" v-if="firstAction"></button>
                 </div>
             </div>
         </div>
@@ -70,6 +71,12 @@ Vue.component('DrawEditor', {
                 return 'normal'
             }
         },
+    },
+    watch: {
+        inputText () {
+            this.modText()
+            console.log('changed')
+        }
     },
     methods: {
         setColor(e, col){
@@ -103,23 +110,36 @@ Vue.component('DrawEditor', {
                 
                 var background = new Image()
                 background.crossOrigin = 'anonymous'
-                background.src = _this.imgbg
-
                 background.onload = function () {
-                    _this.ctx.drawImage(background, 0, 0)
-                    document.getElementsByClassName('draw-editor')[0].classList.add('imgloaded')
                     _this.realSize = {width: background.width, height: background.height }
+                    _this.updateCanvas()
+                    //_this.ctx.drawImage(background, 0, 0)
+                    document.getElementsByClassName('draw-editor')[0].classList.add('imgloaded')
+                    _this.paperStart(background)
                 }
-                _this.paperStart(background)
+                
+                background.src = _this.imgbg
+                
             }, 500)
+        },
+        scalePreserveAspectRatio(imgW,imgH,maxW,maxH){
+            return(Math.min((maxW/imgW),(maxH/imgH)));
         },
         updateCanvas () {
             var parentEl = document.getElementsByClassName('draw-editor')[0]
-
+/*
             this.canvas.width = parentEl.clientWidth
             this.canvas.height = parentEl.clientHeight
             this.canvas.style.width = parentEl.clientWidth + 'px'
             this.canvas.style.height = parentEl.clientHeight + 'px'
+*/
+            this.canvas.width = this.realSize.width
+            this.canvas.height = this.realSize.height
+            this.canvas.style.width = this.realSize.width + 'px'
+            this.canvas.style.height = this.realSize.height + 'px'
+
+
+
             this.canvas.getContext('2d').scale(1, 1)
             
             /*
@@ -194,15 +214,18 @@ Vue.component('DrawEditor', {
             //var touchEV = event.event.touches ? event.event.touches[0] : event.event
             this.inputTextOn = true
             this.inputTextPoint = point
+            if(this.activeTextItem != null) {
+                this.activeTextItem.point = this.inputTextPoint
+            }
             //this.inputTextPointScreen = {x: touchEV.pageX, y: touchEV.pageY}
             this.inputTextPointScreen = {x:point.x, y:point.y-40}
             var _this = this
             setTimeout(function(){_this.$refs.inputTextInput.focus()},100)
         },
         modText () {
-            console.log('modText')
             if(this.activeTextItem == null) {
                 this.activeTextItem = new paper.PointText(this.inputTextPoint)
+            } else {
             }
             this.activeTextItem.fillColor = this.currentcolor
             this.activeTextItem.fontSize = this.returnTextSize
@@ -242,6 +265,7 @@ Vue.component('DrawEditor', {
             self.path.add({x:750, y:1020})
             */
             //TEST !!!!! ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+            if(!this.firstAction) { this.firstAction = true}
 
 
             this.tool.onMouseDown = (event) => {
@@ -296,6 +320,9 @@ Vue.component('DrawEditor', {
                 if(self.selectedShape){
                     self.selectedShape.position = event.point
                 }
+                else if(self.currentcolor!='#fff' && self.currentTool == 'text'){
+                    self.createInputText(realPos, event)
+                }
                 //app.particleAnimation(event.event, 1, 2000, 10, self.currentcolor)
 
             }
@@ -320,9 +347,12 @@ Vue.component('DrawEditor', {
             /* paperjs */
             this.scope = new paper.PaperScope()
             this.scope.setup(this.canvas)
-            var rasterbg = new paper.Raster(bgimg)
-            rasterbg.position = this.scope.view.center
+            var rasterbg = new paper.Raster(bgimg, this.scope.view.center)
+            rasterbg.width = this.currentSize.width
+            rasterbg.height = this.currentSize.height
+            //rasterbg.position = this.scope.view.center
             new paper.Layer()
+            this.updateCanvas()
         }
     },
     mounted () {

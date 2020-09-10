@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="../../assets/assets.css">
     <style>
         .activity{
-            width: 750px;
-            height: 1200px;
+            width: 90%;
+            /* height: 1200px;*/
+            height: auto;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         .draw-editor{
             background: #dCd4aE;
+            /*
             width: 750px;
             height: 1200px;
+            */
         }
 
         .draw-editor{
@@ -35,7 +40,7 @@
             position: fixed;
             right: 4px;
             top: 4px;
-            width: 120px; height: auto;
+            width: 10%; height: auto;
             padding: 10px;
             background: var(--main);
             display: flex;
@@ -44,6 +49,7 @@
             flex-direction: column;
             border-radius: 20px;
             z-index: 2;
+            box-sizing: border-box;
         }
 
         /* -- */
@@ -70,32 +76,26 @@
         }
         @media (max-width: 960px) {
             .activity {
-                width: 100%;
                 height: auto !important;
-                padding-top: 100px;
+                width: 90%;
+                margin-right: auto;
+                margin-left: 0;
+                padding: 0 !important;
             }
             .activity .draw-editor.imgloaded {
-                width: 100%;
+                width: 100% !important;
                 height: auto !important;
             }
             .activity .draw-editor.imgloaded .drawEditorCanvas  {
                 width: 100% !important;
                 height: auto !important;
             }
-            .botonera {
-                width: 100%;
-                flex-direction: row;
-                box-sizing: border-box;
-                top: 0;
-                border-radius: 0 0 10px 10px;
-                right: 0;
-                padding: 2px 4px;
-            }
         }
 
         .button{
             margin: 8px 4px;
         }
+
 
         .sizes {
             display: flex;
@@ -159,11 +159,11 @@
 
         .inputText{
             position: fixed;
-            bottom: 0;
+            bottom: 1%;
             left: 2%;
-            background: #FCF4CE;
+            background: rgba(255,255,255,0.9);
             padding: 6px;
-            border-radius: 0 30px 30px 0;
+            border-radius: 30px;
             width: 96%;
         }
 
@@ -186,46 +186,41 @@
             width: 20px;
             margin-top: 1px;
         }
-/*
-        .inputText {
-            position: absolute;
-            border-bottom: 2px dashed var(--main);
-            padding-bottom: 0px;
-        }
-        .inputText input {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-        }
-        .inputText input:focus {
-            outline: none;
-        }
-        .inputText button {
-            width: 30px;
-            height: 24px;
-            padding: 0;
-            margin: 0;
-        }
-        .inputText button img {
-            width: 20px;
-            margin-top: 1px;
-        }
-        .inputText button:hover {
-            background: #000000 !important;
-        }
-*/
 
         .row.invert{
             flex-direction: row-reverse;
         }
 
-        .finalizar{
-	background: var(--clear);
-	color:#fff;
-}
+        .button.limpiar{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 2px;
+            cursor: pointer;
+            background: transparent;
+            background-image: url(aimg/limpiar.svg);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-.button{
-	letter-spacing: 1px;
-}
+        .finalizar{
+	        background-color: var(--clear);
+            background-image: url(aimg/ok.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 26px;
+            box-shadow: 0px 4px 0px #4Da5e7;
+	        color:#fff;
+            margin: 10px 0 0 0;
+            padding: 6px;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+        }
+
+        .button{
+            letter-spacing: 1px;
+        }
 
 
         @media (max-width:680px){
