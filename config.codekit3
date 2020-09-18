@@ -296,6 +296,14 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/assets\/lottie\/:Users:albinrdz:Documents:GitHub:OdasAvanzadas:assets:lottie:Input.json:Interaccion-keydown.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/assets\/lottie\/:Users:albinrdz:Documents:GitHub:OdasAvanzadas:assets:lottie:Input.json:Interaccion-keydown-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/assets\/lottie\/DragNDrop.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -7241,6 +7249,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3",
+		"oF": 0
+		},
+	"\/ES6T1\/39\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T1\/39\/index.html",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {

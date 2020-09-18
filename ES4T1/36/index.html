@@ -76,13 +76,13 @@
         }
         .arrows {
             position: absolute;
-            bottom: -13%;
-            left: .5;
+            bottom: 0%;
+            left: 0%;
             width: 29%;
             padding: 4px 0;
             text-align: center;
             background: #EC8B2E;
-            border-radius: 10px 10px 0 0;
+            border-radius: 0 10px 10px 0;
             border: 2px solid #586B5E;
         }
         .arrows img{ cursor: pointer; }
@@ -130,7 +130,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="4" scene-color="#ED1C25">
 
-            <info type="seleccionar" title="Interpreto los trayectos" text="Coloca a las personas en su destino siguiendo los trayectos que se indican. Para esto, usa las teclas de dirección de tu computadora para que las personas se dirijan a su destino." textaudio="asound/instruccion.mp3" :autoplay="true" ></info>
+            <info type="keydown" title="Interpreto los trayectos" text="Coloca a las personas en su destino siguiendo los trayectos que se indican. Para esto, usa las teclas de dirección de tu computadora para que las personas se dirijan a su destino." textaudio="asound/instruccion.mp3" :autoplay="true" ></info>
             <activity>
                 <div class="row w100">
                     <div class="w50 croquis" ref="croquis">

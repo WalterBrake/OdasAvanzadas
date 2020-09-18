@@ -130,6 +130,21 @@ input[type=number] {
   .info {
     max-width: 100%;
   }
+  .info h1 {
+    font-size: 1.2rem;
+  }
+  .info h2 {
+    font-size: 1rem;
+  }
+  .info .bottom .scorebox {
+    width: 40% !important;
+  }
+  .info .bottom .instype {
+    width: 20% !important;
+  }
+  .info .bottom .instype embed {
+    width: 100%;
+  }
 }
 @media (max-width: 1280px) and (min-width: 961px) {
   .info {
@@ -137,10 +152,10 @@ input[type=number] {
   }
 }
 .info h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 .info h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 4px;
 }
 .info .bottom {
