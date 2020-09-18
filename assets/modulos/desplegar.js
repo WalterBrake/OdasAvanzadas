@@ -4,7 +4,8 @@ Vue.component('desplegar', {
         'options', // array de opciones que se duplicará
         'answer', // valor que se compara con el campo answer de options
         'showOk', // Cuando OK todos los ERROR se ocultan
-        'modalOptions', //Mostrar las opciones "flotando"
+        'modalOptions', //Mostrar las opciones "flotando",
+        'initialStatus' // initial state = 'open' ? 
     ],
     data () {
         return {
@@ -58,8 +59,9 @@ Vue.component('desplegar', {
                 this.status = 'ok'
                 var _this = this
                 setTimeout(function (){
-                    _this.$refs[ref][0].classList.add('invoker')
-                    console.log(_this.$refs[ref])
+                    if(_this.$refs[ref][0]){
+                        _this.$refs[ref][0].classList.add('invoker')
+                    }
                 }, 200)
             } else {
                 //ERROR
@@ -101,5 +103,8 @@ Vue.component('desplegar', {
     },
     mounted () {
         this.array2obj()
+        if(this.initialStatus != undefined){
+            this.status = this.initialStatus
+        }
     }
 })
