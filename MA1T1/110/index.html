@@ -76,11 +76,11 @@
                 r: [[2, false], [5, false], [3, true], [6, false]  ] },
             { in: 3, p: '¿Cuántos pastelitos se necesitan hacer ahora para tener 20? Elige la respuesta correcta.', s: 'instruccion2.mp3',
                 r: [[12, false], [9, false], [2, false], [8, true]  ] },
-            { in: 4, p: 'Si ahora se tienen 20 pastelitos y la mamá y la hija se comen 3 pastelitos cada uno, ¿cuantos pastelitos quedan?', s: 'instruccion3.mp3',
+            { in: 4, p: 'Si ahora se tienen 20 pastelitos y la mamá y la hija se comen 3 pastelitos cada uno, ¿cuántos pastelitos quedan?', s: 'instruccion3.mp3',
                 r: [[6, false], [14, true], [9, false], [19, false]  ] },
         ]" v-if="currentScene==i.in" :key="i.in"
             :answers="1" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
-            <info type="seleccionar" title="Cuento cuántas frutas son" :text="i.p" :textaudio="'asound/'+i.s" :autoplay="true"></info>
+            <info type="seleccionar" title="Sé cuántos faltan" :text="i.p" :textaudio="'asound/'+i.s" :autoplay="true"></info>
             <activity>
                 <div class="row wrap animate__animated animate__bounceIn justify-center">
                     <div class="w40 boxi" v-for="(click,ind) in i.r">

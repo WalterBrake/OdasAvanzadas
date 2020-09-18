@@ -1505,6 +1505,27 @@
 		"oAP": "\/CM2T1\/259\/index.html",
 		"oF": 0
 		},
+	"\/CM2T1\/264\/aimg\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM2T1\/264\/aimg\/v1.mp4",
+		"oF": 0
+		},
+	"\/CM2T1\/264\/aimg\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM2T1\/264\/aimg\/v1.webm",
+		"oF": 0
+		},
+	"\/CM2T1\/264\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM2T1\/264\/index.html",
+		"oF": 0
+		},
 	"\/CM2T1\/271\/aimg\/aamarillo.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4611,6 +4632,34 @@
 		"oAP": "\/ES1T1\/27\/index.html",
 		"oF": 0
 		},
+	"\/ES1T1\/30\/aimg\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/30\/aimg\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES1T1\/30\/aimg\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/30\/aimg\/v1.webm",
+		"oF": 0
+		},
+	"\/ES1T1\/30\/asound\/instruccion.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/30\/asound\/instruccion.mp3",
+		"oF": 0
+		},
+	"\/ES1T1\/30\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T1\/30\/index.html",
+		"oF": 0
+		},
 	"\/ES2T1\/15\/aimg\/Icon\r": {
 		"cB": 0,
 		"ft": 8192,
@@ -7173,109 +7222,18 @@
 		"oAP": "\/ES6T1\/29\/index.html",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Aquien.mp3": {
+	"\/ES6T1\/39\/aimg\/V1.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Aquien.mp3",
+		"oAP": "\/ES6T1\/39\/aimg\/V1.mp4",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_LaMiss.mp3": {
+	"\/ES6T1\/39\/aimg\/V1.webm": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_LaMiss.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Pues.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag1_Pues.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaM.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaM.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaN.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_HolaN.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_Vamos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag2_Vamos.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_EnEse.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_EnEse.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_SiQuisiera.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_SiQuisiera.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_UnRep.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag3_UnRep.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_EnQue.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_EnQue.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_Periódicos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag4_Periódicos.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Internet.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Internet.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Museo.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_Museo.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_PorSupuesto.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag5_PorSupuesto.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag6_YClaro.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Diag6_YClaro.mp3",
+		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
 	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
@@ -7283,13 +7241,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3",
-		"oF": 0
-		},
-	"\/ES6T1\/39\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T1\/39\/index.html",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
