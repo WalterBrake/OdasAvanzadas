@@ -109,9 +109,7 @@
             margin: 0 auto;
             width: auto;
         }
-        .fresa2 {
-            max-width: 40px;
-        }
+        
 
 
 
@@ -136,6 +134,14 @@
                 height: 30%;
             }
         }
+
+        .frutas2 > div .drag img {
+            max-width: 100px;
+        }
+        .basket {
+            max-width: 200px;
+        }
+
 
        
 
@@ -202,7 +208,7 @@
 
                 <div class="row w100 frutas2">
 
-                    <div><drag initclass="fresa2" dropzone=".basket" @isok="temps++" :data="temps==2?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/fresa.svg"></drag></div>
+                    <div><drag initclass="fresa2" dropzone=".basket" @isok="temps++" :data="temps==2?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/fresas.svg"></drag></div>
                     <div><drag initclass="platano2" dropzone=".basket" @isok="temps++" :data="temps==1?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/platano.svg"></drag></div>
                     <div><drag initclass="miel2" dropzone=".basket" @isok="temps++" :data="temps==4?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/miel2.svg"></drag></div>
                     <div><drag initclass="uvas2" dropzone=".basket" @isok="temps++" :data="temps==3?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/uvas.svg"></drag></div>
