@@ -75,7 +75,7 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="6" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Conozco los continentes" text="Coloca los nombres de los continentes sobre el mapa del mundo." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Conozco los continentes" text="Coloca los nombres de los continentes sobre el mapa del mundo." textaudio="asound/instruccion.mp3" :autoplay="true"><div class="repaso">Página de repaso</div></info>
             <activity>
                 <div class="row w100">
                     <div class="map w100">

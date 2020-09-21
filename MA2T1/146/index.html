@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completo sumas y restas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+
+    <style>
+        :root {
+
+            --plyr-video-control-background-hover: #fff;
+            --plyr-control-icon-size: 28px;
+            --plyr-control-padding: 6px;
+            --plyr-control-radius: 10px;
+        }
+
+        .next {
+            font-size: 2rem;
+            margin: 20px;
+        }
+
+
+        img.zoominImg {
+            position: absolute;
+            z-index: 1;
+            animation: zoominImgKey 3s;
+            animation-delay: 1s;
+            transform: scale(1.1);
+            animation-fill-mode: forwards;
+        }
+
+
+        @keyframes zoominImgKey {
+            0% {
+                transform: scale(1.1);
+                opacity: 1;
+                z-index: 1;
+                bottom: 0;
+            }
+
+            99% {
+                transform: scale(3);
+                opacity: 0;
+                bottom: 25%;
+                z-index: 1;
+            }
+
+            100% {
+                z-index: -1;
+            }
+        }
+
+        .clickable {
+            margin: 20px 40px;
+        }
+
+        @media (max-width: 680px) {}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+
+        <scene v-if="currentScene==1" :key="1" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Completo sumas y restas</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8" @completed="temps.a=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.a" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene>
+
+        <!---->
+        <scene v-if="currentScene==2" :key="2" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Completo sumas y restas"
+                text="Ayuda al niño a responder. Selecciona la operación correspondiente."
+                textaudio="asound/instruccion1.mp3" :autoplay="true">
+                <img class="w40" src="aimg/c10.svg">
+            </info>
+            <activity>
+                <div class="row wrap animate__animated animate__bounceIn">
+                    <div class="col">
+                        <clickable simple-ok block-if-error :isok="true" click-sound="asound/nino1.mp3"><div><img src="aimg/mark1.svg" class="w100"></div></clickable>
+                    </div>
+                    <div class="col">
+                        <clickable simple-ok block-if-error :isok="false" click-sound="asound/nino2.mp3"><div><img src="aimg/mark2.svg" class="w100"></div></clickable>
+                    </div>
+                </div>
+                <div class="row w100">
+                    <div class="w20">
+                        <img src="aimg/a1.svg" class="w100">
+                    </div>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==3" :key="3" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Completo sumas y restas</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v2" :autoplay="true" c="8" @completed="temps.b=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.b" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene>
+
+        <!---->
+        <scene v-if="currentScene==4" :key="4" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Completo sumas y restas"
+                text="Ayuda a la niña a responder. Selecciona la operación a la que corresponde."
+                textaudio="asound/instruccion2.mp3" :autoplay="true">
+                <img class="w40" src="aimg/c9.svg">
+            </info>
+            <activity>
+                <div class="row wrap animate__animated animate__bounceIn">
+                    <div class="col">
+                        <clickable simple-ok block-if-error :isok="false" click-sound="asound/nina1.mp3"><div><img src="aimg/mark1.svg" class="w100"></div></clickable>
+                    </div>
+                    <div class="col">
+                        <clickable simple-ok block-if-error :isok="true" click-sound="asound/nina2.mp3"><div><img src="aimg/mark2.svg" class="w100"></div></clickable>
+                    </div>
+                </div>
+                <div class="row w100">
+                    <div class="w20">
+                        <img src="aimg/b1.svg" class="w100">
+                    </div>
+                </div>
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==5" :key="5" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Completo sumas y restas</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v3" :autoplay="true" c="8" @completed="temps.c=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.c" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Finalizar</button>
+            </activity>
+        </scene>
+
+
+
+
+        <scene v-if="currentScene==6" :key="6" end-scene :final-data="finalData"></scene>
+
+
+
+
+    </div>
+    <!-- libraries -->
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.$set(app.temps, 'a', false)
+        app.$set(app.temps, 'b', false)
+        app.$set(app.temps, 'c', false)
+        app.currentScene = 0
+        app.scenesCount = 2
+        app.$devmode = false
+    </script>
+</body>
+
+</html>
