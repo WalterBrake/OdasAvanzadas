@@ -33,7 +33,7 @@ Vue.component('inputbox', {
             if(this.type == 'text'){
                 this.status = this.status.toLowerCase()
             }
-            if(this.status == this.answer) {
+            if(this.status == this.answer.replace(/\.$/, "")) {
                 this.$emit('isright', true)
                 this.result = true
             }

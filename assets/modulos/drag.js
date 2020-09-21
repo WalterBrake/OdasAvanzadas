@@ -17,6 +17,7 @@ Vue.component('drag', {
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
         'appendToDropzone', // Se añade al contenedor del dropzone,
         'disableok',
+        'firstDropzone', //Sólo se evalua el primer dropzone que toque,
     ],
     data() {
         return {
@@ -27,6 +28,8 @@ Vue.component('drag', {
             draggable: null,
             canvas: null,
             ctx: null,
+            droppedInOk: false,
+            dropzonesEvaluations: [],
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -112,13 +115,14 @@ Vue.component('drag', {
             var _this = this
             var dropzones = document.querySelectorAll(_this.dropzone)
             var drops = 0
+            var dropzonesTouched = []
             for(var dr = 0; dr < dropzones.length; dr++) {
                 var dropzone = dropzones[dr]
                 if(Draggable.hitTest(_this.$refs.drag, dropzone, '50%')){
                     if(isdrop){
-                        drops++
-                        _this.dropHitTest(dropzone, e)
-
+                            drops++
+                            dropzonesTouched.push([dropzone, e])
+                            //_this.dropHitTest(dropzone, e)
                     } else {
                         _this.hoverHitTest(dropzone, e)
                     }
@@ -126,6 +130,11 @@ Vue.component('drag', {
                     if(!isdrop) { _this.hoverExitHitTest(dropzone, e) }
                 }
             }
+
+            if(drops>0){
+                _this.dropHitTest(dropzonesTouched, drops)
+            }
+
             if(isdrop && drops == 0){ _this.backToInitPos() }
         },
         hoverHitTest(dropzone, e) {
@@ -141,49 +150,101 @@ Vue.component('drag', {
         hoverExitHitTest(dropzone, e) {
             if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
         },
-        dropHitTest(dropzone, e) {
-            if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+        //dropHitTest(dropzone, e, dropzonesTouched) {
+        dropHitTest(dropzones, drops) {
             var _this = this
-            
-            if(!_this.dropzoneCanBeDropped(dropzone)){
-                _this.backToInitPos()
-                s_error.play()
-                return false
-            } else {
-                dropzone.classList.add('dropzoneused')
-            }
-            if(this.data == dropzone.getAttribute('data')){
-                //## OK
-                s_ok.play()
-                _this.$emit('isok')
-                _this.returnToPositionFn()
-                _this.stayInDropFn()
-                _this.dropzoneStatusClass('ok', dropzone)
-                _this.dropzoneSound(dropzone, 'oksound')
-                _this.dragStatusClass('ok')
-                _this.stayIfOkFn()
-                app.particleAnimation(e, 100, null, null)
+            let dropzonesEvaluationsArray = []
 
-                _this.setClassAnimation('ok')
-                _this.droppedtimesAdd(dropzone)
-                _this.appendToDropzoneFn(dropzone, e)
-                if(_this.disableok==undefined){
-                    EventBus.$emit('isok')
+            for(var i = 0; i<drops; i++){
+                console.log('start::1')
+                var dropzone = dropzones[i][0]
+                var e = dropzones[i][1]
+                if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+                if(!_this.dropzoneCanBeDropped(dropzone)){
+                    _this.backToInitPos()
+                    s_error.play()
+                    return false
+                } else {
+                    dropzone.classList.add('dropzoneused')
                 }
-            } else {
-                //## ERROR
-                s_error.play()
-                _this.$emit('iserror')
-                _this.stayInDropFn()
-                _this.dropzoneStatusClass('error', dropzone)
-                _this.dropzoneSound(dropzone, 'errorsound')
-                _this.returnToPositionFn()
-                _this.returnIfErrorFn()
-                _this.dragStatusClass('error')
-                EventBus.$emit('iserror')
-                _this.setClassAnimation('error')
-
+                console.log('end::2')
             }
+
+
+            var dr = 0
+            while(dr<drops){
+            //for(var dr = 0; dr<dropzones.length; dr++){
+
+                var dropzone = dropzones[dr][0]
+                var e = dropzones[dr][1]
+                if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+                
+                if(!_this.dropzoneCanBeDropped(dropzone)){
+                    _this.backToInitPos()
+                    s_error.play()
+                    return false
+                } else {
+                    dropzone.classList.add('dropzoneused')
+                }
+
+                
+                if(!_this.droppedInOk){
+                    if(_this.data == dropzone.getAttribute('data')){
+                        dropzonesEvaluationsArray.push([true, dropzone, e])
+                    } else {
+                        dropzonesEvaluationsArray.push([false, dropzone, e])
+                    }
+                }
+                dr++
+                //console.log('endFor::: ',dr, drops)
+            }
+            console.log('EVALUATION')
+
+            _this.dropzonesEvaluations = dropzonesEvaluationsArray
+            
+            const foundedOk = _this.dropzonesEvaluations.find(item => item[0] == true)
+            if(foundedOk != undefined){
+                _this.dropHitTestisOK(foundedOk[1], foundedOk[2])
+            } else {
+                _this.dropHitTestisERROR(_this.dropzonesEvaluations[0][1], _this.dropzonesEvaluations[0][2])
+            }
+
+        },
+        dropHitTestisERROR(dropzone, e){
+            var _this = this
+            //## ERROR
+            s_error.play()
+            _this.$emit('iserror')
+            _this.stayInDropFn()
+            _this.dropzoneStatusClass('error', dropzone)
+            _this.dropzoneSound(dropzone, 'errorsound')
+            _this.returnToPositionFn()
+            _this.returnIfErrorFn()
+            _this.dragStatusClass('error')
+            EventBus.$emit('iserror')
+            _this.setClassAnimation('error')
+            console.log('isError')
+        },
+        dropHitTestisOK(dropzone, e){
+            var _this = this
+            //## OK
+            s_ok.play()
+            _this.$emit('isok')
+            _this.returnToPositionFn()
+            _this.stayInDropFn()
+            _this.dropzoneStatusClass('ok', dropzone)
+            _this.dropzoneSound(dropzone, 'oksound')
+            _this.dragStatusClass('ok')
+            _this.stayIfOkFn()
+            app.particleAnimation(e, 100, null, null)
+            
+            _this.setClassAnimation('ok')
+            _this.droppedtimesAdd(dropzone)
+            _this.appendToDropzoneFn(dropzone, e)
+            if(_this.disableok==undefined){
+                EventBus.$emit('isok')
+            }
+            this.droppedInOk = true
         },
         appendToDropzoneFn(dropzone, e){
             if(this.appendToDropzone != undefined){

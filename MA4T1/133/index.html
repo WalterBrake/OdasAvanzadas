@@ -197,17 +197,17 @@
                     </div>
                 </div>
                 <div class="row w100  wrap figs">
-                    <drag dropzone=".drop" data="rosa" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rombo.svg"></drag>
-                    <drag dropzone=".drop" data="azul" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/triangulo.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="verde" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/trapecio.svg"></drag>
-                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rectangulo.svg"></drag>
-                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop"><img src="aimg/rectangulo.svg"></drag>
+                    <drag dropzone=".drop" data="rosa" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rombo.svg"></drag>
+                    <drag dropzone=".drop" data="azul" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/triangulo.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="verde" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/trapecio.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rectangulo.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rectangulo.svg"></drag>
                 </div>
             </activity>
         </scene> <!-- end scene -->
@@ -285,7 +285,7 @@
         app.$set(app.temps, 'triangulo', null)
         app.$set(app.temps, 'rombo', null)
         app.$set(app.temps, 'cuadrado', null)
-        app.currentScene = 0
+        app.currentScene = 1
         app.scenesCount = 2
         app.$devmode = false
     </script>
