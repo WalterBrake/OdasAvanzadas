@@ -8166,6 +8166,38 @@
 		"oAP": "\/HI5T1\/256\/aimg\/Icon\r",
 		"oF": 0
 		},
+	"\/HI5T1\/256\/aimg\/lottie-a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI5T1\/256\/aimg\/lottie-a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI5T1\/256\/aimg\/lottie-b.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI5T1\/256\/aimg\/lottie-b-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI5T1\/256\/aimg\/lottie-c.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI5T1\/256\/aimg\/lottie-c-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI5T1\/256\/aimg\/lottie-d.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI5T1\/256\/aimg\/lottie-d-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/HI5T1\/256\/aimg\/mexico.svg": {
 		"ft": 2097152,
 		"miP": 0,

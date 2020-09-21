@@ -137,7 +137,7 @@
 .rw4 .box:nth-child(3) {
 	border-color: #73C04B;
 	border-radius: 0;
-	padding-top: 120px;
+	padding-top: 12px;
 }
 
 
@@ -161,11 +161,15 @@
                     <div class="box orange">
                         <p>
                             La Marina de Guerra Nacional consiguió que los españoles capitularan en noviembre de 
-                            <desplegar :key="0" answer="1825" show-ok modal-options :options="['1835', '1925', '1825']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
+                            <desplegar :key="0" answer="1825" show-ok modal-options :options="['1835', '1925', '1825']" @wasclicked="$refs.pley1.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
                             .
                         </p>
                     </div>
-                    <div class="box img" style="background-image:url(aimg/barco.svg)"></div>
+                    <div class="box img">
+                        <p>{{temps.a}}</p>
+                        <lottie-player src="aimg/lottie-a.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop ref="pley1"></lottie-player>
+                    </div>
+                    <!--<div class="box img" style="background-image:url(aimg/barco.svg)"></div>-->
                     <div class="box">
                         <p>
                             Una nueva expedición
@@ -201,32 +205,40 @@
                         <p>
                             <desplegar :key="7" answer="Francia" show-ok modal-options :options="['Bélgica', 'Francia', 'Italia']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
                             mandó tropas al fuerte de San Juan de Ulúa para bloquear el comercio en
-                            <desplegar :key="8" answer="1838" show-ok modal-options :options="['1834', '1838', '1883']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="8" answer="1838" show-ok modal-options :options="['1834', '1838', '1883']" @wasclicked="$refs.pley2.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
                         </p>
                     </div>
-                    <div class="box img" style="background-image:url(aimg/frontera.svg)"></div>
+                    <div class="box img">
+                        <lottie-player src="aimg/lottie-b.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop ref="pley2"></lottie-player>
+                    </div>
+                    <!--<div class="box img" style="background-image:url(aimg/frontera.svg)"></div>-->
                     <div class="box">
                         <p>
                             Texas se convirtió finalmente en un estado más de los 
-                            <desplegar :key="9" answer="Estados Unidos de América" show-ok modal-options :options="['España', 'Francia', 'Estados Unidos de América']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="9" answer="Estados Unidos de América" show-ok modal-options :options="['España', 'Francia', 'Estados Unidos de América']" @wasclicked="$refs.pley3.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
                             en 1845.
                         </p>
                     </div>
                 </div>
 
                 <div class="row rw4 w100">
-                    
-                    <div class="box img" style="background-image:url(aimg/firma.svg)"></div>
+                    <div class="box img">
+                        <lottie-player src="aimg/lottie-d.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop ref="pley4"></lottie-player>
+                    </div>
+                    <!--<div class="box img" style="background-image:url(aimg/firma.svg)"></div>-->
                     <div class="box">
                         <p>
                             Se firmó el Tratado 
                             <desplegar :key="10" answer="Guadalupe-Hidalgo" show-ok modal-options :options="['Santa Ana-Washington', 'Guadalupe-Hidalgo', 'San Luis']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
                             en el que México aceptó la pérdida de Nuevo México y California en 
-                            <desplegar :key="11" answer="1848" show-ok modal-options :options="['1848', '1858', '1884']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="11" answer="1848" show-ok modal-options :options="['1848', '1858', '1884']"  @wasclicked="$refs.pley4.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
                             .
                         </p>
                     </div>
-                    <div class="box img" style="background-image:url(aimg/mexico.svg)"></div>
+                    <div class="box img">
+                        <lottie-player src="aimg/lottie-c.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop ref="pley3"></lottie-player>
+                    </div>
+                    <!--<div class="box img" style="background-image:url(aimg/mexico.svg)"></div>-->
 
                 </div>
 
@@ -265,6 +277,7 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
+
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
