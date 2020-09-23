@@ -72,11 +72,11 @@
         <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="5" scene-color="#ED1C25">
 
-            <info type="dragdrop" title="Conozco en qué consiste la fecundación" text="Coloca la imagen que ilustre cada oración." textaudio="asound/instruccion.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Conozco en qué consiste la fecundación" text="Coloca las oraciones según el orden en el que sucede el desarrollo del embrión." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100">
                     <div class="col oraciones w30">
-                        <drag v-for="i in _.shuffle(temps)" :data="i.v" dropzone=".drop"><number c="8">{{i.v}}</number></drag>
+                        <drag v-for="i in 5" :data="i" dropzone=".drop"><number c="8">{{i}}</number></drag>
                     </div>
                     <div class="col drops w70">
                         <div class="row dropper" v-for="i in _.shuffle(temps)">

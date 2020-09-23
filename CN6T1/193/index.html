@@ -45,7 +45,6 @@
         }
 
         .drag {
-            width: 60%;
             height: auto;
         }
         .descnum {
@@ -84,7 +83,9 @@
             <activity>
                 <div class="row w100">
                     <div class="imgs w40 row wrap">
-                        <drag initclass="dragimg" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone><img :src="'aimg/'+i.val+'.svg'" class="w100 img-fluid"></drag>
+                        <div class="row w100 wrap">
+                            <drag initclass="dragimg w40" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone><img :src="'aimg/n'+i.val+'.svg'" class="w100 img-fluid"></drag>
+                        </div>
                     </div>
                     <div class="texts w60">
                         <div class="desc row w100" v-for="i in _.shuffle(temps)">
@@ -112,7 +113,7 @@
                     <div class="texts w50 row wrap">
                         <drag initclass="w100" v-for="i in _.shuffle(temps)" :key="i.val" dropzone=".drop" :data="i.val" append-to-dropzone>
                             <div class="row desc">
-                                <div class="card w20"><img :src="'aimg/'+i.val+'.svg'" class="w100"></div>
+                                <div class="card w20"><img :src="'aimg/n'+i.val+'.svg'" class="w100"></div>
                                 <div class="txt w80">{{i.txt}}</div>
                             </div>
                         </drag>
@@ -155,13 +156,13 @@
     <script>
         app.temps = [
             { val:'1', txt:'Los huesos son cubiertos por sedimentos producto de la erosión de las rocas que los protegen y evitan su desintegración.'},
-            { val:'2', txt:'Las partes blandas de los dinosaurios se des componen con gran rapidez o son devoradas por animales carroñeros.'},
+            { val:'2', txt:'Las partes blandas de los dinosaurios se descomponen con gran rapidez o son devoradas por animales carroñeros.'},
             { val:'3', txt:'Los minerales son disueltos por la lluvia, lo que hace posible su penetración a través del tejido.'},
             { val:'4', txt:'Cuando el agua se evapora, los minerales se precipitan en los huesos del tejido esponjoso y lo endurecen permitiendo su conservación.'},
             { val:'5', txt:'Otra forma es que los minerales disueltos sustituyan totalmente la estructura ósea de los dinosaurios conservando los huesos.'},
             { val:'6', txt:'Finalmente, las rocas que contienen los fósiles son erosionadas y el resto quedan al descubierto.'},
         ]
-        app.currentScene = 0
+        app.currentScene = 2
         app.scenesCount = 2
         app.$devmode = false
     </script>
