@@ -22,6 +22,7 @@
 	width: 100%;
 	transition: all 0.3s;
 }
+/*
 .pira .piraimg.grow_0:after,
 .pira .piraimg.grow_1:after,
 .pira .piraimg.grow_2:after,
@@ -36,6 +37,7 @@
 .pira .piraimg.grow_7:after {
 	height: 0;
 }
+*/
 .drops .drop {
 	background: #fff;
 	padding: 6px;
@@ -289,10 +291,41 @@
 	border-bottom: none;
 	box-sizing: border-box;
 }
-
-
-        @media (max-width:680px){
-        }
+.datanum .drag{
+	width: 100%;
+	height: 100%;
+}
+.drop.c1 {
+	border-radius: 6px 0 0 6px;
+	box-shadow: 4px 4px 0 #868585, -1px -1px 0 #868585, 1px -1px 0 #868585, -1px 1px 0 #868585, 1px 1px 0 #868585;
+	padding: 2px;
+	width: 90%;
+	margin-left: 10%;
+	margin-bottom: 10px;
+	text-align: center;
+	height: 40px;
+}
+.drop.c1 input {
+	max-width: 90%;
+	padding: 2px;
+}
+.drop.c1 .number {
+	text-align: center;
+}
+.drop.c1:nth-child(1) {
+	background: #4F1935 !important;
+}
+.drop.c1:nth-child(2) {
+	background: #AD0FB6 !important;
+}
+.drop.c1:nth-child(3) {
+	background: #7F5D84 !important;
+}
+.drop.c1:nth-child(4) {
+	background: #BAA1C4 !important;
+}
+	@media (max-width:680px){
+	}
     </style>
     </head>
 <body>
@@ -378,20 +411,26 @@
                             </template>
                         </div>
 
-                        <div class="datanum dn1"><number small c="2">1</number></div>
-                        <div class="datanum dn2"><number small c="3">2</number></div>
-                        <div class="datanum dn3"><number small c="1">3</number></div>
-                        <div class="datanum dn4"><number small c="4">4</number></div>
+                        <div class="datanum dn1"><drag dropzone=".drop" data="1" append-to-dropzone stay-if-ok><number small c="2">1</number></drag></div>
+                        <div class="datanum dn2"><drag dropzone=".drop" data="2" append-to-dropzone stay-if-ok><number small c="3">2</number></drag></div>
+                        <div class="datanum dn3"><drag dropzone=".drop" data="3" append-to-dropzone stay-if-ok><number small c="1">3</number></drag></div>
+                        <div class="datanum dn4"><drag dropzone=".drop" data="4" append-to-dropzone stay-if-ok><number small c="4">4</number></drag></div>
                     </div>
                 </div>
 
                 <div class="row w100">
                     <div class="dots w10">
+						<div class="drop c1" data="1" droptimes="untilok"></div>
+						<div class="drop c1" data="2" droptimes="untilok"></div>
+						<div class="drop c1" data="3" droptimes="untilok"></div>
+						<div class="drop c1" data="4" droptimes="untilok"></div>
+<!--
                         <inputable initclass="c1" isok="1"><number small c="2">1</number></inputable>
                         <inputable initclass="c1" isok="2"><number small c="3">2</number></inputable>
                         <inputable initclass="c1" isok="3"><number small c="1">3</number></inputable>
                         <inputable initclass="c1" isok="4"><number small c="4">4</number></inputable>
-                    </div>
+-->
+					</div>
                     <div class="nota w90">
                         <div class="row one">
                             <div class="w20 date">CDMX. <small>4 sept. 2020</small></div>

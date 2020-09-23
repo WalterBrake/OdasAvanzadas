@@ -119,7 +119,7 @@
         <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#EC8B2E">
 
-            <info type="dragdrop" title="Reconozco nuestras diferencias" text='Coloca la definición que corresponda de "Caracter Sexual Primario" y "Caracter Sexual Secundario".' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
+            <info type="dragdrop" title="Reconozco nuestras diferencias" text='Coloca la definición que corresponda de "Caracteres Sexuales Primarios" y "Caracteres Sexuales Secundarios".' textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
                 <div class="row w100">
                     <div class="w50 area">
@@ -163,16 +163,16 @@
                 </div>    
                 <div class="row w100 wrap">
                     <div v-for="i in [
-                        {d:'m', t: 'Ovarios', v:'ovarios'},
-                        {d:'h', t: 'Conductos deferentes', v:'conductos'},
-                        {d:'h', t: 'Pene', v:'pene'},
-                        {d:'m', t: 'Útero', v:'utero'},
-                        {d:'h', t: 'Vesícula seminal', v:'vesicula'},
-                        {d:'m', t: 'Tubas uterinos', v:'tubas'},
-                        {d:'m', t: 'Vulva', v:'vulca'},
-                        {d:'h', t: 'Testículos', v:'testiculos'},
-                        {d:'h', t: 'Próstata', v:'prostata'},
-                        {d:'m', t: 'Vagina', v:'vagina'},
+                        {d:'m', t: 'ovarios', v:'ovarios'},
+                        {d:'h', t: 'conductos deferentes', v:'conductos'},
+                        {d:'h', t: 'pene', v:'pene'},
+                        {d:'m', t: 'útero', v:'utero'},
+                        {d:'h', t: 'vesícula seminal', v:'vesicula'},
+                        {d:'m', t: 'tubas uterinas', v:'tubas'},
+                        {d:'m', t: 'vulva', v:'vulca'},
+                        {d:'h', t: 'testículos', v:'testiculos'},
+                        {d:'h', t: 'próstata', v:'prostata'},
+                        {d:'m', t: 'vagina', v:'vagina'},
                     ]" class="opt2">
                         <drag dropzone=".drop" :data="i.d" :dragsound="'asound/'+i.v+'.mp3'" append-to-dropzone dropzone-ok-class="okdrop"><div class="number small c4">{{i.t}}</div></drag>
                     </div>
