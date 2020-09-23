@@ -65,8 +65,8 @@
         <scene v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="2" scene-color="#9DCE77">
 
-            <info type="seleccionar" title="Identifico diferentes triángulos" text="¡Hola!, hoy aprenderemos a diferenciar triángulos. Los triángulos son figuras planas con tres lados." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.i2.play(); temps=true">
-                <audiotext text="Y se pueden clasificar de acuerdo a sus lados." audio="asound/instruccion2.mp3" :autoplay="false" ref="i2"></audiotext>
+            <info type="seleccionar" title="Identifico diferentes triángulos" text="¡Hola!, hoy aprenderemos a diferenciar triángulos. Los triángulos son figuras planas con tres lados." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions=" temps=true">
+                <audiotext text="Y se pueden clasificar de acuerdo a sus lados." audio="asound/instruccion2.mp3" :autoplay="true" v-if="temps"></audiotext>
             </info>
             <activity>
 
