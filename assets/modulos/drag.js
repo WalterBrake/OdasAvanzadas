@@ -16,7 +16,8 @@ Vue.component('drag', {
         'initclass', // class de inicio
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
         'appendToDropzone', // Se añade al contenedor del dropzone,
-        'disableok',
+        'disableok', //Deshabilita la acumulación de 'oks'
+        'returnToLastPosition', //Actualiza la posición por la última con Drop (ok o error)
     ],
     data() {
         return {
@@ -27,6 +28,7 @@ Vue.component('drag', {
             draggable: null,
             canvas: null,
             ctx: null,
+            lastPosition: {x:0, y:0},
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -37,6 +39,7 @@ Vue.component('drag', {
     `,
 
     methods: {
+
         init () {
             var _this = this
             _this.posx = _this.$refs.drag.offsetLeft
@@ -49,7 +52,11 @@ Vue.component('drag', {
                 bounds: '.activity',
                 onDragStart: function(e) { _this.DragStart(e) },
                 onDrag: function(e) { _this.Drag(e) },
-                onDragEnd: function(e) { _this.DragEnd(e) }
+                onDragEnd: function(e) { _this.DragEnd(e) },
+                onPress:function(){
+                    _this.lastPosition.x = this.x;
+                    _this.lastPosition.y = this.y; 
+                  },
             })
             _this.dragLineFnInit()
         },
@@ -61,6 +68,7 @@ Vue.component('drag', {
             _this.playDragSound()
             _this.dragPosX = e.clientX + window.scrollX
             _this.dragPosY = e.clientY + window.scrollY
+
         },
         Drag (e) {
             var _this = this
@@ -152,6 +160,9 @@ Vue.component('drag', {
             } else {
                 dropzone.classList.add('dropzoneused')
             }
+
+            
+
             if(this.data == dropzone.getAttribute('data')){
                 //## OK
                 s_ok.play()
@@ -182,8 +193,8 @@ Vue.component('drag', {
                 _this.dragStatusClass('error')
                 EventBus.$emit('iserror')
                 _this.setClassAnimation('error')
-
             }
+
         },
         appendToDropzoneFn(dropzone, e){
             if(this.appendToDropzone != undefined){
@@ -272,7 +283,19 @@ Vue.component('drag', {
                 this.backToInitPos()
             }
         },
+        reset(){
+            this.lastPosition.x = 0
+            this.lastPosition.y = 0
+            this.backToInitPos()
+            s_select.play()
+        },
         backToInitPos(){
+
+            if(this.returnToLastPosition!=undefined){
+                TweenLite.to(this.$refs.drag, .5, {x: this.lastPosition.x, y: this.lastPosition.y, top: this.posy, left: this.posx, delay: .6});
+                return false
+            }
+
             TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
             this.dragLineClear()
         },
@@ -346,6 +369,12 @@ Vue.component('drag', {
         dragLineClear(){
             if(this.dragLine!=undefined) {
                 this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height)
+            }
+        },
+        updatePositionFn (e) {
+            if(this.updatePosition!=undefined){   
+                this.posx = e.clientX + window.scrollX
+                this.posy = e.clientY + window.scrollY
             }
         }
     },

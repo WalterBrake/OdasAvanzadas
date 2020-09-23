@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completo series con operaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        
+        .drag {
+	width: 30%;
+	height: 100%;
+}
+.drag img {
+	height: 120%;
+}
+.insto {
+	background: #D53D49;
+	border-radius: 20px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.insto .audiotext {
+	font-size: 1rem;
+}
+.insto .audiotext .audiotextBtn {
+	max-width: 30px;
+	max-height: 30px;
+}
+@media (max-width: 1024px) {
+	.insto .audiotext {
+		font-size: 0.8rem;
+	}
+}
+aldo,
+nidia,
+jazmin {
+	display: inline-block;
+	padding: 1px 6px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #fff;
+}
+@media (max-width: 680px) {
+	aldo,
+	nidia,
+	jazmin {
+		border-width: 2px !important;
+		padding: 1px 2px;
+	}
+}
+aldo {
+	background: #CD7D31;
+	border: 4px solid #87C895;
+}
+nidia {
+	background: #FF9DAA;
+	border: 4px solid #957EA5;
+}
+jazmin {
+	background: #5CACBB;
+	border: 4px solid #D6CF38;
+}
+.tablero {
+	position: relative;
+}
+.tablero .drops .drop {
+	position: absolute;
+	width: 11.1%;
+	height: 12.5%;
+	border: 4px solid transparent;
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+.tablero .drops .drop.salid {
+	left: 2.4%;
+	top: 3.2%;
+	display: flex;
+}
+.tablero .drops .drop:nth-child(1) {
+	left: 14.2%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(2) {
+	left: 26%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(3) {
+	left: 38%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(4) {
+	left: 49.8%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(5) {
+	left: 61.5%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(6) {
+	left: 73.3%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(7) {
+	left: 85.2%;
+	top: 3.2%;
+}
+.tablero .drops .drop:nth-child(8) {
+	left: 85.2%;
+	top: 16.3%;
+}
+.tablero .drops .drop:nth-child(9) {
+	left: 85.2%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(10) {
+	left: 85.2%;
+	top: 42.5%;
+}
+.tablero .drops .drop:nth-child(11) {
+	left: 85.2%;
+	top: 55.6%;
+}
+.tablero .drops .drop:nth-child(12) {
+	left: 85.2%;
+	top: 68.7%;
+}
+.tablero .drops .drop:nth-child(13) {
+	left: 85.2%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(14) {
+	left: 73.3%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(15) {
+	left: 61.5%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(16) {
+	left: 49.8%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(17) {
+	left: 38%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(18) {
+	left: 26%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(19) {
+	left: 14.2%;
+	top: 81.8%;
+}
+.tablero .drops .drop:nth-child(20) {
+	left: 14.2%;
+	top: 68.7%;
+}
+.tablero .drops .drop:nth-child(21) {
+	left: 14.2%;
+	top: 55.6%;
+}
+.tablero .drops .drop:nth-child(22) {
+	left: 14.2%;
+	top: 42.5%;
+}
+.tablero .drops .drop:nth-child(23) {
+	left: 14.2%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(24) {
+	left: 26%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(25) {
+	left: 38%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(26) {
+	left: 49.8%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(27) {
+	left: 61.5%;
+	top: 29.4%;
+}
+.tablero .drops .drop:nth-child(28) {
+	left: 61.5%;
+	top: 42.5%;
+}
+.tablero .drops .drop:nth-child(29) {
+	left: 61.5%;
+	top: 55.6%;
+}
+.tablero .drops .drop:nth-child(30) {
+	left: 37%;
+	top: 55.6%;
+	width: 23.8%;
+}
+.tablero .drops .drop.hover {
+	border: 4px solid #D53D49;
+}
+.resultados {
+	width: 90%;
+	background: #FCF4CE;
+	margin-top: 10px;
+	padding: 10px;
+	border-radius: 10px;
+}
+@media (max-width: 680px) {
+	.resultados {
+		padding: 2px;
+	}
+}
+.resultados .aldo,
+.resultados .jazmin,
+.resultados .nidia {
+	background: #fff;
+	padding: 10px;
+	display: flex;
+	font-weight: bold;
+	border-radius: 10px;
+	box-sizing: border-box;
+	justify-content: space-between;
+	color: #fff;
+	width: 100%;
+	font-size: 0.9rem;
+}
+@media (max-width: 680px) {
+	.resultados .aldo,
+	.resultados .jazmin,
+	.resultados .nidia {
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		padding: 4px;
+	}
+}
+.resultados .aldo .bx,
+.resultados .jazmin .bx,
+.resultados .nidia .bx {
+	background: #D53D49;
+	color: #fff;
+	width: 20%;
+	text-align: center;
+	border-radius: 6px;
+}
+.resultados .aldo .button,
+.resultados .jazmin .button,
+.resultados .nidia .button {
+	padding: 2px 4px;
+	background: #FCF4CE;
+	font-size: 0.7rem;
+}
+.resultados .aldo {
+	background: #CD7D31;
+	border: 2px solid #87C895;
+}
+.resultados .nidia {
+	background: #FF9DAA;
+	border: 2px solid #957EA5;
+}
+.resultados .jazmin {
+	background: #5CACBB;
+	border: 2px solid #D6CF38;
+}
+.vbtn {
+	text-align: center;
+}
+.verifbtn {
+	width: 90%;
+	font-size: 1.4rem;
+	background: #FF9FC8;
+	color: #D53D49;
+	border: 2px solid #D53D49;
+	box-shadow: 4px 4px #D53D49;
+	margin: 4px;
+}
+
+    </style>
+    </head>
+<body>
+    <div id="app">
+        
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+        
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+        :answers="1" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Completo series con operaciones" text="Lee y escucha con atención la siguiente situación y selecciona las respuestas correctas." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.au2.play()">
+                <div style="margin-top:auto;">Mueve a los personajes a lo largo del circuito de acuerdo a los saltos que debe dar.</div>
+                <!--<audiotext text="Mueve a los personajes a lo largo del circuito de acuerdo a los saltos que debe dar." audio="asound/instruccion3.mp3" :autoplay="false" ref="au3"></audiotext>-->
+            </info>
+            <activity>
+                
+                <div class="row w100">
+                    <div class="w30 insto">
+                        <audiotext text="<aldo>Aldo</aldo>, <nidia>Nidia</nidia> y <jazmin>Jazmín</jazmin> recorren el siguiente circuito. <aldo>Aldo</aldo> avanza en saltos de 4 en 4, <nidia>Nidia</nidia> de 6 en 6 y <jazmin>Jazmín</jazmin> de 10 en 10." audio="asound/instruccion2.mp3"  :autoplay="false" ref="au2" @completed="/*$refs.au3.play()*/"></audiotext>
+                        <div class="resultados">
+                            <div class="aldo w30">Aldo: <div class="bx">{{temps.aldo}}</div><button class="button" @click="temps.aldo=0; $refs.aldo.reset()">Reiniciar</button></div>
+                            <div class="nidia w30">Nidia: <div class="bx">{{temps.nidia}}</div><button class="button" @click="temps.nidia=0; $refs.nidia.reset()">Reiniciar</button></div>
+                            <div class="jazmin w30">Jazmín: <div class="bx">{{temps.jazmin}}</div><button class="button" @click="temps.jazmin=0; $refs.jazmin.reset()">Reiniciar</button></div>
+                        </div>
+                    </div>
+                    <div class="tablero w70">
+                        <img src="aimg/tablero.svg" class="w100">
+                        <div class="drops">
+                            
+                            <div class="drop" v-for="(i, index) in 30" data="" droptimes="multiple" :droplimit="999" :oksound="'asound/n'+((index+1)*2)+'.mp3'"></div>
+
+                            <div class="drop salid" data="reset" droptimes="multiple" :droplimit="999">
+                                <drag disableok return-to-last-position dropzone=".drop" data="" @isok="temps.aldo++" @iserror="temps.aldo=0" ref="aldo"><img src="aimg/aldo.svg"></drag>
+                                <drag disableok return-to-last-position dropzone=".drop" data="" @isok="temps.nidia++" @iserror="temps.nidia=0"ref="nidia"><img src="aimg/nidia.svg"></drag>
+                                <drag disableok return-to-last-position dropzone=".drop" data="" @isok="temps.jazmin++" @iserror="temps.jazmin=0"ref="jazmin"><img src="aimg/jazmin.svg"></drag>
+                            </div>
+                            
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row w100 wrap">
+                    
+                </div>
+                <div class="row w100">
+                    <div class="vbtn">
+                        <verificar :aldo="temps.aldo" :nidia="temps.nidia" :jazmin="temps.jazmin" ></verificar>
+                    </div>
+                    </div>
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+    
+
+    
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        Vue.component('verificar', {
+            props: ['aldo', 'nidia', 'jazmin'],
+            data(){return { }},
+            methods: {
+                verif () {
+                    let aldo = this.aldo
+                    let nidia = this.nidia
+                    let jazmin = this.jazmin
+                    if(aldo == 15 && nidia == 10 && jazmin == 6){
+                        s_ok.play()
+                        this.$emit('isok')
+                        EventBus.$emit('isok')
+                    } else {
+                        s_error.play()
+                        EventBus.$emit('iserror')
+                    }
+                }
+            },
+            template: `
+            <button class="button verifbtn" @click="verif">Verificar</button>
+            `
+        })
+        app.$set(app.temps, 'aldo', 0)
+        app.$set(app.temps, 'jazmin', 0)
+        app.$set(app.temps, 'nidia', 0)
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+</html>
