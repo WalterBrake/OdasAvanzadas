@@ -588,6 +588,36 @@ embed {
 .w10 {
   width: 10%;
 }
+.h100 {
+  height: 100%;
+}
+.h90 {
+  height: 90%;
+}
+.h80 {
+  height: 80%;
+}
+.h70 {
+  height: 70%;
+}
+.h60 {
+  height: 60%;
+}
+.h50 {
+  height: 50%;
+}
+.h40 {
+  height: 40%;
+}
+.h30 {
+  height: 30%;
+}
+.h20 {
+  height: 20%;
+}
+.h10 {
+  height: 10%;
+}
 .number {
   font-family: 'barnacle_boyregular';
   font-size: 60px;
@@ -909,5 +939,114 @@ embed {
   border: 1px solid var(--c8);
   box-shadow: 4px 4px 0 var(--c8);
   --plyr-video-control-color-hover: var(--c8);
+}
+/* ###### MODULO : POPUP.js */
+.modpopup {
+  position: relative;
+  min-height: 200px;
+}
+.popup {
+  position: absolute;
+  background: var(--main);
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.popup.c1 {
+  background: #5EB246;
+}
+.popup.c1 .popup__button {
+  border: 2px solid #5EB246;
+}
+.popup.c1 .popup__button:after {
+  color: #5EB246;
+}
+.popup.c2 {
+  background: #005093;
+}
+.popup.c2 .popup__button {
+  border: 2px solid #005093;
+}
+.popup.c2 .popup__button:after {
+  color: #005093;
+}
+.popup.c3 {
+  background: #7ED4F7;
+}
+.popup.c3 .popup__button {
+  border: 2px solid #7ED4F7;
+}
+.popup.c3 .popup__button:after {
+  color: #7ED4F7;
+}
+.popup.c4 {
+  background: #EB8B2E;
+}
+.popup.c4 .popup__button {
+  border: 2px solid #EB8B2E;
+}
+.popup.c4 .popup__button:after {
+  color: #EB8B2E;
+}
+.popup.c5 {
+  background: #DB3E34;
+}
+.popup.c5 .popup__button {
+  border: 2px solid #DB3E34;
+}
+.popup.c5 .popup__button:after {
+  color: #DB3E34;
+}
+.popup.c6 {
+  background: #F460AB;
+}
+.popup.c6 .popup__button {
+  border: 2px solid #F460AB;
+}
+.popup.c6 .popup__button:after {
+  color: #F460AB;
+}
+.popup.c7 {
+  background: #C1CA27;
+}
+.popup.c7 .popup__button {
+  border: 2px solid #C1CA27;
+}
+.popup.c7 .popup__button:after {
+  color: #C1CA27;
+}
+.popup.c8 {
+  background: #C0A7D0;
+}
+.popup.c8 .popup__button {
+  border: 2px solid #C0A7D0;
+}
+.popup.c8 .popup__button:after {
+  color: #C0A7D0;
+}
+.popup .popup__button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid var(--main);
+}
+.popup .popup__button:after {
+  content: "x";
+  font-family: 'barnacle_boyregular';
+  color: var(--main);
+  font-size: 20px;
 }
 /*# sourceMappingURL=assets.css.map */

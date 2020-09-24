@@ -32,6 +32,7 @@ Vue.component('clickable', {
             }
             var click = this.$refs.clickable
             this.status = !this.status
+            console.log(this.status)
             this.clicksoundsFn()
             this.isOkOrError(e)
             s_select.play()

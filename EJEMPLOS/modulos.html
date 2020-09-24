@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .modulo {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #f0f0f0;
+            box-sizing: border-box;
+            box-shadow: 0 6px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            background: var(--main);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .modulo-info {
+            height: 100%;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .desc {
+            font-size: 1rem;
+
+        }
+
+        .detalle {
+            font-size: 0.9rem;
+            color: #888;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .mod {
+            background: var(--main);
+            color: var(--beige);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .activity {
+            height: auto;
+        }
+
+        .drop {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px dashed #fff;
+            box-sizing: border-box;
+        }
+
+        .drag {
+            width: auto;
+            height: auto;
+
+        }
+
+        .py5 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .drop4 .number {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-text-stroke-width: 0;
+            text-shadow: none;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        .okDrop {
+            background: linear-gradient(var(--accent), var(--c8), var(--clear));
+            border: 6px solid #fff;
+            height: 200px;
+            font-size: 3rem;
+        }
+
+        .okDrop .number {
+            display: none;
+        }
+
+        .boxdrag .box,
+        .boxdrop .box {
+            width: 30px;
+            height: 30px;
+            background: var(--sec);
+            border: 2px solid var(--main);
+            border-radius: 4px;
+        }
+
+        .boxdrop .box.dropped {
+            background: var(--clear);
+        }
+
+        .desplegar .deployer {
+            background: var(--clear);
+            border-bottom: 4px dashed var(--sec);
+        }
+
+        .desplegarModal .modaloptions.open {
+            position: fixed;
+        }
+
+        .audiotextBtn{
+            margin: 0 auto;
+        }
+
+        @media (max-width:680px) {}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" hidescorebox :score="scoreInScene" :temporals="temporals" alloks
+            alloks-sound="../../assets/asound/bienhecho_hombre.mp3" @completed="sceneCompleted" :devmode="$devmode"
+            :answers="9999" scene-color="#ED1C25">
+            <activity>
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>AUDIO TEXTO</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Muestra el texto conforme suena un archivo de audio. Cuenta con un botón
+                            superior que muestra si el audio esta activo con una animación y funciona como play/stop.
+                        </p>
+                        <p class="detalle">Mide el largo del audio y lo divide entre el número de palabras. Si un audio
+                            dura 10 segundos y el texto es de 5 palabras, mostrará una palabra cada 2 segundos.</p>
+                        <div class="mod">
+                            <audiotext text="Selecciona las respuestas correctas." audio="asound/instruccion.mp3">
+                            </audiotext>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>DRAG & DROP</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Arrastrar objeto y soltarlo sobre una zona designada. Tiene varias
+                            características descritas abajo. Es también utilizado para relacionar columnas. Cualquier
+                            objeto gráfico puede ser un Drag: texto, formas, imagenes, etc.</p>
+
+                        <p class="detalle">Se divide en dos partes: <strong>DRAG</strong> que es el objeto a arrastrar y
+                            <strong>DROP</strong> que es la zona donde se depositará.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row">
+                                <drag dropzone=".drop1" data="d1">
+                                    <number smaller c="1">Drag</number>
+                                </drag>
+                            </div>
+                            <div class="w50 h100">
+                                <div class="drop w100 h100 row drop1" droptimes="untilok" data="d1">DROP</div>
+                            </div>
+                        </div>
+                        <p class="detalle">Bloquear al ser soltado en la zona correcta.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row">
+                                <drag stay-if-ok dropzone=".drop1" data="d2">
+                                    <number smaller c="1">Drag 1 vez</number>
+                                </drag>
+                            </div>
+                            <div class="w50 h100">
+                                <div class="drop w100 h50 row drop1" droptimes="untilok" data="d2">DROP</div>
+                                <div class="drop w100 h50 row drop1" droptimes="untilok" data="dno">DROP ERROR</div>
+                            </div>
+                        </div>
+                        <p class="detalle">Dibujar una línea para representar la relación entre dos zonas o columnas.
+                        </p>
+                        <div class="mod row">
+                            <!--<drag dropzone=".dropzone" data="moneda" stay-if-ok drag-line particle-color="#5EB247"><div class="conector c1"></div></drag>-->
+                            <div class="w50 h100 row">
+                                <drag drag-line particle-color="#015093" dropzone=".drop1" data="d3">
+                                    <div class="conector c2"></div>
+                                </drag>
+                                <drag drag-line particle-color="#7DD5F7" dropzone=".drop1" data="d4">
+                                    <div class="conector c3"></div>
+                                </drag>
+                            </div>
+                            <div class="w50 h100">
+                                <div class="drop w100 h50 row drop1" droptimes="untilok" data="d3">DROP</div>
+                                <div class="drop w100 h50 row drop1" droptimes="untilok" data="d4">DROP</div>
+                            </div>
+                        </div>
+                        <p class="detalle">Añadir el objeto que se arrastra al drop.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row">
+                                <drag append-to-dropzone dropzone=".drop4" data="d1">
+                                    <number smaller c="1">Drag</number>
+                                </drag>
+                            </div>
+                            <div class="w50 h100">
+                                <div class="drop w100 h100 row drop4" droptimes="untilok" data="d1">DROP</div>
+                            </div>
+                        </div>
+                        <div class="mod row">
+                            <div class="w50 h100 row boxdrag">
+                                <drag append-to-dropzone dropzone=".drop4" data="d2">
+                                    <div class="box dropped"></div>
+                                </drag>
+                            </div>
+                            <div class="w50 h100 boxdrop">
+                                <div class="drop w100 h100 row drop4" droptimes="untilok" data="d2">
+                                    <div class="box" v-for="(i, index) in 5" :key="index"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="detalle">Arrastrar múltiples objetos y añadirlos al drop.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row boxdrag">
+                                <drag append-to-dropzone dropzone=".drop4" data="d6" v-for="(i, index) in 5"  :key="index">
+                                    <div class="box dropped"></div>
+                                </drag>
+                            </div>
+                            <div class="w50 h100 boxdrop">
+                                <div class="drop w100 h100 row drop4" droptimes="multiple" droplimit="99" data="d6">
+                                    <div class="box" v-for="(i, index) in 2"  :key="index"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="detalle">Arrastrar múltiples objetos con un límite de número y añadirlos al drop.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row boxdrag">
+                                <drag append-to-dropzone dropzone=".drop4" data="d7" v-for="(i, index) in 5"  :key="index">
+                                    <div class="box dropped"></div>
+                                </drag>
+                            </div>
+                            <div class="w50 h100 boxdrop">
+                                <div class="drop w100 h100 row drop4" droptimes="multiple" droplimit="2" data="d7">
+                                    <div class="box" v-for="(i, index) in 2"  :key="index"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="detalle">Modificar el DROP al depositar el DRAG.</p>
+                        <div class="mod row">
+                            <div class="w50 h100 row">
+                                <drag dropzone=".drop1" data="d1" append-to-dropzone dropzone-ok-class="okDrop">
+                                    <number smaller c="1">Drag</number>
+                                </drag>
+                            </div>
+                            <div class="w50 h100">
+                                <div class="drop w100 h100 row drop1" droptimes="untilok" data="d1">DROP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>CLICKABLE</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Recibe click y los selecciona con un círculo. Se puede utilizar para objetos
+                            individuales o en conjunto de respuestas.</p>
+                        <p class="detalle">Puede integrarse en cualquier objeto: texto, imagenes, formas, etc.</p>
+                        <div class="mod row">
+
+                            <clickable initclass="w50 text-center py5" block-if-error :isok="true" simple-ok>
+                                <number small c="7">CLICK ok</number>
+                            </clickable>
+                            <clickable initclass="w50 text-center py5" block-if-error :isok="false" simple-ok>
+                                <number small c="7">CLICK error</number>
+                            </clickable>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>INPUTABLE</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Campo para escritura. Respuesta: CORRECTO.</p>
+                        <p class="detalle">Campo de texto similar al de un formulario web. Se elimina al responder correctamente y mantiene el resultado.</p>
+                        <div class="mod row">
+                            <inputable initclass="c2" isok="correcto"><number small c="2">CORRECTO</number></inputable>
+                        </div>
+                        <p class="detalle">En vez de quedarse el texto puede aparecer otro objeto.</p>
+                        <div class="mod row">
+                            <inputable initclass="c2 text-center w100" isok="correcto"><img class="w50" src="aimg/azul.svg" ></inputable>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>DESPLEGABLE</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Simula un "menú desplegable" de formularios web pero muestra las opciones en un
+                            <em>popup</em> (modal) o en la misma línea. Al elegir la opción correcta se elimina el
+                            módulo y queda únicamente el resultado.</p>
+                        <p class="detalle">Al dar click se abre el popup (modal).</p>
+                        <div class="mod row">
+                            <desplegar initclass="desplegarModal" :key="0" answer="OK" show-ok modal-options
+                                :options="['OK', 'ERROR']"><template v-slot:option="{option}">
+                                    <number small randomc>{{option.text}}</number>
+                                </template></desplegar>
+                        </div>
+
+                        <p class="detalle">Apertura dentro de la misma línea.</p>
+                        <div class="mod row">
+                            <desplegar initclass="" :key="1" answer="OK" show-ok :options="['OK', 'ERROR']"><template
+                                    v-slot:option="{option}">
+                                    <number small randomc>{{option.text}}</number>
+                                </template></desplegar>
+                        </div>
+
+
+                        <p class="detalle">Abierto desde el inicio.</p>
+                        <div class="mod row">
+                            <desplegar initclass="" :key="2" initial-status="open" answer="OK" show-ok
+                                :options="['OK', 'ERROR']"><template v-slot:option="{option}">
+                                    <number small randomc>{{option.text}}</number>
+                                </template></desplegar>
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>DIÁLOGO</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Botón que reproduce un audio al dar click (similar a audiotexto). Puede mostrar "algo" al dar click o mientras se reproduce.</p>
+                        <p class="detalle">Simple. Únicamente se muestra el botón.</p>
+                        <div class="mod row">
+                            <div class="w100 text-center">
+                                <dialogaudio initclass="w100 text-center" audio="asound/instruccion.mp3" ></dialogaudio>
+                            </div>
+                        </div>
+                        
+                        <p class="detalle">Se muestra un objeto al dar click. Útil para diálogos tipo comic.</p>
+                        <div class="mod row">
+                            <div class="w100 text-center">
+                                <dialogaudio initclass="w100 text-center" audio="asound/instruccion.mp3" show-on-play><number smaller c="2">TEXTO U OBJETO OCULTO</number></dialogaudio>
+                            </div>
+                        </div>
+                        
+                        <p class="detalle">Se muestra un objeto al dar click. Y se oculta de nuevo al terminar.</p>
+                        <div class="mod row">
+                            <div class="w100 text-center">
+                                <dialogaudio initclass="w100 text-center" audio="asound/instruccion.mp3" show-while-play><number smaller c="3">SÓLO MIENTRAS SUENA</number></dialogaudio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row w100 modulo">
+                    <div class="w40 title">
+                        <number c="1" smaller>POPUP</number>
+                    </div>
+                    <div class="w60 modulo-info">
+                        <p class="desc">Al dar click se abre una ventana encima que puede almacenar contenido tipo texto, objetos, imagenes, etc. Cuenta con un botón para cerrar el popup.</p>
+                        <p class="detalle">NUEVO: no se ha utilizado en interactivos. No evalua, es únicamente para consulta.</p>
+                        
+                        <p class="detalle">Uso básico: Texto</p>
+                        <div class="mod row modpopup">
+                            <div class="w100 text-center">
+                                <button class="button" @click="$refs.pup.open()">Abrir popup</button>
+                                <popup c="2" ref="pup" :conf="['10%', '10%', '80%', '80%']"><number small c="7">CONTENIDO</number></popup>
+                            </div>
+                        </div>
+                        
+                        <p class="detalle">Uso básico: Imagen</p>
+                        <div class="mod row modpopup">
+                            <div class="w100 text-center">
+                                <button class="button" @click="$refs.pup2.open()">Abrir popup</button>
+                                <popup c="4" ref="pup2" :conf="['10%', '10%', '80%', '80%']"><img class="w50" src="aimg/azul.svg" ></popup>
+                            </div>
+                        </div>
+
+
+                        <p class="detalle">Uso con otro módulo: Inputable</p>
+                        <div class="mod row modpopup">
+                            <div class="w100 text-center">
+                                <button class="button" @click="$refs.pup2.open()">Abrir popup</button>
+                                <popup c="4" ref="pup2" :conf="['10%', '10%', '80%', '80%']">
+                                    <p>Escribe: CORRECTO</p>                                    
+                                    <inputable initclass="c2 text-center w100" isok="correcto"><number randomc>CORRECTO</number></inputable>
+                                </popup>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <!--SIGUE INPUTABLE-->
+
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+
+
+
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.currentScene = 1
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+
+</html>

@@ -449,6 +449,17 @@ embed {
 .w20{ width: 20%; }
 .w10{ width: 10%; }
 
+.h100{ height: 100%; }
+.h90{ height: 90%; }
+.h80{ height: 80%; }
+.h70{ height: 70%; }
+.h60{ height: 60%; }
+.h50{ height: 50%; }
+.h40{ height: 40%; }
+.h30{ height: 30%; }
+.h20{ height: 20%; }
+.h10{ height: 10%; }
+
 
 .numborder(@col){
     -webkit-text-stroke-color: @col;
@@ -654,4 +665,66 @@ embed {
 	&.c6{ .videocolor(var(--c6));}
 	&.c7{ .videocolor(var(--c7));}
 	&.c8{ .videocolor(var(--c8));}
+}
+
+
+
+/* ###### MODULO : POPUP.js */
+
+.modpopup {
+	position: relative;
+	min-height: 200px;
+}
+
+
+.popupcolor(@col){
+    background: @col;
+    .popup__button{
+        border: 2px solid @col;
+        &:after{
+            color: @col;
+        }
+    }
+}
+
+.popup {
+	position: absolute;
+	background: var(--main);
+	border: 2px solid #fff;
+	padding: 10px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    &.c1{  .popupcolor(@main); }
+    &.c2{ .popupcolor(@sec); }
+    &.c3{ .popupcolor(@clear); }
+    &.c4{ .popupcolor(@accent); }
+    &.c5{ .popupcolor(@wrongcol); }
+    &.c6 { .popupcolor(#F460AB); }
+    &.c7 { .popupcolor(#C1CA27); }
+    &.c8 { .popupcolor(#C0A7D0); }
+
+}
+.popup .popup__button {
+	background: transparent;
+	border: none;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+	border: 2px solid var(--main);
+}
+.popup .popup__button:after {
+	content: "x";
+	font-family: 'barnacle_boyregular';
+	color: var(--main);
+	font-size: 20px;
 }

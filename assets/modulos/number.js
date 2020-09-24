@@ -3,7 +3,7 @@ Vue.component('number', {
         'initclass', // clase inicial
         'small', // tamano pequeno
         'smaller', // tamano mas pequeno
-        'c', // valor que se compara con el campo answer de options
+        'c', // Clase de color que se asigna (1-8)
         'randomc', //color aleatorio
     ],
     data () {

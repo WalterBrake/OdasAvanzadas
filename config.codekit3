@@ -536,6 +536,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/popup.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/popup-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/scene.js": {
 		"ft": 64,
 		"ma": 0,
@@ -3847,6 +3857,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/EJEMPLOS\/drag-basico.html",
+		"oF": 0
+		},
+	"\/EJEMPLOS\/modulos.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/EJEMPLOS\/modulos.html",
 		"oF": 0
 		},
 	"\/EJEMPLOS\/STARTER.html": {
