@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplico rápidamente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <style>
+        .dice {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .dice button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+
+        .dice {
+            z-index: 3;
+        }
+        .tablero {
+            position: relative;
+        }
+        .frog {
+            position: absolute;
+            width: 10%;
+            transition: all 0.8s;
+        }
+        .frog.frog1 {
+            top: 4%;
+            left: 5%;
+        }
+        .frog.frog2 {
+            top: 43%;
+            left: 3%;
+        }
+        .frog.frog3 {
+            top: 84%;
+            left: 5%;
+        }
+        .frog.frog1.f1 {
+            left: 40%;
+            top: 20%;
+        }
+        .frog.frog1.f2 {
+            left: 48%;
+            top: 45%;
+        }
+        .frog.frog1.f3 {
+            left: 56%;
+            top: 66%;
+        }
+        .frog.frog1.f4 {
+            left: 76%;
+            top: 81%;
+        }
+        .frog.frog1.f5 {
+            left: 88%;
+            top: 86%;
+        }
+        .frog.frog2.f1 {
+            left: 20%;
+            top: 20%;
+        }
+        .frog.frog2.f2 {
+            left: 46%;
+            top: 24%;
+        }
+        .frog.frog2.f3 {
+            left: 59%;
+            top: 30%;
+        }
+        .frog.frog2.f4 {
+            left: 84%;
+            top: 49%;
+        }
+        .frog.frog2.f5 {
+            left: 88%;
+            top: 36%;
+        }
+        .frog.frog3.f1 {
+            left: 7%;
+            top: 72%;
+        }
+        .frog.frog3.f2 {
+            left: 52%;
+            top: 52%;
+        }
+        .frog.frog3.f3 {
+            left: 62%;
+            top: 20%;
+        }
+        .frog.frog3.f4 {
+            left: 70%;
+            top: 4%;
+        }
+        .frog.frog3.f5 {
+            left: 78%;
+            top: 5%;
+        }
+        .frog.frog3.f6 {
+            left: 88%;
+            top: 8%;
+        }
+
+
+        .popups {
+	position: absolute;
+	left: 30%;
+	right: 30%;
+	bottom: 1%;
+	text-align: center;
+	border-radius: 10px;
+	padding: 10px;
+	color: #fff;
+	font-size: 1.2rem;
+	border: 2px solid #FCF4CE;
+	box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.popups .h3 {
+	font-size: 1.6rem;
+	font-family: 'barnacle_boyregular';
+	color: var(--beige);
+	margin-bottom: 10px;
+}
+.popups .options {
+	font-size: 1.2rem;
+}
+.popups .options .option {
+	font-weight: normal;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 4px 10px;
+	border-radius: 6px;
+	text-align: center;
+}
+.popups.f1 {
+	background: #189B90;
+}
+.popups.f2 {
+	background: #B1B347;
+}
+.popups.f3 {
+	background: #B63F63;
+}
+.button.start {
+	font-size: 2rem;
+}
+
+
+
+        @media (max-width:680px) {}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+        <!-- ### scene -->
+        <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks
+            alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
+            :answers="13" scene-color="#ED1C25">
+
+            <info type="dragdrop" title="Multiplico rápidamente" text="Las ranas deben llegar al otro lado del río, ayúdalas." textaudio="asound/instruccion.mp3"
+                :autoplay="true" @completedinstructions="temps.audio1=true">
+
+                <audiotext text="Multiplica el número de la piedra en la que se detiene por el número que aparece en el dado, y elige la respuesta correcta." audio="asound/instruccion2.mp3" :autoplay="true" v-if="temps.audio1"></audiotext>
+                <button class="button start mt-auto" @click="temps.frog1=1; $refs.dado.dicePosition(3)" v-if="temps.frog1==0">Tirar dado</button>
+            </info>
+            <activity>
+
+                <dado ref="dado" color="#5EB247" nobtn @isrolling="(($ev) => { temps.diceing = $ev})"></dado> <!--dicePosition()-->
+                
+                <div class="row w100">
+                    <div class="w70 tablero">
+                        <img src="aimg/bg.png" class="w100">
+                        <div class="frogs">
+                            <div :class="'frog frog1 f'+temps.frog1 + (temps.diceing && temps.frog1<5 && temps.frog1>0 ? ' animate__animated animate__bounce animate__faster' : ' animate__animated animate__rubberBand')  "><img src="aimg/rana.svg" class="w100"></div>
+                            <div :class="'frog frog2 f'+temps.frog2 + (temps.diceing && temps.frog2<5 && temps.frog2>0 ? ' animate__animated animate__bounce animate__faster' : ' animate__animated animate__rubberBand')  "><img src="aimg/rana2.svg" class="w100"></div>
+                            <div :class="'frog frog3 f'+temps.frog3 + (temps.diceing && temps.frog1<6 && temps.frog3>0 ? ' animate__animated animate__bounce animate__faster' : ' animate__animated animate__rubberBand')  "><img src="aimg/rana3.svg" class="w100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  ###########################  -->
+                <template v-for="(i, index) in [
+                    {op: '50 x 3', values: [120, 150, 170], ans: 150, next: 6, },
+                    {op: '90 x 6', values: [270, 540, 450], ans: 540, next: 5, },
+                    {op: '100 x 5', values: [150, 50, 500], ans: 500, next: 2, },
+                    {op: '80 x 2', values: [160, 86, 260], ans: 160, next: 4, last:true },
+                ]">
+                    <div class="popups f1 animate__animated animate__rubberBand" v-if="temps.frog1==(index+1) && !temps.diceing">
+                        <div class="h3">{{i.op}}</div>
+                        <desplegar @wasclicked="temps.frog1++; $refs.dado.dicePosition(i.next); if(i.last){temps.frog2=1}" initial-status="open" :key="index" :answer="i.ans" show-ok :options="i.values"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </template>
+                
+                <template v-for="(i, index) in [
+                    {op: '90 x 4', values: [280,360,380], ans: 360, next: 4, },
+                    {op: '70 x 4', values: [201,101,210], ans: 210, next: 5, },
+                    {op: '40 x 5', values: [200,100,150], ans: 200, next: 6, },
+                    {op: '100 x 6', values: [106, 600, 260], ans: 600, next: 5, last:true },
+                ]">
+                    <div class="popups f2 animate__animated animate__rubberBand" v-if="temps.frog2==(index+1) && !temps.diceing && temps.frog1==5">
+                        <div class="h3">{{i.op}}</div>
+                        <desplegar @wasclicked="temps.frog2++; $refs.dado.dicePosition(i.next); if(i.last){temps.frog3=1}" initial-status="open" :key="index+4" :answer="i.ans" show-ok :options="i.values"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </template>
+
+                <template v-for="(i, index) in [
+                    {op: '10 x 5', values: [105,150,50], ans: 50, next: 2, },
+                    {op: '30 x 2', values: [60,15,50], ans: 60, next: 6, },
+                    {op: '40 x 6', values: [160,200,240], ans: 240, next: 3, },
+                    {op: '60 x 3', values: [108,118,180], ans: 180, next: 3 },
+                    {op: '90 x 3', values: [180,270,720], ans: 270, next: false },
+                ]">
+                    <div class="popups f3 animate__animated animate__rubberBand" v-if="temps.frog3==(index+1) && !temps.diceing && temps.frog2==5">
+                        <div class="h3">{{i.op}}</div>
+                        <desplegar @wasclicked="temps.frog3++; if(i.next){$refs.dado.dicePosition(i.next)}" initial-status="open" :key="index+8" :answer="i.ans" show-ok :options="i.values"><template v-slot:option="{option}"><p>{{option.text}}</p></template></desplegar>
+                    </div>
+                </template>
+                
+                
+
+
+
+
+
+            </activity>
+        </scene> <!-- end scene -->
+
+
+        <scene v-if="currentScene==2" :key="2" end-scene :final-data="finalData"></scene>
+
+
+
+
+    </div>
+    <!-- libraries -->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <script src="dado.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+
+        app.$set(app.temps, 'audio1', false)
+        app.$set(app.temps,'diceing', true)
+        app.$set(app.temps,'frog1', 0)
+        app.$set(app.temps,'frog2', 0)
+        app.$set(app.temps,'frog3', 0)
+        
+        app.currentScene = 0
+        app.scenesCount = 1
+        app.$devmode = false
+    </script>
+</body>
+
+</html>

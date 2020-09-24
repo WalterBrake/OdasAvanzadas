@@ -53,5 +53,5 @@ Vue.component('choose', {
 })
 
 /*
-<choose v-model="r[4]" ref="q4" num="1." text="El vestido de la niña es:" :options="['rojo', 'amarillo', 'azul']" @isright="right++" answer="amarillo" />
+<choose v-model="r[4]" ref="q4" num="1." text="El vestido de la niña es:" :options="['rojo', 'amarillo', 'azul']" @isright="right++" answer="amarillo" /></choose>
 */
