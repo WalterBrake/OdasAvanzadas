@@ -28,15 +28,17 @@
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-            margin: 10px;
+            box-sizing: border-box;
+            padding: 10px;
         }
 
         .modulo-info {
             height: 100%;
-            margin: 10px;
             display: flex;
             justify-content: center;
             flex-direction: column;
+            box-sizing: border-box;
+            padding: 10px;
         }
 
         .desc {
@@ -59,6 +61,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
+            box-sizing: border-box;
         }
 
         .activity {
@@ -148,11 +151,11 @@
             :answers="9999" scene-color="#ED1C25">
             <activity>
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>AUDIO TEXTO</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Muestra el texto conforme suena un archivo de audio. Cuenta con un botón
                             superior que muestra si el audio esta activo con una animación y funciona como play/stop.
                         </p>
@@ -165,11 +168,11 @@
                     </div>
                 </div>
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>DRAG & DROP</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Arrastrar objeto y soltarlo sobre una zona designada. Tiene varias
                             características descritas abajo. Es también utilizado para relacionar columnas. Cualquier
                             objeto gráfico puede ser un Drag: texto, formas, imagenes, etc.</p>
@@ -280,11 +283,11 @@
 
 
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>CLICKABLE</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Recibe click y los selecciona con un círculo. Se puede utilizar para objetos
                             individuales o en conjunto de respuestas.</p>
                         <p class="detalle">Puede integrarse en cualquier objeto: texto, imagenes, formas, etc.</p>
@@ -302,11 +305,11 @@
                 </div>
 
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>INPUTABLE</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Campo para escritura. Respuesta: CORRECTO.</p>
                         <p class="detalle">Campo de texto similar al de un formulario web. Se elimina al responder correctamente y mantiene el resultado.</p>
                         <div class="mod row">
@@ -322,11 +325,11 @@
 
 
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>DESPLEGABLE</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Simula un "menú desplegable" de formularios web pero muestra las opciones en un
                             <em>popup</em> (modal) o en la misma línea. Al elegir la opción correcta se elimina el
                             módulo y queda únicamente el resultado.</p>
@@ -361,11 +364,11 @@
                 
                 
                 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>DIÁLOGO</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Botón que reproduce un audio al dar click (similar a audiotexto). Puede mostrar "algo" al dar click o mientras se reproduce.</p>
                         <p class="detalle">Simple. Únicamente se muestra el botón.</p>
                         <div class="mod row">
@@ -392,11 +395,11 @@
 
 
 
-                <div class="row w100 modulo">
-                    <div class="w40 title">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title">
                         <number c="1" smaller>POPUP</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Al dar click se abre una ventana encima que puede almacenar contenido tipo texto, objetos, imagenes, etc. Cuenta con un botón para cerrar el popup.</p>
                         <p class="detalle">NUEVO: no se ha utilizado en interactivos. No evalua, es únicamente para consulta.</p>
                         
@@ -431,11 +434,11 @@
                     </div>
                 </div>
 
-                <div class="row w100 modulo">
-                    <div class="w40 title text-center">
+                <div class="row w100 modulo wrap">
+                    <div class="w40 wm100 title text-center">
                         <number c="1" smaller>MONTAJE  DE CONTENIDOS</number>
                     </div>
-                    <div class="w60 modulo-info">
+                    <div class="w60 wm100 modulo-info">
                         <p class="desc">Consideraciones sobre medidas</p>
                         <p class="detalle">Debido a que los interactivos estan destinados para web y multiplataformas, se debe considerar como "flexible" o "elástica" la manera en que funcionan los tamaños dentro del interactivo. Comunmente denominado "Responsivo".</p>
                         <p class="detalle">La mayoría de interactivos cuentan con una zona de Información (verde) y otra de Actividad (beige). La de actividad tiene una medida máxima de 800 pixeles por 600 pixeles. La informativa tiene como tamaño máximo 400px por 600px. (Azul representa el navegador.)</p>
