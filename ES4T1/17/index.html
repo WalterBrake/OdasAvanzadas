@@ -16,19 +16,32 @@
             text-align: center;
             box-sizing: border-box;
         }
+
+        .drag:empty{
+            display: none;
+        }
         .drag p{
             font-size: 0.8rem;
             background: #fff;
             padding: 4px;
             border-radius: 10px;
         }
-        .recuerda .audiotext{
+        .recuerda .dialogaudio {
             background: #FCDDD6;
-            border-radius: 30px 10px 30px 10px;
-            padding: 0 10px 10px 10px;
+            border-radius: 20px 10px 20px 10px;
+            padding: 10px;
             font-size: 0.9rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 90%;
+            z-index: 3;
+            text-align: center;
+            border: 2px solid #BDA6A0;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
         }
-        .recuerda .audiotext strong {color:#F14A5E;}
+        .recuerda .audiotextBtn img{ width: 30px; }
+        .recuerda .dialogaudio  strong {color:#F14A5E;}
 
         .box, .drop, .head{
             height: auto;
@@ -57,8 +70,23 @@
         .box.c4, .drop.c4 { background: var(--clear);}
         .box{width:20%;}
         .box{font-weight: bold;}
+
         @media (max-width:680px){
             .box{
+                font-size: 0.8rem;
+            }
+            .recuerda .audiotext{
+                font-size: 0.8rem;
+                padding: 4px;
+            }
+
+            .opciones{
+                font-size: 0.7rem;
+            }
+            .box, .drop, .head{
+                flex-grow: 1;
+                margin: 0;
+                padding: 2px;
                 font-size: 0.8rem;
             }
         }
@@ -73,17 +101,19 @@
         <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode"
         :answers="8" scene-color="#5EB247">
 
-            <info type="dragdrop" title="Leemos poemas" text="Relaciona cada recurso literario con la definición y el ejemplo correspondiente." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.rec.play()"></info>
+            <info type="dragdrop" title="Leemos poemas" text="Relaciona cada recurso literario con la definición y el ejemplo correspondiente." textaudio="asound/instruccion.mp3" :autoplay="true" @completedinstructions="$refs.rec.playstop()"></info>
             <activity>
                 <div class="row w100 recuerda">
-                    <audiotext audio="asound/recuerda.mp3" text="Recuerda que los <strong>poemas</strong> son composiciones literarias que expresan ideas, sentimientos o emociones, por lo general, utilizan el lenguaje figurado y están escritos en versos y estrofas." :autoplay="false" ref="rec"></audiotext>
+                    <dialogaudio audio="asound/recuerda.mp3" show-while-play :autoplay="false" ref="rec">
+                        <p>Recuerda que los <strong>poemas</strong> son composiciones literarias que expresan ideas, sentimientos o emociones, por lo general, utilizan el lenguaje figurado y están escritos en versos y estrofas.</p>
+                    </dialogaudio>
                 </div>
-                <div class="row w100 wrap opciones mt-auto">
+                <div class="row w100 opciones wrap mt-auto">
                     <template v-for="i in temps" v-if="i.type!='ti'">
                         <drag :initclass="i.type" dropzone=".drop" :data="i.text"  append-to-dropzone><p>{{i.text}}</p></drag>
                     </template>
                 </div>
-                <div class="row w100 wrap tabla mt-auto">
+                <div class="row w100 wrap tabla mt-auto mb-1">
                     <div class="box head"><p>Recurso literario</p></div>
                     <div class=" head"><p>Definición</p></div>
                     <div class=" head"><p>Ejemplo</p></div>

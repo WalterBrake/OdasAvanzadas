@@ -35,7 +35,8 @@ var app = new Vue({
             temporals: [],
             temps: {},
             scoreByScenes: [],
-            screen: []
+            screen: [],
+            timeoutSounds: null,
         }
     },
     watch: {
@@ -69,6 +70,7 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev){
+            var _this = this
             if($ev == false){
                 //this.currentScene++
                 this.temporals = []
@@ -85,8 +87,20 @@ var app = new Vue({
             if($ev.scoresum){ this.finalData.scoresum += $ev.scoresum }
             this.screencapture()
 
-            this.changeSceneTransition()
+            //this.changeSceneTransition()
+
+            this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 300)
             
+        },
+        checkIfSoundsArePlaying(){
+            var allmuted = true
+            for(var hw in Howler._howls){
+                if(Howler._howls[hw].playing()){ allmuted = false }
+            }
+            if(allmuted){
+                clearInterval(this.timeoutSounds)
+                this.changeSceneTransition()
+            }
         },
         changeSceneTransition(speed){
             let speedpart = speed ? speed : 30
