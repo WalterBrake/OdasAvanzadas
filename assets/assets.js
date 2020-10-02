@@ -89,7 +89,7 @@ var app = new Vue({
 
             //this.changeSceneTransition()
 
-            this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 300)
+            this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 100)
             
         },
         checkIfSoundsArePlaying(){
@@ -103,7 +103,7 @@ var app = new Vue({
             }
         },
         changeSceneTransition(speed){
-            let speedpart = speed ? speed : 30
+            let speedpart = speed ? speed : 10
             var _this = this
             var fwIt = 0
             var fw = setInterval(function () {

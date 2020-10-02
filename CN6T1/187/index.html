@@ -145,8 +145,14 @@
             width: 35%;
         }
 
-  
+        .exe1 .drop img{display: none;}
+        .exe1 .drop.okDrop img{
+            display: block;
+        }
 
+        .exe1 .drag.hidden{
+            display: none !important;
+        }
 
         @media (max-width:680px){
         }
@@ -165,27 +171,40 @@
                 <audiotext audio="asound/instruccion2.mp3" text="Para aprender más, completa la infografía." ref="in2"></audiotext>
             </info>
             <activity>
-                <div class="row w100">
-                    <div class="grafia w50">
-                        <img src="aimg/info.svg" class="100">
+                <div class="row w100 exe1">
+                    <div class="grafia w60">
+                        <img src="aimg/info.svg" class="w100">
                         <div class="drops">
-                            <div class="drop" v-for="i in 12" :key="i" :data="i" droptimes="untilok"></div>
+                            <div class="drop" v-for="i in 12" :key="i" :data="i" droptimes="untilok"> <img :src="'aimg/i'+(i)+'.svg'"> </div>
                             <div class="heart1"><img src="aimg/i13.svg"></div>
                         </div>
                     </div>
-                    <div class="w50 parts row wrap">
-                        <drag :key="1" dropzone=".drop" dropzone-ok-class="okDrop" :data="1" append-to-dropzone @isok="temps++"><img :src="'aimg/i1.svg'"></drag>
-                        <drag :key="2" dropzone=".drop" dropzone-ok-class="okDrop" :data="2" append-to-dropzone @isok="temps++" v-if="temps>0"><img :src="'aimg/i2.svg'" style="max-width: 120px;"></drag>
-                        <drag :key="3" dropzone=".drop" dropzone-ok-class="okDrop" :data="3" append-to-dropzone @isok="temps++" v-if="temps>1"><img :src="'aimg/i3.svg'"></drag>
-                        <drag :key="4" dropzone=".drop" dropzone-ok-class="okDrop" :data="4" append-to-dropzone @isok="temps++" v-if="temps>2"><img :src="'aimg/i4.svg'" style="max-width: 160px;"></drag>
-                        <drag :key="5" dropzone=".drop" dropzone-ok-class="okDrop" :data="5" append-to-dropzone @isok="temps++" v-if="temps>3"><img :src="'aimg/i5.svg'" style="max-width: 120px;"></drag>
-                        <drag :key="6" dropzone=".drop" dropzone-ok-class="okDrop" :data="6" append-to-dropzone @isok="temps++" v-if="temps>4"><img :src="'aimg/i6.svg'" style="max-width: 120px;"></drag>
-                        <drag :key="12" dropzone=".drop" dropzone-ok-class="okDrop" :data="12" append-to-dropzone @isok="temps++" v-if="temps>5"><img :src="'aimg/i12.svg'" ></drag>
-                        <drag :key="7" dropzone=".drop" dropzone-ok-class="okDrop" :data="7" append-to-dropzone @isok="temps++" v-if="temps>6"><img :src="'aimg/i7.svg'" style="max-width: 160px;"></drag>
-                        <drag :key="8" dropzone=".drop" dropzone-ok-class="okDrop" :data="8" append-to-dropzone @isok="temps++" v-if="temps>7"><img :src="'aimg/i8.svg'" style="max-width: 160px;"></drag>
-                        <drag :key="9" dropzone=".drop" dropzone-ok-class="okDrop" :data="9" append-to-dropzone @isok="temps++" v-if="temps>8"><img :src="'aimg/i9.svg'"></drag>
-                        <drag :key="10" dropzone=".drop" dropzone-ok-class="okDrop" :data="10" append-to-dropzone @isok="temps++" v-if="temps>9"><img :src="'aimg/i10.svg'" style="max-width: 120px;"></drag>
-                        <drag :key="11" dropzone=".drop" dropzone-ok-class="okDrop" :data="11" append-to-dropzone @isok="temps++" v-if="temps>10"><img :src="'aimg/i11.svg'" style="max-width: 160px;"></drag>
+                    <div class="w40 parts row wrap animate__animated animate__pulse animate__infinite">
+
+                        <drag :key="1" dropzone=".drop" dropzone-ok-class="okDrop" :data="1" @isok="temps++" drag-ok-class="hidden">
+                            <p>Su función es distribuir la sangre por todos los órganos y tejidos del cuerpo. Esta conformado por el <strong>corazón</strong>, y los vasos sanguíneos, de los cuales existen tres tipos: las <strong>arterias</strong>, las <strong></strong> y los <strong>capilares</strong>.</p>
+                        </drag>
+                        <drag :key="2" dropzone=".drop" dropzone-ok-class="okDrop" :data="2" @isok="temps++" v-if="temps>0" drag-ok-class="hidden"><img :src="'aimg/i2.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="3" dropzone=".drop" dropzone-ok-class="okDrop" :data="3" @isok="temps++" v-if="temps>1" drag-ok-class="hidden"><img :src="'aimg/i3.svg'"></drag>
+                        <drag :key="4" dropzone=".drop" dropzone-ok-class="okDrop" :data="4" @isok="temps++" v-if="temps>2" drag-ok-class="hidden">
+                            <p>Es un tejido líquido, compuesto por sustancias orgánicas e inorgánicas y por agua.</p>    
+                        </drag>
+                        <drag :key="5" dropzone=".drop" dropzone-ok-class="okDrop" :data="5"  @isok="temps++" v-if="temps>3" drag-ok-class="hidden"><img :src="'aimg/i5.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="6" dropzone=".drop" dropzone-ok-class="okDrop" :data="6"  @isok="temps++" v-if="temps>4" drag-ok-class="hidden"><img :src="'aimg/i6.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="7" dropzone=".drop" dropzone-ok-class="okDrop" :data="7"  @isok="temps++" v-if="temps>6" drag-ok-class="hidden">
+                            <p>Su pared es más fina y menos resistente que la de las arterias pues la sangre circula por ellas con menos presión.</p>
+                        </drag>
+                        <drag :key="12" dropzone=".drop" dropzone-ok-class="okDrop" :data="12"  @isok="temps++" v-if="temps>5" drag-ok-class="hidden"><img :src="'aimg/i12.svg'" ></drag>
+                        <drag :key="8" dropzone=".drop" dropzone-ok-class="okDrop" :data="8"  @isok="temps++" v-if="temps>7" drag-ok-class="hidden">
+                            <p>Son los vasos sanguíneos más pequeños y delgados del cuerpo humano. Permiten el movimiento de sustancias.</p>
+                        </drag>
+                        <drag :key="9" dropzone=".drop" dropzone-ok-class="okDrop" :data="9"  @isok="temps++" v-if="temps>8" drag-ok-class="hidden"><img :src="'aimg/i9.svg'"></drag>
+                        <drag :key="10" dropzone=".drop" dropzone-ok-class="okDrop" :data="10"  @isok="temps++" v-if="temps>9" drag-ok-class="hidden"><img :src="'aimg/i10.svg'" style="max-width: 120px;"></drag>
+                        <drag :key="11" dropzone=".drop" dropzone-ok-class="okDrop" :data="11"  @isok="temps++" v-if="temps>10" drag-ok-class="hidden">
+                            <p>El corazón bombea la sangre que circula por las arterias para llevar los nutrientes y el oxígeno al cuerpo, y regresa por las venas con los amteriales de desecho.</p>
+                        </drag>
+
+                        <!--<drag :key="1" dropzone=".drop" dropzone-ok-class="okDrop" :data="1"  @isok="temps++"><img :src="'aimg/i1.svg'"></drag>-->
                     </div>
                 </div>
             </activity>
@@ -199,7 +218,7 @@
             </info>
             <activity>
                 <div class="row">
-                    <div class="apheart w50 wm70">
+                    <div class="apheart w60 wm70">
                         <img src="aimg/info2.png" class="w100">
                         <div class="dropheart" data="heart" droptimes="untilok"><img src="aimg/kid.svg" class="w100"></div>
                         <div class="venasarterias" v-if="temps == 20"><lottie-player src="aimg/venasarterias.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player></div>
@@ -241,6 +260,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.temps = 0
+
         app.currentScene = 0
         app.scenesCount = 2
         app.$devmode = false
