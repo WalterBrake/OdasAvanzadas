@@ -55,7 +55,7 @@
         .desplegar .options {
             flex-wrap: wrap;
         }
-        .desplegar .options .option .number.small{
+        .desplegar .options .option .number.smaller{
             font-size: 1.3rem;
             -webkit-text-stroke-width: 1px;
         }
@@ -140,6 +140,9 @@
 	padding-top: 12px;
 }
 
+.options{
+	flex-direction: column;
+}
 
         @media (max-width:680px){
         }
@@ -161,7 +164,7 @@
                     <div class="box orange">
                         <p>
                             La Marina de Guerra Nacional consiguió que los españoles capitularan en noviembre de 
-                            <desplegar :key="0" answer="1825" show-ok modal-options :options="['1835', '1925', '1825']" @wasclicked="$refs.pley1.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
+                            <desplegar :key="0" answer="1825" show-ok modal-options :options="['1835', '1925', '1825']" @wasclicked="$refs.pley1.play()"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar>
                             .
                         </p>
                     </div>
@@ -173,11 +176,11 @@
                     <div class="box">
                         <p>
                             Una nueva expedición
-                            <desplegar :key="1" answer="española" show-ok modal-options :options="['francesa', 'turca', 'española']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>
+                            <desplegar :key="1" answer="española" show-ok modal-options :options="['francesa', 'turca', 'española']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar>
                             llegó a
-                            <desplegar :key="2" answer="Tamaulipas" show-ok modal-options :options="['Durango', 'Tamaulipas', 'Veracruz']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar> 
+                            <desplegar :key="2" answer="Tamaulipas" show-ok modal-options :options="['Durango', 'Tamaulipas', 'Veracruz']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar> 
                             para intentar una segunda 
-                            <desplegar :key="3" answer="reconquista de México" show-ok modal-options :options="['coronación de Maximiliano', 'reconquista de México', 'liberación de esclavos']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number></template></desplegar>  
+                            <desplegar :key="3" answer="reconquista de México" show-ok modal-options :options="['coronación de Maximiliano', 'reconquista de México', 'liberación de esclavos']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number></template></desplegar>  
                             en 1829.
                         </p>
                     </div>
@@ -186,15 +189,15 @@
                 <div class="row rw2 w100">
                     <div class="box x2">
                         <p>Mientras que Antonio López de Santa Anna fue capturado y estuvo prisionero firmó el 
-                        <desplegar :key="4" answer="acuerdo para  la independencia de Texas" show-ok modal-options :options="['tratado de paz en México', 'acuerdo para  la independencia de Texas', 'contrato de devolución de Texas']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                        <desplegar :key="4" answer="acuerdo para  la independencia de Texas" show-ok modal-options :options="['tratado de paz en México', 'acuerdo para  la independencia de Texas', 'contrato de devolución de Texas']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                         en 1836.</p>
                     </div>
                     <div class="box">
                         <p>
                             Más de 30 mil extranjeros y aproximadamente 3 mil mexicanos llegaron a vivir en
-                            <desplegar :key="5" answer="Texas" show-ok modal-options :options="['Nueva York', 'Los Ángeles', 'Texas']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="5" answer="Texas" show-ok modal-options :options="['Nueva York', 'Los Ángeles', 'Texas']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             en el año de
-                            <desplegar :key="6" answer="1834" show-ok modal-options :options="['1824','1934','1834']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="6" answer="1834" show-ok modal-options :options="['1824','1934','1834']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             .
                         </p>
                     </div>
@@ -203,9 +206,9 @@
                 <div class="row rw3 w100">
                     <div class="box">
                         <p>
-                            <desplegar :key="7" answer="Francia" show-ok modal-options :options="['Bélgica', 'Francia', 'Italia']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="7" answer="Francia" show-ok modal-options :options="['Bélgica', 'Francia', 'Italia']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             mandó tropas al fuerte de San Juan de Ulúa para bloquear el comercio en
-                            <desplegar :key="8" answer="1838" show-ok modal-options :options="['1834', '1838', '1883']" @wasclicked="$refs.pley2.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="8" answer="1838" show-ok modal-options :options="['1834', '1838', '1883']" @wasclicked="$refs.pley2.play()"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                         </p>
                     </div>
                     <div class="box img">
@@ -215,7 +218,7 @@
                     <div class="box">
                         <p>
                             Texas se convirtió finalmente en un estado más de los 
-                            <desplegar :key="9" answer="Estados Unidos de América" show-ok modal-options :options="['España', 'Francia', 'Estados Unidos de América']" @wasclicked="$refs.pley3.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="9" answer="Estados Unidos de América" show-ok modal-options :options="['España', 'Francia', 'Estados Unidos de América']" @wasclicked="$refs.pley3.play()"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             en 1845.
                         </p>
                     </div>
@@ -229,9 +232,9 @@
                     <div class="box">
                         <p>
                             Se firmó el Tratado 
-                            <desplegar :key="10" answer="Guadalupe-Hidalgo" show-ok modal-options :options="['Santa Ana-Washington', 'Guadalupe-Hidalgo', 'San Luis']"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="10" answer="Guadalupe-Hidalgo" show-ok modal-options :options="['Santa Ana-Washington', 'Guadalupe-Hidalgo', 'San Luis']"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             en el que México aceptó la pérdida de Nuevo México y California en 
-                            <desplegar :key="11" answer="1848" show-ok modal-options :options="['1848', '1858', '1884']"  @wasclicked="$refs.pley4.play()"><template v-slot:option="{option}"><number small randomc>{{option.text}}</number> </template></desplegar>
+                            <desplegar :key="11" answer="1848" show-ok modal-options :options="['1848', '1858', '1884']"  @wasclicked="$refs.pley4.play()"><template v-slot:option="{option}"><number smaller randomc>{{option.text}}</number> </template></desplegar>
                             .
                         </p>
                     </div>
