@@ -160,11 +160,11 @@
             @completed="sceneCompleted"
             :devmode="false">
 
-            <info type="seleccionar" title="Preparo la receta" text="Vamos a preparar una canasta de fruta, ¿me ayudas? Selecciona los ingredientes que se mencionan." textaudio="asound/instruccion.mp3" @completedinstructions="$refs.instructions2.play()"></info>
+            <info type="seleccionar" title="Preparo la receta" text="Vamos a preparar una canasta de fruta, ¿me ayudas? Selecciona los ingredientes que se mencionan." textaudio="asound/instruccion.mp3" @completedinstructions="temps.audio1=true"></info>
             
             <activity>
-                <div class="row w100 mb-1 inst">
-                    <audiotext :autoplay="false" text="<strong>Necesitamos:</strong> <br> 1 plátano, <br> 4 uvas, <br> 1 naranja grande, <br> 2 fresas, <br> miel." audio="asound/instruccion2.mp3" ref="instructions2"></audiotext>
+                <div class="row w100 mb-1 inst" v-if="temps.audio1">
+                    <audiotext :autoplay="true" text="<strong>Necesitamos:</strong> <br> 1 plátano, <br> 4 uvas, <br> 1 naranja grande, <br> 2 fresas, <br> miel." audio="asound/instruccion2.mp3"></audiotext>
                 </div>
                 
                 <div class="cocina">
@@ -208,22 +208,22 @@
 
                 <div class="row w100 frutas2">
 
-                    <div><drag initclass="fresa2" dropzone=".basket" @isok="temps++" :data="temps==2?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/fresas.svg"></drag></div>
-                    <div><drag initclass="platano2" dropzone=".basket" @isok="temps++" :data="temps==1?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/platano.svg"></drag></div>
-                    <div><drag initclass="miel2" dropzone=".basket" @isok="temps++" :data="temps==4?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/miel2.svg"></drag></div>
-                    <div><drag initclass="uvas2" dropzone=".basket" @isok="temps++" :data="temps==3?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/uvas.svg"></drag></div>
-                    <div><drag initclass="naranja2" dropzone=".basket" @isok="temps++" :data="temps==0?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/naranja.svg"></drag></div>
+                    <div><drag initclass="fresa2" dropzone=".basket" @isok="temps.count++" :data="temps.count==2?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/fresas.svg"></drag></div>
+                    <div><drag initclass="platano2" dropzone=".basket" @isok="temps.count++" :data="temps.count==1?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/platano.svg"></drag></div>
+                    <div><drag initclass="miel2" dropzone=".basket" @isok="temps.count++" :data="temps.count==4?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/miel2.svg"></drag></div>
+                    <div><drag initclass="uvas2" dropzone=".basket" @isok="temps.count++" :data="temps.count==3?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/uvasb.svg"></drag></div>
+                    <div><drag initclass="naranja2" dropzone=".basket" @isok="temps.count++" :data="temps.count==0?'m':''" drag-ok-class="okDrag" stay-if-ok particle-color="#57B76D"><img src="aimg/naranja.svg"></drag></div>
 
                 </div>
 
                 <div class="row mt-auto ">
                     <div class="basket" data="m" droptimes="multiple">
-                        <img src="aimg/basket.svg" v-if="temps==0">
-                        <img src="aimg/basket1.svg" v-if="temps==1">
-                        <img src="aimg/basket2.svg" v-if="temps==2">
-                        <img src="aimg/basket3.svg" v-if="temps==3">
-                        <img src="aimg/basket4.svg" v-if="temps==4">
-                        <img src="aimg/basket5.svg" v-if="temps==5">
+                        <img src="aimg/basket.svg" v-if="temps.count==0">
+                        <img src="aimg/basket1.svg" v-if="temps.count==1">
+                        <img src="aimg/basket2.svg" v-if="temps.count==2">
+                        <img src="aimg/basket3.svg" v-if="temps.count==3">
+                        <img src="aimg/basket4.svg" v-if="temps.count==4">
+                        <img src="aimg/basket5.svg" v-if="temps.count==5">
                     </div>
                 </div>
                 
@@ -262,8 +262,10 @@
     <!-- mainscript -->
     <script src="../../assets/assets.js"></script>
     <script>
-        app.$set(app, 'temps', 0)
-        app.currentScene = 0
+        app.$set(app.temps, 'count', 0)
+        app.$set(app.temps, 'audio1', false)
+        
+        app.currentScene = 2
         app.scenesCount = 2
         app.$devmode = false
     </script>

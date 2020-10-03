@@ -54,7 +54,7 @@
                 <div class="row w100">
                     <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8" @completed="temps.a=true"></videoplayer>
                 </div>
-                <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="okFn()">Finalizar</button>
+                <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="sceneCompleted(false, true)">Finalizar</button>
             </activity>
         </scene>
 

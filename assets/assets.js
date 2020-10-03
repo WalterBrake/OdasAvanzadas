@@ -69,10 +69,18 @@ var app = new Vue({
                 animateParticules(pointerX, pointerY, num, time, size, onecolor);
             }
         },
-        sceneCompleted($ev){
+        sceneCompleted($ev, forceOks){
             var _this = this
             if($ev == false){
                 //this.currentScene++
+                if(forceOks!=undefined){ 
+                    _this.finalData.oks = 1
+                    _this.finalData.answers = 1
+                    _this.finalData.score = 100
+                    _this.finalData.scoresum = 100
+                    _this.finalData.errors = 0
+                }
+
                 this.temporals = []
                 this.notfoundimg()
                 for(var hw in Howler._howls){Howler._howls[hw].stop()}

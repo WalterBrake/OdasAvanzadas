@@ -47,14 +47,16 @@
 
 
         <scene v-if="currentScene==1" :key="1" hidescorebox
-            :answers="1" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="false">
+            :answers="1" scene-color="#B9DAD6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="false">
             <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
             <activity>
                 <div class="row w100 info"><h1>Seguimos las reglas de la casa</h1></div>
                 <div class="row w100">
                     <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8" @completed="temps.a=true"></videoplayer>
                 </div>
-                <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="okFn()">Finalizar</button>
+
+                    <button v-if="temps.a" class="button next animate__animated animate__zoomIn" @click="sceneCompleted(false, true)">Finalizar</button>
+
             </activity>
         </scene>
 
@@ -96,6 +98,9 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.$set(app.temps, 'a', false)
+        
+       
+
         app.currentScene = 0
         app.scenesCount = 1
         app.$devmode = false
