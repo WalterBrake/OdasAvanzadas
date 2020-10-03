@@ -2278,6 +2278,13 @@
 		"oAP": "\/CN4T1\/194\/asound\/caracteristicas.mp3",
 		"oF": 0
 		},
+	"\/CN4T1\/194\/asound\/cn4t1-194-vesicula.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/194\/asound\/cn4t1-194-vesicula.wav",
+		"oF": 0
+		},
 	"\/CN4T1\/194\/asound\/conductos.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -4617,6 +4624,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/ES1T1\/16\/aimg\/cocina.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/ES1T1\/16\/aimg\/croquis.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES1T1\/16\/aimg\/croquis.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -7225,6 +7242,16 @@
 		"oAP": "\/ES4T1\/32\/index.html",
 		"oF": 0
 		},
+	"\/ES4T1\/36\/aimg\/_BACKUPcroquis.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T1\/36\/aimg\/_BACKUPcroquis.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/ES4T1\/36\/aimg\/btnDown.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -7260,16 +7287,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/ES4T1\/36\/aimg\/btnUp.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/ES4T1\/36\/aimg\/Copia de croquis.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/ES4T1\/36\/aimg\/Copia de croquis.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -7439,7 +7456,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -7850,7 +7867,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
