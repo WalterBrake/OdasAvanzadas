@@ -182,7 +182,7 @@
                     <div class="w40 parts row wrap animate__animated animate__pulse animate__infinite">
 
                         <drag :key="1" dropzone=".drop" dropzone-ok-class="okDrop" :data="1" @isok="temps++" drag-ok-class="hidden">
-                            <p>Su función es distribuir la sangre por todos los órganos y tejidos del cuerpo. Esta conformado por el <strong>corazón</strong>, y los vasos sanguíneos, de los cuales existen tres tipos: las <strong>arterias</strong>, las <strong></strong> y los <strong>capilares</strong>.</p>
+                            <p>Esta conformado por el <strong>corazón</strong>, y los vasos sanguíneos, de los cuales existen tres tipos: las <strong>arterias</strong>, las <strong></strong> y los <strong>capilares</strong>.</p>
                         </drag>
                         <drag :key="2" dropzone=".drop" dropzone-ok-class="okDrop" :data="2" @isok="temps++" v-if="temps>0" drag-ok-class="hidden"><img :src="'aimg/i2.svg'" style="max-width: 120px;"></drag>
                         <drag :key="3" dropzone=".drop" dropzone-ok-class="okDrop" :data="3" @isok="temps++" v-if="temps>1" drag-ok-class="hidden"><img :src="'aimg/i3.svg'"></drag>
