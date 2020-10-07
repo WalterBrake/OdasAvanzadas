@@ -120,7 +120,7 @@ var app = new Vue({
                 if(fwIt == speedpart) {
                     clearInterval(fw)
                     //Stop all howlers
-                    for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                    //for(var hw in Howler._howls){Howler._howls[hw].stop()}
                     EventBus = new Vue()
                     _this.currentScene++
                     _this.temporals = []

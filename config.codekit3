@@ -2241,6 +2241,245 @@
 		"oAP": "\/CN4T1\/185\/index.html",
 		"oF": 0
 		},
+	"\/CN4T1\/189\/aimg\/k_ale.png": {
+		"ft": 32768,
+		"iS": 54948,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/k_ale.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/k_luis.png": {
+		"ft": 32768,
+		"iS": 55442,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/k_luis.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/k_marga.png": {
+		"ft": 32768,
+		"iS": 59295,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/k_marga.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/k_rafa.png": {
+		"ft": 32768,
+		"iS": 57550,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/k_rafa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/agua.png": {
+		"ft": 32768,
+		"iS": 64581,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/agua.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/burrito.png": {
+		"ft": 32768,
+		"iS": 64443,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/burrito.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/frutas.png": {
+		"ft": 32768,
+		"iS": 94533,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/frutas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/galletas.png": {
+		"ft": 32768,
+		"iS": 64362,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/galletas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/jugo.png": {
+		"ft": 32768,
+		"iS": 42946,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/jugo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/leche.png": {
+		"ft": 32768,
+		"iS": 26753,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/leche.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/manzana.png": {
+		"ft": 32768,
+		"iS": 59421,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/manzana.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/papas.png": {
+		"ft": 32768,
+		"iS": 78835,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/papas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/refresco.png": {
+		"ft": 32768,
+		"iS": 52028,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/refresco.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/sandwich.png": {
+		"ft": 32768,
+		"iS": 79084,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/sandwich.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/obj\/torta.png": {
+		"ft": 32768,
+		"iS": 40264,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/obj\/torta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/plato.png": {
+		"ft": 32768,
+		"iS": 614090,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/plato.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T1\/189\/aimg\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v1.mp4",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/aimg\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v1.webm",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/aimg\/v2.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v2.mp4",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/aimg\/v2.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v2.webm",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/aimg\/v3.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v3.mp4",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/aimg\/v3.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/aimg\/v3.webm",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/asound\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/asound\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/asound\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/asound\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/CN4T1\/189\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T1\/189\/index.html",
+		"oF": 0
+		},
 	"\/CN4T1\/194\/aimg\/nina.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -2271,18 +2510,18 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/CN4T1\/194\/asound\/_vesicula.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/CN4T1\/194\/asound\/_vesicula.mp3",
+		"oF": 0
+		},
 	"\/CN4T1\/194\/asound\/caracteristicas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN4T1\/194\/asound\/caracteristicas.mp3",
-		"oF": 0
-		},
-	"\/CN4T1\/194\/asound\/cn4t1-194-vesicula.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T1\/194\/asound\/cn4t1-194-vesicula.wav",
 		"oF": 0
 		},
 	"\/CN4T1\/194\/asound\/conductos.mp3": {
@@ -7456,7 +7695,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -7867,7 +8106,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,

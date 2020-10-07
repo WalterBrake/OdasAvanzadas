@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuido mi alimentación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css">
+    <link rel="stylesheet" href="../../assets/assets.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+
+    <style>
+        :root {
+
+            --plyr-video-control-background-hover: #fff;
+            --plyr-control-icon-size: 28px;
+            --plyr-control-padding: 6px;
+            --plyr-control-radius: 10px;
+        }
+
+        .next {
+            font-size: 2rem;
+            margin: 20px;
+        }
+
+
+        img.zoominImg {
+            position: absolute;
+            z-index: 1;
+            animation: zoominImgKey 3s;
+            animation-delay: 1s;
+            transform: scale(1.1);
+            animation-fill-mode: forwards;
+        }
+
+
+        @keyframes zoominImgKey {
+            0% {
+                transform: scale(1.1);
+                opacity: 1;
+                z-index: 1;
+                bottom: 0;
+            }
+
+            99% {
+                transform: scale(3);
+                opacity: 0;
+                bottom: 25%;
+                z-index: 1;
+            }
+
+            100% {
+                z-index: -1;
+            }
+        }
+
+        .clickable {
+            margin: 20px 40px;
+        }
+
+        @media (max-width: 680px) {}
+
+        .infoimg{max-width:300px;}
+        .text-center{ text-align: center;}
+
+        .ob {
+            position: relative;
+            max-width: 100px;
+        }
+        .ob .tag {
+            position: absolute;
+            background: #9DA3A0;
+            color: #fff;
+            box-shadow: 2px 2px 0 #817C69;
+            border-radius: 10px;
+            padding: 1px 10px;
+            border: 2px solid #817C69;
+            bottom: -20%;
+            left: 5%;
+            width: 90%;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 0.8rem;
+            line-height: .9;
+        }
+        .ob .tag small{ font-size: 0.7rem;  }
+
+        .desayuno{
+	background: #F3C5C4;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 10px;
+	border: 2px solid #6A3326;
+}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <scene v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted"></scene>
+
+
+        <scene v-if="currentScene==1" :key="1" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_nino.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Cuido mi alimentación</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v1" :autoplay="true" c="8" @completed="temps.a=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.a" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene>
+
+        <!---->
+        <scene v-if="currentScene==2" :key="2" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuido mi alimentación"
+                text="¿Por qué crees que los alimentos de origen animal se deben consumir en menor cantidad? Elige la respuesta correcta."
+                textaudio="asound/instruccion1.mp3" :autoplay="true">
+                <img src="aimg/plato.png" class="infoimg w100 wm60">
+            </info>
+            <activity>
+
+                <div class="row wrap animate__animated animate__bounceIn text-center">
+                    <div class="col"><clickable simple-ok block-if-error :isok="false"><number small c="2">Porque son muy salados</number></clickable></div>
+                    <div class="col"><clickable simple-ok block-if-error :isok="false"><number small c="3">Porque no aportan nutrientes</number></clickable></div>
+                    <div class="col"><clickable simple-ok block-if-error :isok="true"><number small c="4">Porque proporcionan muchas grasas</number></clickable></div>                
+                </div>
+
+            </activity>
+        </scene>
+
+
+        <scene v-if="currentScene==3" :key="3" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Cuido mi alimentación</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v2" :autoplay="true" c="8" @completed="temps.b=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.b" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Siguiente</button>
+            </activity>
+        </scene>
+
+        <!--    #################### PREGUNTA 1 -->
+        <!---->
+        <scene v-if="currentScene==4" :key="4" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuido mi alimentación"
+                text="¿Qué grupo de alimentos falta en cada desayuno? Elige la respuesta correcta. "
+                textaudio="asound/instruccion2.mp3" :autoplay="true" >
+                <img src="aimg/plato.png" class="infoimg w100 wm60">
+
+            </info>
+            <activity>
+                <div class="row w100 mb-1 desayuno">
+                    <img class="w30" src="aimg/k_luis.png">
+                    <div class="w70 text-center"><number small c="1">Desayuno de Luis</number>
+                        <div class="row">
+                            <div class="ob"><img src="aimg/obj/leche.png" class="w100"><div class="tag">Leche</div></div>
+                            <div class="ob"><img src="aimg/obj/galletas.png" class="w100"><div class="tag">Galletas</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrap animate__animated animate__bounceIn text-center">
+                    <div class="w50"><clickable simple-ok block-if-error :isok="true"><number smaller c="2">Verduras y frutas</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="3">Cereales y tubérculos</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="4">Leguminosas y orígen animal</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="5">Ninguno</number></clickable></div>              
+                </div>
+
+            </activity>
+        </scene>
+        <!--    #################### PREGUNTA 2 -->
+        <!---->
+        <scene v-if="currentScene==5" :key="5" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuido mi alimentación"
+                text="¿Qué grupo de alimentos falta en cada desayuno? Elige la respuesta correcta. "
+                textaudio="asound/instruccion2.mp3" :autoplay="false" >
+                <img src="aimg/plato.png" class="infoimg w100 wm60">
+
+            </info>
+            <activity>
+                <div class="row w100 mb-1 desayuno">
+                    <img class="w30" src="aimg/k_ale.png">
+                    <div class="w70 text-center"><number small c="6">Desayuno de Alejandra</number>
+                        <div class="row">
+                            <div class="ob"><img src="aimg/obj/sandwich.png" class="w100"><div class="tag">Sandwich <small>de jitomate y aguacate</small></div></div>
+                            <div class="ob"><img src="aimg/obj/manzana.png" class="w100"><div class="tag">Manzana</div></div>
+                            <div class="ob"><img src="aimg/obj/agua.png" class="w100"><div class="tag">Agua</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrap animate__animated animate__bounceIn text-center">
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="2">Verduras y frutas</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="3">Cereales y tubérculos</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="true"><number smaller c="4">Leguminosas y orígen animal</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="5">Ninguno</number></clickable></div>              
+                </div>
+
+            </activity>
+        </scene>
+        <!--    #################### PREGUNTA 3 -->
+        <!---->
+        <scene v-if="currentScene==6" :key="6" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuido mi alimentación"
+                text="¿Qué grupo de alimentos falta en cada desayuno? Elige la respuesta correcta. "
+                textaudio="asound/instruccion2.mp3" :autoplay="false">
+                <img src="aimg/plato.png" class="infoimg w100 wm60">
+
+            </info>
+            <activity>
+                <div class="row w100 mb-1 desayuno">
+                    <img class="w30" src="aimg/k_marga.png">
+                    <div class="w70 text-center"><number small c="1">Desayuno de Margarita</number>
+                        <div class="row">
+                            <div class="ob"><img src="aimg/obj/burrito.png" class="w100"><div class="tag">Burrito <small>de huevo con frijoles</small></div></div>
+                            <div class="ob"><img src="aimg/obj/frutas.png" class="w100"><div class="tag">Yogurt <small>con fruta</small></div></div>
+                            <div class="ob"><img src="aimg/obj/jugo.png" class="w100"><div class="tag">Jugo <small>de naranja</small></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrap animate__animated animate__bounceIn text-center">
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="2">Verduras y frutas</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="3">Cereales y tubérculos</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="4">Leguminosas y orígen animal</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="true"><number smaller c="5">Ninguno</number></clickable></div>              
+                </div>
+
+            </activity>
+        </scene>
+        <!--    #################### PREGUNTA 4 -->
+        <!---->
+        <scene v-if="currentScene==7" :key="7" :answers="1" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <info type="seleccionar" title="Cuido mi alimentación"
+                text="¿Qué grupo de alimentos falta en cada desayuno? Elige la respuesta correcta. "
+                textaudio="asound/instruccion2.mp3" :autoplay="false" >
+                <img src="aimg/plato.png" class="infoimg w100 wm60">
+            </info>
+            <activity>
+                <div class="row w100 mb-1 desayuno">
+                    <img class="w30" src="aimg/k_rafa.png">
+                    <div class="w70 text-center"><number small c="1">Desayuno de Rafael</number>
+                        <div class="row">
+                            <div class="ob"><img src="aimg/obj/torta.png" class="w100"><div class="tag">Torta <small>de chilaquiles</small></div></div>
+                            <div class="ob"><img src="aimg/obj/papas.png" class="w100"><div class="tag">Bolsa de papas <small>fritas</small></div></div>
+                            <div class="ob"><img src="aimg/obj/refresco.png" class="w100"><div class="tag">Refresco</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrap animate__animated animate__bounceIn text-center">
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="2">Verduras y frutas</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="3">Cereales y tubérculos</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="true"><number smaller c="4">Leguminosas y orígen animal</number></clickable></div>              
+                    <div class="w50"><clickable simple-ok block-if-error :isok="false"><number smaller c="5">Ninguno</number></clickable></div>              
+                </div>
+
+            </activity>
+        </scene>
+
+
+
+
+
+
+
+        <scene v-if="currentScene==8" :key="8" hidescorebox :answers="4" scene-color="#B9DAD6" :score="scoreInScene"
+            :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_hombre.mp3"
+            @completed="sceneCompleted" :devmode="false">
+            <!--<info type="relacionar" text="false" audio="false"  :autoplay="false"></info>-->
+            <activity>
+                <div class="row w100 info">
+                    <h1>Cuido mi alimentación</h1>
+                </div>
+                <div class="row w100">
+                    <videoplayer initclass="w80" path="aimg/v3" :autoplay="true" c="8" @completed="temps.c=true">
+                    </videoplayer>
+                </div>
+                <button v-if="temps.c" class="button next animate__animated animate__zoomIn"
+                    @click="sceneCompleted(false)">Finalizar</button>
+            </activity>
+        </scene>
+
+
+
+
+        <scene v-if="currentScene==9" :key="9" end-scene :final-data="finalData"></scene>
+
+
+
+
+    </div>
+    <!-- libraries -->
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- fireworks -->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- modulos -->
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- mainscript -->
+    <script src="../../assets/assets.js"></script>
+    <script>
+        app.$set(app.temps, 'a', false)
+        app.$set(app.temps, 'b', false)
+        app.$set(app.temps, 'c', false)
+        app.$set(app.temps, 'audio1', false)
+        app.$set(app.temps, 'audio2', false)
+        app.currentScene = 0
+        app.scenesCount = 5
+        app.$devmode = false
+    </script>
+</body>
+
+</html>
