@@ -37,6 +37,42 @@
         .drag img {
             max-height: 100px;
         }
+        .oracionesex2 {
+            min-width: 120px;
+            margin: 4px;
+        }
+        .oracionesex2 .drag > div {
+            background: #fff;
+            font-size: 0.7rem;
+            padding: 10px;
+            border-radius: 10px;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            height: auto;
+        }
+        .oracionesex2 .drag > div .tooltiper {
+            position: absolute;
+            top: -20px;
+            z-index: 2;
+        }
+        .drop[droppedtimes="1"] {
+            color: #fff;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+        .drop[droppedtimes="1"] .number {
+            display: none;
+        }
+        .drop[droppedtimes="1"] .tooltiper {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: -30px;
+            z-index: 2;
+        }
+
 
         @media (max-width:680px){
         }
@@ -74,19 +110,35 @@
 
             <info type="dragdrop" title="Conozco en qué consiste la fecundación" text="Coloca las oraciones según el orden en el que sucede el desarrollo del embrión." textaudio="asound/instruccion2.mp3" :autoplay="true"></info>
             <activity>
+                <div class="row w100 wrap">
+                    <div class="w20 oracionesex2"  v-for="i in _.shuffle(temps)">
+                        <drag :data="i.v" dropzone=".drop" append-to-dropzone>
+                            <div>{{i.t}}
+                                <tooltiper pos="right"><img :src="'aimg/'+i.v+'.svg'" class="w100"></tooltiper>
+                            </div>
+                        </drag>
+                    </div>
+                </div>
+                <div class="row w100">
+                    <div class="drop w20" v-for="(i, index) in 5" :data="i" droptimes="untilok"><number c="8">{{i}}</number></div>
+                </div>
+                <!--
                 <div class="row w100">
                     <div class="col oraciones w30">
                         <drag v-for="i in 5" :data="i" dropzone=".drop"><number c="8">{{i}}</number></drag>
                     </div>
-                    <div class="col drops w70">
-                        <div class="row dropper" v-for="i in _.shuffle(temps)">
-                            <div class="drop w20" :data="i.v" droptimes="untilok">
-                                <img :src="'aimg/'+i.v+'.svg'" class="w100">
+
+                    <div class="col drops w20">
+                            <div class="row dropper" v-for="i in _.shuffle(temps)">
+                                <div>{{i.t}}</div>
+                                <div class="drop w100" :data="i.v" droptimes="untilok">
+                                    {{i.t}}
+                                </div>
+                                <tooltiper pos="right"><img :src="'aimg/'+i.v+'.svg'" class="w100"></tooltiper>
                             </div>
-                            <div class="w80">{{i.t}}</div>
-                        </div>
                     </div>
                 </div>
+                -->
             </activity>
         </scene> <!-- end scene -->
 
@@ -111,6 +163,7 @@
     <!-- modulos -->
     <script src="../../assets/modulos/number.js"></script>
     <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
@@ -123,11 +176,11 @@
     <script src="../../assets/assets.js"></script>
     <script>
         app.temps = [
-            {v: '1', t: 'Cada 28 días se libera del ovario un óvulo y pasa a la trompa de Falopio.'},
-            {v: '2', t: 'El óvulo se encuentra con un espermatozoide en la trompa de Falopio y se produce la fecundación.'},
-            {v: '3', t: 'Como resultado de la fecundación, se forma un cigoto.'},
-            {v: '4', t: 'El cigoto se divide varias veces para formar al embrión.'},
-            {v: '5', t: 'El embrión llega al útero y se adhiere a su pared, ahí pasa de 38 a 40 semanas hasta el parto.'},
+            {v: 1, t: 'Cada 28 días se libera del ovario un óvulo y pasa a la trompa de Falopio.'},
+            {v: 2, t: 'El óvulo se encuentra con un espermatozoide en la trompa de Falopio y se produce la fecundación.'},
+            {v: 3, t: 'Como resultado de la fecundación, se forma un cigoto.'},
+            {v: 4, t: 'El cigoto se divide varias veces para formar al embrión.'},
+            {v: 5, t: 'El embrión llega al útero y se adhiere a su pared, ahí pasa de 38 a 40 semanas hasta el parto.'},
         ]
         app.currentScene = 0
         app.scenesCount = 2

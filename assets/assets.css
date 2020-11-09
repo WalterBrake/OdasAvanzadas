@@ -1050,4 +1050,62 @@ embed {
   color: var(--main);
   font-size: 20px;
 }
+/* TOOLTIPER */
+.tooltiper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tooltiper .tooltiper__btn {
+  cursor: pointer;
+}
+.tooltiper .tooltiper__btn img {
+  width: 30px;
+  height: 30px;
+  transition: all .3s;
+}
+.tooltiper .tooltiper__btn:hover img {
+  transition: all .3s;
+  transform: scale(1.1);
+}
+.tooltiper .tooltiper__content {
+  position: absolute;
+  background: #fff;
+  border: 2px solid #5EB246;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 9;
+  border-radius: 10px;
+  max-width: 240px;
+}
+.tooltiper .tooltiper__content.right {
+  right: 0;
+}
+.tooltiper .tooltiper__content.top {
+  top: 0;
+}
+.tooltiper .tooltiper__content.left {
+  left: 0;
+}
+.tooltiper .tooltiper__content.bottom {
+  bottom: 0;
+}
+.tooltiper .tooltiper__content .tooltiper__close {
+  font-family: 'barnacle_boyregular';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 24px;
+  height: 24px;
+  background: var(--main);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
 /*# sourceMappingURL=assets.css.map */

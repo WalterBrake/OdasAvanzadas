@@ -103,6 +103,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/aanim\/Tooltiper.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/aanim\/Tooltiper.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/asound\/bienhecho_hombre.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -582,6 +592,16 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/assets\/modulos\/selectableoptions-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/modulos\/tooltiper.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/tooltiper-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
