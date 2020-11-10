@@ -99,8 +99,10 @@ Vue.component('scene', {
         },
         endedFn () {
             //console.log(this.alloks, this.oks, this.answers)
+            
             if(this.alloks != undefined) {
                 if(this.oks == this.answers && this.oks>0) {
+                    this.playAllOksSounds()
                     //Checar que todos los sonidos hayan terminado para terminar la escena
                     this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 300)
 
@@ -121,8 +123,7 @@ Vue.component('scene', {
                 this.endRun()
             }
         },
-        endRun(){
-            this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
+        playAllOksSounds () {
             if(this.alloksSound){
                 var sound = new Howl({ src: [this.alloksSound] })
                 app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
@@ -133,6 +134,10 @@ Vue.component('scene', {
                     sound.play()
                 },600)
             }
+        },
+        endRun(){
+            
+            this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
         },
         checkTemporals () {
             this.oks = 0
