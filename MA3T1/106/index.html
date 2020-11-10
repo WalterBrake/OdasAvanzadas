@@ -388,6 +388,8 @@ jazmin {
                         EventBus.$emit('isok')
                     } else {
                         s_error.play()
+						var s_vuelve = new Howl({ src: ['../../assets/asound/vuelveaintentar_hombre.mp3'] })
+						s_vuelve.play()
                         EventBus.$emit('iserror')
                     }
                 }
