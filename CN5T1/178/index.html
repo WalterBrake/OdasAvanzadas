@@ -182,7 +182,7 @@
                             {n: 'Esófago y estómago', d:'esofagoestomago', w:'a'},
                             {n: 'Cerebro', d:'cerebro', w:'a'},
                             {n: 'Intestinos', d:'intestinos', w:'a'},
-                            ])" :key="i.d" dropzone=".drop" :data="i.d" stay-if-ok append-to-dropzone drag-ok-class="okDrag" @isok="temps[i.w] += 1">
+                            ])" :key="i.d" dropzone=".drop" :data="i.d" stay-if-ok append-to-dropzone drag-ok-class="okDrag" @isok="temps[i.w] += 1" no-error-sound>
                             <div :class="i.d">
                                 <img :src="'aimg/'+i.d+'.svg'" class="w100">
                                 <!--<div>{{i.n}}</div>-->

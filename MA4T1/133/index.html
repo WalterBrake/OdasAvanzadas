@@ -60,17 +60,18 @@
                 left: 72.5%;
                 top: 24.5%;
             }
-            .drop:nth-child(5) {
-                width: 20.5%;
-                height: 43%;
-                left: 11.2%;
-                top: 48%;
-            }
-            .drop:nth-child(6) {
+            .drop:nth-child(5) { 
                 width: 15.5%;
                 height: 32.5%;
                 left: 14.3%;
                 top: 65%;
+                z-index: 3;
+            }
+            .drop:nth-child(6) {
+                width: 20.5%;
+                height: 43%;
+                left: 11.2%;
+                top: 48%;
             }
             .drop:nth-child(7) {
                 width: 15.5%;
@@ -187,8 +188,8 @@
                         <div class="drop" droptimes="untilok" data="azul"></div>
                         <div class="drop" droptimes="untilok" data="morado"></div>
                         <div class="drop" droptimes="untilok" data="morado"></div>
-                        <div class="drop" droptimes="untilok" data="morado"></div>
                         <div class="drop" droptimes="untilok" data="anaranjado"></div>
+                        <div class="drop" droptimes="untilok" data="morado"></div>
                         <div class="drop" droptimes="untilok" data="anaranjado"></div>
                         <div class="drop" droptimes="untilok" data="anaranjado"></div>
                         <div class="drop" droptimes="untilok" data="verde"></div>
@@ -197,17 +198,17 @@
                     </div>
                 </div>
                 <div class="row w100  wrap figs">
-                    <drag dropzone=".drop" data="rosa" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rombo.svg"></drag>
-                    <drag dropzone=".drop" data="azul" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/triangulo.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/cuadrado.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/circulo.svg"></drag>
-                    <drag dropzone=".drop" data="verde" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/trapecio.svg"></drag>
-                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rectangulo.svg"></drag>
-                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" first-dropzone><img src="aimg/rectangulo.svg"></drag>
+                    <drag dropzone=".drop" data="rosa" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/rombo.svg"></drag>
+                    <drag dropzone=".drop" data="azul" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/triangulo.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="morado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/cuadrado.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="anaranjado" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/circulo.svg"></drag>
+                    <drag dropzone=".drop" data="verde" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/trapecio.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/rectangulo.svg"></drag>
+                    <drag dropzone=".drop" data="cafe" append-to-dropzone dropzone-ok-class="okDrop" single-detection><img src="aimg/rectangulo.svg" ></drag>
                 </div>
             </activity>
         </scene> <!-- end scene -->

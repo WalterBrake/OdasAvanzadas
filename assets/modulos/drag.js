@@ -18,6 +18,8 @@ Vue.component('drag', {
         'appendToDropzone', // Se añade al contenedor del dropzone,
         'disableok', //Deshabilita la acumulación de 'oks'
         'returnToLastPosition', //Actualiza la posición por la última con Drop (ok o error)
+        'singleDetection', // Sólo detectar el primer dropzone
+        'noErrorSound', //No reproduce sonido de error
     ],
     data() {
         return {
@@ -29,6 +31,7 @@ Vue.component('drag', {
             canvas: null,
             ctx: null,
             lastPosition: {x:0, y:0},
+            dropzonesDetected: 0
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -68,6 +71,7 @@ Vue.component('drag', {
             _this.playDragSound()
             _this.dragPosX = e.clientX + window.scrollX
             _this.dragPosY = e.clientY + window.scrollY
+            _this.dropzonesDetected = 0
 
         },
         Drag (e) {
@@ -150,8 +154,16 @@ Vue.component('drag', {
             if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
         },
         dropHitTest(dropzone, e) {
-            if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+
             var _this = this
+            _this.dropzonesDetected++
+            
+            if(dropzone.classList.contains('hover')){ dropzone.classList.remove('hover') }
+            
+            if(_this.singleDetection!=undefined && _this.dropzonesDetected > 1) {
+                return false
+            }
+
 
             if(!_this.dropzoneCanBeDropped(dropzone)){
                 _this.backToInitPos()
@@ -161,40 +173,53 @@ Vue.component('drag', {
                 dropzone.classList.add('dropzoneused')
             }
 
-            
-
             if(this.data == dropzone.getAttribute('data')){
-                //## OK
-                s_ok.play()
-                _this.$emit('isok')
-                _this.returnToPositionFn()
-                _this.stayInDropFn()
-                _this.dropzoneStatusClass('ok', dropzone)
-                _this.dropzoneSound(dropzone, 'oksound')
-                _this.dragStatusClass('ok')
-                _this.stayIfOkFn()
-                app.particleAnimation(e, 100, null, null)
-
-                _this.setClassAnimation('ok')
-                _this.droppedtimesAdd(dropzone)
-                _this.appendToDropzoneFn(dropzone, e)
-                if(_this.disableok==undefined){
-                    EventBus.$emit('isok')
-                }
+                _this.hitTestISOK(dropzone,e)
             } else {
-                //## ERROR
-                s_error.play()
-                _this.$emit('iserror')
-                _this.stayInDropFn()
-                _this.dropzoneStatusClass('error', dropzone)
-                _this.dropzoneSound(dropzone, 'errorsound')
-                _this.returnToPositionFn()
-                _this.returnIfErrorFn()
-                _this.dragStatusClass('error')
-                EventBus.$emit('iserror')
-                _this.setClassAnimation('error')
+                _this.hitTestISERROR(dropzone,e)
             }
 
+        },
+        hitTestISOK(dropzone, e){
+            var _this = this
+            //## OK
+            s_ok.play()
+            _this.$emit('isok')
+            _this.returnToPositionFn()
+            _this.stayInDropFn()
+            _this.dropzoneStatusClass('ok', dropzone)
+            _this.dropzoneSound(dropzone, 'oksound')
+            _this.dragStatusClass('ok')
+            _this.stayIfOkFn()
+            app.particleAnimation(e, 100, null, null)
+
+            _this.setClassAnimation('ok')
+            _this.droppedtimesAdd(dropzone)
+            _this.appendToDropzoneFn(dropzone, e)
+            if(_this.disableok==undefined){
+                EventBus.$emit('isok')
+            }
+        },
+        hitTestISERROR(dropzone, e){
+            var _this = this
+
+            
+
+            //## ERROR
+            
+            _this.$emit('iserror')
+            _this.stayInDropFn()
+            _this.dropzoneStatusClass('error', dropzone)
+            _this.dropzoneSound(dropzone, 'errorsound')
+            _this.returnToPositionFn()
+            _this.returnIfErrorFn()
+            _this.dragStatusClass('error')
+            EventBus.$emit('iserror')
+            _this.setClassAnimation('error')
+            
+            if(_this.noErrorSound == undefined){
+                s_error.play()
+            }
         },
         appendToDropzoneFn(dropzone, e){
             if(this.appendToDropzone != undefined){
