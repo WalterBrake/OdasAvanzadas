@@ -81,6 +81,16 @@
 
         .dropzone.red{ border: 6px solid #EF1E23; border-bottom: none; border-radius: 10px 10px 0 0; background: #F9E7E5; }
         .dropzone.blue{ border: 6px solid #008FD5; border-top: none; border-radius: 0 0 10px 10px; background: #E5ECF4; }
+
+        .example{
+            background: #fff;
+            padding: 2px 8px;
+            color: var(--main);
+            border-radius: 4px;
+            display: block;
+            margin: 4px;
+            font-weight: bold;
+        }
     </style>
     </head>
 <body>
@@ -96,8 +106,9 @@
                 <img src="aimg/cards.svg" class="infoimg">
             </info>
             <activity>
+                
                 <div class="dropzones w100">
-                    <div class="numin"><div class="number small c1">42</div></div>
+                    <div class="numin"><span class="example animate__animated animate__pulse animate__infinite">Ejemplo</span> <div class="number small c1">42</div></div>
                     <div class="row dropzone red w100">
                         <div class="card r"></div>
                         <div class="card r"></div>
