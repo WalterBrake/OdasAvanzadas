@@ -55,6 +55,10 @@ body {
   outline: none;
   cursor: pointer;
 }
+.button.big {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
 .fireworks,
 .dragLineCanvas {
   width: 100%;

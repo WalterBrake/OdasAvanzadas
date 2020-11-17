@@ -5177,6 +5177,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/ES1T2\/57\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/57\/index.html",
+		"oF": 0
+		},
 	"\/ES1T2\/57\/index.pug": {
 		"cB": 0,
 		"cOD": 1,
@@ -5185,6 +5192,20 @@
 		"oAP": "\/ES1T2\/57\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/ES1T2\/57\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/57\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/57\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/57\/s\/instruccion2.mp3",
+		"oF": 0
 		},
 	"\/ES2T1\/15\/aimg\/Icon\r": {
 		"cB": 0,
