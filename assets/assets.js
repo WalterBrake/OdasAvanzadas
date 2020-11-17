@@ -48,6 +48,10 @@ var app = new Vue({
         }
     },
     methods: {
+        modifyTemps (thevar, value) {
+            this.temps[thevar] = value
+            console.log('rep')
+        },
         okFn(){
             EventBus.$emit('isok')
         },
@@ -183,6 +187,13 @@ var app = new Vue({
 
 
         this.loadScreencap()
+    },
+    created: function (){
+        var _this = this
+        EventBus.$on('changeTemps', function (thevar, value) {
+            console.log(_this.temps)
+            _this.temps[thevar] = value
+        })
     }
 })
 

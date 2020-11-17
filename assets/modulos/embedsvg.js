@@ -16,6 +16,7 @@ Vue.component('embedsvg', {
             req.onload = function () {
                 if(req.status >= 200) {
                     _this.body = req.response
+                    _this.$emit('loaded')
                 }
             }
             req.send()

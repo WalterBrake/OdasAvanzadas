@@ -1,0 +1,200 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Comparo longitudes'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .embedsvg {
+                width: 100%;
+            }
+            #rosa1,
+            #rosa2,
+            #ama1,
+            #ama2,
+            #ama3,
+            #nara1,
+            #nara2,
+            #nara3 {
+                cursor: pointer;
+            }
+            #rosa1:not(.clicked) path,
+            #rosa2:not(.clicked) path,
+            #ama1:not(.clicked) path,
+            #ama2:not(.clicked) path,
+            #ama3:not(.clicked) path,
+            #nara1:not(.clicked) path,
+            #nara2:not(.clicked) path,
+            #nara3:not(.clicked) path {
+                fill: #fff !important;
+                stroke: #000 !important;
+            }
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" ref="firstscene" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Mariana quiere colorear al calamar, ayúdala." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true")
+                    audiotext(key="a" audio="s/largos.mp3" text="Selecciona los tentáculos más largos." :autoplay="true" v-if="temps.a")
+                    audiotext(key="b" audio="s/mismos.mp3" text="Seleciona los tentáculos que miden los mismo." :autoplay="true" v-if="temps.b")
+                    audiotext(key="c" audio="s/cortos.mp3" text="Seleciona los tentáculos más cortos. " :autoplay="true" v-if="temps.c")
+                activity
+                    .row.w100
+                        embedsvg(src="i/scene.svg" @loaded="buzo")
+            
+            // SCENES Preg 1
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w50.mb-1
+                        embedsvg(src="i/scene.svg" @loaded="buzo2")
+                    .row.w100.h3.mb-1 ¿Qué hay más, tentáculos largos o cortos?
+                    .row.respuestas.w100.around.wrap
+                        clickable(initclass="pa-1" simple-ok :isok="true"): number(randomc small) Cortos
+                        clickable(initclass="pa-1" ): number(randomc small) Medianos
+                        clickable(initclass="pa-1" ): number(randomc small) Largos
+            // SCENES Preg 2
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w50.mb-1
+                        embedsvg(src="i/scene.svg" @loaded="buzo2")
+                    .row.w100.h3.mb-1 ¿Cuántos tentáculos miden lo mismo?
+                    .row.respuestas.w100.around.wrap
+                        clickable(initclass="pa-1" ): number(randomc small) 5
+                        clickable(initclass="pa-1" simple-ok :isok="true"): number(randomc small) 3
+                        clickable(initclass="pa-1" ): number(randomc small) 2
+            // SCENES Preg 3
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w50.mb-1
+                        embedsvg(src="i/scene.svg" @loaded="buzo2")
+                    .row.w100.h3.mb-1 ¿Cuántos tentáculos largos tiene el pulpo?
+                    .row.respuestas.w100.around.wrap
+                        clickable(initclass="pa-1" ): number(randomc small) 4
+                        clickable(initclass="pa-1" ): number(randomc small) 1
+                        clickable(initclass="pa-1" simple-ok :isok="true"): number(randomc small) 2
+            // SCENES Preg 4
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w50.mb-1
+                        embedsvg(src="i/scene.svg" @loaded="buzo2")
+                    .row.w100.h3.mb-1 ¿De qué otra manera puedes medir los tentáculos del pulpo?
+                    .row.respuestas.w100.around.wrap
+                        clickable(initclass="pa-1" ): number(randomc small) Usando un círculo
+                        clickable(initclass="pa-1" simple-ok :isok="true"): number(randomc small) Con una regla
+                        clickable(initclass="pa-1" ): number(randomc small) Con una báscula
+
+
+            // END
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+                app.buzo2 = function () {
+                    setTimeout(function () {
+                        document.getElementById('caraBlanca').style.display = 'none'
+                        document.getElementById('buzo').style.display = 'none'
+                        const alltentacles = ['rosa1', 'rosa2', 'ama1', 'ama2', 'ama3', 'nara1', 'nara2', 'nara3']
+                        for(var i in alltentacles){
+                            document.getElementById(alltentacles[i]).classList.add('clicked')
+                        }
+                        const calam = document.getElementById('calamar')
+                        calam.classList.add('animate__animated')
+                        calam.classList.add('animate__pulse')
+                        calam.classList.add('animate__infinite')
+                        calam.classList.add('animate__slow')
+
+                    }, 10)
+                }
+                app.buzo = function () {
+                    setTimeout(function () {
+                        const thebuzo = document.getElementById('buzo')
+                        const rosa1 = document.getElementById('rosa1')
+                        const rosa2 = document.getElementById('rosa2')
+                        const ama1 = document.getElementById('ama1')
+                        const ama2 = document.getElementById('ama3')
+                        const ama3 = document.getElementById('ama2')
+                        const nara1 = document.getElementById('nara1')
+                        const nara2 = document.getElementById('nara2')
+                        const nara3 = document.getElementById('nara3')
+                        
+                        rosa1.addEventListener('click', app.buzoClick)
+                        rosa2.addEventListener('click', app.buzoClick)
+                        ama1.addEventListener('click', app.buzoClick)
+                        ama2.addEventListener('click', app.buzoClick)
+                        ama3.addEventListener('click', app.buzoClick)
+                        nara1.addEventListener('click', app.buzoClick)
+                        nara2.addEventListener('click', app.buzoClick)
+                        nara3.addEventListener('click', app.buzoClick)
+
+                        thebuzo.classList.add('animate__animated')
+                        thebuzo.classList.add('animate__pulse')
+                        thebuzo.classList.add('animate__infinite')
+                        thebuzo.classList.add('animate__slow')
+                        
+                    }, 10)
+                }
+                app.buzoClick = function () {
+
+                    var elobj = this
+                    let rosas = ['rosa1', 'rosa2']
+                    let amas = ['ama1', 'ama2', 'ama3']
+                    let naras = ['nara1', 'nara2', 'nara3']
+                    
+                    switch(app.$refs.firstscene.oks){
+                        case 0:
+                        case 1:
+                            if(!rosas.includes(elobj.id)){
+                                s_error.play()
+                                return false
+                            }
+                            break
+                        case 2:
+                        case 3:
+                        case 4:
+                            if(!amas.includes(elobj.id)){
+                                s_error.play()
+                                return false
+                            }
+                            break
+                    }
+                    if(true){
+                        this.classList.add('clicked')
+                        EventBus.$emit('isok')
+                        s_ok.play()
+                        if(app.$refs.firstscene.oks === 2){
+                            app.$set(app.temps, 'a', false)
+                            app.$set(app.temps, 'b', true)
+                            elements = document.getElementsByClassName('crayola')
+                            elements[0].style.fill="#FFC108"
+                            elements[1].style.fill="#FFC108"
+                        }
+                        if(app.$refs.firstscene.oks === 5){
+                            app.$set(app.temps, 'a', false)
+                            app.$set(app.temps, 'b', false)
+                            app.$set(app.temps, 'c', true)
+                            elements = document.getElementsByClassName('crayola')
+                            elements[0].style.fill="#FF5C0C"
+                            elements[1].style.fill="#FF5C0C"
+                        }
+                        if(app.$refs.firstscene.oks === 8){
+                            document.getElementById('caraBlanca').style.display = 'none'
+                        }
+                    }
+                }
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                
+                app.currentScene = 0
+                app.scenesCount = 2

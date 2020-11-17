@@ -23,6 +23,14 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/.vscode\/launch.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/.vscode\/launch-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/assets\/aanim\/Dialog.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -615,6 +623,24 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/assets\/pug\/_head.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/assets\/pug\/_head.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/assets\/pug\/_scripts.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/assets\/pug\/_scripts.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/CM1T1\/196\/aimg\/bg.svg": {
 		"ft": 2097152,
@@ -10683,6 +10709,98 @@
 		"oAP": "\/MA1T1\/94\/index.html",
 		"oF": 0
 		},
+	"\/MA1T2\/131\/i\/scene.png": {
+		"ft": 32768,
+		"iS": 2492330,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/i\/scene.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/131\/i\/scene.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T2\/131\/i\/scene.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T2\/131\/i\/scene2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T2\/131\/i\/scene2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T2\/131\/i\/sector1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T2\/131\/i\/sector1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T2\/131\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/index.html",
+		"oF": 0
+		},
+	"\/MA1T2\/131\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA1T2\/131\/s\/cortos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/s\/cortos.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/131\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/131\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/131\/s\/largos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/s\/largos.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/131\/s\/mismos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/131\/s\/mismos.mp3",
+		"oF": 0
+		},
 	"\/MA2T1\/132\/aimg\/i1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -11251,17 +11369,6 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
-		},
-	"\/MA3T1\/106\/aimg\/nidia.png": {
-		"ft": 32768,
-		"iS": 43347,
-		"oA": 0,
-		"oAP": "\/MA3T1\/106\/aimg\/nidia.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"\/MA3T1\/106\/aimg\/nidia.svg": {
 		"ft": 2097152,
