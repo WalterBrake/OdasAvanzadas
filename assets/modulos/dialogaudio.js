@@ -8,7 +8,7 @@ Vue.component('dialogaudio', {
         }
     },
     template: `
-        <div :class="'dialogaudio '+(playing?'playing':'') + (initclass!=undefined?initclass:'')" @click="playstop">
+        <div :class="'dialogaudio '+(playing?'playing ':' ') + (initclass!=undefined?initclass:'')" @click="playstop">
             <div class="audiotextBtn">
                 <div  v-if="playing" ><embed src="../../assets/aanim/Dialog_a.svg" class="animate__animated animate__rubberBand"></embed></div>
                 <img  v-else src="../../assets/aanim/Dialog.svg" class="animate__animated animate__pulse" >

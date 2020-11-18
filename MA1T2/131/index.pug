@@ -39,7 +39,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" ref="firstscene" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Mariana quiere colorear al calamar, ayúdala." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true")
+                info(type="seleccionar" title=title text="Mariana quiere colorear al calamar, ayúdala." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true")
                     audiotext(key="a" audio="s/largos.mp3" text="Selecciona los tentáculos más largos." :autoplay="true" v-if="temps.a")
                     audiotext(key="b" audio="s/mismos.mp3" text="Seleciona los tentáculos que miden los mismo." :autoplay="true" v-if="temps.b")
                     audiotext(key="c" audio="s/cortos.mp3" text="Seleciona los tentáculos más cortos. " :autoplay="true" v-if="temps.c")
@@ -49,7 +49,7 @@ html(lang="es")
             
             // SCENES Preg 1
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")

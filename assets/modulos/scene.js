@@ -102,9 +102,9 @@ Vue.component('scene', {
             
             if(this.alloks != undefined) {
                 if(this.oks == this.answers && this.oks>0) {
-                    this.playAllOksSounds()
+                    
                     //Checar que todos los sonidos hayan terminado para terminar la escena
-                    this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 300)
+                    this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 100)
 
                 }
             } else {
@@ -119,20 +119,25 @@ Vue.component('scene', {
                 if(Howler._howls[hw].playing()){ allmuted = false }
             }
             if(allmuted){
+                this.playAllOksSounds()
                 clearInterval(this.timeoutSounds)
                 this.endRun()
             }
         },
         playAllOksSounds () {
             if(this.alloksSound){
+
                 var sound = new Howl({ src: [this.alloksSound] })
-                app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
+                    app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
+                    setTimeout(function(){
+                        s_win.play()
+                    },200)
+
                 setTimeout(function(){
-                    s_win.play()
-                },200)
-                setTimeout(function(){
+                    console.log('playOKSOUNDS')
                     sound.play()
-                },600)
+                },100)
+
             }
         },
         endRun(){
