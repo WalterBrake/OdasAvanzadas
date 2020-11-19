@@ -16,7 +16,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
                         img(src="i/nota.png").w100
@@ -25,56 +25,56 @@ html(lang="es")
             
             // SCENES Preg 1
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿Cuál es el nombre del periódico?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.a" :key="index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 2
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿Cuál es el título de la nota informativa?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.b" :key="index" :isok="index == 2" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 3
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿De qué lugar habla la nota?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.c" :key="index" :isok="index == 2" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 4
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿Quién es el autor de la nota?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.d" :key="index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 5
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿Por qué el título de la nota es más grande y está resaltado?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.e" :key="index" :isok="index == 2" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 6
             scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4.mb-1 ¿De qué otra forma podemos llamar al título de la noticia?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.f" :key="index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 7
             scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/notaMarca.png").w80
                     .row.w100.h4.mb-1 ¿Cómo se le llama al texto que está encerrado en color rosa?
                     .row.wrap.around: clickable(v-for="(i, index) in temps.g" :key="index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
             // SCENES Preg 8
             scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100.mb-1: img(src="i/nota.png").w80
                     .row.w100.h4 ¿Qué se informa en la noticia?

@@ -17,7 +17,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100"><img class="w100" src="i/nota.png"/></div>
           <div class="row w100">
@@ -27,7 +27,7 @@
       </scene>
       <!-- SCENES Preg 1-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿Cuál es el nombre del periódico?</div>
@@ -40,7 +40,7 @@
       </scene>
       <!-- SCENES Preg 2-->
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿Cuál es el título de la nota informativa?</div>
@@ -53,7 +53,7 @@
       </scene>
       <!-- SCENES Preg 3-->
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿De qué lugar habla la nota?</div>
@@ -66,7 +66,7 @@
       </scene>
       <!-- SCENES Preg 4-->
       <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿Quién es el autor de la nota?</div>
@@ -79,7 +79,7 @@
       </scene>
       <!-- SCENES Preg 5-->
       <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿Por qué el título de la nota es más grande y está resaltado?</div>
@@ -92,7 +92,7 @@
       </scene>
       <!-- SCENES Preg 6-->
       <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4 mb-1">¿De qué otra forma podemos llamar al título de la noticia?</div>
@@ -105,7 +105,7 @@
       </scene>
       <!-- SCENES Preg 7-->
       <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/notaMarca.png"/></div>
           <div class="row w100 h4 mb-1">¿Cómo se le llama al texto que está encerrado en color rosa?</div>
@@ -118,7 +118,7 @@
       </scene>
       <!-- SCENES Preg 8-->
       <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="relacionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Reviso las notas informativas" text="Ahora, elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 mb-1"><img class="w80" src="i/nota.png"/></div>
           <div class="row w100 h4">¿Qué se informa en la noticia?</div>
