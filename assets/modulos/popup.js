@@ -28,6 +28,7 @@ Vue.component('popup', {
             s_select.play()
         },
         close () {
+            for(var hw in Howler._howls){Howler._howls[hw].stop()}
             this.state = false
         }
     },
@@ -37,7 +38,9 @@ Vue.component('popup', {
                 (c!=undefined?'c'+c:'') + ' '
             "
             v-show="state" :style="csspos">
+            <template v-if="state">
               <slot></slot>
+              </template>
             <button @click="close" class="popup__button"></button>
         </div>
     `,
