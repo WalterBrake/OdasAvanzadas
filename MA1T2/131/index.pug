@@ -60,7 +60,7 @@ html(lang="es")
                         clickable(initclass="pa-1" ): number(randomc small) Largos
             // SCENES Preg 2
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
@@ -71,7 +71,7 @@ html(lang="es")
                         clickable(initclass="pa-1" ): number(randomc small) 2
             // SCENES Preg 3
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
@@ -82,7 +82,7 @@ html(lang="es")
                         clickable(initclass="pa-1" simple-ok :isok="true"): number(randomc small) 2
             // SCENES Preg 4
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
