@@ -1,5 +1,5 @@
 Vue.component('audiotext', {
-    props: ['text', 'audio', 'autoplay'],
+    props: ['text', 'audio', 'autoplay', 'initclass'],
     data() {
         return {
             playing: false,
@@ -10,7 +10,7 @@ Vue.component('audiotext', {
         }
     },
     template: `
-        <div class="audiotext">
+        <div :class="'audiotext ' + (initclass?initclass:' ')">
             <div class="audiotextBtn">
                 <div @click="stop" v-if="playing" ><embed src="../../assets/aanim/Dialog_a.svg" class="animate__animated animate__rubberBand"></embed></div>
                 <img v-else src="../../assets/aanim/Dialog.svg" class="animate__animated animate__pulse" @click="play">

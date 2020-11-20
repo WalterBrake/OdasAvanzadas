@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Identifico una autobiografía</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .audiotext.mini {
+          flex-direction: row;
+          background: #fff;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          margin: 4px;
+      }
+      .audiotext.mini .audiotextBtn img,
+      .audiotext.mini .audiotextBtn embed {
+          width: 30px;
+      }
+      .activity .audiotext .audiotextBtn {
+          height: 30px;
+      }
+      .dialoganim .dialogaudio {
+          position: relative;
+      }
+      .dialoganim .dialogaudio .audiotextBtn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 40px;
+      }
+      
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico una autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.s1 = true"></info>
+        <activity>
+          <template v-if="temps.s1">
+            <div class="row w100 h3">
+              <audiotext audio="s/s1.mp3" :autoplay="true" text="Las autobiografías se escriben en primera persona del singular, el narrador utiliza los verbos en pasado para hablar de su vida y su familia. Es decir, es el relato de la vida de una persona escrita por ella misma." @completed="temps.s1_btn = true"></audiotext>
+            </div>
+            <div class="row w100 mt-1"><img class="w50 animate__animated animate__zoomInUp animate__delay-2s" src="i/1a.png"/></div>
+          </template>
+          <div class="row w100" v-if="temps.s1_btn">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico una autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 h3">
+            <audiotext audio="s/s2.mp3" :autoplay="true" text="Las personas gramaticales son: " @completed="temps.s3 = true"></audiotext>
+          </div>
+          <div class="row w100 h4" v-if="temps.s3">
+            <audiotext audio="s/s3.mp3" :autoplay="true" text="&lt;strong&gt;Yo&lt;/strong&gt;, primera (1a) persona del singular, es la persona que habla." initclass="mini" @completed="temps.s4 = true"></audiotext>
+          </div>
+          <div class="row w100 h4" v-if="temps.s4">
+            <audiotext audio="s/s4.mp3" :autoplay="true" text="&lt;strong&gt;Tú&lt;/strong&gt;, segunda (2a) persona del singular, es la persona con quien se habla." initclass="mini" @completed="temps.s5 = true"></audiotext>
+          </div>
+          <div class="row w100 h4" v-if="temps.s5">
+            <audiotext audio="s/s5.mp3" :autoplay="true" text="&lt;strong&gt;Él/Ella&lt;/strong&gt;, tercera (3a) persona del singular, es la persona de quien se habla." initclass="mini" @completed="temps.s6 = true"></audiotext>
+          </div>
+          <div class="row w100" v-if="temps.s6">
+            <audiotext audio="s/s6.mp3" :autoplay="true" text="También hay personas gramaticales del plural: " initclass="" @completed="temps.s7 = true"></audiotext>
+          </div>
+          <div class="row w100 h4" v-if="temps.s7">
+            <audiotext audio="s/s7.mp3" :autoplay="true" text="&lt;strong&gt;Nosotros&lt;/strong&gt; (1a persona); &lt;strong&gt;ustedes&lt;/strong&gt; (2a persona) y &lt;strong&gt;ellos/ellas&lt;/strong&gt; (3a persona). " initclass="mini" @completed="temps.s7_btn = true"></audiotext>
+          </div>
+          <div class="row w100"><img class="w80 animate__animated animate__zoomInUp" src="i/2a.png"/></div>
+          <div class="row w100" v-if="temps.s7_btn">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico una autobiografía" text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="dialoganim">
+            <sequence :options="[{img: 'i/2a.png'}, {audio:'s/s9.mp3', img: 'i/2b.png'}, {audio:'s/s10.mp3', img: 'i/2c.png'}, {audio:'s/s11.mp3', img: 'i/2d.png'}, {audio:'s/s12.mp3', img: 'i/2e.png'}]" @completed="temps.s12_btn = true">
+              <template v-slot:option="{option}">
+                <dialogaudio :audio="option.audio" :autoplay="true" always-visible="always-visible" v-if="option.audio"></dialogaudio><img class="w100" :src="option.img"/>
+              </template>
+            </sequence>
+          </div>
+          <div class="row w100" v-if="temps.s12_btn">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico una autobiografía" text="Ya sabes cuáles son las personas gramaticales, así que ya puedes identificarlas seleccionando la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w70">
+            <div class="dialoganim">
+              <sequence :options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = true">
+                <template v-slot:option="{option}">
+                  <dialogaudio :audio="option.audio" :autoplay="true" always-visible="always-visible" v-if="option.audio"></dialogaudio><img class="w100" :src="option.img"/>
+                </template>
+              </sequence>
+            </div>
+          </div>
+          <div class="row w100" v-if="temps.preguntas"></div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==10" :key="10" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 's1', false)
+      app.$set(app.temps, 's1_btn', false)
+      
+      app.$set(app.temps, 's3', false)
+      app.$set(app.temps, 's4', false)
+      app.$set(app.temps, 's5', false)
+      app.$set(app.temps, 's6', false)
+      app.$set(app.temps, 's7', false)
+      app.$set(app.temps, 's7_btn', false)
+      
+      app.$set(app.temps, 's12_btn', false)
+      app.$set(app.temps, 'preguntas', false)
+      
+      
+      
+      app.currentScene = 4
+      app.scenesCount = 5
+    </script>
+  </body>
+</html>

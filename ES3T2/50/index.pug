@@ -1,0 +1,124 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identifico una autobiografía'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .audiotext.mini {
+                flex-direction: row;
+                background: #fff;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin: 4px;
+            }
+            .audiotext.mini .audiotextBtn img,
+            .audiotext.mini .audiotextBtn embed {
+                width: 30px;
+            }
+            .activity .audiotext .audiotextBtn {
+                height: 30px;
+            }
+            .dialoganim .dialogaudio {
+                position: relative;
+            }
+            .dialoganim .dialogaudio .audiotextBtn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+            }
+
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.s1 = true")
+                activity
+                    template(v-if="temps.s1")
+                        .row.w100.h3
+                            audiotext(audio="s/s1.mp3" :autoplay="true" text="Las autobiografías se escriben en primera persona del singular, el narrador utiliza los verbos en pasado para hablar de su vida y su familia. Es decir, es el relato de la vida de una persona escrita por ella misma." @completed="temps.s1_btn = true")
+                        .row.w100.mt-1: img(src="i/1a.png").w50.animate__animated.animate__zoomInUp.animate__delay-2s
+                    .row.w100(v-if="temps.s1_btn"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__lightSpeedInLeft Siguiente
+            
+
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.h3
+                        audiotext(audio="s/s2.mp3" :autoplay="true" text="Las personas gramaticales son: " @completed="temps.s3 = true")
+                    .row.w100.h4(v-if="temps.s3")
+                        audiotext(audio="s/s3.mp3" :autoplay="true" text="<strong>Yo</strong>, primera (1a) persona del singular, es la persona que habla." initclass="mini" @completed="temps.s4 = true" )
+                    .row.w100.h4(v-if="temps.s4")
+                        audiotext(audio="s/s4.mp3" :autoplay="true" text="<strong>Tú</strong>, segunda (2a) persona del singular, es la persona con quien se habla." initclass="mini" @completed="temps.s5 = true")
+                    .row.w100.h4(v-if="temps.s5")
+                        audiotext(audio="s/s5.mp3" :autoplay="true" text="<strong>Él/Ella</strong>, tercera (3a) persona del singular, es la persona de quien se habla." initclass="mini" @completed="temps.s6 = true")
+                    
+                    .row.w100(v-if="temps.s6")
+                        audiotext(audio="s/s6.mp3" :autoplay="true" text="También hay personas gramaticales del plural: " initclass="" @completed="temps.s7 = true")
+                    
+                    .row.w100.h4(v-if="temps.s7")
+                        audiotext(audio="s/s7.mp3" :autoplay="true" text="<strong>Nosotros</strong> (1a persona); <strong>ustedes</strong> (2a persona) y <strong>ellos/ellas</strong> (3a persona). " initclass="mini" @completed="temps.s7_btn = true")
+                
+                    .row.w100: img(src="i/2a.png").w80.animate__animated.animate__zoomInUp
+                    
+                    .row.w100(v-if="temps.s7_btn"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__lightSpeedInLeft Siguiente
+            
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true")
+                activity
+                    .dialoganim
+                        sequence(:options="[{img: 'i/2a.png'}, {audio:'s/s9.mp3', img: 'i/2b.png'}, {audio:'s/s10.mp3', img: 'i/2c.png'}, {audio:'s/s11.mp3', img: 'i/2d.png'}, {audio:'s/s12.mp3', img: 'i/2e.png'}]" @completed="temps.s12_btn = true")
+                            template(v-slot:option="{option}")
+                                dialogaudio(:audio="option.audio" :autoplay="true" always-visible v-if="option.audio")
+                                img(:src="option.img").w100
+                           
+                    .row.w100(v-if="temps.s12_btn"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__lightSpeedInLeft Siguiente
+            
+            
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ya sabes cuáles son las personas gramaticales, así que ya puedes identificarlas seleccionando la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w70
+                        .dialoganim
+                            sequence(:options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = true")
+                                template(v-slot:option="{option}")
+                                    dialogaudio(:audio="option.audio" :autoplay="true" always-visible v-if="option.audio")
+                                    img(:src="option.img").w100
+                           
+                    .row.w100(v-if="temps.preguntas")
+                        
+
+            // END
+            scene(v-if="currentScene==10" :key="10" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 's1', false)
+                app.$set(app.temps, 's1_btn', false)
+                
+                app.$set(app.temps, 's3', false)
+                app.$set(app.temps, 's4', false)
+                app.$set(app.temps, 's5', false)
+                app.$set(app.temps, 's6', false)
+                app.$set(app.temps, 's7', false)
+                app.$set(app.temps, 's7_btn', false)
+                
+                app.$set(app.temps, 's12_btn', false)
+                app.$set(app.temps, 'preguntas', false)
+
+                
+                
+                app.currentScene = 4
+                app.scenesCount = 5
