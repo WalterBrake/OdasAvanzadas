@@ -10,7 +10,9 @@ Vue.component('clickable', {
         'initclass', // class de inicio
         'isok', // es ok?,
         'blockIfError', // Si es error no permitirá que sea seleccionado,
-        'simpleOk', //No checa, sólo manda isOK
+        'simpleOk', //No checa, sólo manda isOK,
+        'extValidation', // Se llama la función de evaluación desde afuera
+        'noAnimations', //Deshabilita las animaciones
     ],
     data() {
         return {
@@ -34,7 +36,9 @@ Vue.component('clickable', {
             this.status = !this.status
 
             this.clicksoundsFn()
-            this.isOkOrError(e)
+            if(this.extValidation==undefined){
+                this.isOkOrError(e)
+            }
             s_select.play()
         },
         clicksoundsFn () {
@@ -56,6 +60,9 @@ Vue.component('clickable', {
 
         },
         isOkOrError (e) {
+            if(this.alreadyOk) {
+                return false
+            }
             if(this.isok == this.status){
                 //OK
                 //EventBus.$emit('clicked', 'ok')
@@ -64,7 +71,11 @@ Vue.component('clickable', {
                 } else {
                     this.$emit('input', true)
                 }
-                this.$emit('wasclicked')
+                if(this.extValidation == undefined){
+                    this.$emit('wasclicked')
+                } else {
+                    EventBus.$emit('isok')
+                }
                 this.setClassAnimation('ok', this.$refs.clickable)
                 if(e){app.particleAnimation({clientX: event.clientX, clientY: event}, 100, null, null, this.particleColor)}
                 setTimeout(function(){s_ok.play()},100)
@@ -79,13 +90,16 @@ Vue.component('clickable', {
             }
         },
         blockIfErrorFn(){
-            if(!this.isok) {
+            if(!this.isok && this.extValidation == undefined) {
                 this.status = false
                 return false
             }
         },
         setClassAnimation(name, obj) {
             var _this = this
+            if(this.noAnimations){
+                return false
+            }
             var theclass
             switch(name) {
                 case 'start':

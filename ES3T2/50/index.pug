@@ -31,6 +31,78 @@ html(lang="es")
                 width: 40px;
                 height: 40px;
             }
+            
+
+            .biogra {
+                background-image: url("i/biobg.png");
+                background-size: 100%;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 var(--sec);
+            }
+            .biogra p {
+                margin: 20px;
+                line-height: 1.4;
+                font-weight: bold;
+            }
+            .biogra .h4 {
+                font-weight: bold;
+                text-align: center;
+            }
+            @media (max-width: 680px) {
+                .biogra {
+                    font-size: 0.9rem;
+                    padding: 6px;
+                }
+                .biogra p {
+                    margin: 10px;
+                }
+            }
+
+            .biogra {
+                position: relative;
+            }
+            .biogra .goma,
+            .biogra .lapiz {
+                position: absolute;
+            }
+            .biogra .goma {
+                width: 10%;
+                top: 0.5%;
+                right: 2%;
+            }
+            .biogra .lapiz {
+                width: 5%;
+                bottom: 20%;
+                left: -1%;
+            }
+            @media (max-width: 720px) {
+                .finalpreguntas .h4 {
+                    font-size: 1rem;
+                }
+                .finalpreguntas .number.smaller {
+                    font-size: 1.1rem !important;
+                }
+            }
+            .finalpreguntas .pregu {
+                border: 2px solid var(--sec);
+                border-radius: 10px;
+                margin-bottom: 4px;
+                padding: 8px 0;
+            }
+            .finalpreguntas .number.smaller {
+                font-size: 1.2rem !important;
+            }
+            .finalpreguntas .clickable.clicked {
+                background: #DA3F34;
+                border-radius: 6px;
+                padding: 3px 10px;
+            }
+            .finalpreguntas .clickable.clicked embed {
+                display: none;
+            }
+
+
 
 
 
@@ -85,21 +157,66 @@ html(lang="es")
                     .row.w100(v-if="temps.s12_btn"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__lightSpeedInLeft Siguiente
             
             
-            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ya sabes cuáles son las personas gramaticales, así que ya puedes identificarlas seleccionando la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w70
                         .dialoganim
-                            sequence(:options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = true")
+                            sequence(:options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = 'p1'")
                                 template(v-slot:option="{option}")
                                     dialogaudio(:audio="option.audio" :autoplay="true" always-visible v-if="option.audio")
                                     img(:src="option.img").w100
-                           
-                    .row.w100(v-if="temps.preguntas")
-                        
+                    
+                    div(v-if="temps.preguntas == 'p1'")
+                        .h4.text-center ¿Quién habla en primera persona del singular?
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Miguel','Irene','Brenda']" :key="'p1'+index" :isok="index == 2" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'p2' "): number(randomc smaller) {{i}}
+                    div(v-if="temps.preguntas == 'p2'")
+                        .h4.text-center ¿Quien es la segunda persona del singular?
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Brenda','Irene','Miguel']" :key="'p2'+index" :isok="index == 1" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'p3' "): number(randomc smaller) {{i}}
+                    div(v-if="temps.preguntas == 'p3'")
+                        .h4.text-center Si se habla de Miguel, ¿qué persona del singular le corresponde?
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Primera','Segunda','Tercera']" :key="'p3'+index" :isok="index == 2" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'p4' "): number(randomc smaller) {{i}}
+                    div(v-if="temps.preguntas == 'p4'")
+                        .h4.text-center Si Irene dijera: Ustedes son muy talentosos, ¿Qué persona gramatical está usando?
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Segunda persona del singular','Segunda persona del plural','Tercera persona del plural']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'fin' "): number(randomc smaller) {{i}}
 
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, lee la autobiografía." textaudio="s/instruccion3.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w90.biogra
+                            .h4 Autobiografía
+                            p Me llamo Claudia y tengo 8 años. Nací en Saltillo, Coahuila, el día 9 de mayo de 2012. En mi familia somos cuatro personas. Mi papá se llama Alfredo. Él trabaja mucho y es muy divertido. Mi mamá se llama Marcela, ella también trabaja y nos hace rico desayuno para la escuela. Mi hermana menor se llama Lorena. Mis abuelitos maternos son muy lindos y nos llevaban al kinder. Era muy feliz porque mi abuelita Elvira iba por mí a la hora de la salida y me compraba un helado. En ocasiones, también mi abuelito Jesús iba por mí y nos regresábamos caminando a su casa. Ahí esperaba a mi mamá hasta que ella salía de trabajar. Mientras ella llegaba, yo jugaba con mi abuelito porque él me quería mucho.
+                            p Cuando entré a 1º de primaria, conocí a mi amiga Monse. Ella y yo nos divertíamos mucho en la hora del recreo. Después, pasé a 2º de primaria. Mi maestra era Adriana, ella era muy amable y cariñosa conmigo. Ahora, estoy en 3º de primaria, tengo nuevos compañeros y estoy aprendiendo muchas cosas con mi maestra, que se llama Erika.
+                            img(src="i/goma.png").goma
+                            img(src="i/lapiz.png").lapiz
+                    
+                    .row.w100: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__lightSpeedInLeft Siguiente
+
+
+            scene(v-if="currentScene==6" ref="lastscene" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="15" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text=" Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true")
+                activity
+                    .finalpreguntas
+                        .pregu
+                            .h4.text-center ¿En qué persona gramatical está escrito el texto?
+                            .row.wrap.around: clickable(v-for="(i, index) in ['tercera persona del singular','primera persona del plural','primera persona del singular']" :key="'p4'+index" :isok="index == 2"  ext-validation :ref="'click1'+index" no-animations): number(randomc smaller) {{i}}
+                        .pregu
+                            .h4.text-center En el texto hay palabras que indican acciones, por ejemplo nací, ¿que tipo de palabra es?
+                            .row.wrap.around: clickable(v-for="(i, index) in ['adjetivo','sustantivo','verbo']" :key="'p4'+index" :isok="index == 2"  ext-validation  :ref="'click2'+index"  no-animations): number(randomc smaller) {{i}}
+                        .pregu
+                            .h4.text-center ¿En qué tiempo verbal está escrita la palabra nací?
+                            .row.wrap.around: clickable(v-for="(i, index) in ['pasado','presente','futuro']" :key="'p4'+index" :isok="index == 0" ext-validation  :ref="'click3'+index"  no-animations): number(randomc smaller) {{i}}
+                        .pregu
+                            .h4.text-center ¿Cuáles son los tiempos verbales que Claudia usa en su autobiorafía?
+                            .row.wrap.around: clickable(v-for="(i, index) in ['futuro y pasado','pasado y presente','presente y futuro']" :key="'p4'+index" :isok="index == 1"  ext-validation  :ref="'click4'+index"  no-animations): number(randomc smaller) {{i}}
+                        .pregu
+                            .h4.text-center Elige dos datos que escribió Claudia en su autobiografía.
+                            .row.wrap.around: clickable(v-for="(i, index) in ['nombre de familiares','domicilio de su familia','recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2"  ext-validation  :ref="'click5'+index"  no-animations): number(randomc smaller) {{i}}
+                    
+                    .row.w100: button(@click="validarRespuestas").button.big.animate__animated.animate__lightSpeedInLeft Validar
             // END
-            scene(v-if="currentScene==10" :key="10" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -116,9 +233,35 @@ html(lang="es")
                 app.$set(app.temps, 's7_btn', false)
                 
                 app.$set(app.temps, 's12_btn', false)
-                app.$set(app.temps, 'preguntas', false)
+                app.$set(app.temps, 'preguntas', '')
 
+                app.validarRespuestas = function () {
+                    /* oks */
+                    app.$refs.click12[0].isOkOrError()
+                    app.$refs.click22[0].isOkOrError()
+                    app.$refs.click30[0].isOkOrError()
+                    app.$refs.click41[0].isOkOrError()
+                    app.$refs.click50[0].isOkOrError()
+                    app.$refs.click52[0].isOkOrError()
+                    /* errors */
+                    
+                    app.$refs.click10[0].isOkOrError()
+                    app.$refs.click11[0].isOkOrError()
+                    
+                    app.$refs.click20[0].isOkOrError()
+                    app.$refs.click21[0].isOkOrError()
+
+                    app.$refs.click31[0].isOkOrError()
+                    app.$refs.click32[0].isOkOrError()
+                    
+                    app.$refs.click40[0].isOkOrError()
+                    app.$refs.click42[0].isOkOrError()
+                    app.$refs.click51[0].isOkOrError()
+                    if(app.$refs.lastscene.oks < 15){
+                        new Howl({ src: ["../../assets/asound/vuelveaintentar_mujer.mp3"], autoplay:true })
+                    }
+                }
                 
                 
-                app.currentScene = 4
-                app.scenesCount = 5
+                app.currentScene = 0
+                app.scenesCount = 2
