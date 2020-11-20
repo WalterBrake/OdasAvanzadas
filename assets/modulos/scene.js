@@ -44,7 +44,7 @@ Vue.component('scene', {
                 <h1>Felicidades</h1>
                 <h2>Completaste la actividad</h2>
                 <scorebox :score="finalData.scoresum"></scorebox>
-                <p class="endResults">Obtuviste <strong>{{finalData.oks}} respuestas correctas</strong>.</p>
+                <p class="endResults">Obtuviste <strong>{{finalData.oks}} respuesta{{finalData.oks>1?'s':''}} correcta{{finalData.oks>1?'s':''}}</strong>.</p>
                 <template v-if="finalData.score != finalData.scoresum">
                     <p class="endResultErrors">Tuviste problemas con {{finalData.errors}} respuestas.</p>
                     <p class="endImprove">Puedes mejorar tu puntaje repitiendo la actividad.</p>

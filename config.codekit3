@@ -8641,6 +8641,22 @@
 		"oAP": "\/ES5T1\/35\/index.html",
 		"oF": 0
 		},
+	"\/ES5T2\/43\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/index.html",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -8893,6 +8909,36 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/index.html",
+		"oF": 0
+		},
+	"\/GE5T2\/228\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/index.html",
+		"oF": 0
+		},
+	"\/GE5T2\/228\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/GE5T2\/228\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/GE5T2\/228\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/GE6T1\/221\/aimg\/mapa.svg": {

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mi planeta azul</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .map {
+          border: 2px solid #517E8C;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 4px 4px 0 #517E8C;
+          margin: 10px;
+          line-height: 0;
+          position: relative;
+      }
+      .map img {
+          margin: 0;
+      }
+      .drops {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+      .drops .drop {
+          position: absolute;
+          background: #517E8C;
+          width: 20%;
+          height: 50px;
+          border-radius: 6px;
+      }
+      .drops .drop.hover {
+          background: #F4C8D5;
+      }
+      .ex1 .drop:nth-child(1) {
+          left: 3%;
+          top: 56%;
+      }
+      .ex1 .drop:nth-child(2) {
+          left: 40%;
+          top: 12%;
+      }
+      .ex1 .drop:nth-child(3) {
+          left: 42%;
+          top: 63%;
+      }
+      .ex1 .drop:nth-child(4) {
+          left: 72%;
+          top: 22%;
+      }
+      .ex1 {
+          gap: 6px;
+      }
+      .ex1 .drag {
+          font-size: 0.9rem;
+          padding: 4px;
+          height: auto;
+          width: 20%;
+          text-align: center;
+          background: #f5f5f5;
+          border-radius: 4px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .ex1 .drag:nth-child(1) {
+          background: #75B2D6;
+      }
+      .ex1 .drag:nth-child(2) {
+          background: #F4BC84;
+      }
+      .ex1 .drag:nth-child(3) {
+          background: #FDE091;
+      }
+      .ex1 .drag:nth-child(4) {
+          background: #B3D595;
+      }
+      .ex2 {
+          gap: 6px;
+      }
+      .ex2 .drop:nth-child(1) {
+          left: 66%;
+          top: 64%;
+      }
+      .ex2 .drop:nth-child(2) {
+          left: 36%;
+          top: 84%;
+      }
+      .ex2 .drop:nth-child(3) {
+          left: 39%;
+          top: 4%;
+      }
+      .ex2 .drop:nth-child(4) {
+          left: 1%;
+          top: 70%;
+      }
+      .ex2 .drop:nth-child(5) {
+          left: 21%;
+          top: 39%;
+      }
+      .ex2 .drag {
+          font-size: 0.9rem;
+          padding: 4px;
+          height: auto;
+          width: 20%;
+          text-align: center;
+          background: #f5f5f5;
+          border-radius: 4px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .ex2 .drag:nth-child(1) {
+          background: #56B9F6;
+      }
+      .ex2 .drag:nth-child(2) {
+          background: #88CCF7;
+      }
+      .ex2 .drag:nth-child(3) {
+          background: #BADFF6;
+      }
+      .ex2 .drag:nth-child(4) {
+          background: #D3E8F7;
+      }
+      .ex2 .drag:nth-child(5) {
+          background: #E1F7F7;
+      }
+      
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Mi planeta azul" text="¿En qué continente se encuentran estos ríos? Coloca el recuadro que corresponda en cada casilla del mapa." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions=""></info>
+        <activity>
+          <div class="row w100">
+            <div class="map w100"><img class="w100" src="i/m1.png" v-if="!temps.colormap"/><img class="w100" src="i/m2.png" v-else-if="temps.colormap"/>
+              <div class="drops ex1">
+                <div class="drop" droptimes="untilok" data="america"></div>
+                <div class="drop" droptimes="untilok" data="europa"></div>
+                <div class="drop" droptimes="untilok" data="africa"></div>
+                <div class="drop" droptimes="untilok" data="asia"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap around drags ex1">
+            <drag data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Ríos Missouri y Amazonas</div>
+            </drag>
+            <drag data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Río Danubio</div>
+            </drag>
+            <drag data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Ríos Nilo y Congo</div>
+            </drag>
+            <drag data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Río Huang He</div>
+            </drag>
+          </div>
+          <div class="row w100">
+            <button class="button big" @click="verificar">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Mi planeta azul" text="¿Cuál es el nombre de los océanos? Coloca la respuesta en cada casilla del mapa." textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions=""></info>
+        <activity>
+          <div class="row w100">
+            <div class="map w100"><img class="w100" src="i/m2.png" v-if="!temps.finalmap"/><img class="w100" src="i/m3.png" v-else-if="temps.finalmap"/>
+              <div class="drops ex2">
+                <div class="drop" droptimes="untilok" data="ind"></div>
+                <div class="drop" droptimes="untilok" data="ant"></div>
+                <div class="drop" droptimes="untilok" data="art"></div>
+                <div class="drop" droptimes="untilok" data="pac"></div>
+                <div class="drop" droptimes="untilok" data="atl"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap around drags ex2">
+            <drag data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Océano Índico</div>
+            </drag>
+            <drag data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Océano Antártico</div>
+            </drag>
+            <drag data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Océano Ártico</div>
+            </drag>
+            <drag data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Océano Pacífico</div>
+            </drag>
+            <drag data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+              <div>Océano Atlántico</div>
+            </drag>
+          </div>
+          <div class="row w100">
+            <button class="button big" @click="verificar2">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'map', {america:0, europa:0, africa: 0, asia: 0})
+      app.$set(app.temps, 'colormap', false)
+      app.$set(app.temps, 'secmap', {ind:0, ant:0, art: 0, pac: 0, atl: 0})
+      app.$set(app.temps, 'finalmap', false)
+      
+      app.verificar = function () {
+          const map = app.temps.map
+          if(map.america && map.europa && map.africa && map.asia){
+              app.temps.colormap = true
+              setTimeout(function () {
+                  EventBus.$emit('isok')
+              }, 1000)
+          } else {
+              app.$set(app.temps, 'map', {america:0, europa:0, africa: 0, asia: 0})
+              s_error.play()
+              app.$refs.am.backToInitPos()
+              app.$refs.eu.backToInitPos()
+              app.$refs.af.backToInitPos()
+              app.$refs.as.backToInitPos()
+          }
+      }
+      app.verificar2 = function () {
+          const map = app.temps.secmap
+          if(map.ind && map.ant && map.art && map.pac && map.atl){
+              app.temps.finalmap = true
+              setTimeout(function () {
+                  EventBus.$emit('isok')
+              }, 1000)
+          } else {
+              app.$set(app.temps, 'secmap', {ind:0, ant:0, art: 0, pac: 0, atl: 0})
+              s_error.play()
+              app.$refs.ind.backToInitPos()
+              app.$refs.ant.backToInitPos()
+              app.$refs.art.backToInitPos()
+              app.$refs.pac.backToInitPos()
+              app.$refs.atl.backToInitPos()
+          }
+      }
+      
+      app.currentScene = 0
+      app.scenesCount = 2
+    </script>
+  </body>
+</html>

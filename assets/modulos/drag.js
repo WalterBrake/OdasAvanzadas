@@ -19,7 +19,10 @@ Vue.component('drag', {
         'disableok', //Deshabilita la acumulación de 'oks'
         'returnToLastPosition', //Actualiza la posición por la última con Drop (ok o error)
         'singleDetection', // Sólo detectar el primer dropzone
-        'noErrorSound', //No reproduce sonido de error
+        'noErrorSound', //No reproduce sonido de error,
+        'noOkSound', //No reproduce sonido de ok,
+        'noReturnOnDrop', //No regresa aunque sea "error"
+        'noAnimations', //Ninguna animación
     ],
     data() {
         return {
@@ -183,7 +186,9 @@ Vue.component('drag', {
         hitTestISOK(dropzone, e){
             var _this = this
             //## OK
-            s_ok.play()
+            if(_this.noOkSound == undefined){
+                s_ok.play()
+            }
             _this.$emit('isok')
             _this.returnToPositionFn()
             _this.stayInDropFn()
@@ -193,7 +198,9 @@ Vue.component('drag', {
             _this.stayIfOkFn()
             app.particleAnimation(e, 100, null, null)
 
-            _this.setClassAnimation('ok')
+            if(_this.noAnimations == undefined){
+                _this.setClassAnimation('ok')
+            }
             _this.droppedtimesAdd(dropzone)
             _this.appendToDropzoneFn(dropzone, e)
             if(_this.disableok==undefined){
@@ -211,11 +218,16 @@ Vue.component('drag', {
             _this.stayInDropFn()
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
-            _this.returnToPositionFn()
-            _this.returnIfErrorFn()
+            if(_this.noReturnOnDrop == undefined){
+                console.log('noreturn ondrop')
+                _this.returnToPositionFn()
+                _this.returnIfErrorFn()
+            }
             _this.dragStatusClass('error')
             EventBus.$emit('iserror')
-            _this.setClassAnimation('error')
+            if(_this.noAnimations == undefined){
+                _this.setClassAnimation('error')
+            }
             
             if(_this.noErrorSound == undefined){
                 s_error.play()
