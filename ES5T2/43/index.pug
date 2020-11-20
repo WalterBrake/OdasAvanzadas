@@ -1,19 +1,13 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = 'Elijo el tema'
+- title = 'Leo leyendas'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
-            .drop img {
-                max-height: 180px;
-            }
-            .drag {
-                width: 12%;
-            }
-
+           
 
     body
         #app
@@ -24,12 +18,7 @@ html(lang="es")
             scene(v-if="currentScene==1" ref="firstscene" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="")
                 activity
-                    .row.w100.wrap.around
-                        template(v-for="(i, index) in temps.a")
-                            drag(:data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok): img(:src="'i/a'+(index+1)+'.png'").img-fluid
-                    .row.w100.mt-auto
-                        .w50.text-center: .drop(droptimes="multiple" :data="1"): img(src="i/mex.png").img-fluid
-                        .w50.text-center: .drop(droptimes="multiple" :data="2"): img(src="i/pais.png").img-fluid
+                    
                     
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -38,7 +27,7 @@ html(lang="es")
             script.
                 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2])
+                app.$set(app.temps, 'a', false)
                 app.$set(app.temps, 'b', false)
                 app.$set(app.temps, 'c', false)
                 

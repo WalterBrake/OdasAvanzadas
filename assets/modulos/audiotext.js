@@ -1,12 +1,13 @@
 Vue.component('audiotext', {
-    props: ['text', 'audio', 'autoplay', 'initclass'],
+    props: ['text', 'audio', 'autoplay', 'initclass', 'speedOffset'],
     data() {
         return {
             playing: false,
             textrender: [],
             wordcount: 0,
             speedtime: 0,
-            sound: null
+            sound: null,
+            speedOff: 1.0
         }
     },
     template: `
@@ -42,7 +43,7 @@ Vue.component('audiotext', {
                 if(counted == _this.textrender.length){
                     clearInterval(interval)
                 }
-            }, speedtime/1.5)
+            }, (speedtime/1.5) * this.speedOff)
         },
         play () {
             var _this = this
@@ -89,6 +90,9 @@ Vue.component('audiotext', {
             for(txt in this.textrender){
                 this.textrender[txt].on = true
             }
+        }
+        if(this.speedOffset != undefined){
+            this.speedOff = this.speedOffset
         }
     }
 })

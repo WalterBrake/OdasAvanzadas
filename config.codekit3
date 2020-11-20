@@ -6445,7 +6445,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 25761,
+		"iS": 23458,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -6522,7 +6522,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 10945,
+		"iS": 25710,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -8657,6 +8657,83 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES5T2\/43\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A1_Cuenta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A1_Cuenta.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A2_Sol1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A2_Sol1.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A3_Jaguar1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A3_Jaguar1.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A4_Sol2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A4_Sol2.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A5_Jaguar2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A5_Jaguar2.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A6_Lechuza.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A6_Lechuza.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A7_Zorro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A7_Zorro.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A8_AlFinal.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A8_AlFinal.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A9_Resto.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A9_Resto.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_Inst2_Ahora.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_Inst2_Ahora.mp3",
+		"oF": 0
+		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -8910,6 +8987,39 @@
 		"oA": 0,
 		"oAP": "\/GE5T1\/224\/index.html",
 		"oF": 0
+		},
+	"\/GE5T2\/228\/i\/m1.png": {
+		"ft": 32768,
+		"iS": 162489,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/i\/m1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/228\/i\/m2.png": {
+		"ft": 32768,
+		"iS": 158560,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/i\/m2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/228\/i\/m3.png": {
+		"ft": 32768,
+		"iS": 154629,
+		"oA": 0,
+		"oAP": "\/GE5T2\/228\/i\/m3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/GE5T2\/228\/index.html": {
 		"cB": 0,

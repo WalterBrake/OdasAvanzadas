@@ -481,7 +481,14 @@ embed {
       1px -1px 0 @col*.9,
       -1px 1px 0 @col*.9,
        1px 1px 0 @col*.9;
-       
+       @media(max-width: 680px){
+        text-shadow:
+            1px 1px 0 @col*.9,
+            -1px -1px 0 @col*.9,
+            1px -1px 0 @col*.9,
+            -1px 1px 0 @col*.9,
+            1px 1px 0 @col*.9;
+       }
 }
 
 .number {

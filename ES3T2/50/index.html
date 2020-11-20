@@ -30,7 +30,7 @@
       .dialoganim .dialogaudio .audiotextBtn {
           position: absolute;
           top: 0;
-          left: 0;
+          right: 0;
           width: 40px;
           height: 40px;
       }
@@ -79,14 +79,7 @@
           bottom: 20%;
           left: -1%;
       }
-      @media (max-width: 720px) {
-          .finalpreguntas .h4 {
-              font-size: 1rem;
-          }
-          .finalpreguntas .number.smaller {
-              font-size: 1.1rem !important;
-          }
-      }
+      
       .finalpreguntas .pregu {
           border: 2px solid var(--sec);
           border-radius: 10px;
@@ -97,12 +90,32 @@
           font-size: 1.2rem !important;
       }
       .finalpreguntas .clickable.clicked {
-          background: #DA3F34;
+          background: rgba(0,0,0,0.1);
+          border: 2px solid #DA3F34;
           border-radius: 6px;
           padding: 3px 10px;
       }
       .finalpreguntas .clickable.clicked embed {
           display: none;
+      }
+      .sequence{margin: 0 10px;}
+      @media (max-width: 720px) {
+          .finalpreguntas .h4 {
+              font-size: 0.8rem;
+          }
+          .finalpreguntas .number.smaller {
+              font-size: 0.9rem !important;
+              -webkit-text-stroke-width: 1px !important;
+      
+          }
+          .h2{ font-size: 1.4rem; }
+          .h3{ font-size: 1.2rem; }
+          .h4{ font-size: 1rem; }
+          .activity .audiotext .audiotextBtn {
+              height: 22px; width: 22px;
+          }
+          .sequence_nav .button.big{ font-size: 1.1rem;}
+          .biogra p {line-height: 1; font-size: 0.7rem;}
       }
       
       
@@ -122,7 +135,7 @@
         <activity>
           <template v-if="temps.s1">
             <div class="row w100 h3">
-              <audiotext audio="s/s1.mp3" :autoplay="true" text="Las autobiografías se escriben en primera persona del singular, el narrador utiliza los verbos en pasado para hablar de su vida y su familia. Es decir, es el relato de la vida de una persona escrita por ella misma." @completed="temps.s1_btn = true"></audiotext>
+              <audiotext audio="s/s1.mp3" speed-offset="1.5" :autoplay="true" text="Las autobiografías se escriben en primera persona del singular, el narrador utiliza los verbos en pasado para hablar de su vida y su familia. Es decir, es el relato de la vida de una persona escrita por ella misma." @completed="temps.s1_btn = true"></audiotext>
             </div>
             <div class="row w100 mt-1"><img class="w50 animate__animated animate__zoomInUp animate__delay-2s" src="i/1a.png"/></div>
           </template>
