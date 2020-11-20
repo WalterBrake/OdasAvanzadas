@@ -76,7 +76,7 @@
         </info>
         <activity>
           <div class="row w100 mb-1">
-            <videoplayer initclass="w50" path="i/v1" :autoplay="true" c="5" @completed="temps.a = true"></videoplayer>
+            <videoplayer initclass="w100" path="i/v1" :autoplay="true" c="5" @completed="temps.a = true"></videoplayer>
           </div>
           <div class="row w100" v-if="temps.a">
             <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
@@ -204,7 +204,7 @@
         <dialogaudio key="audionota" audio="s/naceosapanda.mp3" always-visible="always-visible" ref="nota" initclass="lanota"><img class="w80" src="i/nota.png"/></dialogaudio>
       </popup>
       <popup :conf="['10%', '10%', '80%', '80%']" ref="animation" c="1">
-        <videoplayer key="animvideo" initclass="w50" path="i/v1" :autoplay="false" c="5"></videoplayer>
+        <videoplayer key="animvideo" initclass="w100" path="i/v1" :autoplay="false" c="5"></videoplayer>
       </popup>
     </div>
     <!-- CDNS-->
@@ -244,7 +244,7 @@
       app.$set(app.temps, 'p4', ['El Informante.','Japón.','Los Osos Panda.','El Mundo.'])
       app.$set(app.temps, 'p5', ['Internet.','Revistas.','Televisión.','Radio.'])
       
-      app.currentScene = 0
+      app.currentScene = 2
       app.scenesCount = 5
     </script>
   </body>
