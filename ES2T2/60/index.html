@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
     <style>
       .drop img {
-          max-height: 180px;
+          max-height: 240px;
       }
       .drag {
+          height: auto;
           width: 12%;
+          min-width: 70px;
+      }
+      @media (max-width:720px){
+          .drop img {
+              max-height: 140px;
+          }
       }
       
       
@@ -33,7 +40,7 @@
               <drag :data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok="stay-if-ok"><img class="img-fluid" :src="'i/a'+(index+1)+'.png'"/></drag>
             </template>
           </div>
-          <div class="row w100 mt-auto">
+          <div class="row w100 mt-1">
             <div class="w50 text-center">
               <div class="drop" droptimes="multiple" :data="1"><img class="img-fluid" src="i/mex.png"/></div>
             </div>
@@ -80,7 +87,7 @@
       app.$set(app.temps, 'b', false)
       app.$set(app.temps, 'c', false)
       
-      app.currentScene = 0
+      app.currentScene = 1
       app.scenesCount = 1
     </script>
   </body>

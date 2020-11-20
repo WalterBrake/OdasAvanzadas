@@ -8,10 +8,17 @@ html(lang="es")
     +head
         style.
             .drop img {
-                max-height: 180px;
+                max-height: 240px;
             }
             .drag {
+                height: auto;
                 width: 12%;
+                min-width: 70px;
+            }
+            @media (max-width:720px){
+                .drop img {
+                    max-height: 140px;
+                }
             }
 
 
@@ -27,7 +34,7 @@ html(lang="es")
                     .row.w100.wrap.around
                         template(v-for="(i, index) in temps.a")
                             drag(:data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok): img(:src="'i/a'+(index+1)+'.png'").img-fluid
-                    .row.w100.mt-auto
+                    .row.w100.mt-1
                         .w50.text-center: .drop(droptimes="multiple" :data="1"): img(src="i/mex.png").img-fluid
                         .w50.text-center: .drop(droptimes="multiple" :data="2"): img(src="i/pais.png").img-fluid
                     
@@ -42,5 +49,5 @@ html(lang="es")
                 app.$set(app.temps, 'b', false)
                 app.$set(app.temps, 'c', false)
                 
-                app.currentScene = 0
+                app.currentScene = 1
                 app.scenesCount = 1
