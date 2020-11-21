@@ -125,6 +125,9 @@ html(lang="es")
             .ex2 .drag:nth-child(5) {
                 background: #E1F7F7;
             }
+            .drop[droppedtimes="1"]{
+                background: var(--main);
+            }
 
 
 
@@ -148,10 +151,10 @@ html(lang="es")
                                 .drop(droptimes="multiple" droplimit="1" data="africa")
                                 .drop(droptimes="multiple" droplimit="1" data="asia")
                     .row.w100.wrap.around.drags.ex1
-                        drag(data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Ríos Missouri y Amazonas
-                        drag(data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Río Danubio
-                        drag(data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Ríos Nilo y Congo
-                        drag(data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Río Huang He
+                        drag(data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" @dragstarted="temps.map.america=0"  no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Ríos Missouri y Amazonas
+                        drag(data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" @dragstarted="temps.map.europa=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Río Danubio
+                        drag(data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" @dragstarted="temps.map.africa=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Ríos Nilo y Congo
+                        drag(data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" @dragstarted="temps.map.asia=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Río Huang He
                     .row.w100: button(@click="verificar").button.big Verificar
             
             // SCENES
@@ -163,17 +166,17 @@ html(lang="es")
                             img(src="i/m2.png" v-if="!temps.finalmap").w100
                             img(src="i/m3.png" v-else-if="temps.finalmap").w100
                             .drops.ex2
-                                .drop(droptimes="untilok" data="ind")
-                                .drop(droptimes="untilok" data="ant")
-                                .drop(droptimes="untilok" data="art")
-                                .drop(droptimes="untilok" data="pac")
-                                .drop(droptimes="untilok" data="atl")
+                                .drop(droptimes="multiple" droplimit="1" data="ind")
+                                .drop(droptimes="multiple" droplimit="1" data="ant")
+                                .drop(droptimes="multiple" droplimit="1" data="art")
+                                .drop(droptimes="multiple" droplimit="1" data="pac")
+                                .drop(droptimes="multiple" droplimit="1" data="atl")
                     .row.w100.wrap.around.drags.ex2
-                        drag(data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Índico
-                        drag(data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Antártico
-                        drag(data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Ártico
-                        drag(data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Pacífico
-                        drag(data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Atlántico
+                        drag(data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" @dragstarted="temps.secmap.ind=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Océano Índico
+                        drag(data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" @dragstarted="temps.secmap.ant=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Océano Antártico
+                        drag(data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" @dragstarted="temps.secmap.art=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Océano Ártico
+                        drag(data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" @dragstarted="temps.secmap.pac=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Océano Pacífico
+                        drag(data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" @dragstarted="temps.secmap.atl=0" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div Océano Atlántico
                     .row.w100: button(@click="verificar2").button.big Verificar
                     
             // END
@@ -196,12 +199,24 @@ html(lang="es")
                             EventBus.$emit('isok')
                         }, 1000)
                     } else {
-                        app.$set(app.temps, 'map', {america:0, europa:0, africa: 0, asia: 0})
+                        //app.$set(app.temps, 'map', {america:0, europa:0, africa: 0, asia: 0})
                         s_error.play()
-                        app.$refs.am.backToInitPos()
-                        app.$refs.eu.backToInitPos()
-                        app.$refs.af.backToInitPos()
-                        app.$refs.as.backToInitPos()
+                        if(!map.america){
+                            app.$refs.am.undroppableFn()
+                            app.$refs.am.backToInitPos()
+                        }
+                        if(!map.europa){
+                            app.$refs.eu.undroppableFn()
+                            app.$refs.eu.backToInitPos()
+                            }
+                        if(!map.africa){
+                            app.$refs.af.undroppableFn()
+                            app.$refs.af.backToInitPos()
+                            }
+                        if(!map.asia){
+                            app.$refs.as.undroppableFn()
+                            app.$refs.as.backToInitPos()
+                            }
                     }
                 }
                 app.verificar2 = function () {
@@ -212,13 +227,28 @@ html(lang="es")
                             EventBus.$emit('isok')
                         }, 1000)
                     } else {
-                        app.$set(app.temps, 'secmap', {ind:0, ant:0, art: 0, pac: 0, atl: 0})
+                        //app.$set(app.temps, 'secmap', {ind:0, ant:0, art: 0, pac: 0, atl: 0})
                         s_error.play()
-                        app.$refs.ind.backToInitPos()
-                        app.$refs.ant.backToInitPos()
-                        app.$refs.art.backToInitPos()
-                        app.$refs.pac.backToInitPos()
-                        app.$refs.atl.backToInitPos()
+                        if(!map.ind){
+                            app.$refs.ind.undroppableFn()
+                            app.$refs.ind.backToInitPos()
+                            }
+                        if(!map.ant){
+                            app.$refs.ant.undroppableFn()
+                            app.$refs.ant.backToInitPos()
+                            }
+                        if(!map.art){
+                            app.$refs.art.undroppableFn()
+                            app.$refs.art.backToInitPos()
+                            }
+                        if(!map.pac){
+                            app.$refs.pac.undroppableFn()
+                            app.$refs.pac.backToInitPos()
+                            }
+                        if(!map.atl){
+                            app.$refs.atl.undroppableFn()
+                            app.$refs.atl.backToInitPos()
+                            }
                     }
                 }
                 

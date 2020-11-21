@@ -23,6 +23,7 @@ Vue.component('drag', {
         'noOkSound', //No reproduce sonido de ok,
         'noReturnOnDrop', //No regresa aunque sea "error"
         'noAnimations', //Ninguna animación
+        'undroppable', // Se puede "sacar" del dropzone y resta los droptimes
     ],
     data() {
         return {
@@ -68,6 +69,7 @@ Vue.component('drag', {
         },
         DragStart (e) {
             var _this = this
+            _this.$emit('dragstarted')
             app.particleAnimation(e, null, null, null, _this.particleColor)
             _this.setClassAnimation('start')
             s_select.play()
@@ -75,6 +77,9 @@ Vue.component('drag', {
             _this.dragPosX = e.clientX + window.scrollX
             _this.dragPosY = e.clientY + window.scrollY
             _this.dropzonesDetected = 0
+            if(_this.undroppable != undefined) {
+                _this.undroppableFn()
+            }
 
         },
         Drag (e) {
@@ -122,6 +127,20 @@ Vue.component('drag', {
                     _this.$refs.drag.children[0].classList.remove(theclass)
                 }
             }, 1000)
+        },
+        undroppableFn (e){
+            var _this = this
+            var dropzones = document.querySelectorAll(_this.dropzone)
+            var drops = 0
+            for(var dr = 0; dr < dropzones.length; dr++) {
+                var dropzone = dropzones[dr]
+                if(Draggable.hitTest(_this.$refs.drag, dropzone, '50%')){
+                    var droppedtimes = dropzone.getAttribute('droppedtimes')
+                    droppedtimes = parseInt(droppedtimes)
+                    var minus = droppedtimes > 0 ? droppedtimes-1 : 0
+                    dropzone.setAttribute('droppedtimes', minus)
+                }
+            }
         },
         HitTestFn (e, isdrop) {
             var _this = this
@@ -218,8 +237,9 @@ Vue.component('drag', {
             _this.stayInDropFn()
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
+            _this.droppedtimesAdd(dropzone)
             if(_this.noReturnOnDrop == undefined){
-                console.log('noreturn ondrop')
+
                 _this.returnToPositionFn()
                 _this.returnIfErrorFn()
             }
@@ -314,11 +334,19 @@ Vue.component('drag', {
             if(this.returnToPosition!=undefined) {
                 this.backToInitPos()
             }
+            if(this.undroppable != undefined) {
+                this.undroppableFn()
+            }
+            
         },
         returnIfErrorFn(){
             if(this.returnIfErrorFn!=undefined) {
                 this.backToInitPos()
             }
+            if(this.undroppable != undefined) {
+                this.undroppableFn()
+            }
+           
         },
         reset(){
             this.lastPosition.x = 0
