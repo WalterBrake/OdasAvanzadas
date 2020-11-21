@@ -145,24 +145,24 @@
           <div class="row w100">
             <div class="map w100"><img class="w100" src="i/m1.png" v-if="!temps.colormap"/><img class="w100" src="i/m2.png" v-else-if="temps.colormap"/>
               <div class="drops ex1">
-                <div class="drop" droptimes="untilok" data="america"></div>
-                <div class="drop" droptimes="untilok" data="europa"></div>
-                <div class="drop" droptimes="untilok" data="africa"></div>
-                <div class="drop" droptimes="untilok" data="asia"></div>
+                <div class="drop" droptimes="multiple" droplimit="1" data="america"></div>
+                <div class="drop" droptimes="multiple" droplimit="1" data="europa"></div>
+                <div class="drop" droptimes="multiple" droplimit="1" data="africa"></div>
+                <div class="drop" droptimes="multiple" droplimit="1" data="asia"></div>
               </div>
             </div>
           </div>
           <div class="row w100 wrap around drags ex1">
-            <drag data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Ríos Missouri y Amazonas</div>
             </drag>
-            <drag data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Río Danubio</div>
             </drag>
-            <drag data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Ríos Nilo y Congo</div>
             </drag>
-            <drag data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Río Huang He</div>
             </drag>
           </div>
@@ -187,19 +187,19 @@
             </div>
           </div>
           <div class="row w100 wrap around drags ex2">
-            <drag data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Océano Índico</div>
             </drag>
-            <drag data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Océano Antártico</div>
             </drag>
-            <drag data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Océano Ártico</div>
             </drag>
-            <drag data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Océano Pacífico</div>
             </drag>
-            <drag data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-error-sound="no-error-sound" disableok="disableok">
+            <drag data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop="no-return-on-drop" no-animations="no-animations" no-ok-sound="no-ok-sound" no-error-sound="no-error-sound" disableok="disableok">
               <div>Océano Atlántico</div>
             </drag>
           </div>

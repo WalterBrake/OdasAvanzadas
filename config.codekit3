@@ -5187,6 +5187,20 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/ES1T2\/56\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/56\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES1T2\/56\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/56\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/ES1T2\/56\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -6431,7 +6445,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 23458,
+		"iS": 25761,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -6508,7 +6522,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 25710,
+		"iS": 10945,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -8627,6 +8641,27 @@
 		"oAP": "\/ES5T1\/35\/index.html",
 		"oF": 0
 		},
+	"\/ES5T2\/43\/i\/ES5T2-43.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/i\/ES5T2-43.webm",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/i\/v1.mov": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/i\/v1.mov",
+		"oF": 0
+		},
+	"\/ES5T2\/43\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/43\/i\/v1.mp4",
+		"oF": 0
+		},
 	"\/ES5T2\/43\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -8650,74 +8685,11 @@
 		"oAP": "\/ES5T2\/43\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A1_Cuenta.mp3": {
+	"\/ES5T2\/43\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A1_Cuenta.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A2_Sol1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A2_Sol1.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A3_Jaguar1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A3_Jaguar1.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A4_Sol2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A4_Sol2.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A5_Jaguar2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A5_Jaguar2.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A6_Lechuza.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A6_Lechuza.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A7_Zorro.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A7_Zorro.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A8_AlFinal.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A8_AlFinal.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A9_Resto.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_A9_Resto.mp3",
-		"oF": 0
-		},
-	"\/ES5T2\/43\/s\/Leo leyendas Es5°T2_Inst2_Ahora.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T2\/43\/s\/Leo leyendas Es5°T2_Inst2_Ahora.mp3",
+		"oAP": "\/ES5T2\/43\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
@@ -8748,7 +8720,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -9222,7 +9194,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,

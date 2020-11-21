@@ -143,15 +143,15 @@ html(lang="es")
                             img(src="i/m1.png" v-if="!temps.colormap").w100
                             img(src="i/m2.png" v-else-if="temps.colormap").w100
                             .drops.ex1
-                                .drop(droptimes="untilok" data="america")
-                                .drop(droptimes="untilok" data="europa")
-                                .drop(droptimes="untilok" data="africa")
-                                .drop(droptimes="untilok" data="asia")
+                                .drop(droptimes="multiple" droplimit="1" data="america")
+                                .drop(droptimes="multiple" droplimit="1" data="europa")
+                                .drop(droptimes="multiple" droplimit="1" data="africa")
+                                .drop(droptimes="multiple" droplimit="1" data="asia")
                     .row.w100.wrap.around.drags.ex1
-                        drag(data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop no-animations no-error-sound disableok): div Ríos Missouri y Amazonas
-                        drag(data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop no-animations no-error-sound disableok): div Río Danubio
-                        drag(data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop no-animations no-error-sound disableok): div Ríos Nilo y Congo
-                        drag(data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop no-animations no-error-sound disableok): div Río Huang He
+                        drag(data="america" dropzone=".drop" ref="am" @isok="temps.map.america=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Ríos Missouri y Amazonas
+                        drag(data="europa" dropzone=".drop" ref="eu" @isok="temps.map.europa=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Río Danubio
+                        drag(data="africa" dropzone=".drop" ref="af" @isok="temps.map.africa=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Ríos Nilo y Congo
+                        drag(data="asia" dropzone=".drop" ref="as" @isok="temps.map.asia=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Río Huang He
                     .row.w100: button(@click="verificar").button.big Verificar
             
             // SCENES
@@ -169,11 +169,11 @@ html(lang="es")
                                 .drop(droptimes="untilok" data="pac")
                                 .drop(droptimes="untilok" data="atl")
                     .row.w100.wrap.around.drags.ex2
-                        drag(data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop no-animations no-error-sound disableok): div Océano Índico
-                        drag(data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop no-animations no-error-sound disableok): div Océano Antártico
-                        drag(data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop no-animations no-error-sound disableok): div Océano Ártico
-                        drag(data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop no-animations no-error-sound disableok): div Océano Pacífico
-                        drag(data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop no-animations no-error-sound disableok): div Océano Atlántico
+                        drag(data="ind" dropzone=".drop" ref="ind" @isok="temps.secmap.ind=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Índico
+                        drag(data="ant" dropzone=".drop" ref="ant" @isok="temps.secmap.ant=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Antártico
+                        drag(data="art" dropzone=".drop" ref="art" @isok="temps.secmap.art=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Ártico
+                        drag(data="pac" dropzone=".drop" ref="pac" @isok="temps.secmap.pac=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Pacífico
+                        drag(data="atl" dropzone=".drop" ref="atl" @isok="temps.secmap.atl=1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok): div Océano Atlántico
                     .row.w100: button(@click="verificar2").button.big Verificar
                     
             // END

@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Elijo el tema</title>
+    <title>Leo leyendas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
     <style>
-      .drop img {
-          max-height: 180px;
-      }
-      .drag {
-          width: 12%;
-      }
-      
+      :root {
+           --plyr-video-control-background-hover: #fff;
+           --plyr-control-icon-size: 28px;
+           --plyr-control-padding: 6px;
+           --plyr-control-radius: 10px;
+       }
+       .info .audiotext strong{color:#fff; font-weight: normal;}
+       
       
     </style>
   </head>
@@ -25,26 +26,122 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" ref="firstscene" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
-        <info type="seleccionar" title="Elijo el tema" text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions=""></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="")-->
         <activity>
-          <div class="row w100 wrap around">
-            <template v-for="(i, index) in temps.a">
-              <drag :data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok="stay-if-ok"><img class="img-fluid" :src="'i/a'+(index+1)+'.png'"/></drag>
-            </template>
+          <div class="row w100 info">
+            <h1>Leo leyendas</h1>
           </div>
-          <div class="row w100 mt-auto">
-            <div class="w50 text-center">
-              <div class="drop" droptimes="multiple" :data="1"><img class="img-fluid" src="i/mex.png"/></div>
-            </div>
-            <div class="w50 text-center">
-              <div class="drop" droptimes="multiple" :data="2"><img class="img-fluid" src="i/pais.png"/></div>
-            </div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P1-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo leyendas" text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.b = true">
+          <audiotext v-if="temps.b" :autoplay="true" text="Ahora, lee cada enunciado y elige si es &lt;strong&gt;verdadero&lt;/strong&gt; o &lt;strong&gt;falso&lt;/strong&gt;." audio="s/instruccion2.mp3"></audiotext>
+        </info>
+        <activity>
+          <div class="h4 text-center">Los animales y los hombres vivían por separado y no se hablaban.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+          <div class="h4 text-center mt-1">La luna le dijo al jaguar que le daría un regalo para él solo.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo leyendas" text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" text="Ahora, lee cada enunciado y elige si es &lt;strong&gt;verdadero&lt;/strong&gt; o &lt;strong&gt;falso&lt;/strong&gt;." audio="s/instruccion2.mp3"></audiotext>
+        </info>
+        <activity>
+          <div class="h4 text-center">El jaguar preguntó si era algo para comer.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+          <div class="h4 text-center mt-1">El sol le pidió al jaguar traer un cerillo.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo leyendas" text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" text="Ahora, lee cada enunciado y elige si es &lt;strong&gt;verdadero&lt;/strong&gt; o &lt;strong&gt;falso&lt;/strong&gt;." audio="s/instruccion2.mp3"></audiotext>
+        </info>
+        <activity>
+          <div class="h4 text-center">El sol le regaló el fuego al jaguar.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p3'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+          <div class="h4 text-center mt-1">El jaguar compartió con todos los animales el fuego.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p4'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo leyendas" text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" text="Ahora, lee cada enunciado y elige si es &lt;strong&gt;verdadero&lt;/strong&gt; o &lt;strong&gt;falso&lt;/strong&gt;." audio="s/instruccion2.mp3"></audiotext>
+        </info>
+        <activity>
+          <div class="h4 text-center">El jaguar sostenía la rama con la boca.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p5'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+          <div class="h4 text-center mt-1">La lechuza se acercó a pedir fuego al jaguar.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p6'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo leyendas" text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" text="Ahora, lee cada enunciado y elige si es &lt;strong&gt;verdadero&lt;/strong&gt; o &lt;strong&gt;falso&lt;/strong&gt;." audio="s/instruccion2.mp3"></audiotext>
+        </info>
+        <activity>
+          <div class="h4 text-center">La mayor parte de la leyenda tiene elementos relacionados con la fantasía.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p7'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+          <div class="h4 text-center mt-1">Es una leyenda mexicana porque utiliza elementos y anmiales propios de nuestro país y cultura.</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Verdadero','Falso']" :key="'p8'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
           </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==7" :key="7" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -76,12 +173,12 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2, 2])
+      app.$set(app.temps, 'a', false)
       app.$set(app.temps, 'b', false)
       app.$set(app.temps, 'c', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>

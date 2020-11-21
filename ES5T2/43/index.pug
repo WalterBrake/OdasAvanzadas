@@ -7,7 +7,14 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
-           
+           :root {
+                --plyr-video-control-background-hover: #fff;
+                --plyr-control-icon-size: 28px;
+                --plyr-control-padding: 6px;
+                --plyr-control-radius: 10px;
+            }
+            .info .audiotext strong{color:#fff; font-weight: normal;}
+            
 
     body
         #app
@@ -15,13 +22,63 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" ref="firstscene" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="")
                 activity
-                    
-                    
+                    .row.w100.info: h1=title
+                    .row.w100: videoplayer(initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true")  
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES P1
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.b = true")
+                    audiotext(v-if="temps.b" :autoplay="true" text="Ahora, lee cada enunciado y elige si es <strong>verdadero</strong> o <strong>falso</strong>." audio="s/instruccion2.mp3")
+                activity
+                    .h4.text-center Los animales y los hombres vivían por separado y no se hablaban.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                    .h4.text-center.mt-1 La luna le dijo al jaguar que le daría un regalo para él solo.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+            
+            // SCENES P2
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(:autoplay="false" text="Ahora, lee cada enunciado y elige si es <strong>verdadero</strong> o <strong>falso</strong>." audio="s/instruccion2.mp3")
+                activity
+                    .h4.text-center El jaguar preguntó si era algo para comer.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p1'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                    .h4.text-center.mt-1 El sol le pidió al jaguar traer un cerillo.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p2'+index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+            
+            // SCENES P3
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(:autoplay="false" text="Ahora, lee cada enunciado y elige si es <strong>verdadero</strong> o <strong>falso</strong>." audio="s/instruccion2.mp3")
+                activity
+                    .h4.text-center El sol le regaló el fuego al jaguar.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p3'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                    .h4.text-center.mt-1 El jaguar compartió con todos los animales el fuego.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+            // SCENES P4
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(:autoplay="false" text="Ahora, lee cada enunciado y elige si es <strong>verdadero</strong> o <strong>falso</strong>." audio="s/instruccion2.mp3")
+                activity
+                    .h4.text-center El jaguar sostenía la rama con la boca.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p5'+index" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                    .h4.text-center.mt-1 La lechuza se acercó a pedir fuego al jaguar.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p6'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+            // SCENES P5
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Seguramente te has dado cuenta de que el relato anterior es una leyenda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(:autoplay="false" text="Ahora, lee cada enunciado y elige si es <strong>verdadero</strong> o <strong>falso</strong>." audio="s/instruccion2.mp3")
+                activity
+                    .h4.text-center La mayor parte de la leyenda tiene elementos relacionados con la fantasía.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p7'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                    .h4.text-center.mt-1 Es una leyenda mexicana porque utiliza elementos y anmiales propios de nuestro país y cultura.
+                    .row.wrap.around: clickable(v-for="(i, index) in ['Verdadero','Falso']" :key="'p8'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -32,4 +89,4 @@ html(lang="es")
                 app.$set(app.temps, 'c', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5
