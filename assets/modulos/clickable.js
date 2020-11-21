@@ -13,6 +13,8 @@ Vue.component('clickable', {
         'simpleOk', //No checa, sólo manda isOK,
         'extValidation', // Se llama la función de evaluación desde afuera
         'noAnimations', //Deshabilita las animaciones
+        'ignoreAlreadyOk', // Ignorar "already ok" y poder dar click,
+        'noErrorSound', // No reproducir sonido de error
     ],
     data() {
         return {
@@ -21,7 +23,7 @@ Vue.component('clickable', {
         }
     },
     template: `
-        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') +' '+ (status?'clicked':'') " @click="clicked">
+        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') +' '+ (status?'clicked':'')  + ' ' + (alreadyOk?'alreadyok':'') " @click="clicked">
             <slot></slot>
             <embed class="anim" v-if="status" src="../../assets/aanim/Select.svg" />
         </div>
@@ -29,8 +31,11 @@ Vue.component('clickable', {
 
     methods: {
         clicked (e) {
-            if(this.alreadyOk) {
+            if(this.alreadyOk && this.ignoreAlreadyOk == undefined) {
                 return false
+            }
+            if(this.ignoreAlreadyOk != undefined){
+                this.alreadyOk = false
             }
             var click = this.$refs.clickable
             this.status = !this.status
@@ -60,7 +65,7 @@ Vue.component('clickable', {
 
         },
         isOkOrError (e) {
-            if(this.alreadyOk) {
+            if(this.alreadyOk && this.ignoreAlreadyOk == undefined) {
                 return false
             }
             if(this.isok == this.status){
@@ -78,11 +83,19 @@ Vue.component('clickable', {
                 }
                 this.setClassAnimation('ok', this.$refs.clickable)
                 if(e){app.particleAnimation({clientX: event.clientX, clientY: event}, 100, null, null, this.particleColor)}
-                setTimeout(function(){s_ok.play()},100)
+                setTimeout(function(){
+                    if(!s_ok.playing()){
+                        s_ok.play()
+                    }
+                },100)
                 this.alreadyOk = true
             } else {
                 //ERROR
-                s_error.play()
+                if(this.noErrorSound == undefined){
+                    if(!s_error.playing()){
+                        s_error.play()
+                    }
+                }
                 this.setClassAnimation('error', this.$refs.clickable)
                 this.blockIfErrorFn()
                 this.$emit('input', false)

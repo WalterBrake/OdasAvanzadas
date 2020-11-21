@@ -118,6 +118,26 @@
           .biogra p {line-height: 1; font-size: 0.7rem;}
       }
       
+      .alreadyok.clicked {
+          position: relative;
+      }
+      .alreadyok.clicked:after {
+          content: "✔";
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          background: var(--main);
+          border-radius: 50%;
+          top: 0;
+          right: 0;
+          color: #fff;
+          font-size: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+      }
+      
       
       
       
@@ -254,7 +274,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿En qué persona gramatical está escrito el texto?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['tercera persona del singular','primera persona del plural','primera persona del singular']" :key="'p4'+index" :isok="index == 2" ext-validation="ext-validation" :ref="'click1'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['tercera persona del singular','primera persona del plural','primera persona del singular']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click1'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -262,7 +282,7 @@
             <div class="pregu">
               <div class="h4 text-center">En el texto hay palabras que indican acciones, por ejemplo nací, ¿que tipo de palabra es?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['adjetivo','sustantivo','verbo']" :key="'p4'+index" :isok="index == 2" ext-validation="ext-validation" :ref="'click2'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['adjetivo','sustantivo','verbo']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click2'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -270,7 +290,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿En qué tiempo verbal está escrita la palabra nací?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['pasado','presente','futuro']" :key="'p4'+index" :isok="index == 0" ext-validation="ext-validation" :ref="'click3'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['pasado','presente','futuro']" :key="'p4'+index" :isok="index == 0" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click3'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -278,7 +298,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿Cuáles son los tiempos verbales que Claudia usa en su autobiorafía?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['futuro y pasado','pasado y presente','presente y futuro']" :key="'p4'+index" :isok="index == 1" ext-validation="ext-validation" :ref="'click4'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['futuro y pasado','pasado y presente','presente y futuro']" :key="'p4'+index" :isok="index == 1" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click4'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -286,7 +306,7 @@
             <div class="pregu">
               <div class="h4 text-center">Elige dos datos que escribió Claudia en su autobiografía.</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['nombre de familiares','domicilio de su familia','recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2" ext-validation="ext-validation" :ref="'click5'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['nombre de familiares','domicilio de su familia','recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click5'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -329,7 +349,7 @@
     <!-- Mainscript-->
     <script src="../../assets/assets.js"></script>
     <script>
-      app.$devmode = false
+      app.$devmode = true
       app.$set(app.temps, 's1', false)
       app.$set(app.temps, 's1_btn', false)
       
@@ -344,6 +364,7 @@
       app.$set(app.temps, 'preguntas', '')
       
       app.validarRespuestas = function () {
+          app.$refs.lastscene.oks = 0
           /* oks */
           app.$refs.click12[0].isOkOrError()
           app.$refs.click22[0].isOkOrError()
@@ -371,7 +392,7 @@
       }
       
       
-      app.currentScene = 0
+      app.currentScene = 6
       app.scenesCount = 2
     </script>
   </body>
