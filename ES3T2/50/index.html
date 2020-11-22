@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Identifico una autobiografía</title>
+    <title>Escribo mi autobiografía</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
@@ -151,7 +151,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.s1 = true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.s1 = true"></info>
         <activity>
           <template v-if="temps.s1">
             <div class="row w100 h3">
@@ -165,7 +165,7 @@
         </activity>
       </scene>
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Observa y escucha la explicación con atención." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 h3">
             <audiotext audio="s/s2.mp3" :autoplay="true" text="Las personas gramaticales son: " @completed="temps.s3 = true"></audiotext>
@@ -192,7 +192,7 @@
         </activity>
       </scene>
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true"></info>
         <activity>
           <div class="dialoganim">
             <sequence :options="[{img: 'i/2a.png'}, {audio:'s/s9.mp3', img: 'i/2b.png'}, {audio:'s/s10.mp3', img: 'i/2c.png'}, {audio:'s/s11.mp3', img: 'i/2d.png'}, {audio:'s/s12.mp3', img: 'i/2e.png'}]" @completed="temps.s12_btn = true">
@@ -207,7 +207,7 @@
         </activity>
       </scene>
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text="Ya sabes cuáles son las personas gramaticales, así que ya puedes identificarlas seleccionando la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Ya sabes cuáles son las personas gramaticales, así que ya puedes identificarlas seleccionando la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w70">
             <div class="dialoganim">
@@ -253,7 +253,7 @@
         </activity>
       </scene>
       <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text="Ahora, lee la autobiografía." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Ahora, lee la autobiografía." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
             <div class="w90 biogra">
@@ -268,7 +268,7 @@
         </activity>
       </scene>
       <scene v-if="currentScene==6" ref="lastscene" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="15" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico una autobiografía" text=" Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text=" Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true"></info>
         <activity>
           <div class="finalpreguntas">
             <div class="pregu">
