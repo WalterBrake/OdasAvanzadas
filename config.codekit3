@@ -5498,6 +5498,13 @@
 		"oAP": "\/ES1T2\/46\/s\/canto1.mp3",
 		"oF": 0
 		},
+	"\/ES1T2\/46\/s\/canto2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/46\/s\/canto2.mp3",
+		"oF": 0
+		},
 	"\/ES1T2\/46\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -5517,13 +5524,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES1T2\/46\/s\/instruccion3.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/46\/s\/Transformo una ronda Es1°T2_Int_GatoCasa.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/46\/s\/Transformo una ronda Es1°T2_Int_GatoCasa.mp3",
 		"oF": 0
 		},
 	"\/ES1T2\/56\/i\/anim.png": {
@@ -12641,6 +12641,17 @@
 		"oAP": "\/MA2T1\/146\/index.html",
 		"oF": 0
 		},
+	"\/MA2T2\/177\/i\/img.png": {
+		"ft": 32768,
+		"iS": 1160796,
+		"oA": 0,
+		"oAP": "\/MA2T2\/177\/i\/img.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA2T2\/177\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -12657,39 +12668,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_10Flores.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_10Flores.mp3",
-		"oF": 0
-		},
-	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_3Filas.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_3Filas.mp3",
-		"oF": 0
-		},
-	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_5Filas.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_5Filas.mp3",
-		"oF": 0
-		},
 	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_8Filas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_8Filas.mp3",
-		"oF": 0
-		},
-	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_FloresFila.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_FloresFila.mp3",
 		"oF": 0
 		},
 	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_FloresTotal.mp3": {
@@ -12699,11 +12682,39 @@
 		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_FloresTotal.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_Mira.mp3": {
+	"\/MA2T2\/177\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/177\/s\/Cuento de 10 en 10 Ma 2°T2_Inst_Mira.mp3",
+		"oAP": "\/MA2T2\/177\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/MA2T2\/177\/s\/p1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T2\/177\/s\/p1.mp3",
+		"oF": 0
+		},
+	"\/MA2T2\/177\/s\/p2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T2\/177\/s\/p2.mp3",
+		"oF": 0
+		},
+	"\/MA2T2\/177\/s\/p3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T2\/177\/s\/p3.mp3",
+		"oF": 0
+		},
+	"\/MA2T2\/177\/s\/p4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T2\/177\/s\/p4.mp3",
 		"oF": 0
 		},
 	"\/MA3T1\/102\/aimg\/crucigrama-letras.svg": {
