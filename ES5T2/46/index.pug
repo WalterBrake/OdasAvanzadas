@@ -1,12 +1,49 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Informo por medio de un boletín'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag{
+                width: auto; height: auto;
+                padding: 2px 6px;
+            }
+            .drag .number{
+                font-size: 1.2rem;
+            }
+            .text {
+                background: #D4E2AB;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 6px;
+                box-shadow: 4px 4px 0 #5EB247;
+            }
+            .text > div {
+                margin: 5px 0;
+                line-height: 1.3;
+            }
+            .text .drop {
+                display: inline-block;
+                min-width: 10%;
+                background: #fff;
+                height: 20px;
+                border-radius: 6px;
+                padding: 2px 6px;
+            }
+            .text .drop .number {
+                font-size: 1rem;
+                -webkit-text-stroke: 0;
+                text-shadow: none;
+                color: #5EB247;
+            }
+            @media (max-width: 720px){
+                .text{
+                    font-size: 0.9rem;
+                }
+            }
 
 
     body
@@ -15,10 +52,27 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca en los espacios las palabras  que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.around.wrap
+                        drag(data="A" dropzone=".drop" append-to-dropzone): number(randomc smaller) boletín informativo
+                        drag(data="B" dropzone=".drop" append-to-dropzone): number(randomc smaller) cuerpo de la noticia
+                        drag(data="C" dropzone=".drop" append-to-dropzone): number(randomc smaller) titular
+                        drag(data="D" dropzone=".drop" append-to-dropzone): number(randomc smaller) entrada
+                        drag(data="E" dropzone=".drop" append-to-dropzone): number(randomc smaller) nota periodística
+                        drag(data="F" dropzone=".drop" append-to-dropzone): number(randomc smaller) bajada o subtítulo
+                        drag(data="G" dropzone=".drop" append-to-dropzone): number(randomc smaller) noticia
+
+                    .w100: .text
+                        div Un <div data="A" class="drop" droptimes="untilok"></div> es una publicación impresa donde se difunden de manera periódica textos como noticias, notas periodísticas, anuncios publicitarios, etcétera, y va adaptado al interés del público al que va dirigido. 
+                        div Una <div data="E" class="drop" droptimes="untilok"></div> es un relato que presenta información reciente y relevante acerca de un tema particular.
+                        div Una <div data="G" class="drop" droptimes="untilok"></div> es un texto informativo que busca dar a conocer un hecho o suceso dentro de una comunidad y que requiere su divulgación.
+                        div Al primer párrafo en el que se da a conocer lo más sobresaliente del hecho, se le conoce como la <div data="D" class="drop" droptimes="untilok"></div> de la noticia. 
+                        div La frase que le da nombre a la noticia, resalta por su tamaño y busca llamar la atención haciendo mención a un hecho relevante de la noticia es el <div data="C" class="drop" droptimes="untilok"></div>.
+                        div La <div data="F" class="drop" droptimes="untilok"></div> complementa el titular con una frase que menciona algún detalle sobre el hecho. 
+                        div El <div data="B" class="drop" droptimes="untilok"></div> es el lugar donde se desarrolla la noticia, se especifican los detalles y se amplía la información. 
+
             
             
             // END
