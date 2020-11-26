@@ -3,27 +3,161 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Evito contaminar el medio ambiente</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .btns{
+          margin-top: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+      }
+      .btns button{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+      }
+      @media (max-width: 1024px){
+          .btns {
+              flex-direction: row;
+          }
+          .btns button img{
+              max-height: 40px;
+              width: auto !important;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Coloca los platillos en cada canasta según su origen." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="")-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Evito contaminar el medio ambiente</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P1-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Evito contaminar el medio ambiente" text="Ahora que conoces los problemas de la contaminación de la Tierra, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="$refs.p1.play()">
+          <div class="btns">
+              <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/tierra0.png"/>
+                <p>Ver animación</p>
+              </button>
+          </div>
+        </info>
+        <activity>
+          <div class="h4 text-center">
+            <audiotext text="¿Quién cuenta la historieta?" audio="s/p1.mp3" :autoplay="false" ref="p1"></audiotext>
+          </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p1" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p1'+index+'.mp3'">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Evito contaminar el medio ambiente" text="Ahora que conoces los problemas de la contaminación de la Tierra, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+              <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/tierra0.png"/>
+                <p>Ver animación</p>
+              </button>
+          </div>
+        </info>
+        <activity>
+          <div class="h4 text-center">
+            <audiotext text="¿Cuáles son las acciones que realiza el hombre que dañan la Tierra?" audio="s/p2.mp3" :autoplay="true"></audiotext>
+          </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p2" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p2'+index+'.mp3'">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Evito contaminar el medio ambiente" text="Ahora que conoces los problemas de la contaminación de la Tierra, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+              <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/tierra0.png"/>
+                <p>Ver animación</p>
+              </button>
+          </div>
+        </info>
+        <activity>
+          <div class="h4 text-center">
+            <audiotext text="¿Qué tipos de contaminación existen?" audio="s/p3.mp3" :autoplay="true"></audiotext>
+          </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p3" :key="index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p3'+index+'.mp3'">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Evito contaminar el medio ambiente" text="Ahora que conoces los problemas de la contaminación de la Tierra, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+              <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/tierra0.png"/>
+                <p>Ver animación</p>
+              </button>
+          </div>
+        </info>
+        <activity>
+          <div class="h4 text-center">
+            <audiotext text="Es uno de los daños que tiene la Tierra debido a la contaminación del aire:" audio="s/p4.mp3" :autoplay="true"></audiotext>
+          </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p4" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p4'+index+'.mp3'">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Evito contaminar el medio ambiente" text="Ahora que conoces los problemas de la contaminación de la Tierra, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+              <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/tierra0.png"/>
+                <p>Ver animación</p>
+              </button>
+          </div>
+        </info>
+        <activity>
+          <div class="h4 text-center">
+            <audiotext text="¿Qué acciones puedes realizar para cuidar el planeta Tierra?" audio="s/p5.mp3" :autoplay="true"></audiotext>
+          </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p5" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p5'+index+'.mp3'">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==7" :key="7" end-scene="end-scene" :final-data="finalData"></scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="animation" c="1">
+        <videoplayer key="animvideo" initclass="w100" path="i/v1" :autoplay="false" c="5"></videoplayer>
+      </popup>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -55,10 +189,15 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      
+      app.$set(app.temps, 'p1', ['Un hombre.','El Planeta Marte.','La Tierra.'])
+      app.$set(app.temps, 'p2', ['Sembrar árboles.','Utilizar barcos para extraer el petróleo.','Las fábricas echan sus desechos al agua.'])
+      app.$set(app.temps, 'p3', ['Del aire, agua y suelo.','Del agua, universo y aire.','Del sol, el agua y la tierra.'])
+      app.$set(app.temps, 'p4', ['Sus pulmones están negros.','Tiene un agujero en la capa de ozono.','El aire está contaminado.'])
+      app.$set(app.temps, 'p5', ['Tirar basura en el piso.','Reciclar y no desperdiciar.','Cuidar el agua solamente cuando te bañas.'])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>
