@@ -3,27 +3,185 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Realizo diferentes giros </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .vineta {
+          position: relative;
+      }
+      .vineta .dial {
+          position: absolute;
+          top: 0;
+          width: 100%;
+      }
+      .vineta .dial .audiotextBtn {
+          width: 26px;
+          height: 26px;
+          position: absolute;
+          right: 0; top: -20px;
+      }
+      .v1 .dial{ left: 40%; top: 10%; width: 45%; }
+      .v2 .dial{ left: 30%; top: 10%; width: 55%; }
+      .v3 .dial{ left: 10%; top: 0%; width: 55%; }
+      .v4 .dial{ left: 10%; top: 0%; width: 70%; }
+      .v5 .dial{ left: 10%; top: 0%; width: 75%; }
+      .v6 .dial{ left: 0%; top: 0%; width: 45%; }
+      .v7 .dial{ left: 37%; top: 10%; width: 30%; }
+      .v7 .dial.d8{ left: 20%; top: 70%; width: 30%; }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.a1.playstop()"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 text-center">
+            <number c="8" small="small">Un día en la clase de ballet</number>
+          </div>
+          <div class="row w100">
+            <div class="vineta w50 wm80 v1"><img class="w100" src="i/v1.png"/>
+              <div class="dial">
+                <dialogaudio ref="a1" audio="s/a1.mp3" :autoplay="false" show-on-play="show-on-play" @completed="temps.a=true"><img class="w100" src="i/d1.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.a">Siguiente</button>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w50 wm80 v2"><img class="w100" src="i/v2.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a2.mp3" :autoplay="true" show-on-play="show-on-play"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d2.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="h4 text-center">¿A cuántas vueltas equivale un giro de 360°?</div>
+          <div class="row respuestas w100 around wrap">
+            <template v-for="(i, index) in ['Media vuelta.', 'Vuelta completa.', 'Vuelta y media vuelta más.']">
+              <clickable initclass="pa-1" simple-ok="simple-ok" :isok="index == 1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w50 wm80 v3"><img class="w100" src="i/v3.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a3.mp3" :autoplay="true" show-on-play="show-on-play"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d3.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="h4 text-center">¿A qué tipo de ángulo sería igual un split?</div>
+          <div class="row respuestas w100 around wrap">
+            <template v-for="(i, index) in ['Ángulo de 45°','Ángulo de 360°', 'Ángulo de 180°']">
+              <clickable initclass="pa-1" simple-ok="simple-ok" :isok="index == 2">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w50 wm80 v4"><img class="w100" src="i/v4.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a4.mp3" :autoplay="true" show-on-play="show-on-play"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d4.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="h4 text-center">¿Cuánto debe medir un ángulo agudo?</div>
+          <div class="row respuestas w100 around wrap">
+            <template v-for="(i, index) in ['Más de 90°','Más de 100°','Menos de 90°']">
+              <clickable initclass="pa-1" simple-ok="simple-ok" :isok="index == 2">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w50 wm80 v5"><img class="w100" src="i/v5.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a5.mp3" :autoplay="true" show-on-play="show-on-play"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d5.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="h4 text-center"> ¿Cuánto debe medir un ángulo recto?</div>
+          <div class="row respuestas w100 around wrap">
+            <template v-for="(i, index) in ['180°','90°','45°']">
+              <clickable initclass="pa-1" simple-ok="simple-ok" :isok="index == 1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P6-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w80 wm100 v6"><img class="w100" src="i/v6.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a6.mp3" :autoplay="true" show-on-play="show-on-play"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d6.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="h4 text-center">¿Cuánto debe medir un ángulo obtuso?</div>
+          <div class="row respuestas w100 around wrap">
+            <template v-for="(i, index) in ['Más de 90°','Menos de 90°','Exactamente 100°']">
+              <clickable initclass="pa-1" simple-ok="simple-ok" :isok="index == 0">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P7-->
+      <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Realizo diferentes giros " text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="vineta w60 wm90 v7"><img class="w100" src="i/v7.png"/>
+              <div class="dial">
+                <dialogaudio audio="s/a7.mp3" :autoplay="true" show-on-play="show-on-play" @completed="temps.b = true"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d7.png"/></dialogaudio>
+              </div>
+              <div class="dial d8">
+                <dialogaudio audio="s/a8.mp3" :autoplay="true" v-if="temps.b" show-on-play="show-on-play" @completed="temps.c = true"><img class="w100 animate__animated animate__zoomIn animate__delay-1s" src="i/d8.png"/></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.c">Finalizar</button>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==8" :key="8" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -55,10 +213,12 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>

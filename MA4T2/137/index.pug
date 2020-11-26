@@ -1,12 +1,35 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Realizo diferentes giros '
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .vineta {
+                position: relative;
+            }
+            .vineta .dial {
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+            .vineta .dial .audiotextBtn {
+                width: 26px;
+                height: 26px;
+                position: absolute;
+                right: 0; top: -20px;
+            }
+            .v1 .dial{ left: 40%; top: 10%; width: 45%; }
+            .v2 .dial{ left: 30%; top: 10%; width: 55%; }
+            .v3 .dial{ left: 10%; top: 0%; width: 55%; }
+            .v4 .dial{ left: 10%; top: 0%; width: 70%; }
+            .v5 .dial{ left: 10%; top: 0%; width: 75%; }
+            .v6 .dial{ left: 0%; top: 0%; width: 45%; }
+            .v7 .dial{ left: 37%; top: 10%; width: 30%; }
+            .v7 .dial.d8{ left: 20%; top: 70%; width: 30%; }
+
 
 
     body
@@ -15,20 +38,96 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.a1.playstop()")
                 activity
+                    .row.w100.text-center: number(c=8 small) Un día en la clase de ballet
                     .row.w100
+                        .vineta.w50.wm80.v1
+                            img(src="i/v1.png").w100
+                            .dial: dialogaudio(ref="a1" audio="s/a1.mp3" :autoplay="false" show-on-play @completed="temps.a=true"): img(src="i/d1.png").w100
+                    button(@click="sceneCompleted(false)" v-if="temps.a").button.big.animate__animated.animate__flip Siguiente
             
+            // SCENES P2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w50.wm80.v2
+                            img(src="i/v2.png").w100
+                            .dial: dialogaudio(audio="s/a2.mp3" :autoplay="true" show-on-play): img(src="i/d2.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    .h4.text-center ¿A cuántas vueltas equivale un giro de 360°?
+                    .row.respuestas.w100.around.wrap
+                        template(v-for="(i, index) in ['Media vuelta.', 'Vuelta completa.', 'Vuelta y media vuelta más.']")
+                            clickable(initclass="pa-1" simple-ok :isok="index == 1"): number(randomc smaller) {{i}}
+            
+            // SCENES P3
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w50.wm80.v3
+                            img(src="i/v3.png").w100
+                            .dial: dialogaudio(audio="s/a3.mp3" :autoplay="true" show-on-play): img(src="i/d3.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    .h4.text-center ¿A qué tipo de ángulo sería igual un split?
+                    .row.respuestas.w100.around.wrap
+                        template(v-for="(i, index) in ['Ángulo de 45°','Ángulo de 360°', 'Ángulo de 180°']")
+                            clickable(initclass="pa-1" simple-ok :isok="index == 2"): number(randomc smaller) {{i}}
+            
+            // SCENES P4
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w50.wm80.v4
+                            img(src="i/v4.png").w100
+                            .dial: dialogaudio(audio="s/a4.mp3" :autoplay="true" show-on-play): img(src="i/d4.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    .h4.text-center ¿Cuánto debe medir un ángulo agudo?
+                    .row.respuestas.w100.around.wrap
+                        template(v-for="(i, index) in ['Más de 90°','Más de 100°','Menos de 90°']")
+                            clickable(initclass="pa-1" simple-ok :isok="index == 2"): number(randomc smaller) {{i}}
+            
+            // SCENES P5
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w50.wm80.v5
+                            img(src="i/v5.png").w100
+                            .dial: dialogaudio(audio="s/a5.mp3" :autoplay="true" show-on-play): img(src="i/d5.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    .h4.text-center  ¿Cuánto debe medir un ángulo recto?
+                    .row.respuestas.w100.around.wrap
+                        template(v-for="(i, index) in ['180°','90°','45°']")
+                            clickable(initclass="pa-1" simple-ok :isok="index == 1"): number(randomc smaller) {{i}}
+            
+            // SCENES P6
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w80.wm100.v6
+                            img(src="i/v6.png").w100
+                            .dial: dialogaudio(audio="s/a6.mp3" :autoplay="true" show-on-play): img(src="i/d6.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    .h4.text-center ¿Cuánto debe medir un ángulo obtuso?
+                    .row.respuestas.w100.around.wrap
+                        template(v-for="(i, index) in ['Más de 90°','Menos de 90°','Exactamente 100°']")
+                            clickable(initclass="pa-1" simple-ok :isok="index == 0"): number(randomc smaller) {{i}}
+            
+            // SCENES P7
+            scene(v-if="currentScene==7" hidescorebox :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: .vineta.w60.wm90.v7
+                            img(src="i/v7.png").w100
+                            .dial: dialogaudio(audio="s/a7.mp3" :autoplay="true" show-on-play @completed="temps.b = true"): img(src="i/d7.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                            .dial.d8: dialogaudio(audio="s/a8.mp3" :autoplay="true" v-if="temps.b" show-on-play @completed="temps.c = true"): img(src="i/d8.png").w100.animate__animated.animate__zoomIn.animate__delay-1s
+                    button(@click="sceneCompleted(false)" v-if="temps.c").button.big.animate__animated.animate__flip Finalizar
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==8" :key="8" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5
