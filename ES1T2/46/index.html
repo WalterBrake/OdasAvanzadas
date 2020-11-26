@@ -69,6 +69,21 @@
           color: #C5382F;
           text-shadow: none !important;
       }
+      @media (max-width:768px){
+          .canto .audiotext .audiotextTxt, .canto2 .audiotext .audiotextTxt {
+              font-size: 0.9rem;
+          }
+          .canto .h3, .canto2 .h3{
+              font-size: 1rem;
+          }
+          .drop{
+              max-width: 70%;
+              height: 20px;
+          }
+          .drop .number {
+              font-size: 0.9rem;
+          }
+      }
       
       
       
@@ -96,7 +111,7 @@
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
         <info type="dragdrop" title="Transformo una ronda" text="Utiliza las palabras del recuadro y cambia las palabras de la ronda para hacer una nueva versión. " textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 palabras">
+          <div class="row w100 palabras wrap">
             <drag data="A" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
               <number c="1" smaller="smaller">enoja</number>
             </drag>
