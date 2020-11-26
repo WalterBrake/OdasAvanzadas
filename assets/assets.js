@@ -50,7 +50,6 @@ var app = new Vue({
     methods: {
         modifyTemps (thevar, value) {
             this.temps[thevar] = value
-            console.log('rep')
         },
         okFn(){
             EventBus.$emit('isok')
@@ -151,6 +150,7 @@ var app = new Vue({
         },
         scenePointsFn () {
             this.scenePointsCounter+=1
+            console.log(this.scenePointsCounter, this.scenesCount)
             if(this.scenesCount == this.scenePointsCounter) {
                 this.scoreInScene += this.decimalSum
             }

@@ -134,7 +134,6 @@ Vue.component('scene', {
                     },200)
 
                 setTimeout(function(){
-                    console.log('playOKSOUNDS')
                     sound.play()
                 },100)
 
