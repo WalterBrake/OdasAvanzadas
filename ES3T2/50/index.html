@@ -243,7 +243,7 @@
             </div>
           </div>
           <div v-if="temps.preguntas == 'p4'">
-            <div class="h4 text-center">Si Irene dijera: Ustedes son muy talentosos, ¿Qué persona gramatical está usando?</div>
+            <div class="h4 text-center">Si Irene dijera: Ustedes son muy talentosos, ¿qué persona gramatical está usando?</div>
             <div class="row wrap around">
               <clickable v-for="(i, index) in ['Segunda persona del singular','Segunda persona del plural','Tercera persona del plural']" :key="'p4'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" @wasclicked="temps.preguntas = 'fin' ">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>

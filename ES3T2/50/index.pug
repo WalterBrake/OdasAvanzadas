@@ -210,7 +210,7 @@ html(lang="es")
                         .h4.text-center Si se habla de Miguel, ¿qué persona del singular le corresponde?
                         .row.wrap.around: clickable(v-for="(i, index) in ['Primera','Segunda','Tercera']" :key="'p3'+index" :isok="index == 2" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'p4' "): number(randomc smaller) {{i}}
                     div(v-if="temps.preguntas == 'p4'")
-                        .h4.text-center Si Irene dijera: Ustedes son muy talentosos, ¿Qué persona gramatical está usando?
+                        .h4.text-center Si Irene dijera: Ustedes son muy talentosos, ¿qué persona gramatical está usando?
                         .row.wrap.around: clickable(v-for="(i, index) in ['Segunda persona del singular','Segunda persona del plural','Tercera persona del plural']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-1" @wasclicked="temps.preguntas = 'fin' "): number(randomc smaller) {{i}}
 
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
