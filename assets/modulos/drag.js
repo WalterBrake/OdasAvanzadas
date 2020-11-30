@@ -208,7 +208,11 @@ Vue.component('drag', {
             if(_this.noOkSound == undefined){
                 s_ok.play()
             }
-            _this.$emit('isok')
+
+            setTimeout(function (){
+                let droppedtimes = dropzone.getAttribute('droppedtimes')
+                _this.$emit('isok', {droppedtimes: droppedtimes})
+            }, 100)
             _this.returnToPositionFn()
             _this.stayInDropFn()
             _this.dropzoneStatusClass('ok', dropzone)
@@ -263,7 +267,7 @@ Vue.component('drag', {
         },
         dropzoneCanBeDropped (dropzone) {
             if(dropzone.getAttribute('droptimes') == 'multiple') {
-                var droplimit = dropzone.getAttribute('droplimit')
+                var droplimit = parseInt(dropzone.getAttribute('droplimit'))
                 if(droplimit) {
                     var droppedtimes = dropzone.getAttribute('droppedtimes')
                     if(droppedtimes){
@@ -448,3 +452,8 @@ Vue.component('drag', {
         window.addEventListener('resize', this.updateCanvas)
     }
 })
+
+
+/*
+drag(:data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok): img(:src="'i/a'+(index+1)+'.png'").img-fluid
+*/

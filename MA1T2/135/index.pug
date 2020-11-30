@@ -1,0 +1,137 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Cuento de 10 en 10'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drag {
+                width: auto;
+                height: auto;
+                max-width: 55px;
+                max-height: 55px;
+                width: 10%;
+                box-sizing: border-box;
+                padding: 5px;
+            }
+            .drag img {
+                min-width: auto;
+            }
+            .drop{
+                height: 140px;
+                max-width: 140px;
+                width: 40%;
+                margin: 4px;
+                background: #E1EDF4;
+                border-radius: 50%;
+                border: 2px solid var(--main);
+                box-shadow: 4px 4px 0 #437D31;
+            }
+            .drop.hover{
+                box-shadow: 4px 4px 0 #437D31 inset;
+                background: #FDE8CF;
+                transition: all 0.3s;
+            }
+            @media (max-width: 680px){
+                .drop {
+                    height: 100px;
+                }
+            }
+            .inputable{
+                margin: 4px auto;
+                max-width: 180px;
+            }
+            .drag.dropped img{
+                transform: scale(0.6);
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="52" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Vamos a formar grupos de 10! Coloca 10 peces en cada círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos peces sobraron." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.areas.wrap.around
+                        .areas.drop(v-for="(i, index) in 5" droptimes="multiple" :droplimit="10" data="p")
+                    .row.w100.peces.wrap.around
+                        template(v-for="(i, index) in 50")
+                            drag(dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok drag-ok-class="dropped"): img(src="i/peces.png").img-fluid
+                    .row.w90
+                        .w50.text-center
+                            .h4 Grupos de 10:
+                            inputable(initclass="c8" :isok="5"): number(c=8 small) 5
+                        .w50.text-center
+                            .h4 Sobrante:
+                            inputable(initclass="c7" :isok="0"): number(c=7 small) 0
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="12" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca 10 soldados en el círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos soldados sobraron." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.areas.wrap.around
+                        .areas.drop(v-for="(i, index) in 1" droptimes="multiple" :droplimit="10" data="p")
+                    .row.w100.peces.wrap.around
+                        template(v-for="(i, index) in 15")
+                            drag(dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok drag-ok-class="dropped"): img(src="i/soldados.png").img-fluid
+                    .row.w90
+                        .w50.text-center
+                            .h4 Grupos de 10:
+                            inputable(initclass="c8" :isok="1"): number(c=8 small) 1
+                        .w50.text-center
+                            .h4 Sobrante:
+                            inputable(initclass="c7" :isok="5"): number(c=7 small) 5
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="42" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca 10 abejas en los círculos. Mientras lo haces, cuenta en voz alta. Después escribe en los recuadros cuántos grupos de 10 formaste y cuántas abejas sobraron." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.areas.wrap.around
+                        .areas.drop(v-for="(i, index) in 4" droptimes="multiple" :droplimit="10" data="p")
+                    .row.w100.peces.wrap.around
+                        template(v-for="(i, index) in 48")
+                            drag(dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok drag-ok-class="dropped"): img(src="i/abejas.png").img-fluid
+                    .row.w90
+                        .w50.text-center
+                            .h4 Grupos de 10:
+                            inputable(initclass="c8" :isok="4"): number(c=8 small) 4
+                        .w50.text-center
+                            .h4 Sobrante:
+                            inputable(initclass="c7" :isok="8"): number(c=7 small) 8
+            
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca 10 loros en los círculos. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 figuras formaste y cuántos loros sobraron." textaudio="s/instruccion4.mp3" :autoplay="true")
+                activity
+                    .row.w100.areas.wrap.around
+                        .areas.drop(v-for="(i, index) in 3" droptimes="multiple" :droplimit="10" data="p")
+                    .row.w100.peces.wrap.around
+                        template(v-for="(i, index) in 35")
+                            drag(dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok drag-ok-class="dropped"): img(src="i/cotorros.png").img-fluid
+                    .row.w90
+                        .w50.text-center
+                            .h4 Grupos de 10:
+                            inputable(initclass="c8" :isok="3"): number(c=8 small) 3
+                        .w50.text-center
+                            .h4 Sobrante:
+                            inputable(initclass="c7" :isok="5"): number(c=7 small) 5
+            
+            // END
+            scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.droppedsound = function ($ev){
+                    new Howl({ src: ['s/'+$ev.droppedtimes+'.mp3'],  autoplay: true })
+                }
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 4
+
