@@ -12235,6 +12235,41 @@
 		"oAP": "\/MA1T2\/135\/s\/9.mp3",
 		"oF": 0
 		},
+	"\/MA1T2\/135\/s\/grupo1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/135\/s\/grupo1.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/135\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/135\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/135\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/135\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/135\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/135\/s\/instruccion3.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/135\/s\/instruccion4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/135\/s\/instruccion4.mp3",
+		"oF": 0
+		},
 	"\/MA1T2\/136\/i\/1.png": {
 		"ft": 32768,
 		"iS": 71858,

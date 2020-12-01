@@ -37,6 +37,9 @@
           background: #FDE8CF;
           transition: all 0.3s;
       }
+      .drop[droppedtimes="10"]{
+          background: var(--accent);
+      }
       @media (max-width: 680px){
           .drop {
               height: 100px;
@@ -49,7 +52,19 @@
       .drag.dropped img{
           transform: scale(0.6);
       }
+      .drag.dropped{
+          
+      }
+      .audiotext .audiotextBtn{
+          width: 20px; height: 20px;
+      }
+      @media (max-width: 680px){
+          .d1 .drop {
+              width: 70px;
+              height: 70px;
+          }
       
+      }
       
     </style>
   </head>
@@ -58,10 +73,10 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="52" scene-color="#ED1C25">
+      <scene ref="es1" v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="52" scene-color="#ED1C25">
         <info type="dragdrop" title="Cuento de 10 en 10" text="¡Vamos a formar grupos de 10! Coloca 10 peces en cada círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos peces sobraron." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 areas wrap around">
+          <div class="row w100 areas wrap around d1">
             <div class="areas drop" v-for="(i, index) in 5" droptimes="multiple" :droplimit="10" data="p"></div>
           </div>
           <div class="row w100 peces wrap around">
@@ -69,24 +84,27 @@
               <drag dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok="stay-if-ok" drag-ok-class="dropped"><img class="img-fluid" src="i/peces.png"/></drag>
             </template>
           </div>
-          <div class="row w90">
-            <div class="w50 text-center">
-              <div class="h4">Grupos de 10:</div>
-              <inputable initclass="c8" :isok="5">
-                <number c="8" small="small">5</number>
-              </inputable>
+          <template v-if="temps.a1">
+            <audiotext audio="s/grupo1.mp3" text="¿Cuántos grupos de 10 figuras formaste y cuántas figuras sobraron?" :autoplay="true"></audiotext>
+            <div class="row w90">
+              <div class="w50 text-center">
+                <div class="h4">Grupos de 10:</div>
+                <inputable initclass="c8" :isok="5">
+                  <number c="8" small="small">5</number>
+                </inputable>
+              </div>
+              <div class="w50 text-center">
+                <div class="h4">Sobrante:</div>
+                <inputable initclass="c7" :isok="0">
+                  <number c="7" small="small">0</number>
+                </inputable>
+              </div>
             </div>
-            <div class="w50 text-center">
-              <div class="h4">Sobrante:</div>
-              <inputable initclass="c7" :isok="0">
-                <number c="7" small="small">0</number>
-              </inputable>
-            </div>
-          </div>
+          </template>
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="12" scene-color="#ED1C25">
+      <scene ref="es2" v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="12" scene-color="#ED1C25">
         <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 soldados en el círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos soldados sobraron." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 areas wrap around">
@@ -97,25 +115,28 @@
               <drag dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok="stay-if-ok" drag-ok-class="dropped"><img class="img-fluid" src="i/soldados.png"/></drag>
             </template>
           </div>
-          <div class="row w90">
-            <div class="w50 text-center">
-              <div class="h4">Grupos de 10:</div>
-              <inputable initclass="c8" :isok="1">
-                <number c="8" small="small">1</number>
-              </inputable>
+          <template v-if="temps.a2">
+            <audiotext audio="s/grupo1.mp3" text="¿Cuántos grupos de 10 figuras formaste y cuántas figuras sobraron?" :autoplay="true"></audiotext>
+            <div class="row w90">
+              <div class="w50 text-center">
+                <div class="h4">Grupos de 10:</div>
+                <inputable initclass="c8" :isok="1">
+                  <number c="8" small="small">1</number>
+                </inputable>
+              </div>
+              <div class="w50 text-center">
+                <div class="h4">Sobrante:</div>
+                <inputable initclass="c7" :isok="5">
+                  <number c="7" small="small">5</number>
+                </inputable>
+              </div>
             </div>
-            <div class="w50 text-center">
-              <div class="h4">Sobrante:</div>
-              <inputable initclass="c7" :isok="5">
-                <number c="7" small="small">5</number>
-              </inputable>
-            </div>
-          </div>
+          </template>
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="42" scene-color="#ED1C25">
-        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 abejas en los círculos. Mientras lo haces, cuenta en voz alta. Después escribe en los recuadros cuántos grupos de 10 formaste y cuántas abejas sobraron." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+      <scene ref="es3" v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="42" scene-color="#ED1C25">
+        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 abejas en los círculos. Mientras lo haces, cuenta en voz alta. Después escribe en los recuadros cuántos grupos de 10 formaste y cuántas abejas sobraron." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 areas wrap around">
             <div class="areas drop" v-for="(i, index) in 4" droptimes="multiple" :droplimit="10" data="p"></div>
@@ -125,24 +146,27 @@
               <drag dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok="stay-if-ok" drag-ok-class="dropped"><img class="img-fluid" src="i/abejas.png"/></drag>
             </template>
           </div>
-          <div class="row w90">
-            <div class="w50 text-center">
-              <div class="h4">Grupos de 10:</div>
-              <inputable initclass="c8" :isok="4">
-                <number c="8" small="small">4</number>
-              </inputable>
+          <template v-if="temps.a3">
+            <audiotext audio="s/grupo1.mp3" text="¿Cuántos grupos de 10 figuras formaste y cuántas figuras sobraron?" :autoplay="true"></audiotext>
+            <div class="row w90">
+              <div class="w50 text-center">
+                <div class="h4">Grupos de 10:</div>
+                <inputable initclass="c8" :isok="4">
+                  <number c="8" small="small">4</number>
+                </inputable>
+              </div>
+              <div class="w50 text-center">
+                <div class="h4">Sobrante:</div>
+                <inputable initclass="c7" :isok="8">
+                  <number c="7" small="small">8</number>
+                </inputable>
+              </div>
             </div>
-            <div class="w50 text-center">
-              <div class="h4">Sobrante:</div>
-              <inputable initclass="c7" :isok="8">
-                <number c="7" small="small">8</number>
-              </inputable>
-            </div>
-          </div>
+          </template>
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25">
+      <scene ref="es4" v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25">
         <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 loros en los círculos. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 figuras formaste y cuántos loros sobraron." textaudio="s/instruccion4.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 areas wrap around">
@@ -153,20 +177,23 @@
               <drag dropzone=".drop" data="p" @isok="droppedsound" stay-if-ok="stay-if-ok" drag-ok-class="dropped"><img class="img-fluid" src="i/cotorros.png"/></drag>
             </template>
           </div>
-          <div class="row w90">
-            <div class="w50 text-center">
-              <div class="h4">Grupos de 10:</div>
-              <inputable initclass="c8" :isok="3">
-                <number c="8" small="small">3</number>
-              </inputable>
+          <template v-if="temps.a4">
+            <audiotext audio="s/grupo1.mp3" text="¿Cuántos grupos de 10 figuras formaste y cuántas figuras sobraron?" :autoplay="true"></audiotext>
+            <div class="row w90">
+              <div class="w50 text-center">
+                <div class="h4">Grupos de 10:</div>
+                <inputable initclass="c8" :isok="3">
+                  <number c="8" small="small">3</number>
+                </inputable>
+              </div>
+              <div class="w50 text-center">
+                <div class="h4">Sobrante:</div>
+                <inputable initclass="c7" :isok="5">
+                  <number c="7" small="small">5</number>
+                </inputable>
+              </div>
             </div>
-            <div class="w50 text-center">
-              <div class="h4">Sobrante:</div>
-              <inputable initclass="c7" :isok="5">
-                <number c="7" small="small">5</number>
-              </inputable>
-            </div>
-          </div>
+          </template>
         </activity>
       </scene>
       <!-- END-->
@@ -204,10 +231,18 @@
     <script>
       app.droppedsound = function ($ev){
           new Howl({ src: ['s/'+$ev.droppedtimes+'.mp3'],  autoplay: true })
+          let thescene = app.$refs['es'+app.currentScene]
+          if(thescene.oks == (thescene.answers-2)){
+              app.$set(app.temps, 'a'+app.currentScene, true)
+          }
       }
       
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a1', false)
+      app.$set(app.temps, 'a2', false)
+      app.$set(app.temps, 'a3', false)
+      app.$set(app.temps, 'a4', false)
+      app.$set(app.temps, 'a5', false)
       
       app.currentScene = 0
       app.scenesCount = 4
