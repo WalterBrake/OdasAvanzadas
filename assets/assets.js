@@ -150,7 +150,6 @@ var app = new Vue({
         },
         scenePointsFn () {
             this.scenePointsCounter+=1
-            console.log(this.scenePointsCounter, this.scenesCount)
             if(this.scenesCount == this.scenePointsCounter) {
                 this.scoreInScene += this.decimalSum
             }

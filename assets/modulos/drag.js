@@ -375,7 +375,6 @@ Vue.component('drag', {
             }
         },
         dragLineDraw(e) {
-            console.log(e)
             var line = {}
             line.x = this.dragPosX
             line.y = this.dragPosY
