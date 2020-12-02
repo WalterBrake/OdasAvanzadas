@@ -8614,6 +8614,28 @@
 		"oAP": "\/ES3T2\/50\/s\/s9.mp3",
 		"oF": 0
 		},
+	"\/ES3T2\/56\/i\/id.png": {
+		"ft": 32768,
+		"iS": 139657,
+		"oA": 0,
+		"oAP": "\/ES3T2\/56\/i\/id.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T2\/56\/i\/nota.png": {
+		"ft": 32768,
+		"iS": 2566355,
+		"oA": 0,
+		"oAP": "\/ES3T2\/56\/i\/nota.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES3T2\/56\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -8630,18 +8652,18 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES3T2\/56\/s\/Encuentro los elementos del artículo Es3°T2_Inst1.wav": {
+	"\/ES3T2\/56\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES3T2\/56\/s\/Encuentro los elementos del artículo Es3°T2_Inst1.wav",
+		"oAP": "\/ES3T2\/56\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES3T2\/56\/s\/Encuentro los elementos del artículo Es3°T2_Inst2.wav": {
+	"\/ES3T2\/56\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES3T2\/56\/s\/Encuentro los elementos del artículo Es3°T2_Inst2.wav",
+		"oAP": "\/ES3T2\/56\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/ES4T1\/17\/aimg\/1.svg": {

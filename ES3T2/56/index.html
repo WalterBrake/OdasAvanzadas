@@ -3,27 +3,116 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Encuentro los elementos del artículo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+      }
+      .word {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          border-radius: 6px;
+          font-weight: bold;
+          margin: 6px;
+      }
+      .word:nth-child(4n+1) {
+          background: #EBD5E0;
+          color: #AE4E8F;
+          box-shadow: 4px 4px 0 #AE4E8F;
+      }
+      .word:nth-child(4n+1) .conector {
+          background: #AE4E8F;
+          box-shadow: 4px 4px #AE4E8F;
+      }
+      .word:nth-child(4n+2) {
+          background: #C6DDE9;
+          color: #0083BF;
+          box-shadow: 4px 4px 0 #0083BF;
+      }
+      .word:nth-child(4n+2) .conector {
+          background: #0083BF;
+          box-shadow: 4px 4px #0083BF;
+      }
+      .word:nth-child(4n+3) {
+          background: #DEEDCD;
+          color: #6CB743;
+          box-shadow: 4px 4px 0 #6CB743;
+      }
+      .word:nth-child(4n+3) .conector {
+          background: #6CB743;
+          box-shadow: 4px 4px #6CB743;
+      }
+      .word:nth-child(4n+4) {
+          background: #FBE0C2;
+          color: #E9832C;
+          box-shadow: 4px 4px 0 #E9832C;
+      }
+      .word:nth-child(4n+4) .conector {
+          background: #E9832C;
+          box-shadow: 4px 4px #E9832C;
+      }
+      @media (max-width: 820px) {
+          .word {
+              font-size: 0.8rem;
+              padding: 10px 4px;
+          }
+      }
+      @media (max-width: 820px) {
+          .kido {
+              display: none;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Encuentro los elementos del artículo" text="Lee el artículo sobre el Dengue." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100"><img class="w80 wm100" src="i/nota.png"/></div>
+          <div class="row w100">
+            <button class="button big" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="relacionar" title="Encuentro los elementos del artículo" text="Relaciona las columnas de acuerdo a lo que leíste sobre el Dengue." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w30 wm50">
+              <div class="word" v-for="(i, index) in temps.a">{{i}}
+                <drag :data="index" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" :particle-color="coloring(index)">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40 text-center kido"><img class="w40" src="i/kid.png"/></div>
+            <div class="w30 wm50">
+              <div class="word drop" v-for="(i, index) in temps.b" :data="i[1]" droptimes="untilok">
+                <div v-html="i[0]"></div>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="lanota" c="1"><img class="w80" src="i/nota.png"/></popup>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -56,10 +145,51 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          'Dengue',
+          'Portador',
+          'Tipos de Dengue',
+          'Transmisor',
+          'Palabras en latín',
+          'Texto expositivo',
+          'Diccionario',
+          'Hemorragia'
+      ])
+      app.$set(app.temps, 'b', [
+          ['Explica, ejemplifica y describe.', 5],
+          ['Clásico y hemorrágico', 2],
+          ['Picadura', 3],
+          ['Fuente de consulta', 6],
+          ['Virus', 0],
+          ['Flujo de sangre por rotura de vasos sanguíneos.', 7],
+          ['Mosquito', 1],
+          ['<em>Aedes aegypti, Aedes albopictus</em>', 4],
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
+      
+      app.coloring = function (indx){
+          switch(indx){
+              case 0:
+              case 4:
+                  return '#AE4E8F'
+                  break;
+              case 1:
+              case 5:
+                  return '#0083BF'
+                  break;
+              case 2:
+              case 6:
+                  return '#6CB743'
+                  break;
+              case 3:
+              case 7:
+                  return '#E9832C'
+                  break;
+      
+          }
+      }
     </script>
   </body>
 </html>
