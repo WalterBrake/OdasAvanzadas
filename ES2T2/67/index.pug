@@ -1,0 +1,113 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Adivino adivinanzas'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .activ {
+                align-items: unset;
+                height: 100%;
+            }
+            .adivis {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-start;
+            }
+            .adivis .adiv {
+                background: #fff;
+                padding: 4px 10px;
+                border-radius: 10px;
+                flex-grow: 0;
+                display: flex;
+            }
+            @media (max-width: 720px) {
+                .adivis .adiv {
+                    font-size: 0.8rem;
+                }
+            }
+            .adivis .adiv .drag {
+                width: auto;
+                height: auto;
+                margin-left: 10px;
+            }
+            .imas {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: space-around;
+            }
+            .imas .drop {
+                width: 40%;
+                background: #fff;
+                text-align: center;
+                margin-bottom: 5px;
+                display: flex;
+                padding: 5px;
+                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            @media (max-width: 680px) {
+                .imas .drop {
+                    width: 80%;
+                }
+            }
+            .imas .drop img {
+                max-width: 100px;
+                max-height: 80px;
+                width: auto;
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="¡Adivino, adivinador! Lee las adivinanzas y relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.activ
+                        .w50.adivis
+                            .adiv
+                                | Bolita de algodón, #[br] brinca que brinca #[br] sin ton ni son.
+                                drag(data="1" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                            .adiv
+                                | Con su cola inmensa,#[br] vestido de gris, #[br] busca tu despensa #[br] en cualquier país.
+                                drag(data="2" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                            .adiv
+                                | Ella vive en el mar #[br] y por no ir nunca vacía #[br] dicen los peces que #[br] siembre va llena.
+                                drag(data="3" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                            .adiv
+                                | Tengo agujas #[br] y no se coser, #[br]  tengo números #[br] y no sé leer.
+                                drag(data="4" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                            .adiv
+                                | La A, anda. #[br] La B, besa. #[br] La C, reza #[br] ¿Qué fruta es ésa? 
+                                drag(data="5" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                            .adiv
+                                | En alto vive, #[br] en alto mora, #[br] en alto teje #[br] la tejedora.
+                                drag(data="6" dropzone=".drop" drag-line stay-if-ok particle-color="#5EB247"): .conector.c1
+                        .w50.imas
+                            .drop(data="4" droptimes="untilok"): div: img(src="i/reloj.png").w100
+                            .drop(data="1" droptimes="untilok"): div: img(src="i/borrego.png").w100
+                            .drop(data="3" droptimes="untilok"): div: img(src="i/ballena.png").w100
+                            .drop(data="6" droptimes="untilok"): div: img(src="i/arana.png").w100
+                            .drop(data="2" droptimes="untilok"): div: img(src="i/raton.png").w100
+                            .drop(data="5" droptimes="untilok"): div: img(src="i/cereza.png").w100
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1

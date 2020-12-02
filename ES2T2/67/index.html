@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Adivino adivinanzas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .activ {
+          align-items: unset;
+          height: 100%;
+      }
+      .adivis {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+      }
+      .adivis .adiv {
+          background: #fff;
+          padding: 4px 10px;
+          border-radius: 10px;
+          flex-grow: 0;
+          display: flex;
+      }
+      @media (max-width: 720px) {
+          .adivis .adiv {
+              font-size: 0.8rem;
+          }
+      }
+      .adivis .adiv .drag {
+          width: auto;
+          height: auto;
+          margin-left: 10px;
+      }
+      .imas {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: space-around;
+      }
+      .imas .drop {
+          width: 40%;
+          background: #fff;
+          text-align: center;
+          margin-bottom: 5px;
+          display: flex;
+          padding: 5px;
+          border-radius: 10px;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+      @media (max-width: 680px) {
+          .imas .drop {
+              width: 80%;
+          }
+      }
+      .imas .drop img {
+          max-width: 100px;
+          max-height: 80px;
+          width: auto;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="relacionar" title="Adivino adivinanzas" text="¡Adivino, adivinador! Lee las adivinanzas y relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 activ">
+            <div class="w50 adivis">
+              <div class="adiv">Bolita de algodón, <br/> brinca que brinca <br/> sin ton ni son.
+                <drag data="1" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="adiv">Con su cola inmensa,<br/> vestido de gris, <br/> busca tu despensa <br/> en cualquier país.
+                <drag data="2" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="adiv">Ella vive en el mar <br/> y por no ir nunca vacía <br/> dicen los peces que <br/> siembre va llena.
+                <drag data="3" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="adiv">Tengo agujas <br/> y no se coser, <br/>  tengo números <br/> y no sé leer.
+                <drag data="4" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="adiv">La A, anda. <br/> La B, besa. <br/> La C, reza <br/> ¿Qué fruta es ésa? 
+                <drag data="5" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="adiv">En alto vive, <br/> en alto mora, <br/> en alto teje <br/> la tejedora.
+                <drag data="6" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w50 imas">
+              <div class="drop" data="4" droptimes="untilok">
+                <div><img class="w100" src="i/reloj.png"/></div>
+              </div>
+              <div class="drop" data="1" droptimes="untilok">
+                <div><img class="w100" src="i/borrego.png"/></div>
+              </div>
+              <div class="drop" data="3" droptimes="untilok">
+                <div><img class="w100" src="i/ballena.png"/></div>
+              </div>
+              <div class="drop" data="6" droptimes="untilok">
+                <div><img class="w100" src="i/arana.png"/></div>
+              </div>
+              <div class="drop" data="2" droptimes="untilok">
+                <div><img class="w100" src="i/raton.png"/></div>
+              </div>
+              <div class="drop" data="5" droptimes="untilok">
+                <div><img class="w100" src="i/cereza.png"/></div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', [])
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>
