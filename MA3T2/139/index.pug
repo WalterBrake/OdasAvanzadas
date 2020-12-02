@@ -1,12 +1,50 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco las fracciones'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag{
+                width: auto;
+                height: auto;
+            }
+            .fig{
+                display: flex;
+            }
+            .fraccs{
+                text-align: center;
+            }
+            .fracss .fig {
+                background: rgba(255, 255, 255, 0.5);
+                justify-content: center;
+                margin-bottom: 4px;
+                border-radius: 10px;
+            }
+            @media (min-width: 681px) {
+                .fracss .fig .conector {
+                    margin-top: -30px;
+                    margin-left: 20px;
+                }
+            }
+
+            .frac {
+                font-size: 1.2rem;
+                border: 2px solid var(--clear);
+                padding: 2px 30px 2px 10px;
+                border-radius: 2px 10px;
+                text-align: center;
+                background: #fff;
+            }
+            .frac hr {
+                border: none;
+                border-top: 2px solid var(--clear);
+            }
+            .conector {
+                margin-left: -20px;
+            }
 
 
     body
@@ -15,14 +53,48 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .figuras.w40
+                            .fig
+                                .frac 2#[hr]4
+                                drag(dropzone=".drop" data="1" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 7#[hr]8
+                                drag(dropzone=".drop" data="2" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 1#[hr]2
+                                drag(dropzone=".drop" data="3" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 1#[hr]4
+                                drag(dropzone=".drop" data="4" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 2#[hr]2
+                                drag(dropzone=".drop" data="5" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 3#[hr]4
+                                drag(dropzone=".drop" data="6" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                .frac 5#[hr]8
+                                drag(dropzone=".drop" data="7" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            
+                        .fraccs.w40
+                            .frc.drop(data="3" droptimes="untilok"): img(src="i/i3.svg").w20.wm50
+                            .frc.drop(data="1" droptimes="untilok"): img(src="i/i1.svg").w20.wm50
+                            .frc.drop(data="4" droptimes="untilok"): img(src="i/i4.svg").w20.wm50
+                            .frc.drop(data="7" droptimes="untilok"): img(src="i/i7.svg").w20.wm50
+                            .frc.drop(data="6" droptimes="untilok"): img(src="i/i6.svg").w20.wm50
+                            .frc.drop(data="5" droptimes="untilok"): img(src="i/i5.svg").w20.wm50
+                            .frc.drop(data="2" droptimes="untilok"): img(src="i/i2.svg").w20.wm50
+ 
+
+
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.

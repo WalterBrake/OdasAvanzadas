@@ -3,27 +3,136 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco las fracciones</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag{
+          width: auto;
+          height: auto;
+      }
+      .fig{
+          display: flex;
+      }
+      .fraccs{
+          text-align: center;
+      }
+      .fracss .fig {
+          background: rgba(255, 255, 255, 0.5);
+          justify-content: center;
+          margin-bottom: 4px;
+          border-radius: 10px;
+      }
+      @media (min-width: 681px) {
+          .fracss .fig .conector {
+              margin-top: -30px;
+              margin-left: 20px;
+          }
+      }
+      
+      .frac {
+          font-size: 1.2rem;
+          border: 2px solid var(--clear);
+          padding: 2px 30px 2px 10px;
+          border-radius: 2px 10px;
+          text-align: center;
+          background: #fff;
+      }
+      .frac hr {
+          border: none;
+          border-top: 2px solid var(--clear);
+      }
+      .conector {
+          margin-left: -20px;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco las fracciones" text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="figuras w40">
+              <div class="fig">
+                <div class="frac">2
+                  <hr/>4
+                </div>
+                <drag dropzone=".drop" data="1" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">7
+                  <hr/>8
+                </div>
+                <drag dropzone=".drop" data="2" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">1
+                  <hr/>2
+                </div>
+                <drag dropzone=".drop" data="3" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">1
+                  <hr/>4
+                </div>
+                <drag dropzone=".drop" data="4" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">2
+                  <hr/>2
+                </div>
+                <drag dropzone=".drop" data="5" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">3
+                  <hr/>4
+                </div>
+                <drag dropzone=".drop" data="6" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="fig">
+                <div class="frac">5
+                  <hr/>8
+                </div>
+                <drag dropzone=".drop" data="7" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00BFE5">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="fraccs w40">
+              <div class="frc drop" data="3" droptimes="untilok"><img class="w20 wm50" src="i/i3.svg"/></div>
+              <div class="frc drop" data="1" droptimes="untilok"><img class="w20 wm50" src="i/i1.svg"/></div>
+              <div class="frc drop" data="4" droptimes="untilok"><img class="w20 wm50" src="i/i4.svg"/></div>
+              <div class="frc drop" data="7" droptimes="untilok"><img class="w20 wm50" src="i/i7.svg"/></div>
+              <div class="frc drop" data="6" droptimes="untilok"><img class="w20 wm50" src="i/i6.svg"/></div>
+              <div class="frc drop" data="5" droptimes="untilok"><img class="w20 wm50" src="i/i5.svg"/></div>
+              <div class="frc drop" data="2" droptimes="untilok"><img class="w20 wm50" src="i/i2.svg"/></div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
