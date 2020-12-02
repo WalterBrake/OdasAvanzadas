@@ -1,0 +1,85 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Sé cómo surgió el cristianismo.'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drop {
+                background: #000;
+                text-align: center;
+                min-height: 120px;
+                border-radius: 10px;
+                padding-top: 10px;
+                min-width: 120px;
+            }
+            .drop.m {
+                background: #D6EBD0;
+            }
+            .drop.e {
+                background: #C1D0E3;
+            }
+            .drop.a {
+                background: #FBE7D4;
+            }
+            .drop.c {
+                background: #F8CECA;
+            }
+            .drop img {
+                max-width: 45%;
+                margin: 20px 1%;
+            }
+            @media (max-width: 720px) {
+                .drop .number.smaller {
+                    font-size: 0.8rem;
+                }
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                max-width: 120px;
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca cada herencia en la cultura que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.wrap
+                        .drop(data="m" droptimes="multiple").m.w25
+                            number(smaller c=1) Mesopotámicos
+                        .drop(data="e" droptimes="multiple").e.w25
+                            number(smaller c=2) Egipcios
+                        .drop(data="a" droptimes="multiple").a.w25
+                            number(smaller c=4) Árabes
+                        .drop(data="c" droptimes="multiple").c.w25
+                            number(smaller c=5) Chinos
+                    .row.w100.wrap.mt-1
+                        drag(dropzone=".drop" data="a" append-to-dropzone): img(src="i/a1.png").w100
+                        drag(dropzone=".drop" data="a" append-to-dropzone): img(src="i/a2.png").w100
+                        drag(dropzone=".drop" data="c" append-to-dropzone): img(src="i/a3.png").w100
+                        drag(dropzone=".drop" data="e" append-to-dropzone): img(src="i/a4.png").w100
+                        
+                        drag(dropzone=".drop" data="m" append-to-dropzone): img(src="i/a5.png").w100
+                        drag(dropzone=".drop" data="e" append-to-dropzone): img(src="i/a6.png").w100
+                        drag(dropzone=".drop" data="m" append-to-dropzone): img(src="i/a7.png").w100
+                        drag(dropzone=".drop" data="c" append-to-dropzone): img(src="i/a8.png").w100
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1

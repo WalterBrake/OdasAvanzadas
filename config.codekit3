@@ -10521,6 +10521,117 @@
 		"oAP": "\/HI6T1\/259\/index.html",
 		"oF": 0
 		},
+	"\/HI6T2\/268\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 52562,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 54300,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a3.png": {
+		"ft": 32768,
+		"iS": 40960,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a4.png": {
+		"ft": 32768,
+		"iS": 20223,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a5.png": {
+		"ft": 32768,
+		"iS": 41520,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a6.png": {
+		"ft": 32768,
+		"iS": 49552,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a7.png": {
+		"ft": 32768,
+		"iS": 41208,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/i\/a8.png": {
+		"ft": 32768,
+		"iS": 43495,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/i\/a8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI6T2\/268\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/index.html",
+		"oF": 0
+		},
+	"\/HI6T2\/268\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/HI6T2\/268\/s\/Sé cómo surgió el cristianismo His 6oT2_iNST_Coloca.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI6T2\/268\/s\/Sé cómo surgió el cristianismo His 6oT2_iNST_Coloca.wav",
+		"oF": 0
+		},
 	"\/MA1T1\/100\/aimg\/azul.svg": {
 		"ft": 2097152,
 		"miP": 0,
