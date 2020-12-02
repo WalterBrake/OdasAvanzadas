@@ -1,0 +1,94 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = ''
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .caja{ margin: 10px; }
+            .caja img {
+                max-width: 120px;
+                border-radius: 6px;
+            }
+            .caja .drag {
+                width: auto;
+                height: auto;
+                margin-top: -20px;
+            }
+            .drop {
+                text-align: center;
+                background: #fff;
+                padding: 10px 4px;
+                border-radius: 10px;
+                margin: 5px;
+                min-width: 100px;
+            }
+            .drop .number {
+                font-size: 1rem;
+            }
+            @media (max-width: 680px) {
+                .drop .number {
+                    font-size: 0.6rem;
+                    box-shadow: none;
+                }
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.wrap.cajas
+                        .caja
+                            img(src="i/a1.jpg").w100
+                            drag(data="1" dropzone=".drop" drag-line stay-if-ok particle-color="#C0A6D0"): .conector.c8
+                        .caja
+                            img(src="i/a2.jpg").w100
+                            drag(data="5" dropzone=".drop" drag-line stay-if-ok particle-color="#015093"): .conector.c2
+                            
+                        .caja
+                            img(src="i/a3.jpg").w100
+                            drag(data="2" dropzone=".drop" drag-line stay-if-ok particle-color="#7DD5F7"): .conector.c3
+                            
+                        .caja
+                            img(src="i/a4.jpg").w100
+                            drag(data="5" dropzone=".drop" drag-line stay-if-ok particle-color="#EC8B2E"): .conector.c4
+                            
+                        .caja
+                            img(src="i/a5.jpg").w100
+                            drag(data="1" dropzone=".drop" drag-line stay-if-ok particle-color="#DA3F34"): .conector.c5
+                            
+                        .caja
+                            img(src="i/a6.jpg").w100
+                            drag(data="4" dropzone=".drop" drag-line stay-if-ok particle-color="#F460AB"): .conector.c6
+                            
+                        .caja
+                            img(src="i/a7.jpg").w100
+                            drag(data="3" dropzone=".drop" drag-line stay-if-ok particle-color="#C1CA27"): .conector.c7
+                            
+                    .row.w100.wrap.mt-1
+                        .w20.drop(data="1" droptimes="multiple"): number(c=1 smaller) Consumidor primario
+                        .w20.drop(data="2" droptimes="multiple"): number(c=1 smaller) Consumidor secundario
+                        .w20.drop(data="3" droptimes="multiple"): number(c=1 smaller) Consumidor terciario
+                        .w20.drop(data="4" droptimes="multiple"): number(c=1 smaller) Descomponedores
+                        .w20.drop(data="5" droptimes="multiple"): number(c=1 smaller) Productor
+
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1

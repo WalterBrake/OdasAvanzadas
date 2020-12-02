@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .caja{ margin: 10px; }
+      .caja img {
+          max-width: 120px;
+          border-radius: 6px;
+      }
+      .caja .drag {
+          width: auto;
+          height: auto;
+          margin-top: -20px;
+      }
+      .drop {
+          text-align: center;
+          background: #fff;
+          padding: 10px 4px;
+          border-radius: 10px;
+          margin: 5px;
+          min-width: 100px;
+      }
+      .drop .number {
+          font-size: 1rem;
+      }
+      @media (max-width: 680px) {
+          .drop .number {
+              font-size: 0.6rem;
+              box-shadow: none;
+          }
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="relacionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 wrap cajas">
+            <div class="caja"><img class="w100" src="i/a1.jpg"/>
+              <drag data="1" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#C0A6D0">
+                <div class="conector c8"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a2.jpg"/>
+              <drag data="5" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#015093">
+                <div class="conector c2"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a3.jpg"/>
+              <drag data="2" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#7DD5F7">
+                <div class="conector c3"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a4.jpg"/>
+              <drag data="5" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#EC8B2E">
+                <div class="conector c4"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a5.jpg"/>
+              <drag data="1" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#DA3F34">
+                <div class="conector c5"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a6.jpg"/>
+              <drag data="4" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#F460AB">
+                <div class="conector c6"></div>
+              </drag>
+            </div>
+            <div class="caja"><img class="w100" src="i/a7.jpg"/>
+              <drag data="3" dropzone=".drop" drag-line="drag-line" stay-if-ok="stay-if-ok" particle-color="#C1CA27">
+                <div class="conector c7"></div>
+              </drag>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="w20 drop" data="1" droptimes="multiple">
+              <number c="1" smaller="smaller">Consumidor primario</number>
+            </div>
+            <div class="w20 drop" data="2" droptimes="multiple">
+              <number c="1" smaller="smaller">Consumidor secundario</number>
+            </div>
+            <div class="w20 drop" data="3" droptimes="multiple">
+              <number c="1" smaller="smaller">Consumidor terciario</number>
+            </div>
+            <div class="w20 drop" data="4" droptimes="multiple">
+              <number c="1" smaller="smaller">Descomponedores</number>
+            </div>
+            <div class="w20 drop" data="5" droptimes="multiple">
+              <number c="1" smaller="smaller">Productor</number>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', [])
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>
