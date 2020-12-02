@@ -1,0 +1,200 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identificamos la medida de un litro'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drop {
+                width: 100%;
+                min-height: 140px;
+                border: 4px dashed var(--sec);
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.4);
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .drag {
+                width: 30%;
+                min-width: 140px;
+                height: auto;
+            }
+            .drag div {
+                width: 100%;
+                display: flex;
+                background: var(--main);
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+                margin: 8px;
+                border-radius: 10px;
+                padding: 10px;
+                justify-content: center;
+            }
+            .drag div img {
+                flex-shrink: 0;
+                max-width: 6px;
+            }
+
+            .last .clickable {
+                background: #fff;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 var(--main);
+            }
+            .last .clickable > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .last .clickable img {
+                max-width: 30px;
+                margin: 0 4px;
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="true" )
+                activity
+                    .row.w100.info: h1=title
+                    .row.w100: videoplayer(path="i/v1" :autoplay="true" c="2" ref="v1" @completed="temps.a=true")
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES P1
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¿Cuántos litros usó el abuelo para llenar los vasos  de Elena?  Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.mb-1: img(src="i/nina1.png").w30
+                    .h4.text-center ¿Cuántos litros usó el abuelo para llenar los vasos de Elena? 
+                    .row.wrap.around: clickable(v-for="(i, index) in temps.p1" :key="index" :isok="index == 1" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+
+            // SCENES 
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: videoplayer(path="i/v2" :autoplay="true" c="2" ref="v1" @completed="temps.b=true")
+                    .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES P2
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¿Cuántos vasos de Alan llenan un vaso de Elena? Selecciona la respuesta correcta." textaudio="s/instruccion3.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.mb-1
+                        img(src="i/nino1.png").w20
+                        img(src="i/nina1.png").w20
+                    .h4.text-center ¿Cuántos vasos de Alan llenan un vaso de Elena? 
+                    .row.wrap.around: clickable(v-for="(i, index) in temps.p2" :key="index" :isok="index == 2" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES
+            scene(v-if="currentScene==5" hidescorebox :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .row.w100: videoplayer(path="i/v3" :autoplay="true" c="2" ref="v1" @completed="temps.c=true")
+                    .row.w100(v-if="temps.c"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES P3
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¿Cuántos litros le hacen falta a Elena para llenar su vaso?  Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.mb-1: img(src="i/nina2.png").w30
+                    .h4.text-center ¿Cuántos litros le hacen falta a Elena para llenar su vaso? 
+                    .row.wrap.around: clickable(v-for="(i, index) in temps.p3" :key="index" :isok="index == 1" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P4
+            scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="true")
+                activity
+                    .h4.text-center ¿Cuántos litros sobrarán en el recipiente del abuelo si llena sólo los vasos de Elena?
+                    .row.w100
+                        .w40.text-center
+                            img(src="i/5l.png").w20.wm40
+                            img(src="i/nina2.png").w20.wm40
+                        .w40: .drop(data="ok" droptimes="untilok")
+                    .row.w100.wrap.around
+                        drag(data="no" dropzone=".drop" append-to-dropzone)
+                            div
+                                img(src="i/1l.png")
+                                img(src="i/1l.png")
+                        drag(data="ok" dropzone=".drop" append-to-dropzone)
+                            div
+                                img(src="i/1l.png")
+                        drag(data="no" dropzone=".drop" append-to-dropzone)
+                            div
+                                img(src="i/2l.png")
+           
+            // SCENES P5
+            scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.mb-1: img(src="i/nino2.png").w25
+                    .h4.text-center ¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?
+                    .row.wrap.around.last
+                        clickable(key="p81" :isok="false" simple-ok initclass="pa-1" )
+                            div: img(v-for="(i, index) in 3" src="i/1l.png")
+                        clickable(key="p82" :isok="false" simple-ok initclass="pa-1" )
+                            div: img(v-for="(i, index) in 1" src="i/1l.png")
+                        clickable(key="p83" :isok="true" simple-ok initclass="pa-1" )
+                            div: img(v-for="(i, index) in 5" src="i/1l.png")
+            // SCENES P6
+            scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="false")
+                activity
+                    .row.w100.text-center.mb-1: img(src="i/abuelo.png").w25
+                    .h4.text-center ¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?
+                    .row.wrap.around.last
+                        clickable(key="p91" :isok="false" simple-ok initclass="pa-1" )
+                            div
+                                img(v-for="(i, index) in 3" src="i/1l.png")
+                                number(c=1 ) +
+                                img(v-for="(i, index) in 2" src="i/2l.png")
+                        clickable(key="p92" :isok="true" simple-ok initclass="pa-1" )
+                            div
+                                img(v-for="(i, index) in 1" src="i/1l.png")
+                                number(c=1 ) +
+                                img(v-for="(i, index) in 2" src="i/2l.png")
+                        clickable(key="p93" :isok="true" simple-ok initclass="pa-1" )
+                            div
+                                img(v-for="(i, index) in 3" src="i/1l.png")
+                                number(c=1 ) +
+                                img(v-for="(i, index) in 1" src="i/2l.png")
+            
+            // END
+            scene(v-if="currentScene==10" :key="10" end-scene :final-data="finalData")
+
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                
+                app.$set(app.temps, 'p1', [
+                    '5 litros',
+                    '4 litros',
+                    '3 litros',
+                ])
+                app.$set(app.temps, 'p2', [
+                    '3 vasos',
+                    '4 vasos',
+                    '2 vasos',
+                ])
+                app.$set(app.temps, 'p3', [
+                    '4 litros',
+                    '1 litro',
+                    '2 litros',
+                ])
+
+                
+                app.currentScene = 0
+                app.scenesCount = 6

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Identificamos la medida de un litro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .drop {
+          width: 100%;
+          min-height: 140px;
+          border: 4px dashed var(--sec);
+          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.4);
+          margin: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .drag {
+          width: 30%;
+          min-width: 140px;
+          height: auto;
+      }
+      .drag div {
+          width: 100%;
+          display: flex;
+          background: var(--main);
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+          margin: 8px;
+          border-radius: 10px;
+          padding: 10px;
+          justify-content: center;
+      }
+      .drag div img {
+          flex-shrink: 0;
+          max-width: 6px;
+      }
+      
+      .last .clickable {
+          background: #fff;
+          padding: 10px;
+          margin: 10px;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 var(--main);
+      }
+      .last .clickable > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .last .clickable img {
+          max-width: 30px;
+          margin: 0 4px;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="true" )-->
+        <activity>
+          <div class="row w100 info">
+            <h1>Identificamos la medida de un litro</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer path="i/v1" :autoplay="true" c="2" ref="v1" @completed="temps.a=true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P1-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="¿Cuántos litros usó el abuelo para llenar los vasos  de Elena?  Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center mb-1"><img class="w30" src="i/nina1.png"/></div>
+          <div class="h4 text-center">¿Cuántos litros usó el abuelo para llenar los vasos de Elena? </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p1" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES -->
+      <scene v-if="currentScene==3" hidescorebox="hidescorebox" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <videoplayer path="i/v2" :autoplay="true" c="2" ref="v1" @completed="temps.b=true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.b">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="¿Cuántos vasos de Alan llenan un vaso de Elena? Selecciona la respuesta correcta." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center mb-1"><img class="w20" src="i/nino1.png"/><img class="w20" src="i/nina1.png"/></div>
+          <div class="h4 text-center">¿Cuántos vasos de Alan llenan un vaso de Elena? </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p2" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" hidescorebox="hidescorebox" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <videoplayer path="i/v3" :autoplay="true" c="2" ref="v1" @completed="temps.c=true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.c">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="¿Cuántos litros le hacen falta a Elena para llenar su vaso?  Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center mb-1"><img class="w30" src="i/nina2.png"/></div>
+          <div class="h4 text-center">¿Cuántos litros le hacen falta a Elena para llenar su vaso? </div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in temps.p3" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identificamos la medida de un litro" text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="h4 text-center">¿Cuántos litros sobrarán en el recipiente del abuelo si llena sólo los vasos de Elena?</div>
+          <div class="row w100">
+            <div class="w40 text-center"><img class="w20 wm40" src="i/5l.png"/><img class="w20 wm40" src="i/nina2.png"/></div>
+            <div class="w40">
+              <div class="drop" data="ok" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap around">
+            <drag data="no" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div><img src="i/1l.png"/><img src="i/1l.png"/></div>
+            </drag>
+            <drag data="ok" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div><img src="i/1l.png"/></div>
+            </drag>
+            <drag data="no" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div><img src="i/2l.png"/></div>
+            </drag>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5-->
+      <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center mb-1"><img class="w25" src="i/nino2.png"/></div>
+          <div class="h4 text-center">¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?</div>
+          <div class="row wrap around last">
+            <clickable key="p81" :isok="false" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 3" src="i/1l.png"/></div>
+            </clickable>
+            <clickable key="p82" :isok="false" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 1" src="i/1l.png"/></div>
+            </clickable>
+            <clickable key="p83" :isok="true" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 5" src="i/1l.png"/></div>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P6-->
+      <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identificamos la medida de un litro" text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center mb-1"><img class="w25" src="i/abuelo.png"/></div>
+          <div class="h4 text-center">¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?</div>
+          <div class="row wrap around last">
+            <clickable key="p91" :isok="false" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 3" src="i/1l.png"/>
+                <number c="1">+</number><img v-for="(i, index) in 2" src="i/2l.png"/>
+              </div>
+            </clickable>
+            <clickable key="p92" :isok="true" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 1" src="i/1l.png"/>
+                <number c="1">+</number><img v-for="(i, index) in 2" src="i/2l.png"/>
+              </div>
+            </clickable>
+            <clickable key="p93" :isok="true" simple-ok="simple-ok" initclass="pa-1">
+              <div><img v-for="(i, index) in 3" src="i/1l.png"/>
+                <number c="1">+</number><img v-for="(i, index) in 1" src="i/2l.png"/>
+              </div>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==10" :key="10" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      
+      app.$set(app.temps, 'p1', [
+          '5 litros',
+          '4 litros',
+          '3 litros',
+      ])
+      app.$set(app.temps, 'p2', [
+          '3 vasos',
+          '4 vasos',
+          '2 vasos',
+      ])
+      app.$set(app.temps, 'p3', [
+          '4 litros',
+          '1 litro',
+          '2 litros',
+      ])
+      
+      
+      app.currentScene = 0
+      app.scenesCount = 6
+    </script>
+  </body>
+</html>

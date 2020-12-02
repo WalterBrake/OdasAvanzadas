@@ -1,7 +1,7 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = 'Realizo una entrevista'
+- title = ''
 
 <!DOCTYPE html>
 html(lang="es")
@@ -16,11 +16,10 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.intro.play()")
+                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-                    audiotext(ref="intro" audio="s/intro.mp3" text="Una mañana en la clínica veterinaria..." :autoplay="false")
-                    
+            
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")

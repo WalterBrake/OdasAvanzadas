@@ -8,7 +8,13 @@ Vue.component('videoplayer', {
     ],
     data () {
         return {
-
+            player: null
+        }
+    },
+    methods: {
+        play(){
+            console.log('oplay!')
+            this.player.play()
         }
     },
     template: `
@@ -21,11 +27,11 @@ Vue.component('videoplayer', {
     `,
     mounted() {
         var _this = this
-        const player = new Plyr('video', {
+        this.player = new Plyr('video', {
             controls: ['play','progress', 'fullscreen'],
             //iconUrl: '../../assets/aanim/plyr.svg'
         })
-        player.on('ended', event => {
+        this.player.on('ended', event => {
             _this.$emit('completed')
         });
     }
