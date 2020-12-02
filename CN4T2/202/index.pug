@@ -1,7 +1,7 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Encuentro la cadena trófica'
 
 <!DOCTYPE html>
 html(lang="es")
@@ -43,7 +43,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
-                info(type="relacionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="relacionar" title=title text="Relaciona cada animal con el papel que le corresponde en la cadena trófica." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.wrap.cajas
                         .caja
