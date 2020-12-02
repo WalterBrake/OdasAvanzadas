@@ -16974,6 +16974,204 @@
 		"oAP": "\/MA4T2\/137\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA4T2\/143\/i\/1a.png": {
+		"ft": 32768,
+		"iS": 2039,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/1b.png": {
+		"ft": 32768,
+		"iS": 2537,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/1c.png": {
+		"ft": 32768,
+		"iS": 2486,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/1c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/1d.png": {
+		"ft": 32768,
+		"iS": 1824,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/1d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/1e.png": {
+		"ft": 32768,
+		"iS": 2126,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/1e.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/2a.png": {
+		"ft": 32768,
+		"iS": 4310,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/2b.png": {
+		"ft": 32768,
+		"iS": 4411,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/2c.png": {
+		"ft": 32768,
+		"iS": 4589,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/2c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/2d.png": {
+		"ft": 32768,
+		"iS": 4313,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/2d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/2e.png": {
+		"ft": 32768,
+		"iS": 5186,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/2e.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/f1.png": {
+		"ft": 32768,
+		"iS": 26130,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/f1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/f2.png": {
+		"ft": 32768,
+		"iS": 21419,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/f2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/f3.png": {
+		"ft": 32768,
+		"iS": 19915,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/f3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/f4.png": {
+		"ft": 32768,
+		"iS": 20045,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/f4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/r1.png": {
+		"ft": 32768,
+		"iS": 13051,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/r1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/r2.png": {
+		"ft": 32768,
+		"iS": 10328,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/r2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/r3.png": {
+		"ft": 32768,
+		"iS": 9837,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/r3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/143\/i\/r4.png": {
+		"ft": 32768,
+		"iS": 10051,
+		"oA": 0,
+		"oAP": "\/MA4T2\/143\/i\/r4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA4T2\/143\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -16990,18 +17188,18 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA4T2\/143\/s\/Sumo y resto fracciones Ma 4a T2_Inst2_SumaResta.wav": {
+	"\/MA4T2\/143\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/143\/s\/Sumo y resto fracciones Ma 4a T2_Inst2_SumaResta.wav",
+		"oAP": "\/MA4T2\/143\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA4T2\/143\/s\/Sumo y resto fracciones Ma 4a T2_Inst_Relaciona.wav": {
+	"\/MA4T2\/143\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/143\/s\/Sumo y resto fracciones Ma 4a T2_Inst_Relaciona.wav",
+		"oAP": "\/MA4T2\/143\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {

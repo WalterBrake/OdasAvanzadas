@@ -1,12 +1,34 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Sumo y resto fracciones'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag{
+                width: auto;
+                height: auto;
+            }
+            .fig{
+                display: flex;
+            }
+            .fraccs{
+                text-align: center;
+            }
+            .fracss .fig {
+                background: rgba(255, 255, 255, 0.5);
+                justify-content: center;
+                margin-bottom: 4px;
+                border-radius: 10px;
+            }
+            @media (min-width: 681px) {
+                .fracss .fig .conector {
+                    margin-top: -30px;
+                    margin-left: 20px;
+                }
+            }
 
 
     body
@@ -15,14 +37,62 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .figuras.w40
+                            .fig
+                                img(src="i/1a.png").w30
+                                drag(dropzone=".drop" data="1" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                img(src="i/1b.png").w30
+                                drag(dropzone=".drop" data="2" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                img(src="i/1c.png").w30
+                                drag(dropzone=".drop" data="3" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                img(src="i/1d.png").w30
+                                drag(dropzone=".drop" data="4" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                            .fig
+                                img(src="i/1e.png").w30
+                                drag(dropzone=".drop" data="5" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
+                        .fraccs.w40
+                            .frc.drop(data="5" droptimes="untilok"): img(src="i/2e.png").w20
+                            .frc.drop(data="1" droptimes="untilok"): img(src="i/2a.png").w20
+                            .frc.drop(data="3" droptimes="untilok"): img(src="i/2c.png").w20
+                            .frc.drop(data="4" droptimes="untilok"): img(src="i/2d.png").w20
+                            .frc.drop(data="2" droptimes="untilok"): img(src="i/2b.png").w20
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Relaciona la respuesta correcta de la suma o resta de fracciones." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .figuras.w60.fracss
+                            .fig
+                                img(src="i/f1.png").w50
+                                drag(dropzone=".drop" data="1" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c1
+                            .fig
+                                img(src="i/f2.png").w50
+                                drag(dropzone=".drop" data="2" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c1
+                            .fig
+                                img(src="i/f3.png").w50
+                                drag(dropzone=".drop" data="3" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c1
+                            .fig
+                                img(src="i/f4.png").w50
+                                drag(dropzone=".drop" data="4" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c1
+                        .fraccs.w30
+                            .frc.drop(data="4" droptimes="untilok"): img(src="i/r4.png").w40
+                            .frc.drop(data="1" droptimes="untilok"): img(src="i/r1.png").w40
+                            .frc.drop(data="2" droptimes="untilok"): img(src="i/r2.png").w40
+                            .frc.drop(data="3" droptimes="untilok"): img(src="i/r3.png").w40
+                                
+
+
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +101,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2
