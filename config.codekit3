@@ -13762,6 +13762,28 @@
 		"oAP": "\/MA2T2\/177\/s\/p6.mp3",
 		"oF": 0
 		},
+	"\/MA2T2\/180\/i\/fondo.png": {
+		"ft": 32768,
+		"iS": 35219,
+		"oA": 0,
+		"oAP": "\/MA2T2\/180\/i\/fondo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T2\/180\/i\/kid.png": {
+		"ft": 32768,
+		"iS": 31462,
+		"oA": 0,
+		"oAP": "\/MA2T2\/180\/i\/kid.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA2T2\/180\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13778,53 +13800,53 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_125.wav": {
+	"\/MA2T2\/180\/s\/125.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_125.wav",
+		"oAP": "\/MA2T2\/180\/s\/125.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_306.wav": {
+	"\/MA2T2\/180\/s\/306.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_306.wav",
+		"oAP": "\/MA2T2\/180\/s\/306.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_422.wav": {
+	"\/MA2T2\/180\/s\/422.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_422.wav",
+		"oAP": "\/MA2T2\/180\/s\/422.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_587.wav": {
+	"\/MA2T2\/180\/s\/587.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_587.wav",
+		"oAP": "\/MA2T2\/180\/s\/587.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_601.wav": {
+	"\/MA2T2\/180\/s\/601.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_601.wav",
+		"oAP": "\/MA2T2\/180\/s\/601.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_909.wav": {
+	"\/MA2T2\/180\/s\/909.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_909.wav",
+		"oAP": "\/MA2T2\/180\/s\/909.mp3",
 		"oF": 0
 		},
-	"\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_Ayuda.wav": {
+	"\/MA2T2\/180\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA2T2\/180\/s\/Construyo números Ma 2o T2_Inst_Ayuda.wav",
+		"oAP": "\/MA2T2\/180\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA2T2\/183\/i\/1l.png": {
@@ -15171,11 +15193,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T2\/139\/s\/instruccion1.wav": {
+	"\/MA3T2\/139\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/139\/s\/instruccion1.wav",
+		"oAP": "\/MA3T2\/139\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA4T1\/111\/aimg\/az.svg": {

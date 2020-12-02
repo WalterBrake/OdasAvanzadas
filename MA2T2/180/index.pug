@@ -1,12 +1,60 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Construyo números'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .high {
+                background: var(--accent);
+                padding: 4px 4px 10px;
+                border-radius: 10px;
+                width: 90%;
+                margin-top: auto;
+                font-size: 1.4rem;
+                box-shadow: 4px 4px 0 #fff;
+            }
+            .high .audiotext .audiotextBtn {
+                width: 30px;
+                height: 30px;
+            }
+            .drop {
+                background: #fff;
+                min-height: 120px;
+                padding: 6px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drop .number.smaller:first-child {
+                background: linear-gradient(#fff, #f0f0f0);
+                padding: 10px 4px;
+                border-radius: 6px;
+            }
+            @media (max-width: 680px) {
+                .drop .number.smaller:first-child {
+                    font-size: 0.8rem;
+                    padding: 10px 1px;
+                }
+            }
+            @media (max-width: 680px) {
+                .drop {
+                    padding: 2px;
+                }
+            }
+            .drop.isok {
+                background: var(--accent);
+            }
+            .drag {
+                background: #f5f5f5;
+                margin: 4px;
+                width: auto;
+                height: auto;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
 
 
     body
@@ -14,21 +62,59 @@ html(lang="es")
             // START
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
-            // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
-                activity
-                    .row.w100
+            mixin casillas(ok, rand)
+                .row.w100.wrap.text-center
+                    .w30.wm100: img(src="i/kid.png").w90.wm40
+                    .row.w70.wm100.text-center.around
+                        .drop.w30(:data="i" droptimes="untilok" v-for="(i, index) in "+ok)
+                            number(c="1" smaller v-if="index == 0") Centenas
+                            number(c="2" smaller v-if="index == 1") Decenas
+                            number(c="3" smaller v-if="index == 2") Unidades
+                .row.w100.wrap
+                    drag(v-for="(i, index) in "+rand dropzone=".drop" append-to-dropzone stay-if-ok :data="i" dropzone-ok-class="isok"): number(c="5" small) {{i}}
+
+
+            // SCENES P1
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/306.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true")
+                    .high(v-if="temps.a"): audiotext(audio="s/306.mp3" text="Trescientos seis" :autoplay="true")
+                activity: +casillas('[3,0,6]', '[6,3,0]')
             
+            // SCENES P2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/587.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .high: audiotext(audio="s/587.mp3" text="Quinientos ochenta y siete" :autoplay="true")
+                activity: +casillas('[5,8,7]', '[7,5,8]')
+            // SCENES P3
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/601.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .high: audiotext(audio="s/601.mp3" text="Seiscientos uno" :autoplay="true")
+                activity: +casillas('[6,0,1]', '[6,1,0]')
+            // SCENES P4
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/909.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .high: audiotext(audio="s/909.mp3" text="Novecientos nueve" :autoplay="true")
+                activity: +casillas('[9,0,9]', '[0,9,9]')
+            // SCENES P5
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/422.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .high: audiotext(audio="s/422.mp3" text="Cuatrocientos veintidos" :autoplay="true")
+                activity: +casillas('[4,2,2]', '[2,4,2]')
+            // SCENES P6
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/125.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .high: audiotext(audio="s/125.mp3" text="Ciento veinticinco" :autoplay="true")
+                activity: +casillas('[1,2,5]', '[5,1,2]')
+
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 6

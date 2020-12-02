@@ -3,27 +3,221 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Construyo números</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .high {
+          background: var(--accent);
+          padding: 4px 4px 10px;
+          border-radius: 10px;
+          width: 90%;
+          margin-top: auto;
+          font-size: 1.4rem;
+          box-shadow: 4px 4px 0 #fff;
+      }
+      .high .audiotext .audiotextBtn {
+          width: 30px;
+          height: 30px;
+      }
+      .drop {
+          background: #fff;
+          min-height: 120px;
+          padding: 6px;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drop .number.smaller:first-child {
+          background: linear-gradient(#fff, #f0f0f0);
+          padding: 10px 4px;
+          border-radius: 6px;
+      }
+      @media (max-width: 680px) {
+          .drop .number.smaller:first-child {
+              font-size: 0.8rem;
+              padding: 10px 1px;
+          }
+      }
+      @media (max-width: 680px) {
+          .drop {
+              padding: 2px;
+          }
+      }
+      .drop.isok {
+          background: var(--accent);
+      }
+      .drag {
+          background: #f5f5f5;
+          margin: 4px;
+          width: auto;
+          height: auto;
+          padding: 20px;
+          border-radius: 10px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
-      <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <!-- SCENES P1-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/306.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true">
+          <div class="high" v-if="temps.a">
+            <audiotext audio="s/306.mp3" text="Trescientos seis" :autoplay="true"></audiotext>
+          </div>
+        </info>
         <activity>
-          <div class="row w100"></div>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [3,0,6]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [6,3,0]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/587.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="high">
+            <audiotext audio="s/587.mp3" text="Quinientos ochenta y siete" :autoplay="true"></audiotext>
+          </div>
+        </info>
+        <activity>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [5,8,7]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [7,5,8]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/601.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="high">
+            <audiotext audio="s/601.mp3" text="Seiscientos uno" :autoplay="true"></audiotext>
+          </div>
+        </info>
+        <activity>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [6,0,1]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [6,1,0]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/909.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="high">
+            <audiotext audio="s/909.mp3" text="Novecientos nueve" :autoplay="true"></audiotext>
+          </div>
+        </info>
+        <activity>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [9,0,9]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [0,9,9]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/422.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="high">
+            <audiotext audio="s/422.mp3" text="Cuatrocientos veintidos" :autoplay="true"></audiotext>
+          </div>
+        </info>
+        <activity>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [4,2,2]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [2,4,2]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
+        </activity>
+      </scene>
+      <!-- SCENES P6-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/125.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Construyo números" text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="high">
+            <audiotext audio="s/125.mp3" text="Ciento veinticinco" :autoplay="true"></audiotext>
+          </div>
+        </info>
+        <activity>
+                <div class="row w100 wrap text-center">
+                  <div class="w30 wm100"><img class="w90 wm40" src="i/kid.png"/></div>
+                  <div class="row w70 wm100 text-center around">
+                    <div class="drop w30" :data="i" droptimes="untilok" v-for="(i, index) in [1,2,5]">
+                      <number c="1" smaller="smaller" v-if="index == 0">Centenas</number>
+                      <number c="2" smaller="smaller" v-if="index == 1">Decenas</number>
+                      <number c="3" smaller="smaller" v-if="index == 2">Unidades</number>
+                    </div>
+                  </div>
+                </div>
+                <div class="row w100 wrap">
+                  <drag v-for="(i, index) in [5,1,2]" dropzone=".drop" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" :data="i" dropzone-ok-class="isok">
+                    <number c="5" small="small">{{i}}</number>
+                  </drag>
+                </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==7" :key="7" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -56,10 +250,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 6
     </script>
   </body>
 </html>
