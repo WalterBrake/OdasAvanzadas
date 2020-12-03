@@ -38,8 +38,14 @@
       }
       .drag div img {
           flex-shrink: 0;
-          max-width: 6px;
+          max-width: 40px !important;
+          min-width: 20px;
       }
+      
+      .drop .oper{
+          border: 2px dashed var(--main);
+      }
+      
       
       .last .clickable {
           background: #fff;
@@ -57,6 +63,50 @@
           max-width: 30px;
           margin: 0 4px;
       }
+      
+      .drop {
+          flex-direction: column;
+      }
+      .drop .oper {
+          border: 2px dashed var(--main);
+          display: flex;
+          border-radius: 10px;
+          background: #fff;
+          padding: 10px;
+          height: auto;
+          align-items: center;
+      }
+      .drop .oper img, .drop img {
+          max-width: 20px;
+          min-width: 20px;
+      }
+      @media (max-width: 680px) {
+          .drop .oper {
+              flex-direction: column;
+          }
+      }
+      .drag .oper {
+          align-items: center;
+          width: 100%;
+      }
+      .drag .oper .number,
+      .drag .oper div {
+          font-size: 3rem;
+          box-shadow: none;
+          background: none;
+      }
+      @media (max-width: 680px) {
+          .drag .oper img {
+              max-width: 10px;
+              min-width: 10px;
+          }
+      }
+      @media (max-width: 680px) {
+          .drag {
+              width: 90% !important;
+          }
+      }
+      
       
       
       
@@ -170,46 +220,85 @@
       </scene>
       <!-- SCENES P5-->
       <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identificamos la medida de un litro" text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Identificamos la medida de un litro" text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="false"></info>
         <activity>
-          <div class="row w100 text-center mb-1"><img class="w25" src="i/nino2.png"/></div>
+          <!--.row.w100.text-center.mb-1: img(src="i/nino2.png").w25-->
+          <!--.h4.text-center ¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?-->
           <div class="h4 text-center">¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?</div>
-          <div class="row wrap around last">
-            <clickable key="p81" :isok="false" simple-ok="simple-ok" initclass="pa-1">
+          <div class="row w100">
+            <div class="w40 text-center"><img class="w30 wm40" src="i/nino2.png"/></div>
+            <div class="w40">
+              <div class="drop" data="ok" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap around">
+            <drag data="no" dropzone=".drop" append-to-dropzone="append-to-dropzone">
               <div><img v-for="(i, index) in 3" src="i/1l.png"/></div>
-            </clickable>
-            <clickable key="p82" :isok="false" simple-ok="simple-ok" initclass="pa-1">
+            </drag>
+            <drag data="no" dropzone=".drop" append-to-dropzone="append-to-dropzone">
               <div><img v-for="(i, index) in 1" src="i/1l.png"/></div>
-            </clickable>
-            <clickable key="p83" :isok="true" simple-ok="simple-ok" initclass="pa-1">
+            </drag>
+            <drag data="ok" dropzone=".drop" append-to-dropzone="append-to-dropzone">
               <div><img v-for="(i, index) in 5" src="i/1l.png"/></div>
-            </clickable>
+            </drag>
           </div>
         </activity>
       </scene>
       <!-- SCENES P6-->
-      <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+      <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
         <info type="seleccionar" title="Identificamos la medida de un litro" text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="false"></info>
         <activity>
-          <div class="row w100 text-center mb-1"><img class="w25" src="i/abuelo.png"/></div>
-          <div class="h4 text-center">¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?</div>
-          <div class="row wrap around last">
-            <clickable key="p91" :isok="false" simple-ok="simple-ok" initclass="pa-1">
-              <div><img v-for="(i, index) in 3" src="i/1l.png"/>
-                <number c="1">+</number><img v-for="(i, index) in 2" src="i/2l.png"/>
+          <div class="h4 text-center">¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?
+            <div class="row w100">
+              <div class="w40 text-center"><img class="w30 wm40" src="i/abuelo.png"/></div>
+              <div class="w40">
+                <div class="drop" data="ok" droptimes="untilok"></div>
               </div>
-            </clickable>
-            <clickable key="p92" :isok="true" simple-ok="simple-ok" initclass="pa-1">
-              <div><img v-for="(i, index) in 1" src="i/1l.png"/>
-                <number c="1">+</number><img v-for="(i, index) in 2" src="i/2l.png"/>
-              </div>
-            </clickable>
-            <clickable key="p93" :isok="true" simple-ok="simple-ok" initclass="pa-1">
-              <div><img v-for="(i, index) in 3" src="i/1l.png"/>
-                <number c="1">+</number><img v-for="(i, index) in 1" src="i/2l.png"/>
-              </div>
-            </clickable>
+            </div>
           </div>
+          <div class="row w100 wrap around">
+            <drag data="no" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div class="oper">
+                <div><img v-for="(i, index) in 3" src="i/1l.png"/></div>
+                <number c="2">+</number>
+                <div><img v-for="(i, index) in 2" src="i/2l.png"/></div>
+              </div>
+            </drag>
+            <drag data="ok" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div class="oper">
+                <div><img v-for="(i, index) in 1" src="i/1l.png"/></div>
+                <number c="2">+</number>
+                <div><img v-for="(i, index) in 2" src="i/2l.png"/></div>
+              </div>
+            </drag>
+            <drag data="ok" dropzone=".drop" append-to-dropzone="append-to-dropzone">
+              <div class="oper">
+                <div><img v-for="(i, index) in 3" src="i/1l.png"/></div>
+                <number c="2">+</number>
+                <div><img v-for="(i, index) in 1" src="i/2l.png"/></div>
+              </div>
+            </drag>
+          </div>
+          <!--.row.w100.text-center.mb-1: img(src="i/abuelo.png").w25-->
+          <!--.h4.text-center ¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?-->
+          <!--.row.wrap.around.last
+          clickable(key="p91" :isok="false" simple-ok initclass="pa-1" )
+              div
+                  img(v-for="(i, index) in 3" src="i/1l.png")
+                  number(c=1 ) +
+                  img(v-for="(i, index) in 2" src="i/2l.png")
+          clickable(key="p92" :isok="true" simple-ok initclass="pa-1" )
+              div
+                  img(v-for="(i, index) in 1" src="i/1l.png")
+                  number(c=1 ) +
+                  img(v-for="(i, index) in 2" src="i/2l.png")
+          clickable(key="p93" :isok="true" simple-ok initclass="pa-1" )
+              div
+                  img(v-for="(i, index) in 3" src="i/1l.png")
+                  number(c=1 ) +
+                  img(v-for="(i, index) in 1" src="i/2l.png")
+          
+          -->
         </activity>
       </scene>
       <!-- END-->

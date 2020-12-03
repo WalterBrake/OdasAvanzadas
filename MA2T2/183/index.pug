@@ -35,8 +35,14 @@ html(lang="es")
             }
             .drag div img {
                 flex-shrink: 0;
-                max-width: 6px;
+                max-width: 40px !important;
+                min-width: 20px;
             }
+
+            .drop .oper{
+                border: 2px dashed var(--main);
+            }
+
 
             .last .clickable {
                 background: #fff;
@@ -54,6 +60,50 @@ html(lang="es")
                 max-width: 30px;
                 margin: 0 4px;
             }
+
+            .drop {
+                flex-direction: column;
+            }
+            .drop .oper {
+                border: 2px dashed var(--main);
+                display: flex;
+                border-radius: 10px;
+                background: #fff;
+                padding: 10px;
+                height: auto;
+                align-items: center;
+            }
+            .drop .oper img, .drop img {
+                max-width: 20px;
+                min-width: 20px;
+            }
+            @media (max-width: 680px) {
+                .drop .oper {
+                    flex-direction: column;
+                }
+            }
+            .drag .oper {
+                align-items: center;
+                width: 100%;
+            }
+            .drag .oper .number,
+            .drag .oper div {
+                font-size: 3rem;
+                box-shadow: none;
+                background: none;
+            }
+            @media (max-width: 680px) {
+                .drag .oper img {
+                    max-width: 10px;
+                    min-width: 10px;
+                }
+            }
+            @media (max-width: 680px) {
+                .drag {
+                    width: 90% !important;
+                }
+            }
+
 
 
 
@@ -134,24 +184,60 @@ html(lang="es")
            
             // SCENES P5
             scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="false")
                 activity
-                    .row.w100.text-center.mb-1: img(src="i/nino2.png").w25
+                    //.row.w100.text-center.mb-1: img(src="i/nino2.png").w25
+                    //.h4.text-center ¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?
+                    
+
+
                     .h4.text-center ¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?
-                    .row.wrap.around.last
-                        clickable(key="p81" :isok="false" simple-ok initclass="pa-1" )
+                    .row.w100
+                        .w40.text-center
+                            img(src="i/nino2.png").w30.wm40
+                        .w40: .drop(data="ok" droptimes="untilok")
+                    .row.w100.wrap.around
+                        drag(data="no" dropzone=".drop" append-to-dropzone)
                             div: img(v-for="(i, index) in 3" src="i/1l.png")
-                        clickable(key="p82" :isok="false" simple-ok initclass="pa-1" )
+                        drag(data="no" dropzone=".drop" append-to-dropzone)
                             div: img(v-for="(i, index) in 1" src="i/1l.png")
-                        clickable(key="p83" :isok="true" simple-ok initclass="pa-1" )
+                        drag(data="ok" dropzone=".drop" append-to-dropzone)
                             div: img(v-for="(i, index) in 5" src="i/1l.png")
+
+
+
+
             // SCENES P6
-            scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+            scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion6.mp3" :autoplay="false")
                 activity
-                    .row.w100.text-center.mb-1: img(src="i/abuelo.png").w25
+
                     .h4.text-center ¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?
-                    .row.wrap.around.last
+                        .row.w100
+                            .w40.text-center
+                                img(src="i/abuelo.png").w30.wm40
+                            .w40: .drop(data="ok" droptimes="untilok")
+                    .row.w100.wrap.around
+                        drag(data="no" dropzone=".drop" append-to-dropzone)
+                            div.oper
+                                div: img(v-for="(i, index) in 3" src="i/1l.png")
+                                number(c=2 ) +
+                                div: img(v-for="(i, index) in 2" src="i/2l.png")
+                        drag(data="ok" dropzone=".drop" append-to-dropzone)
+                            div.oper
+                                div: img(v-for="(i, index) in 1" src="i/1l.png")
+                                number(c=2 ) +
+                                div: img(v-for="(i, index) in 2" src="i/2l.png")
+                        drag(data="ok" dropzone=".drop" append-to-dropzone)
+                            div.oper
+                                div: img(v-for="(i, index) in 3" src="i/1l.png")
+                                number(c=2 ) +
+                                div: img(v-for="(i, index) in 1" src="i/2l.png")
+                    
+                    
+                    //.row.w100.text-center.mb-1: img(src="i/abuelo.png").w25
+                    //.h4.text-center ¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?
+                    //.row.wrap.around.last
                         clickable(key="p91" :isok="false" simple-ok initclass="pa-1" )
                             div
                                 img(v-for="(i, index) in 3" src="i/1l.png")
