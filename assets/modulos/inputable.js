@@ -3,7 +3,8 @@ Vue.component('inputable', {
         'oksound', // sonido al reproducir cuando OK
         'particleColor', // color de particulas
         'initclass', // class de inicio (se pueden usar c1,c2,c3...)
-        'isok', // texto a comparar
+        'isok', // texto a comparar,
+        'playError' //Suena error si no es correcto
     ],
     data() {
         return {
@@ -24,6 +25,10 @@ Vue.component('inputable', {
             if(textinput == this.isok) {
                 this.status = true
                 this.isOkFn()
+            } else {
+                if(this.playError != undefined && textinput.length>0){
+                    s_error.play()
+                }
             }
         },
         isOkFn() {

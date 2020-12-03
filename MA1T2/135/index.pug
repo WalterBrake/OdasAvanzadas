@@ -138,10 +138,10 @@ html(lang="es")
                         .row.w90
                             .w50.text-center
                                 .h4 Grupos de 10:
-                                inputable(initclass="c8" :isok="3"): number(c=8 small) 3
+                                inputable(initclass="c8" :isok="3" play-error): number(c=8 small) 3
                             .w50.text-center
                                 .h4 Sobrante:
-                                inputable(initclass="c7" :isok="5"): number(c=7 small) 5
+                                inputable(initclass="c7" :isok="5" play-error): number(c=7 small) 5
             
             // END
             scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
