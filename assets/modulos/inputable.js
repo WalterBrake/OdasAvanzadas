@@ -21,8 +21,8 @@ Vue.component('inputable', {
     methods: {
         filled () {
             s_select.play()
-            var textinput = this.inputed.toLowerCase()
-            if(textinput == this.isok) {
+            var textinput = this.inputed.toLowerCase().trim()
+            if(textinput == this.isok && textinput.length>0) {
                 this.status = true
                 this.isOkFn()
             } else {
