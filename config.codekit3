@@ -10074,6 +10074,71 @@
 		"oAP": "\/HI4T1\/263\/index.html",
 		"oF": 0
 		},
+	"\/HI4T2\/266\/i\/bgmap.png": {
+		"ft": 32768,
+		"iS": 165220,
+		"oA": 0,
+		"oAP": "\/HI4T2\/266\/i\/bgmap.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/266\/i\/mov1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI4T2\/266\/i\/mov1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI4T2\/266\/i\/mov2.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI4T2\/266\/i\/mov2-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI4T2\/266\/i\/mov3.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI4T2\/266\/i\/mov3-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI4T2\/266\/i\/mov4.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/HI4T2\/266\/i\/mov4-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/HI4T2\/266\/i\/rship-removebg-preview.png": {
+		"ft": 32768,
+		"iS": 249592,
+		"oA": 0,
+		"oAP": "\/HI4T2\/266\/i\/rship-removebg-preview.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/266\/i\/rship.png": {
+		"ft": 32768,
+		"iS": 590795,
+		"oA": 0,
+		"oAP": "\/HI4T2\/266\/i\/rship.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/HI4T2\/266\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -10090,18 +10155,18 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/HI4T2\/266\/s\/Ubico las rutas de exploración Hi4°T2_Inst_Ahora.wav": {
+	"\/HI4T2\/266\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI4T2\/266\/s\/Ubico las rutas de exploración Hi4°T2_Inst_Ahora.wav",
+		"oAP": "\/HI4T2\/266\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/HI4T2\/266\/s\/Ubico las rutas de exploración Hi4°T2_Inst_Coloca.wav": {
+	"\/HI4T2\/266\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI4T2\/266\/s\/Ubico las rutas de exploración Hi4°T2_Inst_Coloca.wav",
+		"oAP": "\/HI4T2\/266\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/HI5T1\/256\/aimg\/barco.svg": {
@@ -17143,11 +17208,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/MA4T2\/143\/i\/2a-bb.png": {
+	"\/MA4T2\/143\/i\/2a.png": {
 		"ft": 32768,
 		"iS": 2703,
 		"oA": 0,
-		"oAP": "\/MA4T2\/143\/i\/2a-bb.png",
+		"oAP": "\/MA4T2\/143\/i\/2a.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,

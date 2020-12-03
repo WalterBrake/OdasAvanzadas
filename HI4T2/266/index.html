@@ -3,27 +3,168 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Ubico las rutas de exploración</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+          font-size: 0.8rem;
+          background: #BB9366;
+          padding: 6px;
+          border-radius: 10px;
+          color: #fff;
+      }
+      .w20 {
+          min-width: 140px;
+      }
+      .drop {
+          background: #FBEAC2;
+          border-radius: 10px;
+          min-height: 120px;
+          text-align: center;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drop .number {
+          font-size: 1.2rem;
+      }
+      .drop > div {
+          font-size: 0.8rem;
+          margin-top: 10px;
+      }
+      @media (max-width: 680px) {
+          .drag {
+              font-size: 0.7rem;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="setEv" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico las rutas de exploración" text="Coloca en orden los viajes que hizo Cristóbal Colón a América." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w50">
+              <template v-if="temps.a == 0"><img class="w100" src="i/bgmap.png"/></template>
+              <template v-if="temps.a == 1">
+                <lottie-player src="i/mov1.json" key="m1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay"></lottie-player>
+              </template>
+              <template v-else-if="temps.a == 2">
+                <lottie-player src="i/mov2.json" key="m2" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay"></lottie-player>
+              </template>
+              <template v-else-if="temps.a == 3">
+                <lottie-player src="i/mov3.json" key="m3" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay"></lottie-player>
+              </template>
+              <template v-else-if="temps.a == 4">
+                <lottie-player src="i/mov4.json" key="m4" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay"></lottie-player>
+              </template>
+            </div>
+          </div>
+          <div class="row w100 around wrap">
+            <div class="drop w20" droptimes="untilok" data="1">
+              <number c="1" smaller="smaller">Primer viaje</number>
+            </div>
+            <div class="drop w20" droptimes="untilok" data="2">
+              <number c="2" smaller="smaller">Segundo viaje</number>
+            </div>
+            <div class="drop w20" droptimes="untilok" data="3">
+              <number c="3" smaller="smaller">Tercer viaje</number>
+            </div>
+            <div class="drop w20" droptimes="untilok" data="4">
+              <number c="4" smaller="smaller">Cuarto viaje</number>
+            </div>
+          </div>
+          <div class="row w100 mt-1" v-if="temps.a==4">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(temps.ev)">Continuar</button>
+          </div>
+          <div class="row w100 wrap around mt-auto" v-if="temps.a!=4">
+            <div class="w20">
+              <drag dropzone=".drop" data="1" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" @isok="temps.a=1">
+                <div>De Sanlúcar de Barrameda a Trinidad, Golfo de Paria, Bocas de Orinoco (1498-1500)</div>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag dropzone=".drop" data="2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" @isok="temps.a=2">
+                <div>De Sevilla a Guadalupe, Puerto Rico, Santo Domingo, Cuba, Jamaica (1493-1496)</div>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag dropzone=".drop" data="3" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" @isok="temps.a=3">
+                <div>De España a  Jamaica, Costa de Cuba, Isla de Guanaja, Golfo de Honduras, Nicaragua, Costa Rica, Panamá (1502-1504)</div>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag dropzone=".drop" data="4" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok" @isok="temps.a=4">
+                <div>De Puerto de Palos a Isla Cayo Samana (3 de agosto a 12 de octubre de 1492)</div>
+              </drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P1-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico las rutas de exploración" text="Ahora, selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100"><img class="w20 wm40" src="i/rship.png"/></div>
+          <div class="h4">¿Por qué buscaban los reinos europeos explorar rutas alternativas de comercio?</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Porque no tenían alimentos en toda Europa.','Porque sus rutas tradicionales fueron interrumpidas por los turcos-otomanos.', 'Porque querían encontrar nuevas tierras.']" :key="'p1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 text-center">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P2-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico las rutas de exploración" text="Ahora, selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w20 wm40" src="i/rship.png"/></div>
+          <div class="h4">¿Qué hizo Cristóbal Colón en 1492?</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Construyó tres barcos para hacer un viaje a Asia.','Habló con los reyes de Inglaterra para hacer un viaje.','Buscó una ruta para ir a la India tomando dirección a Occidente.']" :key="'p2'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 text-center">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico las rutas de exploración" text="Ahora, selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w20 wm40" src="i/rship.png"/></div>
+          <div class="h4">¿Cuántas décadas pasaron entre la decisión de buscar nuevas rutas hacia Asia y la colonización de la Nueva España?</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['4 décadas','10 décadas','6 décadas']" :key="'p3'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 text-center">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P4-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico las rutas de exploración" text="Ahora, selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w20 wm40" src="i/rship.png"/></div>
+          <div class="h4">¿En qué siglo llegó Cristóbal Colón al continente americano?</div>
+          <div class="row wrap around">
+            <clickable v-for="(i, index) in ['Siglo XX','Siglo XVIII','Siglo XV']" :key="'p4'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 text-center">
+              <number randomc="randomc" smaller="smaller">{{i}}</number>
+            </clickable>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -56,10 +197,13 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', 0)
+      app.setEv = function ($ev){
+          app.$set(app.temps, 'ev', $ev)
+      }
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>
