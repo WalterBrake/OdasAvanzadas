@@ -7,7 +7,7 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
-            .caja{ margin: 10px; }
+            .caja{ margin: 2px 10px; }
             .caja img {
                 max-width: 120px;
                 border-radius: 6px;
@@ -73,7 +73,7 @@ html(lang="es")
                             img(src="i/a7.jpg").w100
                             drag(data="3" dropzone=".drop" drag-line stay-if-ok particle-color="#C1CA27"): .conector.c7
                             
-                    .row.w100.wrap.mt-1
+                    .row.w100.wrap
                         .w20.drop(data="1" droptimes="multiple"): number(c=1 smaller) Consumidor primario
                         .w20.drop(data="2" droptimes="multiple"): number(c=1 smaller) Consumidor secundario
                         .w20.drop(data="3" droptimes="multiple"): number(c=1 smaller) Consumidor terciario
