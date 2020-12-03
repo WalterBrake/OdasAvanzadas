@@ -53,7 +53,7 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
@@ -94,7 +94,7 @@ html(lang="es")
             
             
             // END
-            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
         +scripts
             script.
