@@ -847,3 +847,113 @@ embed {
 .pt-5{padding-top: 50px;}
 
 .text-center{ text-align: center; }
+
+
+
+
+
+
+/*  COMIC */
+
+.comic {
+	text-align: center;
+	position: relative;
+	.dialog{
+		position: absolute;
+        &.tc{ left: 50%; top: 0; margin-left: -20%; }
+        &.bc{ left: 50%; bottom: 0; margin-left: -20%; }
+        &.cl{ left: 0; top: 50%; }
+        
+        &.tl{ left: 0; top: 0; }
+		&.tr{ right: 0; top: 0; }
+		&.bl{ left: 0; bottom: 0; }
+        &.br{ right: 0; bottom: 0; }
+        
+        &.tip-t{
+            &:before{
+                content: "";
+                width: 0; 
+                height: 0; 
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 30px solid black;
+                position: absolute; top:-30px; right: 5%;
+            }
+            }
+        &.tip-b{
+            &:before{
+                content: "";
+                width: 0; 
+                height: 0; 
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 30px solid black;
+                position: absolute; bottom:-30px; left: 5%;
+            }
+        }
+        &.tip-r{
+            &:before{
+                content: "";
+                width: 0; 
+                height: 0; 
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 30px solid black;
+                position: absolute; right:-30px; bottom: 5%;
+            }
+        }
+        &.tip-l{
+            &:before{
+                content: "";
+                width: 0; 
+                height: 0; 
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-right: 30px solid black;
+                position: absolute; left:-30px; bottom: 5%;
+            }
+        }
+
+
+		margin: 4%;
+		background: #fff;
+		max-width: 40%;
+		border: 4px solid #000;
+		padding: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+
+		.audiotextBtn{
+			width: 20px; height: 20px;
+			position: absolute;
+			padding: 4px;
+			background: #000;
+			border-radius: 50%;
+			top: -22px;
+            right: -22px;
+            @media (max-width: 680px){
+                width: 14px; height: 14px;
+                border: 2px solid #000;
+            }
+        }
+        @media (max-width: 680px){
+            font-size: 0.8rem;
+            padding: 10px 4px;
+            border: 2px solid #000;
+        }
+	}
+}
+
+
+
+.floating{
+    position: absolute;
+    background: var(--clear);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+    &.b{
+        bottom: 0;
+    }
+}

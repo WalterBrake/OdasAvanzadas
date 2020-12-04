@@ -99,9 +99,9 @@ var app = new Vue({
             this.screencapture()
 
             //this.changeSceneTransition()
-
-            this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 100)
-            
+            setTimeout(function (){
+                _this.timeoutSounds = setInterval(_this.checkIfSoundsArePlaying, 10)
+            }, 500)
         },
         checkIfSoundsArePlaying(){
             var allmuted = true
@@ -190,7 +190,6 @@ var app = new Vue({
     created: function (){
         var _this = this
         EventBus.$on('changeTemps', function (thevar, value) {
-            console.log(_this.temps)
             _this.temps[thevar] = value
         })
     }

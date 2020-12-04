@@ -5511,44 +5511,77 @@
 		"oAP": "\/ES1T2\/46\/s\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/ES1T2\/50\/i\/a1.png": {
+	"\/ES1T2\/50\/i\/v1.png": {
 		"ft": 32768,
-		"iS": 315458,
+		"iS": 64980,
 		"oA": 0,
-		"oAP": "\/ES1T2\/50\/i\/a1.png",
+		"oAP": "\/ES1T2\/50\/i\/v1.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/ES1T2\/50\/i\/a2.png": {
+	"\/ES1T2\/50\/i\/v2.png": {
 		"ft": 32768,
-		"iS": 250693,
+		"iS": 292289,
 		"oA": 0,
-		"oAP": "\/ES1T2\/50\/i\/a2.png",
+		"oAP": "\/ES1T2\/50\/i\/v2.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/ES1T2\/50\/i\/a3.png": {
+	"\/ES1T2\/50\/i\/v3.png": {
 		"ft": 32768,
-		"iS": 248909,
+		"iS": 244011,
 		"oA": 0,
-		"oAP": "\/ES1T2\/50\/i\/a3.png",
+		"oAP": "\/ES1T2\/50\/i\/v3.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/ES1T2\/50\/i\/a4.png": {
+	"\/ES1T2\/50\/i\/v4.png": {
 		"ft": 32768,
-		"iS": 313449,
+		"iS": 246031,
 		"oA": 0,
-		"oAP": "\/ES1T2\/50\/i\/a4.png",
+		"oAP": "\/ES1T2\/50\/i\/v4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES1T2\/50\/i\/v5.png": {
+		"ft": 32768,
+		"iS": 294914,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/i\/v5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES1T2\/50\/i\/v6.png": {
+		"ft": 32768,
+		"iS": 186088,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/i\/v6.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES1T2\/50\/i\/v7.png": {
+		"ft": 32768,
+		"iS": 77650,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/i\/v7.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -5571,6 +5604,160 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES1T2\/50\/s\/a1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a1.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a10.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a11.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a11.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a12.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a13.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a13.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a14.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a14.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a15.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a15.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a16.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a16.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a17.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a17.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a18.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a18.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a19.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a19.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a2.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a20.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a20.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a21.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a21.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a22.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a22.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a3.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a4.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a5.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a6.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a7.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a8.mp3",
+		"oF": 0
+		},
+	"\/ES1T2\/50\/s\/a9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES1T2\/50\/s\/a9.mp3",
+		"oF": 0
+		},
 	"\/ES1T2\/50\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -5583,160 +5770,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES1T2\/50\/s\/intro.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio1.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio10.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio10.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio11.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio11.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio12.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio12.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio13.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio13.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio14.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio14.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio15.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio15.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio16.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio16.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio17.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio17.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio18.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio18.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio19.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio19.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio2.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio20.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio20.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio21.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio21.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio22.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio22.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio3.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio4.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio5.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio6.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio7.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio7.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio8.mp3",
-		"oF": 0
-		},
-	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio9.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Audio9.mp3",
 		"oF": 0
 		},
 	"\/ES1T2\/50\/s\/Realizo una entrevista Es1°T2_Inst1_Elige.mp3": {
@@ -10116,17 +10149,6 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
-		},
-	"\/HI4T2\/266\/i\/rship-removebg-preview.png": {
-		"ft": 32768,
-		"iS": 249592,
-		"oA": 0,
-		"oAP": "\/HI4T2\/266\/i\/rship-removebg-preview.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"\/HI4T2\/266\/i\/rship.png": {
 		"ft": 32768,

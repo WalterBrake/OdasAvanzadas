@@ -7,7 +7,9 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
-
+            .floating{
+                background: #B7B0D7;
+            }
 
     body
         #app
@@ -15,21 +17,172 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.intro.play()")
                 activity
-                    .row.w100
-                    audiotext(ref="intro" audio="s/intro.mp3" text="Una mañana en la clínica veterinaria..." :autoplay="false")
-                    
+                    .comic.w70.wm80
+                        img(src="i/v1.png").w100
+                        .dialog.br: audiotext(ref="intro" audio="s/intro.mp3" text="Una mañana en la clínica veterinaria..." :autoplay="false")
+                    button(@click="sceneCompleted(false)").button.animate__animated.animate__flip Siguiente
             
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w70.wm80
+                        img(src="i/v2.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a1.mp3" text="¡Buenos días! ¿Me permite hacerle una entrevista?" :autoplay="true" @completed="temps.au1 = true")
+                        .dialog.cl.tip-t(v-if="temps.au1"): audiotext( audio="s/a2.mp3" text="¡Claro que sí!" :autoplay="true")
+                    button(@click="sceneCompleted(false)").button.animate__animated.animate__flip Siguiente
+            
+            // SCENES P1
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v3.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a3.mp3" text="¿Por qué decidió ser médico veterinario?" :autoplay="true" @completed="temps.p1 = true")
+                    template(v-if="temps.p1")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops1" :key="index" :isok="index == 1" click-ok-sound="s/a4.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            // SCENES P2
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v3.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a5.mp3" text="¿Por qué le gusta su trabajo?" :autoplay="true" @completed="temps.p2 = true")
+                    template(v-if="temps.p2")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops2" :key="index" :isok="index == 2" click-ok-sound="s/a6.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            // SCENES P3
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v4.png").w100
+                        .dialog.tl.tip-r: audiotext(audio="s/a7.mp3" text="¿Cuál es el animal más grande que ha ayudado?" :autoplay="true" @completed="temps.p3 = true")
+                    template(v-if="temps.p3")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops3" :key="index" :isok="index == 2" click-ok-sound="s/a8.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            // SCENES P4
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v4.png").w100
+                        .dialog.tl.tip-r: audiotext(audio="s/a9.mp3" text="¿Qué mascotas son las que más traen al consultorio?" :autoplay="true" @completed="temps.p4 = true")
+                    template(v-if="temps.p4")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops4" :key="index" :isok="index == 1" click-ok-sound="s/a10.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P5
+            scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v4.png").w100
+                        .dialog.tl.tip-r: audiotext(audio="s/a11.mp3" text="¿Cuál es la operación que más hace?" :autoplay="true" @completed="temps.p5 = true")
+                    template(v-if="temps.p5")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops5" :key="index" :isok="index == 1" click-ok-sound="s/a12.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P6
+            scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v5.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a13.mp3" text="¿Qué hace además de curar a las mascotas?" :autoplay="true" @completed="temps.p6 = true")
+                    template(v-if="temps.p6")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops6" :key="index" :isok="index == 2" click-ok-sound="s/a14.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P7
+            scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v5.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a15.mp3" text="¿Cómo podemos cuidar a las mascotas?" :autoplay="true" @completed="temps.p7 = true")
+                    template(v-if="temps.p7")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops7" :key="index" :isok="index == 1" click-ok-sound="s/a16.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P8
+            scene(v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v5.png").w100
+                        .dialog.tr.tip-b: audiotext(audio="s/a17.mp3" text="¿Qué siente al curar o salvar un animal?" :autoplay="true" @completed="temps.p8 = true")
+                    template(v-if="temps.p8")
+                        .floating.b.text-center
+                            .h4 Elige la respuesta del veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops8" :key="index" :isok="index == 2" click-ok-sound="s/a18.mp3" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+
+            // SCENES P9
+            scene(v-if="currentScene==11" :key="11" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        img(src="i/v6.png").w100
+                        .dialog.tl.tip-b: audiotext(audio="s/a19.mp3" text="El trabajo de un veterinario es muy noble." :autoplay="true" @completed="temps.p9 = true")
+                        .dialog.tr.tip-b(v-if="temps.p9"): audiotext(audio="s/a20.mp3" text="Tienes mucha razón, ¿te gustaría escribirle una nota de agradecimiento?" :autoplay="true" @completed="temps.p10 = true")
+                        .dialog.br.tip-l(v-if="temps.p10"): audiotext(audio="s/a21.mp3" text="¡Claro que sí!" :autoplay="true" @completed="temps.p11 = true")
+                    template(v-if="temps.p11")
+                        .floating.b.text-center
+                            .h4 Elige el mensaje que escribirías al veterinario:
+                            .row.wrap.around: clickable(v-for="(i, index) in temps.ops9" :key="index" :isok="index == 1" simple-ok initclass="pa-1" ): number(randomc smaller) {{i}}
+            
+            // SCENES P10
+            scene(v-if="currentScene==12" hidescorebox :key="12" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                activity
+                    .comic.w50.wm80
+                        dialogaudio(audio="s/a22.mp3" :autoplay="true")
+                        img(src="i/v7.png").w100
+                    button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
+            
+            
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==13" :key="13" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'au1', false)
+                
+                app.$set(app.temps, 'p1', false)
+                app.$set(app.temps, 'p2', false)
+                app.$set(app.temps, 'p3', false)
+                app.$set(app.temps, 'p4', false)
+                app.$set(app.temps, 'p5', false)
+                app.$set(app.temps, 'p6', false)
+                app.$set(app.temps, 'p7', false)
+                app.$set(app.temps, 'p8', false)
+                app.$set(app.temps, 'p9', false)
+                app.$set(app.temps, 'p10', false)
+                app.$set(app.temps, 'p11', false)
+                
+                app.$set(app.temps, 'ops1', ['Porque mi papá fue un gran constructor.','Porque me gustan mucho los animales.','Porque en mi familia no había abogados.'])
+                app.$set(app.temps, 'ops2', ['Porque mi pasatiempo favorito es bailar.','Porque preparo un rico helado de limón.','Porque ayudo a los animales que están enfermos.'])
+                app.$set(app.temps, 'ops3', ['Aproximadamente 34 personas al día.','Hace unos días atendí una tortuga.','Una vez atendí un caballo.'])
+                app.$set(app.temps, 'ops4', ['He atendido muchos dragones.','Perros y gatos.','Traen niños.'])
+                app.$set(app.temps, 'ops5', ['Quitar dientes a perros y gatos.','Esterilizar a perros y gatos.','Preparar comida para perros y gatos.'])
+                app.$set(app.temps, 'ops6', ['Salir a jugar con los niños.','Regalar ropa para perro.','Les pongo vacunas.'])
+                app.$set(app.temps, 'ops7', ['Debemos echarlas a la calle.','Hay que alimentarlas, asearlas y vacunarlas.','Encerrándolas en una jaula.'])
+                app.$set(app.temps, 'ops8', ['Enojo','Tristeza','Alegría'])
+                app.$set(app.temps, 'ops9', ['Su trabajo no es necesario, puede marcharse.','Gracias por ayudar a los animales que están enfermos.','Hace un gran trabajo curando a los niños.'])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 9
