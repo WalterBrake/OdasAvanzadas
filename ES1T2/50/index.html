@@ -22,7 +22,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.intro.play()"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.intro.play()"></info>
         <activity>
           <div class="comic w70 wm80"><img class="w100" src="i/v1.png"/>
             <div class="dialog br">
@@ -34,7 +34,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w70 wm80"><img class="w100" src="i/v2.png"/>
             <div class="dialog tr tip-b">
@@ -49,11 +49,11 @@
       </scene>
       <!-- SCENES P1-->
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v3.png"/>
             <div class="dialog tr tip-b">
-              <audiotext audio="s/a3.mp3" text="¿Por qué decidió ser médico veterinario?" :autoplay="true" @completed="temps.p1 = true"></audiotext>
+              <audiotext audio="s/a3.mp3" text="¿Por qué decidio ser médico veterinario?" :autoplay="true" @completed="temps.p1 = true"></audiotext>
             </div>
           </div>
           <template v-if="temps.p1">
@@ -70,7 +70,7 @@
       </scene>
       <!-- SCENES P2-->
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v3.png"/>
             <div class="dialog tr tip-b">
@@ -91,7 +91,7 @@
       </scene>
       <!-- SCENES P3-->
       <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v4.png"/>
             <div class="dialog tl tip-r">
@@ -112,7 +112,7 @@
       </scene>
       <!-- SCENES P4-->
       <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v4.png"/>
             <div class="dialog tl tip-r">
@@ -133,7 +133,7 @@
       </scene>
       <!-- SCENES P5-->
       <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v4.png"/>
             <div class="dialog tl tip-r">
@@ -154,7 +154,7 @@
       </scene>
       <!-- SCENES P6-->
       <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v5.png"/>
             <div class="dialog tr tip-b">
@@ -175,7 +175,7 @@
       </scene>
       <!-- SCENES P7-->
       <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v5.png"/>
             <div class="dialog tr tip-b">
@@ -196,7 +196,7 @@
       </scene>
       <!-- SCENES P8-->
       <scene v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v5.png"/>
             <div class="dialog tr tip-b">
@@ -217,7 +217,7 @@
       </scene>
       <!-- SCENES P9-->
       <scene v-if="currentScene==11" :key="11" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80"><img class="w100" src="i/v6.png"/>
             <div class="dialog tl tip-b">
@@ -244,7 +244,7 @@
       </scene>
       <!-- SCENES P10-->
       <scene v-if="currentScene==12" hidescorebox="hidescorebox" :key="12" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dió." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Realizo una entrevista" text="Miguel entrevistó al veterinario de su colonia. Ayúdale a recordar las respuestas que le dio." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="comic w50 wm80">
             <dialogaudio audio="s/a22.mp3" :autoplay="true"></dialogaudio><img class="w100" src="i/v7.png"/>
