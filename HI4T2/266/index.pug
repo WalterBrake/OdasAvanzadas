@@ -67,13 +67,13 @@ html(lang="es")
                         .drop.w20(droptimes="untilok" data="3"): number(c=3 smaller) Tercer viaje
                         .drop.w20(droptimes="untilok" data="4"): number(c=4 smaller) Cuarto viaje
 
-                    .row.w100(v-if="temps.a==4").mt-1: button(@click="sceneCompleted(temps.ev)").button.big.animate__animated.animate__flip Continuar
+                    .row.w100(v-if="temps.toks==4").mt-1: button(@click="sceneCompleted(temps.ev)").button.big.animate__animated.animate__flip Continuar
 
-                    .row.w100.wrap.around.mt-auto(v-if="temps.a!=4")
-                        .w20: drag(dropzone=".drop" data="1" append-to-dropzone stay-if-ok @isok="temps.a=1"): div De Sanlúcar de Barrameda a Trinidad, Golfo de Paria, Bocas de Orinoco (1498-1500)
-                        .w20: drag(dropzone=".drop" data="2" append-to-dropzone stay-if-ok @isok="temps.a=2"): div De Sevilla a Guadalupe, Puerto Rico, Santo Domingo, Cuba, Jamaica (1493-1496)
-                        .w20: drag(dropzone=".drop" data="3" append-to-dropzone stay-if-ok @isok="temps.a=3"): div De España a  Jamaica, Costa de Cuba, Isla de Guanaja, Golfo de Honduras, Nicaragua, Costa Rica, Panamá (1502-1504)
-                        .w20: drag(dropzone=".drop" data="4" append-to-dropzone stay-if-ok @isok="temps.a=4"): div De Puerto de Palos a Isla Cayo Samana (3 de agosto a 12 de octubre de 1492)
+                    .row.w100.wrap.around.mt-auto(v-if="temps.toks!=4")
+                        .w20: drag(dropzone=".drop" data="3" append-to-dropzone stay-if-ok @isok="temps.a=3; temps.toks++"): div De Sanlúcar de Barrameda a Trinidad, Golfo de Paria, Bocas de Orinoco (1498-1500)
+                        .w20: drag(dropzone=".drop" data="2" append-to-dropzone stay-if-ok @isok="temps.a=2; temps.toks++"): div De Sevilla a Guadalupe, Puerto Rico, Santo Domingo, Cuba, Jamaica (1493-1496)
+                        .w20: drag(dropzone=".drop" data="4" append-to-dropzone stay-if-ok @isok="temps.a=4; temps.toks++"): div De España a Jamaica, Costa de Cuba, Isla de Guanaja, Golfo de Honduras, Nicaragua, Costa Rica, Panamá (1502-1504)
+                        .w20: drag(dropzone=".drop" data="1" append-to-dropzone stay-if-ok @isok="temps.a=1; temps.toks++"): div De Puerto de Palos a Isla Cayo Samana (3 de agosto a 12 de octubre de 1492)
             
             // SCENES P1
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
@@ -114,6 +114,7 @@ html(lang="es")
 
                 app.$devmode = false
                 app.$set(app.temps, 'a', 0)
+                app.$set(app.temps, 'toks', 0)
                 app.setEv = function ($ev){
                     app.$set(app.temps, 'ev', $ev)
                 }
