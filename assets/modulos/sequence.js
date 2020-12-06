@@ -1,5 +1,5 @@
 Vue.component('sequence', {
-    props: ['options', 'initclass', 'autoplay'],
+    props: ['options', 'initclass', 'autoplay', 'noNav'],
     data () {
         return {
             current: 0
@@ -29,7 +29,7 @@ Vue.component('sequence', {
                 <slot name="option" :option="option" />
             </div>
 
-            <div class="sequence_nav">
+            <div class="sequence_nav" v-if="noNav==undefined">
                 <!--disabled-->
                 <button class="button" v-if="current==0" disabled>Atras</button>
                 <!--navigations-->

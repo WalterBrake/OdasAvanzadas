@@ -1241,6 +1241,122 @@
 		"oAP": "\/CM1T2\/216\/i\/Cuido mi salud CM1°T2 Extra - Hoja 1.ai",
 		"oF": 0
 		},
+	"\/CM1T2\/216\/i\/p1.png": {
+		"ft": 32768,
+		"iS": 31550,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p2.png": {
+		"ft": 32768,
+		"iS": 27985,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p3.png": {
+		"ft": 32768,
+		"iS": 27251,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p4.png": {
+		"ft": 32768,
+		"iS": 30883,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p5.png": {
+		"ft": 32768,
+		"iS": 24515,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p6.png": {
+		"ft": 32768,
+		"iS": 24516,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p7.png": {
+		"ft": 32768,
+		"iS": 13226,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/p8.png": {
+		"ft": 32768,
+		"iS": 10785,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/p8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM1T2\/216\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/CM1T2\/216\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/v1.webm",
+		"oF": 0
+		},
+	"\/CM1T2\/216\/i\/v2.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/v2.mp4",
+		"oF": 0
+		},
+	"\/CM1T2\/216\/i\/v2.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM1T2\/216\/i\/v2.webm",
+		"oF": 0
+		},
 	"\/CM1T2\/216\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -1256,97 +1372,6 @@
 		"oAP": "\/CM1T2\/216\/index.html",
 		"oF": 0,
 		"oS": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio1.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio10.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio10.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio11.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio11.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio12.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio12.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio13.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio13.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio2.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio3.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio4.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio5.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio6.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio7.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio7.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio8.mp3",
-		"oF": 0
-		},
-	"\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio9.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CM1T2\/216\/s\/Cuido mi salud CM1°T2_Audio9.mp3",
-		"oF": 0
 		},
 	"\/CM1T2\/216\/s\/instruccion1.mp3": {
 		"cB": 0,
@@ -10071,6 +10096,20 @@
 		"oAP": "\/ES6T1\/39\/index.html",
 		"oF": 0
 		},
+	"\/ES6T2\/55\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/55\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES6T2\/55\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/55\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/ES6T2\/55\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -10217,6 +10256,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/GE4T1\/231\/index.html",
+		"oF": 0
+		},
+	"\/GE4T2\/235\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/235\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/GE4T2\/235\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/235\/i\/v1.webm",
 		"oF": 0
 		},
 	"\/GE4T2\/235\/index.html": {

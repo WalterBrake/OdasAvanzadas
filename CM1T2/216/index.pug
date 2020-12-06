@@ -7,6 +7,13 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .number img{
+                max-width: 140px;
+                width: 100%;
+            }
+            @media (max-width:680px){
+                .number img{ max-width: 100px; }
+            }
 
 
     body
@@ -15,20 +22,54 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Sigue con atención la historia de Edgar. Recordarás algo muy importante." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.v1.play()")
                 activity
-                    .row.w100
+                    .row.w100: videoplayer(initclass="w100" :autoplay="false" c="6" path="i/v1" @completed="temps.a = true" ref="v1")
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES Ps
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Mientras Edgar se lava las manos, recordemos los hábtios de higiene. Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true" )
+                activity
+                    sequence(:options="temps.preguntas" ref="seque" no-nav)
+                        template(v-slot:option="{option}")
+                            .h4.text-center {{option.p}}
+                            .row.w100(v-if="option.img"): .w30.text-center: img(:src="option.img").w100
+                            template(v-if="option.ans==false")
+                                .row.wrap.around: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == 0 || index == 2 || index == 3" simple-ok initclass="pa-1" ): number(randomc smaller): div(v-html="i")
+                            template(v-else)
+                                .row.wrap.around: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1" ): number(randomc smaller): div(v-html="i")
+            
+            // SCENES
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Sigue con atención la historia de Edgar. Recordarás algo muy importante." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.v1.play()")
+
+                activity
+                    .row.w100.info: h1=title
+                    .row.w100: videoplayer(initclass="w100" :autoplay="true" c="6" path="i/v2" @completed="temps.b = true")
+                    .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Finalizar
+            
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'v1', false)
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                
+                app.$set(app.temps, 'preguntas', [
+                    {p: '¿Por qué evitamos enfermedades si nos lavamos las manos?', ops: ['Porque desaparece la piel.','Porque podemos usar guantes.','Porque las limpiamos de bacterias.'], ans: 2 , img: 'i/p1.png'},
+                    {p: '¿Qué debemos hacer después de comer?', ops: ['Bañarnos.','Cepillarnos los dientes.','Jugar con tierra.'], ans: 1, img: 'i/p2.png'},
+                    {p: '¿Qué debemos hacer antes de comer y después de ir al baño?', ops: ['<img src="i/p2.png">','<img src="i/p3.png">','<img src="i/p4.png">'], ans: 1 , img: false},
+                    {p: '¿Qué otro hábito ayuda a tener las manos limpias?', ops: ['<img src="i/p6.png">','<img src="i/p5.png">','<img src="i/p8.png">'], ans: 2, img: false},
+                    {p: 'Elige las imágenes que representan hábitos de higiene:', ops: ['<img src="i/p3.png">','<img src="i/p6.png">','<img src="i/p4.png">', '<img src="i/p2.png">'], ans: false , img: false},
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1
