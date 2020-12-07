@@ -16,6 +16,7 @@ Vue.component('drag', {
         'initclass', // class de inicio
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
         'appendToDropzone', // Se añade al contenedor del dropzone,
+        'appendClone', // Se añade al contenedor del dropzone un clon del contenido
         'disableok', //Deshabilita la acumulación de 'oks'
         'returnToLastPosition', //Actualiza la posición por la última con Drop (ok o error)
         'singleDetection', // Sólo detectar el primer dropzone
@@ -39,6 +40,7 @@ Vue.component('drag', {
             lastPosition: {x:0, y:0},
             dropzonesDetected: 0,
             isItOk: false,
+            clonedIn: []
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -234,6 +236,7 @@ Vue.component('drag', {
             }
             _this.droppedtimesAdd(dropzone)
             _this.appendToDropzoneFn(dropzone, e)
+            _this.appendCloneToDropzoneFn(dropzone, e)
             if(_this.disableok==undefined && _this.extval == undefined){
                 EventBus.$emit('isok')
             }
@@ -249,6 +252,9 @@ Vue.component('drag', {
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
             _this.droppedtimesAdd(dropzone)
+
+            _this.appendCloneToDropzoneFn(dropzone, e)
+
             if(_this.noReturnOnDrop == undefined && _this.extval == undefined){
                 _this.returnToPositionFn()
                 _this.returnIfErrorFn()
@@ -267,8 +273,17 @@ Vue.component('drag', {
             if(this.appendToDropzone != undefined){
                 var obj = this.$refs.drag.children[0]
                 dropzone.append(obj)
-
                 TweenLite.to(this.$refs.drag, .5, {x:0, y:0});
+            }
+        },
+        appendCloneToDropzoneFn(dropzone, e){
+            if(this.appendClone != undefined){
+                var obj = this.$refs.drag.children[0].cloneNode(true)
+                obj.setAttribute('isclone', true)
+                dropzone.append(obj)
+                this.$refs.drag.setAttribute('wascloned', true)
+                this.clonedIn.push(dropzone)
+                //TweenLite.to(this.$refs.drag, .5, {x:0, y:0});
             }
         },
         dropzoneCanBeDropped (dropzone) {
@@ -449,6 +464,16 @@ Vue.component('drag', {
                 this.posy = e.clientY + window.scrollY
             }
         },
+        removeClones () {
+            for(var i in this.clonedIn){
+                let dzone = this.clonedIn[i]
+                let theclone = dzone.querySelectorAll('[isclone]')
+                dzone.classList.remove('dropzoneused')
+                theclone[0].remove()
+            }
+            this.$refs.drag.removeAttribute('wascloned')
+            this.clonedIn = []
+        },
         externalValidation(){
             let theresult = false
             if(this.isItOk == true){
@@ -456,6 +481,7 @@ Vue.component('drag', {
             } else {
                 this.undroppableFn()
                 this.backToInitPos()
+                this.removeClones()
                 if(this.isfalse != undefined){
                     theresult = true
                 } else {

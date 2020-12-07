@@ -18889,6 +18889,94 @@
 		"oAP": "\/MA4T2\/147\/i\/Descubro_cuadrilateros_Ma4°T2.ai",
 		"oF": 0
 		},
+	"\/MA4T2\/147\/i\/la.png": {
+		"ft": 32768,
+		"iS": 3009,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/la.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/lr.png": {
+		"ft": 32768,
+		"iS": 2982,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/lr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/lv.png": {
+		"ft": 32768,
+		"iS": 3035,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/lv.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/t1.png": {
+		"ft": 32768,
+		"iS": 542,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/t2.png": {
+		"ft": 32768,
+		"iS": 182,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/t3.png": {
+		"ft": 32768,
+		"iS": 752,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/t4.png": {
+		"ft": 32768,
+		"iS": 188,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T2\/147\/i\/t5.png": {
+		"ft": 32768,
+		"iS": 607,
+		"oA": 0,
+		"oAP": "\/MA4T2\/147\/i\/t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA4T2\/147\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -18905,39 +18993,39 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio1.mp3": {
+	"\/MA4T2\/147\/s\/au1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio1.mp3",
+		"oAP": "\/MA4T2\/147\/s\/au1.mp3",
 		"oF": 0
 		},
-	"\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio2.mp3": {
+	"\/MA4T2\/147\/s\/au2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio2.mp3",
+		"oAP": "\/MA4T2\/147\/s\/au2.mp3",
 		"oF": 0
 		},
-	"\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio3.mp3": {
+	"\/MA4T2\/147\/s\/au3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Audio3.mp3",
+		"oAP": "\/MA4T2\/147\/s\/au3.mp3",
 		"oF": 0
 		},
-	"\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Inst1.mp3": {
+	"\/MA4T2\/147\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Inst1.mp3",
+		"oAP": "\/MA4T2\/147\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Inst2.mp3": {
+	"\/MA4T2\/147\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T2\/147\/s\/Descubro los cuadrilateros Ma4°T2_Inst2.mp3",
+		"oAP": "\/MA4T2\/147\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {

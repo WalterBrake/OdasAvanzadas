@@ -7,6 +7,126 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .table {
+                text-align: center;
+            }
+            .table .head > div {
+                background: #70BF44;
+                color: var(--beige);
+                font-weight: bold;
+                border-radius: 6px;
+                padding: 6px;
+                border: 2px solid var(--beige);
+            }
+            .table .body {
+                align-items: normal;
+                min-height: 40px;
+            }
+            .table .body > div {
+                background: #f5f5f5;
+                font-weight: bold;
+                border-radius: 6px;
+                border: 2px solid #70BF44;
+                font-size: 0.8rem;
+                min-height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px;
+            }
+            .table .drop.hover {
+                background: var(--clear);
+            }
+            .table .drop[droppedtimes="1"] {
+                border-color: var(--clear);
+            }
+            .drags {
+                padding: 10px;
+            }
+            .drags .drag {
+                margin: 4px;
+                width: 30%;
+                height: auto;
+            }
+            .drags .drag div {
+                font-size: 0.8rem;
+                background: #fff;
+                padding: 6px;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drags .drag img {
+                max-width: 60px;
+            }
+
+            .drag[wascloned]{
+                visibility: hidden;
+            }
+
+
+
+            /* EX2 */
+
+            .lado,
+            .angulo,
+            .esquina {
+                cursor: pointer;
+            }
+            .lado.clicked path {
+                stroke: #DA3F34 !important;
+            }
+            .angulo {
+                opacity: 0;
+            }
+            .angulo circle {
+                fill: rgba(255, 255, 255, 0.5) !important;
+            }
+            .angulo.clicked {
+                opacity: 1;
+            }
+            .angulo.clicked circle {
+                fill: none !important;
+            }
+            .esquina {
+                display: none;
+            }
+            .esquina.on {
+                display: block;
+                opacity:0;
+            }
+            .esquina.on.clicked{
+                opacity: 1;
+            }
+            .bx {
+                position: relative;
+                background: #f5f5f5;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                font-size: 0.8rem;
+                padding: 5px;
+            }
+            .bx:nth-child(1) {
+                border: 2px solid #E51C1B;
+            }
+            .bx:nth-child(2) {
+                border: 2px solid #116FB7;
+            }
+            .bx:nth-child(3) {
+                border: 2px solid #3AAA36;
+            }
+            .bx .audiotextBtn {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+            }
+
+
 
 
     body
@@ -15,20 +135,140 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca la figura y su nombre de acuerdo con la descripción." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        .w100.table
+                            .row.head
+                                .w30 Descripción
+                                .w30 Figura
+                                .w30 Nombre
+                            .row.body
+                                .w30.drop(data="1" droptimes="multiple" droplimit="1")
+                                .w30: img(src="i/t1.png")
+                                .w30.drop(data="2" droptimes="multiple" droplimit="1")
+                            .row.body
+                                .w30.drop(data="3" droptimes="multiple" droplimit="1")
+                                .w30.drop(data="4" droptimes="multiple" droplimit="1")
+                                .w30: div Cuadrado
+                            .row.body
+                                .w30.drop(data="5" droptimes="multiple" droplimit="1")
+                                .w30: img(src="i/t3.png")
+                                .w30.drop(data="6" droptimes="multiple" droplimit="1")
+                            .row.body
+                                .w30: div Tiene dos pares de lados con la misma medida y cuatro ángulos rectos.
+                                .w30.drop(data="7" droptimes="multiple" droplimit="1")
+                                .w30.drop(data="8" droptimes="multiple" droplimit="1")
+                    .row.w100.wrap.drags
+                        drag(data="1" dropzone=".drop" extval ref="b1" append-clone ): div Tiene cuatro lados, dos lados paralelos, dos ángulos agudos y dos ángulos obtusos. 
+                        drag(data="2" dropzone=".drop" extval ref="b2" append-clone): div Trapecio.
+
+                        drag(data="3" dropzone=".drop" extval ref="b3" append-clone): div Tiene cuatros lados iguales y cuatro ángulos rectos.
+                        drag(data="4" dropzone=".drop" extval ref="b4" append-clone): img(src="i/t2.png")
+                        
+                        drag(data="5" dropzone=".drop" extval ref="b5" append-clone): div Tiene cuatro lados iguales y cuatro ángulos agudos.
+                        drag(data="6" dropzone=".drop" extval ref="b6" append-clone): div Rombo.
+
+                        drag(data="7" dropzone=".drop" extval ref="b7" append-clone): img(src="i/t4.png")
+                        drag(data="8" dropzone=".drop" extval ref="b8" append-clone): div Rectángulo.
+
+                    button(@click="dragValidation(['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8'], 8)").button.big.animate__animated.animate__flip Verificar
+
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="40" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn")
+                activity
+                    .row.w100.wrap
+                        .w25.text-center.bx(v-if="temps.a==1").animate__animated.animate__jello
+                            img(src="i/lr.png").w50
+                            audiotext(key="a1" text="Haz clic en cada lado de los cuadriláteros." audio="s/au1.mp3" :autoplay="true")
+                        .w25.text-center.bx(v-if="temps.a==2").animate__animated.animate__jello
+                            img(src="i/la.png").w50
+                            audiotext(key="a2" text="Haz clic en cada ángulo de los cuadriláteros." audio="s/au2.mp3" :autoplay="true")
+                        .w25.text-center.bx(v-if="temps.a==3").animate__animated.animate__jello
+                            img(src="i/lv.png").w50
+                            audiotext(key="a3" text="Marca cada diagonal de los cuadriláteros. Haz clic en un vértice y después en el otro." audio="s/au3.mp3" :autoplay="true")
+                    .row.w100.wrap
+                        .w40: embedsvg(src="i/f1.svg")
+                        .w40: embedsvg(src="i/f2.svg")
+                        .w40: embedsvg(src="i/f3.svg")
+                        .w40: embedsvg(src="i/f4.svg")
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', 0)
+
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2
+
+
+                var okclicks = 0
+                app.startsvgfn = function (){
+                    app.temps.a = 1
+                    document.querySelectorAll('.lado').forEach(item => {
+                    item.addEventListener('click', event => {
+                        if(!item.classList.contains('clicked')){
+                            clickLado(item)
+                        }
+                    })
+                    })
+                }
+
+                function clickLado(item){
+                    item.classList.add('clicked')
+                    s_ok.play()
+                    EventBus.$emit('isok')
+                    okclicks++
+                    if(okclicks == 16){
+                        EventAngulo()
+                        app.temps.a = 2
+                    }
+                }
+                function EventAngulo (){
+                document.querySelectorAll('.angulo').forEach(item => {
+                item.addEventListener('click', event => {
+                    if(!item.classList.contains('clicked')){
+                        clickAngulo(item)
+                    }
+                })
+                })
+                }
+                function clickAngulo(item){
+
+                    item.classList.add('clicked')
+                    s_ok.play()
+                    EventBus.$emit('isok')
+                    okclicks++
+                    if(okclicks == 32){
+
+                        EventEsquina()
+                        app.temps.a = 3
+                    }
+                }
+
+                function EventEsquina (){
+                document.querySelectorAll('.esquina').forEach(item => {
+                item.classList.add('on')
+                item.addEventListener('click', event => {
+                    if(!item.classList.contains('clicked')){
+                        clickEsquina(item)
+                    }
+                })
+                })
+                }
+                function clickEsquina(item){
+                    item.classList.add('clicked')
+                    s_ok.play()
+                    EventBus.$emit('isok')
+                    okclicks++
+                    if(okclicks == 40){
+                        console.log('END')
+                    }
+                }

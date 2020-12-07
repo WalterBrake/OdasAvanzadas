@@ -9,21 +9,230 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .table {
+          text-align: center;
+      }
+      .table .head > div {
+          background: #70BF44;
+          color: var(--beige);
+          font-weight: bold;
+          border-radius: 6px;
+          padding: 6px;
+          border: 2px solid var(--beige);
+      }
+      .table .body {
+          align-items: normal;
+          min-height: 40px;
+      }
+      .table .body > div {
+          background: #f5f5f5;
+          font-weight: bold;
+          border-radius: 6px;
+          border: 2px solid #70BF44;
+          font-size: 0.8rem;
+          min-height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px;
+      }
+      .table .drop.hover {
+          background: var(--clear);
+      }
+      .table .drop[droppedtimes="1"] {
+          border-color: var(--clear);
+      }
+      .drags {
+          padding: 10px;
+      }
+      .drags .drag {
+          margin: 4px;
+          width: 30%;
+          height: auto;
+      }
+      .drags .drag div {
+          font-size: 0.8rem;
+          background: #fff;
+          padding: 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drags .drag img {
+          max-width: 60px;
+      }
+      
+      .drag[wascloned]{
+          visibility: hidden;
+      }
+      
+      
+      
+      /* EX2 */
+      
+      .lado,
+      .angulo,
+      .esquina {
+          cursor: pointer;
+      }
+      .lado.clicked path {
+          stroke: #DA3F34 !important;
+      }
+      .angulo {
+          opacity: 0;
+      }
+      .angulo circle {
+          fill: rgba(255, 255, 255, 0.5) !important;
+      }
+      .angulo.clicked {
+          opacity: 1;
+      }
+      .angulo.clicked circle {
+          fill: none !important;
+      }
+      .esquina {
+          display: none;
+      }
+      .esquina.on {
+          display: block;
+          opacity:0;
+      }
+      .esquina.on.clicked{
+          opacity: 1;
+      }
+      .bx {
+          position: relative;
+          background: #f5f5f5;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          font-size: 0.8rem;
+          padding: 5px;
+      }
+      .bx:nth-child(1) {
+          border: 2px solid #E51C1B;
+      }
+      .bx:nth-child(2) {
+          border: 2px solid #116FB7;
+      }
+      .bx:nth-child(3) {
+          border: 2px solid #3AAA36;
+      }
+      .bx .audiotextBtn {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Descubro los cuadriláteros" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="dragdrop" title="Descubro los cuadriláteros" text="Coloca la figura y su nombre de acuerdo con la descripción." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w100 table">
+              <div class="row head">
+                <div class="w30">Descripción</div>
+                <div class="w30">Figura</div>
+                <div class="w30">Nombre</div>
+              </div>
+              <div class="row body">
+                <div class="w30 drop" data="1" droptimes="multiple" droplimit="1"></div>
+                <div class="w30"><img src="i/t1.png"/></div>
+                <div class="w30 drop" data="2" droptimes="multiple" droplimit="1"></div>
+              </div>
+              <div class="row body">
+                <div class="w30 drop" data="3" droptimes="multiple" droplimit="1"></div>
+                <div class="w30 drop" data="4" droptimes="multiple" droplimit="1"></div>
+                <div class="w30">
+                  <div>Cuadrado</div>
+                </div>
+              </div>
+              <div class="row body">
+                <div class="w30 drop" data="5" droptimes="multiple" droplimit="1"></div>
+                <div class="w30"><img src="i/t3.png"/></div>
+                <div class="w30 drop" data="6" droptimes="multiple" droplimit="1"></div>
+              </div>
+              <div class="row body">
+                <div class="w30">
+                  <div>Tiene dos pares de lados con la misma medida y cuatro ángulos rectos.</div>
+                </div>
+                <div class="w30 drop" data="7" droptimes="multiple" droplimit="1"></div>
+                <div class="w30 drop" data="8" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap drags">
+            <drag data="1" dropzone=".drop" extval="extval" ref="b1" append-clone="append-clone">
+              <div>Tiene cuatro lados, dos lados paralelos, dos ángulos agudos y dos ángulos obtusos. </div>
+            </drag>
+            <drag data="2" dropzone=".drop" extval="extval" ref="b2" append-clone="append-clone">
+              <div>Trapecio.</div>
+            </drag>
+            <drag data="3" dropzone=".drop" extval="extval" ref="b3" append-clone="append-clone">
+              <div>Tiene cuatros lados iguales y cuatro ángulos rectos.</div>
+            </drag>
+            <drag data="4" dropzone=".drop" extval="extval" ref="b4" append-clone="append-clone"><img src="i/t2.png"/></drag>
+            <drag data="5" dropzone=".drop" extval="extval" ref="b5" append-clone="append-clone">
+              <div>Tiene cuatro lados iguales y cuatro ángulos agudos.</div>
+            </drag>
+            <drag data="6" dropzone=".drop" extval="extval" ref="b6" append-clone="append-clone">
+              <div>Rombo.</div>
+            </drag>
+            <drag data="7" dropzone=".drop" extval="extval" ref="b7" append-clone="append-clone"><img src="i/t4.png"/></drag>
+            <drag data="8" dropzone=".drop" extval="extval" ref="b8" append-clone="append-clone">
+              <div>Rectángulo.</div>
+            </drag>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="dragValidation(['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8'], 8)">Verificar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="40" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descubro los cuadriláteros" text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn"></info>
+        <activity>
+          <div class="row w100 wrap">
+            <div class="w25 text-center bx animate__animated animate__jello" v-if="temps.a==1"><img class="w50" src="i/lr.png"/>
+              <audiotext key="a1" text="Haz clic en cada lado de los cuadriláteros." audio="s/au1.mp3" :autoplay="true"></audiotext>
+            </div>
+            <div class="w25 text-center bx animate__animated animate__jello" v-if="temps.a==2"><img class="w50" src="i/la.png"/>
+              <audiotext key="a2" text="Haz clic en cada ángulo de los cuadriláteros." audio="s/au2.mp3" :autoplay="true"></audiotext>
+            </div>
+            <div class="w25 text-center bx animate__animated animate__jello" v-if="temps.a==3"><img class="w50" src="i/lv.png"/>
+              <audiotext key="a3" text="Marca cada diagonal de los cuadriláteros. Haz clic en un vértice y después en el otro." audio="s/au3.mp3" :autoplay="true"></audiotext>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <div class="w40">
+              <embedsvg src="i/f1.svg"></embedsvg>
+            </div>
+            <div class="w40">
+              <embedsvg src="i/f2.svg"></embedsvg>
+            </div>
+            <div class="w40">
+              <embedsvg src="i/f3.svg"></embedsvg>
+            </div>
+            <div class="w40">
+              <embedsvg src="i/f4.svg"></embedsvg>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +254,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +266,76 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', 0)
+      
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
+      
+      
+      var okclicks = 0
+      app.startsvgfn = function (){
+          app.temps.a = 1
+          document.querySelectorAll('.lado').forEach(item => {
+          item.addEventListener('click', event => {
+              if(!item.classList.contains('clicked')){
+                  clickLado(item)
+              }
+          })
+          })
+      }
+      
+      function clickLado(item){
+          item.classList.add('clicked')
+          s_ok.play()
+          EventBus.$emit('isok')
+          okclicks++
+          if(okclicks == 16){
+              EventAngulo()
+              app.temps.a = 2
+          }
+      }
+      function EventAngulo (){
+      document.querySelectorAll('.angulo').forEach(item => {
+      item.addEventListener('click', event => {
+          if(!item.classList.contains('clicked')){
+              clickAngulo(item)
+          }
+      })
+      })
+      }
+      function clickAngulo(item){
+      
+          item.classList.add('clicked')
+          s_ok.play()
+          EventBus.$emit('isok')
+          okclicks++
+          if(okclicks == 32){
+      
+              EventEsquina()
+              app.temps.a = 3
+          }
+      }
+      
+      function EventEsquina (){
+      document.querySelectorAll('.esquina').forEach(item => {
+      item.classList.add('on')
+      item.addEventListener('click', event => {
+          if(!item.classList.contains('clicked')){
+              clickEsquina(item)
+          }
+      })
+      })
+      }
+      function clickEsquina(item){
+          item.classList.add('clicked')
+          s_ok.play()
+          EventBus.$emit('isok')
+          okclicks++
+          if(okclicks == 40){
+              console.log('END')
+          }
+      }
     </script>
   </body>
 </html>
