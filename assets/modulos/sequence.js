@@ -7,6 +7,9 @@ Vue.component('sequence', {
     },
     methods: {
         adelante (){
+            if(this.current==this.options.length-1){
+                return false
+            }
             this.current++
             this.changedCurrent()
         },

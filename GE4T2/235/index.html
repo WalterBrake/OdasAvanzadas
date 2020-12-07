@@ -16,14 +16,40 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Protejo los recursos naturales" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Protejo los recursos naturales" text="Vamos a leer una historieta para aprender sobre los recursos naturales. ¡Pon atención!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.v1.play()"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="false" c="6" path="i/v1" @completed="temps.a = true" ref="v1"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES Ps-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Protejo los recursos naturales" text="¡Vamos probar cuánto aprendiste! Selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <sequence :options="temps.preguntas" ref="seque" no-nav="no-nav">
+            <template v-slot:option="{option}">
+              <div class="h4 text-center">{{option.p}}</div>
+              <div class="row w100" v-if="option.img">
+                <div class="w30 text-center"><img class="w100" :src="option.img"/></div>
+              </div>
+              <div class="row wrap around text-center">
+                <clickable v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" initclass="pa-1">
+                  <number randomc="randomc" smaller="smaller">
+                    <div v-html="i"></div>
+                  </number>
+                </clickable>
+              </div>
+            </template>
+          </sequence>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -56,7 +82,16 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'v1', false)
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      
+      app.$set(app.temps, 'preguntas', [
+          {p: '¿Por qué es importante racionar los recursos naturales?', ops: ['Porque son muy caros.','Porque son muy dificíles de obtener.','Porque su extracción afecta a otras especies del planeta.'], ans: 2 , img: false},
+          {p: '¿Cómo harías para cuidar los recursos naturales?', ops: ['Reutilizaría los productos y los recolectaría para que sean reciclados.','Prohibiría su venta.','Haría campañas publicitarias para explicar para qué sirven.'], ans: 0 , img: false},
+          {p: '¿Cómo se puede obtener la energía de los recursos de naturales?', ops: ['A través del agua y el fuego.','Con el viento ya que se pueden construir aerogeneradores.','No se puede obtener energía de los recursos naturales.'], ans: 1 , img: false},
+          {p: '¿Qué tipo de productos se pueden fabricar con la madera?', ops: ['Sillas, mesas, colchones, lápices.','Cabañas, sillas, mochilas, bolsas.','Sillas, mesas, cabañas, puertas.'], ans: 2 , img: false},
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
