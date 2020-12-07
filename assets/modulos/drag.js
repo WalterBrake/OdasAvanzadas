@@ -24,6 +24,8 @@ Vue.component('drag', {
         'noReturnOnDrop', //No regresa aunque sea "error"
         'noAnimations', //Ninguna animación
         'undroppable', // Se puede "sacar" del dropzone y resta los droptimes
+        'extval', // no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable
+        'isfalse', // Regresa como ok si esta en falso (externalValidation)
     ],
     data() {
         return {
@@ -35,7 +37,8 @@ Vue.component('drag', {
             canvas: null,
             ctx: null,
             lastPosition: {x:0, y:0},
-            dropzonesDetected: 0
+            dropzonesDetected: 0,
+            isItOk: false,
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -77,7 +80,7 @@ Vue.component('drag', {
             _this.dragPosX = e.clientX + window.scrollX
             _this.dragPosY = e.clientY + window.scrollY
             _this.dropzonesDetected = 0
-            if(_this.undroppable != undefined) {
+            if(_this.undroppable != undefined || _this.extval != undefined) {
                 _this.undroppableFn()
             }
 
@@ -160,7 +163,11 @@ Vue.component('drag', {
                     if(!isdrop) { _this.hoverExitHitTest(dropzone, e) }
                 }
             }
-            if(isdrop && drops == 0){ _this.backToInitPos() }
+            if(isdrop && drops == 0){ 
+                    _this.backToInitPos()
+                    _this.$emit('notdropped')
+                    _this.isItOk = undefined
+                }
         },
         hoverHitTest(dropzone, e) {
             var _this = this
@@ -205,13 +212,14 @@ Vue.component('drag', {
         hitTestISOK(dropzone, e){
             var _this = this
             //## OK
-            if(_this.noOkSound == undefined){
+            if(_this.noOkSound == undefined && _this.extval == undefined){
                 s_ok.play()
             }
 
             setTimeout(function (){
                 let droppedtimes = dropzone.getAttribute('droppedtimes')
                 _this.$emit('isok', {droppedtimes: droppedtimes})
+                _this.isItOk = true
             }, 100)
             _this.returnToPositionFn()
             _this.stayInDropFn()
@@ -221,39 +229,37 @@ Vue.component('drag', {
             _this.stayIfOkFn()
             app.particleAnimation(e, 100, null, null)
 
-            if(_this.noAnimations == undefined){
+            if(_this.noAnimations == undefined && _this.extval == undefined){
                 _this.setClassAnimation('ok')
             }
             _this.droppedtimesAdd(dropzone)
             _this.appendToDropzoneFn(dropzone, e)
-            if(_this.disableok==undefined){
+            if(_this.disableok==undefined && _this.extval == undefined){
                 EventBus.$emit('isok')
             }
         },
         hitTestISERROR(dropzone, e){
             var _this = this
 
-            
-
             //## ERROR
             
             _this.$emit('iserror')
+            _this.isItOk = false
             _this.stayInDropFn()
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
             _this.droppedtimesAdd(dropzone)
-            if(_this.noReturnOnDrop == undefined){
-
+            if(_this.noReturnOnDrop == undefined && _this.extval == undefined){
                 _this.returnToPositionFn()
                 _this.returnIfErrorFn()
             }
             _this.dragStatusClass('error')
             EventBus.$emit('iserror')
-            if(_this.noAnimations == undefined){
+            if(_this.noAnimations == undefined && _this.extval == undefined ){
                 _this.setClassAnimation('error')
             }
             
-            if(_this.noErrorSound == undefined){
+            if(_this.noErrorSound == undefined && _this.extval == undefined){
                 s_error.play()
             }
         },
@@ -338,7 +344,7 @@ Vue.component('drag', {
             if(this.returnToPosition!=undefined) {
                 this.backToInitPos()
             }
-            if(this.undroppable != undefined) {
+            if(this.undroppable != undefined || this.extval != undefined) {
                 this.undroppableFn()
             }
             
@@ -347,7 +353,7 @@ Vue.component('drag', {
             if(this.returnIfErrorFn!=undefined) {
                 this.backToInitPos()
             }
-            if(this.undroppable != undefined) {
+            if(this.undroppable != undefined || this.extval != undefined) {
                 this.undroppableFn()
             }
            
@@ -359,12 +365,10 @@ Vue.component('drag', {
             s_select.play()
         },
         backToInitPos(){
-
             if(this.returnToLastPosition!=undefined){
                 TweenLite.to(this.$refs.drag, .5, {x: this.lastPosition.x, y: this.lastPosition.y, top: this.posy, left: this.posx, delay: .6});
                 return false
             }
-
             TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
             this.dragLineClear()
         },
@@ -444,6 +448,21 @@ Vue.component('drag', {
                 this.posx = e.clientX + window.scrollX
                 this.posy = e.clientY + window.scrollY
             }
+        },
+        externalValidation(){
+            let theresult = false
+            if(this.isItOk == true){
+                theresult = true
+            } else {
+                this.undroppableFn()
+                this.backToInitPos()
+                if(this.isfalse != undefined){
+                    theresult = true
+                } else {
+                    theresult = false
+                }
+            }
+            return theresult
         }
     },
     mounted () {
@@ -455,4 +474,20 @@ Vue.component('drag', {
 
 /*
 drag(:data="i" dropzone=".drop" :dragsound="'s/s'+(index+1)+'.mp3'" stay-if-ok): img(:src="'i/a'+(index+1)+'.png'").img-fluid
+*/
+
+
+/* externalValidation */
+/*
+
+
+.h4 2. A Claudia le faltan
+    .drop.d2(data="E" droptimes="multiple" droplimit="1")
+    | para llegar a Ixtlahuacán.
+.row.w100.wrap
+    drag(data="D" dropzone=".d2" extval ref="b4" isfalse): number(randomc smaller ) 15 minutos
+    drag(data="E" dropzone=".d2" extval ref="b5" ): number(randomc smaller ) 3 kilómetros
+    drag(data="F" dropzone=".d2" extval ref="b6" isfalse): number(randomc smaller ) 3 metros
+button(@click="dragValidation([''b4', 'b5', 'b6'], 2)").button.big.animate__animated.animate__flip Verificar
+
 */

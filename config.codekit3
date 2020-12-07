@@ -16624,12 +16624,67 @@
 		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3",
 		"oF": 0
 		},
+	"\/MA3T2\/147\/i\/ana.png": {
+		"ft": 32768,
+		"iS": 16412,
+		"oA": 0,
+		"oAP": "\/MA3T2\/147\/i\/ana.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/147\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 1034444,
+		"oA": 0,
+		"oAP": "\/MA3T2\/147\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/147\/i\/claudia.png": {
+		"ft": 32768,
+		"iS": 16404,
+		"oA": 0,
+		"oAP": "\/MA3T2\/147\/i\/claudia.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA3T2\/147\/i\/Contamos cuánto falta  Ma3°T2 - Hoja 1.ai": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/147\/i\/Contamos cuánto falta  Ma3°T2 - Hoja 1.ai",
 		"oF": 0
+		},
+	"\/MA3T2\/147\/i\/full.png": {
+		"ft": 32768,
+		"iS": 1075494,
+		"oA": 0,
+		"oAP": "\/MA3T2\/147\/i\/full.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/147\/i\/joseluis.png": {
+		"ft": 32768,
+		"iS": 16467,
+		"oA": 0,
+		"oAP": "\/MA3T2\/147\/i\/joseluis.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/MA3T2\/147\/index.html": {
 		"cB": 0,
@@ -16647,25 +16702,25 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_Ahora.mp3": {
+	"\/MA3T2\/147\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_Ahora.mp3",
+		"oAP": "\/MA3T2\/147\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_ColocaCarros.mp3": {
+	"\/MA3T2\/147\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_ColocaCarros.mp3",
+		"oAP": "\/MA3T2\/147\/s\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_EnCamino.mp3": {
+	"\/MA3T2\/147\/s\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_EnCamino.mp3",
+		"oAP": "\/MA3T2\/147\/s\/instruccion3.mp3",
 		"oF": 0
 		},
 	"\/MA4T1\/111\/aimg\/az.svg": {

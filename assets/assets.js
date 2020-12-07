@@ -174,7 +174,25 @@ var app = new Vue({
                     */
                 }).catch(function (error) { console.error('oops, something went wrong!', error); });
             }
-        }
+        },
+        dragValidation (verarray, numOfAns) {
+            let allok = true
+            for(va in verarray){
+                let rf = verarray[va]
+                let res = app.$refs[rf].externalValidation()
+                if(res===false){
+                    allok = false
+                }
+            }
+            if(allok){
+                s_ok.play()
+                for(var i=0; i < numOfAns; i++){
+                    EventBus.$emit('isok')
+                }
+            } else {
+                s_error.play()
+            }
+        },
     },
     mounted () {
         this.notfoundimg()

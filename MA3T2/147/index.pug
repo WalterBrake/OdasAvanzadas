@@ -7,7 +7,33 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
-
+            .carretera{position:relative}.carretera .drop{position:absolute;left:0;top:0;width:7%;height:8%;border-radius:80%}.carretera .drop:nth-child(1){left:2%;top:0}.carretera .drop:nth-child(2){left:3%;top:8%}.carretera .drop:nth-child(3){left:6%;top:16%}.carretera .drop:nth-child(4){left:13%;top:20%}.carretera .drop:nth-child(5){left:19%;top:20%}.carretera .drop:nth-child(6){left:26%;top:18%}.carretera .drop:nth-child(7){left:33%;top:15%}.carretera .drop:nth-child(8){left:39%;top:11%}.carretera .drop:nth-child(9){left:45%;top:7%}.carretera .drop:nth-child(10){left:52%;top:5%}.carretera .drop:nth-child(11){left:59%;top:6%}.carretera .drop:nth-child(12){left:65%;top:11%}.carretera .drop:nth-child(13){left:67%;top:20%}.carretera .drop:nth-child(14){left:67%;top:30%}.carretera .drop:nth-child(15){left:63%;top:38%}.carretera .drop:nth-child(16){left:57%;top:43%}.carretera .drop:nth-child(17){left:51%;top:46%}.carretera .drop:nth-child(18){left:44%;top:48%}.carretera .drop:nth-child(19){left:37%;top:49%}.carretera .drop:nth-child(20){left:31%;top:50%}.carretera .drop:nth-child(21){left:24%;top:52%}.carretera .drop:nth-child(22){left:18%;top:54%}.carretera .drop:nth-child(23){left:12%;top:58%}.carretera .drop:nth-child(24){left:9%;top:66%}.carretera .drop:nth-child(25){left:10%;top:75%}.carretera .drop:nth-child(26){left:15%;top:80%}.carretera .drop:nth-child(27){left:22%;top:84%}.carretera .drop:nth-child(28){left:28%;top:85%}.carretera .drop:nth-child(29){left:35%;top:86%}.carretera .drop:nth-child(30){left:42%;top:87%}.carretera .drop:nth-child(31){left:49%;top:86%}.carretera .drop:nth-child(32){left:55%;top:85%}.carretera .drop:nth-child(33){left:61%;top:83%}.carretera .drop:nth-child(34){left:68%;top:81%}.carretera .drop:nth-child(35){left:74%;top:79%}.carretera .drop:nth-child(36){left:81%;top:76%}.carretera .drop:nth-child(37){left:88%;top:74%}.carretera .drop.hover{box-shadow:0 0 20px var(--sec)}.drags{display:flex;flex-direction:column;justify-content:center;align-items:center}.drags .drag{width:auto;height:auto;max-width:24%;max-height:30px;margin:30px 0}.drags .drag img{width:100%;margin-bottom:30px;min-width:auto}@media (max-width:820px){.drags .drag{max-width:10%;max-height:20px}}@media (max-width:820px){.drags{flex-direction:row;justify-content:space-around}}
+            .inst{background:var(--sec);padding:10px;border-radius:10px;box-sizing:border-box;color:#fff}.inst div{margin:6px}@media (max-width:820px) and (min-width:680px){.carretera{width:70%!important}.drags .drag{max-width:7%}}
+            .pregunta {
+                background: rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 5px;
+            }
+            .pregunta .drop {
+                background: #fff;
+                border-radius: 6px;
+                min-width: 160px;
+                height: 30px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 6px;
+            }
+            .pregunta .drop.hover,
+            .pregunta .drop[droppedtimes="1"] {
+                background: var(--accent);
+            }
+            .pregunta .drag {
+                width: auto;
+                height: auto;
+                margin: 10px;
+            }
 
     body
         #app
@@ -15,20 +41,106 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ana, José Luis y Claudia se encuentran en camino de Guadalajara a Ixtlahuacán de los Membrillos." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(text="Coloca sus carros en la parte del camino donde se te indica. Toma en cuenta que cada casilla representa un kilómetro." audio="s/instruccion2.mp3" v-if="temps.au1" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100.wrap
+                        .w70.wm100.carretera
+                            img(src="i/bg.png").w100
+                            .drops
+                                template(v-for="(i, index) in 37")
+                                    .drop(:data="i" droptimes="untilok")
+                        .w30.wm100.drags
+                            drag(:data="4" dropzone=".drop" ref="a1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable @isok="temps.autos.a1 = true" @iserror="temps.autos.a1 = false" @notdropped="temps.autos.a1 = false"): img(src="i/joseluis.png")
+                            drag(:data="21" dropzone=".drop" ref="a2" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable @isok="temps.autos.a2 = true" @iserror="temps.autos.a2 = false" @notdropped="temps.autos.a2 = false"): img(src="i/ana.png")
+                            drag(:data="34" dropzone=".drop" ref="a3" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable @isok="temps.autos.a3 = true"  @iserror="temps.autos.a3 = false" @notdropped="temps.autos.a3 = false"): img(src="i/claudia.png")
+                            button(@click="verificar").button.big Verificar
+
+                    .w100.inst
+                        div 1. José Luis está a 4 kilómetros de Guadalajara.
+                        div 2. Ana se encuentra 6 kilómetros adelante del kilómetro 15.
+                        div 3. A Claudia le faltan 3 kilómetros para llegar a Ixtlahuacán.
             
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta para completar el enunciado." textaudio="s/instruccion3.mp3" :autoplay="true")
+                activity
+                    .row.w100: .w50: img(src="i/full.png").w100
+                    .w100.pregunta
+                        .h4 1. A José Luis le faltan
+                            .drop.d1(data="C" droptimes="multiple" droplimit="1")
+                            | para alcanzar a Ana.
+                        .row.w100.wrap
+                            drag(data="A" dropzone=".d1" extval ref="a1" isfalse): number(randomc smaller ) 12 kilómetros
+                            drag(data="B" dropzone=".d1" extval ref="a2" isfalse): number(randomc smaller ) 2 horas
+                            drag(data="C" dropzone=".d1" extval ref="a3"): number(randomc smaller ) 17 kilómetros
+                    .w100.pregunta
+                        .h4 2. A Claudia le faltan
+                            .drop.d2(data="E" droptimes="multiple" droplimit="1")
+                            | para llegar a Ixtlahuacán.
+                        .row.w100.wrap
+                            drag(data="D" dropzone=".d2" extval ref="a4" isfalse): number(randomc smaller ) 15 minutos
+                            drag(data="E" dropzone=".d2" extval ref="a5" ): number(randomc smaller ) 3 kilómetros
+                            drag(data="F" dropzone=".d2" extval ref="a6" isfalse): number(randomc smaller ) 3 metros
+                    button(@click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6'], 2)").button.big.animate__animated.animate__flip Verificar
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta para completar el enunciado." textaudio="s/instruccion3.mp3" :autoplay="false")
+                activity
+                    .row.w100: .w50: img(src="i/full.png").w100
+                    .w100.pregunta
+                        .h4 1. Hace 10 minutos, Ana estaba en el kilómetro 13, por lo tanto avanzó
+                            .drop.d1(data="C" droptimes="multiple" droplimit="1")
+                        .row.w100.wrap
+                            drag(data="A" dropzone=".d1" extval ref="b1" isfalse): number(randomc smaller ) 8 metros
+                            drag(data="B" dropzone=".d1" extval ref="b2" isfalse): number(randomc smaller ) 10 minutos
+                            drag(data="C" dropzone=".d1" extval ref="b3"): number(randomc smaller ) 8 kilómetros
+                    .w100.pregunta
+                        .h4 2. José Luis regresó a la ciudad a recoger a su mamá. Tuvo que regresar    
+                            .drop.d2(data="E" droptimes="multiple" droplimit="1")
+                        .row.w100.wrap
+                            drag(data="D" dropzone=".d2" extval ref="b4" isfalse): number(randomc smaller ) 1.5 kilómetros
+                            drag(data="E" dropzone=".d2" extval ref="b5" ): number(randomc smaller ) 3 kilómetros
+                            drag(data="F" dropzone=".d2" extval ref="b6" isfalse): number(randomc smaller ) 3 metros
+                    button(@click="dragValidation(['b1', 'b2', 'b3', 'b4', 'b5', 'b6'], 2)").button.big.animate__animated.animate__flip Verificar
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'au1', false)
+
+                app.$set(app.temps, 'autos', {a1: false, a2: false, a3:false})
+
+                
+                app.verificar = function () {
+                    if(app.temps.autos.a1 && app.temps.autos.a2 && app.temps.autos.a3){
+                        s_ok.play()
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                    } else {
+                        s_error.play()
+                        if(!app.temps.autos.a1){
+                            app.$refs.a1.undroppableFn()
+                            app.$refs.a1.backToInitPos()
+                        }
+                        if(!app.temps.autos.a2){
+                            app.$refs.a2.undroppableFn()
+                            app.$refs.a2.backToInitPos()
+                        }
+                        if(!app.temps.autos.a3){
+                            app.$refs.a3.undroppableFn()
+                            app.$refs.a3.backToInitPos()
+                        }
+                    }
+                }
+
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3
