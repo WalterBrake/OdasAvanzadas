@@ -7728,7 +7728,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 25761,
+		"iS": 23458,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -7805,7 +7805,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 10945,
+		"iS": 25710,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -10339,7 +10339,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -10439,28 +10439,28 @@
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Vamos.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -10994,7 +10994,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -14389,12 +14389,180 @@
 		"oAP": "\/MA1T2\/136\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA1T2\/141\/i\/Describo_figuras_Ma1°T2-Hoja1.ai": {
-		"cB": 0,
-		"ft": 8192,
+	"\/MA1T2\/141\/i\/i1.png": {
+		"ft": 32768,
+		"iS": 7236,
 		"oA": 0,
-		"oAP": "\/MA1T2\/141\/i\/Describo_figuras_Ma1°T2-Hoja1.ai",
-		"oF": 0
+		"oAP": "\/MA1T2\/141\/i\/i1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/i2.png": {
+		"ft": 32768,
+		"iS": 5330,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/i2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/i3.png": {
+		"ft": 32768,
+		"iS": 5428,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/i3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r1.png": {
+		"ft": 32768,
+		"iS": 1846,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r2.png": {
+		"ft": 32768,
+		"iS": 995,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r3.png": {
+		"ft": 32768,
+		"iS": 1388,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r4.png": {
+		"ft": 32768,
+		"iS": 2468,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r5.png": {
+		"ft": 32768,
+		"iS": 367,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r6.png": {
+		"ft": 32768,
+		"iS": 1051,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/r7.png": {
+		"ft": 32768,
+		"iS": 1032,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/r7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/robot.png": {
+		"ft": 32768,
+		"iS": 32066,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/robot.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/robotfinal.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA1T2\/141\/i\/robotfinal.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA1T2\/141\/i\/t1.png": {
+		"ft": 32768,
+		"iS": 2115,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/t2.png": {
+		"ft": 32768,
+		"iS": 3676,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/t3.png": {
+		"ft": 32768,
+		"iS": 4075,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T2\/141\/i\/t4.png": {
+		"ft": 32768,
+		"iS": 518,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/i\/t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/MA1T2\/141\/index.html": {
 		"cB": 0,
@@ -14412,13 +14580,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA1T2\/141\/s\/Describo figuras Ma1°T2_fx_Robot.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA1T2\/141\/s\/Describo figuras Ma1°T2_fx_Robot.mp3",
-		"oF": 0
-		},
 	"\/MA1T2\/141\/s\/Describo figuras Ma1°T2_fx_Robot2.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -14426,18 +14587,25 @@
 		"oAP": "\/MA1T2\/141\/s\/Describo figuras Ma1°T2_fx_Robot2.mp3",
 		"oF": 0
 		},
-	"\/MA1T2\/141\/s\/Describo figuras Ma1°T2_Inst_3Lados.mp3": {
+	"\/MA1T2\/141\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T2\/141\/s\/Describo figuras Ma1°T2_Inst_3Lados.mp3",
+		"oAP": "\/MA1T2\/141\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA1T2\/141\/s\/Describo figuras Ma1°T2_Inst_4Lados.mp3": {
+	"\/MA1T2\/141\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T2\/141\/s\/Describo figuras Ma1°T2_Inst_4Lados.mp3",
+		"oAP": "\/MA1T2\/141\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/MA1T2\/141\/s\/robot.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/s\/robot.mp3",
 		"oF": 0
 		},
 	"\/MA2T1\/132\/aimg\/i1.svg": {
@@ -15081,7 +15249,7 @@
 		},
 	"\/MA2T2\/183\/i\/nina2.png": {
 		"ft": 32768,
-		"iS": 44627,
+		"iS": 44332,
 		"oA": 0,
 		"oAP": "\/MA2T2\/183\/i\/Asset 13@5x.png",
 		"oF": 0,
@@ -16391,35 +16559,35 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst1_Coloca.mp3": {
+	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst1_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst1_Coloca.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst2_Ahora.mp3": {
+	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst2_Ahora.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst2_Ahora.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst3_Terminar.mp3": {
+	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst3_Terminar.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst3_Terminar.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3": {
+	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/147\/i\/Contamos cuánto falta  Ma3°T2 - Hoja 1.ai": {
+	"\/MA3T2\/147\/i\/Contamos cuánto falta  Ma3°T2 - Hoja 1.ai": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -16442,21 +16610,21 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_Ahora.mp3": {
+	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_Ahora.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_Ahora.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_ColocaCarros.mp3": {
+	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_ColocaCarros.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_ColocaCarros.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_EnCamino.mp3": {
+	"\/MA3T2\/147\/s\/Contamos cuánto falta  Ma3°T2_Inst_EnCamino.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
