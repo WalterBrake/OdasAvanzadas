@@ -9,17 +9,169 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .tabla {
+          border: 2px solid var(--accent);
+          border-radius: 10px;
+          background: #F9DAAA;
+      }
+      .tabla .row {
+          align-items: normal;
+      }
+      .tabla .head {
+          background: var(--accent);
+          font-weight: bold;
+          color: #fff;
+      }
+      .tabla .head .w25 {
+          font-size: 1.1rem;
+      }
+      @media (max-width: 680px) {
+          .tabla .head .w25 {
+              font-size: 0.6rem;
+          }
+      }
+      .tabla .w25 {
+          outline: 1px solid var(--accent);
+          padding: 5px;
+          font-size: 0.8rem;
+          min-height: 100%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+      }
+      @media (max-width: 680px) {
+          .tabla .w25 {
+              font-size: 0.6rem;
+          }
+      }
+      .tabla .w25 .drop {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .tabla .w25 .drop > div {
+          border-radius: 6px;
+      }
+      .tabla .w25 img {
+          border-radius: 6px;
+      }
+      .pool {
+          font-size: 0.7rem;
+      }
+      .pool .drag {
+          width: auto;
+          height: auto;
+          margin: 2px;
+      }
+      .pool .drag > div {
+          padding: 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .pool .drag > div.im {
+          padding: 0;
+          line-height: 0;
+          border-radius: 6px;
+      }
+      .yel {
+          background: #ffdd00;
+          padding: 6px;
+      }
+      .pin {
+          background: #ffaaee;
+          padding: 6px;
+      }
+      .blu {
+          background: #aaddff;
+          padding: 6px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="¿Qué celebro en diciembre?" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="12" scene-color="#ED1C25">
+        <info type="dragdrop" title="¿Qué celebro en diciembre?" text="Coloca cada cuadro de texto o  imagen en el lugar que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <div class="w70 wm100 tabla">
+              <div class="row w100 head text-center">
+                <div class="w25">Estaciones</div>
+                <div class="w25">Meses</div>
+                <div class="w25">Características</div>
+                <div class="w25">Tradición</div>
+              </div>
+              <div class="row w100 body">
+                <div class="w25"><img class="w100" src="i/primavera.png"/></div>
+                <div class="w25">
+                  <div class="drop" data="prim1" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="prim2" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="prim3" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="row w100 body">
+                <div class="w25">
+                  <div class="drop" data="ver0" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="ver1" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="ver2" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div>Encuentro Internacional del Mariachi y la Charrería.</div>
+                </div>
+              </div>
+              <div class="row w100 body">
+                <div class="w25">
+                  <div class="drop" data="oto0" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="oto1" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div>El clima es agradable y las hojas de algunos árboles se caen.</div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="oto3" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="row w100 body">
+                <div class="w25">
+                  <div class="drop" data="inv0" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div>Diciembre, enero, febrero y marzo.</div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="inv2" droptimes="untilok"></div>
+                </div>
+                <div class="w25">
+                  <div class="drop" data="inv3" droptimes="untilok"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row w25 wm100 wrap pool">
+              <div class="w50 wm20" v-for="(i, index) in temps.a">
+                <drag dropzone=".drop" :data="i.d" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <div v-html="i.c" :class="i.t"></div>
+                </drag>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -56,7 +208,23 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {d: 'prim3', c: 'Carnaval', t:'blu'},
+          
+          {d: 'ver0', c: '<img src="i/verano.png" class="w100">', t: 'im'},
+          {d: 'inv2', c: 'Hace frío y nieva en algunas montañas altas.', t:'pin'},
+          {d: 'prim2', c: 'El clima es templado y las plantas florecen.', t:'pin'},
+          {d: 'ver1', c: 'Junio, julio, agosto y septiembre.', t:'yel'},
+          {d: 'ver2', c: 'Hace calor y en algunos lugares llueve mucho.', t:'pin'},
+          {d: 'prim1', c: 'Marzo, abril, mayo y junio.', t: 'yel'},
+          {d: 'inv3', c: 'Noche Buena.', t:'blu'},
+          {d: 'inv0', c: '<img src="i/invierno.png" class="w100">', t: 'im'},
+          {d: 'oto0', c: '<img src="i/otono.png" class="w100">', t: 'im'},
+          {d: 'oto3', c: 'Día de Muertos.', t:'blu'},
+          {d: 'oto1', c: 'Septiembre, octubre, noviembre y diciembre.', t:'yel'},
+          
+          
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
