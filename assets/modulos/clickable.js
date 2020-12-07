@@ -148,3 +148,7 @@ Vue.component('clickable', {
         this.$refs.clickable.children[0].classList.add('animate__animated')
     }
 })
+
+/*
+.row.wrap.around: clickable(v-for="(i, index) in ['30','40']" :key="'p3'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+*/

@@ -604,6 +604,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/modulos\/selectives.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/assets\/modulos\/selectives-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/assets\/modulos\/sequence.js": {
 		"ft": 64,
 		"ma": 0,
@@ -10156,12 +10166,67 @@
 		"oAP": "\/ES4T1\/36\/index.html",
 		"oF": 0
 		},
+	"\/ES4T2\/60\/i\/comic.png": {
+		"ft": 32768,
+		"iS": 1152045,
+		"oA": 0,
+		"oAP": "\/ES4T2\/60\/i\/comic.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES4T2\/60\/i\/Observo la publicidad Es4°T2 - Hoja 1.ai": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES4T2\/60\/i\/Observo la publicidad Es4°T2 - Hoja 1.ai",
 		"oF": 0
+		},
+	"\/ES4T2\/60\/i\/v1.png": {
+		"ft": 32768,
+		"iS": 397996,
+		"oA": 0,
+		"oAP": "\/ES4T2\/60\/i\/v1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T2\/60\/i\/v2.png": {
+		"ft": 32768,
+		"iS": 312468,
+		"oA": 0,
+		"oAP": "\/ES4T2\/60\/i\/v2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T2\/60\/i\/v3.png": {
+		"ft": 32768,
+		"iS": 281504,
+		"oA": 0,
+		"oAP": "\/ES4T2\/60\/i\/v3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T2\/60\/i\/v4.png": {
+		"ft": 32768,
+		"iS": 309544,
+		"oA": 0,
+		"oAP": "\/ES4T2\/60\/i\/v4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ES4T2\/60\/index.html": {
 		"cB": 0,

@@ -7,6 +7,20 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .pregunta {
+                background: #E0E9E6;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                border-radius: 10px;
+                margin: 5px;
+            }
+            .pregunta .on,
+            .pregunta .off {
+                padding: 6px;
+            }
+            .pregunta .number.smaller {
+                font-size: 1.2rem;
+            }
 
 
     body
@@ -15,14 +29,67 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Lee la historieta." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100: .w90: img(src="i/comic.png").w100
+                    button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES P1 & P2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100: .w50: img(src="i/v1.png").w100
+                    .pregunta.text-center
+                        .h4 ¿Cómo son los anuncios representados en la historieta?
+                        selectives(:ans="1" key="p1" :ops="['Tienen letra pequeña para que no se noten.','Son llamativos, de colores y tienen grandes letras.','Son en blanco y negro, no tienen imágenes.']" number disableok ref="p1")
+                    .pregunta.text-center
+                        .h4 ¿En qué lugares hay anuncios publicitarios?
+                        selectives(:ans="1" key="p2" :ops="['En los negocios.','En casas, negocios, transportes.','En los transportes y negocios.']" number disableok ref="p2")
+
+                    .row.w100: button(@click="selectiveValidation(['p1', 'p2'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES P3 & P4
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100: .w50: img(src="i/v2.png").w100
+                    .pregunta.text-center
+                        .h4 ¿Cuál de estos productos implica un daño a la naturaleza?
+                        selectives(:ans="1" key="p3" :ops="[' La fruta orgánica.','Las botas de serpiente.','Ninguna.']" number disableok ref="p3")
+                    .pregunta.text-center
+                        .h4 ¿Qué significa que la fruta es orgánica?
+                        selectives(:ans="2" key="p4" :ops="['Que es seleccionada por tamaño y sabor.','Que es un organismo viviente.','Que se producen sin sustancias que dañan al ambiente.']" number disableok ref="p4")
+                    .row.w100: button(@click="selectiveValidation(['p3', 'p4'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES P5 & P6
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100: .w50: img(src="i/v3.png").w100
+                    .pregunta.text-center
+                        .h4 ¿Qué es lo que compró Patricia?
+                        selectives(:ans="1" key="p5" :ops="['Unos zapatos y unos anteojos.','Mucha ropa y zapatos que tal vez no necesita.','Artículos para su despensa.']" number disableok ref="p5")
+                    .pregunta.text-center
+                        .h4 ¿Qué compró José?
+                        selectives(:ans="1" key="p6" :ops="['Una caja para frutas y otros alimentos.','Frutas y verduras necesarias para su alimentación.','Alimentos protegidos con plástico.']" number disableok ref="p6")
+                    .row.w100: button(@click="selectiveValidation(['p5', 'p6'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES P7 & P8
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100: .w50: img(src="i/v4.png").w100
+                    .pregunta.text-center
+                        .h4 ¿Cuál es un comportamiento de consumo responsable en ropa?
+                        selectives(:ans="2" key="p7" :ops="['Adquirir mucha ropa y zapatos de la misma talla.','Comprar en todas las temporadas de rebajas.','Revisar que esté hecha con materiales más orgánicos que sintéticos. ']" number disableok ref="p7")
+                    .pregunta.text-center
+                        .h4 ¿Qué debes tomar en cuenta para comprar un producto en rebaja?
+                        selectives(:ans="1" key="p8" :ops="['El tiempo de caducidad de la oferta, tal vez nunca vuelva a ofrecerse.','Verificar que sí necesitas el producto y comparar precios en otros lugares.','La opinión de diferentes personas para ver si les gusta el producto.']" number disableok ref="p8")
+                    .row.w100: button(@click="selectiveValidation(['p7', 'p8'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +98,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 4

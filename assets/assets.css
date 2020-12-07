@@ -1350,4 +1350,13 @@ embed {
 .floating.b {
   bottom: 0;
 }
+/* SELECTIVES */
+.selectives .on,
+.selectives .off {
+  cursor: pointer;
+}
+.selectives .on {
+  border: 4px solid #DA3F34;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=assets.css.map */

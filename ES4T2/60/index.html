@@ -9,21 +9,121 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .pregunta {
+          background: #E0E9E6;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          border-radius: 10px;
+          margin: 5px;
+      }
+      .pregunta .on,
+      .pregunta .off {
+          padding: 6px;
+      }
+      .pregunta .number.smaller {
+          font-size: 1.2rem;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Observo la publicidad" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Observo la publicidad" text="Lee la historieta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w90"><img class="w100" src="i/comic.png"/></div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES P1 & P2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Observo la publicidad" text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50"><img class="w100" src="i/v1.png"/></div>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cómo son los anuncios representados en la historieta?</div>
+            <selectives :ans="1" key="p1" :ops="['Tienen letra pequeña para que no se noten.','Son llamativos, de colores y tienen grandes letras.','Son en blanco y negro, no tienen imágenes.']" number="number" disableok="disableok" ref="p1"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿En qué lugares hay anuncios publicitarios?</div>
+            <selectives :ans="1" key="p2" :ops="['En los negocios.','En casas, negocios, transportes.','En los transportes y negocios.']" number="number" disableok="disableok" ref="p2"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p1', 'p2'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P3 & P4-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Observo la publicidad" text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50"><img class="w100" src="i/v2.png"/></div>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál de estos productos implica un daño a la naturaleza?</div>
+            <selectives :ans="1" key="p3" :ops="[' La fruta orgánica.','Las botas de serpiente.','Ninguna.']" number="number" disableok="disableok" ref="p3"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Qué significa que la fruta es orgánica?</div>
+            <selectives :ans="2" key="p4" :ops="['Que es seleccionada por tamaño y sabor.','Que es un organismo viviente.','Que se producen sin sustancias que dañan al ambiente.']" number="number" disableok="disableok" ref="p4"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p3', 'p4'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P5 & P6-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Observo la publicidad" text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50"><img class="w100" src="i/v3.png"/></div>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Qué es lo que compró Patricia?</div>
+            <selectives :ans="1" key="p5" :ops="['Unos zapatos y unos anteojos.','Mucha ropa y zapatos que tal vez no necesita.','Artículos para su despensa.']" number="number" disableok="disableok" ref="p5"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Qué compró José?</div>
+            <selectives :ans="1" key="p6" :ops="['Una caja para frutas y otros alimentos.','Frutas y verduras necesarias para su alimentación.','Alimentos protegidos con plástico.']" number="number" disableok="disableok" ref="p6"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p5', 'p6'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES P7 & P8-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Observo la publicidad" text="Ahora, elige la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50"><img class="w100" src="i/v4.png"/></div>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál es un comportamiento de consumo responsable en ropa?</div>
+            <selectives :ans="2" key="p7" :ops="['Adquirir mucha ropa y zapatos de la misma talla.','Comprar en todas las temporadas de rebajas.','Revisar que esté hecha con materiales más orgánicos que sintéticos. ']" number="number" disableok="disableok" ref="p7"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Qué debes tomar en cuenta para comprar un producto en rebaja?</div>
+            <selectives :ans="1" key="p8" :ops="['El tiempo de caducidad de la oferta, tal vez nunca vuelva a ofrecerse.','Verificar que sí necesitas el producto y comparar precios en otros lugares.','La opinión de diferentes personas para ver si les gusta el producto.']" number="number" disableok="disableok" ref="p8"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p7', 'p8'])">Validar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +145,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -59,7 +160,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>

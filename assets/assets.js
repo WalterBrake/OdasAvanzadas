@@ -193,6 +193,23 @@ var app = new Vue({
                 s_error.play()
             }
         },
+        selectiveValidation (verarray) {
+            let allok = true
+            for(va in verarray){
+                let rf = verarray[va]
+                let res = app.$refs[rf].validate()
+                if(res===false){
+                    allok = false
+                } else {
+                    EventBus.$emit('isok')
+                }
+            }
+            if(allok){
+                s_ok.play()
+            } else {
+                s_error.play()
+            }
+        },
     },
     mounted () {
         this.notfoundimg()
