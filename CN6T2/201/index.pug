@@ -7,6 +7,283 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .navigator {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+            .navigator .nav-area {
+                background: #D0ECEC;
+                width: 200%;
+                position: absolute;
+                transition: all 0.5s;
+            }
+            .navigator .nav-area.X0 {
+                left: 0;
+            }
+            .navigator .nav-area.X1 {
+                left: -100%;
+            }
+            .navigator .nav-area.Y0 {
+                top: 0;
+            }
+            .navigator .nav-area.Y1 {
+                top: -60%;
+            }
+            @media (max-width: 768px) {
+                .navigator .nav-area.Y1 {
+                    top: -50%;
+                }
+            }
+            @media (max-width: 680px) {
+                .navigator .nav-area.Y1 {
+                    top: -35%;
+                }
+            }
+            @media (max-width: 570px) {
+                .navigator .nav-area.Y1 {
+                    top: -10%;
+                }
+            }
+            @media (max-width: 500px) {
+                .navigator .nav-area.Y1 {
+                    top: 0;
+                }
+            }
+            .navigator .nav-controls {
+                position: absolute;
+                right: 2px;
+                bottom: 2px;
+                width: 120px;
+                height: 100px;
+                z-index: 9;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                background: var(--accent);
+                padding: 4px;
+                border-radius: 10px;
+            }
+            .navigator .nav-controls > div {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background: var(--beige);
+                box-sizing: border-box;
+                height: 30px;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+            .navigator .nav-controls > div:hover {
+                background: var(--main);
+            }
+            .navigator .nav-controls > div img {
+                width: 20%;
+            }
+            .navigator .nav-controls > div:nth-child(1),
+            .navigator .nav-controls > div:nth-child(4) {
+                width: 60%;
+            }
+            .navigator .nav-controls > div:nth-child(4) img {
+                transform: rotate(180deg);
+            }
+            .navigator .nav-controls > div:nth-child(2),
+            .navigator .nav-controls > div:nth-child(3) {
+                width: 45%;
+            }
+            .navigator .nav-controls > div:nth-child(2) img {
+                transform: rotate(-90deg);
+            }
+            .navigator .nav-controls > div:nth-child(3) img {
+                transform: rotate(90deg);
+            }
+            @media (max-width: 500px) {
+                .navigator .nav-controls > div:nth-child(1),
+                .navigator .nav-controls > div:nth-child(4) {
+                    display: none;
+                }
+            }
+
+
+            .hiders .hider {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #D0ECEC;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px #C4DFE1;
+                cursor: pointer;
+            }
+            .hiders .hider > div {
+                width: 30px;
+                height: 30px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .hiders .hider > div img {
+                width: 100%;
+            }
+            @media (max-width: 680px) {
+                .hiders .hider > div img {
+                    width: 50%;
+                }
+            }
+            .hiders .hider:nth-child(1) {
+                left: 3%;
+                top: 13%;
+                width: 17%;
+                height: 5%;
+            }
+            .hiders .hider:nth-child(2) {
+                left: 24%;
+                top: 63.7%;
+                width: 14%;
+                height: 5%;
+            }
+            .hiders .hider:nth-child(3) {
+                left: 52%;
+                top: 8.5%;
+                width: 11%;
+                height: 9%;
+            }
+            .hiders .hider:nth-child(4) {
+                left: 66%;
+                top: 51.5%;
+                width: 6%;
+                height: 11%;
+            }
+            .hiders .hider:nth-child(5) {
+                left: 73.5%;
+                top: 52%;
+                width: 6%;
+                height: 10%;
+            }
+            .hiders .hider:nth-child(6) {
+                left: 81%;
+                top: 52%;
+                width: 6%;
+                height: 10%;
+            }
+            .hiders .hider:nth-child(7) {
+                left: 90%;
+                top: 52.5%;
+                width: 6%;
+                height: 9%;
+            }
+            .hiders .hider:nth-child(8) {
+                left: 61%;
+                top: 68.5%;
+                width: 20%;
+                height: 5%;
+            }
+            .hiders .hider:nth-child(9) {
+                left: 65.5%;
+                top: 7.4%;
+                width: 15.3%;
+                height: 19%;
+                background: #DDC0DB;
+            }
+            .hiders .hider:nth-child(9) > div {
+                width: auto;
+                height: auto;
+            }
+            .hiders .hider:nth-child(9) img {
+                display: none;
+            }
+            .hiders .hider:nth-child(10) {
+                left: 81.3%;
+                top: 7.3%;
+                width: 15.3%;
+                height: 19%;
+                background: #8ECEB0;
+            }
+            .hiders .hider:nth-child(10) > div {
+                width: auto;
+                height: auto;
+            }
+            .hiders .hider:nth-child(10) img {
+                display: none;
+            }
+            .hiders .hider:nth-child(11) {
+                left: 65.5%;
+                top: 27%;
+                width: 15.3%;
+                height: 19%;
+                background: #EDDABD;
+            }
+            .hiders .hider:nth-child(11) > div {
+                width: auto;
+                height: auto;
+            }
+            .hiders .hider:nth-child(11) img {
+                display: none;
+            }
+            .hiders .hider:nth-child(12) {
+                left: 81.3%;
+                top: 27%;
+                width: 15.3%;
+                height: 19%;
+                background: #72CBCE;
+            }
+            .hiders .hider:nth-child(12) > div {
+                width: auto;
+                height: auto;
+            }
+            .hiders .hider:nth-child(12) img {
+                display: none;
+            }
+            .hiders .hider.nonvisible {
+                opacity: 0;
+                transition: all 0.4s;
+            }
+
+            .drag {
+                width: auto;
+                height: auto;
+            }
+            .caso {
+                border-radius: 10px;
+                padding: 10px;
+                margin: 4px;
+                display: flex;
+                background: #DAEAD5;
+            }
+            @media (max-width: 680px) {
+                .caso {
+                    font-size: 0.6rem;
+                }
+            }
+            .acciones {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .acciones .drop {
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+                border-radius: 10px;
+                flex-grow: 1;
+                box-shadow: 6px 6px 0 var(--main);
+            }
+            @media (max-width: 680px) {
+                .acciones .drop .number.small {
+                    font-size: 1.2rem;
+                }
+            }
+
+
+
 
 
     body
@@ -16,19 +293,132 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Descubre la información en la infografía y aprende más sobre las tres erres." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .navigator
+                        .nav-area(:class="'X'+temps.ex+' '+'Y'+temps.ey")
+                            img(src="i/info.png").w100
+                            .hiders
+                                hider(v-for="(i, index) in 12" :key="i" @clicked="temps.clicks++")
+                                    number(v-if="index==8" c=1) 1
+                                    number(v-if="index==9" c=2) 2
+                                    number(v-if="index==10" c=3) 3
+                                    number(v-if="index==11" c=4) 4
+                        .nav-controls
+                            div.up(@click="gotop"): img(src="i/arr.png")
+                            div.left(@click="goleft"): img(src="i/arr.png")
+                            div.right(@click="goright"): img(src="i/arr.png")
+                            div.bottom(@click="gobottom"): img(src="i/arr.png")
+                    button(@click="sceneCompleted(false)" v-if="temps.clicks>=12").button.big.flying.animate__animated.animate__flip Siguiente
+
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Ahora, relaciona los casos con la acción que le corresponda." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
-            
+                        .w50
+                            template(v-for="(i, index) in temps.relac")
+                                div.caso
+                                    .txt {{i.t}}
+                                    drag(:data="i.v" dropzone=".drop" @isok="temps.ans['b'+index] = true" :particle-color="i.col" @iserror="temps.ans['b'+index] = false" :ref="'b'+index" drag-line no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): .conector(:class="'c'+(index+1)")
+                            
+                        .w50.acciones
+                            .drop(data="reutilizar" droptimes="multiple"): number(c=1 small) Reutilizar
+                            .drop(data="reciclar" droptimes="multiple"): number(c=1 small) Reciclar
+                            .drop(data="reducir" droptimes="multiple"): number(c=1 small) Reducir
+                    button(@click="validateem").button.big.animate__animated.animate__flip Verificar
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
+                Vue.component('hider', {
+                    data(){
+                        return{
+                            visible: true
+                        }
+                    },
+                    methods: {
+                        clic(){
+                            if(!this.visible){
+                                return false
+                            }
+                            this.visible = false
+                            s_select.play()
+                            this.$emit('clicked')
+                        }
+                    },
+                    template: `
+                    <div :class="visible?'visible':'nonvisible'" class="hider" @click="clic">
+                        <div class="animate__animated animate__jello animate__infinite">
+                            <img src="i/hider.png">
+                            <slot></slot>
+                        </div>
+                    </div>
+                        `,
+                })
+            
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'clicks', 0)
+
+                app.$set(app.temps, 'ex', 0)
+                app.$set(app.temps, 'ey', 0)
+                app.goright = function () { app.temps.ex = 1 }
+                app.goleft = function () { app.temps.ex = 0 }
+                app.gotop = function () { app.temps.ey = 0 }
+                app.gobottom = function () { app.temps.ey = 1 }
+
+
+                app.$set(app.temps, 'relac', [
+                    {t: 'Brenda compró una bolsa de 5kg de jabón para ropa en lugar de cinco bolsas con 1 kg cada una.' , v: 'reducir', col:'#5EB247'},
+                    {t: 'Josué cortó dos trozos de tela de una camisa y los usó para poner un parche en su chaleco.' , v: 'reutilizar', col:'#015093'},
+                    {t: 'Alicia recolecta llantas porque hace taburetes y los vende.' , v: 'reutilizar', col:'#7DD5F7'},
+                    {t: 'Ernesto usa los residuos de frutas y verduras para hacer composta en su jardín.' , v: 'reciclar', col:'#EC8B2E'},
+                    {t: 'Cuando Monse va a la fonda a comprar comida, lleva sus propios recipientes.' , v: 'reducir', col:'#DA3F34'},
+                    {t: 'Samuel trabaja en una fábrica que usa vidrio para elaborar ladrillos.' , v: 'reciclar', col:'#F460AB'},
+                ])
+
+                app.$set(app.temps, 'ans', {
+                    b0: false,
+                    b1: false,
+                    b2: false,
+                    b3: false,
+                    b4: false,
+                })
+
+
+                app.validateem = function () {
+                    let allok = true
+                    for(i in app.temps.ans){
+                        let answer = app.temps.ans[i]
+                        if(!answer){
+                            allok = false
+                        }
+                    }
+                    if(allok){
+                        s_ok.play()
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                        EventBus.$emit('isok')
+                    } else {
+                        s_error.play()
+                        for(i in app.temps.ans){
+                            app.$refs[i][0].undroppableFn()
+                            app.$refs[i][0].backToInitPos()
+                            app.temps.ans.b0 = false
+                            app.temps.ans.b1 = false
+                            app.temps.ans.b2 = false
+                            app.temps.ans.b3 = false
+                            app.temps.ans.b4 = false
+                        }
+                       
+                    }
+                }
+                
                 
                 app.currentScene = 0
                 app.scenesCount = 1

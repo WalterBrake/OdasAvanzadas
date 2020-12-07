@@ -4310,11 +4310,11 @@
 		"oAP": "\/CN5T2\/193\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Inst_Coloca.mp3": {
+	"\/CN5T2\/193\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Inst_Coloca.mp3",
+		"oAP": "\/CN5T2\/193\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.jpg": {
@@ -4879,6 +4879,61 @@
 		"oA": 0,
 		"oAP": "\/CN6T1\/193\/index.html",
 		"oF": 0
+		},
+	"\/CN6T2\/201\/i\/arr.png": {
+		"ft": 32768,
+		"iS": 719,
+		"oA": 0,
+		"oAP": "\/CN6T2\/201\/i\/arr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T2\/201\/i\/hider.png": {
+		"ft": 32768,
+		"iS": 2138,
+		"oA": 0,
+		"oAP": "\/CN6T2\/201\/i\/hider.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T2\/201\/i\/i1.png": {
+		"ft": 32768,
+		"iS": 2387886,
+		"oA": 0,
+		"oAP": "\/CN6T2\/201\/i\/i1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T2\/201\/i\/i2.png": {
+		"ft": 32768,
+		"iS": 2363118,
+		"oA": 0,
+		"oAP": "\/CN6T2\/201\/i\/i2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T2\/201\/i\/info.png": {
+		"ft": 32768,
+		"iS": 4790367,
+		"oA": 0,
+		"oAP": "\/CN6T2\/201\/i\/info.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/CN6T2\/201\/index.html": {
 		"cB": 0,

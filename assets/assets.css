@@ -299,6 +299,11 @@ input[type=number] {
     width: 98%;
   }
 }
+@media (max-width: 992px) {
+  .activity {
+    margin-bottom: 60px;
+  }
+}
 .startScene,
 .endScene {
   background: #5EB246;
