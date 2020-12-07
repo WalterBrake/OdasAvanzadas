@@ -7,6 +7,106 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .drags {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 4px;
+            }
+            .drag div {
+                padding: 5px;
+                background: #fff;
+                border-radius: 14px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .area {
+                position: relative;
+                margin: 0 auto;
+            }
+            .area .drops .drop {
+                position: absolute;
+                width: 20%;
+                height: 14%;
+                left: 0;
+                border-radius: 20px;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .area1 .drops .drop:nth-child(1) {
+                width: 100%;
+                top: 0;
+                background: #75489D;
+            }
+            .area1 .drops .drop:nth-child(2) {
+                width: 70%;
+                left: 0;
+                top: 15%;
+                background: #F15A4D;
+            }
+            .area1 .drops .drop:nth-child(3) {
+                width: 48%;
+                left: 0;
+                bottom: 0;
+                background: #F15A4D;
+            }
+            .area1 .drops .drop:nth-child(4) {
+                width: 48%;
+                left: 50%;
+                bottom: 0;
+                background: #F15A4D;
+            }
+            .area2 .drops .drop:nth-child(1) {
+                width: 48%;
+                left: 0;
+                top: 10%;
+                background: #F15A4D;
+                font-size: 0.9rem;
+            }
+            .area2 .drops .drop:nth-child(2) {
+                width: 48%;
+                left: 50%;
+                top: 13%;
+                background: #F15A4D;
+            }
+            .area2 .drops .drop:nth-child(3) {
+                width: 40%;
+                left: 0;
+                bottom: 0;
+                background: #F15A4D;
+            }
+            .area2 .drops .drop:nth-child(4) {
+                width: 48%;
+                left: 42%;
+                bottom: 0;
+                background: #F15A4D;
+            }
+            .area3 .drops .drop:nth-child(1) {
+                width: 100%;
+                top: 0;
+                background: #75489D;
+            }
+            .area3 .drops .drop:nth-child(2) {
+                width: 70%;
+                left: 15%;
+                bottom: 0%;
+                background: #F15A4D;
+            }
+            @media (max-width: 680px) {
+                .area .drops .drop {
+                    font-size: 0.7rem;
+                }
+                .area .drops .drop div{
+                    line-height: 0.8;
+                }
+            }
+
 
 
     body
@@ -15,20 +115,82 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Conoces las partes de una revista? Coloca su nombre en el espacio que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100.wrap
+                        .w50.wm100.drags
+                             drag(v-for="(i, index) in temps.a" :key="'p1'+index" dropzone=".drop" :data="i.v" append-to-dropzone stay-if-ok): div {{i.t}}
+                        .w50.wm100
+                            .w70.area.area1.text-center
+                                img(src="i/portada.png").w100
+                                .drops
+                                    .drop(droptimes="untilok" data="1")
+                                    .drop(droptimes="untilok" data="2")
+                                    .drop(droptimes="untilok" data="3")
+                                    .drop(droptimes="untilok" data="4")
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Conoces las partes de una revista? Coloca su nombre en el espacio que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap
+                        .w50.wm100.drags
+                             drag(v-for="(i, index) in temps.b" :key="'p2'+index" dropzone=".drop" :data="i.v" append-to-dropzone stay-if-ok): div {{i.t}}
+                        .w50.wm100
+                            .w70.area.area2.text-center
+                                img(src="i/paginas.png").w100
+                                .drops
+                                    .drop(droptimes="untilok" data="1")
+                                    .drop(droptimes="untilok" data="2")
+                                    .drop(droptimes="untilok" data="3")
+                                    .drop(droptimes="untilok" data="4")
             
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Conoces las partes de una revista? Coloca su nombre en el espacio que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap
+                        .w50.wm100.drags
+                             drag(v-for="(i, index) in temps.c" :key="'p3'+index" dropzone=".drop" :data="i.v" append-to-dropzone stay-if-ok): div {{i.t}}
+                        .w50.wm100
+                            .w70.area.area3.text-center
+                                img(src="i/contraportada.png").w100
+                                .drops
+                                    .drop(droptimes="untilok" data="1")
+                                    .drop(droptimes="untilok" data="2")
+
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    { t: 'Índice/Secciones', v: 0 },
+                    { t: 'Portada', v: 1 },
+                    { t: 'Subtítulo ', v: 3 },
+                    { t: 'Columnas', v: 0 },
+                    { t: 'Contraportada ', v: 0 },
+                    { t: 'Título', v: 2 },
+                    { t: 'Ilustraciones o fotografías', v: 4 },
+                    { t: 'Editorial', v: 0 },
+                    { t: 'Créditos', v: 0 },
+                    { t: 'Páginas', v: 0 },
+                ])
+                app.$set(app.temps, 'b', [
+                    { t: 'Índice / Secciones', v: 1 },
+                    { t: 'Editorial', v: 0 },
+                    { t: 'Créditos', v: 3 },
+                    { t: 'Columnas', v: 2 },
+                    { t: 'Páginas', v: 4 },
+                    { t: 'Contraportada', v: 0 },
+                ])
+                app.$set(app.temps, 'c', [
+                    { t: 'Contraportada', v: 1 },
+                    { t: 'Editorial', v: 2 },
+                ])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3

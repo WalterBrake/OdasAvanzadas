@@ -7968,6 +7968,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/ES2T2\/75\/i\/pizarra.png": {
+		"ft": 32768,
+		"iS": 22389,
+		"oA": 0,
+		"oAP": "\/ES2T2\/75\/i\/pizarra.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES2T2\/75\/i\/pizarraCon.png": {
 		"ft": 32768,
 		"iS": 45267,
@@ -9221,6 +9232,39 @@
 		"oA": 0,
 		"oAP": "\/ES3T2\/56\/s\/instruccion2.mp3",
 		"oF": 0
+		},
+	"\/ES3T2\/59\/i\/contraportada.png": {
+		"ft": 32768,
+		"iS": 191479,
+		"oA": 0,
+		"oAP": "\/ES3T2\/59\/i\/contraportada.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T2\/59\/i\/paginas.png": {
+		"ft": 32768,
+		"iS": 340444,
+		"oA": 0,
+		"oAP": "\/ES3T2\/59\/i\/paginas.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T2\/59\/i\/portada.png": {
+		"ft": 32768,
+		"iS": 239570,
+		"oA": 0,
+		"oAP": "\/ES3T2\/59\/i\/portada.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ES3T2\/59\/index.html": {
 		"cB": 0,
