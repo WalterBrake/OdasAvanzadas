@@ -4144,12 +4144,148 @@
 		"oAP": "\/CN5T1\/181\/index.html",
 		"oF": 0
 		},
-	"\/CN5T2\/193\/i\/Sé cuidar ecosistemas CN5°T2 - Hoja 1.ai": {
-		"cB": 0,
-		"ft": 8192,
+	"\/CN5T2\/193\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 564036,
 		"oA": 0,
-		"oAP": "\/CN5T2\/193\/i\/Sé cuidar ecosistemas CN5°T2 - Hoja 1.ai",
-		"oF": 0
+		"oAP": "\/CN5T2\/193\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i1.png": {
+		"ft": 32768,
+		"iS": 28574,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i10.png": {
+		"ft": 32768,
+		"iS": 44991,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i11.png": {
+		"ft": 32768,
+		"iS": 4165,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i12.png": {
+		"ft": 32768,
+		"iS": 9914,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i12.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i2.png": {
+		"ft": 32768,
+		"iS": 72077,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i3.png": {
+		"ft": 32768,
+		"iS": 20750,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i4.png": {
+		"ft": 32768,
+		"iS": 110379,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i5.png": {
+		"ft": 32768,
+		"iS": 20924,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i6.png": {
+		"ft": 32768,
+		"iS": 41705,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i7.png": {
+		"ft": 32768,
+		"iS": 3183,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i8.png": {
+		"ft": 32768,
+		"iS": 7573,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T2\/193\/i\/i9.png": {
+		"ft": 32768,
+		"iS": 10628,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/i\/i9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/CN5T2\/193\/index.html": {
 		"cB": 0,
@@ -4167,18 +4303,18 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/CN5T2\/193\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN5T2\/193\/s\/instruccion1.mp3",
+		"oF": 0
+		},
 	"\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Inst_Coloca.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Inst_Coloca.mp3",
-		"oF": 0
-		},
-	"\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Intro_Ecosistemas.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN5T2\/193\/s\/Sé cuidar ecosistemas CN5°T2_Intro_Ecosistemas.mp3",
 		"oF": 0
 		},
 	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.jpg": {
@@ -10976,7 +11112,7 @@
 		},
 	"\/HI4T2\/266\/i\/rship.png": {
 		"ft": 32768,
-		"iS": 249592,
+		"iS": 590795,
 		"oA": 0,
 		"oAP": "\/HI4T2\/266\/i\/rship.png",
 		"oF": 0,

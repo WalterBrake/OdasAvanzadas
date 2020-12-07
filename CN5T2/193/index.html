@@ -9,17 +9,142 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .bg {
+          position: relative;
+      }
+      .drags .drag {
+          width: auto;
+          height: auto;
+          max-width: 100px;
+          
+      }
+      .drags .obj{
+          position: absolute;
+      }
+      .drags .obj img {
+          min-width: auto;
+      }
+      .drags .obj:nth-child(1) {
+          left: 8%;
+          top: 31%;
+          width: 16%;
+      }
+      .drags .obj:nth-child(2) {
+          left: 36%;
+          bottom: 2%;
+          width: 14%;
+      }
+      .drags .obj:nth-child(3) {
+          left: 48%;
+          bottom: 20%;
+          width: 10%;
+      }
+      .drags .obj:nth-child(4) {
+          right: 10%;
+          top: 26%;
+          width: 21%;
+      }
+      .drags .obj:nth-child(5) {
+          left: 10%;
+          bottom: 2%;
+          width: 12%;
+      }
+      .drags .obj:nth-child(6) {
+          left: 24%;
+          top: 50%;
+          width: 15%;
+      }
+      .drags .obj:nth-child(7) {
+          right: 30%;
+          top: 54%;
+          width: 5%;
+      }
+      .drags .obj:nth-child(8) {
+          right: 22%;
+          top: 82%;
+          width: 10%;
+      }
+      .drags .obj:nth-child(9) {
+          left: 6%;
+          top: 77%;
+          width: 10%;
+      }
+      .drags .obj:nth-child(10) {
+          left: 30%;
+          top: 39%;
+          width: 18%;
+      }
+      .drags .obj:nth-child(11) {
+          right: 30%;
+          top: 74%;
+          width: 8%;
+      }
+      .drags .obj:nth-child(12) {
+          left: 3%;
+          top: 66%;
+          width: 8%;
+      }
+      
+      .dropa {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 2%;
+          box-sizing: border-box;
+      }
+      .dropa .drop {
+          background: var(--clear);
+          border: 4px dashed var(--sec);
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+          margin: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          flex-wrap: wrap;
+      }
+      .dropa .drop img {
+          max-width: 100px;
+      }
+      @media (max-width: 680px){
+          .dropa .drop img {
+              max-width: 40%;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Sé cuidar ecosistemas" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_nino.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="dragdrop" title="Sé cuidar ecosistemas" text="Es importante la conservación de los ecosistemas porque romper con su equilibrio, afecta a todas las especies que viven en él." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1=true">
+          <audiotext audio="s/instruccion2.mp3" text="Coloca en la caja los objetos, productos o acciones humanas que dañan a los ecosistemas." :autoplay="true" v-if="temps.au1"></audiotext>
+        </info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <div class="bg w60 wm80 text-center"><img class="w100" src="i/bg.png"/>
+              <div class="drags">
+                <template v-for="(i, index) in temps.a">
+                  <div class="obj">
+                    <drag dropzone=".drop" :data="i.ok?'ok':'no'" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img :src="i.im"/></drag>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div class="row w40 wm20 dropa">
+              <div class="drop" droptimes="multiple" droplimit="10" data="ok"></div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -56,7 +181,21 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'a', [
+          {im: 'i/i1.png', ok:false},
+          {im: 'i/i2.png', ok:true},
+          {im: 'i/i3.png', ok:true},
+          {im: 'i/i4.png', ok:true},
+          {im: 'i/i5.png', ok:false},
+          {im: 'i/i6.png', ok:false},
+          {im: 'i/i7.png', ok:true},
+          {im: 'i/i8.png', ok:true},
+          {im: 'i/i9.png', ok:false},
+          {im: 'i/i10.png', ok:false},
+          {im: 'i/i11.png', ok:true},
+          {im: 'i/i12.png', ok:true},
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
