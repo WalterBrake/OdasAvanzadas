@@ -7,6 +7,43 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .p2 {
+                position: relative;
+            }
+            .p2 .drop {
+                position: absolute;
+                left: 3%;
+                top: 14%;
+                width: 94%;
+                height: 72%;
+            }
+            .p2 .drop.hover {
+                box-shadow: 0 0 30px #5EB247 inset;
+            }
+            .p1 {
+                position: relative;
+            }
+            .p1 .items {
+                position: absolute;
+                left: 3%;
+                top: 14%;
+                width: 94%;
+                height: 70%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+            .p1 .items .drag {
+                width: auto;
+                height: auto;
+            }
+            @media (max-width:680px){
+                .p1 .items .drag{
+                    font-size: 0.6rem;
+                }
+            }
+
 
 
     body
@@ -16,10 +53,19 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Coloca en el pizarrón las oraciones que tengan los signos escritos correctamente." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.wrap
+                        .w50.wm50.p1
+                            img(src="i/pizarra.png").w100
+                            .items
+                                template(v-for="(i, index) in temps.texts")
+                                    drag(:data="i.ok?'ok':'no'" dropzone=".drop" :ref="'f'+index" @isok="temps.frases['f'+index] = 1" @iserror="temps.frases['f'+index] = 1" no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): div {{i.t}}
+                        .w50.wm50.p2
+                            img(src="i/pizarraCon.png").w100
+                            .drop(droptimes="multiple" droplimit="10" data="ok")
+                    button(@click="validateem").button.big.animate__animated.animate__flip Verificar
+
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +74,46 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'frases', {f0:0,f1:0, f2:0, f3:0, f4:0,f5:0, f6:0, f7:0, f8:0, f9:0, f10:0})
+
+                app.validateem = function () {
+                    console.log('::::::checking')
+                    let withErrors = false
+                    let okeis = 0
+                    for( i in app.temps.frases){
+                        let fra = app.temps.frases[i]
+
+                        let inx = parseInt(i.substring(1))
+                        let corr = app.temps.texts[inx].ok
+                        console.log(fra == corr)
+                        if(fra != corr){
+                            withErrors = true
+                            app.$refs[i][0].undroppableFn()
+                            app.$refs[i][0].backToInitPos()
+                            app.temps.frases[i] = 0
+                        }
+                    }
+                    if(withErrors){
+                        s_error.play()
+                    } else {
+                        s_ok.play()
+                        EventBus.$emit('isok')
+                    }
+                }
                 
+                app.$set(app.temps, 'texts', [
+                    {t:'Cuándo iremos al cine!', ok: false}, 
+                    {t:'¿Por qué no fuimos al parque?', ok: true},
+                    {t:'¡Corran!', ok: true},
+                    {t:'¿Qué comió tu perro?', ok: true},
+                    {t:'¡Tengo mucho miedo?', ok: false},
+                    {t:'¡¡Miren, un gato!!', ok: false},
+                    {t:'¡Está lloviendo!', ok: true},
+                    {t:'¿A dónde iremos esta tarde?', ok: true},
+                    {t:'¡Ya viene el caballo dorado!', ok: true},
+                    {t:'Cómo estás?', ok: false},
+                    {t:'?Me tropecé!', ok: false},
+                ])
+
                 app.currentScene = 0
                 app.scenesCount = 1

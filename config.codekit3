@@ -7957,6 +7957,28 @@
 		"oAP": "\/ES2T2\/75\/i\/Conozco los signos Es2°T2 - Hoja 1.ai",
 		"oF": 0
 		},
+	"\/ES2T2\/75\/i\/nina.png": {
+		"ft": 32768,
+		"iS": 279241,
+		"oA": 0,
+		"oAP": "\/ES2T2\/75\/i\/nina.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T2\/75\/i\/pizarraCon.png": {
+		"ft": 32768,
+		"iS": 45267,
+		"oA": 0,
+		"oAP": "\/ES2T2\/75\/i\/pizarraCon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES2T2\/75\/index.html": {
 		"cB": 0,
 		"ft": 8192,
