@@ -2543,6 +2543,127 @@
 		"oAP": "\/CN3T2\/217\/s\/p52.mp3",
 		"oF": 0
 		},
+	"\/CN3T2\/222\/i\/i1.png": {
+		"ft": 32768,
+		"iS": 21499,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i10.png": {
+		"ft": 32768,
+		"iS": 7858,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i11.png": {
+		"ft": 32768,
+		"iS": 17400,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i12.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i2.png": {
+		"ft": 32768,
+		"iS": 14713,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i3.png": {
+		"ft": 32768,
+		"iS": 31636,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i4.png": {
+		"ft": 32768,
+		"iS": 17821,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i5.png": {
+		"ft": 32768,
+		"iS": 21732,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i6.png": {
+		"ft": 32768,
+		"iS": 23739,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i7.png": {
+		"ft": 32768,
+		"iS": 42509,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i8.png": {
+		"ft": 32768,
+		"iS": 20615,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN3T2\/222\/i\/i9.png": {
+		"ft": 32768,
+		"iS": 36112,
+		"oA": 0,
+		"oAP": "\/CN3T2\/222\/i\/i9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CN3T2\/222\/i\/Reconozco los materiales CN 3o T2 - Hoja 1.ai": {
 		"cB": 0,
 		"ft": 8192,
@@ -10527,13 +10648,6 @@
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Hijo_Teatro.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Selecciona.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Selecciona.mp3",
-		"oF": 0
-		},
 	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -10567,6 +10681,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES6T2\/55\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/55\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {

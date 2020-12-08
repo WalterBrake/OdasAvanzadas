@@ -9,17 +9,81 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drop {
+          background: #fff;
+          margin: 6px;
+          min-height: 140px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          padding: 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drop .number.smaller {
+          display: block;
+          text-align: center;
+          min-width: 100%;
+      }
+      @media (max-width: 680px) {
+          .drop .number.smaller {
+              font-size: 0.7rem;
+          }
+      }
+      .drop > div {
+          min-width: 30px;
+          max-width: 80px;
+      }
+      .drop > div img {
+          min-width: 30px;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+      }
+      .drag img {
+          max-width: 70px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Reconozco los materiales" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconozco los materiales" text="Coloca los objetos en el lugar que corresponde según su material: sólido, líquido y gaseoso." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in ['s', 's', 'l', 'l', 'g', 'l', 'g', 's', 'g', 'l', 's']">
+              <drag dropzone=".drop" :data="i" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                <div><img class="w100" :src="'i/i'+(index+1)+'.png'"/></div>
+              </drag>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="w30">
+              <div class="drop" data="s" droptimes="untilok">
+                <number smaller="smaller" c="1">Sólido</number>
+              </div>
+            </div>
+            <div class="w30">
+              <div class="drop" data="l" droptimes="untilok">
+                <number smaller="smaller" c="2">Líquido</number>
+              </div>
+            </div>
+            <div class="w30">
+              <div class="drop" data="g" droptimes="untilok">
+                <number smaller="smaller" c="3">Gaseoso</number>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +109,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

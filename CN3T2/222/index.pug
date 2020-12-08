@@ -7,6 +7,44 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .drop {
+                background: #fff;
+                margin: 6px;
+                min-height: 140px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                padding: 6px;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drop .number.smaller {
+                display: block;
+                text-align: center;
+                min-width: 100%;
+            }
+            @media (max-width: 680px) {
+                .drop .number.smaller {
+                    font-size: 0.7rem;
+                }
+            }
+            .drop > div {
+                min-width: 30px;
+                max-width: 80px;
+            }
+            .drop > div img {
+                min-width: 30px;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+            }
+            .drag img {
+                max-width: 70px;
+            }
+
 
 
     body
@@ -15,11 +53,16 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los objetos en el lugar que corresponde según su material: sólido, líquido y gaseoso." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.wrap
+                        template(v-for="(i, index) in ['s', 's', 'l', 'l', 'g', 'l', 'g', 's', 'g', 'l', 's']")
+                            drag(dropzone=".drop" :data="i" append-to-dropzone stay-if-ok): div: img(:src="'i/i'+(index+1)+'.png'").w100
                     .row.w100
-            
+                        .w30: .drop(data="s" droptimes="untilok"): number(smaller c=1) Sólido
+                        .w30: .drop(data="l" droptimes="untilok"): number(smaller c=2) Líquido
+                        .w30: .drop(data="g" droptimes="untilok"): number(smaller c=3) Gaseoso
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
