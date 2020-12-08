@@ -10534,13 +10534,6 @@
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Selecciona.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Vamos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Inst_Vamos.mp3",
-		"oF": 0
-		},
 	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -10567,6 +10560,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3",
+		"oF": 0
+		},
+	"\/ES6T2\/55\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/55\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
@@ -18888,6 +18888,46 @@
 		"oA": 0,
 		"oAP": "\/MA4T2\/147\/i\/Descubro_cuadrilateros_Ma4°T2.ai",
 		"oF": 0
+		},
+	"\/MA4T2\/147\/i\/f1.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T2\/147\/i\/f1.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T2\/147\/i\/f2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T2\/147\/i\/f2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T2\/147\/i\/f3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T2\/147\/i\/f3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA4T2\/147\/i\/f4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA4T2\/147\/i\/f4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/MA4T2\/147\/i\/la.png": {
 		"ft": 32768,

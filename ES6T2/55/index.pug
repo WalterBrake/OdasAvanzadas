@@ -2,7 +2,6 @@ include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
 - title = 'Estudiamos las obras de teatro'
-
 <!DOCTYPE html>
 html(lang="es")
     +head
@@ -15,20 +14,41 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Vamos a leer una historieta acerca del teatro." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.v1.play()")
                 activity
-                    .row.w100
+                    .row.w100: videoplayer(initclass="w100" :autoplay="false" c="6" path="i/v1" @completed="temps.a = true" ref="v1")
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+
+            // SCENES Ps
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true" )
+                activity
+                    sequence(:options="temps.preguntas" ref="seque" no-nav)
+                        template(v-slot:option="{option}")
+                            .h4.text-center {{option.p}}
+                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1" ): number(randomc smaller): div(v-html="i")
+            
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'v1', false)
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+
+                app.$set(app.temps, 'preguntas', [
+                    { ans: 0, p: '¿Cómo se llama el teatro que visitan en la historieta?', ops: ['Teatro Degollado.','Teatro Don Juan Degollado.','Teatro Juan Tenorio.','Teatro de la Ciudad.']},
+                    { ans: 2, p: '¿Qué tienen en común las obras de teatro y los cuentos?', ops: ['Ambos tienen actores y escenas. ','Los cuentos y las obras de teatro narran historias reales.','Tanto los cuentos como las obras de teatro tienen inicio, nudo y desenlace.','Ambas tienen finales felices y nos divierten.']},
+                    { ans: 3, p: '¿Cuál es la función del actor en la obra de teatro?', ops: ['El actor es el que dirije la obra.','El actor es el que escribe el guion.','El actor es el que divide la obra en actos y escenas.','El actor es el que interpreta a los personajes del guion.']},
+                    { ans: 1, p: '¿Qué son las acotaciones?', ops: ['Lo que escribe el autor para que lo diga el actor en la escena.','Lo que escribe el autor entre paréntesis para saber cómo moverse en el escenario.','Los diálogos de la obra que dicen los actores.','Lo que escribe el autor en los diálogos para que se digan en el escenario.']},
+
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1
