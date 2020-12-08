@@ -7,6 +7,26 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .sequence {
+                background: var(--accent);
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
+            .sequence .sequence_nav {
+                margin-top: 10%;
+            }
+            .sequence .selectives {
+                margin-top: 20px;
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                text-align: center;
+            }
+            .sequence .selectives .row {
+                flex-direction: column;
+            }
+
 
 
     body
@@ -15,11 +35,17 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w90
+                        sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true")
+                            template(v-slot:option="{option}")
+                                .row.w100: .w50: img(src="i/i1.png").w100
+                                .row.w100.mb-auto
+                                    selectives(:ans="option.ans" :key="'k'+option.k" :ops="option.ops" number disableok :ref="'k'+option.k")
+                    .row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar
+
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +54,15 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'last', false)
+
+                app.$set(app.temps, 'preguntas', [
+                    {k:1, im: 'i/i1.png', ans:0, ops: ['Volumen: 10 X 3 X 3 = 90 cubos','Volumen: 10 + 3 X 3 = 39 cubos','Volumen: 10 X 3 + 3 = 33 cubos']},
+                    {k:2, im: 'i/i2.png', ans:1, ops: ['Volumen: 4 x 5 x 4 = 80 cubos','Volumen: 5 x 4 x 2= 40 cubos','Volumen:  2 x 5 x 5 = 50 cubos']},
+                    {k:3, im: 'i/i3.png', ans:2, ops: ['Volumen:  4 + 4  x 4 = 32 cubos','Volumen: 4+4+4= 12 cubos','Volumen: 4 x 4 x 4 = 64 cubos']},
+                    {k:4, im: 'i/i4.png', ans:2, ops: ['Volumen 5 x 5 x 2 = 50 cubos','Volumen: 2 x 5 + 5 = 15 cubos','Volumen: 5 x 2 x 3 = 30 cubos']},
+                    {k:5, im: 'i/i5.png', ans:0, ops: ['Volumen: 4 x 3 x 2 = 24 cubos','Volumen 4 x 2 + 3 = 12 cubos','Volumen = 4 x 4 x 3 = 48 cubos']},
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1
