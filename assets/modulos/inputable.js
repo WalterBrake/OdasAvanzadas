@@ -4,7 +4,11 @@ Vue.component('inputable', {
         'particleColor', // color de particulas
         'initclass', // class de inicio (se pueden usar c1,c2,c3...)
         'isok', // texto a comparar,
-        'playError' //Suena error si no es correcto
+        'playError', //Suena error si no es correcto
+        'placeholder',
+        'pattern',
+        'disabled',
+        'type'
     ],
     data() {
         return {
@@ -14,8 +18,10 @@ Vue.component('inputable', {
     },
     template: `
         <div ref="inputable" :class="'inputable ' + (initclass!=undefined?initclass:'')+ ' ' + (status ? 'okInput':'') ">
+            <slot name="before"></slot>
             <slot v-if="status"></slot>
-            <input @input="filled" v-model="inputed" v-if="!status">
+            <input @input="filled" v-model="inputed" v-if="!status" :placeholder="placeholder?placeholder:''" :pattern="pattern?pattern:''" :disabled="disabled?disabled:false" :type="type?type:'text'">
+            <slot name="after"></slot>
         </div>
     `,
     methods: {
