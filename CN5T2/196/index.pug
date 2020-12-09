@@ -7,6 +7,12 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .audiotext .audiotextTxt strong{
+                background: #fff;
+                padding: 0 8px;
+                border-radius: 4px;
+            }
+
 
 
     body
@@ -16,7 +22,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="¿Sabes qué es la gravedad? Haz clic en el ícono de <strong>?</strong> y lee la información. Después, responde <strong>F</strong> para falso o <strong>V</strong>  para verdadero en las afirmaciones y selecciona la razón que fundamenta tu respuesta." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
             

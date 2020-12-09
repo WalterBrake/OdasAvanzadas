@@ -3402,12 +3402,101 @@
 		"oAP": "\/CN4T2\/202\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/CN4T2\/205\/i\/Valoro la importancia del agua CN4°T2 - Hoja 1.ai": {
-		"cB": 0,
-		"ft": 8192,
+	"\/CN4T2\/205\/i\/c1.png": {
+		"ft": 32768,
+		"iS": 32339,
 		"oA": 0,
-		"oAP": "\/CN4T2\/205\/i\/Valoro la importancia del agua CN4°T2 - Hoja 1.ai",
-		"oF": 0
+		"oAP": "\/CN4T2\/205\/i\/c1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/c2.png": {
+		"ft": 32768,
+		"iS": 33742,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/c2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/c3.png": {
+		"ft": 32768,
+		"iS": 32663,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/c3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/c4.png": {
+		"ft": 32768,
+		"iS": 31873,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/c4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/c5.png": {
+		"ft": 32768,
+		"iS": 33497,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/c5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/i1.png": {
+		"ft": 32768,
+		"iS": 2353211,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/i1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/im1.png": {
+		"ft": 32768,
+		"iS": 410149,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/im1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/im2.png": {
+		"ft": 32768,
+		"iS": 773900,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/i\/im2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T2\/205\/i\/rain.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/CN4T2\/205\/i\/rain-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/CN4T2\/205\/index.html": {
 		"cB": 0,
@@ -3425,18 +3514,25 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Audio1.mp3": {
+	"\/CN4T2\/205\/s\/a2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Audio1.mp3",
+		"oAP": "\/CN4T2\/205\/s\/a2.mp3",
 		"oF": 0
 		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio2.mp3": {
+	"\/CN4T2\/205\/s\/hola.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio2.mp3",
+		"oAP": "\/CN4T2\/205\/s\/hola.mp3",
+		"oF": 0
+		},
+	"\/CN4T2\/205\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio3.mp3": {
@@ -3486,13 +3582,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_VuelveAintentar.mp3",
-		"oF": 0
-		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Intro.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Intro.mp3",
 		"oF": 0
 		},
 	"\/CN5T1\/168\/aimg\/i1.jpg": {
@@ -4525,13 +4614,6 @@
 		"oAP": "\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.psd",
 		"oF": 0
 		},
-	"\/CN5T2\/196\/i\/Sé qué es la fuerza de gravedad CN5o T2.pdf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN5T2\/196\/i\/Sé qué es la fuerza de gravedad CN5o T2.pdf",
-		"oF": 0
-		},
 	"\/CN5T2\/196\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4547,6 +4629,13 @@
 		"oAP": "\/CN5T2\/196\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/CN5T2\/196\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN5T2\/196\/s\/instruccion1.mp3",
+		"oF": 0
 		},
 	"\/CN6T1\/184\/aimg\/1.svg": {
 		"ft": 2097152,

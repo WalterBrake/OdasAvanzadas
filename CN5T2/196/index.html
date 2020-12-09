@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .audiotext .audiotextTxt strong{
+          background: #fff;
+          padding: 0 8px;
+          border-radius: 4px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
@@ -17,7 +26,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Sé qué es la fuerza de gravedad" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Sé qué es la fuerza de gravedad" text="¿Sabes qué es la gravedad? Haz clic en el ícono de &lt;strong&gt;?&lt;/strong&gt; y lee la información. Después, responde &lt;strong&gt;F&lt;/strong&gt; para falso o &lt;strong&gt;V&lt;/strong&gt;  para verdadero en las afirmaciones y selecciona la razón que fundamenta tu respuesta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100"></div>
         </activity>
@@ -45,6 +54,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

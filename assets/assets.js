@@ -184,14 +184,14 @@ var app = new Vue({
                         let res = app.$refs[rf][i].externalValidation()
                         if(res===false){
                             allok = false
-                        } else {console.log('ok')}
+                        } 
                     }
                 }
                  else {
                     let res = app.$refs[rf].externalValidation()
                     if(res===false){
                         allok = false
-                    }  else {console.log('ok')}
+                    }  
                 }
                 
             }
