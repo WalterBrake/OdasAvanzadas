@@ -16777,6 +16777,94 @@
 		"oAP": "\/MA3T2\/139\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA3T2\/144\/i\/150.png": {
+		"ft": 32768,
+		"iS": 18436,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/150.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/250.png": {
+		"ft": 32768,
+		"iS": 18821,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/250.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/45.png": {
+		"ft": 32768,
+		"iS": 16711,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/45.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/56.png": {
+		"ft": 32768,
+		"iS": 17949,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/56.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/64.png": {
+		"ft": 32768,
+		"iS": 18477,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/64.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/esta.png": {
+		"ft": 32768,
+		"iS": 174562,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/esta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/full.png": {
+		"ft": 32768,
+		"iS": 174562,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/full.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/full1.png": {
+		"ft": 32768,
+		"iS": 51281,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/full1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA3T2\/144\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -16793,32 +16881,32 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst1_Coloca.mp3": {
+	"\/MA3T2\/144\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst1_Coloca.mp3",
+		"oAP": "\/MA3T2\/144\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst2_Ahora.mp3": {
+	"\/MA3T2\/144\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst2_Ahora.mp3",
+		"oAP": "\/MA3T2\/144\/s\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst3_Terminar.mp3": {
+	"\/MA3T2\/144\/s\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst3_Terminar.mp3",
+		"oAP": "\/MA3T2\/144\/s\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3": {
+	"\/MA3T2\/144\/s\/instruccion4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T2\/144\/s\/Números perdidos  Ma3°T2_Inst_Sucesiones.mp3",
+		"oAP": "\/MA3T2\/144\/s\/instruccion4.mp3",
 		"oF": 0
 		},
 	"\/MA3T2\/147\/i\/ana.png": {
@@ -20322,28 +20410,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/MA6T2\/137\/i\/i2.png": {
-		"ft": 32768,
-		"iS": 2679,
-		"oA": 0,
-		"oAP": "\/MA6T2\/137\/i\/i2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/MA6T2\/137\/i\/i8.png": {
-		"ft": 32768,
-		"iS": 2131,
-		"oA": 0,
-		"oAP": "\/MA6T2\/137\/i\/i8.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/MA6T2\/137\/i\/kid.png": {
 		"ft": 32768,
 		"iS": 98644,
@@ -20415,6 +20481,28 @@
 		"iS": 4139,
 		"oA": 0,
 		"oAP": "\/MA6T2\/137\/i\/l6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T2\/137\/i\/l7.png": {
+		"ft": 32768,
+		"iS": 2679,
+		"oA": 0,
+		"oAP": "\/MA6T2\/137\/i\/l7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T2\/137\/i\/l8.png": {
+		"ft": 32768,
+		"iS": 2131,
+		"oA": 0,
+		"oAP": "\/MA6T2\/137\/i\/l8.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

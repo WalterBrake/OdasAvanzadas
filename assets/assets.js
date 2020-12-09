@@ -179,10 +179,21 @@ var app = new Vue({
             let allok = true
             for(va in verarray){
                 let rf = verarray[va]
-                let res = app.$refs[rf].externalValidation()
-                if(res===false){
-                    allok = false
+                if(Array.isArray(app.$refs[rf])){
+                    for(i in app.$refs[rf]){
+                        let res = app.$refs[rf][i].externalValidation()
+                        if(res===false){
+                            allok = false
+                        } else {console.log('ok')}
+                    }
                 }
+                 else {
+                    let res = app.$refs[rf].externalValidation()
+                    if(res===false){
+                        allok = false
+                    }  else {console.log('ok')}
+                }
+                
             }
             if(allok){
                 s_ok.play()

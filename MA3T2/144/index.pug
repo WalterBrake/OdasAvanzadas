@@ -7,6 +7,114 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .suc1{
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 #60B248;
+            }
+            .suc2{
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 #025193;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 5px auto;
+                position: relative;
+                z-index: 3;
+                max-width: 60px;
+            }
+            @media (max-width: 680px) {
+                .drag {
+                    max-width: 30px;
+                }
+            }
+            @media (max-width: 480px) {
+                .drag {
+                    max-width: 20px;
+                }
+            }
+            .drag img {
+                width: 100%;
+                min-width: 20px;
+                max-width: 40px;
+            }
+            .esta {
+                position: relative;
+            }
+            .esta .drop {
+                position: absolute;
+                width: 11%;
+                height: 23%;
+                left: 0;
+                top: 0;
+            }
+            .esta .drop:nth-child(1) {
+                left: 75.3%;
+                top: 1%;
+            }
+            .esta .drop:nth-child(2) {
+                left: 87.6%;
+                top: 1%;
+            }
+            .esta .drop:nth-child(3) {
+                left: 38.3%;
+                top: 39.5%;
+            }
+            .esta .drop:nth-child(4) {
+                left: 26%;
+                top: 76%;
+            }
+            .esta .drop:nth-child(5) {
+                left: 75.3%;
+                top: 76%;
+            }
+            .esta .drop.hover {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            
+
+            .drop.d2 {
+                width: 300px;
+                height: 60px;
+                background: #fff;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .drags2 .drag {
+                max-width: fit-content;
+                width: auto;
+                padding: 6px;
+                border-radius: 6px;
+            }
+
+            .ex3 {
+                background: var(--accent);
+                padding: 10px;
+                border-radius: 10px;
+                max-width: fit-content;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
+            .ex3 > div {
+                margin: 5px;
+            }
+            .ex3 .d3 {
+                background: #fff;
+                height: 40px;
+                width: 60px;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            [wascloned]{
+                display: none;
+            }
+
 
 
     body
@@ -16,19 +124,127 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Las sucesiones son un conjunto de números, objetos o figuras que ordenamos mediante una regla a la que llamamos progresión aritmética ascendente o descendente, según sea el caso." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.b=true")
+                activity
+                    .row.w90.around.suc1
+                        .animate__animated.animate__bounceIn.animate__delay-1s: number(c=1) 2
+                        .animate__animated.animate__bounceIn.animate__delay-2s: number(c=1) 4
+                        .animate__animated.animate__bounceIn.animate__delay-3s: number(c=1) 6
+                        .animate__animated.animate__bounceIn.animate__delay-4s: number(c=1) 8
+                        .animate__animated.animate__bounceIn.animate__delay-5s: number(c=1) 10
+                    .row.w90.around.mt-1(v-if="temps.a").suc2
+                        .animate__animated.animate__bounceIn: number(c=2) 28
+                        .animate__animated.animate__bounceIn.animate__delay-1s: number(c=2) 20
+                        .animate__animated.animate__bounceIn.animate__delay-2s: number(c=2) 12
+                        .animate__animated.animate__bounceIn.animate__delay-3s: number(c=2) 4
+                    .row.w100.text-center.mt-1(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w30
+                            drag(v-for="(i, index) in [250, 56, 150, 45, 64]" :data="i" dropzone=".drop" extval :ref="'aut'"): img(:src="'i/'+i+'.png'")
+                            .text-center: button(@click="dragValidation(['aut'], 5)").button.big.animate__animated.animate__flip Verificar
+                        .w70.esta
+                            img(src="i/esta.png").w100
+                            .drops
+                                .drop(v-for="(i, index) in [56, 64, 45, 150, 250]" :data="i" droptimes="multiple" droplimit="1")
+
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100: img(src="i/full1.png").w100
+                    .row.w100.mt-1
+                        .w50
+                            div Constante
+                                .drop.d2(data="s8" droptimes="untilok")
+                            div.mt-1 Progresión aritmética
+                                .drop.d2(data="asc" droptimes="untilok")
+                        .w50.drags2
+                            drag(data="r6" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 6
+                            drag(data="s8" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 8
+                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w100: img(src="i/full2.png").w100
+                    .row.w100.mt-1
+                        .w50
+                            div Constante
+                                .drop.d2(data="r3" droptimes="untilok")
+                            div.mt-1 Progresión aritmética
+                                .drop.d2(data="des" droptimes="untilok")
+                        .w50.drags2
+                            drag(data="r3" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 3
+                            drag(data="s7" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 7
+                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w100: img(src="i/full3.png").w100
+                    .row.w100.mt-1
+                        .w50
+                            div Constante
+                                .drop.d2(data="s25" droptimes="untilok")
+                            div.mt-1 Progresión aritmética
+                                .drop.d2(data="asc" droptimes="untilok")
+                        .w50.drags2
+                            drag(data="s25" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 25
+                            drag(data="r20" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 20
+                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+            
+            // SCENES
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Para terminar, coloca los números que faltan en la siguiente sucesión." textaudio="s/instruccion3.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap.h3.ex3
+                        div 550,
+                        .drop.d3(:data="600" droptimes="untilok")
+                        div , 650, 700,
+                        .drop.d3(:data="750" droptimes="untilok")
+                        div ,
+                        .drop.d3(:data="800" droptimes="untilok")
+                        div , 850.
+
+                    .row.w100.mt-1
+                        drag(:data="800" dropzone=".d3" append-clone extval ref="s1" ): number(smaller c=2) 800
+                        drag(:data="720" dropzone=".d3" append-clone extval ref="s2" isfalse): number(smaller c=2) 720
+                        drag(:data="750" dropzone=".d3" append-clone extval ref="s3" ): number(smaller c=2) 750
+                        drag(:data="600" dropzone=".d3" append-clone extval ref="s4" ): number(smaller c=2) 600
+                        drag(:data="801" dropzone=".d3" append-clone extval ref="s5" isfalse): number(smaller c=2) 801
+                        drag(:data="620" dropzone=".d3" append-clone extval ref="s6" isfalse): number(smaller c=2) 620
+                    
+                    .text-center.mt-1: button(@click="dragValidation(['s1', 's2', 's3', 's4', 's5', 's6'], 6)").button.big.animate__animated.animate__flip Verificar
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
 
+
+
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                /* scene1 */
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+
+                setTimeout(function () {
+                    app.temps.a = true
+                }, 6000)
                 
+                /* scene 2 */
+
+
+
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5
