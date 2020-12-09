@@ -9,17 +9,107 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 4px;
+      }
+      .drag .number.smaller {
+          background: #fff;
+          border-radius: 6px;
+          padding: 6px;
+      }
+      @media (max-width: 680px) {
+          .drag .number.smaller {
+              font-size: 0.8rem;
+          }
+      }
+      .bg {
+          position: relative;
+      }
+      .drops .drop {
+          position: absolute;
+          width: 24%;
+          height: 10%;
+          background: #015093;
+          border: 2px solid #FFDD19;
+          left: 0;
+          top: 0;
+          border-radius: 10px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .drops .drop:nth-child(1) {
+          left: 8%;
+          top: 3%;
+      }
+      .drops .drop:nth-child(2) {
+          left: 58%;
+          top: 5%;
+      }
+      .drops .drop:nth-child(3) {
+          left: 70%;
+          top: 80%;
+      }
+      .drops .drop:nth-child(4) {
+          left: 8%;
+          top: 85%;
+      }
+      @media (max-width: 680px) {
+          .drops .drop .number.smaller {
+              font-size: 0.6rem;
+          }
+      }
+      [wascloned] {
+          display: none;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Observo las transformaciones" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Observo las transformaciones" text="El ciclo del agua es un cambio temporal en la naturaleza." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" audio="s/instruccion2.mp3" text="Coloca el nombre de cada fase en el lugar del dibujo que le corresponda." :autoplay="true"></audiotext>
+        </info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w100 bg"><img class="w100" src="i/bg.png"/>
+              <div class="drops">
+                <div class="drop" data="pr" droptimes="untilok"></div>
+                <div class="drop" data="co" droptimes="untilok"></div>
+                <div class="drop" data="ev" droptimes="untilok"></div>
+                <div class="drop" data="es" droptimes="untilok"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <drag data="co" dropzone=".drop" extval="extval" ref="a1" append-clone="append-clone">
+              <number randomc="randomc" smaller="smaller">Condensación</number>
+            </drag>
+            <drag data="pr" dropzone=".drop" extval="extval" ref="a2" append-clone="append-clone">
+              <number randomc="randomc" smaller="smaller">Precipitación</number>
+            </drag>
+            <drag data="li" dropzone=".drop" extval="extval" ref="a3" append-clone="append-clone" isfalse="isfalse">
+              <number randomc="randomc" smaller="smaller">Licuación</number>
+            </drag>
+            <drag data="es" dropzone=".drop" extval="extval" ref="a4" append-clone="append-clone">
+              <number randomc="randomc" smaller="smaller">Escurrimiento</number>
+            </drag>
+            <drag data="ev" dropzone=".drop" extval="extval" ref="a5" append-clone="append-clone">
+              <number randomc="randomc" smaller="smaller">Evaporación</number>
+            </drag>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5'], 4)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +135,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,7 +147,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', false)
       
       app.currentScene = 0
       app.scenesCount = 1

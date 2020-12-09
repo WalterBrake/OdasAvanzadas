@@ -5144,6 +5144,17 @@
 		"oAP": "\/CN6T2\/201\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/CN6T2\/203\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 3411975,
+		"oA": 0,
+		"oAP": "\/CN6T2\/203\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CN6T2\/203\/index.html": {
 		"cB": 0,
 		"ft": 8192,

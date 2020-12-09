@@ -7,6 +7,62 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 4px;
+            }
+            .drag .number.smaller {
+                background: #fff;
+                border-radius: 6px;
+                padding: 6px;
+            }
+            @media (max-width: 680px) {
+                .drag .number.smaller {
+                    font-size: 0.8rem;
+                }
+            }
+            .bg {
+                position: relative;
+            }
+            .drops .drop {
+                position: absolute;
+                width: 24%;
+                height: 10%;
+                background: #015093;
+                border: 2px solid #FFDD19;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .drops .drop:nth-child(1) {
+                left: 8%;
+                top: 3%;
+            }
+            .drops .drop:nth-child(2) {
+                left: 58%;
+                top: 5%;
+            }
+            .drops .drop:nth-child(3) {
+                left: 70%;
+                top: 80%;
+            }
+            .drops .drop:nth-child(4) {
+                left: 8%;
+                top: 85%;
+            }
+            @media (max-width: 680px) {
+                .drops .drop .number.smaller {
+                    font-size: 0.6rem;
+                }
+            }
+            [wascloned] {
+                display: none;
+            }
 
 
     body
@@ -15,11 +71,25 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="El ciclo del agua es un cambio temporal en la naturaleza." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(v-if="temps.au1" audio="s/instruccion2.mp3" text="Coloca el nombre de cada fase en el lugar del dibujo que le corresponda." :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100: .w100.bg
+                        img(src="i/bg.png").w100
+                        .drops
+                            .drop(data="pr" droptimes="untilok")
+                            .drop(data="co" droptimes="untilok" )
+                            .drop(data="ev" droptimes="untilok" )
+                            .drop(data="es" droptimes="untilok" )
+                    .row.w100.wrap
+                        drag(data="co" dropzone=".drop" extval ref="a1" append-clone): number(randomc smaller) Condensación
+                        drag(data="pr" dropzone=".drop" extval ref="a2" append-clone): number(randomc smaller) Precipitación
+                        drag(data="li" dropzone=".drop" extval ref="a3" append-clone isfalse): number(randomc smaller) Licuación
+                        drag(data="es" dropzone=".drop" extval ref="a4" append-clone): number(randomc smaller) Escurrimiento
+                        drag(data="ev" dropzone=".drop" extval ref="a5" append-clone): number(randomc smaller) Evaporación
+                    .text-center: button(@click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5'], 4)").button.big.animate__animated.animate__flip Verificar
+
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +98,7 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'au1', false)
                 
                 app.currentScene = 0
                 app.scenesCount = 1
