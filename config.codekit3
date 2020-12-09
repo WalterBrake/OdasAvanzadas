@@ -16865,6 +16865,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/MA3T2\/144\/i\/full2.png": {
+		"ft": 32768,
+		"iS": 87619,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/full2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T2\/144\/i\/full3.png": {
+		"ft": 32768,
+		"iS": 92146,
+		"oA": 0,
+		"oAP": "\/MA3T2\/144\/i\/full3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA3T2\/144\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -19910,6 +19932,138 @@
 		"oAP": "\/MA5T1\/95\/index.html",
 		"oF": 0
 		},
+	"\/MA5T2\/134\/i\/c1.png": {
+		"ft": 32768,
+		"iS": 12165,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/c1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/c2.png": {
+		"ft": 32768,
+		"iS": 14042,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/c2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/c3.png": {
+		"ft": 32768,
+		"iS": 8221,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/c3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/c4.png": {
+		"ft": 32768,
+		"iS": 10620,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/c4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/d1.png": {
+		"ft": 32768,
+		"iS": 2247,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/d1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/d2.png": {
+		"ft": 32768,
+		"iS": 7719,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/d2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/d3.png": {
+		"ft": 32768,
+		"iS": 7205,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/d3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/d4.png": {
+		"ft": 32768,
+		"iS": 14801,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/d4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/k1.png": {
+		"ft": 32768,
+		"iS": 65018,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/k1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/k2.png": {
+		"ft": 32768,
+		"iS": 78053,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/k2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/k3.png": {
+		"ft": 32768,
+		"iS": 67766,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/k3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/134\/i\/k4.png": {
+		"ft": 32768,
+		"iS": 65673,
+		"oA": 0,
+		"oAP": "\/MA5T2\/134\/i\/k4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA5T2\/134\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -19926,39 +20080,39 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Inst_Relaciona.mp3": {
+	"\/MA5T2\/134\/s\/2caras.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Inst_Relaciona.mp3",
+		"oAP": "\/MA5T2\/134\/s\/2caras.mp3",
 		"oF": 0
 		},
-	"\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_2caras.mp3": {
+	"\/MA5T2\/134\/s\/3caras.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_2caras.mp3",
+		"oAP": "\/MA5T2\/134\/s\/3caras.mp3",
 		"oF": 0
 		},
-	"\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_3caras.mp3": {
+	"\/MA5T2\/134\/s\/5caras.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_3caras.mp3",
+		"oAP": "\/MA5T2\/134\/s\/5caras.mp3",
 		"oF": 0
 		},
-	"\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_5caras.mp3": {
+	"\/MA5T2\/134\/s\/6caras.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_5caras.mp3",
+		"oAP": "\/MA5T2\/134\/s\/6caras.mp3",
 		"oF": 0
 		},
-	"\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_6caras.mp3": {
+	"\/MA5T2\/134\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T2\/134\/s\/Reconozco los prismas Mat 5o T2_Int_6caras.mp3",
+		"oAP": "\/MA5T2\/134\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/113\/aimg\/02.eps": {

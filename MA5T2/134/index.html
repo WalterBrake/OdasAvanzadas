@@ -9,17 +9,135 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .activity > .row {
+          height: 100%;
+      }
+      .cuerpos,
+      .desarrollos,
+      .kids {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+      .cuerpo,
+      .desarrollo,
+      .kid {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 6px;
+          border-radius: 10px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 680px){
+          .cuerpo,
+          .desarrollo,
+          .kid {
+              flex-direction: column;
+          }
+          
+      }
+      .cuerpo img,
+          .desarrollo img,
+          .kid img {
+              max-width: 120px;
+          }
+      .cuerpo .im,
+      .desarrollo .im,
+      .kid .im {
+          max-width: 80%;
+      }
+      .cuerpo img,
+      .desarrollo img,
+      .kid img {
+          width: 100%;
+      }
+      div.cuerpo {
+          background: #516AB3;
+      }
+      div.desarrollo {
+          background: #C4D1E2;
+      }
+      div.kid {
+          background: #C7E7F1;
+      }
+      .drag{
+          width: auto; height: auto;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Reconozco los prismas" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="seleccionar" title="Reconozco los prismas" text="Relaciona las columnas para vincular el cuerpo geométrico con su desarrollo plano y sus características." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 around">
+            <div class="w20 wm30 cuerpos">
+              <div class="cuerpo">
+                <div class="im"><img src="i/c2.png"/></div>
+                <drag dropzone=".desarrollo" data="2" drag-line="drag-line" particle-color="#C1CA27" stay-if-ok="stay-if-ok">
+                  <div class="conector c7"></div>
+                </drag>
+              </div>
+              <div class="cuerpo">
+                <div class="im"><img src="i/c4.png"/></div>
+                <drag dropzone=".desarrollo" data="4" drag-line="drag-line" particle-color="#DA3F34" stay-if-ok="stay-if-ok">
+                  <div class="conector c5"></div>
+                </drag>
+              </div>
+              <div class="cuerpo">
+                <div class="im"><img src="i/c1.png"/></div>
+                <drag dropzone=".desarrollo" data="1" drag-line="drag-line" particle-color="#C0A6D0" stay-if-ok="stay-if-ok">
+                  <div class="conector c8"></div>
+                </drag>
+              </div>
+              <div class="cuerpo">
+                <div class="im"><img src="i/c3.png"/></div>
+                <drag dropzone=".desarrollo" data="3" drag-line="drag-line" particle-color="#F460AB" stay-if-ok="stay-if-ok">
+                  <div class="conector c6"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w20 wm30 desarrollos">
+              <div class="desarrollo" data="4" droptimes="untilok">
+                <div class="im"><img class="w100" src="i/d4.png"/></div>
+                <drag dropzone=".kid" data="4" drag-line="drag-line" particle-color="#7DD5F7" stay-if-ok="stay-if-ok">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="desarrollo" data="1" droptimes="untilok">
+                <div class="im"><img class="w100" src="i/d1.png"/></div>
+                <drag dropzone=".kid" data="1" drag-line="drag-line" particle-color="#C0A6D0" stay-if-ok="stay-if-ok">
+                  <div class="conector c8"></div>
+                </drag>
+              </div>
+              <div class="desarrollo" data="2" droptimes="untilok">
+                <div class="im"><img class="w100" src="i/d2.png"/></div>
+                <drag dropzone=".kid" data="2" drag-line="drag-line" particle-color="#5EB247" stay-if-ok="stay-if-ok">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="desarrollo" data="3" droptimes="untilok">
+                <div class="im"><img class="w100" src="i/d3.png"/></div>
+                <drag dropzone=".kid" data="3" drag-line="drag-line" particle-color="#EC8B2E" stay-if-ok="stay-if-ok">
+                  <div class="conector c4"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w20 wm30 kids">
+              <div class="kid" data="2" droptimes="untilok" oksound="s/3caras.mp3"><img class="w100" src="i/k2.png"/></div>
+              <div class="kid" data="1" droptimes="untilok" oksound="s/6caras.mp3"><img class="w100" src="i/k1.png"/></div>
+              <div class="kid" data="3" droptimes="untilok" oksound="s/5caras.mp3"><img class="w100" src="i/k3.png"/></div>
+              <div class="kid" data="4" droptimes="untilok" oksound="s/2caras.mp3"><img class="w100" src="i/k4.png"/></div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +163,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

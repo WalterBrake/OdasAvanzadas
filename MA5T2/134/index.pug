@@ -7,6 +7,62 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .activity > .row {
+                height: 100%;
+            }
+            .cuerpos,
+            .desarrollos,
+            .kids {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .cuerpo,
+            .desarrollo,
+            .kid {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 6px;
+                border-radius: 10px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 680px){
+                .cuerpo,
+                .desarrollo,
+                .kid {
+                    flex-direction: column;
+                }
+                
+            }
+            .cuerpo img,
+                .desarrollo img,
+                .kid img {
+                    max-width: 120px;
+                }
+            .cuerpo .im,
+            .desarrollo .im,
+            .kid .im {
+                max-width: 80%;
+            }
+            .cuerpo img,
+            .desarrollo img,
+            .kid img {
+                width: 100%;
+            }
+            div.cuerpo {
+                background: #516AB3;
+            }
+            div.desarrollo {
+                background: #C4D1E2;
+            }
+            div.kid {
+                background: #C7E7F1;
+            }
+            .drag{
+                width: auto; height: auto;
+            }
 
 
     body
@@ -15,11 +71,47 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Relaciona las columnas para vincular el cuerpo geométrico con su desarrollo plano y sus características." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.around
+                        .w20.wm30.cuerpos
+                            div.cuerpo
+                                div.im: img(src="i/c2.png")
+                                drag(dropzone=".desarrollo" data="2" drag-line particle-color="#C1CA27" stay-if-ok): .conector.c7
+                            div.cuerpo
+                                div.im: img(src="i/c4.png")
+                                drag(dropzone=".desarrollo" data="4" drag-line particle-color="#DA3F34" stay-if-ok): .conector.c5
+                            div.cuerpo
+                                div.im: img(src="i/c1.png")
+                                drag(dropzone=".desarrollo" data="1" drag-line particle-color="#C0A6D0" stay-if-ok): .conector.c8
+                            div.cuerpo
+                                div.im: img(src="i/c3.png")
+                                drag(dropzone=".desarrollo" data="3" drag-line particle-color="#F460AB" stay-if-ok): .conector.c6
+                        .w20.wm30.desarrollos
+                            div.desarrollo(data="4" droptimes="untilok")
+                                div.im: img(src="i/d4.png").w100
+                                drag(dropzone=".kid" data="4" drag-line particle-color="#7DD5F7" stay-if-ok): .conector.c3
+                            div.desarrollo(data="1" droptimes="untilok")
+                                div.im: img(src="i/d1.png").w100
+                                drag(dropzone=".kid" data="1" drag-line particle-color="#C0A6D0" stay-if-ok): .conector.c8
+                            div.desarrollo(data="2" droptimes="untilok")
+                                div.im: img(src="i/d2.png").w100
+                                drag(dropzone=".kid" data="2" drag-line particle-color="#5EB247" stay-if-ok): .conector.c1
+                            div.desarrollo(data="3" droptimes="untilok")
+                                div.im: img(src="i/d3.png").w100
+                                drag(dropzone=".kid" data="3" drag-line particle-color="#EC8B2E" stay-if-ok): .conector.c4
+                        .w20.wm30.kids
+                            div.kid(data="2" droptimes="untilok" oksound="s/3caras.mp3")
+                                img(src="i/k2.png").w100
+                            div.kid(data="1" droptimes="untilok" oksound="s/6caras.mp3")
+                                img(src="i/k1.png").w100
+                            div.kid(data="3" droptimes="untilok" oksound="s/5caras.mp3")
+                                img(src="i/k3.png").w100
+                            div.kid(data="4" droptimes="untilok" oksound="s/2caras.mp3")
+                                img(src="i/k4.png").w100
+                            
+                            
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -29,6 +121,6 @@ html(lang="es")
 
                 app.$devmode = false
                 app.$set(app.temps, 'a', [])
-                
+
                 app.currentScene = 0
                 app.scenesCount = 1
