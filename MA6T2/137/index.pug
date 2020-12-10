@@ -41,8 +41,11 @@ html(lang="es")
             .inputable input {
                 font-size: 1.2rem;
                 margin: 0 10px;
+                max-width: 100px;
             }
+            
             .inputable .bimg {
+                min-width: 30px;
                 width: 50px;
                 height: auto;
                 display: flex;
@@ -53,6 +56,20 @@ html(lang="es")
             }
             .inputable .bimg img {
                 width: 90%;
+            }
+            @media (max-width: 820px){
+                .inputable{
+                    margin: 1px;
+                }
+                .inputable input {
+                    max-width: 60px;
+                    font-size: 1rem;
+                }
+                .inputable .bimg{
+                    min-width: 20px;
+                    margin: 0 2px;
+                    width: 15%;
+                }
             }
 
 
@@ -108,5 +125,5 @@ html(lang="es")
                     app.$set(app.temps, 'ev', $ev)
                 }
                 
-                app.currentScene = 0
+                app.currentScene = 1
                 app.scenesCount = 1
