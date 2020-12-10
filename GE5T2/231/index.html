@@ -22,7 +22,7 @@
           <activity>
             <div class="h4 text-center" v-html="i.p"></div>
             <div class="row wrap around text-center">
-              <clickable v-for="(p, index) in i.op" :key="'p'+index" :isok="index == i.an" simple-ok="simple-ok" initclass="pa-1">
+              <clickable v-for="(p, index) in i.op" :key="'p'+index" :isok="index == i.an" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{p}}</number>
               </clickable>
             </div>

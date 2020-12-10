@@ -15,9 +15,7 @@
           border-radius: 10px;
           background: #F9DAAA;
       }
-      .tabla .row {
-          align-items: normal;
-      }
+      
       .tabla .head {
           background: var(--accent);
           font-weight: bold;
@@ -40,6 +38,7 @@
           align-items: center;
           display: flex;
           flex-direction: column;
+          box-sizing: border-box;
       }
       @media (max-width: 680px) {
           .tabla .w25 {
@@ -88,6 +87,18 @@
           background: #aaddff;
           padding: 6px;
       }
+      .activity > .row {
+          height: 100%;
+      }
+      .activity > .row > div.tabla {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+      }
+      .activity > .row > div.tabla > div.body {
+          flex: 1;
+      }
+      
       
       
       
@@ -197,6 +208,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

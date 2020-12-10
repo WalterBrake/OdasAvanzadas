@@ -23,13 +23,13 @@ html(lang="es")
 
             // SCENES Ps
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="¡Vamos probar cuánto aprendiste! Selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true" )
+                info(type="seleccionar" title=title text="¡Vamos a probar cuánto aprendiste! Selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true" )
                 activity
                     sequence(:options="temps.preguntas" ref="seque" no-nav)
                         template(v-slot:option="{option}")
                             .h4.text-center {{option.p}}
                             .row.w100(v-if="option.img"): .w30.text-center: img(:src="option.img").w100
-                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1" ): number(randomc smaller): div(v-html="i")
+                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
             
             
             

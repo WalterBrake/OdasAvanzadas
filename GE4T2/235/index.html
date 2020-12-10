@@ -29,7 +29,7 @@
       </scene>
       <!-- SCENES Ps-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
-        <info type="seleccionar" title="Protejo los recursos naturales" text="¡Vamos probar cuánto aprendiste! Selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Protejo los recursos naturales" text="¡Vamos a probar cuánto aprendiste! Selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <sequence :options="temps.preguntas" ref="seque" no-nav="no-nav">
             <template v-slot:option="{option}">
@@ -38,7 +38,7 @@
                 <div class="w30 text-center"><img class="w100" :src="option.img"/></div>
               </div>
               <div class="row wrap around text-center">
-                <clickable v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" initclass="pa-1">
+                <clickable v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100">
                   <number randomc="randomc" smaller="smaller">
                     <div v-html="i"></div>
                   </number>
@@ -71,6 +71,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

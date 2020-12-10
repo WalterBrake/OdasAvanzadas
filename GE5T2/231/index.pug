@@ -20,7 +20,7 @@ html(lang="es")
                     info(type="seleccionar" title=title text="¡Pon a prueba tus conocimientos sobre las regiones naturales! Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false")
                     activity
                         .h4.text-center(v-html="i.p")
-                        .row.wrap.around.text-center: clickable(v-for="(p, index) in i.op" :key="'p'+index" :isok="index == i.an" simple-ok initclass="pa-1"): number(randomc smaller) {{p}}
+                        .row.wrap.around.text-center: clickable(v-for="(p, index) in i.op" :key="'p'+index" :isok="index == i.an" simple-ok initclass="pa-1 w100"): number(randomc smaller) {{p}}
 
 
             

@@ -12,9 +12,7 @@ html(lang="es")
                 border-radius: 10px;
                 background: #F9DAAA;
             }
-            .tabla .row {
-                align-items: normal;
-            }
+            
             .tabla .head {
                 background: var(--accent);
                 font-weight: bold;
@@ -37,6 +35,7 @@ html(lang="es")
                 align-items: center;
                 display: flex;
                 flex-direction: column;
+                box-sizing: border-box;
             }
             @media (max-width: 680px) {
                 .tabla .w25 {
@@ -85,6 +84,18 @@ html(lang="es")
                 background: #aaddff;
                 padding: 6px;
             }
+            .activity > .row {
+                height: 100%;
+            }
+            .activity > .row > div.tabla {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .activity > .row > div.tabla > div.body {
+                flex: 1;
+            }
+
 
 
 
