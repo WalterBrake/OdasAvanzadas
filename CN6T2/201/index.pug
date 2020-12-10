@@ -312,7 +312,7 @@ html(lang="es")
                     button(@click="sceneCompleted(false)" v-if="temps.clicks>=12").button.big.flying.animate__animated.animate__flip Siguiente
 
             // SCENES
-            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="relacionar" title=title text="Ahora, relaciona los casos con la acción que le corresponda." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100
@@ -399,6 +399,7 @@ html(lang="es")
                     }
                     if(allok){
                         s_ok.play()
+                        EventBus.$emit('isok')
                         EventBus.$emit('isok')
                         EventBus.$emit('isok')
                         EventBus.$emit('isok')

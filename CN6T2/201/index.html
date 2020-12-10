@@ -321,7 +321,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
         <info type="relacionar" title="Analizo las tres erres" text="Ahora, relaciona los casos con la acción que le corresponda." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
@@ -373,6 +373,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -449,6 +450,7 @@
           }
           if(allok){
               s_ok.play()
+              EventBus.$emit('isok')
               EventBus.$emit('isok')
               EventBus.$emit('isok')
               EventBus.$emit('isok')
