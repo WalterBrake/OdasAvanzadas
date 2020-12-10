@@ -30,10 +30,11 @@
               background-size: cover;
           }
           lottie-player {
-              max-width: 430px;
+              max-width: 360px;
               margin: 0 auto;
           }
       }
+      
       .inputable {
           display: flex;
           justify-content: center;
@@ -99,7 +100,7 @@
               <lottie-player v-else-if="temps.dis==8" src="i/v8.json" key="l8" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay"></lottie-player>
             </div>
             <div class="w30 wm100 box-c">
-              <div class="boxa">
+              <div class="boxa" :class="temps.dis == 8 ? 'itended':''">
                 <div class="boxa-wr" v-for="(i, index) in ['3,9','1,6', '1,2', '5,2', '9,2', '9,6', '9,9', '5,6' ]">
                   <inputable initclass="c2" :isok="i" placeholder="#,#" :disabled="temps.dis&lt;(index)" @isok="temps.dis+=1">
                     <template v-slot:before="">
@@ -112,9 +113,9 @@
                     </template>
                   </inputable>
                 </div>
-                <div class="boxa-wr text-center" v-if="temps.dis == 8">
-                  <button class="button big animate__animated animate__flip" @click="sceneCompleted(temps.ev)">Finalizar</button>
-                </div>
+              </div>
+              <div class="text-center" v-if="temps.dis == 8">
+                <button class="button big animate__animated animate__flip" @click="sceneCompleted(temps.ev)">Finalizar</button>
               </div>
             </div>
           </div>
@@ -155,7 +156,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'dis', 0)
+      app.$set(app.temps, 'dis', 8)
       
       app.setEv = function ($ev){
           app.$set(app.temps, 'ev', $ev)
