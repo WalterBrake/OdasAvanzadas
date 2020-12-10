@@ -27,7 +27,7 @@ html(lang="es")
                     sequence(:options="temps.preguntas" ref="seque" no-nav)
                         template(v-slot:option="{option}")
                             .h4.text-center {{option.p}}
-                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1" ): number(randomc smaller): div(v-html="i")
+                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
             
             
             

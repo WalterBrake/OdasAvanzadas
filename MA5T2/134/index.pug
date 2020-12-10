@@ -64,6 +64,17 @@ html(lang="es")
                 width: auto; height: auto;
             }
 
+            .kids .kid img {
+                max-width: 80%;
+            }
+
+            .hover{
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                background: #fff;
+                border-radius: 10px;
+            }
+
+
 
     body
         #app
@@ -78,30 +89,30 @@ html(lang="es")
                         .w20.wm30.cuerpos
                             div.cuerpo
                                 div.im: img(src="i/c2.png")
-                                drag(dropzone=".desarrollo" data="2" drag-line particle-color="#C1CA27" stay-if-ok): .conector.c7
+                                drag(dropzone=".desarro" data="2" drag-line particle-color="#C1CA27" stay-if-ok): .conector.c7
                             div.cuerpo
                                 div.im: img(src="i/c4.png")
-                                drag(dropzone=".desarrollo" data="4" drag-line particle-color="#DA3F34" stay-if-ok): .conector.c5
+                                drag(dropzone=".desarro" data="4" drag-line particle-color="#DA3F34" stay-if-ok): .conector.c5
                             div.cuerpo
                                 div.im: img(src="i/c1.png")
-                                drag(dropzone=".desarrollo" data="1" drag-line particle-color="#C0A6D0" stay-if-ok): .conector.c8
+                                drag(dropzone=".desarro" data="1" drag-line particle-color="#C0A6D0" stay-if-ok): .conector.c8
                             div.cuerpo
                                 div.im: img(src="i/c3.png")
-                                drag(dropzone=".desarrollo" data="3" drag-line particle-color="#F460AB" stay-if-ok): .conector.c6
+                                drag(dropzone=".desarro" data="3" drag-line particle-color="#F460AB" stay-if-ok): .conector.c6
                         .w20.wm30.desarrollos
-                            div.desarrollo(data="4" droptimes="untilok")
-                                div.im: img(src="i/d4.png").w100
+                            div.desarrollo
+                                div.im.desarro(data="4" droptimes="untilok"): img(src="i/d4.png").w100
                                 drag(dropzone=".kid" data="4" drag-line particle-color="#7DD5F7" stay-if-ok): .conector.c3
-                            div.desarrollo(data="1" droptimes="untilok")
-                                div.im: img(src="i/d1.png").w100
+                            div.desarrollo
+                                div.im.desarro(data="1" droptimes="untilok"): img(src="i/d1.png").w100
                                 drag(dropzone=".kid" data="1" drag-line particle-color="#C0A6D0" stay-if-ok): .conector.c8
-                            div.desarrollo(data="2" droptimes="untilok")
-                                div.im: img(src="i/d2.png").w100
+                            div.desarrollo
+                                div.im.desarro(data="2" droptimes="untilok"): img(src="i/d2.png").w100
                                 drag(dropzone=".kid" data="2" drag-line particle-color="#5EB247" stay-if-ok): .conector.c1
-                            div.desarrollo(data="3" droptimes="untilok")
-                                div.im: img(src="i/d3.png").w100
+                            div.desarrollo
+                                div.im.desarro(data="3" droptimes="untilok"): img(src="i/d3.png").w100
                                 drag(dropzone=".kid" data="3" drag-line particle-color="#EC8B2E" stay-if-ok): .conector.c4
-                        .w20.wm30.kids
+                        .w30.wm40.kids
                             div.kid(data="2" droptimes="untilok" oksound="s/3caras.mp3")
                                 img(src="i/k2.png").w100
                             div.kid(data="1" droptimes="untilok" oksound="s/6caras.mp3")

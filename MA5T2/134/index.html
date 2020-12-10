@@ -67,6 +67,17 @@
           width: auto; height: auto;
       }
       
+      .kids .kid img {
+          max-width: 80%;
+      }
+      
+      .hover{
+          box-shadow: 0 0 20px rgba(0,0,0,0.1);
+          background: #fff;
+          border-radius: 10px;
+      }
+      
+      
       
     </style>
   </head>
@@ -82,56 +93,56 @@
             <div class="w20 wm30 cuerpos">
               <div class="cuerpo">
                 <div class="im"><img src="i/c2.png"/></div>
-                <drag dropzone=".desarrollo" data="2" drag-line="drag-line" particle-color="#C1CA27" stay-if-ok="stay-if-ok">
+                <drag dropzone=".desarro" data="2" drag-line="drag-line" particle-color="#C1CA27" stay-if-ok="stay-if-ok">
                   <div class="conector c7"></div>
                 </drag>
               </div>
               <div class="cuerpo">
                 <div class="im"><img src="i/c4.png"/></div>
-                <drag dropzone=".desarrollo" data="4" drag-line="drag-line" particle-color="#DA3F34" stay-if-ok="stay-if-ok">
+                <drag dropzone=".desarro" data="4" drag-line="drag-line" particle-color="#DA3F34" stay-if-ok="stay-if-ok">
                   <div class="conector c5"></div>
                 </drag>
               </div>
               <div class="cuerpo">
                 <div class="im"><img src="i/c1.png"/></div>
-                <drag dropzone=".desarrollo" data="1" drag-line="drag-line" particle-color="#C0A6D0" stay-if-ok="stay-if-ok">
+                <drag dropzone=".desarro" data="1" drag-line="drag-line" particle-color="#C0A6D0" stay-if-ok="stay-if-ok">
                   <div class="conector c8"></div>
                 </drag>
               </div>
               <div class="cuerpo">
                 <div class="im"><img src="i/c3.png"/></div>
-                <drag dropzone=".desarrollo" data="3" drag-line="drag-line" particle-color="#F460AB" stay-if-ok="stay-if-ok">
+                <drag dropzone=".desarro" data="3" drag-line="drag-line" particle-color="#F460AB" stay-if-ok="stay-if-ok">
                   <div class="conector c6"></div>
                 </drag>
               </div>
             </div>
             <div class="w20 wm30 desarrollos">
-              <div class="desarrollo" data="4" droptimes="untilok">
-                <div class="im"><img class="w100" src="i/d4.png"/></div>
+              <div class="desarrollo">
+                <div class="im desarro" data="4" droptimes="untilok"><img class="w100" src="i/d4.png"/></div>
                 <drag dropzone=".kid" data="4" drag-line="drag-line" particle-color="#7DD5F7" stay-if-ok="stay-if-ok">
                   <div class="conector c3"></div>
                 </drag>
               </div>
-              <div class="desarrollo" data="1" droptimes="untilok">
-                <div class="im"><img class="w100" src="i/d1.png"/></div>
+              <div class="desarrollo">
+                <div class="im desarro" data="1" droptimes="untilok"><img class="w100" src="i/d1.png"/></div>
                 <drag dropzone=".kid" data="1" drag-line="drag-line" particle-color="#C0A6D0" stay-if-ok="stay-if-ok">
                   <div class="conector c8"></div>
                 </drag>
               </div>
-              <div class="desarrollo" data="2" droptimes="untilok">
-                <div class="im"><img class="w100" src="i/d2.png"/></div>
+              <div class="desarrollo">
+                <div class="im desarro" data="2" droptimes="untilok"><img class="w100" src="i/d2.png"/></div>
                 <drag dropzone=".kid" data="2" drag-line="drag-line" particle-color="#5EB247" stay-if-ok="stay-if-ok">
                   <div class="conector c1"></div>
                 </drag>
               </div>
-              <div class="desarrollo" data="3" droptimes="untilok">
-                <div class="im"><img class="w100" src="i/d3.png"/></div>
+              <div class="desarrollo">
+                <div class="im desarro" data="3" droptimes="untilok"><img class="w100" src="i/d3.png"/></div>
                 <drag dropzone=".kid" data="3" drag-line="drag-line" particle-color="#EC8B2E" stay-if-ok="stay-if-ok">
                   <div class="conector c4"></div>
                 </drag>
               </div>
             </div>
-            <div class="w20 wm30 kids">
+            <div class="w30 wm40 kids">
               <div class="kid" data="2" droptimes="untilok" oksound="s/3caras.mp3"><img class="w100" src="i/k2.png"/></div>
               <div class="kid" data="1" droptimes="untilok" oksound="s/6caras.mp3"><img class="w100" src="i/k1.png"/></div>
               <div class="kid" data="3" droptimes="untilok" oksound="s/5caras.mp3"><img class="w100" src="i/k3.png"/></div>
