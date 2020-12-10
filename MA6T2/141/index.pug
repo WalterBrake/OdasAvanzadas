@@ -41,7 +41,7 @@ html(lang="es")
                     .row.w90
                         sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true")
                             template(v-slot:option="{option}")
-                                .row.w100: .w50: img(src="i/i1.png").w100
+                                .row.w100: .w40: img(:src="option.im").w100
                                 .row.w100.mb-auto
                                     selectives(:ans="option.ans" :key="'k'+option.k" :ops="option.ops" number disableok :ref="'k'+option.k")
                     .row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar

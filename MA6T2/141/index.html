@@ -46,7 +46,7 @@
             <sequence :options="temps.preguntas" ref="seque" @last="temps.last=true">
               <template v-slot:option="{option}">
                 <div class="row w100">
-                  <div class="w50"><img class="w100" src="i/i1.png"/></div>
+                  <div class="w40"><img class="w100" :src="option.im"/></div>
                 </div>
                 <div class="row w100 mb-auto">
                   <selectives :ans="option.ans" :key="'k'+option.k" :ops="option.ops" number="number" disableok="disableok" :ref="'k'+option.k"></selectives>
