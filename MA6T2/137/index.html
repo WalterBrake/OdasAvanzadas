@@ -67,7 +67,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="setEv" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
-        <info type="input" title="Sé dónde están los puntos" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="input" title="Sé dónde están los puntos" text="Escribe las coordenadas en las que se encuentra cada imagen, para descubrir la figura que se forma. Sigue el orden en el que se encuentran en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 bg wrap">
             <div class="w60 wm100">

@@ -63,7 +63,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="setEv" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
-                info(type="input" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="input" title=title text="Escribe las coordenadas en las que se encuentra cada imagen, para descubrir la figura que se forma. Sigue el orden en el que se encuentran en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.bg.wrap
                         .w60.wm100
