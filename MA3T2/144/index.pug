@@ -157,13 +157,13 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100: img(src="i/full1.png").w100
-                    .row.w100.mt-1
-                        .w50
+                    .row.w100.mt-1.wrap
+                        .w50.wm100
                             div Constante
                                 .drop.d2(data="s8" droptimes="untilok")
                             div.mt-1 Progresión aritmética
                                 .drop.d2(data="asc" droptimes="untilok")
-                        .w50.drags2
+                        .w50.drags2.wm100
                             drag(data="r6" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 6
                             drag(data="s8" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 8
                             drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
@@ -173,13 +173,13 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100: img(src="i/full2.png").w100
-                    .row.w100.mt-1
-                        .w50
+                    .row.w100.mt-1.wrap
+                        .w50.wm100
                             div Constante
                                 .drop.d2(data="r3" droptimes="untilok")
                             div.mt-1 Progresión aritmética
                                 .drop.d2(data="des" droptimes="untilok")
-                        .w50.drags2
+                        .w50.drags2.wm100
                             drag(data="r3" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 3
                             drag(data="s7" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 7
                             drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
@@ -189,13 +189,13 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="false")
                 activity
                     .row.w100: img(src="i/full3.png").w100
-                    .row.w100.mt-1
-                        .w50
+                    .row.w100.mt-1.wrap
+                        .w50.wm100
                             div Constante
                                 .drop.d2(data="s25" droptimes="untilok")
                             div.mt-1 Progresión aritmética
                                 .drop.d2(data="asc" droptimes="untilok")
-                        .w50.drags2
+                        .w50.drags2.wm100
                             drag(data="s25" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 25
                             drag(data="r20" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 20
                             drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
