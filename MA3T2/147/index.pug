@@ -93,6 +93,7 @@ html(lang="es")
                     .w100.pregunta
                         .h4 1. Hace 10 minutos, Ana estaba en el kilómetro 13, por lo tanto avanzó
                             .drop.d1(data="C" droptimes="multiple" droplimit="1")
+                            | .
                         .row.w100.wrap
                             drag(data="A" dropzone=".d1" extval ref="b1" isfalse): number(randomc smaller ) 8 metros
                             drag(data="B" dropzone=".d1" extval ref="b2" isfalse): number(randomc smaller ) 10 minutos
@@ -100,6 +101,7 @@ html(lang="es")
                     .w100.pregunta
                         .h4 2. José Luis regresó a la ciudad a recoger a su mamá. Tuvo que regresar    
                             .drop.d2(data="E" droptimes="multiple" droplimit="1")
+                            | .
                         .row.w100.wrap
                             drag(data="D" dropzone=".d2" extval ref="b4" isfalse): number(randomc smaller ) 1.5 kilómetros
                             drag(data="E" dropzone=".d2" extval ref="b5" ): number(randomc smaller ) 3 kilómetros
