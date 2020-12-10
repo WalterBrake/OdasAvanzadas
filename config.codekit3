@@ -3521,6 +3521,34 @@
 		"oAP": "\/CN4T2\/205\/s\/a2.mp3",
 		"oF": 0
 		},
+	"\/CN4T2\/205\/s\/a3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/s\/a3.mp3",
+		"oF": 0
+		},
+	"\/CN4T2\/205\/s\/a4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/s\/a4.mp3",
+		"oF": 0
+		},
+	"\/CN4T2\/205\/s\/a5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/s\/a5.mp3",
+		"oF": 0
+		},
+	"\/CN4T2\/205\/s\/a6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T2\/205\/s\/a6.mp3",
+		"oF": 0
+		},
 	"\/CN4T2\/205\/s\/hola.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -3533,34 +3561,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/CN4T2\/205\/s\/instruccion1.mp3",
-		"oF": 0
-		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio3.mp3",
-		"oF": 0
-		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio4.mp3",
-		"oF": 0
-		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio5.mp3",
-		"oF": 0
-		},
-	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_Audio6.mp3",
 		"oF": 0
 		},
 	"\/CN4T2\/205\/s\/Valoro la importancia del agua CN4°T2_Inst_BienHecho.mp3": {
@@ -4585,6 +4585,28 @@
 		"oAP": "\/CN5T2\/193\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/CN5T2\/196\/i\/bg.jpg": {
+		"ft": 16384,
+		"iS": 533787,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T2\/196\/i\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T2\/196\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 11623505,
+		"oA": 0,
+		"oAP": "\/CN5T2\/196\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.jpg": {
 		"ft": 16384,
 		"iS": 7027956,
@@ -4602,8 +4624,8 @@
 		"oA": 0,
 		"oAP": "\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
