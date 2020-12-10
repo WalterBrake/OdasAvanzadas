@@ -206,16 +206,19 @@ var app = new Vue({
         },
         selectiveValidation (verarray) {
             let allok = true
+            console.log(allok)
             for(va in verarray){
                 let rf = verarray[va]
                 let res = app.$refs[rf].validate()
                 if(res===false){
                     allok = false
-                } else {
-                    EventBus.$emit('isok')
                 }
             }
+            console.log(allok)
             if(allok){
+                for(ai in verarray){
+                    EventBus.$emit('isok')
+                }
                 s_ok.play()
             } else {
                 s_error.play()
