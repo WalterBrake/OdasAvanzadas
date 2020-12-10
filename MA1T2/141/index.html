@@ -143,6 +143,47 @@
           }
       }
       
+      
+      .drags .drag:nth-child(2) {
+          max-width: 30%;
+          max-height: 30%;
+      }
+      .drags .drag:nth-child(3) {
+          max-width: 18%;
+          max-height: 18%;
+      }
+      .drags .drag:nth-child(4) {
+          max-width: 20%;
+      }
+      .drags .drag:nth-child(5) {
+          max-width: 35%;
+          max-height: 30%;
+      }
+      .drags .drag:nth-child(6) {
+          max-width: 8%;
+      }
+      .drags .drag:nth-child(7) {
+          max-width: 8%;
+      }
+      .drags .drag:nth-child(9) {
+          max-width: 6%;
+          max-height: 10%;
+      }
+      .drags .drag:nth-child(10) {
+          max-width: 15%;
+          max-height: 10%;
+      }
+      .drags .drag:nth-child(11) {
+          max-width: 7%;
+      }
+      .drags .drag:nth-child(12) {
+          max-width: 21%;
+      }
+      .drags .drag:nth-child(13) {
+          max-width: 24%;
+      }
+      
+      
     </style>
   </head>
   <body>
@@ -172,7 +213,9 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
-        <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w50 robot">
@@ -210,6 +253,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
