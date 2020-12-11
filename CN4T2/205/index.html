@@ -342,39 +342,37 @@
             </div>
             <div class="w40 wm100" v-if="temps.mark==0">
               <div class="drags">
-                <drag :data="1" dropzone=".drop" ref="a1" extVal="extVal" append-clone="append-clone">
+                <drag :data="1" dropzone=".drop" ref="a1" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <div class="txt">PROCESO EN EL QUE EL AGUA SE DESPLAZA SOBRE Y DEBAJO DE LA SUPERFICIE DE LA TIERRA, UNA Y OTRA VEZ.</div>
                 </drag>
-                <drag :data="2" dropzone=".drop" ref="a2" extVal="extVal" append-clone="append-clone">
+                <drag :data="2" dropzone=".drop" ref="a2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Océanos</number>
                 </drag>
-                <drag :data="3" dropzone=".drop" ref="a3" extVal="extVal" append-clone="append-clone">
+                <drag :data="3" dropzone=".drop" ref="a3" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Evaporación</number>
                 </drag>
-                <drag :data="4" dropzone=".drop" ref="a4" extVal="extVal" append-clone="append-clone"><img class="w100" src="i/c1.png"/></drag>
-                <drag :data="5" dropzone=".drop" ref="a5" extVal="extVal" append-clone="append-clone"><img class="w100" src="i/c2.png"/></drag>
-                <drag :data="6" dropzone=".drop" ref="a6" extVal="extVal" append-clone="append-clone">
+                <drag :data="4" dropzone=".drop" ref="a4" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c1.png"/></drag>
+                <drag :data="5" dropzone=".drop" ref="a5" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c2.png"/></drag>
+                <drag :data="6" dropzone=".drop" ref="a6" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Condensación</number>
                 </drag>
-                <drag :data="7" dropzone=".drop" ref="a7" extVal="extVal" append-clone="append-clone">
+                <drag :data="7" dropzone=".drop" ref="a7" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Precipitación</number>
                 </drag>
-                <drag :data="8" dropzone=".drop" ref="a8" extVal="extVal" append-clone="append-clone">
+                <drag :data="8" dropzone=".drop" ref="a8" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Infiltración</number>
                 </drag>
-                <drag :data="9" dropzone=".drop" ref="a9" extVal="extVal" append-clone="append-clone">
+                <drag :data="9" dropzone=".drop" ref="a9" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <div class="txt">SUCEDE DEBIDO AL CHOQUE DE PARTÍCULAS DE VAPOR DE AGUA EN LAS NUBES.</div>
                 </drag>
-                <drag :data="10" dropzone=".drop" ref="a10" extVal="extVal" append-clone="append-clone">
+                <drag :data="10" dropzone=".drop" ref="a10" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <div class="txt">AQUELLA QUE NO PUEDE RETENERSE. ESCURRE Y LLEGA A RÍOS Y ARROYOS.</div>
                 </drag>
-                <drag :data="11" dropzone=".drop" ref="a11" extVal="extVal" append-clone="append-clone"><img class="w100" src="i/c3.png"/></drag>
-                <drag :data="12" dropzone=".drop" ref="a12" extVal="extVal" append-clone="append-clone"><img class="w100" src="i/c4.png"/></drag>
-                <drag :data="13" dropzone=".drop" ref="a13" extVal="extVal" append-clone="append-clone"><img class="w100" src="i/c5.png"/></drag>
+                <drag :data="11" dropzone=".drop" ref="a11" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c3.png"/></drag>
+                <drag :data="12" dropzone=".drop" ref="a12" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c4.png"/></drag>
+                <drag :data="13" dropzone=".drop" ref="a13" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c5.png"/></drag>
               </div>
-              <div class="text-center">
-                <button class="button big animate__animated animate__flip" @click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'], 13)">Verificar</button>
-              </div>
+              <!--.text-center: button(@click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'], 13)").button.big.animate__animated.animate__flip Verificar-->
               <!--button(@click="finishapp") Finish-->
             </div>
           </div>

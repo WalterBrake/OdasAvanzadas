@@ -322,24 +322,24 @@ html(lang="es")
                                 button.button.animate__animated.animate__pulse.animate__infinite.btnb(v-if="temps.image==false" @click="temps.image=true") Anterior
                         .w40.wm100(v-if="temps.mark==0")
                             .drags
-                                drag(:data="1" dropzone=".drop" ref="a1" extVal append-clone): div.txt PROCESO EN EL QUE EL AGUA SE DESPLAZA SOBRE Y DEBAJO DE LA SUPERFICIE DE LA TIERRA, UNA Y OTRA VEZ.
-                                drag(:data="2" dropzone=".drop" ref="a2" extVal append-clone): number(smaller randomc) Océanos
-                                drag(:data="3" dropzone=".drop" ref="a3" extVal append-clone): number(smaller randomc) Evaporación
+                                drag(:data="1" dropzone=".drop" ref="a1"  append-to-dropzone stay-if-ok): div.txt PROCESO EN EL QUE EL AGUA SE DESPLAZA SOBRE Y DEBAJO DE LA SUPERFICIE DE LA TIERRA, UNA Y OTRA VEZ.
+                                drag(:data="2" dropzone=".drop" ref="a2"  append-to-dropzone stay-if-ok): number(smaller randomc) Océanos
+                                drag(:data="3" dropzone=".drop" ref="a3"  append-to-dropzone stay-if-ok): number(smaller randomc) Evaporación
                                 
-                                drag(:data="4" dropzone=".drop" ref="a4" extVal append-clone): img(src="i/c1.png").w100
-                                drag(:data="5" dropzone=".drop" ref="a5" extVal append-clone): img(src="i/c2.png").w100
-                                drag(:data="6" dropzone=".drop" ref="a6" extVal append-clone): number(smaller randomc) Condensación
-                                drag(:data="7" dropzone=".drop" ref="a7" extVal append-clone): number(smaller randomc) Precipitación
-                                drag(:data="8" dropzone=".drop" ref="a8" extVal append-clone): number(smaller randomc) Infiltración
+                                drag(:data="4" dropzone=".drop" ref="a4"  append-to-dropzone stay-if-ok): img(src="i/c1.png").w100
+                                drag(:data="5" dropzone=".drop" ref="a5"  append-to-dropzone stay-if-ok): img(src="i/c2.png").w100
+                                drag(:data="6" dropzone=".drop" ref="a6"  append-to-dropzone stay-if-ok): number(smaller randomc) Condensación
+                                drag(:data="7" dropzone=".drop" ref="a7"  append-to-dropzone stay-if-ok): number(smaller randomc) Precipitación
+                                drag(:data="8" dropzone=".drop" ref="a8"  append-to-dropzone stay-if-ok): number(smaller randomc) Infiltración
 
-                                drag(:data="9" dropzone=".drop" ref="a9" extVal append-clone): div.txt SUCEDE DEBIDO AL CHOQUE DE PARTÍCULAS DE VAPOR DE AGUA EN LAS NUBES.
-                                drag(:data="10" dropzone=".drop" ref="a10" extVal append-clone): div.txt AQUELLA QUE NO PUEDE RETENERSE. ESCURRE Y LLEGA A RÍOS Y ARROYOS.
+                                drag(:data="9" dropzone=".drop" ref="a9"  append-to-dropzone stay-if-ok): div.txt SUCEDE DEBIDO AL CHOQUE DE PARTÍCULAS DE VAPOR DE AGUA EN LAS NUBES.
+                                drag(:data="10" dropzone=".drop" ref="a10"  append-to-dropzone stay-if-ok): div.txt AQUELLA QUE NO PUEDE RETENERSE. ESCURRE Y LLEGA A RÍOS Y ARROYOS.
 
-                                drag(:data="11" dropzone=".drop" ref="a11" extVal append-clone): img(src="i/c3.png").w100
-                                drag(:data="12" dropzone=".drop" ref="a12" extVal append-clone): img(src="i/c4.png").w100
-                                drag(:data="13" dropzone=".drop" ref="a13" extVal append-clone): img(src="i/c5.png").w100
+                                drag(:data="11" dropzone=".drop" ref="a11"  append-to-dropzone stay-if-ok): img(src="i/c3.png").w100
+                                drag(:data="12" dropzone=".drop" ref="a12"  append-to-dropzone stay-if-ok): img(src="i/c4.png").w100
+                                drag(:data="13" dropzone=".drop" ref="a13"  append-to-dropzone stay-if-ok): img(src="i/c5.png").w100
 
-                            .text-center: button(@click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'], 13)").button.big.animate__animated.animate__flip Verificar
+                            //.text-center: button(@click="dragValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'], 13)").button.big.animate__animated.animate__flip Verificar
 
                             //button(@click="finishapp") Finish
 
