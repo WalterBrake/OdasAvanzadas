@@ -87,14 +87,14 @@ html(lang="es")
             .angulo.clicked circle {
                 fill: none !important;
             }
-            .esquina {
+            .linea, .dot {
                 display: none;
             }
-            .esquina.on {
+            .linea.on, .dot.on {
                 display: block;
                 opacity:0;
             }
-            .esquina.on.clicked{
+            .linea.on.clicked, .dot.on.clicked{
                 opacity: 1;
             }
             .bx {
@@ -181,7 +181,7 @@ html(lang="es")
                     button(@click="dragValidation(['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8'], 8)").button.big.animate__animated.animate__flip Verificar
 
             // SCENES
-            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="40" scene-color="#ED1C25")
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="48" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn")
                 activity
                     .row.w100.wrap
@@ -252,14 +252,13 @@ html(lang="es")
                     EventBus.$emit('isok')
                     okclicks++
                     if(okclicks == 32){
-
                         EventEsquina()
                         app.temps.a = 3
                     }
                 }
 
                 function EventEsquina (){
-                document.querySelectorAll('.esquina').forEach(item => {
+                document.querySelectorAll('.dot').forEach(item => {
                 item.classList.add('on')
                 item.addEventListener('click', event => {
                     if(!item.classList.contains('clicked')){
@@ -273,7 +272,17 @@ html(lang="es")
                     s_ok.play()
                     EventBus.$emit('isok')
                     okclicks++
-                    if(okclicks == 40){
+                    if(okclicks == 48){
                         console.log('END')
                     }
+                    document.querySelectorAll('.linea').forEach(item => {
+                        let dotsok = 0
+                        item.classList.add('on')
+                        item.parentNode.querySelectorAll('.clicked').forEach(dot =>{
+                            dotsok++
+                        })
+                        if(dotsok >= 2){
+                            item.classList.add('clicked')
+                        }
+                    })
                 }

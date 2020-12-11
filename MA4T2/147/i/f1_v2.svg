@@ -51,24 +51,24 @@
                         </g>
                     </g>
                     <g class="esquina">
-                        <g id="dot" transform="matrix(0.0604845,0,0,0.0854674,28.7787,0.111939)">
+                        <g class="dot" transform="matrix(0.0604845,0,0,0.0854674,28.7787,0.111939)">
                             <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
                         </g>
-                        <g id="dot1" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,5.09764,-19.2766)">
+                        <g class="dot" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,5.09764,-19.2766)">
                             <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
                         </g>
-                        <g id="linea" transform="matrix(-2.48986,0,0,2.48986,19.0921,16.5872)">
+                        <g class="linea" transform="matrix(-2.48986,0,0,2.48986,19.0921,16.5872)">
                             <path d="M0,0L-9.511,7.787" style="fill:none;fill-rule:nonzero;stroke:rgb(58,170,54);stroke-width:0.27px;stroke-dasharray:0.53,0.8,0,0;"/>
                         </g>
                     </g>
                     <g class="esquina" serif:id="esquina">
-                        <g id="dot2" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,0.117909,0.111939)">
+                        <g class="dot" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,0.117909,0.111939)">
                             <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
                         </g>
-                        <g id="dot3" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,33.7585,-19.2766)">
+                        <g class="dot" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,33.7585,-19.2766)">
                             <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
                         </g>
-                        <g id="linea1" serif:id="linea" transform="matrix(-2.48986,0,0,2.48986,19.0921,16.5872)">
+                        <g class="linea" serif:id="linea" transform="matrix(-2.48986,0,0,2.48986,19.0921,16.5872)">
                             <path d="M2,7.787L-11.511,0" style="fill:none;fill-rule:nonzero;stroke:rgb(58,170,54);stroke-width:0.27px;stroke-dasharray:0.53,0.8,0,0;"/>
                         </g>
                     </g>
