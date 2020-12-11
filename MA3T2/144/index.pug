@@ -114,6 +114,42 @@ html(lang="es")
             [wascloned]{
                 display: none;
             }
+            .drop img {
+                width: 100%;
+            }
+
+
+            .items2 {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                max-width: 90%;
+            }
+            .items2 > div {
+                margin-bottom: 10px;
+                background: var(--main);
+                padding: 10px;
+                border-radius: 10px;
+                text-align: center;
+                max-width: 100%;
+            }
+            .items2 > div .drop {
+                margin-top: 6px;
+                max-width: 100%;
+            }
+            .drags2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .drags2 .drag {
+                margin: 4px;
+                background: #fff;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+
 
 
 
@@ -144,13 +180,13 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100
-                        .w30
-                            drag(v-for="(i, index) in [250, 56, 150, 45, 64]" :data="i" dropzone=".drop" extval :ref="'aut'"): img(:src="'i/'+i+'.png'")
-                            .text-center: button(@click="dragValidation(['aut'], 5)").button.big.animate__animated.animate__flip Verificar
                         .w70.esta
                             img(src="i/esta.png").w100
                             .drops
-                                .drop(v-for="(i, index) in [56, 64, 45, 150, 250]" :data="i" droptimes="multiple" droplimit="1")
+                                .drop(v-for="(i, index) in [56, 64, 45, 150, 250]" :data="i" droptimes="untilok" droplimit="1")
+                        .w30
+                            drag(v-for="(i, index) in [250, 56, 150, 45, 64]" :data="i" dropzone=".drop" extval :ref="'aut'" append-clone stay-if-ok): img(:src="'i/'+i+'.png'")
+                            .text-center: button(@click="dragValidation(['aut'], 5)").button.big.animate__animated.animate__flip Verificar
 
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
@@ -158,48 +194,48 @@ html(lang="es")
                 activity
                     .row.w100: img(src="i/full1.png").w100
                     .row.w100.mt-1.wrap
-                        .w50.wm100
+                        .w100: .items2
                             div Constante
                                 .drop.d2(data="s8" droptimes="untilok")
-                            div.mt-1 Progresión aritmética
+                            div Progresión aritmética
                                 .drop.d2(data="asc" droptimes="untilok")
-                        .w50.drags2.wm100
-                            drag(data="r6" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 6
-                            drag(data="s8" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 8
-                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
-                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+                        .w100: .drags2
+                            drag(data="r6" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Restar 6
+                            drag(data="s8" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Sumar 8
+                            drag(data="asc" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Descendente
             // SCENES
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la regla o constante que corresponde a cada sucesión y el tipo de progresión aritmética que le corresponda." textaudio="s/instruccion3.mp3" :autoplay="false")
                 activity
                     .row.w100: img(src="i/full2.png").w100
                     .row.w100.mt-1.wrap
-                        .w50.wm100
+                        .w100: .items2
                             div Constante
                                 .drop.d2(data="r3" droptimes="untilok")
-                            div.mt-1 Progresión aritmética
+                            div Progresión aritmética
                                 .drop.d2(data="des" droptimes="untilok")
-                        .w50.drags2.wm100
-                            drag(data="r3" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 3
-                            drag(data="s7" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 7
-                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
-                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+                        .w100: .drags2
+                            drag(data="r3" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Restar 3
+                            drag(data="s7" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Sumar 7
+                            drag(data="asc" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Descendente
             // SCENES
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la regla o constante que corresponde a cada sucesión y el tipo de progresión aritmética que le corresponda." textaudio="s/instruccion3.mp3" :autoplay="false")
                 activity
                     .row.w100: img(src="i/full3.png").w100
                     .row.w100.mt-1.wrap
-                        .w50.wm100
+                        .w100: .items2
                             div Constante
                                 .drop.d2(data="s25" droptimes="untilok")
-                            div.mt-1 Progresión aritmética
+                            div Progresión aritmética
                                 .drop.d2(data="asc" droptimes="untilok")
-                        .w50.drags2.wm100
-                            drag(data="s25" dropzone=".d2" append-to-dropzone): number(smaller c=1) Sumar 25
-                            drag(data="r20" dropzone=".d2" append-to-dropzone): number(smaller c=1) Restar 20
-                            drag(data="asc" dropzone=".d2" append-to-dropzone): number(smaller c=1) Ascendente
-                            drag(data="des" dropzone=".d2" append-to-dropzone): number(smaller c=1) Descendente
+                        .w100: .drags2
+                            drag(data="s25" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Sumar 25
+                            drag(data="r20" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Restar 20
+                            drag(data="asc" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Ascendente
+                            drag(data="des" dropzone=".d2" append-to-dropzone stay-if-ok): number(smaller c=1) Descendente
             
             // SCENES
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
@@ -246,5 +282,5 @@ html(lang="es")
 
 
 
-                app.currentScene = 3
+                app.currentScene = 0
                 app.scenesCount = 5

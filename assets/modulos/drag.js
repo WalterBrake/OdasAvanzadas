@@ -56,6 +56,7 @@ Vue.component('drag', {
             var _this = this
             _this.posx = _this.$refs.drag.offsetLeft
             _this.posy = _this.$refs.drag.offsetTop
+
             _this.$refs.drag.children[0].classList.add('animate__animated')
 
 
@@ -384,7 +385,8 @@ Vue.component('drag', {
                 TweenLite.to(this.$refs.drag, .5, {x: this.lastPosition.x, y: this.lastPosition.y, top: this.posy, left: this.posx, delay: .6});
                 return false
             }
-            TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
+            //TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: this.posy, left: this.posx, delay: .6});
+            TweenLite.to(this.$refs.drag, .5, {x:0, y:0, top: 0, left: 0, delay: .6});
             this.dragLineClear()
         },
         dropzoneSound(dropzone, attr) {
@@ -459,7 +461,7 @@ Vue.component('drag', {
             }
         },
         updatePositionFn (e) {
-            if(this.updatePosition!=undefined){   
+            if(this.updatePosition!=undefined){
                 this.posx = e.clientX + window.scrollX
                 this.posy = e.clientY + window.scrollY
             }

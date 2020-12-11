@@ -117,6 +117,42 @@
       [wascloned]{
           display: none;
       }
+      .drop img {
+          width: 100%;
+      }
+      
+      
+      .items2 {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          max-width: 90%;
+      }
+      .items2 > div {
+          margin-bottom: 10px;
+          background: var(--main);
+          padding: 10px;
+          border-radius: 10px;
+          text-align: center;
+          max-width: 100%;
+      }
+      .items2 > div .drop {
+          margin-top: 6px;
+          max-width: 100%;
+      }
+      .drags2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+      .drags2 .drag {
+          margin: 4px;
+          background: #fff;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      
       
       
       
@@ -171,15 +207,15 @@
         <info type="dragdrop" title="Números perdidos" text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
-            <div class="w30">
-              <drag v-for="(i, index) in [250, 56, 150, 45, 64]" :data="i" dropzone=".drop" extval="extval" :ref="'aut'"><img :src="'i/'+i+'.png'"/></drag>
-              <div class="text-center">
-                <button class="button big animate__animated animate__flip" @click="dragValidation(['aut'], 5)">Verificar</button>
-              </div>
-            </div>
             <div class="w70 esta"><img class="w100" src="i/esta.png"/>
               <div class="drops">
-                <div class="drop" v-for="(i, index) in [56, 64, 45, 150, 250]" :data="i" droptimes="multiple" droplimit="1"></div>
+                <div class="drop" v-for="(i, index) in [56, 64, 45, 150, 250]" :data="i" droptimes="untilok" droplimit="1"></div>
+              </div>
+            </div>
+            <div class="w30">
+              <drag v-for="(i, index) in [250, 56, 150, 45, 64]" :data="i" dropzone=".drop" extval="extval" :ref="'aut'" append-clone="append-clone" stay-if-ok="stay-if-ok"><img :src="'i/'+i+'.png'"/></drag>
+              <div class="text-center">
+                <button class="button big animate__animated animate__flip" @click="dragValidation(['aut'], 5)">Verificar</button>
               </div>
             </div>
           </div>
@@ -191,27 +227,31 @@
         <activity>
           <div class="row w100"><img class="w100" src="i/full1.png"/></div>
           <div class="row w100 mt-1 wrap">
-            <div class="w50 wm100">
-              <div>Constante
-                <div class="drop d2" data="s8" droptimes="untilok"></div>
-              </div>
-              <div class="mt-1">Progresión aritmética
-                <div class="drop d2" data="asc" droptimes="untilok"></div>
+            <div class="w100">
+              <div class="items2">
+                <div>Constante
+                  <div class="drop d2" data="s8" droptimes="untilok"></div>
+                </div>
+                <div>Progresión aritmética
+                  <div class="drop d2" data="asc" droptimes="untilok"></div>
+                </div>
               </div>
             </div>
-            <div class="w50 drags2 wm100">
-              <drag data="r6" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Restar 6</number>
-              </drag>
-              <drag data="s8" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Sumar 8</number>
-              </drag>
-              <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Ascendente</number>
-              </drag>
-              <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Descendente</number>
-              </drag>
+            <div class="w100">
+              <div class="drags2">
+                <drag data="r6" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Restar 6</number>
+                </drag>
+                <drag data="s8" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Sumar 8</number>
+                </drag>
+                <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Ascendente</number>
+                </drag>
+                <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Descendente</number>
+                </drag>
+              </div>
             </div>
           </div>
         </activity>
@@ -222,27 +262,31 @@
         <activity>
           <div class="row w100"><img class="w100" src="i/full2.png"/></div>
           <div class="row w100 mt-1 wrap">
-            <div class="w50 wm100">
-              <div>Constante
-                <div class="drop d2" data="r3" droptimes="untilok"></div>
-              </div>
-              <div class="mt-1">Progresión aritmética
-                <div class="drop d2" data="des" droptimes="untilok"></div>
+            <div class="w100">
+              <div class="items2">
+                <div>Constante
+                  <div class="drop d2" data="r3" droptimes="untilok"></div>
+                </div>
+                <div>Progresión aritmética
+                  <div class="drop d2" data="des" droptimes="untilok"></div>
+                </div>
               </div>
             </div>
-            <div class="w50 drags2 wm100">
-              <drag data="r3" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Restar 3</number>
-              </drag>
-              <drag data="s7" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Sumar 7</number>
-              </drag>
-              <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Ascendente</number>
-              </drag>
-              <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Descendente</number>
-              </drag>
+            <div class="w100">
+              <div class="drags2">
+                <drag data="r3" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Restar 3</number>
+                </drag>
+                <drag data="s7" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Sumar 7</number>
+                </drag>
+                <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Ascendente</number>
+                </drag>
+                <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Descendente</number>
+                </drag>
+              </div>
             </div>
           </div>
         </activity>
@@ -253,27 +297,31 @@
         <activity>
           <div class="row w100"><img class="w100" src="i/full3.png"/></div>
           <div class="row w100 mt-1 wrap">
-            <div class="w50 wm100">
-              <div>Constante
-                <div class="drop d2" data="s25" droptimes="untilok"></div>
-              </div>
-              <div class="mt-1">Progresión aritmética
-                <div class="drop d2" data="asc" droptimes="untilok"></div>
+            <div class="w100">
+              <div class="items2">
+                <div>Constante
+                  <div class="drop d2" data="s25" droptimes="untilok"></div>
+                </div>
+                <div>Progresión aritmética
+                  <div class="drop d2" data="asc" droptimes="untilok"></div>
+                </div>
               </div>
             </div>
-            <div class="w50 drags2 wm100">
-              <drag data="s25" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Sumar 25</number>
-              </drag>
-              <drag data="r20" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Restar 20</number>
-              </drag>
-              <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Ascendente</number>
-              </drag>
-              <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone">
-                <number smaller="smaller" c="1">Descendente</number>
-              </drag>
+            <div class="w100">
+              <div class="drags2">
+                <drag data="s25" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Sumar 25</number>
+                </drag>
+                <drag data="r20" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Restar 20</number>
+                </drag>
+                <drag data="asc" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Ascendente</number>
+                </drag>
+                <drag data="des" dropzone=".d2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <number smaller="smaller" c="1">Descendente</number>
+                </drag>
+              </div>
             </div>
           </div>
         </activity>
@@ -363,7 +411,7 @@
       
       
       
-      app.currentScene = 3
+      app.currentScene = 0
       app.scenesCount = 5
     </script>
   </body>
