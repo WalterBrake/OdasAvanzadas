@@ -32,32 +32,36 @@
       }
       .images .btna.button {
           position: absolute;
-          left: 40%;
-          bottom: 6px;
+          left: 38%;
+          top: 2%;
           border: 2px solid var(--accent);
           color: var(--accent);
           box-shadow: 4px 4px 0 var(--sec);
       }
       @media (max-width: 680px) {
           .images .btna.button {
-              font-size: 0.6rem;
+              font-size: 0.5rem;
               left: 33%;
               padding: 2px;
+              border-width: 1px;
+              box-shadow: 2px 2px 0 var(--sec);
           }
       }
       .images .btnb.button {
           position: absolute;
           left: 52%;
-          bottom: 6px;
+          top: 2%;;
           border: 2px solid var(--accent);
           color: var(--accent);
           box-shadow: 4px 4px 0 var(--sec);
       }
       @media (max-width: 680px) {
           .images .btnb.button {
-              font-size: 0.6rem;
-              left: 83%;
+              font-size: 0.5rem;
+              left: 52%;
               padding: 2px;
+              border-width: 1px;
+              box-shadow: 2px 2px 0 var(--sec);
           }
       }
       .images.two {
@@ -212,7 +216,12 @@
           height: auto;
           max-width: 40%;
           width: fit-content;
+          margin: 2px;
+      }
+      @media (min-width: 820px){
+          .drag{
           margin: 10px;
+          }
       }
       .drag .txt {
           font-size: 0.6rem;
@@ -223,6 +232,7 @@
       .drag img {
           width: 100%;
           max-width: 40px;
+          min-width: 40px;
       }
       .drag .number.smaller {
           font-size: 0.9rem !important;
@@ -230,6 +240,9 @@
       @media (max-width: 820px) {
           .drag {
               width: fit-content;
+          }
+          .drag .txt{
+              font-size: 0.5rem;
           }
       }
       @media (max-width: 680px) {
@@ -342,17 +355,12 @@
             </div>
             <div class="w40 wm100" v-if="temps.mark==0">
               <div class="drags">
-                <drag :data="1" dropzone=".drop" ref="a1" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
-                  <div class="txt">PROCESO EN EL QUE EL AGUA SE DESPLAZA SOBRE Y DEBAJO DE LA SUPERFICIE DE LA TIERRA, UNA Y OTRA VEZ.</div>
-                </drag>
                 <drag :data="2" dropzone=".drop" ref="a2" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Océanos</number>
                 </drag>
                 <drag :data="3" dropzone=".drop" ref="a3" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Evaporación</number>
                 </drag>
-                <drag :data="4" dropzone=".drop" ref="a4" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c1.png"/></drag>
-                <drag :data="5" dropzone=".drop" ref="a5" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c2.png"/></drag>
                 <drag :data="6" dropzone=".drop" ref="a6" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Condensación</number>
                 </drag>
@@ -362,12 +370,17 @@
                 <drag :data="8" dropzone=".drop" ref="a8" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <number smaller="smaller" randomc="randomc">Infiltración</number>
                 </drag>
+                <drag :data="1" dropzone=".drop" ref="a1" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
+                  <div class="txt">PROCESO EN EL QUE EL AGUA SE DESPLAZA SOBRE Y DEBAJO DE LA SUPERFICIE DE LA TIERRA, UNA Y OTRA VEZ.</div>
+                </drag>
                 <drag :data="9" dropzone=".drop" ref="a9" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <div class="txt">SUCEDE DEBIDO AL CHOQUE DE PARTÍCULAS DE VAPOR DE AGUA EN LAS NUBES.</div>
                 </drag>
                 <drag :data="10" dropzone=".drop" ref="a10" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok">
                   <div class="txt">AQUELLA QUE NO PUEDE RETENERSE. ESCURRE Y LLEGA A RÍOS Y ARROYOS.</div>
                 </drag>
+                <drag :data="4" dropzone=".drop" ref="a4" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c1.png"/></drag>
+                <drag :data="5" dropzone=".drop" ref="a5" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c2.png"/></drag>
                 <drag :data="11" dropzone=".drop" ref="a11" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c3.png"/></drag>
                 <drag :data="12" dropzone=".drop" ref="a12" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c4.png"/></drag>
                 <drag :data="13" dropzone=".drop" ref="a13" append-to-dropzone="append-to-dropzone" stay-if-ok="stay-if-ok"><img class="w100" src="i/c5.png"/></drag>
