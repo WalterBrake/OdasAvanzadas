@@ -195,14 +195,14 @@ html(lang="es")
                             img(src="i/lv.png").w50
                             audiotext(key="a3" text="Marca cada diagonal de los cuadriláteros. Haz clic en un vértice y después en el otro." audio="s/au3.mp3" :autoplay="true")
                     .row.w100.wrap
-                        .w40: embedsvg(src="i/f1.svg")
-                        .w40: embedsvg(src="i/f2.svg")
-                        .w40: embedsvg(src="i/f3.svg")
-                        .w40: embedsvg(src="i/f4.svg")
+                        .w40: embedsvg(src="i/f1_v2.svg")
+                        .w40: embedsvg(src="i/f2_v2.svg")
+                        .w40: embedsvg(src="i/f3_v2.svg")
+                        .w40: embedsvg(src="i/f4_v2.svg")
             
             // END
             scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
-        
+
         +scripts
             script.
 
@@ -210,7 +210,7 @@ html(lang="es")
                 app.$set(app.temps, 'a', 0)
 
                 
-                app.currentScene = 2
+                app.currentScene = 0
                 app.scenesCount = 2
 
 

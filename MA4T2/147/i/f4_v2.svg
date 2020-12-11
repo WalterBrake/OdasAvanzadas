@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 758 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+    <g id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" transform="matrix(1,0,0,1,-121.477,-69.5299)">
+        <rect x="121.477" y="69.53" width="757.902" height="470.47" style="fill:none;"/>
+        <g transform="matrix(16.5332,0,0,11.7004,-802.857,-460.964)">
+            <g id="Capa-1" serif:id="Capa 1">
+                <g id="f4">
+                    <g class="lado" transform="matrix(-2.48986,0,0,2.48986,63.214,55.7505)">
+                        <path d="M-12.51,7.787L0,7.787" style="fill:none;fill-rule:nonzero;stroke:rgb(234,94,218);stroke-width:1px;"/>
+                    </g>
+                    <g class="lado" serif:id="lado" transform="matrix(-2.48986,0,0,2.48986,63.214,55.7505)">
+                        <path d="M0,7.787L-2,0" style="fill:none;fill-rule:nonzero;stroke:rgb(234,94,218);stroke-width:1px;"/>
+                    </g>
+                    <g class="lado" serif:id="lado" transform="matrix(-2.48986,0,0,2.48986,63.214,55.7505)">
+                        <path d="M-2,0L-10.51,0" style="fill:none;fill-rule:nonzero;stroke:rgb(234,94,218);stroke-width:1px;"/>
+                    </g>
+                    <g class="lado" serif:id="lado" transform="matrix(-2.48986,0,0,2.48986,63.214,55.7505)">
+                        <path d="M-10.51,0L-12.51,7.787" style="fill:none;fill-rule:nonzero;stroke:rgb(234,94,218);stroke-width:1px;"/>
+                    </g>
+                    <g class="angulo" transform="matrix(1.02641e-17,-0.0473724,0.033525,1.45036e-17,83.6905,71.6083)">
+                        <g transform="matrix(1.40128,0,0,1.40128,-512.95,-319.248)">
+                            <circle cx="554.392" cy="328.581" r="50.539" style="fill:rgb(235,235,235);fill-opacity:0.01;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-28.7147,-28.7147)">
+                            <path d="M235.419,192.767C235.419,149.561 270.497,114.483 313.703,114.483C323.837,114.483 333.524,116.413 342.417,119.925" style="fill:none;stroke:rgb(23,108,171);stroke-width:10.82px;stroke-miterlimit:1.5;stroke-dasharray:21.65,32.47,0,0;"/>
+                        </g>
+                    </g>
+                    <g class="angulo" serif:id="angulo" transform="matrix(0.033525,1.0841e-18,-7.6721e-19,0.0473723,81.5181,65.2831)">
+                        <g transform="matrix(1.40128,0,0,1.40128,-512.95,-319.248)">
+                            <circle cx="554.392" cy="328.581" r="50.539" style="fill:rgb(235,235,235);fill-opacity:0.01;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-28.7147,-28.7147)">
+                            <path d="M235.419,192.767C235.419,149.561 270.497,114.483 313.703,114.483C323.837,114.483 333.524,116.413 342.417,119.925" style="fill:none;stroke:rgb(23,108,171);stroke-width:10.82px;stroke-miterlimit:1.5;stroke-dasharray:21.65,32.47,0,0;"/>
+                        </g>
+                    </g>
+                    <g class="angulo" serif:id="angulo" transform="matrix(-0.033525,-6.88555e-18,4.87283e-18,-0.0473723,78.3064,65.7936)">
+                        <g transform="matrix(1.40128,0,0,1.40128,-512.95,-319.248)">
+                            <circle cx="554.392" cy="328.581" r="50.539" style="fill:rgb(235,235,235);fill-opacity:0.01;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-28.7147,-28.7147)">
+                            <path d="M235.419,192.767C235.419,149.561 270.497,114.483 313.703,114.483C323.837,114.483 333.524,116.413 342.417,119.925" style="fill:none;stroke:rgb(23,108,171);stroke-width:10.82px;stroke-miterlimit:1.5;stroke-dasharray:21.65,32.47,0,0;"/>
+                        </g>
+                    </g>
+                    <g class="angulo" serif:id="angulo" transform="matrix(0,0.0473724,-0.033525,-1.73472e-18,71.8179,59.2823)">
+                        <g transform="matrix(1.40128,0,0,1.40128,-512.95,-319.248)">
+                            <circle cx="554.392" cy="328.581" r="50.539" style="fill:rgb(235,235,235);fill-opacity:0.01;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,1,-28.7147,-28.7147)">
+                            <path d="M235.419,192.767C235.419,149.561 270.497,114.483 313.703,114.483C323.837,114.483 333.524,116.413 342.417,119.925" style="fill:none;stroke:rgb(23,108,171);stroke-width:10.82px;stroke-miterlimit:1.5;stroke-dasharray:21.65,32.47,0,0;"/>
+                        </g>
+                    </g>
+                    <g class="esquina" transform="matrix(1,0,0,1,35.7371,42.0848)">
+                        <g id="dot" transform="matrix(0.0604845,0,0,0.0854674,13.5634,-2.80959)">
+                            <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
+                        </g>
+                        <g id="dot1" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,39.6509,-22.1982)">
+                            <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
+                        </g>
+                        <g id="linea" transform="matrix(-2.48986,0,0,2.48986,14.0486,22.573)">
+                            <path d="M-5.426,4.21L-15.903,-3.577" style="fill:none;fill-rule:nonzero;stroke:rgb(58,170,54);stroke-width:0.27px;stroke-dasharray:0.53,0.8,0,0;"/>
+                        </g>
+                    </g>
+                    <g class="esquina" serif:id="esquina" transform="matrix(1,0,0,1,35.7371,42.0848)">
+                        <g id="dot2" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,18.4622,-22.1982)">
+                            <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
+                        </g>
+                        <g id="dot3" serif:id="dot" transform="matrix(0.0604845,0,0,0.0854674,44.6306,-2.80959)">
+                            <circle cx="231.372" cy="419.621" r="18.059" style="fill:rgb(58,170,54);"/>
+                        </g>
+                        <g id="linea1" serif:id="linea" transform="matrix(-2.48986,0,0,2.48986,14.0486,22.573)">
+                            <path d="M-7.393,-3.577L-17.903,4.21" style="fill:none;fill-rule:nonzero;stroke:rgb(58,170,54);stroke-width:0.27px;stroke-dasharray:0.53,0.8,0,0;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
