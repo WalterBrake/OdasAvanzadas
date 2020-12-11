@@ -23,7 +23,7 @@ html(lang="es")
                 border-radius: 10px;
                 text-align: center;
             }
-            .sequence .selectives .row {
+            .selectives .row {
                 flex-direction: column;
             }
 
@@ -35,20 +35,22 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="true")
-                activity
-                    .row.w90
-                        sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true")
-                            template(v-slot:option="{option}")
-                                .row.w100: .w40: img(:src="option.im").w100
-                                .row.w100.mb-auto
-                                    selectives(:ans="option.ans" :key="'k'+option.k" :ops="option.ops" number disableok :ref="'k'+option.k")
-                    .row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar
+            template(v-for="(i, index) in temps.preguntas")
+                scene( v-if="currentScene==index+1" :key="index+1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                    info(type="seleccionar" title=title text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false")
+                    activity
+                        //.row.w90
+                            //sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true" no-nav)
+                                template(v-slot:option="{option}")
+                        .row.w100: .w40: img(:src="i.im").w100
+                        .row.w100.mb-1
+                            selectives(:ans="i.ans" :key="'k'+i.k" :ops="i.ops" number disableok ref="preg")
+                        .text-center: button(@click="selectiveValidation(['preg'])").button.big.animate__animated.animate__bounceInDown Validar
+                        //.row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar
 
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
         
         +scripts
             script.

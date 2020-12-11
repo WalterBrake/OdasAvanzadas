@@ -26,7 +26,7 @@
           border-radius: 10px;
           text-align: center;
       }
-      .sequence .selectives .row {
+      .selectives .row {
           flex-direction: column;
       }
       
@@ -39,28 +39,29 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="seleccionar" title="Me ayudo con los cubos" text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
-        <activity>
-          <div class="row w90">
-            <sequence :options="temps.preguntas" ref="seque" @last="temps.last=true">
-              <template v-slot:option="{option}">
-                <div class="row w100">
-                  <div class="w40"><img class="w100" :src="option.im"/></div>
-                </div>
-                <div class="row w100 mb-auto">
-                  <selectives :ans="option.ans" :key="'k'+option.k" :ops="option.ops" number="number" disableok="disableok" :ref="'k'+option.k"></selectives>
-                </div>
-              </template>
-            </sequence>
-          </div>
-          <div class="row w100" v-if="temps.last">
-            <button class="button big animate__animated animate__bounceInDown" @click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])">Validar</button>
-          </div>
-        </activity>
-      </scene>
+      <template v-for="(i, index) in temps.preguntas">
+        <scene v-if="currentScene==index+1" :key="index+1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+          <info type="seleccionar" title="Me ayudo con los cubos" text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false"></info>
+          <activity>
+            <!--.row.w90
+            //sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true" no-nav)
+                template(v-slot:option="{option}")
+            -->
+            <div class="row w100">
+              <div class="w40"><img class="w100" :src="i.im"/></div>
+            </div>
+            <div class="row w100 mb-1">
+              <selectives :ans="i.ans" :key="'k'+i.k" :ops="i.ops" number="number" disableok="disableok" ref="preg"></selectives>
+            </div>
+            <div class="text-center">
+              <button class="button big animate__animated animate__bounceInDown" @click="selectiveValidation(['preg'])">Validar</button>
+            </div>
+            <!--.row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar-->
+          </activity>
+        </scene>
+      </template>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>

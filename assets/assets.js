@@ -206,12 +206,30 @@ var app = new Vue({
         },
         selectiveValidation (verarray) {
             let allok = true
-            for(va in verarray){
+            /*for(va in verarray){
                 let rf = verarray[va]
                 let res = app.$refs[rf].validate()
                 if(res===false){
                     allok = false
                 }
+            }*/
+            for(va in verarray){
+                let rf = verarray[va]
+                if(Array.isArray(app.$refs[rf])){
+                    for(i in app.$refs[rf]){
+                        let res = app.$refs[rf][i].validate()
+                        if(res===false){
+                            allok = false
+                        } 
+                    }
+                }
+                 else {
+                    let res = app.$refs[rf].validate()
+                    if(res===false){
+                        allok = false
+                    }  
+                }
+                
             }
             if(allok){
                 for(ai in verarray){
