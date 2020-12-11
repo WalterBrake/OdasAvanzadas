@@ -193,7 +193,7 @@
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
         <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true">
-          <audiotext v-if="temps.count==4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
+          <audiotext v-if="temps.count&gt;=4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
         </info>
         <activity>
           <div class="row w100">
@@ -264,7 +264,7 @@
     <!-- Mainscript-->
     <script src="../../assets/assets.js"></script>
     <script>
-      app.$devmode = false
+      app.$devmode = 1
       app.$set(app.temps, 'count', 0)
       app.$set(app.temps, 'a', [
           {im: 'i/i3.png', d:0},
@@ -283,7 +283,7 @@
           {im: 'i/i2.png', d:0},
       ])
       
-      app.currentScene = 0
+      app.currentScene = 1
       app.scenesCount = 1
     </script>
   </body>
