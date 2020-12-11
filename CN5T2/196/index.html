@@ -27,57 +27,128 @@
       .ask.ans {
           background: var(--main);
       }
+      @media (max-width: 680px) {
+          .ask {
+              padding: 1px 6px;
+          }
+          .ask .number.smaller {
+              font-size: 0.7rem;
+          }
+      }
       .b1 {
-          left: 0.4%;
+          left: 1%;
           top: 2%;
       }
       .b2 {
-          left: 29%;
+          left: 40%;
           top: 1%;
       }
       .b3 {
           left: 35%;
-          top: 26%;
+          top: 38%;
       }
       .b4 {
-          left: 20%;
-          top: 84%;
+          left: 25%;
+          top: 77%;
       }
       .b5 {
-          left: 30%;
-          top: 60%;
+          left: 26%;
+          top: 65%;
       }
-      .pregunta {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.4);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-      }
-      .pregunta .clickable .number.smaller {
-          font-size: 1.1rem;
-      }
-      .pregunta .cont {
-          position: relative;
-          background: var(--beige);
-          padding: 20px;
-          border-radius: 10px;
-          margin: 10px 20px;
-      }
-      .pregunta .closeit {
-          position: absolute;
-          top: -10px;
-          right: -10px;
-          padding: 2px 10px;
-          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-          background: var(--main);
-      }
+      .b6 { left: 56%; top: 30%; }
+      .b7 { left: 72%; top: 12%; }
+      .b8 { left: 90%; top: 15%; }
+      .b9 { left: 52%; top: 67%; }
+      .b10 { left: 40%; top: 80%; }
       
+      .pregunta .h4 {
+          font-size: 0.8rem;
+      }
+      @media (max-width: 680px) {
+          .pregunta .h4 {
+              font-size: 0.6rem;
+          }
+      }
+      .pregunta .question1 {
+          position: absolute;
+          left: -2px;
+          top: 35%;
+          width: 20%;
+          background: #fff;
+          border: 2px solid #000;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 0 6px 6px 0;
+          padding: 2% 1%;
+          box-sizing: border-box;
+      }
+      @media (max-width: 680px) {
+          .pregunta .question1 {
+              position: static;
+              width: 100%;
+              margin: 0;
+          }
+      }
+      .pregunta .question1 .pregs {
+          justify-content: space-around;
+          padding: 2px;
+          border-radius: 4px;
+          margin-top: 1%;
+      }
+      .pregunta .question1 .pregs .clickable {
+          background: #f5f5f5;
+          padding: 1% 5%;
+          border-radius: 4px;
+      }
+      .pregunta .question1 .pregs .clickable .number {
+          color: #666;
+      }
+      .pregunta .question1 .pregs .clickable.clicked {
+          background: var(--accent);
+      }
+      .pregunta .question1 .pregs .clickable.clicked .number {
+          color: #fff;
+      }
+      .pregunta .question1 .pregs .clickable.clicked .anim {
+          display: none;
+      }
+      .pregunta .question2 {
+          background: #fff;
+          border: 2px solid #000;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 6px 0 0 6px;
+          padding: 1%;
+          margin-top: -8%;
+          position: relative;
+          z-index: 5;
+          width: 80%;
+          margin-left: 21%;
+          box-sizing: border-box;
+      }
+      @media (max-width: 680px) {
+          .pregunta .question2 {
+              position: static;
+              width: 100%;
+              margin: 0;
+          }
+      }
+      .pregunta .question2 .clickable {
+          font-size: 0.8rem;
+          background: #f5f5f5;
+          margin: 0.5% 0;
+          padding: 5px;
+          border-radius: 4px;
+      }
+      @media (max-width: 680px) {
+          .pregunta .question2 .clickable {
+              font-size: 0.6rem;
+          }
+      }
+      .pregunta .question2 .clickable.clicked {
+          background: var(--accent);
+      }
+      .pregunta .question2 .clickable.clicked .anim {
+          display: none;
+      }
       
       
       
@@ -88,13 +159,13 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="20" scene-color="#ED1C25">
         <info type="seleccionar" title="Sé qué es la fuerza de gravedad" text="¿Sabes qué es la gravedad? Haz clic en el ícono de &lt;strong&gt;?&lt;/strong&gt; y lee la información. Después, responde &lt;strong&gt;F&lt;/strong&gt; para falso o &lt;strong&gt;V&lt;/strong&gt;  para verdadero en las afirmaciones y selecciona la razón que fundamenta tu respuesta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
-            <div class="bg w100"><img class="w100" src="i/bg.png"/>
+            <div class="bg w100"><img class="w100" src="i/bg5.jpg"/>
               <!--BTNS-->
-              <template v-for="(i, index) in 5">
+              <template v-for="(i, index) in 10">
                 <button class="button ask animate__animated animate__pulse animate__infinite" @click="openp(index+1)" :class="('b'+(index+1)) + ' ' + (temps['p'+(index+1)]&gt;1?'ans':'')">
                   <number c="2" smaller="smaller">?</number>
                 </button>
@@ -104,23 +175,20 @@
           <!--PREGUNTAS-->
           <template v-for="(i, index) in temps.preguntas">
             <div class="pregunta" v-show="temps.nump==(index+1)">
-              <div class="cont">
-                <button class="button closeit animate__animated animate__jello" v-if="temps['p'+(index+1)]&gt;1" @click="temps.nump = false">
-                  <number c="1" smaller="smaller">x</number>
-                </button>
-                <div class="h4 text-center">{{i.p}} </div>
-                <div class="row wrap around">
+              <div class="question1 animate__animated animate__lightSpeedInLeft">
+                <div class="h4 text-center">{{i.p}}</div>
+                <div class="row pregs">
                   <clickable v-for="(i1, index1) in ['V', 'F']" :key="'p'+index+index1" :isok="index1 == i.vf" simple-ok="simple-ok" initclass="pa-1" @wasclicked="temps['p'+(index+1)]=1">
-                    <number randomc="randomc" smaller="smaller">{{i1}}</number>
+                    <number smaller="smaller">{{i1}}</number>
                   </clickable>
                 </div>
-                <div class="mt-1 text-center" v-if="temps['p'+(index+1)]&gt;0">
-                  <div class="h4 text-center">Razón:</div>
-                  <div class="row wrap around">
-                    <clickable v-for="(i2, index2) in i.ops" :key="'ops'+index2" :isok="index2 == i.ans" simple-ok="simple-ok" initclass="pa-1" @wasclicked="temps['p'+(index+1)]=2">
-                      <number randomc="randomc" smaller="smaller">{{i2}}</number>
-                    </clickable>
-                  </div>
+              </div>
+              <div class="question2 animate__animated animate__backInRight" v-if="temps['p'+(index+1)]&gt;0">
+                <div class="h4 text-center">Razón:</div>
+                <div class="row wrap around">
+                  <clickable v-for="(i2, index2) in i.ops" :key="'ops'+index2" :isok="index2 == i.ans" simple-ok="simple-ok" initclass="" @wasclicked="temps['p'+(index+1)]=2">
+                    <div class="answe">{{i2}}</div>
+                  </clickable>
                 </div>
               </div>
             </div>
@@ -167,19 +235,26 @@
       app.$set(app.temps, 'p3', 0)
       app.$set(app.temps, 'p4', 0)
       app.$set(app.temps, 'p5', 0)
+      app.$set(app.temps, 'p6', 0)
+      app.$set(app.temps, 'p7', 0)
+      app.$set(app.temps, 'p8', 0)
+      app.$set(app.temps, 'p9', 0)
+      app.$set(app.temps, 'p10', 0)
       
       app.$set(app.temps, 'nump', false)
       
       app.$set(app.temps, 'preguntas', [
           {p: 'La gravedad es una fuerza de atracción.', vf:0, ops: ['La gravedad es una fuerza de atracción que ejerce un objeto sobre otro.','A partir del descubrimiento de la gravedad se puede manipular la fuerza que tiene sobre los objetos.'], ans: 0 },
-          
           {p: 'La gravedad permite que la Tierra orbite alrededor del Sol porque ejerce una fuerza de repulsión.', vf:1, ops: ['La gravedad es una fuerza esencial del universo que permite la órbita alrededor del Sol.','El universo tiene muchas fuerzas que luchan entre sí que repelen la órbita alrededor del Sol.'], ans: 0 },
-          
           {p: ' Galileo Galilei demostró que los objetos que poseen fuerza de gravedad caen rápidamente y, los que no poseen gravedad, no lo hacen.', vf:1, ops: ['Galileo Galilei demostró que todos objetos caen sobre la superficie de la Tierra con la misma rapidez independientemente del peso. ','Galileo Galilei demostró que los objetos pesados caen más rápido que los objetos ligeros.'], ans: 0 },
-          
           {p: 'Isaac Newton descubrió la fuerza de gravedad.', vf:0, ops: ['Isaac Newton descubrió que todos los objetos caen sobre la superficie de la Tierra sin importar el tamaño ni el peso. ','Isaac Newton descubrió la fuerza de gravedad en 1685.'], ans: 1 },
+          {p: 'Isaac Newton descubrió la gravedad cuando una manzana cayó sobre su cabeza y recordó la teoría de Galileo Galilei.', vf:1, ops: ['La gravedad es una fuerza de atracción que ejerce un objeto sobre otro.','A partir del descubrimiento de la gravedad se puede manipular la fuerza que tiene sobre los objetos.'], ans: 1 },
           
-          {p: 'Isaac Newton descubrió la gravedad cuando una manzana cayó sobre su cabeza y recordó la teoría de Galileo Galilei. ', vf:1, ops: ['La gravedad es una fuerza de atracción que ejerce un objeto sobre otro.','A partir del descubrimiento de la gravedad se puede manipular la fuerza que tiene sobre los objetos.'], ans: 1 },
+          {p: 'Una de las características de la gravedad es que actúa de manera instantánea.', vf:0, ops: ['El efecto de atracción de la gravedad es inmediato.','El efecto de atracción de la gravedad depende del peso de los objetos.'], ans: 0 },
+          {p: 'La gravedad es una fuerza que actúa sin importar si los cuerpos se encuentran en contacto uno con otro.', vf:0, ops: ['La fuerza de gravedad actúa a distancia.','La gravedad de gravedad actúa sólo en cuerpos que se encuentran cercanos. '], ans: 0 },
+          {p: 'La gravedad es una fuerza que actúa sólo en los cuerpos de gran tamaño.', vf:1, ops: ['La gravedad actúa sobre todos los tamaños de cuerpos.','La gravedad actúa sobre los cuerpos pequeños. '], ans: 0 },
+          {p: 'Si no existiera la gravedad, los objetos flotarían.', vf:0, ops: ['La gravedad atrae los objetos hacia la superficie de la Tierra.','La gravedad y otras fuerzas permiten que los objetos no floten. '], ans: 0 },
+          {p: 'La gravedad nos permite caminar sobre la superficie de la Tierra sin caernos.', vf:0, ops: ['La gravedad y otras fuerzas permiten que podamos caminar sobre la superficie de la Tierra sin caernos.','Si no existiera la gravedad, no podríamos caminar sobre la superficie de la Tierra sin caernos. '], ans: 0 },
       ])
       
       

@@ -4589,45 +4589,49 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/CN5T2\/196\/i\/bg.png": {
-		"ft": 32768,
-		"iS": 11623505,
-		"oA": 0,
-		"oAP": "\/CN5T2\/196\/i\/bg.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.jpg": {
+	"\/CN5T2\/196\/i\/bg2.jpg": {
 		"ft": 16384,
-		"iS": 7027956,
+		"iS": 420360,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.jpg",
+		"oAP": "\/CN5T2\/196\/i\/bg2.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.png": {
-		"ft": 32768,
-		"iS": 3080389,
+	"\/CN5T2\/196\/i\/bg3.jpg": {
+		"ft": 16384,
+		"iS": 398817,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.png",
+		"oAP": "\/CN5T2\/196\/i\/bg3.jpg",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
-	"\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.psd": {
-		"cB": 0,
-		"ft": 8192,
+	"\/CN5T2\/196\/i\/bg4.jpg": {
+		"ft": 16384,
+		"iS": 338679,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "\/CN5T2\/196\/i\/Se_que_es_la_fuerza_de_gravedad_CN5oT2.psd",
-		"oF": 0
+		"oAP": "\/CN5T2\/196\/i\/bg4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/CN5T2\/196\/i\/bg5.jpg": {
+		"ft": 16384,
+		"iS": 342074,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/CN5T2\/196\/i\/bg5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
 		},
 	"\/CN5T2\/196\/index.html": {
 		"cB": 0,
