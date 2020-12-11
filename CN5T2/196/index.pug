@@ -147,7 +147,6 @@ html(lang="es")
                 display: none;
             }
 
-            
 
     body
         #app
@@ -174,9 +173,8 @@ html(lang="es")
                             .question2(v-if="temps['p'+(index+1)]>0").animate__animated.animate__backInRight
                                 .h4.text-center Razón:
                                 .row.wrap.around: clickable(v-for="(i2, index2) in i.ops" :key="'ops'+index2" :isok="index2 == i.ans" simple-ok initclass="" @wasclicked="temps['p'+(index+1)]=2"): div.answe {{i2}}
-            
 
-            
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -202,13 +200,13 @@ html(lang="es")
                     {p: 'La gravedad permite que la Tierra orbite alrededor del Sol porque ejerce una fuerza de repulsión.', vf:1, ops: ['La gravedad es una fuerza esencial del universo que permite la órbita alrededor del Sol.','El universo tiene muchas fuerzas que luchan entre sí que repelen la órbita alrededor del Sol.'], ans: 0 },
                     {p: ' Galileo Galilei demostró que los objetos que poseen fuerza de gravedad caen rápidamente y, los que no poseen gravedad, no lo hacen.', vf:1, ops: ['Galileo Galilei demostró que todos objetos caen sobre la superficie de la Tierra con la misma rapidez independientemente del peso. ','Galileo Galilei demostró que los objetos pesados caen más rápido que los objetos ligeros.'], ans: 0 },
                     {p: 'Isaac Newton descubrió la fuerza de gravedad.', vf:0, ops: ['Isaac Newton descubrió que todos los objetos caen sobre la superficie de la Tierra sin importar el tamaño ni el peso. ','Isaac Newton descubrió la fuerza de gravedad en 1685.'], ans: 1 },
-                    {p: 'Isaac Newton descubrió la gravedad cuando una manzana cayó sobre su cabeza y recordó la teoría de Galileo Galilei.', vf:1, ops: ['La gravedad es una fuerza de atracción que ejerce un objeto sobre otro.','A partir del descubrimiento de la gravedad se puede manipular la fuerza que tiene sobre los objetos.'], ans: 1 },
+                    {p: 'Isaac Newton descubrió la gravedad cuando una manzana cayó sobre su cabeza y recordó la teoría de Galileo Galilei.', vf:1, ops: ['Issac Newton se enojó mucho porque una manzana le cayó en la cabeza y se le ocurrió pensar en la gravedad que ya había investigado.','Isaac Newton descubrió la gravedad cuando una manzana le cayó en la cabeza y eso lo inspiró para investigar más.'], ans: 1 },
                     
                     {p: 'Una de las características de la gravedad es que actúa de manera instantánea.', vf:0, ops: ['El efecto de atracción de la gravedad es inmediato.','El efecto de atracción de la gravedad depende del peso de los objetos.'], ans: 0 },
-                    {p: 'La gravedad es una fuerza que actúa sin importar si los cuerpos se encuentran en contacto uno con otro.', vf:0, ops: ['La fuerza de gravedad actúa a distancia.','La gravedad de gravedad actúa sólo en cuerpos que se encuentran cercanos. '], ans: 0 },
+                    {p: 'La gravedad es una fuerza que actúa sin importar si los cuerpos se encuentran en contacto uno con otro.', vf:0, ops: ['La fuerza de gravedad actúa a distancia.','La gravedad actúa sólo en cuerpos que se encuentran cercanos. '], ans: 0 },
                     {p: 'La gravedad es una fuerza que actúa sólo en los cuerpos de gran tamaño.', vf:1, ops: ['La gravedad actúa sobre todos los tamaños de cuerpos.','La gravedad actúa sobre los cuerpos pequeños. '], ans: 0 },
                     {p: 'Si no existiera la gravedad, los objetos flotarían.', vf:0, ops: ['La gravedad atrae los objetos hacia la superficie de la Tierra.','La gravedad y otras fuerzas permiten que los objetos no floten. '], ans: 0 },
-                    {p: 'La gravedad nos permite caminar sobre la superficie de la Tierra sin caernos.', vf:0, ops: ['La gravedad y otras fuerzas permiten que podamos caminar sobre la superficie de la Tierra sin caernos.','Si no existiera la gravedad, no podríamos caminar sobre la superficie de la Tierra sin caernos. '], ans: 0 },
+                    {p: 'La gravedad nos permite caminar sobre la superficie de la Tierra sin caernos.', vf:0, ops: ['La gravedad y otras fuerzas permiten que podamos caminar sobre la superficie de la Tierra sin caernos.','Si no existiera la gravedad, no podríamos caminar sobre la superficie de la Tierra sin caernos. '], ans: 1 },
                 ])
 
 
