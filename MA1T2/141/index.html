@@ -211,10 +211,9 @@
           </div>
         </activity>
       </scene>
-      <!-- SCENES-->
-      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
+      <scene v-if="currentScene==2" :key="2" hidescorebox="hidescorebox" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
         <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
-          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
+          <audiotext text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda." audio="s/instruccion2.mp3" :autoplay="false"></audiotext>
         </info>
         <activity>
           <div class="row w100">
