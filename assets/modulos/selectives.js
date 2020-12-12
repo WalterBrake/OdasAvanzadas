@@ -2,21 +2,29 @@ Vue.component('selectives', {
     props: ['ops', 'ans', 'number', 'disableok'],
     data () {
         return {
-            selected: null
+            selected: null,
+            validatedok: false
         }
     },
     methods: {
         clicked (index){
+            if(this.validatedok){
+                return false
+            }
             this.selected = index
             s_select.play()
         },
         validate () {
+            if(this.validatedok){
+                return false
+            }
             if(this.ans == this.selected){
                 if(this.disableok==undefined){
                     s_ok.play()
                     EventBus.$emit('isok')
                 }
                 this.$emit('isok')
+                this.validatedok = true
                 return true
             } else {
                 if(this.disableok==undefined){
