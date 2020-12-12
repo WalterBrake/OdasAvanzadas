@@ -14,6 +14,12 @@ html(lang="es")
             @media (max-width:680px){
                 .number img{ max-width: 100px; }
             }
+            .h3{
+                padding: 10px;
+                background: var(--main);
+                color:#fff;
+                border-radius: 10px;
+            }
 
 
     body
@@ -30,11 +36,11 @@ html(lang="es")
             
             // SCENES Ps
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Mientras Edgar se lava las manos, recordemos los hábtios de higiene. Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true" )
+                info(type="seleccionar" title=title text="Mientras Edgar se lava las manos, recordemos los hábitos de higiene. Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true" )
                 activity
                     sequence(:options="temps.preguntas" ref="seque" no-nav)
                         template(v-slot:option="{option}")
-                            .h4.text-center {{option.p}}
+                            .h3.text-center {{option.p}}
                             .row.w100(v-if="option.img"): .w30.text-center: img(:src="option.img").w100
                             template(v-if="option.ans==false")
                                 .row.wrap.around: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == 0 || index == 2 || index == 3" simple-ok initclass="pa-1" ): number(randomc smaller): div(v-html="i")
@@ -67,7 +73,7 @@ html(lang="es")
                     {p: '¿Por qué evitamos enfermedades si nos lavamos las manos?', ops: ['Porque desaparece la piel.','Porque podemos usar guantes.','Porque las limpiamos de bacterias.'], ans: 2 , img: 'i/p1.png'},
                     {p: '¿Qué debemos hacer después de comer?', ops: ['Bañarnos.','Cepillarnos los dientes.','Jugar con tierra.'], ans: 1, img: 'i/p2.png'},
                     {p: '¿Qué debemos hacer antes de comer y después de ir al baño?', ops: ['<img src="i/p2.png">','<img src="i/p3.png">','<img src="i/p4.png">'], ans: 1 , img: false},
-                    {p: '¿Qué otro hábito ayuda a tener las manos limpias?', ops: ['<img src="i/p6.png">','<img src="i/p5.png">','<img src="i/p8.png">'], ans: 2, img: false},
+                    {p: '¿Qué otro hábito ayuda a tener las manos limpias?', ops: ['<img src="i/p5.png">','<img src="i/p6.png">','<img src="i/p8.png">'], ans: 2, img: false},
                     {p: 'Elige las imágenes que representan hábitos de higiene:', ops: ['<img src="i/p3.png">','<img src="i/p6.png">','<img src="i/p4.png">', '<img src="i/p2.png">'], ans: false , img: false},
                 ])
                 
