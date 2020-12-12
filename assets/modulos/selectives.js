@@ -3,28 +3,23 @@ Vue.component('selectives', {
     data () {
         return {
             selected: null,
-            validatedok: false
+            validateok: false
         }
     },
     methods: {
         clicked (index){
-            if(this.validatedok){
-                return false
-            }
+
             this.selected = index
             s_select.play()
         },
         validate () {
-            if(this.validatedok){
-                return false
-            }
             if(this.ans == this.selected){
                 if(this.disableok==undefined){
                     s_ok.play()
                     EventBus.$emit('isok')
                 }
                 this.$emit('isok')
-                this.validatedok = true
+                this.validateok = true
                 return true
             } else {
                 if(this.disableok==undefined){
@@ -46,7 +41,6 @@ Vue.component('selectives', {
                     <template v-else>
                         <div @click="clicked(index)" :class="index == selected ? 'on':'off'" v-html="i"></div>
                     </template>
-
                 </template>
             </div>
         </div>

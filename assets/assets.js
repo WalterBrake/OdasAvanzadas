@@ -37,6 +37,9 @@ var app = new Vue({
             scoreByScenes: [],
             screen: [],
             timeoutSounds: null,
+            sceneCompletedCalled: false,
+            dragValidationsList: [],
+            selectivesValidationsList: []
         }
     },
     watch: {
@@ -73,6 +76,11 @@ var app = new Vue({
             }
         },
         sceneCompleted($ev, forceOks){
+            if(this.sceneCompletedCalled){
+                return false
+            } else {
+                this.sceneCompletedCalled = true
+            }
             var _this = this
             if($ev == false){
                 //this.currentScene++
@@ -128,6 +136,8 @@ var app = new Vue({
                     _this.currentScene++
                     _this.temporals = []
                     _this.notfoundimg()
+
+                    _this.sceneCompletedCalled = false
                     
                     if(_this.currentScene == _this.scenesCount+1) {
                         _this.ended()
@@ -176,6 +186,9 @@ var app = new Vue({
             }
         },
         dragValidation (verarray, numOfAns) {
+            if( this.dragValidationsList.some(r=> _.isEqual(r.sort(), verarray.sort()) ) ){
+                return false
+            }
             let allok = true
             for(va in verarray){
                 let rf = verarray[va]
@@ -196,15 +209,19 @@ var app = new Vue({
                 
             }
             if(allok){
-                s_ok.play()
                 for(var i=0; i < numOfAns; i++){
                     EventBus.$emit('isok')
                 }
+                s_ok.play()
+                this.dragValidationsList.push(verarray)
             } else {
                 s_error.play()
             }
         },
         selectiveValidation (verarray) {
+            if( this.selectivesValidationsList.some(r=> _.isEqual(r.sort(), verarray.sort()) ) ){
+                return false
+            }
             let allok = true
             /*for(va in verarray){
                 let rf = verarray[va]
@@ -236,6 +253,7 @@ var app = new Vue({
                     EventBus.$emit('isok')
                 }
                 s_ok.play()
+                this.selectivesValidationsList.push(verarray)
             } else {
                 s_error.play()
             }
