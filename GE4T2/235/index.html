@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .h3{
+          background: var(--main);
+          color: #fff !important;
+          padding: 10px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+      }
+      
+    </style>
   </head>
   <body>
     <div id="app">
@@ -33,12 +42,12 @@
         <activity>
           <sequence :options="temps.preguntas" ref="seque" no-nav="no-nav">
             <template v-slot:option="{option}">
-              <div class="h4 text-center">{{option.p}}</div>
+              <div class="h3 text-center">{{option.p}}</div>
               <div class="row w100" v-if="option.img">
                 <div class="w30 text-center"><img class="w100" :src="option.img"/></div>
               </div>
               <div class="row wrap around text-center">
-                <clickable v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100">
+                <clickable v-for="(i, index) in option.ops" :key="'p1'+index" :isok="option.any? true : (index == option.ans)" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100">
                   <number randomc="randomc" smaller="smaller">
                     <div v-html="i"></div>
                   </number>
@@ -89,7 +98,7 @@
       
       app.$set(app.temps, 'preguntas', [
           {p: '¿Por qué es importante racionar los recursos naturales?', ops: ['Porque son muy caros.','Porque son muy dificíles de obtener.','Porque su extracción afecta a otras especies del planeta.'], ans: 2 , img: false},
-          {p: '¿Cómo harías para cuidar los recursos naturales?', ops: ['Reutilizaría los productos y los recolectaría para que sean reciclados.','Prohibiría su venta.','Haría campañas publicitarias para explicar para qué sirven.'], ans: 0 , img: false},
+          {p: '¿Cómo harías para cuidar los recursos naturales?', ops: ['Reutilizaría los productos y los recolectaría para que sean reciclados.','Prohibiría su venta.','Haría campañas publicitarias para explicar para qué sirven.'], ans: 0 , img: false, any:true},
           {p: '¿Cómo se puede obtener la energía de los recursos naturales?', ops: ['A través del agua y el fuego.','Con el viento ya que se pueden construir aerogeneradores.','No se puede obtener energía de los recursos naturales.'], ans: 1 , img: false},
           {p: '¿Qué tipo de productos se pueden fabricar con la madera?', ops: ['Sillas, mesas, colchones, lápices.','Cabañas, sillas, mochilas, bolsas.','Sillas, mesas, cabañas, puertas.'], ans: 2 , img: false},
       ])

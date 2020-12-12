@@ -7,7 +7,13 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
-
+            .h3{
+                background: var(--main);
+                color: #fff !important;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
 
     body
         #app
@@ -27,9 +33,9 @@ html(lang="es")
                 activity
                     sequence(:options="temps.preguntas" ref="seque" no-nav)
                         template(v-slot:option="{option}")
-                            .h4.text-center {{option.p}}
+                            .h3.text-center {{option.p}}
                             .row.w100(v-if="option.img"): .w30.text-center: img(:src="option.img").w100
-                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="index == option.ans" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
+                            .row.wrap.around.text-center: clickable(v-for="(i, index) in option.ops" :key="'p1'+index" :isok="option.any? true : (index == option.ans)" simple-ok @wasclicked="$refs.seque.adelante()" initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
             
             
             
@@ -46,7 +52,7 @@ html(lang="es")
 
                 app.$set(app.temps, 'preguntas', [
                     {p: '¿Por qué es importante racionar los recursos naturales?', ops: ['Porque son muy caros.','Porque son muy dificíles de obtener.','Porque su extracción afecta a otras especies del planeta.'], ans: 2 , img: false},
-                    {p: '¿Cómo harías para cuidar los recursos naturales?', ops: ['Reutilizaría los productos y los recolectaría para que sean reciclados.','Prohibiría su venta.','Haría campañas publicitarias para explicar para qué sirven.'], ans: 0 , img: false},
+                    {p: '¿Cómo harías para cuidar los recursos naturales?', ops: ['Reutilizaría los productos y los recolectaría para que sean reciclados.','Prohibiría su venta.','Haría campañas publicitarias para explicar para qué sirven.'], ans: 0 , img: false, any:true},
                     {p: '¿Cómo se puede obtener la energía de los recursos naturales?', ops: ['A través del agua y el fuego.','Con el viento ya que se pueden construir aerogeneradores.','No se puede obtener energía de los recursos naturales.'], ans: 1 , img: false},
                     {p: '¿Qué tipo de productos se pueden fabricar con la madera?', ops: ['Sillas, mesas, colchones, lápices.','Cabañas, sillas, mochilas, bolsas.','Sillas, mesas, cabañas, puertas.'], ans: 2 , img: false},
                 ])
