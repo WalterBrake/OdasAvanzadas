@@ -39,7 +39,8 @@ var app = new Vue({
             timeoutSounds: null,
             sceneCompletedCalled: false,
             dragValidationsList: [],
-            selectivesValidationsList: []
+            selectivesValidationsList: [],
+            clickableValidationsList: []
         }
     },
     watch: {
@@ -223,13 +224,6 @@ var app = new Vue({
                 return false
             }
             let allok = true
-            /*for(va in verarray){
-                let rf = verarray[va]
-                let res = app.$refs[rf].validate()
-                if(res===false){
-                    allok = false
-                }
-            }*/
             for(va in verarray){
                 let rf = verarray[va]
                 if(Array.isArray(app.$refs[rf])){
@@ -254,6 +248,38 @@ var app = new Vue({
                 }
                 s_ok.play()
                 this.selectivesValidationsList.push(verarray)
+            } else {
+                s_error.play()
+            }
+        },
+        clickableValidation (verarray) {
+            if( this.clickableValidationsList.some(r=> _.isEqual(r.sort(), verarray.sort()) ) ){
+                return false
+            }
+            let allok = true
+            for(va in verarray){
+                let rf = verarray[va]
+                if(Array.isArray(app.$refs[rf])){
+                    for(i in app.$refs[rf]){
+                        let res = app.$refs[rf][i].validate()
+                        if(res===false){
+                            allok = false
+                        } 
+                    }
+                }
+                 else {
+                    let res = app.$refs[rf].validate()
+                    if(res===false){
+                        allok = false
+                    }  
+                }
+            }
+            if(allok){
+                for(ai in verarray){
+                    EventBus.$emit('isok')
+                }
+                s_ok.play()
+                this.clickableValidationsList.push(verarray)
             } else {
                 s_error.play()
             }

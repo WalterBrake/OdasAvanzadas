@@ -1,0 +1,39 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Cuidamos el medioambiente'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¡Cuidar el medioambiente es tarea de todos! Selecciona las acciones que nos ayudan a hacerlo." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.wrap.around.text-center
+                        .w50: clickable(key="1" ref="a1" :isok="true" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a1.png").w40.ws80
+                        .w50: clickable(key="2" ref="a2" :isok="false" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a2.png").w40.ws80
+                        .w50: clickable(key="3" ref="a3" :isok="true" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a3.png").w40.ws80
+                        .w50: clickable(key="4" ref="a4" :isok="false" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a4.png").w40.ws80
+                        .w50: clickable(key="5" ref="a5" :isok="false" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a5.png").w40.ws80
+                        .w50: clickable(key="6" ref="a6" :isok="true" simple-ok initclass="" ignore-already-ok  ext-validation no-animations): img(src="i/a6.png").w40.ws80
+                    button(@click="clickableValidation(['a1', 'a2', 'a3', 'a4', 'a5', 'a6'])").button.big.animate__animated.animate__flip Validar
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1

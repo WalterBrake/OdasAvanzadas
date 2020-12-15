@@ -102,6 +102,15 @@ Vue.component('clickable', {
                 //EventBus.$emit('clicked', 'error')
             }
         },
+        validate(){
+            if(this.isok == this.status){
+                this.$emit('isok')
+                return true
+            } else {
+                this.status = false
+                return false
+            }
+        },
         blockIfErrorFn(){
             if(!this.isok && this.extValidation == undefined) {
                 this.status = false

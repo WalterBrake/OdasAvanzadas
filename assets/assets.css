@@ -795,6 +795,41 @@ embed {
     width: 10%;
   }
 }
+@media (max-width: 520px) {
+  .mobile100 {
+    flex-direction: column;
+  }
+  .ws100 {
+    width: 100%;
+  }
+  .ws90 {
+    width: 90%;
+  }
+  .ws80 {
+    width: 80%;
+  }
+  .ws70 {
+    width: 70%;
+  }
+  .ws60 {
+    width: 60%;
+  }
+  .ws50 {
+    width: 50%;
+  }
+  .ws40 {
+    width: 40%;
+  }
+  .ws30 {
+    width: 30%;
+  }
+  .ws20 {
+    width: 20%;
+  }
+  .ws10 {
+    width: 10%;
+  }
+}
 .inputable {
   background: #fff;
   padding: 4px;
