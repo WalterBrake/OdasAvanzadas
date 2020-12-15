@@ -22,7 +22,7 @@ body {
   --c4: #EB8B2E;
   --c5: #DB3E34;
   --c6: #F460AB;
-  --c7: #C1CA27;
+  --c7: #B1BA24;
   --c8: #C0A7D0;
 }
 .repaso {
@@ -704,12 +704,12 @@ embed {
   }
 }
 .number.c7 {
-  -webkit-text-stroke-color: #C1CA27;
-  text-shadow: 4px 4px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
+  -webkit-text-stroke-color: #B1BA24;
+  text-shadow: 4px 4px 0 #9fa720, -1px -1px 0 #9fa720, 1px -1px 0 #9fa720, -1px 1px 0 #9fa720, 1px 1px 0 #9fa720;
 }
 @media (max-width: 680px) {
   .number.c7 {
-    text-shadow: 1px 1px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
+    text-shadow: 1px 1px 0 #9fa720, -1px -1px 0 #9fa720, 1px -1px 0 #9fa720, -1px 1px 0 #9fa720, 1px 1px 0 #9fa720;
   }
 }
 .number.c8 {
@@ -753,8 +753,8 @@ embed {
   box-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
 }
 .conector.c7 {
-  background: #C1CA27;
-  box-shadow: 4px 4px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
+  background: #B1BA24;
+  box-shadow: 4px 4px 0 #9fa720, -1px -1px 0 #9fa720, 1px -1px 0 #9fa720, -1px 1px 0 #9fa720, 1px 1px 0 #9fa720;
 }
 .conector.c8 {
   background: #C0A7D0;
@@ -874,8 +874,8 @@ embed {
   box-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
 }
 .inputable.c7 {
-  background: #C1CA27;
-  box-shadow: 4px 4px 0 #aeb623, -1px -1px 0 #aeb623, 1px -1px 0 #aeb623, -1px 1px 0 #aeb623, 1px 1px 0 #aeb623;
+  background: #B1BA24;
+  box-shadow: 4px 4px 0 #9fa720, -1px -1px 0 #9fa720, 1px -1px 0 #9fa720, -1px 1px 0 #9fa720, 1px 1px 0 #9fa720;
 }
 .inputable.c8 {
   background: #C0A7D0;
@@ -1105,13 +1105,13 @@ embed {
   color: #F460AB;
 }
 .popup.c7 {
-  background: #C1CA27;
+  background: #B1BA24;
 }
 .popup.c7 .popup__button {
-  border: 2px solid #C1CA27;
+  border: 2px solid #B1BA24;
 }
 .popup.c7 .popup__button:after {
-  color: #C1CA27;
+  color: #B1BA24;
 }
 .popup.c8 {
   background: #C0A7D0;

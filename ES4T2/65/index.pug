@@ -1,12 +1,164 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco los textos expositivos'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .imgs img {
+                position: absolute;
+            }
+            @media (max-width: 680px) {
+                .imgs {
+                    width: 100%;
+                    position: relative;
+                    height: 500px;
+                }
+            }
+            @media (max-width: 520px) {
+                .imgs {
+                    height: 400px;
+                }
+            }
+            @media (max-width: 440px) {
+                .imgs {
+                    height: 320px;
+                }
+            }
+            @media (max-width: 340px) {
+                .imgs {
+                    height: 240px;
+                }
+            }
+            .it {
+                cursor: pointer;
+            }
+            .im1 {
+                left: 0;
+                top: 0;
+                width: 40%;
+            }
+            .im2 {
+                left: 4%;
+                top: 20%;
+                width: 10%;
+            }
+            .im3 {
+                left: 14%;
+                top: 33%;
+                width: 10%;
+            }
+            .im4 {
+                left: 4%;
+                top: 62%;
+                width: 10%;
+            }
+            .im8 {
+                left: 0;
+                top: 16%;
+                width: 40%;
+            }
+            .im9 {
+                left: 0;
+                top: 33%;
+                width: 30%;
+            }
+            .im10 {
+                left: 0;
+                top: 46%;
+                width: 40%;
+            }
+            .im11 {
+                left: 0;
+                top: 61%;
+                width: 36%;
+            }
+            .im5 {
+                left: 0;
+                top: 77%;
+                width: 60%;
+            }
+            .im12 {
+                left: 0;
+                top: 77%;
+                width: 60%;
+            }
+            .im6 {
+                right: 5%;
+                top: 22%;
+                width: 25%;
+            }
+            .im15 {
+                right: 5%;
+                top: 22%;
+                width: 25%;
+            }
+            .im7 {
+                right: 13%;
+                top: 0;
+                width: 16%;
+            }
+            .im14 {
+                right: 0;
+                top: 0;
+                width: 40%;
+            }
+            .im13 {
+                right: 0;
+                top: 68%;
+                width: 36%;
+            }
+            .im16 {
+                left: 31%;
+                top: 6%;
+                width: 38%;
+            }
+
+            .pregunta {
+                margin-bottom: 20px;
+            }
+            .pregunta .h4 {
+                background: var(--main);
+                color: #fff;
+                border-radius: 10px;
+                padding: 10px;
+            }
+            .pregunta .number {
+                font-size: 1.2rem;
+            }
+            .pregunta .selectives .row {
+                flex-direction: column;
+            }
+            .pregunta .selectives .row .pa-1 {
+                padding: 6px 10px;
+            }
+
+
+            .btns{
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .btns button{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            @media (max-width: 1024px){
+                .btns {
+                    flex-direction: row;
+                }
+                .btns button img{
+                    max-height: 40px;
+                    width: auto !important;
+                }
+            }
+            .popup{
+                z-index: 99;
+            }
 
 
     body
@@ -15,20 +167,112 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Descubre los textos y sonidos de la infografía." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .imgs
+                        img(src="i/a10.png").im10
+                        
+                        
+                        img(src="i/a8.png" v-if="temps.a").animate__animated.animate__jello.im8
+                        img(src="i/a2.png" v-if="!temps.a" @click="onit('a')").im2.it.animate__animated.animate__infinite.animate__pulse
+                        
+                        img(src="i/a9.png" v-if="temps.b").animate__animated.animate__jello.im9
+                        img(src="i/a3.png" v-if="!temps.b" @click="onit('b')").it.animate__animated.animate__infinite.animate__pulse.im3
+                        
+                        img(src="i/a11.png" v-if="temps.c").animate__animated.animate__jello.im11
+                        img(src="i/a4.png" v-if="!temps.c" @click="onit('c')").it.animate__animated.animate__infinite.animate__pulse.im4
+                        
+                        img(src="i/a12.png" v-if="temps.d").animate__animated.animate__jello.im12
+                        img(src="i/a5.png" v-if="!temps.d" @click="onit('d')").it.animate__animated.animate__infinite.animate__pulse.im5
+                        
+                        
+
+                        img(src="i/a14.png" v-if="temps.f").animate__animated.animate__jello.im14
+                        img(src="i/a7.png" v-if="!temps.f" @click="onit('f')").it.animate__animated.animate__infinite.animate__pulse.im7
+                        
+                        img(src="i/a15.png" v-if="temps.e").animate__animated.animate__jello.im15
+                        img(src="i/a6.png" v-if="!temps.e" @click="onit('e')").it.animate__animated.animate__infinite.animate__pulse.im6
+                        
+                        
+                        img(src="i/a13.png").im13
+                        img(src="i/a16.png").im16
+                        img(src="i/a1.png").im1
+
+                        button(@click="sceneCompleted(false)" v-if="temps.g").button.big.animate__animated.animate__flip.centerize Siguiente
+            mixin btnAnim
+                button(@click="$refs.animation.open()").button
+                    img(src="i/info.jpg").w20
+                    p Ver infografía
+            popup(:conf="['10%', '10%', '80%', '80%']" ref="animation" c="1"): img(src="i/info.jpg").w60.wm100
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                    .btns: +btnAnim
+                activity
+                    .pregunta.text-center
+                        .h4 ¿Cuál es el título del texto expositivo?
+                        selectives(:ans="1" key="p1" :ops="['Gigantes.','Elefantes.','Grandes animales.']" number disableok ref="p1")
+                    .pregunta.text-center
+                        .h4 ¿Cuál es el subtítulo?
+                        selectives(:ans="2" key="p2" :ops="['Los animales gigantes.','Increíbles animales.','Los gigantes de la naturaleza.']" number disableok ref="p2")
+                    .row.w100: button(@click="selectiveValidation(['p1', 'p2'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                    .btns: +btnAnim
+                activity
+                    .pregunta.text-center
+                        .h4 ¿Cuáles son los tres recursos complementarios del artículo?
+                        selectives(:ans="1" key="p3" :ops="['Cuadros de texto, imágenes y números.','Una gráfica, un mapa e imágenes.','Título grande, subtítulo pequeño y mapa.']" number disableok ref="p3")
+                    .pregunta.text-center
+                        .h4 ¿Cuál es la función de los recursos complementarios?
+                        selectives(:ans="1" key="p4" :ops="['Decorar el artículo.','Ejemplificar, ilustrar o destacar información.','Conocer la opinión del artículo.']" number disableok ref="p4")
+                    .row.w100: button(@click="selectiveValidation(['p3', 'p4'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                    .btns: +btnAnim
+                activity
+                    .pregunta.text-center
+                        .h4 ¿Por qué es un texto expositivo?
+                        selectives(:ans="0" key="p5" :ops="['Porque explica, ejemplifica y describe un tema específico.','Porque se usa para exponer en clase.','Porque muestra opiniones sobre el tema.']" number disableok ref="p5")
+                    
+                    .row.w100: button(@click="selectiveValidation(['p5'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                app.$set(app.temps, 'd', false)
+                app.$set(app.temps, 'e', false)
+                app.$set(app.temps, 'f', false)
+                app.$set(app.temps, 'g', false)
+
+
+                app.$set(app.temps, 'counter', 0)
+
+                app.onit = function (variable) {
+                    app.temps[variable] = true
+                    s_select.play()
+                    app.temps.counter++
+                    if(variable=='a' || variable=='b' || variable=='c' ){
+                        var sound = new Howl({ src: ['s/'+variable+'.mp3'], autoplay:true })
+                    }
+                    if(app.temps.counter >=6){
+                        app.temps.g = true
+                    }
+                }
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3

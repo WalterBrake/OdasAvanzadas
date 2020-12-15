@@ -3,27 +3,250 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco los textos expositivos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .imgs img {
+          position: absolute;
+      }
+      @media (max-width: 680px) {
+          .imgs {
+              width: 100%;
+              position: relative;
+              height: 500px;
+          }
+      }
+      @media (max-width: 520px) {
+          .imgs {
+              height: 400px;
+          }
+      }
+      @media (max-width: 440px) {
+          .imgs {
+              height: 320px;
+          }
+      }
+      @media (max-width: 340px) {
+          .imgs {
+              height: 240px;
+          }
+      }
+      .it {
+          cursor: pointer;
+      }
+      .im1 {
+          left: 0;
+          top: 0;
+          width: 40%;
+      }
+      .im2 {
+          left: 4%;
+          top: 20%;
+          width: 10%;
+      }
+      .im3 {
+          left: 14%;
+          top: 33%;
+          width: 10%;
+      }
+      .im4 {
+          left: 4%;
+          top: 62%;
+          width: 10%;
+      }
+      .im8 {
+          left: 0;
+          top: 16%;
+          width: 40%;
+      }
+      .im9 {
+          left: 0;
+          top: 33%;
+          width: 30%;
+      }
+      .im10 {
+          left: 0;
+          top: 46%;
+          width: 40%;
+      }
+      .im11 {
+          left: 0;
+          top: 61%;
+          width: 36%;
+      }
+      .im5 {
+          left: 0;
+          top: 77%;
+          width: 60%;
+      }
+      .im12 {
+          left: 0;
+          top: 77%;
+          width: 60%;
+      }
+      .im6 {
+          right: 5%;
+          top: 22%;
+          width: 25%;
+      }
+      .im15 {
+          right: 5%;
+          top: 22%;
+          width: 25%;
+      }
+      .im7 {
+          right: 13%;
+          top: 0;
+          width: 16%;
+      }
+      .im14 {
+          right: 0;
+          top: 0;
+          width: 40%;
+      }
+      .im13 {
+          right: 0;
+          top: 68%;
+          width: 36%;
+      }
+      .im16 {
+          left: 31%;
+          top: 6%;
+          width: 38%;
+      }
+      
+      .pregunta {
+          margin-bottom: 20px;
+      }
+      .pregunta .h4 {
+          background: var(--main);
+          color: #fff;
+          border-radius: 10px;
+          padding: 10px;
+      }
+      .pregunta .number {
+          font-size: 1.2rem;
+      }
+      .pregunta .selectives .row {
+          flex-direction: column;
+      }
+      .pregunta .selectives .row .pa-1 {
+          padding: 6px 10px;
+      }
+      
+      
+      .btns{
+          margin-top: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+      }
+      .btns button{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+      }
+      @media (max-width: 1024px){
+          .btns {
+              flex-direction: row;
+          }
+          .btns button img{
+              max-height: 40px;
+              width: auto !important;
+          }
+      }
+      .popup{
+          z-index: 99;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco los textos expositivos" text="Descubre los textos y sonidos de la infografía." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="imgs"><img class="im10" src="i/a10.png"/><img class="animate__animated animate__jello im8" src="i/a8.png" v-if="temps.a"/><img class="im2 it animate__animated animate__infinite animate__pulse" src="i/a2.png" v-if="!temps.a" @click="onit('a')"/><img class="animate__animated animate__jello im9" src="i/a9.png" v-if="temps.b"/><img class="it animate__animated animate__infinite animate__pulse im3" src="i/a3.png" v-if="!temps.b" @click="onit('b')"/><img class="animate__animated animate__jello im11" src="i/a11.png" v-if="temps.c"/><img class="it animate__animated animate__infinite animate__pulse im4" src="i/a4.png" v-if="!temps.c" @click="onit('c')"/><img class="animate__animated animate__jello im12" src="i/a12.png" v-if="temps.d"/><img class="it animate__animated animate__infinite animate__pulse im5" src="i/a5.png" v-if="!temps.d" @click="onit('d')"/><img class="animate__animated animate__jello im14" src="i/a14.png" v-if="temps.f"/><img class="it animate__animated animate__infinite animate__pulse im7" src="i/a7.png" v-if="!temps.f" @click="onit('f')"/><img class="animate__animated animate__jello im15" src="i/a15.png" v-if="temps.e"/><img class="it animate__animated animate__infinite animate__pulse im6" src="i/a6.png" v-if="!temps.e" @click="onit('e')"/><img class="im13" src="i/a13.png"/><img class="im16" src="i/a16.png"/><img class="im1" src="i/a1.png"/>
+            <button class="button big animate__animated animate__flip centerize" @click="sceneCompleted(false)" v-if="temps.g">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="animation" c="1"><img class="w60 wm100" src="i/info.jpg"/></popup>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco los textos expositivos" text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true">
+          <div class="btns">
+                  <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/info.jpg"/>
+                    <p>Ver infografía</p>
+                  </button>
+          </div>
+        </info>
+        <activity>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál es el título del texto expositivo?</div>
+            <selectives :ans="1" key="p1" :ops="['Gigantes.','Elefantes.','Grandes animales.']" number="number" disableok="disableok" ref="p1"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál es el subtítulo?</div>
+            <selectives :ans="2" key="p2" :ops="['Los animales gigantes.','Increíbles animales.','Los gigantes de la naturaleza.']" number="number" disableok="disableok" ref="p2"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p1', 'p2'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco los textos expositivos" text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+                  <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/info.jpg"/>
+                    <p>Ver infografía</p>
+                  </button>
+          </div>
+        </info>
+        <activity>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuáles son los tres recursos complementarios del artículo?</div>
+            <selectives :ans="1" key="p3" :ops="['Cuadros de texto, imágenes y números.','Una gráfica, un mapa e imágenes.','Título grande, subtítulo pequeño y mapa.']" number="number" disableok="disableok" ref="p3"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál es la función de los recursos complementarios?</div>
+            <selectives :ans="1" key="p4" :ops="['Decorar el artículo.','Ejemplificar, ilustrar o destacar información.','Conocer la opinión del artículo.']" number="number" disableok="disableok" ref="p4"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p3', 'p4'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco los textos expositivos" text="Ahora, selecciona la respuesta correcta a cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="false">
+          <div class="btns">
+                  <button class="button" @click="$refs.animation.open()"><img class="w20" src="i/info.jpg"/>
+                    <p>Ver infografía</p>
+                  </button>
+          </div>
+        </info>
+        <activity>
+          <div class="pregunta text-center">
+            <div class="h4">¿Por qué es un texto expositivo?</div>
+            <selectives :ans="0" key="p5" :ops="['Porque explica, ejemplifica y describe un tema específico.','Porque se usa para exponer en clase.','Porque muestra opiniones sobre el tema.']" number="number" disableok="disableok" ref="p5"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p5'])">Validar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==5" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +268,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +280,31 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      app.$set(app.temps, 'd', false)
+      app.$set(app.temps, 'e', false)
+      app.$set(app.temps, 'f', false)
+      app.$set(app.temps, 'g', false)
+      
+      
+      app.$set(app.temps, 'counter', 0)
+      
+      app.onit = function (variable) {
+          app.temps[variable] = true
+          s_select.play()
+          app.temps.counter++
+          if(variable=='a' || variable=='b' || variable=='c' ){
+              var sound = new Howl({ src: ['s/'+variable+'.mp3'], autoplay:true })
+          }
+          if(app.temps.counter >=6){
+              app.temps.g = true
+          }
+      }
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 3
     </script>
   </body>
 </html>
