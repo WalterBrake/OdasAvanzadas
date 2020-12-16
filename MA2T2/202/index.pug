@@ -1,12 +1,55 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco figuras y cuerpos geométricos'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .obj {
+                background: var(--main);
+                margin-bottom: 4px;
+                padding: 2% 0;
+                text-align: center;
+                margin: 4px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+            .obj img {
+                width: 80px;
+            }
+            .obj .drag {
+                width: 40px;
+                height: 40px;
+                margin-top: -20px;
+            }
+            @media (max-width: 680px) {
+                .obj img {
+                    width: 40px;
+                }
+                .obj .conector {
+                    width: 14px;
+                    height: 14px;
+                    border-width: 2px;
+                }
+            }
+            .fig img {
+                width: 50px;
+            }
+            .drop {
+                background: #fff;
+                margin-bottom: 4px;
+                width: 48%;
+                margin: 1%;
+                padding: 5% 0;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .drop.hover {
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
 
 
     body
@@ -15,12 +58,19 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
-            
+                        .w60.row.wrap
+                            .obj(v-for="(i, index) in temps.a")
+                                img(:src="'i/i'+index+'.svg'")
+                                drag(:data="i" dropzone=".drop" extval drag-line ref="figs"): .conector.c1
+                        .w40.row.wrap
+                            .drop.fig(v-for="(i, index) in 10" :data="i" droptimes="multiple" droplimit="10")
+                                img(:src="'i/f'+i+'.svg'")
+                    .text-center: button(@click="dragValidation(['figs'], 14)").button.big.animate__animated.animate__flip Verificar
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -28,7 +78,24 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    2, 
+                    9, 
+                    1, 
+                    1, 
+                    3, 
+                    
+                    3, 
+                    4, 
+                    5, 
+                    4, 
+                    5, 
+                    
+                    6, 
+                    10, 
+                    4, 
+                    8, 
+                    ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1

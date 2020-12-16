@@ -3,23 +3,83 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco figuras y cuerpos geométricos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .obj {
+          background: var(--main);
+          margin-bottom: 4px;
+          padding: 2% 0;
+          text-align: center;
+          margin: 4px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+      }
+      .obj img {
+          width: 80px;
+      }
+      .obj .drag {
+          width: 40px;
+          height: 40px;
+          margin-top: -20px;
+      }
+      @media (max-width: 680px) {
+          .obj img {
+              width: 40px;
+          }
+          .obj .conector {
+              width: 14px;
+              height: 14px;
+              border-width: 2px;
+          }
+      }
+      .fig img {
+          width: 50px;
+      }
+      .drop {
+          background: #fff;
+          margin-bottom: 4px;
+          width: 48%;
+          margin: 1%;
+          padding: 5% 0;
+          text-align: center;
+          border-radius: 10px;
+      }
+      .drop.hover {
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
+        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w60 row wrap">
+              <div class="obj" v-for="(i, index) in temps.a"><img :src="'i/i'+index+'.svg'"/>
+                <drag :data="i" dropzone=".drop" extval="extval" drag-line="drag-line" ref="figs">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40 row wrap">
+              <div class="drop fig" v-for="(i, index) in 10" :data="i" droptimes="multiple" droplimit="10"><img :src="'i/f'+i+'.svg'"/></div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['figs'], 14)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +105,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,7 +117,24 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          2, 
+          9, 
+          1, 
+          1, 
+          3, 
+          
+          3, 
+          4, 
+          5, 
+          4, 
+          5, 
+          
+          6, 
+          10, 
+          4, 
+          8, 
+          ])
       
       app.currentScene = 0
       app.scenesCount = 1
