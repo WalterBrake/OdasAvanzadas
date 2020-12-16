@@ -16,7 +16,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text=" En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
             

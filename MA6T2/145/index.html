@@ -9,21 +9,314 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .ficha {
+          position: relative;
+          width: 120px;
+          height: 60px;
+          background: #FDEEB9;
+          border-radius: 4px;
+          border: 2px solid #000;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          justify-content: normal;
+          text-align: center;
+      }
+      .ficha.off {
+          flex-direction: row-reverse;
+      }
+      .ficha .ficha1,
+      .ficha .ficha2 {
+          width: 48%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .ficha .ficha2 {
+          /*background: #FEF7D8;*/
+      }
+      .ficha .mid {
+          background: #000;
+          width: 2%;
+          height: 100%;
+      }
+      .ficha hr {
+          border: none;
+          border-top: 2px solid #000;
+          min-width: 20px;
+      }
+      .ficha .button {
+          position: absolute;
+          left: 50%;
+          margin-left: -17%;
+          bottom: -20%;
+          font-size: 0.6rem;
+          background: #000;
+          color: #fff;
+      }
+      .drag{
+          width: auto; height: auto;
+          margin: 10px;
+      }
+      
+      .drop {
+          width: 120px;
+          border-radius: 4px;
+          height: 60px;
+          background: #fff;
+          margin: 4px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
+      }
+      .drop button {
+          display: none;
+      }
+      [wascloned] {
+          display: none;
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Identifico el valor de decimal" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+                  <drag ref="f2" :data="temps['f2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['f2']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>6</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.25</div></div>
+                      <button class="button" @click="temps['f2']=!temps['f2']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="f4" :data="temps['f4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['f4']?'on':'off'">
+                      <div class="ficha1"><div>2<hr>3</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.5</div></div>
+                      <button class="button" @click="temps['f4']=!temps['f4']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="f3" :data="temps['f3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['f3']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>4</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.66</div></div>
+                      <button class="button" @click="temps['f3']=!temps['f3']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="f0" :data="temps['f0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['f0']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>2</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.75</div></div>
+                      <button class="button" @click="temps['f0']=!temps['f0']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="f1" :data="temps['f1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['f1']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>4</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.16</div></div>
+                      <button class="button" @click="temps['f1']=!temps['f1']">Voltear</button>
+                    </div>
+                  </drag>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="drop" data="0" droptimes="untilok"></div>
+            <div class="drop" data="1" droptimes="untilok"></div>
+            <div class="drop" data="2" droptimes="untilok"></div>
+            <div class="drop" data="3" droptimes="untilok"></div>
+            <div class="drop" data="4" droptimes="untilok"></div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['f0','f1','f2','f3', 'f4'], 5)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 wrap">
+                  <drag ref="b4" :data="temps['b4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['b4']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>9</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.14</div></div>
+                      <button class="button" @click="temps['b4']=!temps['b4']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="b2" :data="temps['b2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['b2']?'on':'off'">
+                      <div class="ficha1"><div>4<hr>6</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.4</div></div>
+                      <button class="button" @click="temps['b2']=!temps['b2']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="b1" :data="temps['b1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['b1']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>6</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.66</div></div>
+                      <button class="button" @click="temps['b1']=!temps['b1']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="b3" :data="temps['b3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['b3']?'on':'off'">
+                      <div class="ficha1"><div>2<hr>5</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.33</div></div>
+                      <button class="button" @click="temps['b3']=!temps['b3']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="b0" :data="temps['b0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['b0']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>7</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.50</div></div>
+                      <button class="button" @click="temps['b0']=!temps['b0']">Voltear</button>
+                    </div>
+                  </drag>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="drop" data="0" droptimes="untilok"></div>
+            <div class="drop" data="1" droptimes="untilok"></div>
+            <div class="drop" data="2" droptimes="untilok"></div>
+            <div class="drop" data="3" droptimes="untilok"></div>
+            <div class="drop" data="4" droptimes="untilok"></div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['b0','b1','b2','b3', 'b4'], 5)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 wrap">
+                  <drag ref="c3" :data="temps['c3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['c3']?'on':'off'">
+                      <div class="ficha1"><div>2<hr>8</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.42</div></div>
+                      <button class="button" @click="temps['c3']=!temps['c3']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="c4" :data="temps['c4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['c4']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>7</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.125</div></div>
+                      <button class="button" @click="temps['c4']=!temps['c4']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="c1" :data="temps['c1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['c1']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>5</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.33</div></div>
+                      <button class="button" @click="temps['c1']=!temps['c1']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="c0" :data="temps['c0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['c0']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>8</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.6</div></div>
+                      <button class="button" @click="temps['c0']=!temps['c0']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="c2" :data="temps['c2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['c2']?'on':'off'">
+                      <div class="ficha1"><div>2<hr>6</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.25</div></div>
+                      <button class="button" @click="temps['c2']=!temps['c2']">Voltear</button>
+                    </div>
+                  </drag>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="drop" data="0" droptimes="untilok"></div>
+            <div class="drop" data="1" droptimes="untilok"></div>
+            <div class="drop" data="2" droptimes="untilok"></div>
+            <div class="drop" data="3" droptimes="untilok"></div>
+            <div class="drop" data="4" droptimes="untilok"></div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['c0','c1','c2','c3', 'c4'], 5)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 wrap">
+                  <drag ref="d3" :data="temps['d3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['d3']?'on':'off'">
+                      <div class="ficha1"><div>2<hr>4</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.8</div></div>
+                      <button class="button" @click="temps['d3']=!temps['d3']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="d2" :data="temps['d2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['d2']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>10</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.5</div></div>
+                      <button class="button" @click="temps['d2']=!temps['d2']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="d0" :data="temps['d0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['d0']?'on':'off'">
+                      <div class="ficha1"><div>1<hr>5</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.1</div></div>
+                      <button class="button" @click="temps['d0']=!temps['d0']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="d4" :data="temps['d4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['d4']?'on':'off'">
+                      <div class="ficha1"><div>4<hr>5</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.2</div></div>
+                      <button class="button" @click="temps['d4']=!temps['d4']">Voltear</button>
+                    </div>
+                  </drag>
+                  <drag ref="d1" :data="temps['d1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                    <div class="row ficha" :class="temps['d1']?'on':'off'">
+                      <div class="ficha1"><div>3<hr>10</div></div>
+                      <div class="mid"></div>
+                      <div class="ficha2"><div>0.3</div></div>
+                      <button class="button" @click="temps['d1']=!temps['d1']">Voltear</button>
+                    </div>
+                  </drag>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="drop" data="0" droptimes="untilok"></div>
+            <div class="drop" data="1" droptimes="untilok"></div>
+            <div class="drop" data="2" droptimes="untilok"></div>
+            <div class="drop" data="3" droptimes="untilok"></div>
+            <div class="drop" data="4" droptimes="untilok"></div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['d0','d1','d2','d3', 'd4'], 5)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==5" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +338,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +350,33 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'f0', true)
+      app.$set(app.temps, 'f1', false)
+      app.$set(app.temps, 'f2', true)
+      app.$set(app.temps, 'f3', false)
+      app.$set(app.temps, 'f4', false)
+      
+      app.$set(app.temps, 'b0', false)
+      app.$set(app.temps, 'b1', false)
+      app.$set(app.temps, 'b2', true)
+      app.$set(app.temps, 'b3', true)
+      app.$set(app.temps, 'b4', true)
+      
+      app.$set(app.temps, 'c0', true)
+      app.$set(app.temps, 'c1', false)
+      app.$set(app.temps, 'c2', false)
+      app.$set(app.temps, 'c3', true)
+      app.$set(app.temps, 'c4', false)
+      
+      app.$set(app.temps, 'd0', true)
+      app.$set(app.temps, 'd1', false)
+      app.$set(app.temps, 'd2', true)
+      app.$set(app.temps, 'd3', false)
+      app.$set(app.temps, 'd4', false)
+      
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>

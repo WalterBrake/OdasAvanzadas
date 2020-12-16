@@ -11632,11 +11632,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/GE6T2\/242\/s\/Conozco el comercio y la industria Ge6°T2_Relaciona.wav": {
+	"\/GE6T2\/242\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE6T2\/242\/s\/Conozco el comercio y la industria Ge6°T2_Relaciona.wav",
+		"oAP": "\/GE6T2\/242\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/HI4T1\/254\/aimg\/hombre.svg": {
@@ -21796,6 +21796,13 @@
 		"oAP": "\/MA6T2\/145\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA6T2\/145\/s\/Identifico el valor de decimal Mat 6o T2_Inst.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T2\/145\/s\/Identifico el valor de decimal Mat 6o T2_Inst.wav",
+		"oF": 0
 		},
 	"\/readme": {
 		"ft": 65536,
