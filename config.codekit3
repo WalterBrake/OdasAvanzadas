@@ -8687,6 +8687,69 @@
 		"oAP": "\/ES2T2\/75\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/ES2T2\/84\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 131907,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T2\/84\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 65244,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T2\/84\/i\/b1.png": {
+		"ft": 32768,
+		"iS": 74633,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/i\/b1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T2\/84\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/index.html",
+		"oF": 0
+		},
+	"\/ES2T2\/84\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES2T2\/84\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES2T2\/84\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T2\/84\/s\/instruccion2.mp3",
+		"oF": 0
+		},
 	"\/ES3T1\/26\/aimg\/evita.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -21797,11 +21860,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA6T2\/145\/s\/Identifico el valor de decimal Mat 6o T2_Inst.wav": {
+	"\/MA6T2\/145\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T2\/145\/s\/Identifico el valor de decimal Mat 6o T2_Inst.wav",
+		"oAP": "\/MA6T2\/145\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/readme": {

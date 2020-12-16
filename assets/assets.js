@@ -196,13 +196,16 @@ var app = new Vue({
                 if(Array.isArray(app.$refs[rf])){
                     for(i in app.$refs[rf]){
                         let res = app.$refs[rf][i].externalValidation()
+                        
                         if(res===false){
                             allok = false
-                        } 
+                        }
+                        
                     }
                 }
                  else {
                     let res = app.$refs[rf].externalValidation()
+
                     if(res===false){
                         allok = false
                     }  

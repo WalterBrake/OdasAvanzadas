@@ -85,6 +85,7 @@ Vue.component('drag', {
             _this.dropzonesDetected = 0
             if(_this.undroppable != undefined || _this.extval != undefined) {
                 _this.undroppableFn()
+
             }
 
         },
@@ -141,6 +142,7 @@ Vue.component('drag', {
             for(var dr = 0; dr < dropzones.length; dr++) {
                 var dropzone = dropzones[dr]
                 if(Draggable.hitTest(_this.$refs.drag, dropzone, '50%')){
+                    console.log('touchig dropzone', e)
                     var droppedtimes = dropzone.getAttribute('droppedtimes')
                     droppedtimes = parseInt(droppedtimes)
                     var minus = droppedtimes > 0 ? droppedtimes-1 : 0
@@ -221,8 +223,10 @@ Vue.component('drag', {
 
             setTimeout(function (){
                 let droppedtimes = dropzone.getAttribute('droppedtimes')
+
                 _this.$emit('isok', {droppedtimes: droppedtimes})
                 _this.isItOk = true
+                
             }, 100)
             _this.returnToPositionFn()
             _this.stayInDropFn()
@@ -311,13 +315,13 @@ Vue.component('drag', {
             }
         },
         droppedtimesAdd (dropzone){
-            var droppedtimes = dropzone.getAttribute('droppedtimes')
-            if(droppedtimes){
-                var sum = parseInt(droppedtimes)+1
-                dropzone.setAttribute('droppedtimes', sum)
-                } else {
-                    dropzone.setAttribute('droppedtimes', 1)
-            }
+                var droppedtimes = dropzone.getAttribute('droppedtimes')
+                if(droppedtimes){
+                    var sum = parseInt(droppedtimes)+1
+                    dropzone.setAttribute('droppedtimes', sum)
+                    } else {
+                        dropzone.setAttribute('droppedtimes', 1)
+                }
         },
         dropzoneStatusClass(status, dropzone){
             var _this = this
@@ -354,14 +358,16 @@ Vue.component('drag', {
                 _this.draggable[0].disable()
             } else {
                 _this.returnToPositionFn()
+
             }
         },
         returnToPositionFn(){
             if(this.returnToPosition!=undefined) {
                 this.backToInitPos()
-            }
-            if(this.undroppable != undefined || this.extval != undefined) {
-                this.undroppableFn()
+                if(this.undroppable != undefined || this.extval != undefined) {
+                    this.undroppableFn()
+
+                }
             }
             
         },
@@ -485,6 +491,7 @@ Vue.component('drag', {
                 this.backToInitPos()
                 this.removeClones()
                 if(this.isfalse != undefined){
+
                     theresult = true
                 } else {
                     theresult = false
