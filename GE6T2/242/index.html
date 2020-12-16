@@ -3,23 +3,109 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco el comercio y la industria</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .area {
+          background: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 4px;
+      }
+      .area .txt {
+          font-size: 0.8rem;
+      }
+      @media (max-width: 680px) {
+          .area .txt {
+              font-size: 0.5rem;
+          }
+      }
+      .area .drag {
+          width: auto;
+          height: auto;
+      }
+      .area:nth-child(1) {
+          background: #A3D295;
+      }
+      .area:nth-child(2) {
+          background: #81A1C6;
+      }
+      .area:nth-child(3) {
+          background: #E0F0F8;
+      }
+      .area:nth-child(4) {
+          background: #F8D3B3;
+      }
+      .drop {
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 60px;
+          margin: 10px;
+          border-radius: 10px;
+      }
+      .drop.hover {
+          background: var(--main);
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="relacionar" title="Conozco el comercio y la industria" text="Relaciona cada caso con el tipo de comercio del que se trate." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w50">
+              <div class="area">
+                <div class="txt">Actualmente, Puebla es uno de los principales estados productores de aguacate con un volumen total de 16 842 toneladas anuales. Este producto se consume en muchos de los estados del país en donde antes sólo llegaba y se consumía el aguacate de Michoacán, Jalisco y Nayarit. </div>
+                <drag ref="a1" :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" extval="extval" drag-line="drag-line" particle-color="#A3D295">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="area">
+                <div class="txt">En 2015, México estuvo en el lugar número 12 en la producción mundial de alimentos y exportó a otros países principalmente aguacate, fresa, cebolla, azúcar, chocolate y carne.</div>
+                <drag ref="a2" :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" extval="extval" drag-line="drag-line" particle-color="#81A1C6">
+                  <div class="conector c2"></div>
+                </drag>
+              </div>
+              <div class="area">
+                <div class="txt">Durante 2019, 6.9% del total de exportaciones de México a Argentina fueron de aparatos eléctricos de telefonía o telegrafía.</div>
+                <drag ref="a3" :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" extval="extval" drag-line="drag-line" particle-color="#E0F0F8">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="area">
+                <div class="txt">En Chiapas, Tabasco y Veracruz se concentra la mayoría de la producción de plátano en México, el 60% de la producción nacional. Es una de las frutas de mayor consumo: un mexicano come 14.2 kilos de plátano al año.</div>
+                <drag ref="a4" :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" extval="extval" drag-line="drag-line" particle-color="#F8D3B3">
+                  <div class="conector c4"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w50 com">
+              <div class="drop" data="1" droptimes="multiple" droplimit="5">
+                <number c="5" smaller="smaller">Comercio exterior</number>
+              </div>
+              <div class="drop" data="2" droptimes="multiple" droplimit="5">
+                <number c="5" smaller="smaller">Comercio interior</number>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['a1','a2','a3','a4'], 4)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +131,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

@@ -1,12 +1,57 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco el comercio y la industria'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .area {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 4px;
+            }
+            .area .txt {
+                font-size: 0.8rem;
+            }
+            @media (max-width: 680px) {
+                .area .txt {
+                    font-size: 0.5rem;
+                }
+            }
+            .area .drag {
+                width: auto;
+                height: auto;
+            }
+            .area:nth-child(1) {
+                background: #A3D295;
+            }
+            .area:nth-child(2) {
+                background: #81A1C6;
+            }
+            .area:nth-child(3) {
+                background: #E0F0F8;
+            }
+            .area:nth-child(4) {
+                background: #F8D3B3;
+            }
+            .drop {
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 60px;
+                margin: 10px;
+                border-radius: 10px;
+            }
+            .drop.hover {
+                background: var(--main);
+            }
 
 
     body
@@ -15,11 +60,29 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Relaciona cada caso con el tipo de comercio del que se trate." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        .w50
+                            .area
+                                .txt Actualmente, Puebla es uno de los principales estados productores de aguacate con un volumen total de 16 842 toneladas anuales. Este producto se consume en muchos de los estados del país en donde antes sólo llegaba y se consumía el aguacate de Michoacán, Jalisco y Nayarit. 
+                                drag(ref="a1" :data="2" dropzone=".drop" stay-if-ok extval drag-line particle-color="#A3D295"): .conector.c1
+                            .area
+                                .txt En 2015, México estuvo en el lugar número 12 en la producción mundial de alimentos y exportó a otros países principalmente aguacate, fresa, cebolla, azúcar, chocolate y carne.
+                                drag(ref="a2" :data="1" dropzone=".drop" stay-if-ok extval drag-line particle-color="#81A1C6"): .conector.c2
+                            .area
+                                .txt Durante 2019, 6.9% del total de exportaciones de México a Argentina fueron de aparatos eléctricos de telefonía o telegrafía.
+                                drag(ref="a3" :data="1" dropzone=".drop" stay-if-ok extval drag-line particle-color="#E0F0F8"): .conector.c3
+                            .area
+                                .txt En Chiapas, Tabasco y Veracruz se concentra la mayoría de la producción de plátano en México, el 60% de la producción nacional. Es una de las frutas de mayor consumo: un mexicano come 14.2 kilos de plátano al año.
+                                drag(ref="a4" :data="2" dropzone=".drop" stay-if-ok extval drag-line particle-color="#F8D3B3"): .conector.c4
+                        .w50.com
+                            .drop(data="1" droptimes="multiple" droplimit="5"): number(c=5 smaller) Comercio exterior
+                            .drop(data="2" droptimes="multiple" droplimit="5"): number(c=5 smaller) Comercio interior
+                    
+                    .text-center: button(@click="dragValidation(['a1','a2','a3','a4'], 4)").button.big.animate__animated.animate__flip Verificar
+
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
