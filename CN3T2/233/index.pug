@@ -1,12 +1,67 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Utilizo las máquinas'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .area {
+                background: #f5f5f5;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .area .txt {
+                flex-grow: 1;
+                font-size: 0.8rem;
+                margin-right: 10px;
+            }
+            .area:nth-child(1) {
+                background: #FAE5D6;
+            }
+            .area:nth-child(2) {
+                background: #E1E1FF;
+            }
+            .area:nth-child(3) {
+                background: #FFF2CC;
+            }
+            .area:nth-child(4) {
+                background: #FFDCFF;
+            }
+            .drop {
+                background: #fff;
+                border-radius: 10px;
+                display: block;
+                min-height: 70px;
+                width: 130px;
+                border: 2px solid var(--main);
+            }
+            .drop img {
+                margin: 5%;
+                width: 90%;
+            }
+            [wascloned] {
+                display: none;
+            }
+            .drag{
+                width: auto;
+                height: auto;
+                max-width: 160px;
+                margin: 6px;
+
+            }
+
+            @media (max-width: 680px){
+                .area .txt {
+                    font-size:0.5rem;
+                }
+                .drag{
+                    max-width: 100px;
+                }
+            }
 
 
     body
@@ -15,14 +70,58 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#5EB247")
+                info(type="dragdrop" title=title text="Coloca la imagen de la máquina en la casilla de la descripción que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100.wrap
+                        .w60.wm100
+                            div.area.row
+                                .txt.w50 La rueda consiste en una pieza en forma circular que gira sobre su propio eje. Esta máquina nos ayuda a transportar carga más fácilmente.
+                                .drop.w50(data="1" droptimes="untilok")
+                            div.area.row
+                                .txt.w50 La polea se compone de una rueda con una hendidura por donde pasa una cuerda. Nos permite subir objetos muy pesados.
+                                .drop.w50(data="2" droptimes="untilok")
+                            div.area.row
+                                .txt.w50 El plano inclinado es una máquina plana que se coloca de manera inclinada, nos ayuda a transportar objetos. Entre menor inclinación tenga más fácil será trasladar objetos.
+                                .drop.w50(data="3" droptimes="untilok")
+                            div.area.row
+                                .txt.w50 La palanca es una barra dividida en dos partes, en ambos lados se puede colocar peso y el objeto menos pesado subirá.
+                                .drop.w50(data="4" droptimes="untilok")
+                        .w30.wm100.row.wrap
+                            drag(ref="d1" :data="2" dropzone=".drop" extval append-clone): img(src="i/a1.png").w100
+                            drag(ref="d2" :data="4" dropzone=".drop" extval append-clone): img(src="i/a2.png").w100
+                            drag(ref="d3" :data="1" dropzone=".drop" extval append-clone): img(src="i/a3.png").w100
+                            drag(ref="d4" :data="3" dropzone=".drop" extval append-clone): img(src="i/a4.png").w100
+                    
+                    .text-center: button(@click="dragValidation(['d1','d2','d3','d4'], 4)").button.big.animate__animated.animate__flip Verificar
+
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#5EB247")
+                info(type="dragdrop" title=title text="Coloca la máquina que se deba utilizar en cada caso." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.wrap
+                        .w60.wm100
+                            div.area.row
+                                .txt.w50 ¿Cuál de las máquinas simples se utiliza para hacer funcionar una bicicleta?
+                                .drop.w50(data="1" droptimes="untilok")
+                            div.area.row
+                                .txt.w50 Si Esteban quiere subir algunos muebles del primer piso de su casa al segundo, ¿qué máquina podría utilizar para no tener que aplicar tanta fuerza?
+                                .drop.w50(data="2" droptimes="untilok")
+                                .drop.w50(data="2" droptimes="untilok")
+
+                        .w30.wm100.row.wrap
+                            drag(ref="s1" :data="2" dropzone=".drop" extval append-clone): img(src="i/a1.png").w100
+                            drag(ref="s2" :data="3" dropzone=".drop" extval append-clone isfalse): img(src="i/a2.png").w100
+                            drag(ref="s3" :data="1" dropzone=".drop" extval append-clone): img(src="i/a3.png").w100
+                            drag(ref="s4" :data="2" dropzone=".drop" extval append-clone): img(src="i/a4.png").w100
+                    
+                    .text-center: button(@click="dragValidation(['s1','s2','s3','s4'], 3)").button.big.animate__animated.animate__flip Verificar
+
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +130,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2
