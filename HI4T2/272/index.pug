@@ -1,0 +1,152 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Ubico territorios de Nueva España '
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .embedsvg{
+                width: 100%;
+            }
+            .row.items {
+                justify-content: normal;
+                align-items: normal;
+                justify-content: center;
+            }
+            .itm {
+                background: #f5f5f5;
+                padding: 5px 2px;
+                border-radius: 6px;
+                margin: 2px;
+                font-size: 0.7rem;
+                flex-grow: 1;
+                height: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                cursor: pointer;
+            }
+            .itm .title {
+                font-weight: bold;
+                background: #fff;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            .itm .txt {
+                font-size: 0.7rem;
+            }
+            .itm.on {
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .itm.verde.on {
+                background: #69B86F;
+            }
+            .itm.azul.on {
+                background: #5BA6C1;
+            }
+            .itm.naranja.on {
+                background: #EC8B49;
+            }
+            .itm.amarillo.on {
+                background: #FEDA1C;
+            }
+            .itm.rojo.on {
+                background: #E05540;
+            }
+            #verde,
+            #naranja,
+            #azul,
+            #amarillo,
+            #rojo {
+                opacity: 0;
+            }
+            #verde.on,
+            #naranja.on,
+            #azul.on,
+            #amarillo.on,
+            #rojo.on {
+                opacity: 1;
+                transition: all 0.3s;
+            }
+            .img {
+                max-width: 60px;
+                margin: 0 auto;
+            }
+            .img img {
+                width: 100%;
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona en el mapa los estados con el color que se te indica para descubrir el reino al que pertenecieron." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.items.wrap
+                        .w20.wm30: .itm.verde(@click="temps.a='verde'" :class="temps.a=='verde'?'on':'off'")
+                            .title Nueva Vizcaya:
+                            .txt Sinaloa, Durango y Sonora.
+                            div.img: img(src="i/verde.png")
+                        .w20.wm30: .itm.azul(@click="temps.a='azul'" :class="temps.a=='azul'?'on':'off'")
+                            .title Nuevo Reino de León:
+                            .txt Nuevo León y Tamaulipas.
+                            div.img: img(src="i/azul.png")
+                        .w20.wm30: .itm.naranja(@click="temps.a='naranja'" :class="temps.a=='naranja'?'on':'off'")
+                            .title Reino de la Nueva España:
+                            .txt Michoacán, Estado de México e Hidalgo.
+                            div.img: img(src="i/naranja.png")
+                        .w20.wm30: .itm.amarillo(@click="temps.a='amarillo'" :class="temps.a=='amarillo'?'on':'off'")
+                            .title Reino de la Nueva Galicia:
+                            .txt Jalisco,Guanajuato, Colima y Nayarit.
+                            div.img: img(src="i/amarillo.png")
+                        .w20.wm30: .itm.rojo(@click="temps.a='rojo'" :class="temps.a=='rojo'?'on':'off'")
+                            .title Capitanía General de Guatemala:
+                            .txt Chiapas, Guatemala y Honduras.
+                            div.img: img(src="i/rojo.png")
+
+                    .row.w100.mt-1
+                        .w80: embedsvg(src="i/mapa.svg" @loaded="clickfns")
+
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', 'verde')
+
+                app.clickfns = function(){
+                    setTimeout(function(){
+                        document.getElementById('verde').addEventListener('click', function(){clickoed('verde')})
+                        document.getElementById('azul').addEventListener('click', function(){clickoed('azul')})
+                        document.getElementById('naranja').addEventListener('click', function(){clickoed('naranja')})
+                        document.getElementById('amarillo').addEventListener('click', function(){clickoed('amarillo')})
+                        document.getElementById('rojo').addEventListener('click', function(){clickoed('rojo')})
+                    },10)
+                }
+                
+                function clickoed(col){
+
+                    if(app.temps.a==col && ! document.getElementById(col).classList.contains('on')){
+                        document.getElementById(col).classList.add('on')
+                        s_ok.play()
+                        EventBus.$emit('isok')
+                        var sound = new Howl({ src: ['s/'+col+'.mp3'], autoplay:true })
+                    } else {
+                        s_error.play()
+                    }
+                }
+                app.currentScene = 0
+                app.scenesCount = 1
+

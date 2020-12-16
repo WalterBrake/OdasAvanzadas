@@ -12068,6 +12068,129 @@
 		"oAP": "\/HI4T2\/266\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/HI4T2\/272\/i\/amarillo.png": {
+		"ft": 32768,
+		"iS": 3100,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/i\/amarillo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/272\/i\/azul.png": {
+		"ft": 32768,
+		"iS": 3115,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/i\/azul.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/272\/i\/mapa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/HI4T2\/272\/i\/mapa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/HI4T2\/272\/i\/naranja.png": {
+		"ft": 32768,
+		"iS": 3159,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/i\/naranja.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/272\/i\/rojo.png": {
+		"ft": 32768,
+		"iS": 3195,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/i\/rojo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/272\/i\/verde.png": {
+		"ft": 32768,
+		"iS": 3450,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/i\/verde.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T2\/272\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/index.html",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/HI4T2\/272\/s\/amarillo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/amarillo.mp3",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/s\/azul.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/azul.mp3",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/s\/naranja.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/naranja.mp3",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/s\/rojo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/rojo.mp3",
+		"oF": 0
+		},
+	"\/HI4T2\/272\/s\/verde.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T2\/272\/s\/verde.mp3",
+		"oF": 0
+		},
 	"\/HI5T1\/256\/aimg\/barco.svg": {
 		"ft": 2097152,
 		"miP": 0,
