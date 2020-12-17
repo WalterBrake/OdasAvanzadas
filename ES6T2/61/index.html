@@ -108,6 +108,20 @@
               padding: 0;
           }
       }
+      @media (min-width: 681px) {
+          .btnlista {
+              display: none;
+          }
+      }
+      @media (max-width: 680px) {
+          .words.outside {
+              display: none;
+          }
+          .btnlista {
+              display: block;
+          }
+      }
+      
       
       
       
@@ -141,7 +155,7 @@
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
         <info type="input" title="Identifico los elementos de la carta" text="Escribe en las casillas el nombre del elemento que corresponda." textaudio="s/instruccion3.mp3" :autoplay="true">
-          <button class="button mt-auto" @click="$refs.words.open()">Lista de elementos</button>
+          <button class="button mt-auto btnlista" @click="$refs.words.open()">Lista de elementos</button>
         </info>
         <activity>
           <popup :conf="['25%', '10%', '50%', '80%']" ref="words" c="1">
@@ -159,6 +173,18 @@
             </div>
           </popup>
           <div class="row w100">
+            <div class="words outside">
+              <div>Destinatario</div>
+              <div>Saludo cordial</div>
+              <div>Argumento </div>
+              <div>Motivo de la carta</div>
+              <div>Lugar y fecha</div>
+              <div>Despedida cordial</div>
+              <div>Datos del destinatario</div>
+              <div>Opinión </div>
+              <div>Remitente</div>
+              <div>Número de oficio</div>
+            </div>
             <div class="carta">
               <tooltiper pos="right">
                 <inputable initclass="c7" isok="lugar y fecha">

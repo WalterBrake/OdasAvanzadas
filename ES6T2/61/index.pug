@@ -105,6 +105,20 @@ html(lang="es")
                     padding: 0;
                 }
             }
+            @media (min-width: 681px) {
+                .btnlista {
+                    display: none;
+                }
+            }
+            @media (max-width: 680px) {
+                .words.outside {
+                    display: none;
+                }
+                .btnlista {
+                    display: block;
+                }
+            }
+
 
 
 
@@ -132,9 +146,10 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
                 info(type="input" title=title text="Escribe en las casillas el nombre del elemento que corresponda." textaudio="s/instruccion3.mp3" :autoplay="true")
-                    button(@click="$refs.words.open()").button.mt-auto Lista de elementos
+                    button(@click="$refs.words.open()").button.mt-auto.btnlista Lista de elementos
                 activity
-                    popup(:conf="['25%', '10%', '50%', '80%']" ref="words" c="1"): .words
+                    popup(:conf="['25%', '10%', '50%', '80%']" ref="words" c="1")
+                        .words
                             div Destinatario
                             div Saludo cordial
                             div Argumento 
@@ -146,6 +161,17 @@ html(lang="es")
                             div Remitente
                             div Número de oficio
                     .row.w100
+                        .words.outside
+                            div Destinatario
+                            div Saludo cordial
+                            div Argumento 
+                            div Motivo de la carta
+                            div Lugar y fecha
+                            div Despedida cordial
+                            div Datos del destinatario
+                            div Opinión 
+                            div Remitente
+                            div Número de oficio
                         .carta
                             tooltiper(pos="right"): inputable(initclass="c7" isok="lugar y fecha"): number(c=7 smaller) Lugar y fecha
                             tooltiper(pos="left"): inputable(initclass="c7" isok="datos del destinatario"): number(c=7 smaller) Datos del destinatario
