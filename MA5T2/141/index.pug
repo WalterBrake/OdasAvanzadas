@@ -1,0 +1,138 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Cuanto como un egipcio'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .bx {
+                position: relative;
+                background: #0078AC;
+                color: #FFDF00;
+                border-radius: 10px;
+                padding: 10px;
+                margin: 10px;
+            }
+            .bx .audiotextBtn {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: -10px;
+                left: -10px;
+            }
+            @media (max-width: 680px){
+                .bx{
+                    padding: 4px;
+                    font-size: 0.7rem;
+                }
+            }
+            .pgr {
+                text-align: center;
+                background: #F2E4A1;
+                padding: 2px 10px;
+                border-radius: 10px;
+                margin-bottom: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 98%;
+            }
+            @media (max-width: 680px) {
+                .pgr {
+                    flex-direction: column;
+                    padding: 2px;
+                }
+            }
+            .pgr img {
+                max-width: 200px;
+            }
+            @media (max-width: 680px) {
+                .pgr img {
+                    max-width: 140px;
+                }
+            }
+            .pgr .selectives .row {
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                justify-content: space-between;
+            }
+            @media (max-width: 680px) {
+                .pgr .selectives .row {
+                    padding: 0;
+                    background: transparent;
+                }
+                .pgr .selectives .row > div {
+                    padding: 0 6px;
+                }
+                .pgr .selectives .row > div .number {
+                    font-size: 1rem;
+                }
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="El sistema de numeración egipcio es un sistema que apareció en los inicios de la escritura jeroglífica." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true")
+                activity
+                    .row.w100.h3.text-center.mb-auto.mt-auto Sistema de numeración egipcio
+                    .row.w100(v-if="temps.au3").wrap
+                        .bx.w50.ws100.animate__animated.animate__jello: audiotext(:autoplay="true" audio="s/a2.mp3" text="Es un sistema aditivo, es decir, que va sumando símbolos para representar un número. No es posicional, pues el valor de los símbolos no cambia según su posición." @completed="temps.au4 = true")
+                        .w40.ws100.animate__animated.animate__heartBeat: img(src="i/nums.png").w100
+                    .row.w100(v-if="temps.au4")
+                        .bx.w60.ws100.animate__animated.animate__jello: audiotext(:autoplay="true" audio="s/a3.mp3" text="Como puedes observar, cada símbolo se repite el número de veces necesarias para representar su valor." @completed="temps.au5 = true")
+                    .row.w100
+                        .w40.ws80
+                            img(src="i/a0.png").w100
+                            .bx(v-if="temps.au2").animate__animated.animate__jello: audiotext(:autoplay="true" audio="s/a1.mp3" text="Estos son los símbolos del sistema de numeración egipcio." @completed="temps.au3 = true")
+                    button(v-if="temps.au5" @click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora, selecciona el número del sistema decimal que equivale a la representación en jeroglíficos egipcios." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true")
+                activity
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b1.png")
+                        .w60.ws100: selectives(:ans="1" key="p1" :ops="['40 020','420','2040']" number disableok ref="p1")
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b2.png")
+                        .w60.ws100: selectives(:ans="2" key="p1" :ops="['123','3 012','321']" number disableok ref="p2")
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b3.png")
+                        .w60.ws100: selectives(:ans="1" key="p1" :ops="['3 221','2 321','3 112']" number disableok ref="p3")
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b4.png")
+                        .w60.ws100: selectives(:ans="2" key="p1" :ops="['11 125','10 105','10 025']" number disableok ref="p4")
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b5.png")
+                        .w60.ws100: selectives(:ans="1" key="p1" :ops="['1 605 410','1 602 411','142 011']" number disableok ref="p5")
+                    .row.w100: .pgr
+                        .w40.ws100: img(src="i/b6.png")
+                        .w60.ws100: selectives(:ans="1" key="p1" :ops="['11 080','10 080','10 008']" number disableok ref="p6")
+
+                    .row.w100: button(@click="selectiveValidation(['p1','p2', 'p3','p4','p5','p6'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+
+            // END
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                app.$set(app.temps, 'au2', false)
+                app.$set(app.temps, 'au3', false)
+                app.$set(app.temps, 'au4', false)
+                app.$set(app.temps, 'au5', false)
+                
+                app.currentScene = 0
+                app.scenesCount = 1

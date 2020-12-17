@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cuanto como un egipcio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .bx {
+          position: relative;
+          background: #0078AC;
+          color: #FFDF00;
+          border-radius: 10px;
+          padding: 10px;
+          margin: 10px;
+      }
+      .bx .audiotextBtn {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: -10px;
+          left: -10px;
+      }
+      @media (max-width: 680px){
+          .bx{
+              padding: 4px;
+              font-size: 0.7rem;
+          }
+      }
+      .pgr {
+          text-align: center;
+          background: #F2E4A1;
+          padding: 2px 10px;
+          border-radius: 10px;
+          margin-bottom: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 98%;
+      }
+      @media (max-width: 680px) {
+          .pgr {
+              flex-direction: column;
+              padding: 2px;
+          }
+      }
+      .pgr img {
+          max-width: 200px;
+      }
+      @media (max-width: 680px) {
+          .pgr img {
+              max-width: 140px;
+          }
+      }
+      .pgr .selectives .row {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          justify-content: space-between;
+      }
+      @media (max-width: 680px) {
+          .pgr .selectives .row {
+              padding: 0;
+              background: transparent;
+          }
+          .pgr .selectives .row > div {
+              padding: 0 6px;
+          }
+          .pgr .selectives .row > div .number {
+              font-size: 1rem;
+          }
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuanto como un egipcio" text="El sistema de numeración egipcio es un sistema que apareció en los inicios de la escritura jeroglífica." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100 h3 text-center mb-auto mt-auto">Sistema de numeración egipcio</div>
+          <div class="row w100 wrap" v-if="temps.au3">
+            <div class="bx w50 ws100 animate__animated animate__jello">
+              <audiotext :autoplay="true" audio="s/a2.mp3" text="Es un sistema aditivo, es decir, que va sumando símbolos para representar un número. No es posicional, pues el valor de los símbolos no cambia según su posición." @completed="temps.au4 = true"></audiotext>
+            </div>
+            <div class="w40 ws100 animate__animated animate__heartBeat"><img class="w100" src="i/nums.png"/></div>
+          </div>
+          <div class="row w100" v-if="temps.au4">
+            <div class="bx w60 ws100 animate__animated animate__jello">
+              <audiotext :autoplay="true" audio="s/a3.mp3" text="Como puedes observar, cada símbolo se repite el número de veces necesarias para representar su valor." @completed="temps.au5 = true"></audiotext>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w40 ws80"><img class="w100" src="i/a0.png"/>
+              <div class="bx animate__animated animate__jello" v-if="temps.au2">
+                <audiotext :autoplay="true" audio="s/a1.mp3" text="Estos son los símbolos del sistema de numeración egipcio." @completed="temps.au3 = true"></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" v-if="temps.au5" @click="sceneCompleted(false)">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuanto como un egipcio" text="Ahora, selecciona el número del sistema decimal que equivale a la representación en jeroglíficos egipcios." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b1.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="1" key="p1" :ops="['40 020','420','2040']" number="number" disableok="disableok" ref="p1"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b2.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="2" key="p1" :ops="['123','3 012','321']" number="number" disableok="disableok" ref="p2"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b3.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="1" key="p1" :ops="['3 221','2 321','3 112']" number="number" disableok="disableok" ref="p3"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b4.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="2" key="p1" :ops="['11 125','10 105','10 025']" number="number" disableok="disableok" ref="p4"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b5.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="1" key="p1" :ops="['1 605 410','1 602 411','142 011']" number="number" disableok="disableok" ref="p5"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="pgr">
+              <div class="w40 ws100"><img src="i/b6.png"/></div>
+              <div class="w60 ws100">
+                <selectives :ans="1" key="p1" :ops="['11 080','10 080','10 008']" number="number" disableok="disableok" ref="p6"></selectives>
+              </div>
+            </div>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p1','p2', 'p3','p4','p5','p6'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'au2', false)
+      app.$set(app.temps, 'au3', false)
+      app.$set(app.temps, 'au4', false)
+      app.$set(app.temps, 'au5', false)
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>

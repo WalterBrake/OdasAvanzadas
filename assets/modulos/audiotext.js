@@ -29,6 +29,7 @@ Vue.component('audiotext', {
             this.sound.stop()
             for(txt in this.textrender){
                 this.textrender[txt].on = true
+                this.$emit('completed')
             }
         },
         textanimation (duration) {
