@@ -233,19 +233,19 @@ html(lang="es")
                     .finalpreguntas
                         .pregu
                             .h4.text-center ¿En qué persona gramatical está escrito el texto?
-                            .row.wrap.around: clickable(v-for="(i, index) in ['tercera persona del singular','primera persona del plural','primera persona del singular']" :key="'p4'+index" :isok="index == 2" ignore-already-ok   ext-validation :ref="'click1'+index" no-animations): number(randomc smaller) {{i}}
+                            .row.wrap.around: clickable(v-for="(i, index) in ['Tercera persona del singular','Primera persona del plural','Primera persona del singular']" :key="'p4'+index" :isok="index == 2" ignore-already-ok   ext-validation :ref="'click1'+index" no-animations): number(randomc smaller) {{i}}
                         .pregu
                             .h4.text-center En el texto hay palabras que indican acciones, por ejemplo nací, ¿que tipo de palabra es?
-                            .row.wrap.around: clickable(v-for="(i, index) in ['adjetivo','sustantivo','verbo']" :key="'p4'+index" :isok="index == 2"  ignore-already-ok  ext-validation  :ref="'click2'+index"  no-animations): number(randomc smaller) {{i}}
+                            .row.wrap.around: clickable(v-for="(i, index) in ['Adjetivo','Sustantivo','Verbo']" :key="'p4'+index" :isok="index == 2"  ignore-already-ok  ext-validation  :ref="'click2'+index"  no-animations): number(randomc smaller) {{i}}
                         .pregu
                             .h4.text-center ¿En qué tiempo verbal está escrita la palabra nací?
-                            .row.wrap.around: clickable(v-for="(i, index) in ['pasado','presente','futuro']" :key="'p4'+index" :isok="index == 0"  ignore-already-ok  ext-validation  :ref="'click3'+index"  no-animations): number(randomc smaller) {{i}}
+                            .row.wrap.around: clickable(v-for="(i, index) in ['Pasado','Presente','Futuro']" :key="'p4'+index" :isok="index == 0"  ignore-already-ok  ext-validation  :ref="'click3'+index"  no-animations): number(randomc smaller) {{i}}
                         .pregu
                             .h4.text-center ¿Cuáles son los tiempos verbales que Claudia usa en su autobiorafía?
-                            .row.wrap.around: clickable(v-for="(i, index) in ['futuro y pasado','pasado y presente','presente y futuro']" :key="'p4'+index" :isok="index == 1"  ignore-already-ok  ext-validation  :ref="'click4'+index"  no-animations): number(randomc smaller) {{i}}
+                            .row.wrap.around: clickable(v-for="(i, index) in ['Futuro y pasado','Pasado y presente','Presente y futuro']" :key="'p4'+index" :isok="index == 1"  ignore-already-ok  ext-validation  :ref="'click4'+index"  no-animations): number(randomc smaller) {{i}}
                         .pregu
                             .h4.text-center Elige dos datos que escribió Claudia en su autobiografía.
-                            .row.wrap.around: clickable(v-for="(i, index) in ['nombre de familiares','domicilio de su familia','recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2"  ignore-already-ok  ext-validation  :ref="'click5'+index"  no-animations): number(randomc smaller) {{i}}
+                            .row.wrap.around: clickable(v-for="(i, index) in ['Nombre de familiares','Domicilio de su familia','Recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2"  ignore-already-ok  ext-validation  :ref="'click5'+index"  no-animations): number(randomc smaller) {{i}}
                     
                     .row.w100: button(@click="validarRespuestas").button.big.animate__animated.animate__lightSpeedInLeft Validar
             // END

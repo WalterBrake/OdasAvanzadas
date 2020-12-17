@@ -274,7 +274,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿En qué persona gramatical está escrito el texto?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['tercera persona del singular','primera persona del plural','primera persona del singular']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click1'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['Tercera persona del singular','Primera persona del plural','Primera persona del singular']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click1'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -282,7 +282,7 @@
             <div class="pregu">
               <div class="h4 text-center">En el texto hay palabras que indican acciones, por ejemplo nací, ¿que tipo de palabra es?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['adjetivo','sustantivo','verbo']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click2'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['Adjetivo','Sustantivo','Verbo']" :key="'p4'+index" :isok="index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click2'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -290,7 +290,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿En qué tiempo verbal está escrita la palabra nací?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['pasado','presente','futuro']" :key="'p4'+index" :isok="index == 0" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click3'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['Pasado','Presente','Futuro']" :key="'p4'+index" :isok="index == 0" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click3'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -298,7 +298,7 @@
             <div class="pregu">
               <div class="h4 text-center">¿Cuáles son los tiempos verbales que Claudia usa en su autobiorafía?</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['futuro y pasado','pasado y presente','presente y futuro']" :key="'p4'+index" :isok="index == 1" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click4'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['Futuro y pasado','Pasado y presente','Presente y futuro']" :key="'p4'+index" :isok="index == 1" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click4'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -306,7 +306,7 @@
             <div class="pregu">
               <div class="h4 text-center">Elige dos datos que escribió Claudia en su autobiografía.</div>
               <div class="row wrap around">
-                <clickable v-for="(i, index) in ['nombre de familiares','domicilio de su familia','recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click5'+index" no-animations="no-animations">
+                <clickable v-for="(i, index) in ['Nombre de familiares','Domicilio de su familia','Recuerdos de su vida']" :key="'p4'+index" :isok="index == 0 || index == 2" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation" :ref="'click5'+index" no-animations="no-animations">
                   <number randomc="randomc" smaller="smaller">{{i}}</number>
                 </clickable>
               </div>
@@ -340,6 +340,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
