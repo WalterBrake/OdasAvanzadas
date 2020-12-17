@@ -1,0 +1,246 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identifico suceso de México '
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .decadas {
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+            .decadas > .w100 {
+                margin-bottom: 20px;
+            }
+            @media (max-width: 680px) {
+                .decadas > .w100 .number {
+                    font-size: 1.6rem;
+                }
+            }
+            .decadas .drop {
+                background: #fff0CE;
+                width: 60%;
+                min-height: 120px;
+                border-radius: 6px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 0.8rem;
+                margin-bottom: 4px;
+                flex-direction: column;
+            }
+            @media (max-width: 680px) {
+                .decadas .drop {
+                    font-size: 0.5rem;
+                    min-height: 140px;
+                }
+            }
+            .decadas .drop .number {
+                opacity: 0.4;
+                position: absolute;
+            }
+            @media (max-width: 680px) {
+                .decadas .drop .number {
+                    font-size: 0.8rem;
+                }
+            }
+            .decadas .drop.right {
+                margin-left: 40%;
+            }
+            .decadas .drop .t {
+                background: #fff;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 4px;
+                width: 90%;
+                box-sizing: border-box;
+            }
+            .decadas.end .drop {
+                min-height: 40px;
+                cursor: pointer;
+            }
+            .decadas.end .drop .number {
+                position: relative;
+                opacity: 1;
+                margin-bottom: 6px;
+            }
+            .decadas.end .drop .lista div {
+                background: #fff;
+                padding: 4px;
+                margin: 2px;
+                border-radius: 4px;
+            }
+            .drag {
+                position: relative;
+                z-index: 9;
+                width: fit-content;
+                width: -moz-fit-content;
+                height: auto;
+                text-align: center;
+                margin: 6px auto;
+            }
+            .drag div {
+                background: #fff;
+                padding: 4px 6px;
+                font-size: 0.8rem;
+                border-radius: 10px;
+                box-sizing: border-box;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 680px) {
+                .drag div {
+                    font-size: 0.5rem;
+                }
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w25
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del INAH 
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del PAN  
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del PNR
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación de la SEP
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Asesinato de Álvaro Obregón
+                        .w50.decadas
+                            .w100.text-center: number(c=3 small) Décadas
+                            //.drop.left(v-for="(i, index) in 5" data="1" droptimes="untilok"): number(c=1 smaller) 10 y 20
+                            //.drop.right(v-for="(i, index) in 5" data="2" droptimes="untilok"): number(c=2 smaller) 30
+                            .drop.left(data="1" droptimes="untilok"): number(c=1 smaller) 10 y 20
+                            .drop.right(data="2" droptimes="untilok"): number(c=2 smaller) 30
+                        .w25
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del IPN
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del Partido Comunista Mexicano
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Guerra cristera
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del PRM 
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Nacionalización del petróleo
+                            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w25
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación del PRI
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación de la Conaliteg
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Primer canal de Televisión en México
+
+                        .w50.decadas
+                            .w100.text-center: number(c=3 small) Décadas
+                            .drop.left(data="1" droptimes="untilok"): number(c=3 smaller) 40
+                            .drop.right(data="2" droptimes="untilok"): number(c=4 smaller) 50
+                        .w25
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación IMSS
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Fundación ISSSTE
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Se otorga el voto a la mujer
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Acuerdo de braceros entre México y Estados Unidos
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w25
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Movimiento estudiantil
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Plan Nacional de Planificación Familiar 
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Campeonato Mundial de Futbol 
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Descubrimiento del yacimiento de petróleo Cantarell
+                        .w50.decadas
+                            .w100.text-center: number(c=3 small) Décadas
+                            .drop.left(data="1" droptimes="untilok"): number(c=5 smaller) 60
+                            .drop.right(data="2" droptimes="untilok"): number(c=6 smaller) 70
+                            .drop.left(data="3" droptimes="untilok"): number(c=7 smaller) 80
+                        .w25
+                            drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Juegos Olímpicos
+                            drag(:data="3" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Nacionalización de la banca y crisis económica
+                            drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div.t Reforma electoral por Jesús Reyes Heroles
+
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¡Ahora veamos todos los sucesos completos! Haz clic en cada una de las décadas." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w80.decadas.end
+                                .w100.text-center: number(c=3 small) Décadas
+                                .drop.left(@click="temps.a=1")
+                                    number(c=1 smaller) 10 y 20
+                                    .lista(v-if="temps.a==1")
+                                        div Fundación del Partido Comunista Mexicano. 
+                                        div Guerra cristera. 
+                                        div Fundación del PNR. 
+                                        div Fundación de la SEP.  
+                                        div Asesinato de Álvaro Obregón.
+
+                                .drop.right(@click="temps.a=2")
+                                    number(c=2 smaller) 30
+                                    .lista(v-if="temps.a==2")
+                                        div Fundación del IPN.
+                                        div Fundación del PRM. 
+                                        div Fundación del INAH. 
+                                        div Fundación del PAN.  
+                                        div Nacionalización del petróleo.
+                                .drop.left(@click="temps.a=3")
+                                    number(c=3 smaller) 40
+                                    .lista(v-if="temps.a==3")
+                                        div Fundación IMSS.
+                                        div Fundación del PRI.
+                                        div Acuerdo de braceros entre México y Estados Unidos.
+                                .drop.right(@click="temps.a=4")
+                                    number(c=4 smaller) 50
+                                    .lista(v-if="temps.a==4")
+                                        div Fundación de la Conaliteg.
+                                        div Primer canal de Televisión en México.
+                                        div Fundación ISSSTE.
+                                        div Se otorga el voto a la mujer. 
+                                .drop.left(@click="temps.a=5")
+                                    number(c=5 smaller) 60
+                                    .lista(v-if="temps.a==5")
+                                        div Movimiento estudiantil. 
+                                        div Juegos Olímpicos. 
+                                .drop.right(@click="temps.a=6")
+                                    number(c=6 smaller) 70
+                                    .lista(v-if="temps.a==6")
+                                        div Plan Nacional de Planificación Familiar.  
+                                        div Campeonato Mundial de Futbol.  
+                                        div Descubrimiento del yacimiento de petróleo Cantarell.      
+                                        div Reforma electoral por Jesús Reyes Heroles.          
+                                .drop.left(@click="temps.a=7")
+                                    number(c=7 smaller) 80
+                                    .lista(v-if="temps.a==7")
+                                        div Nacionalización de la banca y crisis económica.
+                    .text-centerbutton(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
+
+                            
+
+
+
+            
+            
+            // END
+            scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', 0)
+                
+                app.currentScene = 0
+                app.scenesCount = 3

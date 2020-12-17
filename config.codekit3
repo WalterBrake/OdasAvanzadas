@@ -13338,6 +13338,36 @@
 		"oAP": "\/HI5T1\/262\/index.html",
 		"oF": 0
 		},
+	"\/HI5T2\/275\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T2\/275\/index.html",
+		"oF": 0
+		},
+	"\/HI5T2\/275\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/HI5T2\/275\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/HI5T2\/275\/s\/Identifico suceso de México His 5o T2_Inst1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T2\/275\/s\/Identifico suceso de México His 5o T2_Inst1.wav",
+		"oF": 0
+		},
+	"\/HI5T2\/275\/s\/Identifico suceso de México His 5o T2_Inst2.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T2\/275\/s\/Identifico suceso de México His 5o T2_Inst2.wav",
+		"oF": 0
+		},
 	"\/HI6T1\/257\/aimg\/i1.svg": {
 		"ft": 2097152,
 		"miP": 0,

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Identifico suceso de México </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .decadas {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          box-sizing: border-box;
+          padding: 10px;
+      }
+      .decadas > .w100 {
+          margin-bottom: 20px;
+      }
+      @media (max-width: 680px) {
+          .decadas > .w100 .number {
+              font-size: 1.6rem;
+          }
+      }
+      .decadas .drop {
+          background: #fff0CE;
+          width: 60%;
+          min-height: 120px;
+          border-radius: 6px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 0.8rem;
+          margin-bottom: 4px;
+          flex-direction: column;
+      }
+      @media (max-width: 680px) {
+          .decadas .drop {
+              font-size: 0.5rem;
+              min-height: 140px;
+          }
+      }
+      .decadas .drop .number {
+          opacity: 0.4;
+          position: absolute;
+      }
+      @media (max-width: 680px) {
+          .decadas .drop .number {
+              font-size: 0.8rem;
+          }
+      }
+      .decadas .drop.right {
+          margin-left: 40%;
+      }
+      .decadas .drop .t {
+          background: #fff;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 4px;
+          width: 90%;
+          box-sizing: border-box;
+      }
+      .decadas.end .drop {
+          min-height: 40px;
+          cursor: pointer;
+      }
+      .decadas.end .drop .number {
+          position: relative;
+          opacity: 1;
+          margin-bottom: 6px;
+      }
+      .decadas.end .drop .lista div {
+          background: #fff;
+          padding: 4px;
+          margin: 2px;
+          border-radius: 4px;
+      }
+      .drag {
+          position: relative;
+          z-index: 9;
+          width: fit-content;
+          width: -moz-fit-content;
+          height: auto;
+          text-align: center;
+          margin: 6px auto;
+      }
+      .drag div {
+          background: #fff;
+          padding: 4px 6px;
+          font-size: 0.8rem;
+          border-radius: 10px;
+          box-sizing: border-box;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 680px) {
+          .drag div {
+              font-size: 0.5rem;
+          }
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico suceso de México " text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w25">
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del INAH </div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del PAN  </div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del PNR</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación de la SEP</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Asesinato de Álvaro Obregón</div>
+              </drag>
+            </div>
+            <div class="w50 decadas">
+              <div class="w100 text-center">
+                <number c="3" small="small">Décadas</number>
+              </div>
+              <!--.drop.left(v-for="(i, index) in 5" data="1" droptimes="untilok"): number(c=1 smaller) 10 y 20-->
+              <!--.drop.right(v-for="(i, index) in 5" data="2" droptimes="untilok"): number(c=2 smaller) 30-->
+              <div class="drop left" data="1" droptimes="untilok">
+                <number c="1" smaller="smaller">10 y 20</number>
+              </div>
+              <div class="drop right" data="2" droptimes="untilok">
+                <number c="2" smaller="smaller">30</number>
+              </div>
+            </div>
+            <div class="w25">
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del IPN</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del Partido Comunista Mexicano</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Guerra cristera</div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del PRM </div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Nacionalización del petróleo</div>
+              </drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico suceso de México " text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w25">
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación del PRI</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación de la Conaliteg</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Primer canal de Televisión en México</div>
+              </drag>
+            </div>
+            <div class="w50 decadas">
+              <div class="w100 text-center">
+                <number c="3" small="small">Décadas</number>
+              </div>
+              <div class="drop left" data="1" droptimes="untilok">
+                <number c="3" smaller="smaller">40</number>
+              </div>
+              <div class="drop right" data="2" droptimes="untilok">
+                <number c="4" smaller="smaller">50</number>
+              </div>
+            </div>
+            <div class="w25">
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación IMSS</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Fundación ISSSTE</div>
+              </drag>
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Se otorga el voto a la mujer</div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Acuerdo de braceros entre México y Estados Unidos</div>
+              </drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico suceso de México " text="Coloca los sucesos de la historia de México en la década que sucedieron." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w25">
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Movimiento estudiantil</div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Plan Nacional de Planificación Familiar </div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Campeonato Mundial de Futbol </div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Descubrimiento del yacimiento de petróleo Cantarell</div>
+              </drag>
+            </div>
+            <div class="w50 decadas">
+              <div class="w100 text-center">
+                <number c="3" small="small">Décadas</number>
+              </div>
+              <div class="drop left" data="1" droptimes="untilok">
+                <number c="5" smaller="smaller">60</number>
+              </div>
+              <div class="drop right" data="2" droptimes="untilok">
+                <number c="6" smaller="smaller">70</number>
+              </div>
+              <div class="drop left" data="3" droptimes="untilok">
+                <number c="7" smaller="smaller">80</number>
+              </div>
+            </div>
+            <div class="w25">
+              <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Juegos Olímpicos</div>
+              </drag>
+              <drag :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Nacionalización de la banca y crisis económica</div>
+              </drag>
+              <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="t">Reforma electoral por Jesús Reyes Heroles</div>
+              </drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico suceso de México " text="¡Ahora veamos todos los sucesos completos! Haz clic en cada una de las décadas." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w80 decadas end">
+              <div class="w100 text-center">
+                <number c="3" small="small">Décadas</number>
+              </div>
+              <div class="drop left" @click="temps.a=1">
+                <number c="1" smaller="smaller">10 y 20</number>
+                <div class="lista" v-if="temps.a==1">
+                  <div>Fundación del Partido Comunista Mexicano. </div>
+                  <div>Guerra cristera. </div>
+                  <div>Fundación del PNR. </div>
+                  <div>Fundación de la SEP.  </div>
+                  <div>Asesinato de Álvaro Obregón.</div>
+                </div>
+              </div>
+              <div class="drop right" @click="temps.a=2">
+                <number c="2" smaller="smaller">30</number>
+                <div class="lista" v-if="temps.a==2">
+                  <div>Fundación del IPN.</div>
+                  <div>Fundación del PRM. </div>
+                  <div>Fundación del INAH. </div>
+                  <div>Fundación del PAN.  </div>
+                  <div>Nacionalización del petróleo.</div>
+                </div>
+              </div>
+              <div class="drop left" @click="temps.a=3">
+                <number c="3" smaller="smaller">40</number>
+                <div class="lista" v-if="temps.a==3">
+                  <div>Fundación IMSS.</div>
+                  <div>Fundación del PRI.</div>
+                  <div>Acuerdo de braceros entre México y Estados Unidos.</div>
+                </div>
+              </div>
+              <div class="drop right" @click="temps.a=4">
+                <number c="4" smaller="smaller">50</number>
+                <div class="lista" v-if="temps.a==4">
+                  <div>Fundación de la Conaliteg.</div>
+                  <div>Primer canal de Televisión en México.</div>
+                  <div>Fundación ISSSTE.</div>
+                  <div>Se otorga el voto a la mujer. </div>
+                </div>
+              </div>
+              <div class="drop left" @click="temps.a=5">
+                <number c="5" smaller="smaller">60</number>
+                <div class="lista" v-if="temps.a==5">
+                  <div>Movimiento estudiantil. </div>
+                  <div>Juegos Olímpicos. </div>
+                </div>
+              </div>
+              <div class="drop right" @click="temps.a=6">
+                <number c="6" smaller="smaller">70</number>
+                <div class="lista" v-if="temps.a==6">
+                  <div>Plan Nacional de Planificación Familiar.  </div>
+                  <div>Campeonato Mundial de Futbol.  </div>
+                  <div>Descubrimiento del yacimiento de petróleo Cantarell.      </div>
+                  <div>Reforma electoral por Jesús Reyes Heroles.          </div>
+                </div>
+              </div>
+              <div class="drop left" @click="temps.a=7">
+                <number c="7" smaller="smaller">80</number>
+                <div class="lista" v-if="temps.a==7">
+                  <div>Nacionalización de la banca y crisis económica.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-centerbutton button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==5" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', 0)
+      
+      app.currentScene = 0
+      app.scenesCount = 3
+    </script>
+  </body>
+</html>
