@@ -189,22 +189,23 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
-                    audiotext(v-if="temps.co>=4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda.")
+                    audiotext(v-if="temps.count>=4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda.")
                 activity
                     .row.w100
                         .w50.robot
                             img(src="i/robot.png").w100
                             .drops
-                                .drop.drop1(v-for="(i, index) in 4" :key="index" :data="index" droptimes="untilok")
-                                .drop.drop2(v-for="(i, index) in 7" :key="index+5" :data="index+4" droptimes="untilok" v-if="temps.co>=4")
+                                .drop.drop1(:data="index" droptimes="untilok" v-for="(i, index) in 4")
+                                .drop.drop2(:data="index+4" droptimes="untilok" v-for="(i, index) in 7" v-if="temps.count>=4")
                         .w50.drags
-                            template(v-for="(i, index) in temps.imgs")
-                                drag(ref="drgs" :data="i.d" dropzone=".drop" stay-if-ok append-to-dropzone @isok="temps.co++" no-error-sound): img(:src="i.im").w100
+                            template(v-for="(i, index) in temps.a")
+                                drag(dropzone=".drop" :data="i.d" stay-if-ok append-to-dropzone @isok="temps.count++" no-error-sound): img(:src="i.im").w100
             
+
             scene(v-if="currentScene==2" :key="2" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     audiotext(text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda." audio="s/instruccion2.mp3" :autoplay="false")
-                activity
+                //activity
                     .row.w100
                         .w50.robot
                             .minglob: dialogaudio(audio="s/robot.mp3" :autoplay="true" always-visible key="final")
@@ -218,9 +219,8 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'au1', false)
-                app.$set(app.temps, 'co', false)
-                app.$set(app.temps, 'imgs', [
+                app.$set(app.temps, 'count', 0)
+                app.$set(app.temps, 'a', [
                     {im: 'i/i3.png', d:0},
                     {im: 'i/t3.png', d:2},
                     {im: 'i/r1.png', d:4},
