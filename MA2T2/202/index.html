@@ -18,7 +18,9 @@
           margin: 4px;
           border-radius: 10px;
           display: flex;
-          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 40%;
       }
       .obj.o2{
           background: var(--sec);
@@ -65,35 +67,49 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
         <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
-            <div class="w30 row wrap">
+            <div class="w50 row wrap">
               <div class="obj" v-for="(i, index) in temps.a"><img :src="'i/i'+index+'.svg'"/>
                 <drag :data="i" dropzone=".drop" extval="extval" drag-line="drag-line" ref="figs" :particle-color="every3(index)">
                   <div class="conector" :class="class3(index)"></div>
                 </drag>
               </div>
             </div>
-            <div class="w40 row wrap">
+            <div class="w50 row wrap">
               <div class="drop fig" v-for="(i, index) in 10" :data="i" droptimes="multiple" droplimit="10"><img :src="'i/f'+i+'.svg'"/></div>
             </div>
-            <div class="w30 row wrap">
-              <div class="obj o2" v-for="(i, index) in temps.b"><img :src="'i/i'+(index+7)+'.svg'"/>
-                <drag :data="i" dropzone=".drop" extval="extval" drag-line="drag-line" ref="figs" :particle-color="every3(index)">
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['figs'], 8)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50 row wrap">
+              <div class="obj o2" v-for="(i, index) in temps.b"><img :src="'i/i'+(index+8)+'.svg'"/>
+                <drag :data="i" dropzone=".drop" extval="extval" drag-line="drag-line" ref="figs2" :particle-color="every3(index)">
                   <div class="conector" :class="class3(index)"></div>
                 </drag>
               </div>
             </div>
+            <div class="w50 row wrap">
+              <div class="drop fig" v-for="(i, index) in 10" :data="i" droptimes="multiple" droplimit="10"><img :src="'i/f'+i+'.svg'"/></div>
+            </div>
           </div>
           <div class="text-center">
-            <button class="button big animate__animated animate__flip" @click="dragValidation(['figs'], 14)">Verificar</button>
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['figs2'], 6)">Verificar</button>
           </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -135,9 +151,9 @@
           3, 
           3, 
           4, 
+          5, 
           ])
       app.$set(app.temps, 'b', [
-          5, 
           4, 
           5, 
           
