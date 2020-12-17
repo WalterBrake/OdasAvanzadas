@@ -72,7 +72,7 @@ html(lang="es")
                 flex-direction: column;
                 justify-content: space-around;
             }
-            .ex2 .map {
+            .ex2.map {
                 position: relative;
             }
             .ex2 .drops2 .drop {
@@ -125,8 +125,20 @@ html(lang="es")
                 flex-direction: column;
                 justify-content: space-around;
             }
-
-
+            @media (max-width: 680px){
+                .drags2 .drag .number.smaller{
+                    font-size: 0.6rem;
+                }
+                .ex2 .drops2 .drop .number.smaller{
+                    font-size: 0.6rem;
+                }
+                .cats .drop .number.smaller { 
+                    font-size: 0.7rem;
+                }
+                .cats .drop{
+                    font-size: 0.6rem;
+                }
+            }
 
 
 
@@ -206,7 +218,7 @@ html(lang="es")
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca cada elemento en la categoría que  corresponda." textaudio="s/instruccion3.mp3" :autoplay="true")
                 activity
-                    .row.w100.text-center.cats
+                    .row.w100.text-center.cats.wrap
                         .drop(data="len" droptimes="multiple").w20
                             number(c=1 smaller) Lengua
                         .drop(data="rel" droptimes="multiple").w20

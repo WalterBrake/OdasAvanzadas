@@ -75,7 +75,7 @@
           flex-direction: column;
           justify-content: space-around;
       }
-      .ex2 .map {
+      .ex2.map {
           position: relative;
       }
       .ex2 .drops2 .drop {
@@ -128,8 +128,20 @@
           flex-direction: column;
           justify-content: space-around;
       }
-      
-      
+      @media (max-width: 680px){
+          .drags2 .drag .number.smaller{
+              font-size: 0.6rem;
+          }
+          .ex2 .drops2 .drop .number.smaller{
+              font-size: 0.6rem;
+          }
+          .cats .drop .number.smaller { 
+              font-size: 0.7rem;
+          }
+          .cats .drop{
+              font-size: 0.6rem;
+          }
+      }
       
       
       
@@ -250,7 +262,7 @@
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25">
         <info type="dragdrop" title="Reconozco la riqueza cultural " text="Coloca cada elemento en la categoría que  corresponda." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 text-center cats">
+          <div class="row w100 text-center cats wrap">
             <div class="drop w20" data="len" droptimes="multiple">
               <number c="1" smaller="smaller">Lengua</number>
             </div>
