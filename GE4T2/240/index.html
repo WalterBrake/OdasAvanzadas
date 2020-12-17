@@ -83,7 +83,7 @@
       .ex2 .drops2 .drop {
           position: absolute;
           width: 24%;
-          height: 7%;
+          height: 9%;
           background: #fff;
           left: 0;
           top: 0;
@@ -213,7 +213,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==2" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
         <info type="dragdrop" title="Reconozco la riqueza cultural " text="Coloca los elementos que conforman la cultura dentro de la imagen del mapa de México." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
@@ -283,9 +283,9 @@
               <number c="5" smaller="smaller">Comida</number>
             </div>
           </div>
-          <div class="row ww100 wrap mt-1">
+          <div class="row w100 wrap mt-1">
             <template v-for="(i, index) in temps.a">
-              <drag ref="dr" :data="i.v" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <drag :data="i.v" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
                 <div>{{i.t}} </div>
               </drag>
             </template>

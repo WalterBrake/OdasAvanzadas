@@ -80,7 +80,7 @@ html(lang="es")
             .ex2 .drops2 .drop {
                 position: absolute;
                 width: 24%;
-                height: 7%;
+                height: 9%;
                 background: #fff;
                 left: 0;
                 top: 0;
@@ -192,7 +192,7 @@ html(lang="es")
 
                             
             // SCENES
-            scene(v-if="currentScene==2" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca los elementos que conforman la cultura dentro de la imagen del mapa de México." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
                     .row.w100: .map.w80.ex2
@@ -233,9 +233,9 @@ html(lang="es")
                             number(c=4 smaller) Tradición
                         .drop(data="com" droptimes="multiple").w20
                             number(c=5 smaller) Comida
-                    .row.ww100.wrap.mt-1
+                    .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.a")
-                            drag(ref="dr" :data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}} 
+                            drag(:data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}} 
   
 
             
