@@ -12,13 +12,14 @@
     <style>
       .drag {
           width: auto;
-         width: fit-content; width: -moz-fit-content;
+          width: fit-content; width: -moz-fit-content;
           height: auto;
           text-align: left;
           justify-content: flex-start;
           max-width: 80%;
           margin: 4px auto;
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          margin: 5px;
       }
       .drag > div {
           text-align: left;
@@ -74,6 +75,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+      
       }
       .ex2.map {
           position: relative;
@@ -127,7 +129,9 @@
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          
       }
+      .cats .drag{margin: 6px; }
       @media (max-width: 680px){
           .drags2 .drag .number.smaller{
               font-size: 0.6rem;
@@ -340,7 +344,7 @@
           {t:'Náhuatl', v:'len'},
       ])
       
-      app.currentScene = 0
+      app.currentScene = 3
       app.scenesCount = 3
     </script>
   </body>
