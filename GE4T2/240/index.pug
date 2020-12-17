@@ -1,0 +1,251 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Reconozco la riqueza cultural '
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drag {
+                width: auto;
+                width: fit-content;
+                height: auto;
+                text-align: left;
+                justify-content: flex-start;
+                max-width: 80%;
+                margin: 4px auto;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drag > div {
+                text-align: left;
+                background: #fff;
+                padding: 4px;
+                border-radius: 6px;
+                font-size: 0.9rem;
+            }
+            @media (max-width: 680px) {
+                .drag > div {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase {
+                background: #fff;
+                border-radius: 6px;
+                padding: 6px;
+                margin-bottom: 5px;
+            }
+            @media (max-width: 680px) {
+                .frase {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase .drop {
+                min-height: 26px;
+                border-radius: 4px;
+                background: var(--clear);
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
+                padding: 4px;
+                font-size: 0.7rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @media (max-width: 680px) {
+                .frase .drop {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase .drop.hover {
+                background: var(--accent);
+            }
+            [wascloned] {
+                display: none;
+            }
+            .ex1 {
+                height: 100%;
+                align-items: normal;
+            }
+            .frases,
+            .drags {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .ex2 .map {
+                position: relative;
+            }
+            .ex2 .drops2 .drop {
+                position: absolute;
+                width: 24%;
+                height: 7%;
+                background: #fff;
+                left: 0;
+                top: 0;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .ex2 .drops2 .drop:nth-child(1) {
+                left: 4%;
+                top: 10%;
+            }
+            .ex2 .drops2 .drop:nth-child(2) {
+                left: 14%;
+                top: 30%;
+            }
+            .ex2 .drops2 .drop:nth-child(3) {
+                left: 24%;
+                top: 50%;
+            }
+            .ex2 .drops2 .drop:nth-child(4) {
+                left: 44%;
+                top: 20%;
+            }
+            .ex2 .drops2 .drop:nth-child(5) {
+                left: 50%;
+                top: 40%;
+            }
+            .ex2 .drops2 .drop:nth-child(6) {
+                left: 70%;
+                top: 60%;
+            }
+            .ex2 .drops2 .drop.hover {
+                background: #F2BB55;
+            }
+            .cats .drop {
+                height: 120px;
+                background: #fff;
+                border-radius: 10px;
+                border: 2px solid #FCF4CE;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca la respuesta correcta para completar la oración." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.ex1
+                        .w50.frases
+                            div.frase
+                                .t Nuestras tradiciones y costumbres son herencia de nuestros antepasados.
+                                .drop(data="a" droptimes="untilok")
+            
+                            div.frase
+                                .t La lengua nos sirve para
+                                .drop(data="b" droptimes="untilok")
+            
+                            div.frase
+                                .t Son ejemplos de elementos culturales:
+                                .drop(data="c" droptimes="untilok")
+            
+                            div.frase
+                                .t Con las tradiciones se puede expresar  
+                                .drop(data="d" droptimes="untilok")
+                            
+                            div.frase
+                                .t En México hay
+                                .drop(data="e" droptimes="untilok")
+                            
+                            div.frase
+                                .t En su mayoría, los pueblos indígenas
+                                .drop(data="f" droptimes="untilok")
+                        .w50.drags
+                            drag(ref="b" data="b" dropzone=".drop" stay-if-ok append-clone extval): div expresar cómo vemos al mundo.
+                            drag(ref="d" data="d" dropzone=".drop" stay-if-ok append-clone extval): div la visión que se tiene del mundo.
+                            drag(ref="a" data="a" dropzone=".drop" stay-if-ok append-clone extval): div Combinan las influencias culturales que ocurrieron y ocurren a lo largo de la historia del país.
+                            drag(ref="e" data="e" dropzone=".drop" stay-if-ok append-clone extval): div más de 60 pueblos indígenas.
+                            drag(ref="c" data="c" dropzone=".drop" stay-if-ok append-clone extval): div la historia, la lengua, la religión y las tradiciones.
+                            drag(ref="f" data="f" dropzone=".drop" stay-if-ok append-clone extval): div viven en zonas rurales, practican la agricultura y la ganadería.
+
+                            .text-center: button(@click="dragValidation(['a','b','c','d','e','f'], 6)").button.big.animate__animated.animate__flip Verificar
+
+                            
+            // SCENES
+            scene(v-if="currentScene==2" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los elementos que conforman la cultura dentro de la imagen del mapa de México." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100: .map.w80.ex2
+                        img(src="i/mapa.png").w100
+                        .drops2
+                            .drop(data="ok" droptimes="untilok")
+                            .drop(data="ok" droptimes="untilok")
+                            .drop(data="ok" droptimes="untilok")
+                            .drop(data="ok" droptimes="untilok")
+                            .drop(data="ok" droptimes="untilok")
+                            .drop(data="ok" droptimes="untilok")
+
+                    .row.w100.drags2.wrap
+                        drag(ref="g" data="no" isfalse dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Clima
+                        drag(ref="h" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Música
+                        drag(ref="i" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Religión
+                        drag(ref="j" data="no" isfalse dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Comercio
+                        drag(ref="k" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Tradiciones
+                        drag(ref="l" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Comida
+                        drag(ref="m" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Lengua
+                        drag(ref="n" data="ok" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Vestimenta
+                        drag(ref="o" data="no" isfalse dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) Ejercicio
+                        .text-center: button(@click="dragValidation(['g','h','i','j','k','l', 'm', 'n', 'o'], 6)").button.big.animate__animated.animate__flip Verificar
+
+
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="14" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada elemento en la categoría que  corresponda." textaudio="s/instruccion3.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.cats
+                        .drop(data="len" droptimes="multiple").w20
+                            number(c=1 smaller) Lengua
+                        .drop(data="rel" droptimes="multiple").w20
+                            number(c=2 smaller) Religión
+                        .drop(data="ves" droptimes="multiple").w20
+                            number(c=3 smaller) Vestimenta
+                        .drop(data="tra" droptimes="multiple").w20
+                            number(c=4 smaller) Tradición
+                        .drop(data="com" droptimes="multiple").w20
+                            number(c=5 smaller) Comida
+                    .row.ww100.wrap.mt-1
+                        template(v-for="(i, index) in temps.a")
+                            drag(ref="dr" :data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}} 
+  
+
+            
+            // END
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [
+                    {t:'Mole', v:'com'},
+                    {t:'Politeísta', v:'rel'},
+                    {t:'Día de Muertos', v:'tra'},
+                    {t:'Tortillas', v:'com'},
+                    {t:'Católica', v:'rel'},
+                    {t:'Mixteco', v:'len'},
+                    {t:'Fiestas religiosas', v:'tra'},
+                    {t:'Tehuana', v:'ves'},
+                    {t:'Maya', v:'len'},
+                    {t:'Pozole', v:'com'},
+                    {t:'Dhayemlaab', v:'ves'},
+                    {t:'Tamales ', v:'com'},
+                    {t:'Huipil', v:'ves'},
+                    {t:'Náhuatl', v:'len'},
+                ])
+                
+                app.currentScene = 0
+                app.scenesCount = 3

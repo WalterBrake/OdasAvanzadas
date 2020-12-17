@@ -11483,6 +11483,54 @@
 		"oAP": "\/GE4T2\/235\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/GE4T2\/240\/i\/mapa.png": {
+		"ft": 32768,
+		"iS": 401036,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/i\/mapa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE4T2\/240\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/index.html",
+		"oF": 0
+		},
+	"\/GE4T2\/240\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/GE4T2\/240\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/GE4T2\/240\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/GE4T2\/240\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE4T2\/240\/s\/instruccion3.mp3",
+		"oF": 0
+		},
 	"\/GE5T1\/219\/aimg\/africa.svg": {
 		"ft": 2097152,
 		"miP": 0,
