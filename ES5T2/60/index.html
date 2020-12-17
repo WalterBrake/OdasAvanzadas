@@ -77,7 +77,7 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
         <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1=true">
           <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
         </info>
@@ -86,37 +86,156 @@
             <div class="nota">
               <div class="h4">¿Por qué los monos no pueden hablar?</div>
               <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
-              <template v-if="temps.parr&gt;=1">
-                <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
-              </template>
-              <template v-if="temps.parr&gt;=2">
-                <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
-              </template>
-              <template v-if="temps.parr&gt;=3">
-                <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
-              </template>
-              <template v-if="temps.parr&gt;=4">
-                <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
-              </template>
-              <template v-if="temps.parr&gt;=5">
-                <div class="text-center"><img class="w50" src="i/a1.png"/></div>
-                <p><small>El bonobo es una de las dos especies que componen el géne- ro de los chimpancés</small></p>
-              </template>
-              <template v-if="temps.parr&gt;=6">
-                <p>La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.</p>
-              </template>
-              <div class="text-right" v-if="temps.parr&lt;6">
-                <button class="button animate__animated animate__flip" @click="temps.parr++">Siguiente</button>
-              </div>
+              <!--
+              template(v-if="temps.parr>=1")
+                  p La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.
+              template(v-if="temps.parr>=2")
+                  p La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.
+              template(v-if="temps.parr>=3")
+                  p Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.
+              template(v-if="temps.parr>=4")
+                  p Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.
+              template(v-if="temps.parr>=5")
+                  .text-center: img(src="i/a1.png").w50
+                  p: small El bonobo es una de las dos especies que componen el género de los chimpancés
+              template(v-if="temps.parr>=6")
+                  p La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.
+              -->
+              <!--.text-right(v-if="temps.parr<6"): button(@click="temps.parr++").button.animate__animated.animate__flip Siguiente-->
             </div>
           </div>
-          <div class="text-center" v-if="temps.parr==6">
-            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
           </div>
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" hidescorebox="hidescorebox" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" hidescorebox="hidescorebox" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+              <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" hidescorebox="hidescorebox" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+              <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+              <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==6" hidescorebox="hidescorebox" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+              <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+              <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
+              <div class="text-center"><img class="w50" src="i/a1.png"/></div>
+              <p><small>El bonobo es una de las dos especies que componen el género de los chimpancés</small></p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext :autoplay="false" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+              <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+              <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
+              <div class="text-center"><img class="w50" src="i/a1.png"/></div>
+              <p><small>El bonobo es una de las dos especies que componen el género de los chimpancés</small></p>
+              <p>La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
         <info type="seleccionar" title="Repaso artículos de investigación" text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="true">
           <button class="button mt-auto" @click="$refs.nota.open()">Ver nota</button>
         </info>
@@ -135,7 +254,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+      <scene v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
         <info type="seleccionar" title="Repaso artículos de investigación" text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="false">
           <button class="button mt-auto" @click="$refs.nota.open()">Ver nota</button>
         </info>
@@ -150,7 +269,7 @@
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==10" :key="10" end-scene="end-scene" :final-data="finalData"></scene>
       <popup :conf="['10%', '10%', '80%', '80%']" ref="nota">
         <div class="nota">
           <div class="h4">¿Por qué los monos no pueden hablar?</div>
