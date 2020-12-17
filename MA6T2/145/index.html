@@ -45,14 +45,20 @@
           border-top: 2px solid #000;
           min-width: 20px;
       }
-      .ficha .button {
+      .fic{
+          text-align: center;
+      }
+      .fic .button {
+          /*
           position: absolute;
           left: 50%;
           margin-left: -17%;
           bottom: -20%;
+          */
           font-size: 0.6rem;
           background: #000;
           color: #fff;
+          z-index: 10;
       }
       .drag{
           width: auto; height: auto;
@@ -73,6 +79,7 @@
       [wascloned] {
           display: none;
       }
+      [wascloned]+button{display: none;}
       
       
       
@@ -88,46 +95,61 @@
         <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 wrap">
-                  <drag ref="f2" :data="temps['f2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['f2']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>6</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.25</div></div>
-                      <button class="button" @click="temps['f2']=!temps['f2']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="f4" :data="temps['f4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['f4']?'on':'off'">
-                      <div class="ficha1"><div>2<hr>3</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.5</div></div>
-                      <button class="button" @click="temps['f4']=!temps['f4']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="f3" :data="temps['f3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['f3']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>4</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.66</div></div>
-                      <button class="button" @click="temps['f3']=!temps['f3']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="f0" :data="temps['f0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['f0']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>2</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.75</div></div>
-                      <button class="button" @click="temps['f0']=!temps['f0']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="f1" :data="temps['f1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['f1']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>4</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.16</div></div>
-                      <button class="button" @click="temps['f1']=!temps['f1']">Voltear</button>
-                    </div>
-                  </drag>
+                  <div class="fic">
+                    <drag ref="f2" :data="temps['f2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['f2']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>6</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.25</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['f2']=!temps['f2']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="f4" :data="temps['f4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['f4']?'on':'off'">
+                        <div class="ficha1"><div>2<hr>3</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.5</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['f4']=!temps['f4']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="f3" :data="temps['f3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['f3']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>4</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.66</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['f3']=!temps['f3']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="f0" :data="temps['f0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['f0']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>2</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.75</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['f0']=!temps['f0']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="f1" :data="temps['f1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['f1']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>4</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.16</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['f1']=!temps['f1']">Voltear</button>
+                  </div>
           </div>
           <div class="row w100 wrap mt-1">
             <div class="drop" data="0" droptimes="untilok"></div>
@@ -146,46 +168,61 @@
         <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 wrap">
-                  <drag ref="b4" :data="temps['b4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['b4']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>9</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.14</div></div>
-                      <button class="button" @click="temps['b4']=!temps['b4']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="b2" :data="temps['b2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['b2']?'on':'off'">
-                      <div class="ficha1"><div>4<hr>6</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.4</div></div>
-                      <button class="button" @click="temps['b2']=!temps['b2']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="b1" :data="temps['b1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['b1']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>6</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.66</div></div>
-                      <button class="button" @click="temps['b1']=!temps['b1']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="b3" :data="temps['b3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['b3']?'on':'off'">
-                      <div class="ficha1"><div>2<hr>5</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.33</div></div>
-                      <button class="button" @click="temps['b3']=!temps['b3']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="b0" :data="temps['b0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['b0']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>7</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.50</div></div>
-                      <button class="button" @click="temps['b0']=!temps['b0']">Voltear</button>
-                    </div>
-                  </drag>
+                  <div class="fic">
+                    <drag ref="b4" :data="temps['b4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['b4']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>9</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.14</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['b4']=!temps['b4']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="b2" :data="temps['b2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['b2']?'on':'off'">
+                        <div class="ficha1"><div>4<hr>6</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.4</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['b2']=!temps['b2']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="b1" :data="temps['b1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['b1']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>6</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.66</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['b1']=!temps['b1']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="b3" :data="temps['b3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['b3']?'on':'off'">
+                        <div class="ficha1"><div>2<hr>5</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.33</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['b3']=!temps['b3']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="b0" :data="temps['b0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['b0']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>7</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.50</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['b0']=!temps['b0']">Voltear</button>
+                  </div>
           </div>
           <div class="row w100 wrap mt-1">
             <div class="drop" data="0" droptimes="untilok"></div>
@@ -204,46 +241,61 @@
         <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 wrap">
-                  <drag ref="c3" :data="temps['c3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['c3']?'on':'off'">
-                      <div class="ficha1"><div>2<hr>8</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.42</div></div>
-                      <button class="button" @click="temps['c3']=!temps['c3']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="c4" :data="temps['c4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['c4']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>7</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.125</div></div>
-                      <button class="button" @click="temps['c4']=!temps['c4']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="c1" :data="temps['c1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['c1']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>5</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.33</div></div>
-                      <button class="button" @click="temps['c1']=!temps['c1']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="c0" :data="temps['c0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['c0']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>8</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.6</div></div>
-                      <button class="button" @click="temps['c0']=!temps['c0']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="c2" :data="temps['c2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['c2']?'on':'off'">
-                      <div class="ficha1"><div>2<hr>6</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.25</div></div>
-                      <button class="button" @click="temps['c2']=!temps['c2']">Voltear</button>
-                    </div>
-                  </drag>
+                  <div class="fic">
+                    <drag ref="c3" :data="temps['c3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['c3']?'on':'off'">
+                        <div class="ficha1"><div>2<hr>8</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.42</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['c3']=!temps['c3']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="c4" :data="temps['c4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['c4']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>7</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.125</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['c4']=!temps['c4']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="c1" :data="temps['c1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['c1']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>5</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.33</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['c1']=!temps['c1']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="c0" :data="temps['c0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['c0']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>8</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.6</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['c0']=!temps['c0']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="c2" :data="temps['c2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['c2']?'on':'off'">
+                        <div class="ficha1"><div>2<hr>6</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.25</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['c2']=!temps['c2']">Voltear</button>
+                  </div>
           </div>
           <div class="row w100 wrap mt-1">
             <div class="drop" data="0" droptimes="untilok"></div>
@@ -262,46 +314,61 @@
         <info type="dragdrop" title="Identifico el valor de decimal" text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 wrap">
-                  <drag ref="d3" :data="temps['d3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['d3']?'on':'off'">
-                      <div class="ficha1"><div>2<hr>4</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.8</div></div>
-                      <button class="button" @click="temps['d3']=!temps['d3']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="d2" :data="temps['d2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['d2']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>10</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.5</div></div>
-                      <button class="button" @click="temps['d2']=!temps['d2']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="d0" :data="temps['d0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['d0']?'on':'off'">
-                      <div class="ficha1"><div>1<hr>5</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.1</div></div>
-                      <button class="button" @click="temps['d0']=!temps['d0']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="d4" :data="temps['d4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['d4']?'on':'off'">
-                      <div class="ficha1"><div>4<hr>5</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.2</div></div>
-                      <button class="button" @click="temps['d4']=!temps['d4']">Voltear</button>
-                    </div>
-                  </drag>
-                  <drag ref="d1" :data="temps['d1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
-                    <div class="row ficha" :class="temps['d1']?'on':'off'">
-                      <div class="ficha1"><div>3<hr>10</div></div>
-                      <div class="mid"></div>
-                      <div class="ficha2"><div>0.3</div></div>
-                      <button class="button" @click="temps['d1']=!temps['d1']">Voltear</button>
-                    </div>
-                  </drag>
+                  <div class="fic">
+                    <drag ref="d3" :data="temps['d3']?3:13" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['d3']?'on':'off'">
+                        <div class="ficha1"><div>2<hr>4</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.8</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['d3']=!temps['d3']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="d2" :data="temps['d2']?2:12" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['d2']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>10</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.5</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['d2']=!temps['d2']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="d0" :data="temps['d0']?0:10" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['d0']?'on':'off'">
+                        <div class="ficha1"><div>1<hr>5</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.1</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['d0']=!temps['d0']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="d4" :data="temps['d4']?4:14" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['d4']?'on':'off'">
+                        <div class="ficha1"><div>4<hr>5</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.2</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['d4']=!temps['d4']">Voltear</button>
+                  </div>
+                  <div class="fic">
+                    <drag ref="d1" :data="temps['d1']?1:11" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                      <div class="row ficha" :class="temps['d1']?'on':'off'">
+                        <div class="ficha1"><div>3<hr>10</div></div>
+                        <div class="mid"></div>
+                        <div class="ficha2"><div>0.3</div></div>
+                        <!--button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear-->
+                      </div>
+                    </drag>
+                    <button class="button" @click="temps['d1']=!temps['d1']">Voltear</button>
+                  </div>
           </div>
           <div class="row w100 wrap mt-1">
             <div class="drop" data="0" droptimes="untilok"></div>

@@ -42,14 +42,20 @@ html(lang="es")
                 border-top: 2px solid #000;
                 min-width: 20px;
             }
-            .ficha .button {
+            .fic{
+                text-align: center;
+            }
+            .fic .button {
+                /*
                 position: absolute;
                 left: 50%;
                 margin-left: -17%;
                 bottom: -20%;
+                */
                 font-size: 0.6rem;
                 background: #000;
                 color: #fff;
+                z-index: 10;
             }
             .drag{
                 width: auto; height: auto;
@@ -70,6 +76,7 @@ html(lang="es")
             [wascloned] {
                 display: none;
             }
+            [wascloned]+button{display: none;}
 
 
 
@@ -80,12 +87,15 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             mixin ficha(ind, num1, num2, val)
-                drag(ref=ind :data="temps['"+ind+"']?"+val+":1"+val dropzone=".drop" stay-if-ok append-clone extval)
-                    .row.ficha(:class="temps['"+ind+"']?'on':'off'")
-                        .ficha1 !{num1}
-                        .mid
-                        .ficha2 !{num2}
-                        button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear
+                div.fic
+                    drag(ref=ind :data="temps['"+ind+"']?"+val+":1"+val dropzone=".drop" stay-if-ok append-clone extval)
+                        .row.ficha(:class="temps['"+ind+"']?'on':'off'")
+                            .ficha1 !{num1}
+                            .mid
+                            .ficha2 !{num2}
+                            //button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear
+                    button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear
+
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true")
