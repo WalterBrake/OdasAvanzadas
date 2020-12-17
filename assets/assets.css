@@ -1291,6 +1291,10 @@ embed {
   left: 0;
   top: 50%;
 }
+.comic .dialog.cr {
+  right: 0;
+  top: 50%;
+}
 .comic .dialog.tl {
   left: 0;
   top: 0;

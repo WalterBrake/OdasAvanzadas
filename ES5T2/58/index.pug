@@ -3,10 +3,112 @@ include ../../assets/pug/_scripts
 
 - title = 'Aprendemos a debatir'
 
+mixin textodeb
+    .h4 El uso de los teléfonos móviles durante la cuarentena
+    p A causa de la reciente y actual pandemia de COVID-19, el uso del teléfono móvil o smartphone ha aumentado durante la cuarentena ya que las personas tienen más tiempo libre y además porque desean seguir en contacto con sus seres queridos mientras se quedan en casa.
+    p En estos momentos en los que la mayoría de las personas en cuarentena mantienen la distancia social, y a consecuencia del cierre de escuelas en general y de la mayoría de los trabajos; el tiempo de uso de los teléfonos para redes sociales, llamadas telefónicas, aplicaciones para comunicación con video y chat, plataformas de streaming, periódicos digitales e incluso aplicaciones de juegos, ha aumentado de manera considerable, haciendo que las personas puedan realizar actividades sin peligro a contagiarse de este virus. Por otro lado, se ha visto un aumento también en el tiempo que las personas pasan ahora frente a este tipo de dispositivos.
+    p También el uso de aplicaciones que ofrecen métodos de pago electrónico ya sea para hacer compras en línea o para pedir alimentos, ha sido de gran ayuda en estos tiempos. Sin embargo, algunos de los comercios que ofrecen estos servicios también se han visto afectados y han disminuido sus ventas por temor al contagio por la manipulación de los productos.
+mixin pregunta(p, ops,ans, clic)
+    .h4 !{p}
+    .row.wrap.around
+        clickable(v-for="(i, index) in "+ops :key="refCount()" @wasclicked=clic :isok="index == "+ans simple-ok initclass="pa-1 text-center w100"): number(randomc smaller) {{i}}
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .textodeb {
+                background: linear-gradient(#f5f5f5, #fff);
+                padding: 10px;
+                border-radius: 10px;
+                max-width: 90%;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+                font-size: 0.9rem;
+            }
+            .textodeb .h4 {
+                text-align: center;
+                font-weight: bold;
+            }
+            .textodeb p {
+                margin: 10px 0;
+            }
+            @media (max-width: 680px) {
+                .textodeb .h4 {
+                    font-size: 0.8rem;
+                }
+                .textodeb p {
+                    font-size: 0.6rem;
+                }
+            }
+
+            .row.comic1 {
+                height: 100%;
+            }
+            .row.comic1 .comic {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .row.comic1 .comic img {
+                border-radius: 10px;
+            }
+            .dialog.long {
+                max-width: 100%;
+            }
+            .activity {
+                position: relative;
+            }
+            .pregunta {
+                background: #fff;
+                text-align: center;
+                border: 2px solid #000;
+                border-radius: 10px 10px 0 0;
+                border-bottom: 0;
+                padding: 10px;
+                position: absolute;
+                z-index: 9;
+                box-shadow: 6px -6px 0 rgba(0, 0, 0, 0.1);
+                width: 90%;
+                margin-left: 5%;
+                box-sizing: border-box;
+                bottom: 0;
+                left: 0;
+            }
+            .pregunta .number {
+                font-size: 1rem;
+            }
+            .pregunta .pa-1 {
+                padding: 4px 6px;
+            }
+            .dialog .audiotext .audiotextTxt{
+                font-size: 0.7rem;
+            }
+            .sp1{
+                margin-left: 18% !important;
+            }
+
+            .sp2{
+                top: 30% !important;
+            }
+
+            .comic .dialog.tip-b.sp2:before{
+                left: 50%;
+            }
+            .sp3{
+                top: 34% !important;
+                left: 20% !important;
+            }
+            .sp4{top:30% !important;}
+
+            @media (max-width:680px){
+                .dialog .audiotext .audiotextTxt{
+                    font-size: 0.4rem;
+                }
+                .h4{
+                    font-size: 1rem;
+                }
+            }
+
 
 
     body
@@ -15,20 +117,120 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text=" En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .textodeb: +textodeb
+                    .text-center.mt-1: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(v-if="temps.a1" :autoplay="true" audio="s/instruccion2.mp3" text="Selecciona la respuesta correcta.")
+                activity
+                    .row.w100.comic1
+                        .comic.w100.wm80
+                            img(src="i/p1.png").w80.ws100
+                            .dialog.tl.tip-b.long: audiotext(audio="s/a1.mp3"  :autoplay="true" @completed="temps.a1=true" text="Buenos días, vamos a iniciar nuestro debate.  El tema es \"El uso de los teléfonos móviles durante la cuarentena\". Dos equipos participarán, los integrantes dirán sus argumentos con respeto y por turnos. En este debate nos ayudarán nuestros compañeros Anaí y Héctor.")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a1")
+                        +pregunta('Además de los debatientes, ¿qué otros participantes hay en un debate?', "['Moderador, señalador y apuntador.','Moderador, secretario y adjudicador.','Juez, adjudicador y secretario.']", 0)
             
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(v-if="temps.a2" :autoplay="true" audio="s/instruccion2.mp3" text="Selecciona la respuesta correcta.")
+                activity
+                    .row.w100.comic1
+                        .comic.w100.wm80
+                            img(src="i/p1.png").w80.ws100
+                            .dialog.tl.tip-b: audiotext(audio="s/a2.mp3"  :autoplay="true" @completed="temps.a2=true" text="Anaí y Héctor tendrán diferentes funciones.")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
+                        +pregunta('¿Qué rol tendrá Héctor si será quien anote todo lo que suceda durante el debate?', "['Será el moderador.','Será el administrador.','Será el secretario.']", 2)
+                        +pregunta('Si a Anaí le tocará determinar quien gana el debate y decir la razón de esto, ¿qué rol tiene?', "['Será la secretaria.','Será el adjudicador.','Será la moderadora.']", 1)
+            
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(v-if="temps.a3==4 || temps.a3==7" :autoplay="true" audio="s/instruccion2.mp3" text="Selecciona la respuesta correcta.")
+                activity
+                    .row.w100.comic1
+                        .comic.w100.wm80
+                            img(v-if="temps.a3==0 || temps.a3==2 || temps.a3==5" src="i/p1.png").w80.ws100
+                            img(v-else src="i/p0.png").w80.ws100
+                            //Nina1
+                            .dialog.tc.tip-b(v-if="temps.a3==0"): audiotext(audio="s/a3.mp3"  :autoplay="true" @completed="temps.a3+=1" text="Muy bien, el Equipo 1 tiene la palabra." :key="refCount()")
+                            .dialog.tc.tip-b(v-if="temps.a3==2"): audiotext(audio="s/a5.mp3"  :autoplay="true" @completed="temps.a3++" text="Gracias Engelberto. Equipo 2, adelante." :key="refCount()")
+                            .dialog.tc.tip-b(v-if="temps.a3==5"): audiotext(audio="s/a7.mp3"  :autoplay="true" @completed="temps.a3++" text="Gracias Fernanda. Ahora continuamos con el Equipo 1. " :key="refCount()")
+
+                            //EA1 - Nino1
+                            .dialog.cc.tip-b.sp1(v-if="temps.a3==1"): audiotext(audio="s/a4.mp3"  :autoplay="true" @completed="temps.a3++" text="Durante la cuarentena no podíamos visitar a nuestra familia y amigos, el uso de los teléfonos móviles nos ayudó a estar conectados con ellos, no solo por teléfono sino también usando Internet." :key="refCount()")
+                            //EA1 - Nina
+                            .dialog.cl.tip-b.sp3(v-if="temps.a3==6"): audiotext(audio="s/a8.mp3"  :autoplay="true" @completed="temps.a3++" text="Usando el teléfono móvil, pudimos hacer compras y evitamos salir de casa e ir a lugares concurridos, además de que fue una herramienta para terminar el ciclo escolar e iniciar el siguiente." :key="refCount()")
+                            .dialog.cl.tip-b.sp3(v-if="temps.a3==7"): audiotext(audio="s/a8.mp3"  :autoplay="false" @completed="" text="Usando el teléfono móvil, pudimos hacer compras y evitamos salir de casa e ir a lugares concurridos, además de que fue una herramienta para terminar el ciclo escolar e iniciar el siguiente." :key="refCount()")
+
+                            //EB2 - Nina3
+                            .dialog.cr.tip-b.sp2(v-if="temps.a3==3"): audiotext(audio="s/a6.mp3"  :autoplay="true" @completed="temps.a3++" text="Además de hablar con familiares y amigos, el teléfono se usaba para ver videos o películas, el tiempo de uso era prolongado y los efectos en la salud son varios, como cansancio en la vista, dolor en el cuello o dolor de cabeza." :key="refCount()")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a3==4")
+                        +pregunta('¿Qué tipo de argumento es el anterior con respecto al uso del teléfono móvil durante la cuarentena?', "['A favor.','En contra.']", 1, "temps.a3++")
+                    
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a3==7")
+                        +pregunta('¿Qué tipo de argumento es el anterior con respecto al uso del teléfono móvil durante la cuarentena?', "['A favor.','En contra.']", 0, "temps.a3++")
+
+
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="En el salón de Raquel, organizaron un debate. Identifica los elementos que forman parte de esta discusión formal. Fíjate bien en el tema del debate y lee el texto." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    audiotext(v-if="temps.a4==6 || temps.a4==9" :autoplay="true" audio="s/instruccion2.mp3" text="Selecciona la respuesta correcta.")
+                activity
+                    .row.w100.comic1
+                        .comic.w100.wm80
+                            img(v-if="temps.a4==0 || temps.a4==2 || temps.a5==5 || temps.a5==8" src="i/p1.png").w80.ws100
+                            img(v-else src="i/p0.png").w80.ws100
+                            //Nina1
+                            .dialog.tc.tip-b(v-if="temps.a4==0"): audiotext(audio="s/a9.mp3"  :autoplay="true" @completed="temps.a4+=1" text="Gracias Nerina. Adelante Equipo 2." :key="refCount()")
+                            .dialog.tc.tip-b(v-if="temps.a4==2"): audiotext(audio="s/a11.mp3"  :autoplay="true" @completed="temps.a4+=1" text="Gracias, José. Muy bien equipos, escucharemos su participación de cierre, adelante Equipo 2." :key="refCount()")
+                            .dialog.tc.tip-b(v-if="temps.a4==5"): audiotext(audio="s/a14.mp3"  :autoplay="true" @completed="temps.a4+=1" text="Gracias compañeros. Anaí, de acuerdo con lo expresado por los equipos, ¿quién gana este debate y por qué?" :key="refCount()")
+                            .dialog.tc.tip-b(v-if="temps.a4==8"): audiotext(audio="s/a16.mp3"  :autoplay="true" @completed="temps.a4+=1" text="Muchas gracias, Anaí. Héctor anotará el resultado de esta discución. Gracias a todos por participar." :key="refCount()")
+                            
+                            
+                            //Nina 4
+                            .dialog.tr.tip-b(v-if="temps.a4==7"): audiotext(audio="s/a15.mp3"  :autoplay="true" @completed="temps.a4+=1" text="Gracias Raquel. Gana el Equipo 1 porque ha dado el argumento de que, el teléfono móvil es una herramienta útil pero su uso depende de cada uno de nosotros, es nuestra responsabilidad usarlo por un tiempo determinado solamente y, agrego yo, sin descuidar otras actividades." :key="refCount()")
+
+                            //EA1 - Nino1
+                            .dialog.cc.tip-b.sp1(v-if="temps.a4==4"): audiotext(audio="s/a13.mp3"  :autoplay="true" @completed="temps.a4++" text="El teléfono móvil fue una herramienta muy útil durante la cuarentena, nos permitió comunicarnos y hacer otras actividades usando Internet. Los excesos son por el comportamiento de las personas, no por el teléfono en sí mismo o el Internet, es nuestra responsabilidad usarlo adecuadamente. Gracias." :key="refCount()")
+                            
+
+                            //EA2 - Nino2
+                            .dialog.cr.tip-b.sp4(v-if="temps.a4==1"): audiotext(audio="s/a10.mp3"  :autoplay="true" @completed="temps.a4++" text="El uso del teléfono móvil provocó mayor sedentarismo y aislamiento dentro de nuestra propia casa, la mayor parte del tiempo la ocupamos en usar redes sociales, escuchar música,  ver videos o incluso películas." :key="refCount()")
+                            
+
+                            //EB2 - Nina3
+                            .dialog.cr.tip-b.sp2(v-if="temps.a4==3"): audiotext(audio="s/a12.mp3"  :autoplay="true" @completed="temps.a4++" text="El uso del teléfono móvil durante la cuarentena nos hizo sedentarios y aislados, esto repercutió en nuestra salud. La mayor parte del tiempo estábamos conectados a Internet desde el teléfono y no hacíamos otras actividades por estar al pendiente de redes sociales, de las clases, etc. Gracias." :key="refCount()")
+
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a4==6")
+                        +pregunta('¿Quién ganó el debate?', "['Equipo 1. A favor del uso del teléfono móvil.','Equipo 2. En contra del uso del teléfono móvil.']", 0, "temps.a4++")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a4==9")
+                        +pregunta('¿Qué rol tuvo Raquel en el debate si se encargó de presentar a los participantes y de dar la palabra?', "['Adjudicador','Moderador','Secretario']", 1, "")
+
+
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
         
+
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a1', false)
+                app.$set(app.temps, 'a2', false)
+                app.$set(app.temps, 'a3', 0)
+
+
+                app.$set(app.temps, 'a4', false)
+                app.$set(app.temps, 'a5', false)
+                app.$set(app.temps, 'a6', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 4

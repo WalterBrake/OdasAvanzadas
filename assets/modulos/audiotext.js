@@ -27,9 +27,9 @@ Vue.component('audiotext', {
         stop(){
             this.playing = false
             this.sound.stop()
+            this.$emit('completed')
             for(txt in this.textrender){
                 this.textrender[txt].on = true
-                this.$emit('completed')
             }
         },
         textanimation (duration) {
@@ -68,6 +68,7 @@ Vue.component('audiotext', {
             _this.sound = new Howl({
                 src: [this.audio],
                 autoplay: false,
+                loop: false,
                 onplay: function () {
                     _this.textanimation(_this.sound.duration())
                 },
