@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Repaso artículos de investigación</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .info h2 {font-size: 1rem;}
+      
+      .nota {
+          background: linear-gradient(to right, #DADBDA, #fff);
+          padding: 10px;
+          border-radius: 10px;
+          font-size: 0.8rem;
+          max-width: 520px;
+      }
+      .nota p {
+          margin: 10px 0;
+      }
+      .h4{
+          background: linear-gradient(to right, #DADBDA, #fff);
+          padding: 10px;
+          border-radius: 10px;
+          width: fit-content;
+          margin: 10px auto 0 auto;
+      }
+      .number.smaller{
+          font-size: 1.2rem;
+      }
+      .selectives .row {
+          flex-direction: column;
+      }
+      @media (max-width: 680px){
+          .nota{
+              font-size: 0.4rem;
+          }
+          .number.smaller{
+              font-size: 1rem;
+          }
+      }
+      .ascards .selectives span {
+          color: var(--sec);
+          text-transform: italic;
+      }
+      .ascards .selectives .row {
+          flex-direction: row;
+          margin-top: 10px;
+      }
+      .ascards .selectives .row > div {
+          min-width: 200px;
+          width: 33%;
+          background: #DEEBF7;
+          padding: 10px;
+          border-radius: 10px;
+          margin: 4px;
+          font-size: 0.9rem;
+      }
+      .ascards .selectives .row > div > div {
+          font-size: 0.7rem;
+          margin-top: 6px;
+      }
+      .ascards .selectives .row > div > div small {
+          display: block;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1=true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="nota">
+              <div class="h4">¿Por qué los monos no pueden hablar?</div>
+              <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+              <template v-if="temps.parr&gt;=1">
+                <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+              </template>
+              <template v-if="temps.parr&gt;=2">
+                <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+              </template>
+              <template v-if="temps.parr&gt;=3">
+                <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+              </template>
+              <template v-if="temps.parr&gt;=4">
+                <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
+              </template>
+              <template v-if="temps.parr&gt;=5">
+                <div class="text-center"><img class="w50" src="i/a1.png"/></div>
+                <p><small>El bonobo es una de las dos especies que componen el géne- ro de los chimpancés</small></p>
+              </template>
+              <template v-if="temps.parr&gt;=6">
+                <p>La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.</p>
+              </template>
+              <div class="text-right" v-if="temps.parr&lt;6">
+                <button class="button animate__animated animate__flip" @click="temps.parr++">Siguiente</button>
+              </div>
+            </div>
+          </div>
+          <div class="text-center" v-if="temps.parr==6">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="true">
+          <button class="button mt-auto" @click="$refs.nota.open()">Ver nota</button>
+        </info>
+        <activity>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuál es el tema principal del artículo que acabas de leer?</div>
+            <selectives :ans="1" key="p1" :ops="['Habla sobre los movimientos lentos de los simios.','Trata de por qué los simios no pueden hablar como los humanos.','Expone el porqué de la evolución del lenguaje en los simios.']" number="number" disableok="disableok" ref="p1"></selectives>
+          </div>
+          <div class="pregunta text-center">
+            <div class="h4">¿Cuáles son los complementos que puedes encontrar en el artículo?</div>
+            <selectives :ans="2" key="p2" :ops="['Textos cortos, gráficas, fotografías.','Ilustraciones, enlaces web, párrafos grandes.','Título, ilustración o fotografía, y pie de ilustración.']" number="number" disableok="disableok" ref="p2"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p1', 'p2'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Repaso artículos de investigación" text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="false">
+          <button class="button mt-auto" @click="$refs.nota.open()">Ver nota</button>
+        </info>
+        <activity>
+          <div class="pregunta text-center ascards">
+            <div class="h4">¿Cuál es la referencia bibliográfica en la que podrías encontrar el artículo anterior?</div>
+            <selectives :ans="1" key="p1" :ops="['National Geographic. “Bonobos: El primate de la orilla izquierda”. &lt;div&gt;Consultado en: &lt;span&gt;https://url2.cl/wDrRJ&lt;/span&gt; &lt;small&gt;(1º de octubre de 2018).&lt;/small&gt;&lt;/div&gt;','Mohar, España. Muy Interesante. “¿Por qué los monos no hablan?”. &lt;div&gt;Consultado en: &lt;span&gt;https://url2.cl/2Etkq&lt;/span&gt; &lt;small&gt;(30 de mayo de 2018).&lt;/small&gt;&lt;/div&gt;', 'Herreros, Pablo. El Mundo. &quot;Amor de madre primate&quot;. &lt;div&gt;Consultado en: &lt;span&gt;https://url2.cl/IzA4Z&lt;/span&gt; &lt;small&gt;(18 de abril de 2019).&lt;/small&gt;&lt;/div&gt;']" disableok="disableok" ref="p3"></selectives>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__lightSpeedInLeft" @click="selectiveValidation(['p3'])">Validar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="nota">
+        <div class="nota">
+          <div class="h4">¿Por qué los monos no pueden hablar?</div>
+          <p>Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.</p>
+          <p>La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.</p>
+          <p>La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.</p>
+          <p>Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.</p>
+          <p>Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.</p>
+          <div class="text-center"><img class="w50" src="i/a1.png"/></div>
+          <p><small>El bonobo es una de las dos especies que componen el géne- ro de los chimpancés</small></p>
+          <p>La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.</p>
+        </div>
+      </popup>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'parr', 0)
+      
+      app.currentScene = 0
+      app.scenesCount = 2
+    </script>
+  </body>
+</html>

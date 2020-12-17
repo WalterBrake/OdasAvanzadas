@@ -1,0 +1,149 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Repaso artículos de investigación'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .info h2 {font-size: 1rem;}
+
+            .nota {
+                background: linear-gradient(to right, #DADBDA, #fff);
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 0.8rem;
+                max-width: 520px;
+            }
+            .nota p {
+                margin: 10px 0;
+            }
+            .h4{
+                background: linear-gradient(to right, #DADBDA, #fff);
+                padding: 10px;
+                border-radius: 10px;
+                width: fit-content;
+                margin: 10px auto 0 auto;
+            }
+            .number.smaller{
+                font-size: 1.2rem;
+            }
+            .selectives .row {
+                flex-direction: column;
+            }
+            @media (max-width: 680px){
+                .nota{
+                    font-size: 0.4rem;
+                }
+                .number.smaller{
+                    font-size: 1rem;
+                }
+            }
+            .ascards .selectives span {
+                color: var(--sec);
+                text-transform: italic;
+            }
+            .ascards .selectives .row {
+                flex-direction: row;
+                margin-top: 10px;
+            }
+            .ascards .selectives .row > div {
+                min-width: 200px;
+                width: 33%;
+                background: #DEEBF7;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 4px;
+                font-size: 0.9rem;
+            }
+            .ascards .selectives .row > div > div {
+                font-size: 0.7rem;
+                margin-top: 6px;
+            }
+            .ascards .selectives .row > div > div small {
+                display: block;
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Los artículos de divulgación utilizan recursos como recuadros, títulos, subtítulos, ilustraciones, fotografías, gráficas y referencias bibliográficas, entre otros, para complementar y aclarar la información." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1=true")
+                    audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Lee el artículo de investigación, usa el botón para avanzar.")
+                activity
+                    .row.w100
+                        .nota
+                            .h4 ¿Por qué los monos no pueden hablar?
+                            p Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.
+                            template(v-if="temps.parr>=1")
+                                p La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.
+                            template(v-if="temps.parr>=2")
+                                p La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.
+                            template(v-if="temps.parr>=3")
+                                p Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.
+                            template(v-if="temps.parr>=4")
+                                p Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.
+                            template(v-if="temps.parr>=5")
+                                .text-center: img(src="i/a1.png").w50
+                                p: small El bonobo es una de las dos especies que componen el géne- ro de los chimpancés
+                            template(v-if="temps.parr>=6")
+                                p La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.
+
+                            .text-right(v-if="temps.parr<6"): button(@click="temps.parr++").button.animate__animated.animate__flip Siguiente
+                    .text-center(v-if="temps.parr==6"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="true")
+                    button(@click="$refs.nota.open()").button.mt-auto Ver nota
+                activity
+                    .pregunta.text-center
+                        .h4 ¿Cuál es el tema principal del artículo que acabas de leer?
+                        selectives(:ans="1" key="p1" :ops="['Habla sobre los movimientos lentos de los simios.','Trata de por qué los simios no pueden hablar como los humanos.','Expone el porqué de la evolución del lenguaje en los simios.']" number disableok ref="p1")
+                    .pregunta.text-center
+                        .h4 ¿Cuáles son los complementos que puedes encontrar en el artículo?
+                        selectives(:ans="2" key="p2" :ops="['Textos cortos, gráficas, fotografías.','Ilustraciones, enlaces web, párrafos grandes.','Título, ilustración o fotografía, y pie de ilustración.']" number disableok ref="p2")
+                    .row.w100: button(@click="selectiveValidation(['p1', 'p2'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="false")
+                    button(@click="$refs.nota.open()").button.mt-auto Ver nota
+                activity
+                    .pregunta.text-center.ascards
+                        .h4 ¿Cuál es la referencia bibliográfica en la que podrías encontrar el artículo anterior?
+                        selectives(:ans="1" key="p1" :ops="['National Geographic. “Bonobos: El primate de la orilla izquierda”. <div>Consultado en: <span>https://url2.cl/wDrRJ</span> <small>(1º de octubre de 2018).</small></div>','Mohar, España. Muy Interesante. “¿Por qué los monos no hablan?”. <div>Consultado en: <span>https://url2.cl/2Etkq</span> <small>(30 de mayo de 2018).</small></div>', 'Herreros, Pablo. El Mundo. \"Amor de madre primate\". <div>Consultado en: <span>https://url2.cl/IzA4Z</span> <small>(18 de abril de 2019).</small></div>']" disableok ref="p3")
+
+                    .row.w100: button(@click="selectiveValidation(['p3'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+            
+
+            // END
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
+
+            popup(:conf="['10%', '10%', '80%', '80%']" ref="nota")
+                .nota
+                    .h4 ¿Por qué los monos no pueden hablar?
+                    p Los monos son los mamíferos más cercanos al hombre. Durante muchos años, dos teorías explicaban por qué los monos no hablaban como los humanos.
+                    p La primera teoría era que no tenían las mismas cuerdas vocales que nosotros, lo cual evitaba que produjeran los mismos sonidos que podemos producir.
+                    p La segunda teoría era que su cerebro no estaba lo suficientemente desarrollado, y esa terminó siendo la teoría correcta.
+                    p Después de varios años de investigación y observaciones científicas, se ha comprobado que los simios tienen su anatomía vocal perfectamente estructurada para hablar como nosotros.
+                    p Actualmente el bonobo o chimpancé pigmeo es considerado el pariente más cercano al humano, y puede producir al menos 38 llamados diferentes.
+                    .text-center: img(src="i/a1.png").w50
+                    p: small El bonobo es una de las dos especies que componen el géne- ro de los chimpancés
+                    p La estructura de la mandíbula y las cuerdas vocales son perfectas para producir palabras, lo cual puede descartar la primera teoría. Gracias a los nuevos datos obtenidos se ha concluido que a los monos les hace falta un conector en el cerebro que permite formular y emitir palabras, es decir, su cerebro no está desarrollado como el de los humanos.
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                app.$set(app.temps, 'parr', 0)
+                
+                app.currentScene = 0
+                app.scenesCount = 2

@@ -11150,6 +11150,54 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES5T2\/60\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 497697,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T2\/60\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/index.html",
+		"oF": 0
+		},
+	"\/ES5T2\/60\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES5T2\/60\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/60\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES5T2\/60\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/s\/instruccion3.mp3",
+		"oF": 0
+		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
 		"cB": 0,
 		"ft": 8192,
