@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Identifico las fuentes de energía</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .dia {
+          position: relative;
+          text-align: center;
+      }
+      .dia .drop {
+          width: 20%;
+          height: 14%;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.9rem;
+      }
+      .dia .drop:nth-child(1) {
+          left: 0;
+          top: 52%;
+      }
+      .dia .drop:nth-child(2) {
+          left: 20%;
+          top: 84%;
+      }
+      .dia .drop:nth-child(3) {
+          left: 40%;
+          top: 52%;
+      }
+      .dia .drop:nth-child(4) {
+          left: 60%;
+          top: 84%;
+      }
+      .dia .drop:nth-child(5) {
+          left: 79%;
+          top: 52%;
+      }
+      @media (max-width: 680px) {
+          .dia .drop {
+              font-size: 0.6rem;
+          }
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 10px;
+          background: #fff;
+          
+          text-align: center;
+          font-size: 0.9rem;
+      }
+      .drag div {
+          padding: 6px;
+          border-radius: 2px;
+      }
+      @media (max-width: 680px) {
+          .drag {
+              font-size: 0.6rem;
+          }
+      }
+      [wascloned] {
+          display: none;
+      }
+      .drops2 {
+          justify-content: space-around;
+      }
+      .drops2 .drop {
+          width: 140px;
+          height: 140px;
+          background: #fff;
+          border-radius: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+      @media (max-width: 680px) {
+          .drops2 .drop {
+              width: 100px;
+              height: 100px;
+          }
+      }
+      .drops2 .drop .number {
+          position: absolute;
+      }
+      .drags2 .drag {
+          border-radius: 10px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drags2 .drag div {
+          max-width: 120px;
+      }
+      @media (max-width: 680px) {
+          .drags2 .drag div {
+              max-width: 90px;
+          }
+      }
+      
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico las fuentes de energía" text="¿De dónde se obtiene la energía para la actividad industrial? Coloca las opciones correctas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="dia w100"><img class="w80" src="i/dia.png"/>
+              <div class="drops">
+                <div class="drop" data="ok" droptimes="multiple" droplimit="1"></div>
+                <div class="drop" data="ok" droptimes="multiple" droplimit="1"></div>
+                <div class="drop" data="ok" droptimes="multiple" droplimit="1"></div>
+                <div class="drop" data="ok" droptimes="multiple" droplimit="1"></div>
+                <div class="drop" data="ok" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 mt-1 wrap">
+            <drag ref="a" data="ok" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Petróleo</div>
+            </drag>
+            <drag ref="b" data="ok" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Gas natural</div>
+            </drag>
+            <drag ref="c" data="ok" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Carbón</div>
+            </drag>
+            <drag ref="d" data="ok" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Plantas nucleares</div>
+            </drag>
+            <drag ref="e" data="-" isfalse="isfalse" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Plantas químicas</div>
+            </drag>
+            <drag ref="f" data="ok" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Presas hidroeléctricas</div>
+            </drag>
+            <drag ref="g" data="-" isfalse="isfalse" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Magnética</div>
+            </drag>
+            <drag ref="h" data="-" isfalse="isfalse" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Sol</div>
+            </drag>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Identifico las fuentes de energía" text="Coloca las fuentes de consumo de energía de mayor a menor en cuanto a su utilización en el mundo." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 drops2 wrap">
+            <div class="w20 drop" data="1" droptimes="untilok">
+              <number c="8">1</number>
+            </div>
+            <div class="w20 drop" data="2" droptimes="untilok">
+              <number c="8">2</number>
+            </div>
+            <div class="w20 drop" data="3" droptimes="untilok">
+              <number c="8">3</number>
+            </div>
+            <div class="w20 drop" data="4" droptimes="untilok">
+              <number c="8">4</number>
+            </div>
+            <div class="w20 drop" data="5" droptimes="untilok">
+              <number c="8">5</number>
+            </div>
+          </div>
+          <div class="row w100 drags2 wrap mt-1">
+            <drag :data="4" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div><img class="w100" src="i/p4.png"/></div>
+            </drag>
+            <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div><img class="w100" src="i/p2.png"/></div>
+            </drag>
+            <drag :data="5" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div><img class="w100" src="i/p5.png"/></div>
+            </drag>
+            <drag :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div><img class="w100" src="i/p1.png"/></div>
+            </drag>
+            <drag :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div><img class="w100" src="i/p3.png"/></div>
+            </drag>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', [])
+      
+      app.currentScene = 0
+      app.scenesCount = 2
+    </script>
+  </body>
+</html>

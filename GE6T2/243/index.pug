@@ -1,0 +1,168 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identifico las fuentes de energía'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .dia {
+                position: relative;
+                text-align: center;
+            }
+            .dia .drop {
+                width: 20%;
+                height: 14%;
+                background: #fff;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.9rem;
+            }
+            .dia .drop:nth-child(1) {
+                left: 0;
+                top: 52%;
+            }
+            .dia .drop:nth-child(2) {
+                left: 20%;
+                top: 84%;
+            }
+            .dia .drop:nth-child(3) {
+                left: 40%;
+                top: 52%;
+            }
+            .dia .drop:nth-child(4) {
+                left: 60%;
+                top: 84%;
+            }
+            .dia .drop:nth-child(5) {
+                left: 79%;
+                top: 52%;
+            }
+            @media (max-width: 680px) {
+                .dia .drop {
+                    font-size: 0.6rem;
+                }
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 10px;
+                background: #fff;
+                
+                text-align: center;
+                font-size: 0.9rem;
+            }
+            .drag div {
+                padding: 6px;
+                border-radius: 2px;
+            }
+            @media (max-width: 680px) {
+                .drag {
+                    font-size: 0.6rem;
+                }
+            }
+            [wascloned] {
+                display: none;
+            }
+            .drops2 {
+                justify-content: space-around;
+            }
+            .drops2 .drop {
+                width: 140px;
+                height: 140px;
+                background: #fff;
+                border-radius: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            @media (max-width: 680px) {
+                .drops2 .drop {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .drops2 .drop .number {
+                position: absolute;
+            }
+            .drags2 .drag {
+                border-radius: 10px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drags2 .drag div {
+                max-width: 120px;
+            }
+            @media (max-width: 680px) {
+                .drags2 .drag div {
+                    max-width: 90px;
+                }
+            }
+
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿De dónde se obtiene la energía para la actividad industrial? Coloca las opciones correctas." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .dia.w100
+                            img(src="i/dia.png").w80
+                            .drops
+                                .drop(data="ok" droptimes="multiple" droplimit="1")
+                                .drop(data="ok" droptimes="multiple" droplimit="1")
+                                .drop(data="ok" droptimes="multiple" droplimit="1")
+                                .drop(data="ok" droptimes="multiple" droplimit="1")
+                                .drop(data="ok" droptimes="multiple" droplimit="1")
+
+                    .row.w100.mt-1.wrap
+                        drag(ref="a" data="ok" dropzone=".drop" stay-if-ok append-to-dropzone): div Petróleo
+                        drag(ref="b" data="ok" dropzone=".drop" stay-if-ok append-to-dropzone): div Gas natural
+                        drag(ref="c" data="ok" dropzone=".drop" stay-if-ok append-to-dropzone): div Carbón
+                        drag(ref="d" data="ok" dropzone=".drop" stay-if-ok append-to-dropzone): div Plantas nucleares
+                        drag(ref="e" data="-" isfalse dropzone=".drop" stay-if-ok append-to-dropzone): div Plantas químicas
+                        drag(ref="f" data="ok" dropzone=".drop" stay-if-ok append-to-dropzone): div Presas hidroeléctricas
+                        drag(ref="g" data="-" isfalse dropzone=".drop" stay-if-ok append-to-dropzone): div Magnética
+                        drag(ref="h" data="-" isfalse dropzone=".drop" stay-if-ok append-to-dropzone): div Sol
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca las fuentes de consumo de energía de mayor a menor en cuanto a su utilización en el mundo." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.drops2.wrap
+                        .w20.drop(data="1" droptimes="untilok"): number(c=8) 1
+                        .w20.drop(data="2" droptimes="untilok"): number(c=8) 2
+                        .w20.drop(data="3" droptimes="untilok"): number(c=8) 3
+                        .w20.drop(data="4" droptimes="untilok"): number(c=8) 4
+                        .w20.drop(data="5" droptimes="untilok"): number(c=8) 5
+                    .row.w100.drags2.wrap.mt-1
+                        drag(:data="4" dropzone=".drop" stay-if-ok append-to-dropzone): div: img(src="i/p4.png").w100
+                        drag(:data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div: img(src="i/p2.png").w100
+                        drag(:data="5" dropzone=".drop" stay-if-ok append-to-dropzone): div: img(src="i/p5.png").w100
+                        drag(:data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div: img(src="i/p1.png").w100
+                        drag(:data="3" dropzone=".drop" stay-if-ok append-to-dropzone): div: img(src="i/p3.png").w100
+
+            // END
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 2

@@ -256,7 +256,7 @@ Vue.component('drag', {
             _this.stayInDropFn()
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
-            _this.droppedtimesAdd(dropzone)
+            //_this.droppedtimesAdd(dropzone)
 
             _this.appendCloneToDropzoneFn(dropzone, e)
 
@@ -366,7 +366,6 @@ Vue.component('drag', {
                 this.backToInitPos()
                 if(this.undroppable != undefined || this.extval != undefined) {
                     this.undroppableFn()
-
                 }
             }
             
