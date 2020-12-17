@@ -1,0 +1,169 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identifico los elementos de la carta'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .carta {
+                background: #F8F4ED;
+                padding: 10px 30px;
+                border-radius: 10px;
+                margin: 10px;
+                box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+                font-size: 0.8rem;
+                max-width: 50%;
+            }
+            .carta > div {
+                margin-top: 20px;
+            }
+            .carta .text-right {
+                text-align: right;
+            }
+            @media (max-width: 680px) {
+                .carta {
+                    max-width: 80%;
+                    font-size: 0.5rem;
+                }
+            }
+            .info h2{
+                font-size: 1rem;
+            }
+
+            .words {
+                background: #fff;
+                font-size: 0.8rem;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .words div {
+                margin: 4px 0;
+                border-bottom: 1px solid #eee;
+                padding: 4px 0;
+            }
+            .carta {
+                position: relative;
+            }
+            .tooltiper {
+                width: fit-content;
+                position: absolute;
+                text-align: center;
+            }
+            .tooltiper .tooltiper__content {
+                min-width: 160px;
+                padding: 5px;
+            }
+            .tooltiper input {
+                font-size: 0.8rem;
+            }
+            .tooltiper .number {
+                font-size: 0.8rem;
+            }
+            .tooltiper:nth-child(1) {
+                right: 0;
+                top: 0;
+            }
+            .tooltiper:nth-child(2) {
+                left: 0;
+                top: 8%;
+            }
+            .tooltiper:nth-child(3) {
+                left: 0;
+                top: 20%;
+            }
+            .tooltiper:nth-child(4) {
+                right: 0;
+                top: 22%;
+            }
+            .tooltiper:nth-child(5) {
+                right: 0;
+                top: 42%;
+            }
+            .tooltiper:nth-child(6) {
+                right: 0;
+                top: 56%;
+            }
+            .tooltiper:nth-child(7) {
+                left: 0;
+                top: 73%;
+            }
+            .tooltiper:nth-child(8) {
+                left: 14%;
+                top: 85%;
+            }
+            .popup{
+                z-index: 9;
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="input" title=title text="Las cartas de opinión son cartas formales que requieren el uso del vocabulario adecuado, la estructura correcta de las oraciones, los verbos conjugados apropiadamente, así como ortografía y puntuación precisas." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Lee esta carta.")
+                activity
+                    .row.w100
+                        .carta
+                            .text-right Guanajuato, Gto., a 7 de mayo de 2020.
+                            .text-left.mt Lic. Antonio Roca. #[br] Presidente municipal. #[br]Presente.
+                            .text-left.mt Le extiendo un cordial #[strong saludo] y le envío esta #[strong carta] para comentarle mi punto de vista sobre la invasión de músicos informales en el centro histórico.
+                            .text-left.mt Considero que el ruido excesivo que producen las bandas de músicos informales en los restaurantes y bares de la ciudad está afectando al turismo considerablemente. Es bien sabido que las tradicionales estudiantinas son parte del folclor de nuestra ciudad y desde mi punto de vista los músicos informales han generado una #[strong competencia] desleal ante tan tradicional forma de expresión. No estoy de acuerdo en que se les permita a los músicos informales acaparar al turismo que poco a poco se aleja de las tradiciones locales, ya que, según las estadísticas de la Secretaría de Turismo, los visitantes gastan un 25 % menos en estudiantinas durante la temporada alta.
+                            .text-left.mt Agradezco de antemano que lea esta #[strong carta] y tome en cuenta mis opiniones para que nuestra ciudad siga mejorando y se preserven las tradiciones.
+                            .text-center.mt Atentamente#[br]Esteban de Anda López.#[br]Líder de la “Estudiantina de Colores”.
+                    .text-center: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="input" title=title text="Escribe en las casillas el nombre del elemento que corresponda." textaudio="s/instruccion3.mp3" :autoplay="true")
+                    button(@click="$refs.words.open()").button.mt-auto Lista de elementos
+                activity
+                    popup(:conf="['25%', '10%', '50%', '80%']" ref="words" c="1"): .words
+                            div Destinatario
+                            div Saludo cordial
+                            div Argumento 
+                            div Motivo de la carta
+                            div Lugar y fecha
+                            div Despedida cordial
+                            div Datos del destinatario
+                            div Opinión 
+                            div Remitente
+                            div Número de oficio
+                    .row.w100
+                        .carta
+                            tooltiper(pos="right"): inputable(initclass="c7" isok="lugar y fecha"): number(c=7 smaller) Lugar y fecha
+                            tooltiper(pos="left"): inputable(initclass="c7" isok="datos del destinatario"): number(c=7 smaller) Datos del destinatario
+                            tooltiper(pos="left"): inputable(initclass="c7" isok="saludo cordial"): number(c=7 smaller) Saludo cordial
+                            tooltiper(pos="right"): inputable(initclass="c7" isok="motivo de la carta"): number(c=7 smaller) Motivo de la carta
+                            tooltiper(pos="right"): inputable(initclass="c7" isok="opinión"): number(c=7 smaller) Opinión
+                            tooltiper(pos="right"): inputable(initclass="c7" isok="argumento que respalda la opinión"): number(c=7 smaller) Argumento que respalda la opinión
+                            tooltiper(pos="left"): inputable(initclass="c7" isok="despedida cordial"): number(c=7 smaller) Despedida cordial
+                            tooltiper(pos="left"): inputable(initclass="c7" isok="nombre del remitente"): number(c=7 smaller) Nombre del remitente
+
+                            .text-right Guanajuato, Gto., a 7 de mayo de 2020.
+                            .text-left.mt Lic. Antonio Roca. #[br] Presidente municipal. #[br]Presente.
+                            .text-left.mt Le extiendo un cordial #[strong saludo] y le envío esta #[strong carta] para comentarle mi punto de vista sobre la invasión de músicos informales en el centro histórico.
+                            .text-left.mt Considero que el ruido excesivo que producen las bandas de músicos informales en los restaurantes y bares de la ciudad está afectando al turismo considerablemente. Es bien sabido que las tradicionales estudiantinas son parte del folclor de nuestra ciudad y desde mi punto de vista los músicos informales han generado una #[strong competencia] desleal ante tan tradicional forma de expresión. No estoy de acuerdo en que se les permita a los músicos informales acaparar al turismo que poco a poco se aleja de las tradiciones locales, ya que, según las estadísticas de la Secretaría de Turismo, los visitantes gastan un 25 % menos en estudiantinas durante la temporada alta.
+                            .text-left.mt Agradezco de antemano que lea esta #[strong carta] y tome en cuenta mis opiniones para que nuestra ciudad siga mejorando y se preserven las tradiciones.
+                            .text-center.mt Atentamente#[br]Esteban de Anda López.#[br]Líder de la “Estudiantina de Colores”.
+
+
+            
+            // END      
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                
+                app.currentScene = 0
+                app.scenesCount = 1

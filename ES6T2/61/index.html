@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Identifico los elementos de la carta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .carta {
+          background: #F8F4ED;
+          padding: 10px 30px;
+          border-radius: 10px;
+          margin: 10px;
+          box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+          font-size: 0.8rem;
+          max-width: 50%;
+      }
+      .carta > div {
+          margin-top: 20px;
+      }
+      .carta .text-right {
+          text-align: right;
+      }
+      @media (max-width: 680px) {
+          .carta {
+              max-width: 80%;
+              font-size: 0.5rem;
+          }
+      }
+      .info h2{
+          font-size: 1rem;
+      }
+      
+      .words {
+          background: #fff;
+          font-size: 0.8rem;
+          padding: 10px;
+          border-radius: 10px;
+      }
+      .words div {
+          margin: 4px 0;
+          border-bottom: 1px solid #eee;
+          padding: 4px 0;
+      }
+      .carta {
+          position: relative;
+      }
+      .tooltiper {
+          width: fit-content;
+          position: absolute;
+          text-align: center;
+      }
+      .tooltiper .tooltiper__content {
+          min-width: 160px;
+          padding: 5px;
+      }
+      .tooltiper input {
+          font-size: 0.8rem;
+      }
+      .tooltiper .number {
+          font-size: 0.8rem;
+      }
+      .tooltiper:nth-child(1) {
+          right: 0;
+          top: 0;
+      }
+      .tooltiper:nth-child(2) {
+          left: 0;
+          top: 8%;
+      }
+      .tooltiper:nth-child(3) {
+          left: 0;
+          top: 20%;
+      }
+      .tooltiper:nth-child(4) {
+          right: 0;
+          top: 22%;
+      }
+      .tooltiper:nth-child(5) {
+          right: 0;
+          top: 42%;
+      }
+      .tooltiper:nth-child(6) {
+          right: 0;
+          top: 56%;
+      }
+      .tooltiper:nth-child(7) {
+          left: 0;
+          top: 73%;
+      }
+      .tooltiper:nth-child(8) {
+          left: 14%;
+          top: 85%;
+      }
+      .popup{
+          z-index: 9;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="input" title="Identifico los elementos de la carta" text="Las cartas de opinión son cartas formales que requieren el uso del vocabulario adecuado, la estructura correcta de las oraciones, los verbos conjugados apropiadamente, así como ortografía y puntuación precisas." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Lee esta carta."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="carta">
+              <div class="text-right">Guanajuato, Gto., a 7 de mayo de 2020.</div>
+              <div class="text-left mt">Lic. Antonio Roca. <br/> Presidente municipal. <br/>Presente.</div>
+              <div class="text-left mt">Le extiendo un cordial <strong>saludo</strong> y le envío esta <strong>carta</strong> para comentarle mi punto de vista sobre la invasión de músicos informales en el centro histórico.</div>
+              <div class="text-left mt">Considero que el ruido excesivo que producen las bandas de músicos informales en los restaurantes y bares de la ciudad está afectando al turismo considerablemente. Es bien sabido que las tradicionales estudiantinas son parte del folclor de nuestra ciudad y desde mi punto de vista los músicos informales han generado una <strong>competencia</strong> desleal ante tan tradicional forma de expresión. No estoy de acuerdo en que se les permita a los músicos informales acaparar al turismo que poco a poco se aleja de las tradiciones locales, ya que, según las estadísticas de la Secretaría de Turismo, los visitantes gastan un 25 % menos en estudiantinas durante la temporada alta.</div>
+              <div class="text-left mt">Agradezco de antemano que lea esta <strong>carta</strong> y tome en cuenta mis opiniones para que nuestra ciudad siga mejorando y se preserven las tradiciones.</div>
+              <div class="text-center mt">Atentamente<br/>Esteban de Anda López.<br/>Líder de la “Estudiantina de Colores”.</div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="input" title="Identifico los elementos de la carta" text="Escribe en las casillas el nombre del elemento que corresponda." textaudio="s/instruccion3.mp3" :autoplay="true">
+          <button class="button mt-auto" @click="$refs.words.open()">Lista de elementos</button>
+        </info>
+        <activity>
+          <popup :conf="['25%', '10%', '50%', '80%']" ref="words" c="1">
+            <div class="words">
+              <div>Destinatario</div>
+              <div>Saludo cordial</div>
+              <div>Argumento </div>
+              <div>Motivo de la carta</div>
+              <div>Lugar y fecha</div>
+              <div>Despedida cordial</div>
+              <div>Datos del destinatario</div>
+              <div>Opinión </div>
+              <div>Remitente</div>
+              <div>Número de oficio</div>
+            </div>
+          </popup>
+          <div class="row w100">
+            <div class="carta">
+              <tooltiper pos="right">
+                <inputable initclass="c7" isok="lugar y fecha">
+                  <number c="7" smaller="smaller">Lugar y fecha</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="left">
+                <inputable initclass="c7" isok="datos del destinatario">
+                  <number c="7" smaller="smaller">Datos del destinatario</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="left">
+                <inputable initclass="c7" isok="saludo cordial">
+                  <number c="7" smaller="smaller">Saludo cordial</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="right">
+                <inputable initclass="c7" isok="motivo de la carta">
+                  <number c="7" smaller="smaller">Motivo de la carta</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="right">
+                <inputable initclass="c7" isok="opinión">
+                  <number c="7" smaller="smaller">Opinión</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="right">
+                <inputable initclass="c7" isok="argumento que respalda la opinión">
+                  <number c="7" smaller="smaller">Argumento que respalda la opinión</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="left">
+                <inputable initclass="c7" isok="despedida cordial">
+                  <number c="7" smaller="smaller">Despedida cordial</number>
+                </inputable>
+              </tooltiper>
+              <tooltiper pos="left">
+                <inputable initclass="c7" isok="nombre del remitente">
+                  <number c="7" smaller="smaller">Nombre del remitente</number>
+                </inputable>
+              </tooltiper>
+              <div class="text-right">Guanajuato, Gto., a 7 de mayo de 2020.</div>
+              <div class="text-left mt">Lic. Antonio Roca. <br/> Presidente municipal. <br/>Presente.</div>
+              <div class="text-left mt">Le extiendo un cordial <strong>saludo</strong> y le envío esta <strong>carta</strong> para comentarle mi punto de vista sobre la invasión de músicos informales en el centro histórico.</div>
+              <div class="text-left mt">Considero que el ruido excesivo que producen las bandas de músicos informales en los restaurantes y bares de la ciudad está afectando al turismo considerablemente. Es bien sabido que las tradicionales estudiantinas son parte del folclor de nuestra ciudad y desde mi punto de vista los músicos informales han generado una <strong>competencia</strong> desleal ante tan tradicional forma de expresión. No estoy de acuerdo en que se les permita a los músicos informales acaparar al turismo que poco a poco se aleja de las tradiciones locales, ya que, según las estadísticas de la Secretaría de Turismo, los visitantes gastan un 25 % menos en estudiantinas durante la temporada alta.</div>
+              <div class="text-left mt">Agradezco de antemano que lea esta <strong>carta</strong> y tome en cuenta mis opiniones para que nuestra ciudad siga mejorando y se preserven las tradiciones.</div>
+              <div class="text-center mt">Atentamente<br/>Esteban de Anda López.<br/>Líder de la “Estudiantina de Colores”.</div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END      -->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'au1', false)
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>

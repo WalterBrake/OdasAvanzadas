@@ -10,7 +10,7 @@ Vue.component('tooltiper', {
             <div class="tooltiper__btn" @click="openTip">
                 <img src="../../assets/aanim/Tooltiper.svg">
             </div>
-            <div :class="'tooltiper__content ' + (pos!=undefined ? pos : '')" v-if="opened">
+            <div :class="'tooltiper__content ' + (pos!=undefined ? pos : '')" v-show="opened">
                 <slot></slot>
                 <div class="tooltiper__close" @click="closeTip">x</div>
             </div>

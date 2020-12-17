@@ -11306,6 +11306,43 @@
 		"oAP": "\/ES6T2\/55\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES6T2\/61\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/61\/index.html",
+		"oF": 0
+		},
+	"\/ES6T2\/61\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES6T2\/61\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES6T2\/61\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/61\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES6T2\/61\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/61\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES6T2\/61\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T2\/61\/s\/instruccion3.mp3",
+		"oF": 0
+		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,
