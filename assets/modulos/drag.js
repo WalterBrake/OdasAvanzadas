@@ -256,7 +256,8 @@ Vue.component('drag', {
             _this.stayInDropFn()
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
-            //_this.droppedtimesAdd(dropzone)
+            
+            _this.droppedtimesAdd(dropzone)
 
             _this.appendCloneToDropzoneFn(dropzone, e)
 
@@ -315,6 +316,9 @@ Vue.component('drag', {
             }
         },
         droppedtimesAdd (dropzone){
+                if(dropzone.getAttribute('droptimes') != 'multiple') {
+                    return false
+                }
                 var droppedtimes = dropzone.getAttribute('droppedtimes')
                 if(droppedtimes){
                     var sum = parseInt(droppedtimes)+1

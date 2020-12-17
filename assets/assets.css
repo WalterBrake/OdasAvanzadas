@@ -643,7 +643,7 @@ embed {
 }
 .number.small {
   font-size: 2rem;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
 }
 .number.smaller {
   font-size: 1.4rem;

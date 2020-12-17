@@ -16,10 +16,11 @@
           margin: 10px 0;
           border-radius: 10px;
           box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          line-height: 2;
       }
       .words .drop {
           width: 30%;
-          height: 30px;
+          height: 26px;
           background: #fff;
           display: inline-block;
           vertical-align: middle;
@@ -27,6 +28,10 @@
           border-radius: 4px;
           margin-right: 4px;
           text-align: center;
+      }
+      .words .drop .number{
+          font-size: 1rem;
+          line-height: 1.5;
       }
       .drag {
          width: fit-content; width: -moz-fit-content;
@@ -44,6 +49,10 @@
           height: 40px;
       }
       @media (max-width:680px){
+          .words .text{
+              font-size: 0.6rem;
+              line-height: 1.4;
+          }
           .words .drop{
               width: 100%;
           }
@@ -51,6 +60,7 @@
               font-size: 0.8rem;
           }
       }
+      
       
       
       
@@ -201,7 +211,7 @@
       app.$devmode = false
       app.$set(app.temps, 'a', [])
       
-      app.currentScene = 0
+      app.currentScene = ''
       app.scenesCount = 3
     </script>
   </body>
