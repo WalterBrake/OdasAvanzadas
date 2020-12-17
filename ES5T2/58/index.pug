@@ -63,7 +63,6 @@ html(lang="es")
                 text-align: center;
                 border: 2px solid #000;
                 border-radius: 10px 10px 0 0;
-                border-bottom: 0;
                 padding: 10px;
                 position: absolute;
                 z-index: 9;
@@ -140,7 +139,7 @@ html(lang="es")
                             img(src="i/p1.png").w80.ws100
                             .dialog.tl.tip-b.long: audiotext(:speed-offset="1.3" audio="s/a1.mp3"  :autoplay="true" @completed="temps.a1=true" text="Buenos días, vamos a iniciar nuestro debate.  El tema es \"El uso de los teléfonos móviles durante la cuarentena\". Dos equipos participarán, los integrantes dirán sus argumentos con respeto y por turnos. En este debate nos ayudarán nuestros compañeros Anaí y Héctor.")
                     .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a1")
-                        +pregunta('Además de los debatientes, ¿qué otros participantes hay en un debate?', "['Moderador, señalador y apuntador.','Moderador, secretario y adjudicador.','Juez, adjudicador y secretario.']", 0)
+                        +pregunta('Además de los debatientes, ¿qué otros participantes hay en un debate?', "['Moderador, señalador y apuntador.','Moderador, secretario y adjudicador.','Juez, adjudicador y secretario.']", 1)
             
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
@@ -150,7 +149,7 @@ html(lang="es")
                     .row.w100.comic1
                         .comic.w100.wm80
                             img(src="i/p1.png").w80.ws100
-                            .dialog.tl.tip-b: audiotext(audio="s/a2.mp3"  :autoplay="true" @completed="temps.a2=true" text="Anaí y Héctor tendrán diferentes funciones.")
+                            .dialog.tc.tip-b: audiotext(audio="s/a2.mp3"  :autoplay="true" @completed="temps.a2=true" text="Anaí y Héctor tendrán diferentes funciones.")
                     .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
                         +pregunta('¿Qué rol tendrá Héctor si será quien anote todo lo que suceda durante el debate?', "['Será el moderador.','Será el administrador.','Será el secretario.']", 2)
                         +pregunta('Si a Anaí le tocará determinar quién gana el debate y decir la razón de esto, ¿qué rol tiene?', "['Será la secretaria.','Será el adjudicador.','Será la moderadora.']", 1)

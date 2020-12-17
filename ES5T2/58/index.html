@@ -57,7 +57,6 @@
           text-align: center;
           border: 2px solid #000;
           border-radius: 10px 10px 0 0;
-          border-bottom: 0;
           padding: 10px;
           position: absolute;
           z-index: 9;
@@ -150,7 +149,7 @@
           <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.a1">
             <div class="h4">Además de los debatientes, ¿qué otros participantes hay en un debate?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Moderador, señalador y apuntador.','Moderador, secretario y adjudicador.','Juez, adjudicador y secretario.']" :key="refCount()" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1 text-center w100">
+              <clickable v-for="(i, index) in ['Moderador, señalador y apuntador.','Moderador, secretario y adjudicador.','Juez, adjudicador y secretario.']" :key="refCount()" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 text-center w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
@@ -165,7 +164,7 @@
         <activity>
           <div class="row w100 comic1">
             <div class="comic w100 wm80"><img class="w80 ws100" src="i/p1.png"/>
-              <div class="dialog tl tip-b">
+              <div class="dialog tc tip-b">
                 <audiotext audio="s/a2.mp3" :autoplay="true" @completed="temps.a2=true" text="Anaí y Héctor tendrán diferentes funciones."></audiotext>
               </div>
             </div>
