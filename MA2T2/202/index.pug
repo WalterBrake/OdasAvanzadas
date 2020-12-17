@@ -17,6 +17,9 @@ html(lang="es")
                 display: flex;
                 flex-direction: column;
             }
+            .obj.o2{
+                background: var(--sec);
+            }
             .obj img {
                 width: 80px;
             }
@@ -62,13 +65,17 @@ html(lang="es")
                 info(type="relacionar" title=title text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-                        .w60.row.wrap
+                        .w30.row.wrap
                             .obj(v-for="(i, index) in temps.a")
                                 img(:src="'i/i'+index+'.svg'")
-                                drag(:data="i" dropzone=".drop" extval drag-line ref="figs"): .conector.c1
+                                drag(:data="i" dropzone=".drop" extval drag-line ref="figs" :particle-color="every3(index)"): .conector(:class="class3(index)")
                         .w40.row.wrap
                             .drop.fig(v-for="(i, index) in 10" :data="i" droptimes="multiple" droplimit="10")
                                 img(:src="'i/f'+i+'.svg'")
+                        .w30.row.wrap
+                            .obj.o2(v-for="(i, index) in temps.b")
+                                img(:src="'i/i'+(index+7)+'.svg'")
+                                drag(:data="i" dropzone=".drop" extval drag-line ref="figs" :particle-color="every3(index)"): .conector(:class="class3(index)")
                     .text-center: button(@click="dragValidation(['figs'], 14)").button.big.animate__animated.animate__flip Verificar
 
             // END
@@ -84,9 +91,10 @@ html(lang="es")
                     1, 
                     1, 
                     3, 
-                    
                     3, 
                     4, 
+                    ])
+                app.$set(app.temps, 'b', [
                     5, 
                     4, 
                     5, 
@@ -95,7 +103,21 @@ html(lang="es")
                     10, 
                     4, 
                     8, 
-                    ])
-                
+                ])
+
+                app.every3 = function (ind){
+                    console.log('ind')
+                    if(ind % 7 == 0){ return '#93CA83' }
+                    if(ind % 7 == 1){ return '#4B7BAD' }
+                    if(ind % 7 == 2){ return '#7DD5F7' }
+                    if(ind % 7 == 3){ return '#EC8B2E' }
+                    if(ind % 7 == 4){ return '#DA3F34' }
+                    if(ind % 7 == 5){ return '#F460AB' }
+                    if(ind % 7 == 6){ return '#B1BA24' }
+                }
+                app.class3 = function (ind){
+                    return 'c'+((ind % 7)+1)
+                }
+
                 app.currentScene = 0
                 app.scenesCount = 1
