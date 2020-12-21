@@ -51,10 +51,10 @@
               <div class="w40"><img class="w100" :src="i.im"/></div>
             </div>
             <div class="row w100 mb-1">
-              <selectives :ans="i.ans" :key="'k'+i.k" :ops="i.ops" number="number" disableok="disableok" ref="preg"></selectives>
+              <selectives :ans="i.ans" :key="'k'+i.k" :ops="i.ops" number="number" disableok="disableok" :ref="'preg'+index"></selectives>
             </div>
             <div class="text-center">
-              <button class="button big animate__animated animate__bounceInDown" @click="selectiveValidation(['preg'])">Validar</button>
+              <button class="button big animate__animated animate__bounceInDown" @click="selectiveValidation(['preg'+index])">Validar</button>
             </div>
             <!--.row.w100(v-if="temps.last"): button(@click="selectiveValidation(['k1', 'k2', 'k3', 'k4', 'k5'])").button.big.animate__animated.animate__bounceInDown Validar-->
           </activity>
