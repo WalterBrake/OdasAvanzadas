@@ -1,5 +1,5 @@
 Vue.component('sequence', {
-    props: ['options', 'initclass', 'autoplay', 'noNav'],
+    props: ['options', 'initclass', 'autoplay', 'noNav', 'useVif'],
     data () {
         return {
             current: 0
@@ -32,9 +32,16 @@ Vue.component('sequence', {
     template: `
         <div :class="'sequence ' + (initclass?initclass:' ')">
             
-            <div v-for="(option, index) in options" v-show="index == current">
-                <slot name="option" :option="option" />
-            </div>
+            <template v-if="useVif!=undefined">
+                 <div v-for="(option, index) in options" v-if="index == current">
+                    <slot name="option" :option="option" />
+                </div>
+            </template>
+            <template v-else>
+                <div v-for="(option, index) in options" v-show="index == current">
+                    <slot name="option" :option="option" />
+                </div>
+            </template>
 
             <div class="sequence_nav" v-if="noNav==undefined">
                 <!--disabled-->

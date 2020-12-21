@@ -192,10 +192,10 @@
         </activity>
       </scene>
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Escribo mi autobiografía" text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Escribo mi autobiografía" text="Veamos el siguiente ejemplo:" textaudio="s/s8.mp3" :autoplay="true" @completedinstructions="temps.sc3 = true"></info>
         <activity>
           <div class="dialoganim">
-            <sequence :options="[{img: 'i/2a.png'}, {audio:'s/s9.mp3', img: 'i/2b.png'}, {audio:'s/s10.mp3', img: 'i/2c.png'}, {audio:'s/s11.mp3', img: 'i/2d.png'}, {audio:'s/s12.mp3', img: 'i/2e.png'}]" @completed="temps.s12_btn = true">
+            <sequence use-vif="use-vif" :options="[{img: 'i/2a.png'}, {audio:'s/s9.mp3', img: 'i/2b.png'}, {audio:'s/s10.mp3', img: 'i/2c.png'}, {audio:'s/s11.mp3', img: 'i/2d.png'}, {audio:'s/s12.mp3', img: 'i/2e.png'}]" @completed="temps.s12_btn = true">
               <template v-slot:option="{option}">
                 <dialogaudio :audio="option.audio" :autoplay="true" always-visible="always-visible" v-if="option.audio"></dialogaudio><img class="w100" :src="option.img"/>
               </template>
@@ -211,7 +211,7 @@
         <activity>
           <div class="row w70">
             <div class="dialoganim">
-              <sequence :options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = 'p1'">
+              <sequence use-vif="use-vif" :options="[{img: 'i/3a.png'}, {audio:'s/s13.mp3', img: 'i/3b.png'}, {audio:'s/s14.mp3', img: 'i/3c.png'}]" @completed="temps.preguntas = 'p1'">
                 <template v-slot:option="{option}">
                   <dialogaudio :audio="option.audio" :autoplay="true" always-visible="always-visible" v-if="option.audio"></dialogaudio><img class="w100" :src="option.img"/>
                 </template>
@@ -354,6 +354,8 @@
       app.$devmode = false
       app.$set(app.temps, 's1', false)
       app.$set(app.temps, 's1_btn', false)
+      
+      app.$set(app.temps, 'sc3', false)
       
       app.$set(app.temps, 's3', false)
       app.$set(app.temps, 's4', false)
