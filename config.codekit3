@@ -21832,6 +21832,40 @@
 		"oAP": "\/MA5T2\/141\/s\/instruccion3.mp3",
 		"oF": 0
 		},
+	"\/MA5T2\/145\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 1501510,
+		"oA": 0,
+		"oAP": "\/MA5T2\/145\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T2\/145\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T2\/145\/index.html",
+		"oF": 0
+		},
+	"\/MA5T2\/145\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA5T2\/145\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA5T2\/145\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T2\/145\/s\/instruccion1.mp3",
+		"oF": 0
+		},
 	"\/MA6T1\/113\/aimg\/02.eps": {
 		"cB": 0,
 		"ft": 8192,

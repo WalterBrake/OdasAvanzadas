@@ -160,4 +160,6 @@ Vue.component('clickable', {
 
 /*
 .row.wrap.around: clickable(v-for="(i, index) in ['30','40']" :key="'p3'+index" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+
+clickable(:isok="true" simple-ok initclass="pa-1")
 */

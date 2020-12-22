@@ -1,0 +1,193 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Indico el lugar de los objetos '
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .imagerelative {
+                position: relative;
+            }
+            .imagerelative  img{
+                border-radius: 20px;
+            }
+
+            .clickable {
+                position: absolute;
+                z-index: 1;
+                width: 10%;
+                height: 10%;
+            }
+            .clickable:nth-child(1) {
+                left: 1%;
+                top: 65%;
+                width: 16%;
+                height: 24%;
+            }
+            .clickable:nth-child(2) {
+                left: 40%;
+                top: 65%;
+                width: 12%;
+                height: 24%;
+            }
+            .clickable:nth-child(3) {
+                left: 56%;
+                top: 64%;
+                width: 10%;
+                height: 24%;
+            }
+            .clickable:nth-child(4) {
+                right: 0;
+                top: 42%;
+                width: 10%;
+                height: 46%;
+            }
+            .clickable:nth-child(5) {
+                right: 1%;
+                top: 0;
+                width: 8.5%;
+                height: 24%;
+            }
+            .clickable:nth-child(6) {
+                right: 13%;
+                top: 3%;
+                width: 6%;
+                height: 22%;
+            }
+
+            .oracion {
+                background: #fff;
+                padding: 2px 6px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+                margin: 5px 10px;
+                font-size: 0.8rem;
+            }
+            .oracion .drop {
+                background: var(--main);
+                width: 100px;
+                height: 18px;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 6px;
+                text-align: center;
+            }
+            .oracion .drop div {
+                text-shadow: none;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 2px 10px;
+            }
+            .drag div {
+                background: #fff;
+                padding: 4px 8px;
+                border-radius: 6px;
+            }
+            .drag .number.smaller{
+                font-size: 1.2rem;
+            }
+            @media (max-width:680px){
+                .oracion{
+                    font-size: 0.6rem;
+                }
+                .oracion .drop {
+                    width: 80px;
+                    height: 12px;
+                }
+                .drag .number.smaller{
+                    font-size: 0.6rem;
+                }
+            }
+            .oracion .drop div {
+                display: none;
+            }
+            .oracion .drop.isOk{
+                background: var(--sec);
+            }
+            .oracion .drop.isOk div {
+                display: block;
+                text-align: center;
+                color: #fff;
+                font-weight: bold;
+            }
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="16" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca las palabras correspondientes para completar las oraciones y ayudar a Tere a ubicar los productos en su puesto." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    // SE usa un snippet para generar la estructura de imagenes que llevan objetos encima.
+                    //En este caso llevará círculos seleccionando objetos.
+                    
+                    .row.w100.img
+                        .imagerelative.w80
+                            img(src="i/bg.png").w100
+                            .items
+                                clickable(:isok="true" simple-ok initclass="pa-1" ): div
+                                clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+                                clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+                                clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+                                clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+                                clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+                    .row.w100
+                        .w70
+                            .oracion
+                                span Los carros están en la mesa, a la
+                                .drop(data='izquierda' droptimes="untilok"): div izquierda
+                                span de las calaveras.
+                            .oracion
+                                span Los huaraches están
+                                .drop(data='arriba' droptimes="untilok"): div arriba
+                                span de las bolsas y a la
+                                .drop(data='derecha' droptimes="untilok"): div derecha
+                                span de las guitarras.
+                            .oracion
+                                span En la esquina
+                                .drop(data='izquierda' droptimes="untilok"): div izquierda
+                                span de la mesa están las velas,
+                                .drop(data='abajo' droptimes="untilok"): div abajo
+                                span de las playeras.
+                            .oracion
+                                span Las maracas están en la esquina superior
+                                .drop(data='derecha' droptimes="untilok"): div derecha
+                                span .
+                            .oracion
+                                span Las calaveras están 
+                                .drop(data='abajo' droptimes="untilok"): div abajo
+                                span de la estrella, a la
+                                .drop(data='derecha' droptimes="untilok"): div derecha
+                                span de los carros.
+                            .oracion
+                                span Los floreros de barro están
+                                .drop(data='abajo' droptimes="untilok"): div abajo
+                                span de las maracas, a la
+                                .drop(data='derecha' droptimes="untilok"): div derecha
+                                span de las bolsas.
+                        .w30
+                            drag( data="izquierda" dropzone=".drop" return-to-position dropzone-ok-class="isOk"): number(c=1 smaller) izquierda
+                            drag( data="derecha" dropzone=".drop"  return-to-position dropzone-ok-class="isOk"): number(c=2 smaller) derecha
+                            drag( data="arriba" dropzone=".drop"  return-to-position dropzone-ok-class="isOk"): number(c=5 smaller) arriba
+                            drag( data="abajo" dropzone=".drop"  return-to-position dropzone-ok-class="isOk"): number(c=6 smaller) abajo
+                          
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1
