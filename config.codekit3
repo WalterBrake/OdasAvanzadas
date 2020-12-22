@@ -11994,6 +11994,91 @@
 		"oAP": "\/GE5T2\/231\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/GE5T2\/237\/i\/c.png": {
+		"ft": 32768,
+		"iS": 9746,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/i\/c.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/237\/i\/m.png": {
+		"ft": 32768,
+		"iS": 19455,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/i\/m.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/237\/i\/mapa.png": {
+		"ft": 32768,
+		"iS": 298628,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/i\/mapa.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/237\/i\/trigo.png": {
+		"ft": 32768,
+		"iS": 16388,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/i\/trigo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/237\/i\/vaca.png": {
+		"ft": 32768,
+		"iS": 13728,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/i\/vaca.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T2\/237\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/index.html",
+		"oF": 0
+		},
+	"\/GE5T2\/237\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/GE5T2\/237\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/GE5T2\/237\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T2\/237\/s\/instruccion2.mp3",
+		"oF": 0
+		},
 	"\/GE6T1\/221\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,

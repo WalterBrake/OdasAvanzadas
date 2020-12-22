@@ -1,0 +1,190 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Identifico las actividades productivas'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .audiotext .audiotextBtn{height: 40px;}
+            .info h2{ font-size: 1rem; }
+            .drag {
+                width: auto;
+                height: auto;
+                width: 30px;
+                height: 30px;
+            }
+            @media (max-width: 480px) {
+                .drag {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .drag img {
+                min-width: auto;
+                max-height: 100%;
+            }
+            .drag div {
+                background: #fff;
+                border-radius: 50px;
+                width: 30px;
+                height: 30px;
+                padding: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 480px) {
+                .drag div {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .map {
+                position: relative;
+            }
+            .map .items .drop {
+                width: 30px;
+                height: 30px;
+                background: #53A6CF;
+                border-radius: 50%;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+             .map .items .drop div{
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+            .map .items .drop:nth-child(1) {
+                left: 7%;
+                top: 7%;
+            }
+            .map .items .drop:nth-child(2) {
+                left: 25%;
+                top: 45%;
+            }
+            .map .items .drop:nth-child(3) {
+                left: 33%;
+                top: 58%;
+            }
+            .map .items .drop:nth-child(4) {
+                left: 40%;
+                top: 35%;
+            }
+            .map .items .drop:nth-child(5) {
+                left: 44%;
+                top: 63%;
+            }
+            .map .items .drop:nth-child(6) {
+                left: 15%;
+                top: 19%;
+            }
+            .map .items .drop:nth-child(7) {
+                left: 6%;
+                top: 39%;
+            }
+            .map .items .drop:nth-child(8) {
+                left: 33%;
+                top: 77%;
+            }
+            .map .items .drop:nth-child(9) {
+                left: 68%;
+                top: 20%;
+            }
+            .map .items .drop:nth-child(10) {
+                left: 89%;
+                top: 35%;
+            }
+            .map .items .drop:nth-child(11) {
+                left: 15%;
+                top: 38%;
+            }
+            .map .items .drop:nth-child(12) {
+                left: 51%;
+                top: 84%;
+            }
+            .map .items .drop:nth-child(13) {
+                left: 77%;
+                top: 18%;
+            }
+            .map .items .drop:nth-child(14) {
+                left: 82%;
+                top: 51%;
+            }
+            .map .items .drop:nth-child(15) {
+                left: 90%;
+                top: 72%;
+            }
+            .map .items .drop:nth-child(16) {
+                left: 11%;
+                top: 53%;
+            }
+            .map .items .drop:nth-child(17) {
+                left: 19%;
+                top: 63%;
+            }
+            .map .items .drop:nth-child(18) {
+                left: 44%;
+                top: 16%;
+            }
+            .map .items .drop:nth-child(19) {
+                left: 59%;
+                top: 63%;
+            }
+            .map .items .drop:nth-child(20) {
+                left: 73%;
+                top: 78%;
+            }
+            @media (max-width: 480px) {
+                .map .items .drop {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .map .items .drop img {
+                width: 80%;
+                max-height: 100%;
+            }
+            [wascloned] {
+                display: none;
+            }
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="20" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Los principales factores que determinan el volumen de la producción agrícola y ganadera de una región son el clima, la disponibilidad de agua, el tipo de suelo y el relieve." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en la casilla la imagen de los principales productos de los países señalados en el mapa.")
+                activity
+                    .row.w100
+                        .map.w80
+                            img(src="i/mapa.png").w100
+                            .items
+                                template(v-for="(i, index) in ['m','m','m','m','m', 'c','c','c','c','c', 't','t','t','t','t', 'v','v','v','v','v']")
+                                    .drop(:data="i" droptimes="multiple" droplimit="1" :class="i")
+                    .row.w100.wrap.around
+                        template(v-for="(i, index) in ['m','m','m','m','m', 'c','c','c','c','c', 't','t','t','t','t', 'v','v','v','v','v']")
+                            drag(ref="obs" :data="i" dropzone=".drop" stay-if-ok append-clone extval): div: img(:src="'i/'+i+'.png'")
+                    .text-center.mt-auto: button(@click="dragValidation(['obs'], 20)").button.big.animate__animated.animate__flip Verificar
+
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                
+                app.currentScene = 0
+                app.scenesCount = 1
