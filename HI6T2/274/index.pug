@@ -1,0 +1,45 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Ubico culturas de Europa y Oriente'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center
+                        .w40.din
+                            number(c=1 small) Dinastía Sui
+                            p Evento
+                            .drop(data="a2" droptimes="untilok")
+                            p Siglo
+                            .drop(data="a1" droptimes="multiple")
+                        .w40.din
+                            number(c=2 small) Dinastía Tang
+                            p Evento
+                            .drop(data="b2" droptimes="untilok")
+                            p Siglo
+                            .drop(data="b1" droptimes="multiple")
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 1
+                app.scenesCount = 1

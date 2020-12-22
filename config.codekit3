@@ -13711,6 +13711,36 @@
 		"oAP": "\/HI6T2\/268\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/HI6T2\/274\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI6T2\/274\/index.html",
+		"oF": 0
+		},
+	"\/HI6T2\/274\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/HI6T2\/274\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/HI6T2\/274\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI6T2\/274\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/HI6T2\/274\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI6T2\/274\/s\/instruccion2.mp3",
+		"oF": 0
+		},
 	"\/HI6T2\/275\/index.html": {
 		"cB": 0,
 		"ft": 8192,
