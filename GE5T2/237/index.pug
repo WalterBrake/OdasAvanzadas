@@ -14,6 +14,7 @@ html(lang="es")
                 height: auto;
                 width: 30px;
                 height: 30px;
+                margin: 6px;
             }
             @media (max-width: 480px) {
                 .drag {
@@ -175,7 +176,7 @@ html(lang="es")
                     .row.w100.wrap.around
                         template(v-for="(i, index) in ['m','m','m','m','m', 'c','c','c','c','c', 't','t','t','t','t', 'v','v','v','v','v']")
                             drag(ref="obs" :data="i" dropzone=".drop" stay-if-ok append-clone extval): div: img(:src="'i/'+i+'.png'")
-                    .text-center.mt-auto: button(@click="dragValidation(['obs'], 20)").button.big.animate__animated.animate__flip Verificar
+                    .text-center.mt-1: button(@click="dragValidation(['obs'], 20)").button.big.animate__animated.animate__flip Verificar
 
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
