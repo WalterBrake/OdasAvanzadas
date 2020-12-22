@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Uso conectores lógicos </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .oracion {
+          background: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          margin: 5px 10px;
+      }
+      .oracion .drop {
+          background: var(--main);
+          width: 200px;
+          height: 30px;
+          border-radius: 10px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 6px;
+          text-align: center;
+      }
+      .oracion .drop div {
+          text-shadow: none;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 2px 10px;
+      }
+      .drag div {
+          background: #fff;
+          padding: 4px 8px;
+          border-radius: 6px;
+      }
+      .drag .number.smaller{
+          font-size: 1.2rem;
+      }
+      [wascloned] {
+          display: none;
+      }
+      .boxy{
+          background: var(--main);
+          padding: 10px;
+          border-radius: 10px;
+          box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+          margin: 10px 6px;
+      }
+      .boxy:nth-child(2){background: var(--sec);}
+      .boxy:nth-child(2) .oracion .drop{background: var(--sec);}
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="dragdrop" title="Uso conectores lógicos " text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+                <div class="boxy">
+                  <div class="oracion"><span>Los científicos descubrieron que las bacterias,</span>
+                    <div class="drop" data="a diferencia de" droptimes="untilok"></div><span>los virus, se pueden eliminar con antibióticos.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['asimismo','por el contrario','a diferencia de',]">
+                            <drag v-if="index==2" ref="a1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="a1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+                <div class="boxy">
+                  <div class="oracion"><span>Las matemáticas son parte de las ciencias exactas,</span>
+                    <div class="drop" data="en cambio" droptimes="untilok"></div><span>, el arte es una disciplina de apreciación estética.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['por su parte','en cambio','pero',]">
+                            <drag v-if="index==1" ref="a2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="a2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['a1', 'a2'], 2)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="dragdrop" title="Uso conectores lógicos " text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="boxy">
+                  <div class="oracion"><span>No todas las plantas medicinales curan las enfermedades,</span>
+                    <div class="drop" data="por el contrario" droptimes="untilok"></div><span>, la medicina moderna es más eficiente en algunos casos.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['en cambio','por el contrario','a diferencia de',]">
+                            <drag v-if="index==1" ref="b1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="b1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+                <div class="boxy">
+                  <div class="oracion"><span>El español es una de las tres lenguas más habladas a nivel mundial,</span>
+                    <div class="drop" data="asimismo" droptimes="untilok"></div><span>, el inglés y el chino son las más utilizadas en los negocios.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['sin embargo','pero','asimismo',]">
+                            <drag v-if="index==2" ref="b2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="b2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['b1', 'b2'], 2)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="dragdrop" title="Uso conectores lógicos " text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="boxy">
+                  <div class="oracion"><span>La menta es una planta que ayuda a reducir la fiebre;</span>
+                    <div class="drop" data="por su parte" droptimes="untilok"></div><span>, el jengibre ayuda a reducir el dolor muscular.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['pero','por su parte','por el contrario',]">
+                            <drag v-if="index==1" ref="c1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="c1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+                <div class="boxy">
+                  <div class="oracion"><span>Las abejas meleras son las encargadas de polinizar las flores;</span>
+                    <div class="drop" data="sin embargo" droptimes="untilok"></div><span>, otros insectos también cumplen esta función.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['en cambio','por el contrario','sin embargo',]">
+                            <drag v-if="index==2" ref="c2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="c2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['c1', 'c2'], 2)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="dragdrop" title="Uso conectores lógicos " text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="boxy">
+                  <div class="oracion"><span>Los perros son entrenados para cumplir funciones como policías o guías, </span>
+                    <div class="drop" data="pero" droptimes="untilok"></div><span>no pueden realizar maniobras bajo el agua.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['asimismo','pero','a diferencia de',]">
+                            <drag v-if="index==1" ref="d1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="d1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+                <div class="boxy">
+                  <div class="oracion"><span>Debemos alimentarnos con una dieta balanceada</span>
+                    <div class="drop" data="puesto que" droptimes="untilok"></div><span> nuestro cuerpo necesita de varios nutrientes para realizar todas sus funciones.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['pero','sin embargo','puesto que',]">
+                            <drag v-if="index==2" ref="d2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="d2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['d1', 'd2'], 2)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="dragdrop" title="Uso conectores lógicos " text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+                <div class="boxy">
+                  <div class="oracion"><span>En los animales vivíparos, el embrión se desarrolla dentro de la madre,</span>
+                    <div class="drop" data="a diferencia de" droptimes="untilok"></div><span>los ovíparos, que lo hacen en un huevo.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['por su parte','a diferencia de','así como',]">
+                            <drag v-if="index==1" ref="e1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="e1" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+                <div class="boxy">
+                  <div class="oracion"><span>Los cuadrados, trapecios, rombos y rectángulos son cuadrilateros,</span>
+                    <div class="drop" data="puesto que" droptimes="untilok"></div><span>son figuras geométricas que tienen cuatro lados.</span>
+                  </div>
+                        <div class="row w100 wrap">
+                          <template v-for="(i, index) in ['sin embargo','por ejemplo','puesto que',]">
+                            <drag v-if="index==2" ref="e2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                            <drag v-else="v-else" ref="e2" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                              <number smaller="smaller" randomc="randomc">{{i}}</number>
+                            </drag>
+                          </template>
+                        </div>
+                </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['e1', 'e2'], 2)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', [])
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>

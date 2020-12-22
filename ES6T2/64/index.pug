@@ -1,0 +1,147 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Uso conectores lógicos '
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .oracion {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+                margin: 5px 10px;
+            }
+            .oracion .drop {
+                background: var(--main);
+                width: 200px;
+                height: 30px;
+                border-radius: 10px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 6px;
+                text-align: center;
+            }
+            .oracion .drop div {
+                text-shadow: none;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 2px 10px;
+            }
+            .drag div {
+                background: #fff;
+                padding: 4px 8px;
+                border-radius: 6px;
+            }
+            .drag .number.smaller{
+                font-size: 1.2rem;
+            }
+            [wascloned] {
+                display: none;
+            }
+            .boxy{
+                background: var(--main);
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+                margin: 10px 6px;
+            }
+            .boxy:nth-child(2){background: var(--sec);}
+            .boxy:nth-child(2) .oracion .drop{background: var(--sec);}
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            mixin doptions(arrayOps, theok, refname)
+                - var arrays = "["
+                each arr in arrayOps 
+                    - arrays += "'" + arr +"',"
+                - arrays += "]"
+                .row.w100.wrap
+                    template(v-for="(i, index) in "+arrays)
+                        drag(v-if="index=="+theok ref=refname :data="i" dropzone=".drop" stay-if-ok append-clone extval): number(smaller randomc) {{i}}
+                        drag(v-else ref=refname :data="i" dropzone=".drop" stay-if-ok append-clone extval isfalse): number(smaller randomc) {{i}}
+
+            mixin oracion(t1, t2, theok, refname, arrayOps)
+                .boxy
+                    .oracion
+                        span=t1
+                        .drop(data=arrayOps[theok] droptimes="untilok")
+                        span=t2
+                    +doptions(arrayOps, theok, refname)
+
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    +oracion('Los científicos descubrieron que las bacterias,', 'los virus, se pueden eliminar con antibióticos.', 2, 'a1', ['asimismo','por el contrario','a diferencia de'])
+                    
+                    +oracion('Las matemáticas son parte de las ciencias exactas,', ', el arte es una disciplina de apreciación estética.', 1, 'a2', ['por su parte','en cambio','pero'])
+                    
+                    .text-center: button(@click="dragValidation(['a1', 'a2'], 2)").button.big.animate__animated.animate__flip Verificar
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    +oracion('No todas las plantas medicinales curan las enfermedades,', ', la medicina moderna es más eficiente en algunos casos.', 1, 'b1', ['en cambio','por el contrario','a diferencia de'])
+                    
+                    +oracion('El español es una de las tres lenguas más habladas a nivel mundial,', ', el inglés y el chino son las más utilizadas en los negocios.', 2, 'b2', ['sin embargo','pero','asimismo'])
+                    
+                    .text-center: button(@click="dragValidation(['b1', 'b2'], 2)").button.big.animate__animated.animate__flip Verificar
+            
+
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    +oracion('La menta es una planta que ayuda a reducir la fiebre;', ', el jengibre ayuda a reducir el dolor muscular.', 1, 'c1', ['pero','por su parte','por el contrario'])
+                    
+                    +oracion('Las abejas meleras son las encargadas de polinizar las flores;', ', otros insectos también cumplen esta función.', 2, 'c2', ['en cambio','por el contrario','sin embargo'])
+                    
+                    .text-center: button(@click="dragValidation(['c1', 'c2'], 2)").button.big.animate__animated.animate__flip Verificar
+            
+            
+
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    +oracion('Los perros son entrenados para cumplir funciones como policías o guías, ', 'no pueden realizar maniobras bajo el agua.', 1, 'd1', ['asimismo','pero','a diferencia de'])
+                    
+                    +oracion('Debemos alimentarnos con una dieta balanceada', ' nuestro cuerpo necesita de varios nutrientes para realizar todas sus funciones.', 2, 'd2', ['pero','sin embargo','puesto que'])
+                    
+                    .text-center: button(@click="dragValidation(['d1', 'd2'], 2)").button.big.animate__animated.animate__flip Verificar
+            
+
+            
+
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los conectores lógicos que completan las siguientes oraciones descriptivas." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    +oracion('En los animales vivíparos, el embrión se desarrolla dentro de la madre,', 'los ovíparos, que lo hacen en un huevo.', 1, 'e1', ['por su parte','a diferencia de','así como'])
+                    
+                    +oracion('Los cuadrados, trapecios, rombos y rectángulos son cuadrilateros,', 'son figuras geométricas que tienen cuatro lados.', 2, 'e2', ['sin embargo','por ejemplo','puesto que'])
+                    
+                    .text-center: button(@click="dragValidation(['e1', 'e2'], 2)").button.big.animate__animated.animate__flip Verificar
+
+            // END
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+                
+                app.currentScene = 0
+                app.scenesCount = 1
