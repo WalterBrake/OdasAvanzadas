@@ -9,36 +9,138 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      @media (max-width: 680px) {
+          .number.small {
+              font-size: 1.4rem;
+          }
+          .number.smaller {
+              font-size: 0.7rem;
+          }
+          .drop .number.smaller {
+              font-size: 0.6rem !important;
+          }
+      }
+      .drop {
+          background: #fff;
+          width: 90%;
+          margin: 0 auto;
+          min-height: 30px;
+          border-radius: 10px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+      }
+      .drop .number.smaller {
+          font-size: 1rem;
+          margin: 10px 0;
+      }
+      .drop.hover {
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
+      }
+      .din p {
+          opacity: 0.6;
+          margin: 10px 0 2px;
+      }
+      .drags {
+          background: var(--accent);
+          border-radius: 10px;
+      }
+      .drags .drag {
+          width: auto;
+          height: auto;
+          margin: 8px;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
         <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 text-center">
             <div class="w40 din">
               <number c="1" small="small">Dinastía Sui</number>
               <p>Evento</p>
-              <div class="drop" data="a2" droptimes="untilok"></div>
+              <div class="drop" data="a1" droptimes="untilok"></div>
               <p>Siglo</p>
-              <div class="drop" data="a1" droptimes="multiple"></div>
+              <div class="drop" data="a2" droptimes="multiple"></div>
             </div>
             <div class="w40 din">
               <number c="2" small="small">Dinastía Tang</number>
               <p>Evento</p>
-              <div class="drop" data="b2" droptimes="untilok"></div>
+              <div class="drop" data="b1" droptimes="untilok"></div>
               <p>Siglo</p>
-              <div class="drop" data="b1" droptimes="multiple"></div>
+              <div class="drop" data="b2" droptimes="multiple"></div>
             </div>
+          </div>
+          <div class="row w100 wrap drags mt-1">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number randomc="randomc" smaller="smaller">{{i.t}}</number>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <div class="w40 din">
+              <number c="1" small="small">Dinastía Song</number>
+              <p>Evento</p>
+              <div class="drop" data="a1" droptimes="untilok"></div>
+              <p>Siglo</p>
+              <div class="drop" data="a2" droptimes="multiple"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap drags mt-1">
+            <template v-for="(i, index) in temps.b">
+              <drag :data="i.d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number randomc="randomc" smaller="smaller">{{i.t}}</number>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <div class="w40 din">
+              <number c="1" small="small">Dinastía Yuang</number>
+              <p>Evento</p>
+              <div class="drop" data="a1" droptimes="untilok"></div>
+              <p>Siglo</p>
+              <div class="drop" data="a2" droptimes="multiple"></div>
+            </div>
+            <div class="w40 din">
+              <number c="2" small="small">Caída del Imperio romano</number>
+              <p>Evento</p>
+              <div class="drop" data="b1" droptimes="untilok"></div>
+              <p>Siglo</p>
+              <div class="drop" data="b2" droptimes="multiple"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap drags mt-1">
+            <template v-for="(i, index) in temps.c">
+              <drag :data="i.d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number randomc="randomc" smaller="smaller">{{i.t}}</number>
+              </drag>
+            </template>
           </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -72,10 +174,38 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {d:'b2', t:'Entre los s. VI y VII'},
+          {d:'b1', t:'Periodo Nara'},
+          {d:'b1', t:'Ataques vikingos'},
+          {d:'a2', t:'En el s. VI'},
+          {d:'a1', t:'Nacimiento de Mahoma'},
+          {d:'', t:'Nace Jerusalem'},
+          {d:'', t:'En el s. XI'},
+          {d:'b1', t:'Expansión del islam'},
+      ])
+      app.$set(app.temps, 'b', [
+          {d:'a1', t:'Jerusalén conquistada por musulmanes'},
+          {d:'a1', t:'Shogunato en Japón'},
+          {d:'', t:'Expasión del islam'},
+          {d:'', t:'Entre los s. VI y IX'},
+          {d:'a1', t:'Cruzadas'},
+          {d:'a1', t:'Saqueo de Constantinopla'},
+          {d:'a2', t:'Entre los s. X y XIX'},
+      ])
+      app.$set(app.temps, 'c', [
+          {d:'b2', t:'Entre los s. XVI y XVII'},
+          {d:'a1', t:'Shogunato en Japón'},
+          {d:'b1', t:'Dinastía Ming'},
+          {d:'a1', t:'Peste negra'},
+          {d:'a2', t:'Entre los s. XII y XIII'},
+          {d:'', t:'Cruzadas'},
+          {d:'b1', t:'Colón llega a América'},
+          {d:'', t:'Entre los s. XIX y XX'},
+      ])
       
-      app.currentScene = 1
-      app.scenesCount = 1
+      app.currentScene = 0
+      app.scenesCount = 3
     </script>
   </body>
 </html>
