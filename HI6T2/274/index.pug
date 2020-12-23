@@ -53,7 +53,9 @@ html(lang="es")
                 height: auto;
                 margin: 8px;
             }
-
+            .drop{
+                border: 2px solid rgba(0,0,0,0.1);
+            }
 
     body
         #app
@@ -72,12 +74,15 @@ html(lang="es")
                     .row.w100.din
                         .w30: number(c=1 small) Dinastía Sui
                         .w40: .drop(data="a1" droptimes="untilok")
-                        .w40: .drop(data="a2" droptimes="multiple")
+                        .w40: .drop(data="a2" droptimes="untilok")
                     
                     .row.w100.din.mt-1
                         .w30: number(c=2 small) Dinastía Tang
-                        .w40: .drop(data="b1" droptimes="untilok")
-                        .w40: .drop(data="b2" droptimes="multiple")
+                        .w40
+                            .drop(data="b1" droptimes="multiple" droplimit="1")
+                            .drop(data="b1" droptimes="multiple" droplimit="1")
+                            .drop(data="b1" droptimes="multiple" droplimit="1")
+                        .w40: .drop(data="b2" droptimes="untilok")
                         
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.a")
@@ -93,8 +98,12 @@ html(lang="es")
 
                     .row.w100.din
                         .w30: number(c=1 small) Dinastía Song
-                        .w40: .drop(data="a1" droptimes="untilok")
-                        .w40: .drop(data="a2" droptimes="multiple")
+                        .w40
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                        .w40: .drop(data="a2" droptimes="untilok")
                         
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.b")
@@ -110,12 +119,16 @@ html(lang="es")
 
                     .row.w100.din
                         .w30: number(c=1 small) Dinastía Yuang
-                        .w40: .drop(data="a1" droptimes="untilok")
-                        .w40: .drop(data="a2" droptimes="multiple")
+                        .w40
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                            .drop(data="a1" droptimes="multiple" droplimit="1")
+                        .w40: .drop(data="a2" droptimes="untilok")
                     .row.w100.din.mt-1
                         .w30: number(c=2 small) Caída del Imperio romano
-                        .w40: .drop(data="b1" droptimes="untilok")
-                        .w40: .drop(data="b2" droptimes="multiple")
+                        .w40
+                            .drop(data="b1" droptimes="multiple" droplimit="1")
+                            .drop(data="b1" droptimes="multiple" droplimit="1")
+                        .w40: .drop(data="b2" droptimes="untilok")
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.c")
                             drag(:data="i.d" dropzone=".drop" stay-if-ok append-to-dropzone): number(randomc smaller) {{i.t}}

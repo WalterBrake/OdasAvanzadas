@@ -249,6 +249,7 @@ Vue.component('drag', {
         hitTestISERROR(dropzone, e){
             var _this = this
 
+
             //## ERROR
             
             _this.$emit('iserror')
@@ -257,7 +258,9 @@ Vue.component('drag', {
             _this.dropzoneStatusClass('error', dropzone)
             _this.dropzoneSound(dropzone, 'errorsound')
             
-            _this.droppedtimesAdd(dropzone)
+            if(_this.noReturnOnDrop != undefined || _this.extval != undefined){
+                _this.droppedtimesAdd(dropzone)
+            }
 
             _this.appendCloneToDropzoneFn(dropzone, e)
 

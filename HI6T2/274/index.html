@@ -56,7 +56,9 @@
           height: auto;
           margin: 8px;
       }
-      
+      .drop{
+          border: 2px solid rgba(0,0,0,0.1);
+      }
       
     </style>
   </head>
@@ -85,7 +87,7 @@
               <div class="drop" data="a1" droptimes="untilok"></div>
             </div>
             <div class="w40">
-              <div class="drop" data="a2" droptimes="multiple"></div>
+              <div class="drop" data="a2" droptimes="untilok"></div>
             </div>
           </div>
           <div class="row w100 din mt-1">
@@ -93,10 +95,12 @@
               <number c="2" small="small">Dinastía Tang</number>
             </div>
             <div class="w40">
-              <div class="drop" data="b1" droptimes="untilok"></div>
+              <div class="drop" data="b1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="b1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="b1" droptimes="multiple" droplimit="1"></div>
             </div>
             <div class="w40">
-              <div class="drop" data="b2" droptimes="multiple"></div>
+              <div class="drop" data="b2" droptimes="untilok"></div>
             </div>
           </div>
           <div class="row w100 wrap drags mt-1">
@@ -126,10 +130,13 @@
               <number c="1" small="small">Dinastía Song</number>
             </div>
             <div class="w40">
-              <div class="drop" data="a1" droptimes="untilok"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
             </div>
             <div class="w40">
-              <div class="drop" data="a2" droptimes="multiple"></div>
+              <div class="drop" data="a2" droptimes="untilok"></div>
             </div>
           </div>
           <div class="row w100 wrap drags mt-1">
@@ -159,10 +166,11 @@
               <number c="1" small="small">Dinastía Yuang</number>
             </div>
             <div class="w40">
-              <div class="drop" data="a1" droptimes="untilok"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="a1" droptimes="multiple" droplimit="1"></div>
             </div>
             <div class="w40">
-              <div class="drop" data="a2" droptimes="multiple"></div>
+              <div class="drop" data="a2" droptimes="untilok"></div>
             </div>
           </div>
           <div class="row w100 din mt-1">
@@ -170,10 +178,11 @@
               <number c="2" small="small">Caída del Imperio romano</number>
             </div>
             <div class="w40">
-              <div class="drop" data="b1" droptimes="untilok"></div>
+              <div class="drop" data="b1" droptimes="multiple" droplimit="1"></div>
+              <div class="drop" data="b1" droptimes="multiple" droplimit="1"></div>
             </div>
             <div class="w40">
-              <div class="drop" data="b2" droptimes="multiple"></div>
+              <div class="drop" data="b2" droptimes="untilok"></div>
             </div>
           </div>
           <div class="row w100 wrap drags mt-1">
