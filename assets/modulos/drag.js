@@ -141,7 +141,7 @@ Vue.component('drag', {
             var drops = 0
             for(var dr = 0; dr < dropzones.length; dr++) {
                 var dropzone = dropzones[dr]
-                if(Draggable.hitTest(_this.$refs.drag, dropzone, '50%')){
+                if(Draggable.hitTest(_this.$refs.drag, dropzone, '100%')){
                     console.log('touchig dropzone', e)
                     var droppedtimes = dropzone.getAttribute('droppedtimes')
                     droppedtimes = parseInt(droppedtimes)
@@ -480,10 +480,29 @@ Vue.component('drag', {
                 let dzone = this.clonedIn[i]
                 let theclone = dzone.querySelectorAll('[isclone]')
                 dzone.classList.remove('dropzoneused')
+                // minus droppedtimes
+                if(this.undroppable != undefined || this.extval){
+                    var droppedtimes = dzone.getAttribute('droppedtimes')
+                    droppedtimes = parseInt(droppedtimes)
+                    var minus = droppedtimes > 0 ? droppedtimes-1 : 0
+                    dzone.setAttribute('droppedtimes', minus)
+                }
+                //---
                 theclone[0].remove()
             }
             this.$refs.drag.removeAttribute('wascloned')
             this.clonedIn = []
+            /*
+            for(var dr = 0; dr < dropzones.length; dr++) {
+                var dropzone = dropzones[dr]
+                if(Draggable.hitTest(_this.$refs.drag, dropzone, '100%')){
+                    console.log('touchig dropzone', e)
+                    var droppedtimes = dropzone.getAttribute('droppedtimes')
+                    droppedtimes = parseInt(droppedtimes)
+                    var minus = droppedtimes > 0 ? droppedtimes-1 : 0
+                    dropzone.setAttribute('droppedtimes', minus)
+                }
+            }*/
         },
         externalValidation(){
             let theresult = false
