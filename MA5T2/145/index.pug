@@ -125,7 +125,7 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="16" scene-color="#ED1C25")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca las palabras correspondientes para completar las oraciones y ayudar a Tere a ubicar los productos en su puesto." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     // SE usa un snippet para generar la estructura de imagenes que llevan objetos encima.
@@ -134,7 +134,7 @@ html(lang="es")
                     .row.w100.img
                         .imagerelative.w80
                             img(src="i/bg.png").w100
-                            .items
+                            //.items
                                 clickable(:isok="true" simple-ok initclass="pa-1" ): div
                                 clickable(:isok="true" simple-ok initclass="pa-1"  ): div
                                 clickable(:isok="true" simple-ok initclass="pa-1"  ): div

@@ -58,11 +58,11 @@ html(lang="es")
                                 img(src="i/1e.png").w30
                                 drag(dropzone=".drop" data="5" stay-if-ok drag-line particle-color="#00BFE5"): .conector.c3
                         .fraccs.w40
-                            .frc.drop(data="5" droptimes="untilok"): img(src="i/2e.png").w20
+                            .frc.drop(data="2" droptimes="untilok"): img(src="i/2e.png").w20
                             .frc.drop(data="4" droptimes="untilok"): img(src="i/2a.png").w20
                             .frc.drop(data="3" droptimes="untilok"): img(src="i/2c.png").w20
                             .frc.drop(data="1" droptimes="untilok"): img(src="i/2d.png").w20
-                            .frc.drop(data="2" droptimes="untilok"): img(src="i/2b.png").w20
+                            .frc.drop(data="5" droptimes="untilok"): img(src="i/2b.png").w20
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Relaciona la respuesta correcta de la suma o resta de fracciones." textaudio="s/instruccion2.mp3" :autoplay="true")

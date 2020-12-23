@@ -129,33 +129,21 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="16" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25">
         <info type="dragdrop" title="Indico el lugar de los objetos " text="Coloca las palabras correspondientes para completar las oraciones y ayudar a Tere a ubicar los productos en su puesto." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <!-- SE usa un snippet para generar la estructura de imagenes que llevan objetos encima.-->
           <!--En este caso llevará círculos seleccionando objetos.-->
           <div class="row w100 img">
             <div class="imagerelative w80"><img class="w100" src="i/bg.png"/>
-              <div class="items">
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-                <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
-                  <div></div>
-                </clickable>
-              </div>
+              <!--.items
+              clickable(:isok="true" simple-ok initclass="pa-1" ): div
+              clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+              clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+              clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+              clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+              clickable(:isok="true" simple-ok initclass="pa-1"  ): div
+              -->
             </div>
           </div>
           <div class="row w100">
