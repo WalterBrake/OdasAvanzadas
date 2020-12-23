@@ -27,10 +27,15 @@ html(lang="es")
                 box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
                 display: flex;
                 flex-direction: column;
+                text-align:center;
             }
             .drop .number.smaller {
                 font-size: 1rem;
                 margin: 10px 0;
+            }
+            .number.small{
+                font-size: 1.5rem;
+                margin: 2px;
             }
             .drop.hover {
                 box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
@@ -60,18 +65,20 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.text-center
-                        .w40.din
-                            number(c=1 small) Dinastía Sui
-                            p Evento
-                            .drop(data="a1" droptimes="untilok")
-                            p Siglo
-                            .drop(data="a2" droptimes="multiple")
-                        .w40.din
-                            number(c=2 small) Dinastía Tang
-                            p Evento
-                            .drop(data="b1" droptimes="untilok")
-                            p Siglo
-                            .drop(data="b2" droptimes="multiple")
+                        .w30
+                        .w40: p Evento
+                        .w40: p Siglo
+
+                    .row.w100.din
+                        .w30: number(c=1 small) Dinastía Sui
+                        .w40: .drop(data="a1" droptimes="untilok")
+                        .w40: .drop(data="a2" droptimes="multiple")
+                    
+                    .row.w100.din.mt-1
+                        .w30: number(c=2 small) Dinastía Tang
+                        .w40: .drop(data="b1" droptimes="untilok")
+                        .w40: .drop(data="b2" droptimes="multiple")
+                        
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.a")
                             drag(:data="i.d" dropzone=".drop" stay-if-ok append-to-dropzone): number(randomc smaller) {{i.t}}
@@ -80,12 +87,14 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.text-center
-                        .w40.din
-                            number(c=1 small) Dinastía Song
-                            p Evento
-                            .drop(data="a1" droptimes="untilok")
-                            p Siglo
-                            .drop(data="a2" droptimes="multiple")
+                        .w30
+                        .w40: p Evento
+                        .w40: p Siglo
+
+                    .row.w100.din
+                        .w30: number(c=1 small) Dinastía Song
+                        .w40: .drop(data="a1" droptimes="untilok")
+                        .w40: .drop(data="a2" droptimes="multiple")
                         
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.b")
@@ -95,18 +104,18 @@ html(lang="es")
                 info(type="dragdrop" title=title text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.text-center
-                        .w40.din
-                            number(c=1 small) Dinastía Yuang
-                            p Evento
-                            .drop(data="a1" droptimes="untilok")
-                            p Siglo
-                            .drop(data="a2" droptimes="multiple")
-                        .w40.din
-                            number(c=2 small) Caída del Imperio romano
-                            p Evento
-                            .drop(data="b1" droptimes="untilok")
-                            p Siglo
-                            .drop(data="b2" droptimes="multiple")
+                        .w30
+                        .w40: p Evento
+                        .w40: p Siglo
+
+                    .row.w100.din
+                        .w30: number(c=1 small) Dinastía Yuang
+                        .w40: .drop(data="a1" droptimes="untilok")
+                        .w40: .drop(data="a2" droptimes="multiple")
+                    .row.w100.din.mt-1
+                        .w30: number(c=2 small) Caída del Imperio romano
+                        .w40: .drop(data="b1" droptimes="untilok")
+                        .w40: .drop(data="b2" droptimes="multiple")
                     .row.w100.wrap.drags.mt-1
                         template(v-for="(i, index) in temps.c")
                             drag(:data="i.d" dropzone=".drop" stay-if-ok append-to-dropzone): number(randomc smaller) {{i.t}}

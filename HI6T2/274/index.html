@@ -30,10 +30,15 @@
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
           display: flex;
           flex-direction: column;
+          text-align:center;
       }
       .drop .number.smaller {
           font-size: 1rem;
           margin: 10px 0;
+      }
+      .number.small{
+          font-size: 1.5rem;
+          margin: 2px;
       }
       .drop.hover {
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
@@ -64,18 +69,33 @@
         <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 text-center">
-            <div class="w40 din">
-              <number c="1" small="small">Dinastía Sui</number>
+            <div class="w30"></div>
+            <div class="w40">
               <p>Evento</p>
-              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <p>Siglo</p>
+            </div>
+          </div>
+          <div class="row w100 din">
+            <div class="w30">
+              <number c="1" small="small">Dinastía Sui</number>
+            </div>
+            <div class="w40">
+              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <div class="drop" data="a2" droptimes="multiple"></div>
             </div>
-            <div class="w40 din">
+          </div>
+          <div class="row w100 din mt-1">
+            <div class="w30">
               <number c="2" small="small">Dinastía Tang</number>
-              <p>Evento</p>
+            </div>
+            <div class="w40">
               <div class="drop" data="b1" droptimes="untilok"></div>
-              <p>Siglo</p>
+            </div>
+            <div class="w40">
               <div class="drop" data="b2" droptimes="multiple"></div>
             </div>
           </div>
@@ -93,11 +113,22 @@
         <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 text-center">
-            <div class="w40 din">
-              <number c="1" small="small">Dinastía Song</number>
+            <div class="w30"></div>
+            <div class="w40">
               <p>Evento</p>
-              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <p>Siglo</p>
+            </div>
+          </div>
+          <div class="row w100 din">
+            <div class="w30">
+              <number c="1" small="small">Dinastía Song</number>
+            </div>
+            <div class="w40">
+              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <div class="drop" data="a2" droptimes="multiple"></div>
             </div>
           </div>
@@ -115,18 +146,33 @@
         <info type="dragdrop" title="Ubico culturas de Europa y Oriente" text="Coloca el nombre de los eventos que ocurrieron de forma casi simultánea y los siglos a los que corresponden." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100 text-center">
-            <div class="w40 din">
-              <number c="1" small="small">Dinastía Yuang</number>
+            <div class="w30"></div>
+            <div class="w40">
               <p>Evento</p>
-              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <p>Siglo</p>
+            </div>
+          </div>
+          <div class="row w100 din">
+            <div class="w30">
+              <number c="1" small="small">Dinastía Yuang</number>
+            </div>
+            <div class="w40">
+              <div class="drop" data="a1" droptimes="untilok"></div>
+            </div>
+            <div class="w40">
               <div class="drop" data="a2" droptimes="multiple"></div>
             </div>
-            <div class="w40 din">
+          </div>
+          <div class="row w100 din mt-1">
+            <div class="w30">
               <number c="2" small="small">Caída del Imperio romano</number>
-              <p>Evento</p>
+            </div>
+            <div class="w40">
               <div class="drop" data="b1" droptimes="untilok"></div>
-              <p>Siglo</p>
+            </div>
+            <div class="w40">
               <div class="drop" data="b2" droptimes="multiple"></div>
             </div>
           </div>
