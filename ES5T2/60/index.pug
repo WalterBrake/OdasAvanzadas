@@ -208,7 +208,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#DADBDA")
                 info(type="seleccionar" title=title text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="false")
-                    button(@click="$refs.nota.open()").button.mt-auto Ver nota
+                    button(@click="$refs.nota.open()").button.mt-auto Artículo de divulgación
                 activity
                     .pregunta.text-center.ascards
                         .h4 ¿Cuál es la referencia bibliográfica en la que podrías encontrar el artículo anterior?
