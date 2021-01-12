@@ -88,7 +88,7 @@ html(lang="es")
 
             mixin ficha(ind, num1, num2, val)
                 div.fic
-                    drag(ref=ind :data="temps['"+ind+"']?"+val+":1"+val dropzone=".drop" stay-if-ok append-clone extval)
+                    drag(ref=ind :data="temps['"+ind+"']?"+val+":1"+val dropzone=".okdrop" stay-if-ok append-clone extval)
                         .row.ficha(:class="temps['"+ind+"']?'on':'off'")
                             .ficha1 !{num1}
                             .mid
@@ -97,25 +97,29 @@ html(lang="es")
                     button.button(@click="temps['"+ind+"']=!temps['"+ind+"']") Voltear
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.wrap
                         +ficha('f2', '<div>1<hr>6</div>', '<div>0.25</div>', 2)
                         +ficha('f4', '<div>2<hr>3</div>', '<div>0.5</div>', 4)
                         +ficha('f3', '<div>1<hr>4</div>', '<div>0.66</div>', 3)
-                        +ficha('f0', '<div>1<hr>2</div>', '<div>0.75</div>', 0)
+                        //+ficha('f0', '<div>1<hr>2</div>', '<div>0.75</div>', 0)
                         +ficha('f1', '<div>3<hr>4</div>', '<div>0.16</div>', 1)
                     .row.w100.wrap.mt-1
-                        .drop(data="0" droptimes="untilok")
-                        .drop(data="1" droptimes="untilok")
-                        .drop(data="2" droptimes="untilok")
-                        .drop(data="3" droptimes="untilok")
-                        .drop(data="4" droptimes="untilok")
+                        .drop()
+                            .row.ficha(class="on")
+                                .ficha1: div 1#[hr]2
+                                .mid
+                                .ficha2 0.75
+                        .drop(data="1" droptimes="untilok").okdrop
+                        .drop(data="2" droptimes="untilok").okdrop
+                        .drop(data="3" droptimes="untilok").okdrop
+                        .drop(data="4" droptimes="untilok").okdrop
 
-                    .text-center: button(@click="dragValidation(['f0','f1','f2','f3', 'f4'], 5)").button.big.animate__animated.animate__flip Verificar
+                    .text-center: button(@click="dragValidation(['f1','f2','f3', 'f4'], 5)").button.big.animate__animated.animate__flip Verificar
             // SCENES
-            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.wrap
@@ -123,52 +127,64 @@ html(lang="es")
                         +ficha('b2', '<div>4<hr>6</div>', '<div>0.4</div>', 2)
                         +ficha('b1', '<div>3<hr>6</div>', '<div>0.66</div>', 1)
                         +ficha('b3', '<div>2<hr>5</div>', '<div>0.33</div>', 3)
-                        +ficha('b0', '<div>1<hr>7</div>', '<div>0.50</div>', 0)
+                        //+ficha('b0', '<div>1<hr>7</div>', '<div>0.50</div>', 0)
                     .row.w100.wrap.mt-1
-                        .drop(data="0" droptimes="untilok")
-                        .drop(data="1" droptimes="untilok")
-                        .drop(data="2" droptimes="untilok")
-                        .drop(data="3" droptimes="untilok")
-                        .drop(data="4" droptimes="untilok")
+                        .drop()
+                            .row.ficha(class="on")
+                                .ficha1: div 1#[hr]7
+                                .mid
+                                .ficha2 0.50
+                        .drop(data="1" droptimes="untilok").okdrop
+                        .drop(data="2" droptimes="untilok").okdrop
+                        .drop(data="3" droptimes="untilok").okdrop
+                        .drop(data="4" droptimes="untilok").okdrop
 
-                    .text-center: button(@click="dragValidation(['b0','b1','b2','b3', 'b4'], 5)").button.big.animate__animated.animate__flip Verificar
+                    .text-center: button(@click="dragValidation(['b1','b2','b3', 'b4'], 5)").button.big.animate__animated.animate__flip Verificar
             // SCENES
-            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.wrap
                         +ficha('c3', '<div>2<hr>8</div>', '<div>0.42</div>', 3)
                         +ficha('c4', '<div>3<hr>7</div>', '<div>0.125</div>', 4)
                         +ficha('c1', '<div>3<hr>5</div>', '<div>0.33</div>', 1)
-                        +ficha('c0', '<div>1<hr>8</div>', '<div>0.6</div>', 0)
+                        //+ficha('c0', '<div>1<hr>8</div>', '<div>0.6</div>', 0)
                         +ficha('c2', '<div>2<hr>6</div>', '<div>0.25</div>', 2)
                     .row.w100.wrap.mt-1
-                        .drop(data="0" droptimes="untilok")
-                        .drop(data="1" droptimes="untilok")
-                        .drop(data="2" droptimes="untilok")
-                        .drop(data="3" droptimes="untilok")
-                        .drop(data="4" droptimes="untilok")
+                        .drop()
+                            .row.ficha(class="on")
+                                .ficha1: div 1#[hr]8
+                                .mid
+                                .ficha2 0.6
+                        .drop(data="1" droptimes="untilok").okdrop
+                        .drop(data="2" droptimes="untilok").okdrop
+                        .drop(data="3" droptimes="untilok").okdrop
+                        .drop(data="4" droptimes="untilok").okdrop
 
-                    .text-center: button(@click="dragValidation(['c0','c1','c2','c3', 'c4'], 5)").button.big.animate__animated.animate__flip Verificar
+                    .text-center: button(@click="dragValidation(['c1','c2','c3', 'c4'], 5)").button.big.animate__animated.animate__flip Verificar
             
             // SCENES
-            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Vamos a jugar dominó! Coloca las fichas uniendo las fracciones con los números decimales que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.wrap
                         +ficha('d3', '<div>2<hr>4</div>', '<div>0.8</div>', 3)
                         +ficha('d2', '<div>3<hr>10</div>', '<div>0.5</div>', 2)
-                        +ficha('d0', '<div>1<hr>5</div>', '<div>0.1</div>', 0)
+                        //+ficha('d0', '<div>1<hr>5</div>', '<div>0.1</div>', 0)
                         +ficha('d4', '<div>4<hr>5</div>', '<div>0.2</div>', 4)
                         +ficha('d1', '<div>1<hr>10</div>', '<div>0.3</div>', 1)
                     .row.w100.wrap.mt-1
-                        .drop(data="0" droptimes="untilok")
-                        .drop(data="1" droptimes="untilok")
-                        .drop(data="2" droptimes="untilok")
-                        .drop(data="3" droptimes="untilok")
-                        .drop(data="4" droptimes="untilok")
+                        .drop()
+                            .row.ficha(class="on")
+                                .ficha1: div 1#[hr]5
+                                .mid
+                                .ficha2 0.1
+                        .drop(data="1" droptimes="untilok").okdrop
+                        .drop(data="2" droptimes="untilok").okdrop
+                        .drop(data="3" droptimes="untilok").okdrop
+                        .drop(data="4" droptimes="untilok").okdrop
 
-                    .text-center: button(@click="dragValidation(['d0','d1','d2','d3', 'd4'], 5)").button.big.animate__animated.animate__flip Verificar
+                    .text-center: button(@click="dragValidation(['d1','d2','d3', 'd4'], 5)").button.big.animate__animated.animate__flip Verificar
 
 
             
