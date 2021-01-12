@@ -22,7 +22,8 @@ Vue.component('scene', {
             oks: 0,
             errors: 0,
             comenzarBtnClicked: false,
-            timeoutSounds: null
+            timeoutSounds: null,
+            ended: false
         }
     },
     watch: {
@@ -97,15 +98,12 @@ Vue.component('scene', {
             this.currentAnswers++
             this.endedFn()
         },
-        endedFn () {
-            //console.log(this.alloks, this.oks, this.answers)
-            
+        endedFn (event) {
+
             if(this.alloks != undefined) {
                 if(this.oks == this.answers && this.oks>0) {
-                    
                     //Checar que todos los sonidos hayan terminado para terminar la escena
                     this.timeoutSounds = setInterval(this.checkIfSoundsArePlaying, 100)
-
                 }
             } else {
                 if(this.currentAnswers == this.answers) { //Todas las preguntas contestadas...
@@ -118,21 +116,19 @@ Vue.component('scene', {
             for(var hw in Howler._howls){
                 if(Howler._howls[hw].playing()){ allmuted = false }
             }
-            if(allmuted){
-                this.playAllOksSounds()
+            if(allmuted && !this.ended){
                 clearInterval(this.timeoutSounds)
+                this.playAllOksSounds()
                 this.endRun()
             }
         },
         playAllOksSounds () {
             if(this.alloksSound){
-
                 var sound = new Howl({ src: [this.alloksSound] })
                     app.particleAnimation({clientX:window.innerWidth / 2, clientY:window.innerHeight / 2}, 100, 5000, 100)
                     setTimeout(function(){
                         s_win.play()
                     },200)
-
                 setTimeout(function(){
                     sound.play()
                 },100)
@@ -140,7 +136,7 @@ Vue.component('scene', {
             }
         },
         endRun(){
-            
+            this.ended = true
             this.$emit('completed', {oks: this.oks, errors: this.errors, answers: this.answers, score: this.score, scoresum: this.scoresum})
         },
         checkTemporals () {
