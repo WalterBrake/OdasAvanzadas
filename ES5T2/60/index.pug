@@ -192,7 +192,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#DADBDA")
                 info(type="seleccionar" title=title text="Selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion3.mp3" :autoplay="true")
-                    button(@click="$refs.nota.open()").button.mt-auto Ver nota
+                    button(@click="$refs.nota.open()").button.mt-auto Artículo de divulgación
                 activity
                     .pregunta.text-center
                         .h4 ¿Cuál es el tema principal del artículo que acabas de leer?
