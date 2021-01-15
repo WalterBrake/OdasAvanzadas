@@ -51,7 +51,7 @@ html(lang="es")
             
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#5EB247")
-                info(type="dragdrop" title=title text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100
                         template(v-for="(i, index) in [['30 + 20 + 4 =', 'A'],['50 + 20 + 2=', 'B'],['40 + 10 + 4 =', 'A'],['50 + 40 =', 'C'],['30 + 40 + 2 =', 'B'],['40 + 40 + 10 =', 'C'] ]")

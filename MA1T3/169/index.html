@@ -9,33 +9,129 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          margin: 2px;
+          height: auto;
+      }
+      .drag.w20 {
+          width: 16%;
+          min-width: 30px;
+      }
+      .drag.w10 {
+          width: 12%;
+          min-width: 24px;
+      }
+      .drag img {
+          min-width: auto;
+      }
+      .ex1 {
+          background: rgba(100, 205, 255, 0.1);
+          border-radius: 10px;
+          padding: 10px;
+          max-width: 96%;
+      }
+      .box {
+          background: #f5f5f5;
+          border-radius: 10px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .box .number {
+          text-align: center;
+          padding: 10px 1px;
+          font-size: 1rem;
+      }
+      @media (max-width: 680px) {
+          .box .number {
+              font-size: 0.6rem;
+          }
+      }
+      .box .drop {
+          min-height: 60px;
+          background: var(--beige);
+          margin: 4px;
+          border-radius: 6px;
+          border: 2px dashed rgba(0, 0, 0, 0.1);
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+      .box .drop .u {
+          max-width: 26%;
+      }
+      .box .drop .d {
+          max-width: 20%;
+      }
+      .box .drop.hover {
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
+      }
+      .box .inputable {
+          margin: 5px 15px;
+          padding: 2px;
+      }
+      .box .inputable .number{
+          padding: 4px;
+      }
+      .box .inputable input {
+          font-size: 1rem;
+      }
+      .box .inputable .number{
+          padding: 2px 4px;
+          font-size: 1.4rem;
+      }
+      @media (max-width: 680px) {
+          .box .inputable {
+              margin: 2px 8px;
+              padding: 1px;
+          }
+      }
+      .box:last-child {
+          justify-content: center;
+          background: #00A8CB;
+      }
+      .box:last-child .number {
+          font-size: 1.4rem;
+      }
+      @media (max-width: 680px) {
+          .box:last-child .number {
+              font-size: 1rem;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25">
+        <info type="dragdrop" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100">
+          <div class="row w100 ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 4" :data="u" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 2" :data="d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 3" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 3" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
-              <number c="1" smaller="smaller">Unidades</number>
-              <div class="drop" data="u" droptimes="multiple" droplimit="10"></div>
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop1" data="d" droptimes="multiple" droplimit="10"></div>
               <inputable initclass="c1" :isok="3">
                 <number c="1" small="small">3</number>
               </inputable>
             </div>
             <div class="w20 box">
               <number c="2" smaller="smaller">Unidades</number>
-              <div class="drop" data="u" droptimes="multiple" droplimit="10"></div>
+              <div class="drop drop1" data="u" droptimes="multiple" droplimit="10"></div>
               <inputable initclass="c2" :isok="3">
                 <number c="2" small="small">3</number>
               </inputable>
@@ -47,10 +143,156 @@
               </inputable>
             </div>
           </div>
+          <div class="row w100 mt-auto ex1">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 4" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 2" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop2" data="d" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="4">
+                <number c="1" small="small">4</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop drop2" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="2">
+                <number c="2" small="small">2</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="42">
+                <number c="3" small="small">42</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 mt-auto ex1">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 6" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 5" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop3" data="d" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="6">
+                <number c="1" small="small">6</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop drop3" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="5">
+                <number c="2" small="small">5</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="65">
+                <number c="3" small="small">65</number>
+              </inputable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="31" scene-color="#ED1C25">
+        <info type="dragdrop" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 ex1">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 2" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 5" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop1" data="d" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="2">
+                <number c="1" small="small">2</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop drop1" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="5">
+                <number c="2" small="small">5</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="25">
+                <number c="3" small="small">25</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 mt-auto ex1">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 1" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 7" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop2" data="d" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="1">
+                <number c="1" small="small">1</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop drop2" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="7">
+                <number c="2" small="small">7</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="17">
+                <number c="3" small="small">17</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 mt-auto ex1">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 5" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 2" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Decenas</number>
+              <div class="drop drop3" data="d" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="5">
+                <number c="1" small="small">5</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop drop3" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="2">
+                <number c="2" small="small">2</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="52">
+                <number c="3" small="small">52</number>
+              </inputable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -86,8 +328,8 @@
       app.$devmode = false
       app.$set(app.temps, 'a', [])
       
-      app.currentScene = 1
-      app.scenesCount = 1
+      app.currentScene = 0
+      app.scenesCount = 2
     </script>
   </body>
 </html>
