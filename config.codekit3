@@ -2084,6 +2084,22 @@
 		"oAP": "\/CM2T2\/280\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/CM2T3-291\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CM2T3-291\/index.html",
+		"oF": 0
+		},
+	"\/CM2T3-291\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/CM2T3-291\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/CN3T1\/200\/aimg\/arterias.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -8750,6 +8766,22 @@
 		"oAP": "\/ES2T2\/84\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES2T3-95\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3-95\/index.html",
+		"oF": 0
+		},
+	"\/ES2T3-95\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES2T3-95\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/ES3T1\/26\/aimg\/evita.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -10036,6 +10068,22 @@
 		"oA": 0,
 		"oAP": "\/ES3T2\/59\/s\/instruccion1.mp3",
 		"oF": 0
+		},
+	"\/ES3T3-80\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3-80\/index.html",
+		"oF": 0
+		},
+	"\/ES3T3-80\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES3T3-80\/index.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
 		"ft": 2097152,
@@ -12556,7 +12604,7 @@
 		},
 	"\/HI4T2\/266\/i\/rship.png": {
 		"ft": 32768,
-		"iS": 249592,
+		"iS": 590795,
 		"oA": 0,
 		"oAP": "\/HI4T2\/266\/i\/rship.png",
 		"oF": 0,
@@ -16212,6 +16260,38 @@
 		"oAP": "\/MA1T2\/141\/s\/robot.mp3",
 		"oF": 0
 		},
+	"\/MA1T3-165\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T3-165\/index.html",
+		"oF": 0
+		},
+	"\/MA1T3-165\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA1T3-165\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA1T3-169\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T3-169\/index.html",
+		"oF": 0
+		},
+	"\/MA1T3-169\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA1T3-169\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/MA2T1\/132\/aimg\/i1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -17274,6 +17354,38 @@
 		"oA": 0,
 		"oAP": "\/MA2T2\/202\/s\/instruccion1.mp3",
 		"oF": 0
+		},
+	"\/MA2T3-213\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T3-213\/index.html",
+		"oF": 0
+		},
+	"\/MA2T3-213\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA2T3-213\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA2T3-216\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T3-216\/index.html",
+		"oF": 0
+		},
+	"\/MA2T3-216\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA2T3-216\/index.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/MA3T1\/102\/aimg\/crucigrama-letras.svg": {
 		"ft": 2097152,
@@ -22790,19 +22902,26 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/Templates\/tem\/index.html": {
+	"\/Templates\/list.sh": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/Templates\/tem\/index.html",
+		"oAP": "\/Templates\/list.sh",
 		"oF": 0
 		},
-	"\/Templates\/tem\/index.pug": {
+	"\/Templates\/tempPug\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Templates\/tempPug\/index.html",
+		"oF": 0
+		},
+	"\/Templates\/tempPug\/index.pug": {
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
-		"oAP": "\/Templates\/tem\/index.html",
+		"oAP": "\/Templates\/tempPug\/index.html",
 		"oF": 0,
 		"oS": 0
 		}
