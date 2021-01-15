@@ -9,21 +9,75 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .operation {
+          background: #fff;
+          text-align: center;
+          padding: 8px 4px;
+          margin: 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .drop {
+          border: 2px dashed var(--main);
+          border-radius: 10px;
+          padding: 10px;
+          margin: 1%;
+          background: rgba(129, 199, 139, 0.2);
+      }
+      .drop.demo .operation {
+          background: #B3D432;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#5EB247">
+        <info type="dragdrop" title="" text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <template v-for="(i, index) in [['15 + 15 + 5 =', 'B'],['20 + 20 =', 'C'],['25 + 10 =', 'B'],['30 + 10 =', 'C'] ]">
+              <drag :data="i[1]" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="operation">{{i[0]}}</div>
+              </drag>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="drop demo w30" data="A" droptimes="multiple" droplimit="0"><img class="w100" src="i/a1.png"/>
+              <div class="operation">30 + 10 + 6 =</div>
+              <div class="operation">20 + 20 + 6 =</div>
+            </div>
+            <div class="drop w30" data="B" droptimes="multiple"><img class="w100" src="i/a2.png"/></div>
+            <div class="drop w30" data="C" droptimes="multiple"><img class="w100" src="i/a3.png"/></div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#5EB247">
+        <info type="dragdrop" title="" text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <template v-for="(i, index) in [['30 + 20 + 4 =', 'A'],['50 + 20 + 2=', 'B'],['40 + 10 + 4 =', 'A'],['50 + 40 =', 'C'],['30 + 40 + 2 =', 'B'],['40 + 40 + 10 =', 'C'] ]">
+              <drag :data="i[1]" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="operation">{{i[0]}}</div>
+              </drag>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="drop w30" data="A" droptimes="multiple"><img class="w100" src="i/a4.png"/></div>
+            <div class="drop w30" data="B" droptimes="multiple"><img class="w100" src="i/a5.png"/></div>
+            <div class="drop w30" data="C" droptimes="multiple"><img class="w100" src="i/a6.png"/></div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +99,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -59,7 +114,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>

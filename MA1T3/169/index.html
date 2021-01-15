@@ -16,10 +16,37 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
+        <info type="seleccionar" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w40">
+              <div class="row wrap">
+                <drag class="w20" v-for="(i, index) in 4" :data="u" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 2" :data="d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" src="i/1.png"/></drag>
+              </div>
+            </div>
+            <div class="w20 box">
+              <number c="1" smaller="smaller">Unidades</number>
+              <div class="drop" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c1" :isok="3">
+                <number c="1" small="small">3</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="2" smaller="smaller">Unidades</number>
+              <div class="drop" data="u" droptimes="multiple" droplimit="10"></div>
+              <inputable initclass="c2" :isok="3">
+                <number c="2" small="small">3</number>
+              </inputable>
+            </div>
+            <div class="w20 box">
+              <number c="3" smaller="smaller">Total</number>
+              <inputable initclass="c3" :isok="33">
+                <number c="3" small="small">33</number>
+              </inputable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +72,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -58,7 +86,7 @@
       app.$devmode = false
       app.$set(app.temps, 'a', [])
       
-      app.currentScene = 0
+      app.currentScene = 1
       app.scenesCount = 1
     </script>
   </body>
