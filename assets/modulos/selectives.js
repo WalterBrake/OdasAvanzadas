@@ -8,7 +8,6 @@ Vue.component('selectives', {
     },
     methods: {
         clicked (index){
-
             this.selected = index
             s_select.play()
         },

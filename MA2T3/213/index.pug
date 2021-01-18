@@ -1,12 +1,30 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Determino el valor '
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .lp {
+                border: 2px solid #5EB247;
+                padding: 10px;
+                margin: 10px 0;
+                max-width: 96%;
+                border-radius: 10px;
+                background: #fff;
+            }
+            .inputable {
+                max-width: 140px;
+                margin: 10px auto;
+            }
+            .image {
+                padding: 10px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
 
 
     body
@@ -15,20 +33,81 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" ref="sc1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona las respuestas correctas según la imagen que aparece en la pantalla." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        .w50: .image: img(src="i/a1.png").w100
+                        .w50
+                            .pregunta.text-center
+                                .h4 ¿Cuántas centenas hay? 
+                                selectives(:ans="1" key="a1" ref="a1" :ops="[6,5,7]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas decenas hay?
+                                selectives(:ans="2" key="a2" ref="a2" :ops="[3,5,2]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas unidades hay?
+                                selectives(:ans="1" key="a3" ref="a3" :ops="[2,7,5]" number disableok)
+                            .row.w100(v-if="!temps.sc1"): button(@click="validateScene('sc1', ['a1', 'a2', 'a3'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+                    .w100(v-if="temps.sc1").text-center.lp
+                        .h4 Escribe el número que se forma con las centenas, decenas y unidades que hay:
+                        inputable(initclass="c1" :isok="527"): number(c=1 small) 527
+            // SCENES
+            scene(v-if="currentScene==2" ref="sc2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona las respuestas correctas según la imagen que aparece en la pantalla." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w50: .image: img(src="i/a2.png").w100
+                        .w50
+                            .pregunta.text-center
+                                .h4 ¿Cuántas centenas hay? 
+                                selectives(:ans="0" key="b1" ref="b1" :ops="[3,4,5]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas decenas hay?
+                                selectives(:ans="0" key="b2" ref="b2" :ops="[4,3,2]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas unidades hay?
+                                selectives(:ans="0" key="b3" ref="b3" :ops="[3,1,4]" number disableok)
+                            .row.w100(v-if="!temps.sc2"): button(@click="validateScene('sc2', ['b1', 'b2', 'b3'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+                    .w100(v-if="temps.sc2").text-center.lp
+                        .h4 Escribe el número que se forma con las centenas, decenas y unidades que hay:
+                        inputable(initclass="c1" :isok="343"): number(c=1 small) 343
+            // SCENES
+            scene(v-if="currentScene==3" ref="sc3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona las respuestas correctas según la imagen que aparece en la pantalla." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w50: .image: img(src="i/a3.png").w100
+                        .w50
+                            .pregunta.text-center
+                                .h4 ¿Cuántas centenas hay? 
+                                selectives(:ans="1" key="p1" ref="p1" :ops="[6,5,4]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas decenas hay?
+                                selectives(:ans="0" key="p2" ref="p2" :ops="[5,2,6]" number disableok)
+                            .pregunta.text-center
+                                .h4 ¿Cuántas unidades hay?
+                                selectives(:ans="0" key="p3" ref="p3" :ops="[5,6,4]" number disableok)
+                            .row.w100(v-if="!temps.sc3"): button(@click="validateScene('sc3', ['p1', 'p2', 'p3'])").button.big.animate__animated.animate__lightSpeedInLeft Validar
+                    .w100(v-if="temps.sc3").text-center.lp
+                        .h4 Escribe el número que se forma con las centenas, decenas y unidades que hay:
+                        inputable(initclass="c1" :isok="555"): number(c=1 small) 555
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
-
-                app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.validateScene = function (sc, refs) {
+                      app.selectiveValidation(refs)
+                      if(app.$refs[sc].oks === 3){
+                          app.temps[sc] = true
+                      }
+                }
+                app.$devmode = 0
+                app.$set(app.temps, 'sc1', false)
+                app.$set(app.temps, 'sc2', false)
+                app.$set(app.temps, 'sc3', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3
