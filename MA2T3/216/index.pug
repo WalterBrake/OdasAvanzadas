@@ -1,13 +1,24 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Encuentro el número mayor'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
-
+            [wascloned]{
+                display: none;
+            }
+            .drop{
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .drag{
+                width: auto;
+                height: auto;
+                margin: 10px;
+            }
 
     body
         #app
@@ -15,12 +26,18 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Vamos a ordenar las cantidades de tres números de menor a mayor! Coloca la menor debajo del elefante más pequeño y continúa con los siguientes elefantes hasta completar todas las cantidades." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.wrap
+                        template(v-for="(i, index) in [[97,false],[123,true],[70,false],[240,true],[589,true],[895,true],[45,false],[29,false],[998,true],[9,false],[820,true],[15,false]]")
+                            drag(v-if="i[1]" ref="drags" :data="i[0]" dropzone=".drop" stay-if-ok append-clone extval): number(randomc smaller) {{i[0]}}
+                            drag(v-else ref="drags" :data="i" dropzone=".drop" stay-if-ok append-clone extval isfalse): number(randomc smaller) {{i[0]}}
                     .row.w100
-            
-            
+                        template(v-for="(i, index) in [123,240,589,820,895,998]")
+                            .drop(:data="i" droptimes="multiple" droplimit="1"): img(:src="'i/a'+(index+1)+'.png'").w100
+                    button(@click="dragValidation(['drags'], 6)").button.big.animate__animated.animate__flip Verificar
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         

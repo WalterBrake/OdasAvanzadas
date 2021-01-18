@@ -516,7 +516,6 @@ Vue.component('drag', {
                 this.backToInitPos()
                 this.removeClones()
                 if(this.isfalse != undefined){
-
                     theresult = true
                 } else {
                     theresult = false

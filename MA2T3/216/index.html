@@ -3,23 +3,52 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Encuentro el número mayor</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      [wascloned]{
+          display: none;
+      }
+      .drop{
+          text-align: center;
+          padding-bottom: 20px;
+      }
+      .drag{
+          width: auto;
+          height: auto;
+          margin: 10px;
+      }
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="dragdrop" title="Encuentro el número mayor" text="¡Vamos a ordenar las cantidades de tres números de menor a mayor! Coloca la menor debajo del elefante más pequeño y continúa con los siguientes elefantes hasta completar todas las cantidades." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in [[97,false],[123,true],[70,false],[240,true],[589,true],[895,true],[45,false],[29,false],[998,true],[9,false],[820,true],[15,false]]">
+              <drag v-if="i[1]" ref="drags" :data="i[0]" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval">
+                <number randomc="randomc" smaller="smaller">{{i[0]}}</number>
+              </drag>
+              <drag v-else="v-else" ref="drags" :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-clone="append-clone" extval="extval" isfalse="isfalse">
+                <number randomc="randomc" smaller="smaller">{{i[0]}}</number>
+              </drag>
+            </template>
+          </div>
+          <div class="row w100">
+            <template v-for="(i, index) in [123,240,589,820,895,998]">
+              <div class="drop" :data="i" droptimes="multiple" droplimit="1"><img class="w100" :src="'i/a'+(index+1)+'.png'"/></div>
+            </template>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="dragValidation(['drags'], 6)">Verificar</button>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +74,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
