@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco las palabras en otra lengua</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
@@ -16,14 +16,42 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco las palabras en otra lengua" text="¡Vamos a leer una historieta de la abuelita Yeyetzi!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.v1.play()"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="false" c="6" path="i/v1" @completed="temps.a = true" ref="v1"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.scenes" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco las palabras en otra lengua" text="Ahora que conoces a la abuelita Yeyetzi y escuchaste algunas palabras en náhuatl, selecciona las respuestas correctas." textaudio="s/instruccion2.mp3" :autoplay="currentScene==2?true:false">
+          <button class="button mt-auto" @click="$refs.vid.open()">Ver historieta</button>
+        </info>
+        <activity>
+          <div class="h4 text-center">{{i.p}}</div>
+          <div class="row w100">
+            <div class="row wrap around">
+              <clickable v-for="(i2, index2) in i.a" :key="'p'+(index+1)+index2" :isok="index2 == i.right" simple-ok="simple-ok" initclass="pa-1" :click-sound="'s/p'+(index+1)+index2+'.mp3'">
+                <number randomc="randomc" smaller="smaller">{{i2}}</number>
+              </clickable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==7" :key="7" end-scene="end-scene" :final-data="finalData"></scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="vid">
+        <div class="vid">
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="false" path="i/v1"></videoplayer>
+          </div>
+        </div>
+      </popup>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +73,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +85,37 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'scenes', [
+          {
+              p: '¿Cuál es la lengua que habla la abuelita del niño?',
+              a: ['Náhuatl','Zapoteca','Maya'],
+              right: 0
+          },
+          {
+              p: '¿A dónde fueron la abuelita Yayetzi y su nieto?',
+              a: ['Al supermercado','Al bazar','Al tianguis '],
+              right: 2
+          },
+          {
+              p: '¿De qué lugar es originaria la abuela Yayetzi?',
+              a: ['Del Estado de Chiapas','Del Estado de Tabasco','Del Estado de México'],
+              right: 2
+          },
+          {
+              p: '¿Qué alimento prepara con el chocolatl y el elotl?',
+              a: ['Un pastel de elote','Atolli','Esquite'],
+              right: 1
+          },
+          {
+              p: '¿Qué significa la palabra comalli?',
+              a: ['Comal','Sartén','Cazuela'],
+              right: 0
+          },
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>
