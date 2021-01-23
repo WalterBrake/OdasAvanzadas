@@ -38,6 +38,7 @@ Vue.component('clickable', {
                 this.alreadyOk = false
             }
             var click = this.$refs.clickable
+            
             this.status = !this.status
 
             this.clicksoundsFn()

@@ -1,10 +1,10 @@
-for folders in MA1T3 MA2T3 CM2T3 ES2T3 ES3T3 
-do
-    mkdir $folders
-done
+#for folders in CM1T3 CM2T3 CN3T3 CN4T3 CN5T3 CN6T3 ES1T3 ES4T3 ES5T3 ES6T3 GE4T3 GE5T3 GE6T3 HI4T3 HI5T3 HI6T3 MA3T3 MA4T3 MA5T3 MA6T3
+#do
+#    mkdir $folders
+#done
 
 
-for value in MA1T3/165 MA1T3/169 MA2T3/213 CM2T3/291 ES2T3/95 ES3T3/80 MA2T3/216
+for value in ../CN3T3/244 ../CN5T3/207 ../ES5T3/67 ../MA2T3/228 ../MA2T3/230 ../MA3T3/1634 ../MA3T3/166 ../ES5T3/66 ../CM2T3/291
 do
     echo $value
     cp -R tempPug/ $value

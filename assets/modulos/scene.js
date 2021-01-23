@@ -172,6 +172,7 @@ Vue.component('scene', {
         } else {
             this.appearok = true
         }
+        this.$emit('loaded')
     },
     created() {
         if(this.hidescorebox==undefined && this.startScene==undefined && this.endScene==undefined){
