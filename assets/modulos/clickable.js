@@ -66,30 +66,39 @@ Vue.component('clickable', {
 
         },
         isOkOrError (e) {
+            var _this = this
             if(this.alreadyOk && this.ignoreAlreadyOk == undefined) {
                 return false
             }
-            if(this.isok == this.status){
-                //OK
-                //EventBus.$emit('clicked', 'ok')
-                if(this.simpleOk != undefined){
-                    EventBus.$emit('isok')
+            
+
+        if(_this.isok == _this.status){
+            //OK
+            //EventBus.$emit('clicked', 'ok')
+            setTimeout(function () {
+            
+                if(_this.simpleOk != undefined){
+                    setTimeout(function () {
+                        EventBus.$emit('isok')
+                    },400)
                 } else {
-                    this.$emit('input', true)
+                    _this.$emit('input', true)
                 }
-                if(this.extValidation == undefined){
-                    this.$emit('wasclicked')
+                if(_this.extValidation == undefined){
+                    _this.$emit('wasclicked')
                 } else {
                     EventBus.$emit('isok')
                 }
-                this.setClassAnimation('ok', this.$refs.clickable)
-                if(e){app.particleAnimation({clientX: event.clientX, clientY: event}, 100, null, null, this.particleColor)}
+                _this.setClassAnimation('ok', _this.$refs.clickable)
+                if(e){app.particleAnimation({clientX: e.clientX, clientY: e.clientY}, 100, null, null, _this.particleColor)}
                 setTimeout(function(){
                     if(!s_ok.playing()){
                         s_ok.play()
                     }
                 },100)
-                this.alreadyOk = true
+            }, 400)
+            _this.alreadyOk = true
+                
             } else {
                 //ERROR
                 if(this.noErrorSound == undefined){
@@ -118,13 +127,13 @@ Vue.component('clickable', {
                 return false
             }
         },
-        setClassAnimation(name, obj) {
+        setClassAnimation(nome, obj) {
             var _this = this
             if(this.noAnimations){
                 return false
             }
             var theclass
-            switch(name) {
+            switch(nome) {
                 case 'start':
                     theclass = 'animate__rubberBand'
                     break
