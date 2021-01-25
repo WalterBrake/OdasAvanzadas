@@ -3,27 +3,276 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Utilizo adverbios y adjetivos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .h3 {
+          color: #69747C;
+          font-weight: bold;
+      }
+      .h4 {
+          font-size: 0.8rem;
+          color: #69747C;
+      }
+      .h4.aut {
+          margin: 8px 0;
+          color: #69747C;
+      }
+      .textzone {
+          background: #C5DAE9;
+          padding: 10px;
+          box-sizing: border-box;
+          border-radius: 10px;
+          line-height: 1.6;
+      }
+      @media (max-width: 768px) {
+          .textzone p {
+              font-size: 0.6rem;
+              line-height: 1.4;
+          }
+      }
+      .drag {
+          width: 30px;
+          height: 30px;
+          margin: 0 auto;
+      }
+      .drag img {
+          min-width: 20px;
+      }
+      .isok {
+          border-radius: 2px;
+          box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+      .isok[data="v"] {
+          background: #ABBD46;
+      }
+      .isok[data="n"] {
+          background: #F5924B;
+      }
+      .isok[data="m"] {
+          background: #AA7AFF;
+      }
+      .draggs .w30 {
+          padding: 2px 0;
+          border-radius: 6px;
+          background: #ffffff;
+          margin: 1%;
+      }
+      .draggs .w30 .counter {
+          padding: 10px;
+          box-sizing: border-box;
+          border-radius: 6px;
+          margin-left: 10px;
+          font-weight: bold;
+      }
+      .draggs .w30 .counter.cv {
+          background: #ADBF4B;
+      }
+      .draggs .w30 .counter.cn {
+          background: #F5924B;
+      }
+      .draggs .w30 .counter.cm {
+          background: #AA7AFF;
+      }
+      .ex2 {
+          align-items: unset;
+      }
+      .ex2 .w30 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .ex2 .drop {
+          background: #fff;
+          min-height: 100px;
+          border-radius: 6px;
+          margin-top: 8px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          margin: 1%;
+      }
+      .ex2 div.txt {
+          display: flex;
+          align-items: center;
+          padding: 8px;
+          background: rgba(255, 255, 255, 0.3);
+          margin-bottom: 4px;
+          border-radius: 8px;
+          flex-wrap: wrap;
+      }
+      .ex2 .drag {
+          width: auto;
+          height: auto;
+          margin: 0;
+          font-weight: bold;
+          background: #ffdd00;
+          padding: 1px 4px;
+          border-radius: 6px;
+      }
+      .ex2 .drag:first-child {
+          margin-left: 0;
+      }
+      @media (max-width: 680px) {
+          .ex2 .number.smaller {
+              font-size: 0.7rem;
+          }
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="33" scene-color="#ED1C25">
+        <info type="dragdrop" title="Utilizo adverbios y adjetivos" text="Coloca el crayón de color verde sobre los adjetivos, el de color naranja sobre los adverbios y el de color morado sobre las frases preposicionales." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="text-center">
+              <div class="h3">Platero y yo</div>
+              <div class="h4">(Fragmento)</div>
+            </div>
+          </div>
+          <div class="row w90 textzone">
+            <div>
+              <p>Platero es <span class="drop" data="v" droptimes="untilok">pequeño</span>, <span class="drop" data="v" droptimes="untilok">peludo</span>, <span class="drop" data="v" droptimes="untilok">suave</span>; tan <span class="drop" data="v" droptimes="untilok">blando</span> por fuera, que se diría todo <span class="drop" data="m" droptimes="untilok">de algodón</span>, que no lleva huesos. <span class="drop" data="n" droptimes="untilok">Sólo</span> los espejos <span class="drop" data="m" droptimes="untilok">de azabache</span> de sus ojos son <span class="drop" data="v" droptimes="untilok">duros</span> cual dos escarabajos <span class="drop" data="m" droptimes="untilok">de cristal</span> <span class="drop" data="v" droptimes="untilok">negro</span>.</p>
+              <p>Lo dejo suelto y se va al prado, y acaricia <span class="drop" data="n" droptimes="untilok">tibiamente</span> con su hocico, rozándolas <span class="drop" data="n" droptimes="untilok">apenas</span>, las florecillas <span class="drop" data="v" droptimes="untilok">rosas</span>, y <span class="drop" data="v" droptimes="untilok">gualdas</span> ... Lo llamo <span class="drop" data="n" droptimes="untilok">dulcemente</span>: "¿Platero?", y viene a mí con un trotecillo <span class="drop" data="v" droptimes="untilok">alegre</span> que parece que se ríe, en no sé qué cascabeleo <span class="drop" data="v" droptimes="untilok">ideal</span> ...</p>
+              <p>Come <span class="drop" data="v" droptimes="untilok">cuanto</span> le doy. Le gustan las naranjas mandarinas, las uvas moscateles, todas <span class="drop" data="m" droptimes="untilok">de ámbar</span>; los higos <span class="drop" data="v" droptimes="untilok">morados</span>, con su <span class="drop" data="v" droptimes="untilok">cristalina</span> gotita <span class="drop" data="m" droptimes="untilok">de miel</span>...</p>
+              <p>Es <span class="drop" data="v" droptimes="untilok">tierno</span> y <span class="drop" data="v" droptimes="untilok">mimoso</span> igual que un niño, que una niña...; pero <span class="drop" data="v" droptimes="untilok">fuerte</span> y <span class="drop" data="v" droptimes="untilok">seco</span> por dentro, como <span class="drop" data="m" droptimes="untilok">de piedra</span> ... Cuando paseo sobre él, los domingos, por las <span class="drop" data="v" droptimes="untilok">últimas</span> callejas <span class="drop" data="m" droptimes="untilok">del pueblo</span>, los hombres <span class="drop" data="m" droptimes="untilok">del campo</span>, vestidos <span class="drop" data="m" droptimes="untilok">de limpio</span> y <span class="drop" data="v" droptimes="untilok">despaciosos</span>, se quedan mirándolo:</p>
+              <p>— Tiene acero...</p>
+              <p>Tiene acero. Acero y plata <span class="drop" data="m" droptimes="untilok">de luna</span>, al mismo tiempo.</p>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="text-center">
+              <div class="h4 aut">Juan Ramón Jiménez</div>
+            </div>
+          </div>
+          <div class="row w100 draggs text-center wrap">
+            <div class="w30 wm100 row">
+              <div class="w30">
+                <tooltiper>Adjetivo: otorga cualidades a un sustantivo.</tooltiper>
+              </div>
+              <div class="w30">
+                <drag data="v" dropzone=".drop" return-to-position="return-to-position" dropzone-ok-class="isok" @isok="temps.cv = $event.dragoks"><img class="w100" src="i/lv.png"/></drag>
+              </div>
+              <div class="w30 counter cv">{{19 - temps.cv}}</div>
+            </div>
+            <div class="w30 wm100 row">
+              <div class="w30">
+                <tooltiper>Adverbio: palabras que complementan al verbo o a otro adjetivo.</tooltiper>
+              </div>
+              <div class="w30">
+                <drag data="n" dropzone=".drop" return-to-position="return-to-position" dropzone-ok-class="isok" @isok="temps.cn = $event.dragoks"><img class="w100" src="i/ln.png"/></drag>
+              </div>
+              <div class="w30 counter cn">{{4 - temps.cn}}</div>
+            </div>
+            <div class="w30 wm100 row">
+              <div class="w30">
+                <tooltiper>Frases preposicionales: se componen de una preposición y un sustantivo.</tooltiper>
+              </div>
+              <div class="w30">
+                <drag data="m" dropzone=".drop" return-to-position="return-to-position" dropzone-ok-class="isok" @isok="temps.cm = $event.dragoks"><img class="w100" src="i/lm.png"/></drag>
+              </div>
+              <div class="w30 counter cm">{{10-temps.cm}}</div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="16" scene-color="#ED1C25">
+        <info type="dragdrop" title="Utilizo adverbios y adjetivos" text="Ahora, coloca las palabras resaltadas en la caja correspondiente según el tipo de palabra de la que se trate." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 ex2">
+            <div class="w100">
+              <div class="txt"> 
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>Ayer</div>
+                </drag>, comí una 
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>deliciosa</div>
+                </drag>empañada
+                <drag data="c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>de piña.  </div>
+                </drag>
+              </div>
+              <div class="txt">El competidor 
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>alto</div>
+                </drag>corrió 
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>muy</div>
+                </drag>
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>rápidamente</div>
+                </drag>.
+              </div>
+              <div class="txt">Rocío sacó los libros 
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>viejos</div>
+                </drag>y los colocó 
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>cuidadosamente</div>
+                </drag>
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>encima</div>
+                </drag>de la mesa.
+              </div>
+              <div class="txt">La guitarra 
+                <drag data="c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>de madera</div>
+                </drag>y el piano 
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>grande son de mi hermano </div>
+                </drag>
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>mayor</div>
+                </drag>.
+              </div>
+              <div class="txt">En la 
+                <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>gran</div>
+                </drag>fiesta 
+                <drag data="c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>del pueblo</div>
+                </drag>, bailamos 
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>alegremente </div>
+                </drag>
+                <drag data="b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <div>enfrente </div>
+                </drag>de la banda. 
+              </div>
+            </div>
+          </div>
+          <div class="row w100 ex2 mt-1">
+            <div class="w30 text-center">
+              <number c="1" smaller="smaller">Adjetivos</number>
+              <div class="drop" data="a" droptimes="multiple"></div>
+            </div>
+            <div class="w30 text-center">
+              <number c="2" smaller="smaller">Adverbios</number>
+              <div class="drop" data="b" droptimes="multiple"></div>
+            </div>
+            <div class="w30 text-center">
+              <number c="3" smaller="smaller">Frases preposicionales</number>
+              <div class="drop" data="c" droptimes="multiple"></div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +294,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +306,14 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'cv', 0)
+      app.$set(app.temps, 'cn', 0)
+      app.$set(app.temps, 'cm', 0)
       
-      app.currentScene = 0
-      app.scenesCount = 1
+      
+      
+      app.currentScene = 2
+      app.scenesCount = 0
     </script>
   </body>
 </html>

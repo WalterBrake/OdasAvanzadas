@@ -40,7 +40,8 @@ Vue.component('drag', {
             lastPosition: {x:0, y:0},
             dropzonesDetected: 0,
             isItOk: false,
-            clonedIn: []
+            clonedIn: [],
+            dragoks: 0,
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -223,8 +224,8 @@ Vue.component('drag', {
 
             setTimeout(function (){
                 let droppedtimes = dropzone.getAttribute('droppedtimes')
-
-                _this.$emit('isok', {droppedtimes: droppedtimes})
+                _this.dragoks++
+                _this.$emit('isok', {droppedtimes: droppedtimes, dragoks: _this.dragoks})
                 _this.isItOk = true
                 
             }, 100)
