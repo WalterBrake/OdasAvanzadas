@@ -1,12 +1,49 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Reconocemos el sabor'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag {
+                width: auto;
+                height: auto;
+                max-width: 80px;
+                max-height: 80px;
+                margin: 1%;
+            }
+            .drop {
+                min-height: 120px;
+                background: #fff;
+                margin: 1%;
+                border-radius: 10px;
+                padding: 1%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .drop:nth-child(1) {
+                box-shadow: 4px 4px 0 var(--main);
+            }
+            .drop:nth-child(2) {
+                box-shadow: 4px 4px 0 var(--sec);
+            }
+            .drop:nth-child(3) {
+                box-shadow: 4px 4px 0 var(--clear);
+            }
+            .drop:nth-child(4) {
+                box-shadow: 4px 4px 0 var(--accent);
+            }
+            .drop .number.smaller {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            .drop img {
+                width: 30%;
+            }
 
 
     body
@@ -15,12 +52,21 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada alimento dentro del cuadro que corresponda de acuerdo con su sabor." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
-            
+                    .row.w100.text-center
+                        .drop.w20(data="d" droptimes="multiple"): number(c=1 smaller) Alimentos dulces
+                        .drop.w20(data="s" droptimes="multiple"): number(c=2 smaller) Alimentos salados
+                        .drop.w20(data="a" droptimes="multiple"): number(c=3 smaller) Alimentos agrios
+                        .drop.w20(data="am" droptimes="multiple"): number(c=4 smaller) Alimentos amargos
+                    
+                    .row.w100.around.wrap
+                        template(v-for="(i, index) in temps.a")
+                            drag(:data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone)
+                                img(:src="i.img").w100
+
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -28,7 +74,24 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {v: 'd', img: 'i/0.png'},
+                    {v: 'd', img: 'i/1.png'},
+                    {v: 'd', img: 'i/2.png'},
+                    
+                    {v: 's', img: 'i/3.png'},
+                    {v: 's', img: 'i/4.png'},
+                    {v: 's', img: 'i/5.png'},
+                    
+                    {v: 'a', img: 'i/6.png'},
+                    {v: 'a', img: 'i/7.png'},
+                    {v: 'a', img: 'i/8.png'},
+                    
+                    {v: 'am', img: 'i/9.png'},
+                    {v: 'am', img: 'i/10.png'},
+                    {v: 'am', img: 'i/11.png'},
+
+                ])
                 
-                app.currentScene = 0
+                app.currentScene = 1
                 app.scenesCount = 1

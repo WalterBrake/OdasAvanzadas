@@ -3,23 +3,81 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Reconocemos el sabor</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+          max-width: 80px;
+          max-height: 80px;
+          margin: 1%;
+      }
+      .drop {
+          min-height: 120px;
+          background: #fff;
+          margin: 1%;
+          border-radius: 10px;
+          padding: 1%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+      }
+      .drop:nth-child(1) {
+          box-shadow: 4px 4px 0 var(--main);
+      }
+      .drop:nth-child(2) {
+          box-shadow: 4px 4px 0 var(--sec);
+      }
+      .drop:nth-child(3) {
+          box-shadow: 4px 4px 0 var(--clear);
+      }
+      .drop:nth-child(4) {
+          box-shadow: 4px 4px 0 var(--accent);
+      }
+      .drop .number.smaller {
+          font-size: 1rem;
+          margin-bottom: 20px;
+      }
+      .drop img {
+          width: 30%;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconocemos el sabor" text="Coloca cada alimento dentro del cuadro que corresponda de acuerdo con su sabor." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 text-center">
+            <div class="drop w20" data="d" droptimes="multiple">
+              <number c="1" smaller="smaller">Alimentos dulces</number>
+            </div>
+            <div class="drop w20" data="s" droptimes="multiple">
+              <number c="2" smaller="smaller">Alimentos salados</number>
+            </div>
+            <div class="drop w20" data="a" droptimes="multiple">
+              <number c="3" smaller="smaller">Alimentos agrios</number>
+            </div>
+            <div class="drop w20" data="am" droptimes="multiple">
+              <number c="4" smaller="smaller">Alimentos amargos</number>
+            </div>
+          </div>
+          <div class="row w100 around wrap">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.v" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" :src="i.img"/></drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -57,9 +115,26 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {v: 'd', img: 'i/0.png'},
+          {v: 'd', img: 'i/1.png'},
+          {v: 'd', img: 'i/2.png'},
+          
+          {v: 's', img: 'i/3.png'},
+          {v: 's', img: 'i/4.png'},
+          {v: 's', img: 'i/5.png'},
+          
+          {v: 'a', img: 'i/6.png'},
+          {v: 'a', img: 'i/7.png'},
+          {v: 'a', img: 'i/8.png'},
+          
+          {v: 'am', img: 'i/9.png'},
+          {v: 'am', img: 'i/10.png'},
+          {v: 'am', img: 'i/11.png'},
       
-      app.currentScene = 0
+      ])
+      
+      app.currentScene = 1
       app.scenesCount = 1
     </script>
   </body>
