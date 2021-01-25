@@ -69,7 +69,7 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
         <info type="seleccionar" title="Nuestro satélite natural" text="Fases de la Luna." textaudio="s/a1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
           <audiotext v-if="temps.au1" :autoplay="true" audio="s/a2.mp3" text="Son los cambios aparentes de la parte visible o iluminada de la Luna, causados por su cambio de posición respecto a la Tierra y el Sol. El ciclo completo se llama lunación y dura aproximadamente un mes." @completed="temps.au2 = true"></audiotext>
         </info>
@@ -117,7 +117,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
+      <scene v-if="currentScene==10" hidescorebox="hidescorebox" :key="10" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
         <info type="seleccionar" title="Nuestro satélite natural" text="Texto en la parte superior de la pantalla: Cuando mires al cielo, ya sabrás en qué fase está la Luna." textaudio="s/a11.mp3" :autoplay="true"></info>
         <activity>
           <div class="text-right astro animate__animated animate__pulse animate__slower animate__infinite w20"><img class="w100" src="i/astro.png"/></div>
