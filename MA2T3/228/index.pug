@@ -1,12 +1,91 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Juego con las multiplicaciones.'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .tabla {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            .tabla .clickable {
+                padding: 2px;
+                border-radius: 6px;
+                border: 2px solid var(--beige);
+            }
+            .tabla .w10 .clickable {
+                background: #A2CD82;
+            }
+            .tabla .w10.heads .clickable {
+                background: #E9D5E0;
+            }
+            .tabla .w10 > div.nums {
+                padding: 2px;
+                text-align: center;
+                background: #fff;
+                border-radius: 6px;
+                border: 2px solid var(--beige);
+                color: #666;
+            }
+            .tabla .w10 > div.nums.equals {
+                background: var(--clear);
+                color: #fff;
+            }
+            .tabla .ex {
+                padding: 2px;
+                border-radius: 4px;
+                border: 2px solid var(--beige);
+                opacity: 0.2;
+            }
+            .tabla .row {
+                justify-content: center;
+            }
+            .tabla .clickable,
+            .tabla .w10 .clickable,
+            .tabla .w10 > div.nums,
+            .tabla .w10 .ex {
+                width: 30px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                height: 30px;
+                display: flex;
+                justify-content: center; align-items: center;
+            }
+            @media (max-width: 680px) {
+                .tabla .clickable,
+                .tabla .w10 .clickable,
+                .tabla .w10 > div.nums,
+                .tabla .w10 .ex {
+                    width: 14px;
+                    height: 14px;
+                    font-size: 0.6rem;
+                }
+            }
+            .operation {
+                background: #fff;
+                display: flex;
+                padding: 5px;
+                border-radius: 8px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            .operation .number {
+                margin: 0 3px;
+            }
+            .operation .number.c1 {
+                padding: 0 20px 0 16px;
+                background: #A2CD82;
+                border-radius: 6px;
+            }
+            .operation .number.c8 {
+                padding: 0 20px 0 16px;
+                background: #E9D5E0;
+                border-radius: 6px;
+            }
+            .dialogaudio .audiotextBtn{ width: 20px; }
 
 
     body
@@ -15,20 +94,72 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona los digitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.text-center
+                        .w50.row: .operation
+                            number(small c=1) 4
+                            number(small c=2) x
+                            number(small c=8) 6
+                            number(small c=2) =
+                            number(small c=2) 24
                     .row.w100
+                        .w50.wm100.tabla
+                            .row.text-center
+                                .w10: .ex x
+                                .w10.heads(v-for="(i, index) in 11"): clickable(simple-ok :isok="index==6" example): div {{index}}
+                            .row.text-center
+                                .w10: clickable(simple-ok v-for="(i, index) in 11" :isok="index==4" example): div {{index}}
+                                .w10(v-for="(i, index) in 11"): div(v-for="(i2, index2) in 11" :class="index2==4&&index==6?'equals':''").nums {{(index2)*index}}
+                                
+                    button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES
+            scene(v-for="(i0, index0) in temps.opes" v-if="currentScene==i0.key" ref="oks" :key="i0.key" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="temps.counter = 0")
+                info(type="seleccionar" title=title text="Selecciona los digitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.text-center
+                        .w50.row
+                            dialogaudio(:audio="'s/' + i0.v1 + 'x' + i0.v2 + '.mp3'" :autoplay="true" always-visible v-if="temps.counter ==2")
+                            .operation
+                                number(small c=1) {{i0.v1}}
+                                number(small c=2) x
+                                number(small c=8) {{i0.v2}}
+                                number(small c=2) =
+                                number(small c=2 v-if="temps.counter ==2") {{i0.v1*i0.v2}}
+                                number(small c=2 v-else) ?
+                    .row.w100
+                        .w50.wm100.tabla
+                            .row.text-center
+                                .w10: .ex x
+                                .w10.heads(v-for="(i, index) in 11" :key="'head'+index"): clickable(simple-ok :isok="index==i0.v2" @wasclicked="temps.counter++"): div {{index}}
+                            .row.text-center
+                                .w10: clickable(simple-ok v-for="(i, index) in 11" :isok="index==i0.v1" @wasclicked="temps.counter++"): div {{index}}
+                                .w10(v-for="(i, index) in 11"): div(v-for="(i2, index2) in 11" :class="index2==i0.v1&&index==i0.v2 && temps.counter ==2?'equals animate__animated animate__tada':''").nums {{(index2)*index}}
+
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==14" :key="14" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
-                
+                app.$set(app.temps, 'counter', 0)
+                app.$set(app.temps, 'opes', [
+                    {key:2, v1: 5, v2: 3 },
+                    {key:3, v1: 3, v2: 7 },
+                    {key:4, v1: 6, v2: 5 },
+                    {key:5, v1: 9, v2: 6 },
+                    {key:6, v1: 7, v2: 7 },
+                    {key:7, v1: 2, v2: 9 },
+                    {key:8, v1: 5, v2: 7 },
+                    {key:9, v1: 4, v2: 8 },
+                    {key:10, v1: 4, v2: 9 },
+                    {key:11, v1: 8, v2: 8 },
+                    {key:12, v1: 2, v2: 4 },
+                    {key:13, v1: 4, v2: 7 },
+                ])
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 12

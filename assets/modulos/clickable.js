@@ -15,6 +15,7 @@ Vue.component('clickable', {
         'noAnimations', //Deshabilita las animaciones
         'ignoreAlreadyOk', // Ignorar "already ok" y poder dar click,
         'noErrorSound', // No reproducir sonido de error
+        'example', // seleccionado sin funcionalidad
     ],
     data() {
         return {
@@ -31,6 +32,7 @@ Vue.component('clickable', {
 
     methods: {
         clicked (e) {
+            if(this.example != undefined){ return false }
             if(this.alreadyOk && this.ignoreAlreadyOk == undefined) {
                 return false
             }
@@ -166,6 +168,10 @@ Vue.component('clickable', {
     mounted () {
         if(this.isok == this.status){this.$emit('input', true)}else{this.$emit('input', false)}
         this.$refs.clickable.children[0].classList.add('animate__animated')
+
+        if(this.example != undefined && this.isok){
+            this.status = true
+        }
     }
 })
 
