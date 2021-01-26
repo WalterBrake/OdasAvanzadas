@@ -386,6 +386,9 @@ embed {
 .row.around {
   justify-content: space-around;
 }
+.row.column {
+  flex-direction: column;
+}
 .item {
   display: flex;
   justify-content: center;
