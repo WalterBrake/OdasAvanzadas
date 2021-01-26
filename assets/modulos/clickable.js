@@ -80,6 +80,7 @@ Vue.component('clickable', {
                 if(_this.simpleOk != undefined){
                     setTimeout(function () {
                         EventBus.$emit('isok')
+                        _this.$emit('isok')
                     },400)
                 } else {
                     _this.$emit('input', true)

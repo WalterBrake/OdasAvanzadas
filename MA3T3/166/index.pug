@@ -1,12 +1,39 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Marco mis giros'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .frac {
+                padding: 10px 20px;
+                background: var(--accent);
+                border-radius: 10px;
+                margin-right: 2px;
+            }
+            .number {
+                text-align: center;
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 10px;
+            }
+            .number hr {
+                margin: 6px 0;
+                border: none;
+                border-top: 4px solid #015093;
+                min-width: 30px;
+            }
+            .kidresp .number {
+                max-width: 80px;
+                margin: 0 auto;
+                background: transparent;
+            }
+            .kidresp.w40 {
+                background: #fff;
+                border-radius: 10px;
+            }
 
 
     body
@@ -15,20 +42,89 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        div(:class="temps.cb == 0 ? 'w40': 'w20'").kidresp
+                            lottie-player(src="i/b1.json" key="m1" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>0") 5<hr>6
+                        div(:class="temps.cb == 1 ? 'w40': 'w20'" v-if="temps.cb>0").kidresp
+                            lottie-player(src="i/b2.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>1") 1<hr>3
+                        div(:class="temps.cb == 2 ? 'w40': 'w20'"  v-if="temps.cb>1").kidresp
+                            lottie-player(src="i/b3.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>2") 1<hr>2
+
+                    template(v-if="temps.cb == 0")
+                        .row.w100: div.h4 Andrés realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>2','3<hr>4','5<hr>6']" :key="'b1'+index" :isok="index == 2" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 1")
+                        .row.w100: div.h4 Ahora realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['2<hr>2','1<hr>3','2<hr>4']" :key="'b2'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 2")
+                        .row.w100: div.h4 Por último realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>4','5<hr>6','1<hr>2']" :key="'b3'+index" :isok="index == 2" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        div(:class="temps.cb == 3 ? 'w40': 'w20'").kidresp
+                            lottie-player(src="i/b4.json" key="m3" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>3") 1<hr>3
+                        div(:class="temps.cb == 4 ? 'w40': 'w20'" v-if="temps.cb>3").kidresp
+                            lottie-player(src="i/b5.json" key="m4" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>4") 4<hr>6
+                        div(:class="temps.cb == 5 ? 'w40': 'w20'"  v-if="temps.cb>4").kidresp
+                            lottie-player(src="i/b6.json" key="m5" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>5") 2<hr>4
+
+                    template(v-if="temps.cb == 3")
+                        .row.w100: div.h4 Berenice realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>3','2<hr>8','1<hr>6']" :key="'b3'+index" :isok="index == 0" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 4")
+                        .row.w100: div.h4 Ahora realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>2','4<hr>6','2<hr>4']" :key="'b4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 5")
+                        .row.w100: div.h4 Por último realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['2<hr>4','2<hr>2','1<hr>3']" :key="'b5'+index" :isok="index == 0" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+      
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        div(:class="temps.cb == 6 ? 'w40': 'w20'").kidresp
+                            lottie-player(src="i/b7.json" key="m6" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>6") 5<hr>8
+                        div(:class="temps.cb == 7 ? 'w40': 'w20'" v-if="temps.cb>6").kidresp
+                            lottie-player(src="i/b8.json" key="m7" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>7") 2<hr>2
+                        div(:class="temps.cb == 8 ? 'w40': 'w20'"  v-if="temps.cb>7").kidresp
+                            lottie-player(src="i/b9.json" key="m8" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay)
+                            number(randomc smaller v-if="temps.cb>8") 1<hr>4
+
+                    template(v-if="temps.cb == 6")
+                        .row.w100: div.h4 Simón realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>3','5<hr>8','1<hr>2']" :key="'b6'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 7")
+                        .row.w100: div.h4 Ahora realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['2<hr>2','4<hr>3','1<hr>4']" :key="'b7'+index" :isok="index == 0" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.cb == 8")
+                        .row.w100: div.h4 Por último realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>3','1<hr>2','1<hr>4']" :key="'b8'+index" :isok="index == 2" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'cb', 0)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3

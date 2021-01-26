@@ -3,27 +3,218 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Marco mis giros</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .frac {
+          padding: 10px 20px;
+          background: var(--accent);
+          border-radius: 10px;
+          margin-right: 2px;
+      }
+      .number {
+          text-align: center;
+          background: #fff;
+          border-radius: 6px;
+          padding: 8px 10px;
+      }
+      .number hr {
+          margin: 6px 0;
+          border: none;
+          border-top: 4px solid #015093;
+          min-width: 30px;
+      }
+      .kidresp .number {
+          max-width: 80px;
+          margin: 0 auto;
+          background: transparent;
+      }
+      .kidresp.w40 {
+          background: #fff;
+          border-radius: 10px;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Marco mis giros" text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="kidresp" :class="temps.cb == 0 ? 'w40': 'w20'">
+              <lottie-player src="i/b1.json" key="m1" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;0">5<hr>6</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 1 ? 'w40': 'w20'" v-if="temps.cb&gt;0">
+              <lottie-player src="i/b2.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;1">1<hr>3</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 2 ? 'w40': 'w20'" v-if="temps.cb&gt;1">
+              <lottie-player src="i/b3.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;2">1<hr>2</number>
+            </div>
+          </div>
+          <template v-if="temps.cb == 0">
+            <div class="row w100">
+              <div class="h4">Andrés realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;2','3&lt;hr&gt;4','5&lt;hr&gt;6']" :key="'b1'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 1">
+            <div class="row w100">
+              <div class="h4">Ahora realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['2&lt;hr&gt;2','1&lt;hr&gt;3','2&lt;hr&gt;4']" :key="'b2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 2">
+            <div class="row w100">
+              <div class="h4">Por último realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;4','5&lt;hr&gt;6','1&lt;hr&gt;2']" :key="'b3'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Marco mis giros" text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="kidresp" :class="temps.cb == 3 ? 'w40': 'w20'">
+              <lottie-player src="i/b4.json" key="m3" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;3">1<hr>3</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 4 ? 'w40': 'w20'" v-if="temps.cb&gt;3">
+              <lottie-player src="i/b5.json" key="m4" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;4">4<hr>6</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 5 ? 'w40': 'w20'" v-if="temps.cb&gt;4">
+              <lottie-player src="i/b6.json" key="m5" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;5">2<hr>4</number>
+            </div>
+          </div>
+          <template v-if="temps.cb == 3">
+            <div class="row w100">
+              <div class="h4">Berenice realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;3','2&lt;hr&gt;8','1&lt;hr&gt;6']" :key="'b3'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 4">
+            <div class="row w100">
+              <div class="h4">Ahora realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;2','4&lt;hr&gt;6','2&lt;hr&gt;4']" :key="'b4'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 5">
+            <div class="row w100">
+              <div class="h4">Por último realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['2&lt;hr&gt;4','2&lt;hr&gt;2','1&lt;hr&gt;3']" :key="'b5'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Marco mis giros" text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="kidresp" :class="temps.cb == 6 ? 'w40': 'w20'">
+              <lottie-player src="i/b7.json" key="m6" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;6">5<hr>8</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 7 ? 'w40': 'w20'" v-if="temps.cb&gt;6">
+              <lottie-player src="i/b8.json" key="m7" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;7">2<hr>2</number>
+            </div>
+            <div class="kidresp" :class="temps.cb == 8 ? 'w40': 'w20'" v-if="temps.cb&gt;7">
+              <lottie-player src="i/b9.json" key="m8" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;8">1<hr>4</number>
+            </div>
+          </div>
+          <template v-if="temps.cb == 6">
+            <div class="row w100">
+              <div class="h4">Simón realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;3','5&lt;hr&gt;8','1&lt;hr&gt;2']" :key="'b6'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 7">
+            <div class="row w100">
+              <div class="h4">Ahora realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['2&lt;hr&gt;2','4&lt;hr&gt;3','1&lt;hr&gt;4']" :key="'b7'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.cb == 8">
+            <div class="row w100">
+              <div class="h4">Por último realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['1&lt;hr&gt;3','1&lt;hr&gt;2','1&lt;hr&gt;4']" :key="'b8'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -45,6 +236,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,10 +248,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'cb', 0)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 3
     </script>
   </body>
 </html>
