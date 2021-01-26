@@ -5177,6 +5177,94 @@
 		"oAP": "\/CN5T2\/196\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/CN5T3\/207\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 390808,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/inicio.png": {
+		"ft": 32768,
+		"iS": 14641,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/inicio.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/kid.png": {
+		"ft": 32768,
+		"iS": 119706,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/kid.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/secomercializa.png": {
+		"ft": 32768,
+		"iS": 21309,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/secomercializa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/sedisfruta.png": {
+		"ft": 32768,
+		"iS": 18013,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/sedisfruta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/segenera.png": {
+		"ft": 32768,
+		"iS": 18664,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/segenera.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/setransporta.png": {
+		"ft": 32768,
+		"iS": 19700,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/setransporta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN5T3\/207\/i\/torres.png": {
+		"ft": 32768,
+		"iS": 40784,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/i\/torres.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CN5T3\/207\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -5192,6 +5280,13 @@
 		"oAP": "\/CN5T3\/207\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/CN5T3\/207\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN5T3\/207\/s\/instruccion1.mp3",
+		"oF": 0
 		},
 	"\/CN6T1\/184\/aimg\/1.svg": {
 		"ft": 2097152,

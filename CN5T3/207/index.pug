@@ -7,6 +7,60 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .img {
+                position: relative;
+            }
+            .img img {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .img .main {
+                position: static;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                font-size: 0.8rem;
+            }
+            .drag div {
+                background: #f5f5f5;
+                margin: 1%;
+                padding: 1%;
+                border-radius: 6px;
+            }
+            .drop {
+                padding: 1%;
+                margin: 1%;
+                border-radius: 6px;
+                border: 2px dashed var(--main);
+                display: flex;
+                font-size: 0.7rem;
+            }
+            .drop .number {
+                margin-right: 3%;
+            }
+            .drop.isok {
+                background: #fff;
+            }
+            .drop:nth-child(1) {
+                border-color: var(--main);
+            }
+            .drop:nth-child(2) {
+                border-color: var(--sec);
+            }
+            .drop:nth-child(3) {
+                border-color: var(--clear);
+            }
+            .drop:nth-child(4) {
+                border-color: var(--accent);
+            }
+            .drop:nth-child(5) {
+                border-color: #DA635A;
+            }
+            .drop:nth-child(6) {
+                border-color: #E65BA1;
+            }
 
 
     body
@@ -15,11 +69,24 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.parrafos.length" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        .img.w90
+                            img(src="i/bg.png").w100.main
+                            img(src="i/kid.png").w100.animate__animated.animate__fadeInUp
+                            img( v-for="(i, index) in temps.imgs" :src="'i/'+i+'.png'" v-if="temps[i]").w100.animate__animated.animate__rubberBand
+                    
+                    .row.w100
+                        .w50
+                            .drop(v-for="(i, index) in 6" :data="i" droptimes="untilok")
+                                number(smaller :c="i") {{i}}. 
+                        .w50
+                            template(v-for="(i, index) in temps.parrafos")
+                                drag(:data="i.val" dropzone=".drop" stay-if-ok append-to-dropzone @isok="temps[i.im] = true" dropzone-ok-class="isok")
+                                    div {{i.txt}}
+
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +95,20 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+
+                app.$set(app.temps, 'imgs', [ 'inicio', 'secomercializa', 'sedisfruta', 'segenera', 'torres', 'setransporta'])
+                app.$set(app.temps, 'parrafos', [
+                    {val: 4, im: 'segenera', txt: 'Los recursos naturales que se usan son renovables (sol, agua y viento) y no renovables (petróleo, carbón o gas).' },
+                    {val: 2, im: 'sedisfruta', txt: 'Los consumidores disfrutamos de la electricidad en nuestras actividades cotidianas.' },
+                    {val: 1, im: 'secomercializa', txt: 'Hay centros de comercialización encargados del acceso y control de la energía eléctrica.' },
+                    {val: 6, im: 'inicio', txt: 'La energía eléctrica se genera a través de los recursos naturales.' },
+                    {val: 3, im: 'setransporta', txt: 'La electricidad se transporta hasta los principales centros de distribución.' },
+                    {val: 5, im: 'torres', txt: 'Las líneas de trasporte a tensión elevada y las subestaciones forman la red de transporte de la electricidad.' },
+                ])
+
+                for(var i in app.temps.imgs){
+                    app.$set(app.temps, app.temps.imgs[i], false)
+                }
                 
                 app.currentScene = 0
                 app.scenesCount = 1
