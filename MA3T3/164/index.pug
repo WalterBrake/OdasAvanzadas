@@ -31,11 +31,6 @@ html(lang="es")
                 max-width: 200px;
                 box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
             }
-            .buttons p {
-                font-weight: bold;
-                padding-top: 5px;
-                font-size: 0.8rem;
-            }
 
             .buttons .keydown{
                 cursor: pointer;
@@ -176,6 +171,32 @@ html(lang="es")
                     font-size: 0.8rem;
                 }
             }
+            .buttons {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: var(--beige);
+                font-size: 0.8rem;
+                padding: 2px 8px;
+                text-align: right;
+                white-space: nowrap;
+            }
+            .buttons .w40 {
+                margin-left: 4px;
+            }
+            .buttons .keydown {
+                max-width: 54px;
+                text-align: center;
+            }
+            @media (max-width: 680px) {
+                .buttons {
+                    font-size: 0.4rem;
+                }
+                .buttons .keydown {
+                    max-width: 30px;
+                }
+            }
+
 
 
 
@@ -188,25 +209,24 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="keydown" title=title text="Sofía quiere entrenar a su perro Colmillo para una exhibición canina. Ayúdale a Colmillo a seguir las instrucciones de Sofía.  Usa las flechas para que avance. Prepárate... ¡comenzamos!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
-                    .buttons
-                        div.w100
-                            p Giro izquierdo
-                            .row
-                                .keydown.w30(@click="giro('i')"): img(src="i/btnLeft.svg").w100
-                            p Giro derecho
-                            .row
-                                .keydown.w30(@click="giro('d')"): img(src="i/btnRight.svg").w100
-                        div.w100
-                            p Avanzar
-                            .row
-                                .keydown.w30(@click="avanza"): img(src="i/btnUp.svg").w100
                 activity
                     .row.w100
                         .w70.mapa
-                            .girl: img(src="i/girl2.png").w10
+                            .row
+                                .girl: img(src="i/girl2.png").w10
                             .dog(:class="(temps.dog.r) + ' ' + 'x'+temps.dog.x + ' ' + 'y'+temps.dog.y + ' ' + temps.doganim" )
                                 img(:src="'i/dog'+temps.dog.r+'.png'").w100
                             img(src="i/bg.png").w100
+                            .buttons
+                                .row
+                                    .w60 Giro izquierdo
+                                    .w40: .keydown(@click="giro('i')"): img(src="i/btnLeft.svg").w100
+                                .row
+                                    .w60 Giro derecho
+                                    .w40: .keydown(@click="giro('d')"): img(src="i/btnRight.svg").w100
+                                .row
+                                    .w60 Avanzar
+                                    .w40: .keydown(@click="avanza"): img(src="i/btnUp.svg").w100
                     .row.w90.ins
                         audiotext(v-if="temps.au1 && temps.step==0" key="au1" :autoplay="true" audio="s/au1.mp3" text="Colmillo, camina tres cuadros hacia adelante, debes saltar el obstáculo. Después, da vuelta a tu izquierda y avanza un cuadro.")
                         audiotext(v-else-if="temps.step==1" key="au2" :autoplay="true" audio="s/au2.mp3" text="¡Muy bien Colmillo!, ahora gira a tu derecha y avanza un cuadro. Encontrarás la entada al túnel, entra en él.")

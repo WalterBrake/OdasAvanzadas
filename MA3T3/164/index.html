@@ -34,11 +34,6 @@
           max-width: 200px;
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
       }
-      .buttons p {
-          font-weight: bold;
-          padding-top: 5px;
-          font-size: 0.8rem;
-      }
       
       .buttons .keydown{
           cursor: pointer;
@@ -179,6 +174,32 @@
               font-size: 0.8rem;
           }
       }
+      .buttons {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--beige);
+          font-size: 0.8rem;
+          padding: 2px 8px;
+          text-align: right;
+          white-space: nowrap;
+      }
+      .buttons .w40 {
+          margin-left: 4px;
+      }
+      .buttons .keydown {
+          max-width: 54px;
+          text-align: center;
+      }
+      @media (max-width: 680px) {
+          .buttons {
+              font-size: 0.4rem;
+          }
+          .buttons .keydown {
+              max-width: 30px;
+          }
+      }
+      
       
       
       
@@ -191,31 +212,34 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
-        <info type="keydown" title="Vamos a girar" text="Sofía quiere entrenar a su perro Colmillo para una exhibición canina. Ayúdale a Colmillo a seguir las instrucciones de Sofía.  Usa las flechas para que avance. Prepárate... ¡comenzamos!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
-          <div class="buttons">
-            <div class="w100">
-              <p>Giro izquierdo</p>
-              <div class="row">
-                <div class="keydown w30" @click="giro('i')"><img class="w100" src="i/btnLeft.svg"/></div>
-              </div>
-              <p>Giro derecho</p>
-              <div class="row">
-                <div class="keydown w30" @click="giro('d')"><img class="w100" src="i/btnRight.svg"/></div>
-              </div>
-            </div>
-            <div class="w100">
-              <p>Avanzar</p>
-              <div class="row">
-                <div class="keydown w30" @click="avanza"><img class="w100" src="i/btnUp.svg"/></div>
-              </div>
-            </div>
-          </div>
-        </info>
+        <info type="keydown" title="Vamos a girar" text="Sofía quiere entrenar a su perro Colmillo para una exhibición canina. Ayúdale a Colmillo a seguir las instrucciones de Sofía.  Usa las flechas para que avance. Prepárate... ¡comenzamos!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true"></info>
         <activity>
           <div class="row w100">
             <div class="w70 mapa">
-              <div class="girl"><img class="w10" src="i/girl2.png"/></div>
+              <div class="row">
+                <div class="girl"><img class="w10" src="i/girl2.png"/></div>
+              </div>
               <div class="dog" :class="(temps.dog.r) + ' ' + 'x'+temps.dog.x + ' ' + 'y'+temps.dog.y + ' ' + temps.doganim"><img class="w100" :src="'i/dog'+temps.dog.r+'.png'"/></div><img class="w100" src="i/bg.png"/>
+              <div class="buttons">
+                <div class="row">
+                  <div class="w60">Giro izquierdo</div>
+                  <div class="w40">
+                    <div class="keydown" @click="giro('i')"><img class="w100" src="i/btnLeft.svg"/></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="w60">Giro derecho</div>
+                  <div class="w40">
+                    <div class="keydown" @click="giro('d')"><img class="w100" src="i/btnRight.svg"/></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="w60">Avanzar</div>
+                  <div class="w40">
+                    <div class="keydown" @click="avanza"><img class="w100" src="i/btnUp.svg"/></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row w90 ins">
