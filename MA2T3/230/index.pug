@@ -1,12 +1,103 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Multiplico por 2 y por 3'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .activity{background: url(i/bg.png);background-size: 40%;}
+            .roca {
+                width: 16%;
+                min-height: 180px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                flex-wrap: wrap;
+            }
+            .roca .number {
+                font-size: 1.2rem;
+            }
+            @media (max-width: 680px) {
+                .roca .number {
+                    font-size: 0.6rem;
+                }
+            }
+            .roca .number:last-child {
+                margin-left: 4px;
+            }
+            .roca1 {
+                background-image: url("i/roca1.png");
+                margin-bottom: 15px;
+            }
+            .roca2 {
+                background-image: url("i/roca2.png");
+            }
+            .roca3 {
+                background-image: url("i/roca3.png");
+                margin-top: 5px;
+            }
+            .currentrock{
+                width: 30%;
+            }
+            .astroplace{ justify-content: flex-start; }
+            .astro{transition: margin 1s;}
+            .roca {
+                position: relative;
+            }
+            .roca .isok {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                background: #60B248;
+                padding: 2px 10px 2px 6px;
+                border-radius: 6px;
+            }
+            .selectives {
+                background: #3B4C5E;
+                border-radius: 10px;
+            }
+            .selectives .number {
+                font-size: 2rem;
+            }
+            .meta img {
+                margin: -100px 0;
+            }
+            .current0 {
+                margin-left: 1%;
+            }
+            .current1 {
+                margin-left: 16%;
+            }
+            .current2 {
+                margin-left: 30%;
+            }
+            .current3 {
+                margin-left: 45%;
+            }
+            .current4 {
+                margin-left: 59%;
+            }
+            .current6 {
+                margin-left: 80%;
+            }
+
+            .timewatch {
+                position: absolute;
+                right: 6px;
+                top: 6px;
+                background: #FFFFFF;
+                border-radius: 10px;
+                padding: 6px 10px;
+            }
+            .timewatch.warning {
+                background: #DA3F34;
+                color: #fff;
+            }
 
 
     body
@@ -15,20 +106,160 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="startScene('rocasA')")
+                info(type="seleccionar" title=title text="¡El astonauta está aprendiendo a multiplicar! Selecciona la multiplicación que da el mismo resultado que la suma. Entre más rápido lo hagas, ¡mejor!" textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .timewatch(:class="temps.timerwarning?'warning':''")
+                        template(v-if="!temps.failedtime") {{temps.timeformat}}
+                        template(v-else) Tu tiempo se acabó.
+                    .row.w100.astroplace
+                        .astro.w20(:class="'current'+temps.currentA"): img(src="i/as1.png").w100.animate__animated.animate__pulse.animate__infinite.animate__slower
                     .row.w100
+                        template(v-for="(i, index) in temps.rocasA")
+                            .roca(:class="('roca'+((index % 3)+1))   +   (temps.currentA == index ? ' currentrock':'') + '  ' + (!i.alreadyok ? 'alreadyok' : '') ")
+                                number(c=2 smaller) {{i.sa}} + {{i.sb}} = 
+                                number(c=5 smaller)  {{i.sa+i.sb}}
+                                div(v-if="i.alreadyok").isok: number(c=1 smaller) {{i.op[i.ok]}}
+                        .w20.meta: img(src="i/meta.png").w100
+                    .row.w100.options
+                        template(v-for="(i, index) in temps.rocasA")
+                            selectives(v-show="temps.currentA == index && !i.alreadyok" :ans="i.ok" :key="'a'+index" ref="pa" :ops="i.op" number disableok @selected="gonext" @isok="isokselect(index)" @iserror="iserrorselect")
+                    .row.w100(v-if="temps.validateBtn"): button(@click="validatingA('pa')").button.big.animate__animated.animate__lightSpeedInLeft Validar
             
-            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="startScene('rocasB')")
+                info(type="seleccionar" title=title text="¡El astonauta está aprendiendo a multiplicar! Selecciona la multiplicación que da el mismo resultado que la suma. Entre más rápido lo hagas, ¡mejor!" textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .timewatch(:class="temps.timerwarning?'warning':''")
+                        template(v-if="!temps.failedtime") {{temps.timeformat}}
+                        template(v-else) Tu tiempo se acabó.
+                    .row.w100.astroplace
+                        .astro.w20(:class="'current'+temps.currentA"): img(src="i/as2.png").w100.animate__animated.animate__pulse.animate__infinite.animate__slower
+                    .row.w100
+                        template(v-for="(i, index) in temps.rocasB")
+                            .roca(:class="('roca'+((index % 3)+1))   +   (temps.currentA == index ? ' currentrock':'') + '  ' + (!i.alreadyok ? 'alreadyok' : '') ")
+                                number(c=2 smaller) {{i.sa}} + {{i.sb}} = 
+                                number(c=5 smaller)  {{i.sa+i.sb}}
+                                div(v-if="i.alreadyok").isok: number(c=1 smaller) {{i.op[i.ok]}}
+                        .w20.meta: img(src="i/meta.png").w100
+                    .row.w100.options
+                        template(v-for="(i, index) in temps.rocasB")
+                            selectives(v-show="temps.currentA == index && !i.alreadyok" :ans="i.ok" :key="'a'+index" ref="pb" :ops="i.op" number disableok @selected="gonext" @isok="isokselect(index)" @iserror="iserrorselect")
+                    .row.w100(v-if="temps.validateBtn"): button(@click="validatingA('pb')").button.big.animate__animated.animate__lightSpeedInLeft Validar
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+
+                app.$set(app.temps, 'failedtime', false)
+                app.$set(app.temps, 'timerwarning', false)
+                app.$set(app.temps, 'thetimer', null)
+                app.$set(app.temps, 'timersecs', 0)
+                app.$set(app.temps, 'timeformat', '')
+
+                app.$set(app.temps, 'validateBtn', false)
+                app.$set(app.temps, 'howmanyoks', false)
+
+                app.$set(app.temps, 'currentA', 0)
+                app.$set(app.temps, 'rocasA', [
+                    { sa: 4, sb: 2,  op:['4x2', '3x2'], ok:1, alreadyok: false },
+                    { sa: 8, sb: 4,  op:['3x4', '6x3'], ok:0, alreadyok: false },
+                    { sa: 10, sb: 5, op:['10x1','3x5'], ok:1, alreadyok: false },
+                    { sa: 6, sb: 3,  op:['3x3', '6x2'], ok:0, alreadyok: false },
+                    { sa: 2, sb: 1,  op:['3x1', '2x1'], ok:0, alreadyok: false },
+                ])
+                
+                app.$set(app.temps, 'rocasB', [
+                    { sa: 12, sb: 6,  op:['12x1', '3x6'], ok:1, alreadyok: false },
+                    { sa: 16, sb: 8,  op:['3x8', '6x8'], ok:0, alreadyok: false },
+                    { sa: 20, sb: 10, op:['6x4','3x10'], ok:1, alreadyok: false },
+                    { sa: 14, sb: 7,  op:['3x7', '6x3'], ok:0, alreadyok: false },
+                    { sa: 18, sb: 9,  op:['4x6', '3x9'], ok:1, alreadyok: false },
+                ])
+
+                app.$set(app.temps, 'rocasOBJ', [])
+
+                app.iserrorselect= function () {
+                    app.temps.currentA = 0
+                    app.checknext()
+                    app.temps.validateBtn = false
+                    if( app.temps.failedtime){
+                        app.temps.validateBtn = true
+                    }
+                }
+                app.isokselect= function (rock) {
+                    app.temps.howmnayoks++
+                    app.temps.rocasOBJ[rock].alreadyok = true
+                    //SUCCESS OK
+                    if(app.temps.howmnayoks==app.temps.rocasOBJ.length){
+                        app.temps.currentA = app.temps.rocasOBJ.length+1
+                        clearInterval(app.temps.thetimer)
+                    }
+                }
+                app.validatingA = function (toval) {
+                    app.temps.howmnayoks = 0
+                    app.selectiveValidation([toval])
+                }
+                app.gonext = function () {
+                    if(app.temps.currentA >= app.temps.rocasOBJ.length-1){
+                        app.temps.validateBtn = true
+                    } else {
+                        app.temps.validateBtn = false
+                        if( app.temps.failedtime){
+                            app.temps.validateBtn = true
+                        }
+                    }
+                    if(app.temps.currentA >= app.temps.rocasOBJ.length-1){
+                        return false
+                    }
+                    setTimeout(function () {
+                        app.temps.currentA ++
+                        app.checknext()
+                    }, 500)
+                }
+                app.checknext = function () {
+                    if(app.temps.rocasOBJ[app.temps.currentA].alreadyok){
+                        app.gonext()
+                    }
+                }
+                app.timeup = function () {
+                    app.temps.timersecs++
+                    var timestamp = 150 - app.temps.timersecs
+                    var hours = Math.floor(timestamp / 60 / 60)
+                    var minutes = Math.floor(timestamp / 60) - (hours * 60)
+                    var seconds = timestamp % 60
+                    var formatted = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')
+                    app.temps.timeformat = formatted
+                    if(timestamp < 60){
+                        app.temps.timerwarning = true
+                    }
+                    if(timestamp == 0) {
+                        clearInterval(app.temps.thetimer)
+                        app.temps.timerwarning = true
+                        app.temps.failedtime = true
+                        app.temps.validateBtn = true
+                        s_error.play()
+                    }
+                }
+                app.startScene = function (rocks) { 
+                    app.temps.failedtime = false
+                    app.temps.timerwarning = false
+                    app.temps.timersecs = 0
+                    app.temps.currentA = 0
+                    app.temps.howmnayoks = 0
+                    app.temps.validateBtn = false
+                    app.temps.rocasOBJ = app.temps[rocks]
+
+                    
+                    
+                    app.temps.thetimer = setInterval( function () { app.timeup() }, 1000)
+                }
+
+
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2

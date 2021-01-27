@@ -10,6 +10,7 @@ Vue.component('selectives', {
         clicked (index){
             this.selected = index
             s_select.play()
+            this.$emit('selected')
         },
         validate () {
             if(this.ans == this.selected){

@@ -18487,6 +18487,83 @@
 		"oAP": "\/MA2T3\/228\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA2T3\/230\/i\/as1.png": {
+		"ft": 32768,
+		"iS": 86407,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/as1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/as2.png": {
+		"ft": 32768,
+		"iS": 88876,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/as2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 54952,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/meta.png": {
+		"ft": 32768,
+		"iS": 193510,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/meta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/roca1.png": {
+		"ft": 32768,
+		"iS": 83172,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/roca1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/roca2.png": {
+		"ft": 32768,
+		"iS": 66194,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/roca2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA2T3\/230\/i\/roca3.png": {
+		"ft": 32768,
+		"iS": 85383,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/i\/roca3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA2T3\/230\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -18502,6 +18579,13 @@
 		"oAP": "\/MA2T3\/230\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA2T3\/230\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA2T3\/230\/s\/instruccion1.mp3",
+		"oF": 0
 		},
 	"\/MA3T1\/102\/aimg\/crucigrama-letras.svg": {
 		"ft": 2097152,
