@@ -119,6 +119,18 @@
           margin-left: 0;
       }
       @media (max-width: 680px) {
+          .ex2 div.txt{
+              font-size: 0.8rem;
+              padding: 2px;
+              margin-bottom: 2px;
+          }
+          .ex2 .drop{
+              min-height: 60px;
+              font-size: 0.8rem;
+          }
+          .ex2 .drag{
+              padding: 1px 2px;
+          }
           .ex2 .number.smaller {
               font-size: 0.7rem;
           }
@@ -233,8 +245,8 @@
                   <div>de madera</div>
                 </drag>y el piano 
                 <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
-                  <div>grande son de mi hermano </div>
-                </drag>
+                  <div>grande</div>
+                </drag>son de mi hermano 
                 <drag data="a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
                   <div>mayor</div>
                 </drag>.
@@ -255,16 +267,16 @@
               </div>
             </div>
           </div>
-          <div class="row w100 ex2 mt-1">
-            <div class="w30 text-center">
+          <div class="row w100 ex2 mt-1 wrap">
+            <div class="w30 wm100 text-center">
               <number c="1" smaller="smaller">Adjetivos</number>
               <div class="drop" data="a" droptimes="multiple"></div>
             </div>
-            <div class="w30 text-center">
+            <div class="w30 wm100 text-center">
               <number c="2" smaller="smaller">Adverbios</number>
               <div class="drop" data="b" droptimes="multiple"></div>
             </div>
-            <div class="w30 text-center">
+            <div class="w30 wm100 text-center">
               <number c="3" smaller="smaller">Frases preposicionales</number>
               <div class="drop" data="c" droptimes="multiple"></div>
             </div>
@@ -312,8 +324,8 @@
       
       
       
-      app.currentScene = 2
-      app.scenesCount = 0
+      app.currentScene = 0
+      app.scenesCount = 2
     </script>
   </body>
 </html>

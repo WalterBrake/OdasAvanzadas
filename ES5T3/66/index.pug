@@ -116,6 +116,18 @@ html(lang="es")
                 margin-left: 0;
             }
             @media (max-width: 680px) {
+                .ex2 div.txt{
+                    font-size: 0.8rem;
+                    padding: 2px;
+                    margin-bottom: 2px;
+                }
+                .ex2 .drop{
+                    min-height: 60px;
+                    font-size: 0.8rem;
+                }
+                .ex2 .drag{
+                    padding: 1px 2px;
+                }
                 .ex2 .number.smaller {
                     font-size: 0.7rem;
                 }
@@ -190,7 +202,8 @@ html(lang="es")
                             div.txt La guitarra 
                                 drag(data="c" dropzone=".drop" stay-if-ok append-to-dropzone): div de madera
                                 | y el piano 
-                                drag(data="a" dropzone=".drop" stay-if-ok append-to-dropzone): div grande son de mi hermano 
+                                drag(data="a" dropzone=".drop" stay-if-ok append-to-dropzone): div grande
+                                | son de mi hermano 
                                 drag(data="a" dropzone=".drop" stay-if-ok append-to-dropzone): div mayor
                                 | .
                             div.txt En la 
@@ -201,14 +214,14 @@ html(lang="es")
                                 drag(data="b" dropzone=".drop" stay-if-ok append-to-dropzone): div alegremente 
                                 drag(data="b" dropzone=".drop" stay-if-ok append-to-dropzone): div enfrente 
                                 | de la banda. 
-                    .row.w100.ex2.mt-1
-                        .w30.text-center
+                    .row.w100.ex2.mt-1.wrap
+                        .w30.wm100.text-center
                             number(c=1 smaller) Adjetivos
                             .drop(data="a" droptimes="multiple")
-                        .w30.text-center
+                        .w30.wm100.text-center
                             number(c=2 smaller) Adverbios
                             .drop(data="b" droptimes="multiple")
-                        .w30.text-center
+                        .w30.wm100.text-center
                             number(c=3 smaller) Frases preposicionales
                             .drop(data="c" droptimes="multiple")
 
@@ -228,5 +241,5 @@ html(lang="es")
 
                 
                 
-                app.currentScene = 2
-                app.scenesCount = 0
+                app.currentScene = 0
+                app.scenesCount = 2
