@@ -57,6 +57,24 @@ html(lang="es")
                 background: #7030A0;
             }
 
+            .endtext {
+                background: #064A8B;
+                border-radius: 10px;
+                padding: 30px;
+                position: relative;
+                font-size: 1.2rem;
+                color: #fff;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            .endtext .audiotext .audiotextBtn {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                left: 0;
+                top: 0;
+            }
+
 
 
     body
@@ -88,11 +106,12 @@ html(lang="es")
             
             // SCENES
             scene(v-if="currentScene==10" hidescorebox :key="10" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B")
-                info(type="seleccionar" title=title text="Texto en la parte superior de la pantalla: Cuando mires al cielo, ya sabrás en qué fase está la Luna." textaudio="s/a11.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Selecciona la descripción correcta para cada fase de la luna." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .text-right.astro.animate__animated.animate__pulse.animate__slower.animate__infinite.w20: img(src="i/astro.png").w100
                     .text-right.cohete.animate__animated.animate__zoomInLeft.animate__slower.w20: img(src="i/cohete.png").w100
                     .row.luna.w100.animate__animated.animate__pulse: .w30: lottie-player( src="i/fases.json" key="l0" background="transparent" speed="1" style="width: 100%; height: 100%;"  autoplay loop)
+                    .endtext: audiotext(:autoplay="true" audio="s/a11.mp3" text="Cuando mires al cielo, ya sabrás en qué fase está la Luna.")
                     .row.w100.text-center: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
 
             // END
@@ -188,7 +207,7 @@ html(lang="es")
                 ])
                 
                 
-                app.currentScene = 0
+                app.currentScene = 10
                 app.scenesCount = 8
 
 
