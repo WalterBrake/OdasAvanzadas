@@ -95,7 +95,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Selecciona los digitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Selecciona los dígitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
                 activity
                     .row.w100.text-center
                         .w50.row: .operation
@@ -103,21 +103,31 @@ html(lang="es")
                             number(small c=2) x
                             number(small c=8) 6
                             number(small c=2) =
-                            number(small c=2) 24
+                            number(small c=2)
+                                template(v-if="temps.au1") 24
+                                template(v-else) ?
                     .row.w100
                         .w50.wm100.tabla
                             .row.text-center
                                 .w10: .ex x
-                                .w10.heads(v-for="(i, index) in 11"): clickable(simple-ok :isok="index==6" example): div {{index}}
+                                .w10.heads(v-for="(i, index) in 11")
+                                    template(v-if="temps.au1")
+                                        clickable(simple-ok :isok="index==6" example): div {{index}}
+                                    template(v-else)
+                                        div.clickable {{index}}
                             .row.text-center
-                                .w10: clickable(simple-ok v-for="(i, index) in 11" :isok="index==4" example): div {{index}}
-                                .w10(v-for="(i, index) in 11"): div(v-for="(i2, index2) in 11" :class="index2==4&&index==6?'equals':''").nums {{(index2)*index}}
+                                .w10
+                                    template(v-if="temps.au1")
+                                        clickable(simple-ok v-for="(i, index) in 11" :isok="index==4" example): div {{index}}
+                                    template(v-else)
+                                        div.clickable(v-for="(i, index) in 11" ): div {{index}}
+                                .w10(v-for="(i, index) in 11"): div(v-for="(i2, index2) in 11" :class="index2==4&&index==6 && temps.au1?'equals':''").nums {{(index2)*index}}
                                 
-                    button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+                    button(@click="sceneCompleted(false)" v-if="temps.au1").button.big.animate__animated.animate__flip Continuar
             
             // SCENES
             scene(v-for="(i0, index0) in temps.opes" v-if="currentScene==i0.key" ref="oks" :key="i0.key" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="temps.counter = 0")
-                info(type="seleccionar" title=title text="Selecciona los digitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="false")
+                info(type="seleccionar" title=title text="Selecciona los dígitos de las operaciones que aparecen arriba de la tabla para encontrar la respuesta de la operación. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100.text-center
                         .w50.row
@@ -144,6 +154,7 @@ html(lang="es")
         
         +scripts
             script.
+                app.$set(app.temps, 'au1', false)
 
                 app.$devmode = false
                 app.$set(app.temps, 'counter', 0)
@@ -161,5 +172,5 @@ html(lang="es")
                     {key:12, v1: 2, v2: 4 },
                     {key:13, v1: 4, v2: 7 },
                 ])
-                app.currentScene = 0
+                app.currentScene = 1
                 app.scenesCount = 12
