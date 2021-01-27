@@ -1,0 +1,372 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Vamos a girar'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .ins {
+                background: #fff;
+                max-width: 90%;
+                border-radius: 10px;
+                position: relative;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+            }
+            .ins .audiotext {
+                padding: 20px;
+            }
+            .ins .audiotext .audiotextBtn {
+                position: absolute;
+                left: -10px;
+                top: -18px;
+                max-width: 30px;
+                height: 30px;
+            }
+            .buttons {
+                background: #015093;
+                border-radius: 10px;
+                margin-top: auto;
+                max-width: 200px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .buttons p {
+                font-weight: bold;
+                padding-top: 5px;
+                font-size: 0.8rem;
+            }
+
+            .buttons .keydown{
+                cursor: pointer;
+            }
+            .mapa {
+                position: relative;
+            }
+            .dog {
+                left: 0;
+                top: 0;
+                width: 14%;
+                position: absolute;
+            }
+            .dog.x0 {
+                left: 9%;
+            }
+            .dog.x1 {
+                left: 22%;
+            }
+            .dog.x2 {
+                left: 37%;
+            }
+            .dog.x3 {
+                left: 51%;
+            }
+            .dog.x4 {
+                left: 65%;
+            }
+            .dog.x5 {
+                left: 78%;
+            }
+            .dog.x6 {
+                left: 10%;
+            }
+            .dog.y0 {
+                top: 8%;
+            }
+            .dog.y1 {
+                top: 17%;
+            }
+            .dog.y2 {
+                top: 28%;
+            }
+            .dog.y3 {
+                top: 40%;
+            }
+            .dog.y4 {
+                top: 53%;
+            }
+            .dog.x0.y2 {
+                left: 7%;
+            }
+            .dog.x0.y3 {
+                left: 5%;
+            }
+            .dog.x0.y4 {
+                left: 3%;
+            }
+            .dog.x1.y4 {
+                left: 19%;
+            }
+            .dog.x1.y3 {
+                left: 20%;
+            }
+            .dog.x1.y2 {
+                left: 21%;
+            }
+            .dog.x3.y4 {
+                left: 52%;
+            }
+            .dog.x4.y4 {
+                left: 70%;
+            }
+            .dog.x4.y3 {
+                left: 68%;
+            }
+            .dog.x4.y2 {
+                left: 66%;
+            }
+            .dog.x5.y4 {
+                left: 84%;
+            }
+            .dog.x5.y3 {
+                left: 82%;
+            }
+            .dog.x5.y2 {
+                left: 80%;
+            }
+
+            .dog.x3.y5 {
+                top: 58.7%;
+                left: 52%;
+                height: 12%;
+                background-image: url("i/tunel.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .dog.x3.y5 img {
+                display: none;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 4px;
+            }
+            .drag div {
+                background: #fff;
+                padding: 6px;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+            }
+            @media (max-width: 680px) {
+                .drag div {
+                    font-size: 0.8rem;
+                }
+            }
+            .dropps {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .dropps .drop {
+                border: 2px dashed #EFD43D;
+                border-radius: 6px;
+                margin: 4px;
+                padding: 6px;
+                display: flex;
+                align-items: center;
+            }
+            .dropps .drop .number {
+                margin-right: 6px;
+            }
+            .dropps .drop.hover {
+                background: #EFD43D;
+            }
+            @media (max-width: 680px) {
+                .dropps {
+                    font-size: 0.8rem;
+                }
+            }
+
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="keydown" title=title text="Sofía quiere entrenar a su perro Colmillo para una exhibición canina. Ayúdale a Colmillo a seguir las instrucciones de Sofía.  Usa las flechas para que avance. Prepárate... ¡comenzamos!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
+                    .buttons
+                        div.w100
+                            p Giro izquierdo
+                            .row
+                                .keydown.w30(@click="giro('i')"): img(src="i/btnLeft.svg").w100
+                            p Giro derecho
+                            .row
+                                .keydown.w30(@click="giro('d')"): img(src="i/btnRight.svg").w100
+                        div.w100
+                            p Avanzar
+                            .row
+                                .keydown.w30(@click="avanza"): img(src="i/btnUp.svg").w100
+                activity
+                    .row.w100
+                        .w70.mapa
+                            .girl: img(src="i/girl2.png").w10
+                            .dog(:class="(temps.dog.r) + ' ' + 'x'+temps.dog.x + ' ' + 'y'+temps.dog.y + ' ' + temps.doganim" )
+                                img(:src="'i/dog'+temps.dog.r+'.png'").w100
+                            img(src="i/bg.png").w100
+                    .row.w90.ins
+                        audiotext(v-if="temps.au1 && temps.step==0" key="au1" :autoplay="true" audio="s/au1.mp3" text="Colmillo, camina tres cuadros hacia adelante, debes saltar el obstáculo. Después, da vuelta a tu izquierda y avanza un cuadro.")
+                        audiotext(v-else-if="temps.step==1" key="au2" :autoplay="true" audio="s/au2.mp3" text="¡Muy bien Colmillo!, ahora gira a tu derecha y avanza un cuadro. Encontrarás la entada al túnel, entra en él.")
+                        audiotext(v-else-if="temps.step==2" key="au3" :autoplay="true" audio="s/au3.mp3" text="Al salir del túnel, avanza hacia adelante tres cuadros, brincarás a través de un aro.")
+                        audiotext(v-else-if="temps.step==3" key="au4" :autoplay="true" audio="s/au4.mp3" text="Por último gira a tu derecha y avanza dos cuadros, habrás subido una escalera y saltarás a la meta.")
+            
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="En la segunda vuelta de entrenamiento, Colmillo se distrajo con una ardilla y salió corriendo sin seguir el trayecto indicado. Observa el camino que recorrió y coloca los pasos en orden." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100: .w80: img(src="i/s2.png").w100
+
+                    .row.w100
+                        .w50.dropps
+                            .h4.text-center Trayecto que siguió Colmillo
+                            .drop(data="1" droptimes="untilok")
+                                number(c=1 smaller) 1.
+                            .drop(data="2" droptimes="untilok")
+                                number(c=2 smaller) 2.
+                            .drop(data="3" droptimes="untilok")
+                                number(c=3 smaller) 3.
+                            .drop(data="4" droptimes="untilok")
+                                number(c=4 smaller) 4.
+                        .w50
+                            drag(data="4" dropzone=".drop" stay-if-ok append-to-dropzone): div Después se salió de la ruta y fue tras la ardilla.
+                            drag(data="1" dropzone=".drop" stay-if-ok append-to-dropzone): div Caminó tres cuadros hacia adelante.
+                            drag(data="3" dropzone=".drop" stay-if-ok append-to-dropzone): div Giró hacia su derecha y caminó un cuadro.
+                            drag(data="2" dropzone=".drop" stay-if-ok append-to-dropzone): div Giró a su izquierda y caminó cuatro cuadros.
+
+
+            // END
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                app.$set(app.temps, 'au2', false)
+                app.$set(app.temps, 'au3', false)
+                app.$set(app.temps, 'au4', false)
+                app.$set(app.temps, 'au5', false)
+                
+                app.$set(app.temps, 'doganim', null)
+
+                var rota = ['f', 'r', 'b', 'l']
+
+                app.$set(app.temps, 'dog', {x: 0, y: 0, r: 'f'})
+
+                app.$set(app.temps, 'step', 0)
+                app.$set(app.temps, 'answers', [
+                    {x: 1, y: 3},
+                    {x: 1, y: 4},
+                    {x: 3, y: 2},
+                    {x: 5, y: 2},
+                ])
+
+                app.giro = function (dir) {
+                    s_select.play()
+                    
+
+                    let crot = app.temps.dog.r
+                    let cindex = rota.indexOf(crot)
+                    switch(dir){
+                        case 'd':
+                            if(cindex==0){
+                                app.temps.dog.r = rota[rota.length-1]
+                            } else {
+                                app.temps.dog.r = rota[cindex-1]
+                            }
+                            break
+                        case 'i':
+                            if(cindex==rota.length-1){
+                                app.temps.dog.r = rota[0]
+                            } else {
+                                app.temps.dog.r = rota[cindex+1]
+                            }
+                            break
+                    }
+                }
+
+                app.avanza = function () {
+                    s_select.play()
+                    switch(app.temps.dog.r){
+                        case 'f':
+                            if(app.temps.dog.y==4){ return false }
+                            app.temps.dog.y++
+                            break
+                        case 'b':
+                            if(app.temps.dog.y==1){ return false }
+                            app.temps.dog.y--
+                            break
+                        case 'l':
+                            if(app.temps.dog.x==0){ return false }
+                            app.temps.dog.x--
+                            break
+                        case 'r':
+                            if(app.temps.dog.x==5){ return false }
+                            app.temps.dog.x++
+                            break
+                    }
+
+                    //Verify steps
+                    app.verifysteps()
+
+                    //Custom anims
+                    if(app.temps.dog.x == 0 && app.temps.dog.y == 2){
+                        app.temps.doganim = 'animate__animated animate__bounce'
+                    } else if(app.temps.dog.x == 1 && app.temps.dog.y == 4){
+                        app.temps.doganim = 'animate__animated animate__rotateOut'
+                        setTimeout(function () {
+                            app.temps.dog.x = 3
+                            app.temps.dog.y = 5
+                            app.temps.dog.r = 'b'
+                            app.temps.doganim = ''
+                        },800)
+                    } else if(app.temps.dog.x == 3 && app.temps.dog.y == 3){
+                        app.temps.doganim = 'animate__animated animate__swing'
+                    } else if(app.temps.dog.x == 4 && app.temps.dog.y == 2){
+                        app.temps.doganim = 'animate__animated animate__shakeY'
+                    } else {
+                        app.temps.doganim = ''
+
+                    }
+
+                    
+                }
+
+                app.verifysteps = function () {
+                    if(app.temps.dog.x == app.temps.answers[app.temps.step].x && app.temps.dog.y == app.temps.answers[app.temps.step].y) {
+                        for(var hw in Howler._howls){Howler._howls[hw].stop()}
+                        app.temps.step++
+                        EventBus.$emit('isok')
+                        s_ok.play()
+                    }
+
+                    
+
+                }
+
+
+
+                app.keyboard = function(e) {
+                    e = e || window.event;
+                    if (e.keyCode == '38') { //up
+                        app.avanza()
+                    }
+                    else if (e.keyCode == '40') { //down
+                    }
+                    else if (e.keyCode == '37') { //left
+                        app.giro('i')
+                    }
+                    else if (e.keyCode == '39') { //right
+                        app.giro('d')
+                    }
+
+                }
+
+                document.onkeydown = app.keyboard
+
+                app.currentScene = 0
+                app.scenesCount = 2

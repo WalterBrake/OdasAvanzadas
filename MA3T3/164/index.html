@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vamos a girar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .ins {
+          background: #fff;
+          max-width: 90%;
+          border-radius: 10px;
+          position: relative;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+      }
+      .ins .audiotext {
+          padding: 20px;
+      }
+      .ins .audiotext .audiotextBtn {
+          position: absolute;
+          left: -10px;
+          top: -18px;
+          max-width: 30px;
+          height: 30px;
+      }
+      .buttons {
+          background: #015093;
+          border-radius: 10px;
+          margin-top: auto;
+          max-width: 200px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .buttons p {
+          font-weight: bold;
+          padding-top: 5px;
+          font-size: 0.8rem;
+      }
+      
+      .buttons .keydown{
+          cursor: pointer;
+      }
+      .mapa {
+          position: relative;
+      }
+      .dog {
+          left: 0;
+          top: 0;
+          width: 14%;
+          position: absolute;
+      }
+      .dog.x0 {
+          left: 9%;
+      }
+      .dog.x1 {
+          left: 22%;
+      }
+      .dog.x2 {
+          left: 37%;
+      }
+      .dog.x3 {
+          left: 51%;
+      }
+      .dog.x4 {
+          left: 65%;
+      }
+      .dog.x5 {
+          left: 78%;
+      }
+      .dog.x6 {
+          left: 10%;
+      }
+      .dog.y0 {
+          top: 8%;
+      }
+      .dog.y1 {
+          top: 17%;
+      }
+      .dog.y2 {
+          top: 28%;
+      }
+      .dog.y3 {
+          top: 40%;
+      }
+      .dog.y4 {
+          top: 53%;
+      }
+      .dog.x0.y2 {
+          left: 7%;
+      }
+      .dog.x0.y3 {
+          left: 5%;
+      }
+      .dog.x0.y4 {
+          left: 3%;
+      }
+      .dog.x1.y4 {
+          left: 19%;
+      }
+      .dog.x1.y3 {
+          left: 20%;
+      }
+      .dog.x1.y2 {
+          left: 21%;
+      }
+      .dog.x3.y4 {
+          left: 52%;
+      }
+      .dog.x4.y4 {
+          left: 70%;
+      }
+      .dog.x4.y3 {
+          left: 68%;
+      }
+      .dog.x4.y2 {
+          left: 66%;
+      }
+      .dog.x5.y4 {
+          left: 84%;
+      }
+      .dog.x5.y3 {
+          left: 82%;
+      }
+      .dog.x5.y2 {
+          left: 80%;
+      }
+      
+      .dog.x3.y5 {
+          top: 58.7%;
+          left: 52%;
+          height: 12%;
+          background-image: url("i/tunel.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+      .dog.x3.y5 img {
+          display: none;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 4px;
+      }
+      .drag div {
+          background: #fff;
+          padding: 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+      }
+      @media (max-width: 680px) {
+          .drag div {
+              font-size: 0.8rem;
+          }
+      }
+      .dropps {
+          background: #fff;
+          padding: 10px;
+          border-radius: 10px;
+      }
+      .dropps .drop {
+          border: 2px dashed #EFD43D;
+          border-radius: 6px;
+          margin: 4px;
+          padding: 6px;
+          display: flex;
+          align-items: center;
+      }
+      .dropps .drop .number {
+          margin-right: 6px;
+      }
+      .dropps .drop.hover {
+          background: #EFD43D;
+      }
+      @media (max-width: 680px) {
+          .dropps {
+              font-size: 0.8rem;
+          }
+      }
+      
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="keydown" title="Vamos a girar" text="Sofía quiere entrenar a su perro Colmillo para una exhibición canina. Ayúdale a Colmillo a seguir las instrucciones de Sofía.  Usa las flechas para que avance. Prepárate... ¡comenzamos!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <div class="buttons">
+            <div class="w100">
+              <p>Giro izquierdo</p>
+              <div class="row">
+                <div class="keydown w30" @click="giro('i')"><img class="w100" src="i/btnLeft.svg"/></div>
+              </div>
+              <p>Giro derecho</p>
+              <div class="row">
+                <div class="keydown w30" @click="giro('d')"><img class="w100" src="i/btnRight.svg"/></div>
+              </div>
+            </div>
+            <div class="w100">
+              <p>Avanzar</p>
+              <div class="row">
+                <div class="keydown w30" @click="avanza"><img class="w100" src="i/btnUp.svg"/></div>
+              </div>
+            </div>
+          </div>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="w70 mapa">
+              <div class="girl"><img class="w10" src="i/girl2.png"/></div>
+              <div class="dog" :class="(temps.dog.r) + ' ' + 'x'+temps.dog.x + ' ' + 'y'+temps.dog.y + ' ' + temps.doganim"><img class="w100" :src="'i/dog'+temps.dog.r+'.png'"/></div><img class="w100" src="i/bg.png"/>
+            </div>
+          </div>
+          <div class="row w90 ins">
+            <audiotext v-if="temps.au1 &amp;&amp; temps.step==0" key="au1" :autoplay="true" audio="s/au1.mp3" text="Colmillo, camina tres cuadros hacia adelante, debes saltar el obstáculo. Después, da vuelta a tu izquierda y avanza un cuadro."></audiotext>
+            <audiotext v-else-if="temps.step==1" key="au2" :autoplay="true" audio="s/au2.mp3" text="¡Muy bien Colmillo!, ahora gira a tu derecha y avanza un cuadro. Encontrarás la entada al túnel, entra en él."></audiotext>
+            <audiotext v-else-if="temps.step==2" key="au3" :autoplay="true" audio="s/au3.mp3" text="Al salir del túnel, avanza hacia adelante tres cuadros, brincarás a través de un aro."></audiotext>
+            <audiotext v-else-if="temps.step==3" key="au4" :autoplay="true" audio="s/au4.mp3" text="Por último gira a tu derecha y avanza dos cuadros, habrás subido una escalera y saltarás a la meta."></audiotext>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/au5.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Vamos a girar" text="En la segunda vuelta de entrenamiento, Colmillo se distrajo con una ardilla y salió corriendo sin seguir el trayecto indicado. Observa el camino que recorrió y coloca los pasos en orden." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w80"><img class="w100" src="i/s2.png"/></div>
+          </div>
+          <div class="row w100">
+            <div class="w50 dropps">
+              <div class="h4 text-center">Trayecto que siguió Colmillo</div>
+              <div class="drop" data="1" droptimes="untilok">
+                <number c="1" smaller="smaller">1.</number>
+              </div>
+              <div class="drop" data="2" droptimes="untilok">
+                <number c="2" smaller="smaller">2.</number>
+              </div>
+              <div class="drop" data="3" droptimes="untilok">
+                <number c="3" smaller="smaller">3.</number>
+              </div>
+              <div class="drop" data="4" droptimes="untilok">
+                <number c="4" smaller="smaller">4.</number>
+              </div>
+            </div>
+            <div class="w50">
+              <drag data="4" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>Después se salió de la ruta y fue tras la ardilla.</div>
+              </drag>
+              <drag data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>Caminó tres cuadros hacia adelante.</div>
+              </drag>
+              <drag data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>Giró hacia su derecha y caminó un cuadro.</div>
+              </drag>
+              <drag data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>Giró a su izquierda y caminó cuatro cuadros.</div>
+              </drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'au2', false)
+      app.$set(app.temps, 'au3', false)
+      app.$set(app.temps, 'au4', false)
+      app.$set(app.temps, 'au5', false)
+      
+      app.$set(app.temps, 'doganim', null)
+      
+      var rota = ['f', 'r', 'b', 'l']
+      
+      app.$set(app.temps, 'dog', {x: 0, y: 0, r: 'f'})
+      
+      app.$set(app.temps, 'step', 0)
+      app.$set(app.temps, 'answers', [
+          {x: 1, y: 3},
+          {x: 1, y: 4},
+          {x: 3, y: 2},
+          {x: 5, y: 2},
+      ])
+      
+      app.giro = function (dir) {
+          s_select.play()
+          
+      
+          let crot = app.temps.dog.r
+          let cindex = rota.indexOf(crot)
+          switch(dir){
+              case 'd':
+                  if(cindex==0){
+                      app.temps.dog.r = rota[rota.length-1]
+                  } else {
+                      app.temps.dog.r = rota[cindex-1]
+                  }
+                  break
+              case 'i':
+                  if(cindex==rota.length-1){
+                      app.temps.dog.r = rota[0]
+                  } else {
+                      app.temps.dog.r = rota[cindex+1]
+                  }
+                  break
+          }
+      }
+      
+      app.avanza = function () {
+          s_select.play()
+          switch(app.temps.dog.r){
+              case 'f':
+                  if(app.temps.dog.y==4){ return false }
+                  app.temps.dog.y++
+                  break
+              case 'b':
+                  if(app.temps.dog.y==1){ return false }
+                  app.temps.dog.y--
+                  break
+              case 'l':
+                  if(app.temps.dog.x==0){ return false }
+                  app.temps.dog.x--
+                  break
+              case 'r':
+                  if(app.temps.dog.x==5){ return false }
+                  app.temps.dog.x++
+                  break
+          }
+      
+          //Verify steps
+          app.verifysteps()
+      
+          //Custom anims
+          if(app.temps.dog.x == 0 && app.temps.dog.y == 2){
+              app.temps.doganim = 'animate__animated animate__bounce'
+          } else if(app.temps.dog.x == 1 && app.temps.dog.y == 4){
+              app.temps.doganim = 'animate__animated animate__rotateOut'
+              setTimeout(function () {
+                  app.temps.dog.x = 3
+                  app.temps.dog.y = 5
+                  app.temps.dog.r = 'b'
+                  app.temps.doganim = ''
+              },800)
+          } else if(app.temps.dog.x == 3 && app.temps.dog.y == 3){
+              app.temps.doganim = 'animate__animated animate__swing'
+          } else if(app.temps.dog.x == 4 && app.temps.dog.y == 2){
+              app.temps.doganim = 'animate__animated animate__shakeY'
+          } else {
+              app.temps.doganim = ''
+      
+          }
+      
+          
+      }
+      
+      app.verifysteps = function () {
+          if(app.temps.dog.x == app.temps.answers[app.temps.step].x && app.temps.dog.y == app.temps.answers[app.temps.step].y) {
+              for(var hw in Howler._howls){Howler._howls[hw].stop()}
+              app.temps.step++
+              EventBus.$emit('isok')
+              s_ok.play()
+          }
+      
+          
+      
+      }
+      
+      
+      
+      app.keyboard = function(e) {
+          e = e || window.event;
+          if (e.keyCode == '38') { //up
+              app.avanza()
+          }
+          else if (e.keyCode == '40') { //down
+          }
+          else if (e.keyCode == '37') { //left
+              app.giro('i')
+          }
+          else if (e.keyCode == '39') { //right
+              app.giro('d')
+          }
+      
+      }
+      
+      document.onkeydown = app.keyboard
+      
+      app.currentScene = 0
+      app.scenesCount = 2
+    </script>
+  </body>
+</html>

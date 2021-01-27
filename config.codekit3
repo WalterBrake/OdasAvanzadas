@@ -19995,21 +19995,209 @@
 		"oAP": "\/MA3T2\/147\/s\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/1634\/index.html": {
+	"\/MA3T3\/164\/i\/15x\/Asset 9@15x.png": {
+		"ft": 32768,
+		"iS": 1227091,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/15x\/Asset 9@15x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 580067,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/btnDown.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T3\/164\/i\/btnDown.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T3\/164\/i\/btnLeft.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T3\/164\/i\/btnLeft.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T3\/164\/i\/btnRight.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T3\/164\/i\/btnRight.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T3\/164\/i\/btnUp.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA3T3\/164\/i\/btnUp.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA3T3\/164\/i\/dogb.png": {
+		"ft": 32768,
+		"iS": 41238,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/dogb.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/dogf.png": {
+		"ft": 32768,
+		"iS": 20114,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/dogf.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/dogl.png": {
+		"ft": 32768,
+		"iS": 69962,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/dogl.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/dogr.png": {
+		"ft": 32768,
+		"iS": 69293,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/dogr.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/girl1.png": {
+		"ft": 32768,
+		"iS": 214043,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/girl1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/girl2.png": {
+		"ft": 32768,
+		"iS": 131992,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/girl2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/i\/tunel.png": {
+		"ft": 32768,
+		"iS": 16064,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/i\/tunel.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/164\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/1634\/index.html",
+		"oAP": "\/MA3T3\/164\/index.html",
 		"oF": 0
 		},
-	"\/MA3T3\/1634\/index.pug": {
+	"\/MA3T3\/164\/index.pug": {
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
-		"oAP": "\/MA3T3\/1634\/index.html",
+		"oAP": "\/MA3T3\/164\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA3T3\/164\/s\/au1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/au1.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/au2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/au2.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/au3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/au3.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/au4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/au4.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/au5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/au5.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/164\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/164\/s\/instruccion2.mp3",
+		"oF": 0
 		},
 	"\/MA3T3\/166\/i\/b1.json": {
 		"ft": 524288,
