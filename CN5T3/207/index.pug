@@ -70,7 +70,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.parrafos.length" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Observa el diagrama y ordena los momentos de cómo llega la electricidad a tu casa.." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
                         .img.w90
@@ -98,12 +98,12 @@ html(lang="es")
 
                 app.$set(app.temps, 'imgs', [ 'inicio', 'secomercializa', 'sedisfruta', 'segenera', 'torres', 'setransporta'])
                 app.$set(app.temps, 'parrafos', [
-                    {val: 4, im: 'segenera', txt: 'Los recursos naturales que se usan son renovables (sol, agua y viento) y no renovables (petróleo, carbón o gas).' },
-                    {val: 2, im: 'sedisfruta', txt: 'Los consumidores disfrutamos de la electricidad en nuestras actividades cotidianas.' },
-                    {val: 1, im: 'secomercializa', txt: 'Hay centros de comercialización encargados del acceso y control de la energía eléctrica.' },
-                    {val: 6, im: 'inicio', txt: 'La energía eléctrica se genera a través de los recursos naturales.' },
+                    {val: 2, im: 'segenera', txt: 'Los recursos naturales que se usan son renovables (sol, agua y viento) y no renovables (petróleo, carbón o gas).' },
+                    {val: 6, im: 'sedisfruta', txt: 'Los consumidores disfrutamos de la electricidad en nuestras actividades cotidianas.' },
+                    {val: 5, im: 'secomercializa', txt: 'Hay centros de comercialización encargados del acceso y control de la energía eléctrica.' },
+                    {val: 1, im: 'inicio', txt: 'La energía eléctrica se genera a través de los recursos naturales.' },
                     {val: 3, im: 'setransporta', txt: 'La electricidad se transporta hasta los principales centros de distribución.' },
-                    {val: 5, im: 'torres', txt: 'Las líneas de trasporte a tensión elevada y las subestaciones forman la red de transporte de la electricidad.' },
+                    {val: 4, im: 'torres', txt: 'Las líneas de trasporte a tensión elevada y las subestaciones forman la red de transporte de la electricidad.' },
                 ])
 
                 for(var i in app.temps.imgs){
