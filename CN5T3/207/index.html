@@ -74,7 +74,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.parrafos.length" scene-color="#ED1C25">
-        <info type="dragdrop" title="" text="Observa el diagrama y ordena los momentos de cómo llega la electricidad a tu casa.." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="" text="Observa el diagrama y ordena los momentos de cómo llega la electricidad a tu casa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
             <div class="img w90"><img class="w100 main" src="i/bg.png"/><img class="w100 animate__animated animate__fadeInUp" src="i/kid.png"/><img class="w100 animate__animated animate__rubberBand" v-for="(i, index) in temps.imgs" :src="'i/'+i+'.png'" v-if="temps[i]"/></div>

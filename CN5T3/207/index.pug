@@ -70,7 +70,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.parrafos.length" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Observa el diagrama y ordena los momentos de cómo llega la electricidad a tu casa.." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Observa el diagrama y ordena los momentos de cómo llega la electricidad a tu casa." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
                         .img.w90
