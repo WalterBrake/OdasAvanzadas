@@ -27,7 +27,7 @@
       }
       @media (max-width: 680px) {
           .roca .number {
-              font-size: 0.6rem;
+              font-size: 0.7rem;
           }
       }
       .roca .number:last-child {
@@ -46,6 +46,11 @@
       }
       .currentrock{
           width: 30%;
+      }
+      @media (max-width: 680px) {
+          .roca.currentrock .number {
+              font-size: 1.2rem;
+          }
       }
       .astroplace{ justify-content: flex-start; }
       .astro{transition: margin 1s;}
@@ -111,7 +116,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="startScene('rocasA')">
-        <info type="seleccionar" title="Multiplico por 2 y por 3" text="¡El astonauta está aprendiendo a multiplicar! Selecciona la multiplicación que da el mismo resultado que la suma. Entre más rápido lo hagas, ¡mejor!" textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Multiplico por 2 y por 3" text="¡El astonauta está aprendiendo a multiplicar! Selecciona la multiplicación que da el mismo resultado que la suma. Entre más rápido lo hagas, ¡mejor!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true"></info>
         <activity>
           <div class="timewatch" :class="temps.timerwarning?'warning':''">
             <template v-if="!temps.failedtime">{{temps.timeformat}}</template>
@@ -211,11 +216,13 @@
     <script>
       app.$devmode = false
       
+      app.$set(app.temps, 'au1', false)
+      
       app.$set(app.temps, 'failedtime', false)
       app.$set(app.temps, 'timerwarning', false)
       app.$set(app.temps, 'thetimer', null)
       app.$set(app.temps, 'timersecs', 0)
-      app.$set(app.temps, 'timeformat', '')
+      app.$set(app.temps, 'timeformat', '2:30')
       
       app.$set(app.temps, 'validateBtn', false)
       app.$set(app.temps, 'howmanyoks', false)
@@ -310,9 +317,11 @@
           app.temps.validateBtn = false
           app.temps.rocasOBJ = app.temps[rocks]
       
-          
-          
-          app.temps.thetimer = setInterval( function () { app.timeup() }, 1000)
+          app.temps.thetimer = setInterval( function () {
+              if(app.temps.au1){
+                  app.timeup()
+              }
+          }, 100)
       }
       
       
