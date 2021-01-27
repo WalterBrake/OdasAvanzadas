@@ -136,10 +136,10 @@ html(lang="es")
                                 number(c=1 smaller) Acotación:
                                 .drop(data="d" droptimes="untilok")
                     .row.w100.wrap.palabras
-                        drag(data="a" dropzone=".drop" stay-if-ok append-to-dropzone): div Caperucita acercándose a la cama de su abuela del lado izquierdo. 
-                        drag(data="b" dropzone=".drop" stay-if-ok append-to-dropzone): div Sorprendida al ver la extraña apariencia de su abuela, exclama.
                         drag(data="c" dropzone=".drop" stay-if-ok append-to-dropzone): div Con mirada feroz responde.
+                        drag(data="a" dropzone=".drop" stay-if-ok append-to-dropzone): div Caperucita acercándose a la cama de su abuela del lado izquierdo. 
                         drag(data="d" dropzone=".drop" stay-if-ok append-to-dropzone): div El lobo salta encima de Caperucita y se la come.
+                        drag(data="b" dropzone=".drop" stay-if-ok append-to-dropzone): div Sorprendida al ver la extraña apariencia de su abuela, exclama.
             
             // END
             scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
