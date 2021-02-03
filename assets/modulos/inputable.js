@@ -98,3 +98,11 @@ Vue.component('inputable', {
         //this.$refs.clickable.children[0].classList.add('animate__animated')
     }
 })
+
+
+
+/* 
+
+inputable(initclass="c8" :isok="5" play-error): number(c=8 small) 5
+
+*/

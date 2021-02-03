@@ -1,12 +1,33 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Leo y escribo nuevas palabras'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .words {
+                border: 2px solid var(--main);
+                max-width: 98%;
+                border-radius: 10px;
+                background: #f5f5f5;
+            }
+            .words .w30.last {
+                background: #f5f5f5;
+                padding:  2px 10px;
+                text-align: center;
+            }
+            .words .selectives .pa-1 {
+                padding: 4%;
+            }
+            .exm .number:nth-child(1) {
+                border: 2px solid #DA3F34;
+                border-radius: 6px;
+                padding: 0 10px;
+            }
+
+
 
 
     body
@@ -15,11 +36,50 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="21" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la primera sílaba de cada palabra. Después, escribe palabras nuevas con esas sílabas. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.words.wrap
+                        .w30.wm50
+                            .row.exm
+                                number(c=5 smaller) ba
+                                number(c=1 smaller) ra
+                                number(c=1 smaller) to
+                        .w30.wm50
+                            .row.exm
+                                number(c=5 smaller) ta
+                                number(c=1 smaller) que
+                                number(c=1 smaller) ro
+                        .w30.wm100.last: number(c=1 smaller) bata
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['pi','ra','ta']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['pa','na','de', 'ro']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="pipa" ): number(c=4 small) pipa
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['te','so','ro']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['ma','de','ra']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="tema" ): number(c=4 small) tema
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['va','ca']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['so','pa']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="vaso" ): number(c=4 small) vaso
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['co','che']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['me','sa']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="come" ): number(c=4 small) come
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['pe','lo','ta']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['so','bre']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="peso" ): number(c=4 small) peso
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['li','tro']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['bro','cha']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="libro" ): number(c=4 small) libro
+                    .row.w100.words.wrap
+                        .w30.wm50: selectives(:ans="0" :ops="['som','bre','ro']" number automatic)
+                        .w30.wm50: selectives(:ans="0" :ops="['bra','zo']" number automatic)
+                        .w30.wm100.last: inputable(initclass="c3" isok="sombra" ): number(c=4 small) sombra
+                    
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")

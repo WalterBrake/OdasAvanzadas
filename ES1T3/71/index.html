@@ -3,23 +3,156 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Leo y escribo nuevas palabras</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .words {
+          border: 2px solid var(--main);
+          max-width: 98%;
+          border-radius: 10px;
+          background: #f5f5f5;
+      }
+      .words .w30.last {
+          background: #f5f5f5;
+          padding:  2px 10px;
+          text-align: center;
+      }
+      .words .selectives .pa-1 {
+          padding: 4%;
+      }
+      .exm .number:nth-child(1) {
+          border: 2px solid #DA3F34;
+          border-radius: 6px;
+          padding: 0 10px;
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="21" scene-color="#ED1C25">
+        <info type="seleccionar" title="Leo y escribo nuevas palabras" text="Selecciona la primera sílaba de cada palabra. Después, escribe palabras nuevas con esas sílabas. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <div class="row exm">
+                <number c="5" smaller="smaller">ba</number>
+                <number c="1" smaller="smaller">ra</number>
+                <number c="1" smaller="smaller">to</number>
+              </div>
+            </div>
+            <div class="w30 wm50">
+              <div class="row exm">
+                <number c="5" smaller="smaller">ta</number>
+                <number c="1" smaller="smaller">que</number>
+                <number c="1" smaller="smaller">ro</number>
+              </div>
+            </div>
+            <div class="w30 wm100 last">
+              <number c="1" smaller="smaller">bata</number>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['pi','ra','ta']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['pa','na','de', 'ro']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="pipa">
+                <number c="4" small="small">pipa</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['te','so','ro']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['ma','de','ra']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="tema">
+                <number c="4" small="small">tema</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['va','ca']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['so','pa']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="vaso">
+                <number c="4" small="small">vaso</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['co','che']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['me','sa']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="come">
+                <number c="4" small="small">come</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['pe','lo','ta']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['so','bre']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="peso">
+                <number c="4" small="small">peso</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['li','tro']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['bro','cha']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="libro">
+                <number c="4" small="small">libro</number>
+              </inputable>
+            </div>
+          </div>
+          <div class="row w100 words wrap">
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['som','bre','ro']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm50">
+              <selectives :ans="0" :ops="['bra','zo']" number="number" automatic="automatic"></selectives>
+            </div>
+            <div class="w30 wm100 last">
+              <inputable initclass="c3" isok="sombra">
+                <number c="4" small="small">sombra</number>
+              </inputable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +178,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>

@@ -1,5 +1,5 @@
 Vue.component('selectives', {
-    props: ['ops', 'ans', 'number', 'disableok'],
+    props: ['ops', 'ans', 'number', 'disableok', 'automatic'],
     data () {
         return {
             selected: null,
@@ -8,9 +8,15 @@ Vue.component('selectives', {
     },
     methods: {
         clicked (index){
+            if(this.validateok){
+                return false
+            }
             this.selected = index
             s_select.play()
             this.$emit('selected')
+            if(this.automatic){
+                this.validate()
+            }
         },
         validate () {
             if(this.ans == this.selected){
@@ -46,3 +52,10 @@ Vue.component('selectives', {
         </div>
     `
 })
+
+
+/*
+
+selectives(:ans="1" key="p1" :ops="['Habla sobre los movimientos lentos de los simios.','Trata de por qué los simios no pueden hablar como los humanos.','Expone el porqué de la evolución del lenguaje en los simios.']" number disableok ref="p1")
+
+*/
