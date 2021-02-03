@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Describo figuras</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .drags {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .drags .drag {
+          width: auto;
+          height: auto;
+          max-width: 60px;
+          max-height: 60px;
+          margin: 6px;
+      }
+      .drags .drag img {
+          widows: auto;
+          height: auto;
+          max-height: 100%;
+          max-width: 100%;
+          min-width: auto;
+          min-height: auto;
+          object-fit: contain;
+      }
+      .robot {
+          position: relative;
+      }
+      .drops .drop {
+          position: absolute;
+          width: 20%;
+          height: 10%;
+      }
+      .drops .drop:nth-child(1) {
+          left: 34%;
+          top: 51%;
+          width: 16%;
+          height: 11%;
+      }
+      .drops .drop:nth-child(2) {
+          left: 31%;
+          top: 35.5%;
+          width: 37.5%;
+          height: 13%;
+      }
+      .drops .drop:nth-child(3) {
+          left: 31%;
+          top: 49%;
+          width: 37.5%;
+          height: 13%;
+      }
+      .drops .drop:nth-child(4) {
+          left: 70.7%;
+          top: 46.2%;
+          width: 6%;
+          height: 4%;
+      }
+      .drops .drop:nth-child(5) {
+          left: 50%;
+          top: 21.8%;
+          width: 19%;
+          height: 13%;
+      }
+      .drops .drop:nth-child(6) {
+          left: 22%;
+          top: 21.8%;
+          width: 9.3%;
+          height: 6.5%;
+      }
+      .drops .drop:nth-child(7) {
+          left: 23.3%;
+          top: 28.5%;
+          width: 6.2%;
+          height: 17.5%;
+      }
+      .drops .drop:nth-child(8) {
+          left: 49.5%;
+          top: 62.3%;
+          width: 16%;
+          height: 25.5%;
+      }
+      .drops .drop:nth-child(9) {
+          left: 51%;
+          top: 10.5%;
+          width: 6%;
+          height: 3%;
+      }
+      .drops .drop:nth-child(10) {
+          left: 27%;
+          top: 88%;
+          width: 23%;
+          height: 6%;
+      }
+      .drops .drop:nth-child(11) {
+          left: 37%;
+          top: 4%;
+          width: 25.5%;
+          height: 4.3%;
+      }
+      
+      .minglob{
+          position: absolute;
+          left: 0; top: 0;
+          width: 10%;
+      }
+      #ojol, #ojod{
+          animation-name: ojos;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+      }
+      
+      @keyframes ojos {
+          0%{
+              opacity: 0%;
+          }
+          45%{
+              opacity: 100%;
+          }
+          50%{
+              opacity: 0%;
+          }
+          55%{
+              opacity: 100%;
+          }
+          60%{
+              opacity: 0%;
+          }
+          65%{
+              opacity: 100%;
+          }
+          90%{
+              opacity: 100%;
+          }
+          100%{
+              opacity: 0%;
+          }
+      }
+      
+      
+      .drags .drag:nth-child(2) {
+          max-width: 30%;
+          max-height: 30%;
+      }
+      .drags .drag:nth-child(3) {
+          max-width: 18%;
+          max-height: 18%;
+      }
+      .drags .drag:nth-child(4) {
+          max-width: 20%;
+      }
+      .drags .drag:nth-child(5) {
+          max-width: 35%;
+          max-height: 30%;
+      }
+      .drags .drag:nth-child(6) {
+          max-width: 8%;
+      }
+      .drags .drag:nth-child(7) {
+          max-width: 8%;
+      }
+      .drags .drag:nth-child(9) {
+          max-width: 6%;
+          max-height: 10%;
+      }
+      .drags .drag:nth-child(10) {
+          max-width: 15%;
+          max-height: 10%;
+      }
+      .drags .drag:nth-child(11) {
+          max-width: 7%;
+      }
+      .drags .drag:nth-child(12) {
+          max-width: 21%;
+      }
+      .drags .drag:nth-child(13) {
+          max-width: 24%;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
+        <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <audiotext v-if="temps.count&gt;=4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="w50 robot"><img class="w100" src="i/robot.png"/>
+              <div class="drops">
+                <div class="drop drop1" :data="index" droptimes="untilok" v-for="(i, index) in 4"></div>
+                <div class="drop drop2" :data="index+4" droptimes="untilok" v-for="(i, index) in 7" v-if="temps.count&gt;=4"></div>
+              </div>
+            </div>
+            <div class="w50 drags">
+              <template v-for="(i, index) in temps.a">
+                <drag dropzone=".drop" :data="i.d" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isok="temps.count++" no-error-sound="no-error-sound"><img class="w100" :src="i.im"/></drag>
+              </template>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <scene v-if="currentScene==2" :key="2" hidescorebox="hidescorebox" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <audiotext text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda." audio="s/instruccion2.mp3" :autoplay="false"></audiotext>
+        </info>
+        <!--activity
+        .row.w100
+            .w50.robot
+                .minglob: dialogaudio(audio="s/robot.mp3" :autoplay="true" always-visible key="final")
+                embedsvg(src="i/robotfinal.svg")
+            .w20: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
+        
+        -->
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'count', 0)
+      app.$set(app.temps, 'a', [
+          {im: 'i/i3.png', d:0},
+          {im: 'i/t3.png', d:2},
+          {im: 'i/r1.png', d:4},
+          {im: 'i/t1.png', d:0},
+          {im: 'i/t2.png', d:1},
+          {im: 'i/r2.png', d:5},
+          {im: 'i/t4.png', d:3},
+          {im: 'i/i1.png', d:0},
+          {im: 'i/r3.png', d:6},
+          {im: 'i/r4.png', d:7},
+          {im: 'i/r5.png', d:8},
+          {im: 'i/r6.png', d:9},
+          {im: 'i/r7.png', d:10},
+          {im: 'i/i2.png', d:0},
+      ])
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>

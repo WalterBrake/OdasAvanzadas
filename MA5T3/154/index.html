@@ -9,24 +9,327 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .ex1 .audiotext {
+          position: relative;
+          font-size: 0.8rem;
+          background: #754D28;
+          color: var(--beige);
+          padding: 8px;
+          border-radius: 4px;
+          margin: 4px 0;
+      }
+      .ex1 .audiotext .audiotextBtn {
+          position: absolute;
+          width: 20px;
+          left: 0;
+          top: -10px;
+          height: 20px;
+          z-index: 1;
+      }
+      @media (max-width: 768px) {
+          .ex1 .audiotext {
+              font-size: 0.6rem !important;
+          }
+      }
+      .tabmay {
+          border: 2px solid #C0B183;
+          max-width: 96%;
+          border-radius: 10px;
+          margin-bottom: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+          text-align: center;
+      }
+      .tabmay .w30 {
+          padding: 10px;
+      }
+      .tabmay img {
+          max-width: 100px;
+      }
+      .desplegar .deployer {
+          border-bottom: 2px dashed #917C45;
+          background: #E5E0D5;
+          border-radius: 6px;
+      }
+      .desplegar .modaloptions {
+          flex-wrap: wrap;
+      }
+      .desplegar .modaloptions .option {
+          margin: 10px;
+      }
+      .text-right {
+          text-align: right;
+      }
+      @media (max-width: 768px) {
+          .head,
+          .text-right {
+              font-size: 0.6rem;
+          }
+      }
+      .text-right {
+          position: relative;
+          padding-right: 40px;
+          box-sizing: border-box;
+      }
+      .tooltiper {
+          max-width: 30px;
+          height: 20px;
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+      .tooltiper .tooltiper__content {
+          font-size: 0.8rem;
+          padding: 4px;
+      }
+      .tooltiper .tooltiper__content .tooltiper__close {
+          right: -15px;
+          top: -15px;
+      }
+      .w16{
+          width: 16.66%;
+          box-sizing: border-box;
+          border: 2px solid var(--main);
+          text-align: center;
+          padding: 10px 0;
+          background: #F9FCF7;
+          height: 100%;
+          padding: 6px;
+      
+      }
+      
+      .fina{
+          align-items: flex-start;
+      }
+      .desplegar {
+          position: relative;
+      }
+      .desplegar .options.open {
+          position: absolute;
+          min-height: 300%;
+          display: flex;
+          flex-direction: column;
+          background: #F9FCF7;
+          z-index: 2;
+          top: 0;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .desplegar .options.open .option {
+          padding: 6px 0;
+      }
+      
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Descifro el sistema maya" text="" textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descifro el sistema maya" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 ex1">
+            <audiotext :autoplay="true" audio="s/intro1.mp3" speed-offset="1.4" text="Recuerda que el sistema de numeración maya es vigesimal, esto significa que los números se van agrupando de 20 en 20. El sistema maya utiliza 3 símbolos para representar el valor de las cantidades." @completed="temps.au1 = true"></audiotext>
+          </div>
+          <div class="row w100">
+            <div class="w50"><img class="img-fluid w100" src="i/a1.png"/></div>
+          </div>
+          <div class="row w100 ex1">
+            <audiotext v-if="temps.au1" :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles y su valor depende del nivel en el que se encuentren, ya que habrá que multiplicar su valor por 1 si está en el primero, por 20 si está en el segundo, por 400 si está en el tercero y por 8000 si está en el cuarto." @completed="temps.au2 = true"></audiotext>
+          </div>
+          <div class="row w100 ex1">
+            <audiotext v-if="temps.au2" :autoplay="true" audio="s/intro3.mp3" text="A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata." @completed="temps.au3 = true"></audiotext>
+          </div>
+          <div class="row w100">
+            <div class="w50 wm80">
+              <lottie-player v-if="temps.au1" src="i/intro.json" key="lt1" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.au3">
+            <button class="button animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descifro el sistema maya" text="Elige en cada nivel del número maya, la respuesta correcta de multiplicación y resultado. Después elige la respuesta correcta para el total de la suma que es el número que está representado." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center head">
+            <div class="w30">Número maya</div>
+            <div class="w30">Multiplicación</div>
+            <div class="w30">Resultado</div>
+          </div>
+          <template v-for="(i, index) in temps.p1">
+            <div class="row w100 tabmay" v-if="index&lt;temps.p1.length-1">
+              <div class="w30"><img class="w100" :src="'i/'+i[0]+'.png'"/></div>
+              <div class="w30">
+                <desplegar :key="'a'+index" :answer-num="i[1]" show-ok="show-ok" :options="i[2]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+              <div class="w30">
+                <desplegar :key="'b'+index" :answer-num="i[3]" show-ok="show-ok" :options="i[4]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+            <div class="row w100 tabmay" v-else="v-else">
+              <div class="w60 text-right">
+                <tooltiper>Suma de todos los resultados anteriores.</tooltiper>Número representado
+              </div>
+              <div class="w30">
+                <desplegar :key="'c'+index" :answer-num="i[0]" show-ok="show-ok" :options="i[1]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descifro el sistema maya" text="Elige en cada nivel del número maya, la respuesta correcta de multiplicación y resultado. Después elige la respuesta correcta para el total de la suma que es el número que está representado." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center head">
+            <div class="w30">Número maya</div>
+            <div class="w30">Multiplicación</div>
+            <div class="w30">Resultado</div>
+          </div>
+          <template v-for="(i, index) in temps.p2">
+            <div class="row w100 tabmay" v-if="index&lt;temps.p2.length-1">
+              <div class="w30"><img class="w100" :src="'i/'+i[0]+'.png'"/></div>
+              <div class="w30">
+                <desplegar :key="'d'+index" :answer-num="i[1]" show-ok="show-ok" :options="i[2]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+              <div class="w30">
+                <desplegar :key="'e'+index" :answer-num="i[3]" show-ok="show-ok" :options="i[4]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+            <div class="row w100 tabmay" v-else="v-else">
+              <div class="w60 text-right">
+                <tooltiper>Suma de todos los resultados anteriores.</tooltiper>Número representado
+              </div>
+              <div class="w30">
+                <desplegar :key="'f'+index" :answer-num="i[0]" show-ok="show-ok" :options="i[1]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descifro el sistema maya" text="Elige en cada nivel del número maya, la respuesta correcta de multiplicación y resultado. Después elige la respuesta correcta para el total de la suma que es el número que está representado." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center head">
+            <div class="w30">Número maya</div>
+            <div class="w30">Multiplicación</div>
+            <div class="w30">Resultado</div>
+          </div>
+          <template v-for="(i, index) in temps.p3">
+            <div class="row w100 tabmay" v-if="index&lt;temps.p3.length-1">
+              <div class="w30"><img class="w100" :src="'i/'+i[0]+'.png'"/></div>
+              <div class="w30">
+                <desplegar :key="'g'+index" :answer-num="i[1]" show-ok="show-ok" :options="i[2]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+              <div class="w30">
+                <desplegar :key="'h'+index" :answer-num="i[3]" show-ok="show-ok" :options="i[4]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+            <div class="row w100 tabmay" v-else="v-else">
+              <div class="w60 text-right">
+                <tooltiper>Suma de todos los resultados anteriores.</tooltiper>Número representado
+              </div>
+              <div class="w30">
+                <desplegar :key="'i'+index" :answer-num="i[0]" show-ok="show-ok" :options="i[1]">
+                  <template v-slot:option="{option}">
+                    <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                  </template>
+                </desplegar>
+              </div>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descifro el sistema maya" text="Elige el número arábigo que está representado en número maya." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
-            <audiotext :autoplay="true" audio="s/intro1.mp3" text="Recuerda que el sistema de numeración maya es vigesimal, esto significa que los números se van agrupando de 20 en 20. El sistema maya utiliza 3 símbolos para representar el valor de las cantidades."></audiotext>
-            <audiotext :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles, su valor depende del nivel en el que se encuentren: &lt;br&gt;Si están en el primero, hay que multiplicar por 1 &lt;br&gt;Si están en el segundo, por 20 &lt;br&gt;Si están en el tercero, por 400 &lt;br&gt;Si está en el cuarto nivel, por 8000. &lt;br&gt;A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata."></audiotext>
+            <div class="w100"><img class="w100" src="i/tab.png"/></div>
+          </div>
+          <div class="row w100 fina">
+            <div class="w16">Número arábigo</div>
+            <div class="w16">
+              <desplegar key="x1" :answer-num="1" show-ok="show-ok" :options="[542,452,442]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w16">
+              <desplegar key="x2" :answer-num="2" show-ok="show-ok" :options="[12220,10305,10205]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w16">
+              <desplegar key="x3" :answer-num="2" show-ok="show-ok" :options="[319,119,19]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w16">
+              <desplegar key="x4" :answer-num="0" show-ok="show-ok" :options="[40430,40040,43000]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w16">
+              <desplegar key="x5" :answer-num="1" show-ok="show-ok" :options="[1920,1820,1020]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
           </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -52,6 +355,7 @@
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
     <script src="../../assets/modulos/scorebox.js"></script>
     <script src="../../assets/modulos/scene.js"></script>
     <script src="../../assets/modulos/info.js"></script>
@@ -60,10 +364,35 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'au2', false)
+      app.$set(app.temps, 'au3', false)
       
-      app.currentScene = 1
-      app.scenesCount = 1
+      app.$set(app.temps, 'p1', [
+          ['2a', 1, ['5 x 4000', '8 x 8000', '8 x 2000'], 2, ['16000', '20000', '64000']],
+          ['2b', 2, ['4 x 200', '5 x 800', '6 x 400'], 2, ['800', '4000', '2400']],
+          ['2c', 0, ['8 x 20', '5 x 10', '8 x 200'], 2, ['50', '1600', '160']],
+          ['2d', 2, ['8 x 1', '5 x 2', '4 x 1'], 2, ['8', '10', '4']],
+          [2, ['66566','25600','66564']]
+      ])
+      app.$set(app.temps, 'p2', [
+          ['3a', 2, ['1 x 4000', '10 x 8000', '11 x 8000'], 1, ['4000', '88000', '80000']],
+          ['3b', 0, ['6 x 200', '3 x 400', '2 x 400'], 0, ['1200', '800', '1200']],
+          ['3c', 1, ['2 x 20', '0 x 20', '0 x 400'], 0, ['0', '20', '40']],
+          ['3d', 0, ['16 x 1', '8 x 2', '0 x 2'], 2, ['8', '0', '16']],
+          [1, ['88216','89216','78214']]
+      ])
+      app.$set(app.temps, 'p3', [
+          ['4a', 2, ['5 x 400', '8 x 300', '4 x 400'], 2, ['2400', '2000', '1600']],
+          ['4b', 1, ['14 x 100', '14 x 20', '10 x 200'], 2, ['2000', '1400', '280']],
+          ['4c', 2, ['14 x 1', '14 x 20', '19 x 1'], 0, ['19', '14', '280']],
+      
+          [1, ['1900', '1899', '1800']]
+      ])
+      
+          //['4a', 1, [''], 2, ['']],
+      app.currentScene = 0
+      app.scenesCount = 4
     </script>
   </body>
 </html>

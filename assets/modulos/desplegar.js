@@ -3,6 +3,7 @@ Vue.component('desplegar', {
         'initclass', // clase inicial
         'options', // array de opciones que se duplicará
         'answer', // valor que se compara con el campo answer de options
+        'answerNum', // valor ok en el array -
         'showOk', // Cuando OK todos los ERROR se ocultan
         'modalOptions', //Mostrar las opciones "flotando",
         'initialStatus' // initial state = 'open' ? 
@@ -11,7 +12,8 @@ Vue.component('desplegar', {
         return {
             status: null,
             selected: null,
-            desplegaropt: null
+            desplegaropt: null,
+            theanswer: null,
         }
     },
     template: `
@@ -19,9 +21,9 @@ Vue.component('desplegar', {
             <div class="deployer" v-if="status==null" @click="status='open'"></div>
             <div v-if="optionsVisible" :class="optionsClasses">
                 <template  v-for="(opt,index) in desplegaropt">
-                    <div :class="'option ' + (selected == opt.answer ? 'ok':'') " :ref="'opt'+index" @click="clicked('opt'+index, opt.answer)" >
+                    <div :class="'option ' + (selected == opt.theanswer ? 'ok':'') " :ref="'opt'+index" @click="clicked('opt'+index, opt.theanswer)" >
                         <slot name="option" :option="opt" />
-                        <embed class="anim" v-if="selected == opt.answer " src="../../assets/aanim/Select.svg" />
+                        <embed class="anim" v-if="selected == opt.theanswer " src="../../assets/aanim/Select.svg" />
                     </div>
                 </template>
             </div>
@@ -48,7 +50,7 @@ Vue.component('desplegar', {
             if(this.selected != null){
                 return false
             }
-            if(optionAnswer == this.answer) {
+            if(optionAnswer == this.theanswer) {
                 
                 // OK
                 this.selected = optionAnswer
@@ -95,7 +97,7 @@ Vue.component('desplegar', {
                 var opt = this.options[op]
                 if(typeof opt === 'object') {
                 } else {
-                    array2obj.push( {answer: opt, text: opt} )
+                    array2obj.push( {theanswer: opt, text: opt} )
                 }
             }
             this.desplegaropt = array2obj.length ? array2obj : this.options
@@ -105,6 +107,11 @@ Vue.component('desplegar', {
         this.array2obj()
         if(this.initialStatus != undefined){
             this.status = this.initialStatus
+        }
+        if(this.answerNum != undefined){
+            this.theanswer = this.options[this.answerNum]
+        } else {
+            this.theanswer = this.answer
         }
     }
 })

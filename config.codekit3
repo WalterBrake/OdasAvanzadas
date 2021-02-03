@@ -12288,6 +12288,13 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES5T2\/60\/index_v1.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T2\/60\/index_v1.html",
+		"oF": 0
+		},
 	"\/ES5T2\/60\/index_v1.pug": {
 		"cB": 0,
 		"cOD": 1,
@@ -17421,6 +17428,13 @@
 		"oAP": "\/MA1T2\/141\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA1T2\/141\/index_v1.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA1T2\/141\/index_v1.html",
+		"oF": 0
 		},
 	"\/MA1T2\/141\/index_v1.pug": {
 		"cB": 0,
@@ -24172,6 +24186,157 @@
 		"oAP": "\/MA5T2\/145\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA5T3\/154\/i\/2a.png": {
+		"ft": 32768,
+		"iS": 1411,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/2b.png": {
+		"ft": 32768,
+		"iS": 970,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/2c.png": {
+		"ft": 32768,
+		"iS": 1396,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/2c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/2d.png": {
+		"ft": 32768,
+		"iS": 1464,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/2d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/3a.png": {
+		"ft": 32768,
+		"iS": 1040,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/3b.png": {
+		"ft": 32768,
+		"iS": 1283,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/3c.png": {
+		"ft": 32768,
+		"iS": 4468,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/3c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/3d.png": {
+		"ft": 32768,
+		"iS": 1072,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/3d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/4a.png": {
+		"ft": 32768,
+		"iS": 1450,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/4b.png": {
+		"ft": 32768,
+		"iS": 1719,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/4b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/4c.png": {
+		"ft": 32768,
+		"iS": 1730,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/4c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 9636,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA5T3\/154\/i\/intro.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/MA5T3\/154\/i\/intro-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/MA5T3\/154\/i\/tab.png": {
+		"ft": 32768,
+		"iS": 78748,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/i\/tab.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA5T3\/154\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -24195,25 +24360,11 @@
 		"oAP": "\/MA5T3\/154\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/instruccion1.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/instruccion1.wav",
-		"oF": 0
-		},
 	"\/MA5T3\/154\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA5T3\/154\/s\/instruccion2.mp3",
-		"oF": 0
-		},
-	"\/MA5T3\/154\/s\/instruccion2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Inst2.wav",
 		"oF": 0
 		},
 	"\/MA5T3\/154\/s\/intro1.mp3": {
@@ -24223,13 +24374,6 @@
 		"oAP": "\/MA5T3\/154\/s\/intro1.mp3",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/intro1.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/intro1.wav",
-		"oF": 0
-		},
 	"\/MA5T3\/154\/s\/intro2.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -24237,11 +24381,11 @@
 		"oAP": "\/MA5T3\/154\/s\/intro2.mp3",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/intro2.wav": {
+	"\/MA5T3\/154\/s\/intro3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/intro2.wav",
+		"oAP": "\/MA5T3\/154\/s\/intro3.mp3",
 		"oF": 0
 		},
 	"\/MA6T1\/113\/aimg\/02.eps": {

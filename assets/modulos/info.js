@@ -2,13 +2,16 @@ Vue.component('info', {
     props: ['title', 'text', 'textaudio', 'type', 'autoplay'],
     data () {
         return {
-            score: 0
+            score: 0,
+            showPlayer: true,
         }
     },
     template: `
         <div class="info">
             <h1>{{title}}</h1>
-            <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
+            <template v-if="showPlayer">
+                <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
+            </template>
             <slot></slot>
             <div class="bottom">
                 <scorebox :score="score"></scorebox>
@@ -29,5 +32,10 @@ Vue.component('info', {
     mounted () {
         //this.$ref.instructions
         this.score = this.$parent.score
+    },
+    created () {
+        if(this.textaudio == undefined){
+            this.showPlayer = false
+        }
     }
 })
