@@ -3,23 +3,136 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Analizo las actividades económicas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .h4 {
+          background: var(--main);
+          padding: 10px;
+          border-radius: 10px;
+          color: var(--beige);
+          margin-bottom: 30px;
+      }
+      @media (max-width: 680px) {
+          .number.smaller {
+              font-size: 0.7rem;
+          }
+      }
+      .defs .w30 {
+          height: 100%;
+      }
+      .defs .w30 div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          padding: 10px;
+          font-size: 0.8rem;
+          border: 2px solid var(--main);
+          border-radius: 10px;
+          margin: 10px;
+          box-sizing: border-box;
+      }
+      @media (max-width: 680px) {
+          .defs .w30 div {
+              padding: 4px;
+              margin: 4px;
+              font-size: 0.6rem;
+          }
+      }
+      .drop {
+          min-height: 80px;
+          background: #fff;
+          margin: 10px;
+          text-align: center;
+          border: 2px solid var(--main);
+          border-top: 0;
+          border-radius: 0 0 10px 10px;
+          font-size: 0.8rem;
+      }
+      @media (max-width: 680px) {
+          .drop {
+              font-size: 0.6rem;
+          }
+      }
+      .drag {
+          margin: auto;
+          height: auto;
+          margin: 1px 6px;
+      }
+      .drag div {
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+          background: #fff;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          text-align: center;
+      }
+      @media (max-width: 680px) {
+          .drag div {
+              font-size: 0.6rem;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo las actividades económicas" text="Coloca los ejemplos de las diferentes actividades económicas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 text-center">
+            <div class="h4">Actividades económicas</div>
+          </div>
+          <div class="row w100 text-center">
+            <div class="w30">
+              <number c="1" smaller="smaller">Primarias</number>
+            </div>
+            <div class="w30">
+              <number c="1" smaller="smaller">Secundarias</number>
+            </div>
+            <div class="w30">
+              <number c="1" smaller="smaller">Terciarias</number>
+            </div>
+          </div>
+          <div class="row w100 defs">
+            <div class="w30">
+              <div>Son aquellas de las que se adqueren materias primas de la naturaleza.</div>
+            </div>
+            <div class="w30">
+              <div>En ellas se elaboran o fabrican artículos con las materias primas, para ser consumidos por los humanos.</div>
+            </div>
+            <div class="w30">
+              <div>Reúnen diferentes clases de servicios necesarios para el bienestar humano.</div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w30">
+              <div class="drop" data="a" droptimes="multiple"></div>
+            </div>
+            <div class="w30">
+              <div class="drop" data="b" droptimes="multiple"></div>
+            </div>
+            <div class="w30">
+              <div class="drop" data="c" droptimes="multiple"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.r" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>{{i.t}}</div>
+              </drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +158,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -56,7 +170,26 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {r:'a', t:'Pesca.'},
+          {r:'a', t:'Ganadería.'},
+          {r:'a', t:'Minería.'},
+          {r:'a', t:'Agricultura.'},
+          {r:'a', t:'Silvicultura.'},
+      
+          {r:'b', t:'Zapatos.'},
+          {r:'b', t:'Productos lácteos.'},
+          {r:'b', t:'Muebles.'},
+          {r:'b', t:'Alimentos.'},
+          {r:'b', t:'Bebidas envasadas.'},
+          
+          {r:'c', t:'Educación.'},
+          {r:'c', t:'Telecoluminación.'},
+          {r:'c', t:'Transporte de mercancías.'},
+          {r:'c', t:'Hospedaje.'},
+          {r:'c', t:'Eventos artísticos.'},
+      
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1

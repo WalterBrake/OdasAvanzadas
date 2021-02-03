@@ -1,12 +1,80 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Analizo las actividades económicas'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .h4 {
+                background: var(--main);
+                padding: 10px;
+                border-radius: 10px;
+                color: var(--beige);
+                margin-bottom: 30px;
+            }
+            @media (max-width: 680px) {
+                .number.smaller {
+                    font-size: 0.7rem;
+                }
+            }
+            .defs .w30 {
+                height: 100%;
+            }
+            .defs .w30 div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                padding: 10px;
+                font-size: 0.8rem;
+                border: 2px solid var(--main);
+                border-radius: 10px;
+                margin: 10px;
+                box-sizing: border-box;
+            }
+            @media (max-width: 680px) {
+                .defs .w30 div {
+                    padding: 4px;
+                    margin: 4px;
+                    font-size: 0.6rem;
+                }
+            }
+            .drop {
+                min-height: 80px;
+                background: #fff;
+                margin: 10px;
+                text-align: center;
+                border: 2px solid var(--main);
+                border-top: 0;
+                border-radius: 0 0 10px 10px;
+                font-size: 0.8rem;
+            }
+            @media (max-width: 680px) {
+                .drop {
+                    font-size: 0.6rem;
+                }
+            }
+            .drag {
+                margin: auto;
+                height: auto;
+                margin: 1px 6px;
+            }
+            .drag div {
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+                background: #fff;
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+            @media (max-width: 680px) {
+                .drag div {
+                    font-size: 0.6rem;
+                }
+            }
+
 
 
     body
@@ -15,10 +83,25 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca los ejemplos de las diferentes actividades económicas." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.text-center: .h4 Actividades económicas
+                    .row.w100.text-center
+                        .w30: number(c=1 smaller) Primarias
+                        .w30: number(c=1 smaller) Secundarias
+                        .w30: number(c=1 smaller) Terciarias
+                    .row.w100.defs
+                        .w30: div Son aquellas de las que se adqueren materias primas de la naturaleza.
+                        .w30: div En ellas se elaboran o fabrican artículos con las materias primas, para ser consumidos por los humanos.
+                        .w30: div Reúnen diferentes clases de servicios necesarios para el bienestar humano.
                     .row.w100
+                        .w30: .drop(data="a" droptimes="multiple")
+                        .w30: .drop(data="b" droptimes="multiple")
+                        .w30: .drop(data="c" droptimes="multiple")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.a")
+                            drag(:data="i.r" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}}
             
             
             // END
@@ -28,7 +111,26 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {r:'a', t:'Pesca.'},
+                    {r:'a', t:'Ganadería.'},
+                    {r:'a', t:'Minería.'},
+                    {r:'a', t:'Agricultura.'},
+                    {r:'a', t:'Silvicultura.'},
+
+                    {r:'b', t:'Zapatos.'},
+                    {r:'b', t:'Productos lácteos.'},
+                    {r:'b', t:'Muebles.'},
+                    {r:'b', t:'Alimentos.'},
+                    {r:'b', t:'Bebidas envasadas.'},
+                    
+                    {r:'c', t:'Educación.'},
+                    {r:'c', t:'Telecoluminación.'},
+                    {r:'c', t:'Transporte de mercancías.'},
+                    {r:'c', t:'Hospedaje.'},
+                    {r:'c', t:'Eventos artísticos.'},
+
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1
