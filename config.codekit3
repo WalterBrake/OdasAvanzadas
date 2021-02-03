@@ -17593,6 +17593,149 @@
 		"oAP": "\/MA1T3\/169\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA1T3\/174\/i\/b1.png": {
+		"ft": 32768,
+		"iS": 27846,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/b2.png": {
+		"ft": 32768,
+		"iS": 24496,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/b3.png": {
+		"ft": 32768,
+		"iS": 25137,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/b4.png": {
+		"ft": 32768,
+		"iS": 14650,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/b5.png": {
+		"ft": 32768,
+		"iS": 24031,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/b6.png": {
+		"ft": 32768,
+		"iS": 24882,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/b6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/balanza.png": {
+		"ft": 32768,
+		"iS": 24887,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/balanza.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/balanzabox.png": {
+		"ft": 32768,
+		"iS": 7399,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/balanzabox.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/manzana.png": {
+		"ft": 32768,
+		"iS": 7503,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/manzana.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/melon.png": {
+		"ft": 32768,
+		"iS": 22915,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/melon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/pera.png": {
+		"ft": 32768,
+		"iS": 8938,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/pera.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/platano.png": {
+		"ft": 32768,
+		"iS": 12489,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/platano.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/174\/i\/sandia.png": {
+		"ft": 32768,
+		"iS": 24228,
+		"oA": 0,
+		"oAP": "\/MA1T3\/174\/i\/sandia.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA1T3\/174\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -17609,11 +17752,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA1T3\/174\/s\/Utilizo la balanza Ma 1° T3_Inst_Coloca.wav": {
+	"\/MA1T3\/174\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/174\/s\/Utilizo la balanza Ma 1° T3_Inst_Coloca.wav",
+		"oAP": "\/MA1T3\/174\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA2T1\/132\/aimg\/i1.svg": {
@@ -24045,32 +24188,60 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Inst1.wav": {
+	"\/MA5T3\/154\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Inst1.wav",
+		"oAP": "\/MA5T3\/154\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Inst2.wav": {
+	"\/MA5T3\/154\/s\/instruccion1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/s\/instruccion1.wav",
+		"oF": 0
+		},
+	"\/MA5T3\/154\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/MA5T3\/154\/s\/instruccion2.wav": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Inst2.wav",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Intro1.wav": {
+	"\/MA5T3\/154\/s\/intro1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Intro1.wav",
+		"oAP": "\/MA5T3\/154\/s\/intro1.mp3",
 		"oF": 0
 		},
-	"\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Intro2.wav": {
+	"\/MA5T3\/154\/s\/intro1.wav": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA5T3\/154\/s\/Descifro el sistema maya Ma5°T3_Intro2.wav",
+		"oAP": "\/MA5T3\/154\/s\/intro1.wav",
+		"oF": 0
+		},
+	"\/MA5T3\/154\/s\/intro2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/s\/intro2.mp3",
+		"oF": 0
+		},
+	"\/MA5T3\/154\/s\/intro2.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA5T3\/154\/s\/intro2.wav",
 		"oF": 0
 		},
 	"\/MA6T1\/113\/aimg\/02.eps": {

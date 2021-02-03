@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Descifro el sistema maya</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
@@ -17,9 +17,12 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Descifro el sistema maya" text="" textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <audiotext :autoplay="true" audio="s/intro1.mp3" text="Recuerda que el sistema de numeración maya es vigesimal, esto significa que los números se van agrupando de 20 en 20. El sistema maya utiliza 3 símbolos para representar el valor de las cantidades."></audiotext>
+            <audiotext :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles, su valor depende del nivel en el que se encuentren: &lt;br&gt;Si están en el primero, hay que multiplicar por 1 &lt;br&gt;Si están en el segundo, por 20 &lt;br&gt;Si están en el tercero, por 400 &lt;br&gt;Si está en el cuarto nivel, por 8000. &lt;br&gt;A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata."></audiotext>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -45,6 +48,7 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -58,7 +62,7 @@
       app.$devmode = false
       app.$set(app.temps, 'a', [])
       
-      app.currentScene = 0
+      app.currentScene = 1
       app.scenesCount = 1
     </script>
   </body>

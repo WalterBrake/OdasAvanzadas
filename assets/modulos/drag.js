@@ -173,7 +173,7 @@ Vue.component('drag', {
                     _this.backToInitPos()
                     _this.$emit('notdropped')
                     _this.isItOk = undefined
-                }
+            }
         },
         hoverHitTest(dropzone, e) {
             var _this = this
@@ -217,6 +217,9 @@ Vue.component('drag', {
         },
         hitTestISOK(dropzone, e){
             var _this = this
+
+            _this.$emit('dropped')
+
             //## OK
             if(_this.noOkSound == undefined && _this.extval == undefined){
                 s_ok.play()
