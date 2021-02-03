@@ -3,77 +3,23 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tiro la basura en su lugar</title>
+    <title></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style>
-      .drop {
-          position: relative;
-          min-height: 300px;
-          margin: 20px auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          align-content: flex-start;
-      }
-      @media (max-width: 680px) {
-          .drop {
-              min-height: 200px;
-          }
-      }
-      .drop img.bote {
-          position: absolute;
-          left: 0;
-          right: 0;
-          width: 100%;
-      }
-      .drop .itemy {
-          max-width: 40%;
-      }
-      @media (max-width: 768px){
-          .drag{
-              width: auto; height: auto;
-              max-width: 60px;
-          }       
-              }
-      
-      
-      .drop{
-              background: #f5f5f5;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 10px;
-          border: 4px dashed #eee;
-          padding: 10px;
-      }
-      
-      
-    </style>
+    <style></style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="10" scene-color="#ED1C25">
-        <info type="dragdrop" title="Tiro la basura en su lugar" text="Coloca la basura en el bote que corresponde." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 wrap">
-            <template v-for="(i, index) in temps.a">
-              <drag :data="i.d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
-                <div class="itemy"><img class="w100" :src="i.img"/></div>
-              </drag>
-            </template>
-          </div>
-          <div class="row w100">
-            <div class="w30 drop" data="o" droptimes="multiple"><img class="w100 bote" src="i/organica.png"/></div>
-            <div class="w30 drop" data="i" droptimes="multiple"><img class="w100 bote" src="i/inorganica.png"/></div>
-          </div>
+          <div class="row w100"></div>
         </activity>
       </scene>
       <!-- END-->
@@ -99,7 +45,6 @@
     <script src="../../assets/modulos/embedsvg.js"></script>
     <script src="../../assets/modulos/tooltiper.js"></script>
     <script src="../../assets/modulos/dialogaudio.js"></script>
-    <script src="../../assets/modulos/selectives.js"></script>
     <script src="../../assets/modulos/clickable.js"></script>
     <script src="../../assets/modulos/drag.js"></script>
     <script src="../../assets/modulos/audiotext.js"></script>
@@ -111,18 +56,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [
-          {d: 'i', img: 'i/i4.png'},
-          {d: 'o', img: 'i/o4.png'},
-          {d: 'o', img: 'i/o3.png'},
-          {d: 'i', img: 'i/i5.png'},
-          {d: 'o', img: 'i/o1.png'},
-          {d: 'i', img: 'i/i2.png'},
-          {d: 'i', img: 'i/i3.png'},
-          {d: 'o', img: 'i/o2.png'},
-          {d: 'o', img: 'i/o5.png'},
-          {d: 'i', img: 'i/i1.png'},
-      ])
+      app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
       app.scenesCount = 1
