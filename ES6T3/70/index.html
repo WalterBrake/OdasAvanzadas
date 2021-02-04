@@ -3,27 +3,260 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Comparo poemas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .pregunta {
+          text-align: center;
+          position: absolute;
+          bottom: 2%;
+          background: #fff;
+          border-radius: 10px;
+          width: 96%;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .pregunta .h4 {
+          margin: 20px 0;
+      }
+      .pregunta .h4 .audiotext .audiotextBtn {
+          position: absolute;
+          left: 5px;
+          top: -10px;
+          width: 22px;
+          height: 22px;
+      }
+      .pregunta .number.smaller {
+          font-size: 1.2rem;
+      }
+      .pregunta .clickable {
+          margin: 4px 0;
+      }
+      .dialog.nodialog{
+          background: transparent;
+          border: none;
+          box-shadow: none;
+      }
+      .comic .dialog.text-le {
+          max-width: 48% !important;
+      }
+      .comic .dialog.text-le .audiotext .audiotextTxt {
+          justify-content: flex-start;
+          font-size: 0.8rem;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
-      <!-- SCENES-->
+      <!-- SCENES 1-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a1.png"/>
+              <div class="dialog tl tip-b long">
+                <audiotext audio="s/a1.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Qué estabas leyendo, abuelo?"></audiotext>
+              </div>
+              <div class="dialog tr tip-b long" v-if="temps.a1">
+                <audiotext audio="s/a2.mp3" :autoplay="true" @completed="temps.a2=true" text="Es un viejo libro de poemas escritos por gente que habla las lenguas originarias de México."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.a2">
+            <div class="h4">
+              <audiotext audio="s/p1.mp3" :autoplay="true" text="¿Cuáles de las siguientes son lenguas originarias de México?"></audiotext>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Náhuatl, maya y zapoteca.','Maya, castellano, hichol.','Azteca, náhuatl, mixteca.']" :key="refCount()" :isok="index == 0" simple-ok="simple-ok" initclass="text-center w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a2.png"/>
+              <div class="dialog tl tip-t long">
+                <audiotext audio="s/a3.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Qué pájaro es ese, abuelo?"></audiotext>
+              </div>
+              <div class="dialog tr tip-t long" v-if="temps.a1">
+                <audiotext audio="s/a4.mp3" :autoplay="true" @completed="temps.a2=true" text="Es un centzontototl, eso quiere decir &quot;cenzontle&quot; en español."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.a2">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a3.png"/>
+              <div class="dialog tr tip-t">
+                <audiotext audio="s/a5.mp3" :autoplay="true" @completed="temps.a1=true" text="Lo leeré, escuchen con atención:"></audiotext>
+              </div>
+              <div class="dialog nodialog cr" v-if="temps.a1">
+                <dialogaudio audio="s/a6.mp3" :autoplay="true" @completed="temps.a2=true"></dialogaudio>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.a2">
+            <div class="h4">
+              <audiotext audio="s/p2.mp3" :autoplay="true" text="¿En qué lengua originaria está escrito este poema?"></audiotext>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Castellano','Guaraní','Náhuatl']" :key="refCount()" :isok="index == 2" simple-ok="simple-ok" initclass="text-center w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <!--.row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar-->
+        </activity>
+      </scene>
+      <!-- SCENES 4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a4.png"/>
+              <div class="dialog tr tip-b">
+                <audiotext audio="s/a7.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Quién escribió este poema?"></audiotext>
+              </div>
+              <div class="dialog br tip-t long" v-if="temps.a1">
+                <audiotext audio="s/a8.mp3" :autoplay="true" @completed="temps.a2=true" text="Lo escribió un rey llamado Nezahualcóyotl."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.a2">
+            <div class="h4">
+              <audiotext audio="s/p3.mp3" :autoplay="true" text="¿De qué pueblo era rey Nezahualcóyotl?"></audiotext>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Olmeca','Azteca','Chichimeca']" :key="refCount()" :isok="index == 1" simple-ok="simple-ok" initclass="text-center w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <!--.row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar-->
+        </activity>
+      </scene>
+      <!-- SCENES 5-->
+      <scene v-if="currentScene==5" hidescorebox="hidescorebox" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a5.png"/>
+              <div class="dialog tr tip-b">
+                <audiotext audio="s/a9.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Tú sabes qué quiere decir el poema?"></audiotext>
+              </div>
+              <div class="dialog bl tip-t" v-if="temps.a1">
+                <audiotext audio="s/a10.mp3" :autoplay="true" @completed="temps.a2=true" text="Sí. ¿Quieren saber qué dice?"></audiotext>
+              </div>
+              <div class="dialog cr tip-t long" v-if="temps.a2">
+                <audiotext audio="s/a11.mp3" :autoplay="true" @completed="temps.a3=true" text="¡Síííííí!"></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.a3">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 6-->
+      <scene v-if="currentScene==6" hidescorebox="hidescorebox" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a6.png"/>
+              <div class="dialog tl tip text-le">
+                <audiotext audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, &lt;br&gt; pájaro de cuatrocientas voces, &lt;br&gt; amo el color del jade &lt;br&gt; y el enervante perfume de las flores, &lt;br&gt; pero amo más a mi hermano, el hombre."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.a1">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 7-->
+      <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a7.png"/>
+              <!--.dialog.tl.tip.text-le: audiotext(audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, <br> pájaro de cuatrocientas voces, <br> amo el color del jade <br> y el enervante perfume de las flores, <br> pero amo más a mi hermano, el hombre.")-->
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp">
+            <div class="h4">
+              <audiotext audio="s/p4.mp3" :autoplay="true" text="¿Qué palabras se repiten en el poema en náhuatl?"></audiotext>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['oc cenca','in tlacatl','nehuatl nictlazotla']" :key="refCount()" :isok="index == 2" simple-ok="simple-ok" initclass="text-center w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <!--.row.w100.text-center(v-if="temps.a1"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar-->
+        </activity>
+      </scene>
+      <!-- SCENES 8-->
+      <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a7.png"/>
+              <!--.dialog.tl.tip.text-le: audiotext(audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, <br> pájaro de cuatrocientas voces, <br> amo el color del jade <br> y el enervante perfume de las flores, <br> pero amo más a mi hermano, el hombre.")-->
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp">
+            <div class="h4">
+              <audiotext audio="s/p5.mp3" :autoplay="true" text="¿Cuál será su significado si comparamos esas palabras con el poema en español?"></audiotext>
+            </div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Cenzontle','Amo','Enervante']" :key="refCount()" :isok="index == 1" simple-ok="simple-ok" initclass="text-center w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 9-->
+      <scene v-if="currentScene==9" hidescorebox="hidescorebox" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus">
+        <info type="seleccionar" title="Comparo poemas" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 comic1">
+            <div class="comic w60 wm80"><img class="w100" src="i/a8.png"/>
+              <div class="dialog tr tip-b">
+                <audiotext audio="s/a13.mp3" :autoplay="true" @completed="temps.a1=true" text="Es un poema muy lindo, vengan vamos a buscar más en el libro."></audiotext>
+              </div>
+              <div class="dialog tl tip-b long" v-if="temps.a1">
+                <audiotext audio="s/a14.mp3" :autoplay="true" @completed="temps.a2=true" text="¡Sííííí!"></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.a2">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==10" :key="10" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +291,18 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a1', false)
+      app.$set(app.temps, 'a2', false)
+      app.$set(app.temps, 'a3', false)
+      
+      app.resetaus = function () {
+          app.temps.a1 = false
+          app.temps.a2 = false
+          app.temps.a3 = false
+      }
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>

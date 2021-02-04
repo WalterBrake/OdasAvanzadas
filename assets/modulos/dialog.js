@@ -12,6 +12,7 @@ Vue.component('dialogaudio', {
                 <div @click="stop" v-if="playing" ><embed src="../../assets/aanim/Dialog_a.svg" class="animate__animated animate__rubberBand"></embed></div>
                 <img v-else src="../../assets/aanim/Dialog.svg" class="animate__animated animate__pulse" @click="play">
             </div>
+            FILE!!!
             <div class="dialog-content">
                 <slot></slot>
             </div>
@@ -38,13 +39,14 @@ Vue.component('dialogaudio', {
                 onplay: function () {
 
                 },
-                
                 onend: function () {
                     _this.playing = false
                     _this.$emit('completed')
                 },
                 onstop: function () {
                     _this.playing = false
+                    console.log('STOPED!')
+                    _this.$emit('completed')
                 }
             });
         }

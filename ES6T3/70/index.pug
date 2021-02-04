@@ -1,12 +1,54 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Comparo poemas'
 
+mixin pregunta(au, p, ops,ans, clic)
+    .h4: audiotext(audio=au :autoplay="true" text=p)
+    .row.wrap.around
+        clickable(v-for="(i, index) in "+ops :key="refCount()" @wasclicked=clic :isok="index == "+ans simple-ok initclass="text-center w100"): number(randomc smaller) {{i}}
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .pregunta {
+                text-align: center;
+                position: absolute;
+                bottom: 2%;
+                background: #fff;
+                border-radius: 10px;
+                width: 96%;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .pregunta .h4 {
+                margin: 20px 0;
+            }
+            .pregunta .h4 .audiotext .audiotextBtn {
+                position: absolute;
+                left: 5px;
+                top: -10px;
+                width: 22px;
+                height: 22px;
+            }
+            .pregunta .number.smaller {
+                font-size: 1.2rem;
+            }
+            .pregunta .clickable {
+                margin: 4px 0;
+            }
+            .dialog.nodialog{
+                background: transparent;
+                border: none;
+                box-shadow: none;
+            }
+            .comic .dialog.text-le {
+                max-width: 48% !important;
+            }
+            .comic .dialog.text-le .audiotext .audiotextTxt {
+                justify-content: flex-start;
+                font-size: 0.8rem;
+            }
+
 
 
     body
@@ -14,21 +56,128 @@ html(lang="es")
             // START
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
-            // SCENES
+            // SCENES 1
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title  :autoplay="false")
                 activity
-                    .row.w100
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a1.png").w100
+                            .dialog.tl.tip-b.long: audiotext(audio="s/a1.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Qué estabas leyendo, abuelo?")
+                            .dialog.tr.tip-b.long(v-if="temps.a1"): audiotext(audio="s/a2.mp3" :autoplay="true" @completed="temps.a2=true" text="Es un viejo libro de poemas escritos por gente que habla las lenguas originarias de México.")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
+                        +pregunta('s/p1.mp3','¿Cuáles de las siguientes son lenguas originarias de México?', "['Náhuatl, maya y zapoteca.','Maya, castellano, hichol.','Azteca, náhuatl, mixteca.']", 0)
+            
+            // SCENES 2
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a2.png").w100
+                            .dialog.tl.tip-t.long: audiotext(audio="s/a3.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Qué pájaro es ese, abuelo?")
+                            .dialog.tr.tip-t.long(v-if="temps.a1"): audiotext(audio="s/a4.mp3" :autoplay="true" @completed="temps.a2=true" text="Es un centzontototl, eso quiere decir \"cenzontle\" en español.")
+                    .row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 3
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a3.png").w100
+                            .dialog.tr.tip-t: audiotext(audio="s/a5.mp3" :autoplay="true" @completed="temps.a1=true" text="Lo leeré, escuchen con atención:")
+                            .dialog.nodialog.cr(v-if="temps.a1"): dialogaudio(audio="s/a6.mp3" :autoplay="true" @completed="temps.a2=true")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
+                        +pregunta('s/p2.mp3','¿En qué lengua originaria está escrito este poema?', "['Castellano','Guaraní','Náhuatl']", 2)
+                    //.row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 4
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a4.png").w100
+                            .dialog.tr.tip-b: audiotext(audio="s/a7.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Quién escribió este poema?")
+                            .dialog.br.tip-t.long(v-if="temps.a1"): audiotext(audio="s/a8.mp3" :autoplay="true" @completed="temps.a2=true" text="Lo escribió un rey llamado Nezahualcóyotl.")
+                    .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
+                        +pregunta('s/p3.mp3','¿De qué pueblo era rey Nezahualcóyotl?', "['Olmeca','Azteca','Chichimeca']", 1)
+                    //.row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 5
+            scene(v-if="currentScene==5" hidescorebox :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a5.png").w100
+                            .dialog.tr.tip-b: audiotext(audio="s/a9.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Tú sabes qué quiere decir el poema?")
+                            .dialog.bl.tip-t(v-if="temps.a1"): audiotext(audio="s/a10.mp3" :autoplay="true" @completed="temps.a2=true" text="Sí. ¿Quieren saber qué dice?")
+                            .dialog.cr.tip-t.long(v-if="temps.a2"): audiotext(audio="s/a11.mp3" :autoplay="true" @completed="temps.a3=true" text="¡Síííííí!")
+                    
+                    .row.w100.text-center(v-if="temps.a3"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            // SCENES 6
+            scene(v-if="currentScene==6" hidescorebox :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a6.png").w100
+                            .dialog.tl.tip.text-le: audiotext(audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, <br> pájaro de cuatrocientas voces, <br> amo el color del jade <br> y el enervante perfume de las flores, <br> pero amo más a mi hermano, el hombre.")
+                    
+                    .row.w100.text-center(v-if="temps.a1"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 7
+            scene(v-if="currentScene==7"  :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a7.png").w100
+                            //.dialog.tl.tip.text-le: audiotext(audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, <br> pájaro de cuatrocientas voces, <br> amo el color del jade <br> y el enervante perfume de las flores, <br> pero amo más a mi hermano, el hombre.")
+                    .pregunta.animate__animated.animate__bounceInUp()
+                        +pregunta('s/p4.mp3','¿Qué palabras se repiten en el poema en náhuatl?', "['oc cenca','in tlacatl','nehuatl nictlazotla']", 2)
+                    //.row.w100.text-center(v-if="temps.a1"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 8
+            scene(v-if="currentScene==8"  :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a7.png").w100
+                            //.dialog.tl.tip.text-le: audiotext(audio="s/a12.mp3" :autoplay="true" @completed="temps.a1=true" text="Amo el canto del cenzontle, <br> pájaro de cuatrocientas voces, <br> amo el color del jade <br> y el enervante perfume de las flores, <br> pero amo más a mi hermano, el hombre.")
+                    .pregunta.animate__animated.animate__bounceInUp()
+                        +pregunta('s/p5.mp3','¿Cuál será su significado si comparamos esas palabras con el poema en español?', "['Cenzontle','Amo','Enervante']", 1)
             
             
+            // SCENES 9
+            scene(v-if="currentScene==9" hidescorebox :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.comic1
+                        .comic.w60.wm80
+                            img(src="i/a8.png").w100
+                            .dialog.tr.tip-b: audiotext(audio="s/a13.mp3" :autoplay="true" @completed="temps.a1=true" text="Es un poema muy lindo, vengan vamos a buscar más en el libro.")
+                            .dialog.tl.tip-b.long(v-if="temps.a1"): audiotext(audio="s/a14.mp3" :autoplay="true" @completed="temps.a2=true" text="¡Sííííí!")
+                    .row.w100.text-center(v-if="temps.a2"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==10" :key="10" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a1', false)
+                app.$set(app.temps, 'a2', false)
+                app.$set(app.temps, 'a3', false)
+                
+                app.resetaus = function () {
+                    app.temps.a1 = false
+                    app.temps.a2 = false
+                    app.temps.a3 = false
+                }
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5

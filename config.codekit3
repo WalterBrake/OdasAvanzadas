@@ -8870,7 +8870,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 23458,
+		"iS": 25761,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -8947,7 +8947,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 10945,
+		"iS": 25710,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -12663,6 +12663,94 @@
 		"oAP": "\/ES6T3\/70\/Comparo poemas Es6°T3 - Hoja 1.ai",
 		"oF": 0
 		},
+	"\/ES6T3\/70\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 114946,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 72266,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a3.png": {
+		"ft": 32768,
+		"iS": 49375,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a4.png": {
+		"ft": 32768,
+		"iS": 90703,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a5.png": {
+		"ft": 32768,
+		"iS": 124938,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a6.png": {
+		"ft": 32768,
+		"iS": 54339,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a6.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a7.png": {
+		"ft": 32768,
+		"iS": 53260,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a7.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/70\/i\/a8.png": {
+		"ft": 32768,
+		"iS": 112485,
+		"oA": 0,
+		"oAP": "\/ES6T3\/70\/i\/a8.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES6T3\/70\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -12679,144 +12767,137 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_1.wav": {
+	"\/ES6T3\/70\/s\/a1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_1.wav",
+		"oAP": "\/ES6T3\/70\/s\/a1.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_10.wav": {
+	"\/ES6T3\/70\/s\/a10.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_10.wav",
+		"oAP": "\/ES6T3\/70\/s\/a10.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_11.wav": {
+	"\/ES6T3\/70\/s\/a11.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_11.wav",
+		"oAP": "\/ES6T3\/70\/s\/a11.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_12.wav": {
+	"\/ES6T3\/70\/s\/a12.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_12.wav",
+		"oAP": "\/ES6T3\/70\/s\/a12.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_13.wav": {
+	"\/ES6T3\/70\/s\/a13.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_13.wav",
+		"oAP": "\/ES6T3\/70\/s\/a13.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_14.wav": {
+	"\/ES6T3\/70\/s\/a14.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_14.wav",
+		"oAP": "\/ES6T3\/70\/s\/a14.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_2.wav": {
+	"\/ES6T3\/70\/s\/a2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_2.wav",
+		"oAP": "\/ES6T3\/70\/s\/a2.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_3.wav": {
+	"\/ES6T3\/70\/s\/a3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_3.wav",
+		"oAP": "\/ES6T3\/70\/s\/a3.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_4.wav": {
+	"\/ES6T3\/70\/s\/a4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_4.wav",
+		"oAP": "\/ES6T3\/70\/s\/a4.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_5.wav": {
+	"\/ES6T3\/70\/s\/a5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_5.wav",
+		"oAP": "\/ES6T3\/70\/s\/a5.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_7.wav": {
+	"\/ES6T3\/70\/s\/a6.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_7.wav",
+		"oAP": "\/ES6T3\/70\/s\/a6.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_8.wav": {
+	"\/ES6T3\/70\/s\/a7.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_8.wav",
+		"oAP": "\/ES6T3\/70\/s\/a7.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_9.wav": {
+	"\/ES6T3\/70\/s\/a8.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Audio_9.wav",
+		"oAP": "\/ES6T3\/70\/s\/a8.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_LoLeeré.wav": {
+	"\/ES6T3\/70\/s\/a9.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_LoLeeré.wav",
+		"oAP": "\/ES6T3\/70\/s\/a9.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_PoemaNáhuatl.wav": {
+	"\/ES6T3\/70\/s\/p1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_PoemaNáhuatl.wav",
+		"oAP": "\/ES6T3\/70\/s\/p1.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_1.wav": {
+	"\/ES6T3\/70\/s\/p2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_1.wav",
+		"oAP": "\/ES6T3\/70\/s\/p2.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_2.wav": {
+	"\/ES6T3\/70\/s\/p3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_2.wav",
+		"oAP": "\/ES6T3\/70\/s\/p3.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_3.wav": {
+	"\/ES6T3\/70\/s\/p4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_3.wav",
+		"oAP": "\/ES6T3\/70\/s\/p4.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_4.wav": {
+	"\/ES6T3\/70\/s\/p5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_4.wav",
-		"oF": 0
-		},
-	"\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_5.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES6T3\/70\/s\/Comparo poemas Es6°T3_Pregunta_5.wav",
+		"oAP": "\/ES6T3\/70\/s\/p5.mp3",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
@@ -13794,7 +13875,7 @@
 		},
 	"\/HI4T2\/266\/i\/rship.png": {
 		"ft": 32768,
-		"iS": 590795,
+		"iS": 249592,
 		"oA": 0,
 		"oAP": "\/HI4T2\/266\/i\/rship.png",
 		"oF": 0,
@@ -18414,7 +18495,7 @@
 		},
 	"\/MA2T2\/183\/i\/nina2.png": {
 		"ft": 32768,
-		"iS": 44332,
+		"iS": 44627,
 		"oA": 0,
 		"oAP": "\/MA2T2\/183\/i\/Asset 13@5x.png",
 		"oF": 0,
