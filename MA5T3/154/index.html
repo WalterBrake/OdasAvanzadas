@@ -140,10 +140,10 @@
             <div class="w50"><img class="img-fluid w100" src="i/a1.png"/></div>
           </div>
           <div class="row w100 ex1">
-            <audiotext v-if="temps.au1" :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles y su valor depende del nivel en el que se encuentren, ya que habrá que multiplicar su valor por 1 si está en el primero, por 20 si está en el segundo, por 400 si está en el tercero y por 8000 si está en el cuarto." @completed="temps.au2 = true"></audiotext>
+            <audiotext v-if="temps.au1" :speed-offset="1.4" :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles, su valor depende del nivel en el que se encuentren: Si están en el primero, hay que multiplicar por 1; si están en el segundo, por 20; si están en el tercero, por 400; si está en el cuarto nivel, por 8000." @completed="temps.au2 = true"></audiotext>
           </div>
           <div class="row w100 ex1">
-            <audiotext v-if="temps.au2" :autoplay="true" audio="s/intro3.mp3" text="A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata." @completed="temps.au3 = true"></audiotext>
+            <audiotext v-if="temps.au2" :speed-offset="1.2" :autoplay="true" audio="s/intro3.mp3" text="A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata." @completed="temps.au3 = true"></audiotext>
           </div>
           <div class="row w100">
             <div class="w50 wm80">
@@ -377,7 +377,7 @@
       ])
       app.$set(app.temps, 'p2', [
           ['3a', 2, ['1 x 4000', '10 x 8000', '11 x 8000'], 1, ['4000', '88000', '80000']],
-          ['3b', 0, ['6 x 200', '3 x 400', '2 x 400'], 0, ['1200', '800', '1200']],
+          ['3b', 1, ['6 x 200', '3 x 400', '2 x 400'], 0, ['1200', '800', '1000']],
           ['3c', 1, ['2 x 20', '0 x 20', '0 x 400'], 0, ['0', '20', '40']],
           ['3d', 0, ['16 x 1', '8 x 2', '0 x 2'], 2, ['8', '0', '16']],
           [1, ['88216','89216','78214']]

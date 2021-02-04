@@ -133,9 +133,9 @@ html(lang="es")
                         audiotext(:autoplay="true" audio="s/intro1.mp3" speed-offset="1.4" text="Recuerda que el sistema de numeración maya es vigesimal, esto significa que los números se van agrupando de 20 en 20. El sistema maya utiliza 3 símbolos para representar el valor de las cantidades." @completed="temps.au1 = true")
                     .row.w100: .w50: img(src="i/a1.png").img-fluid.w100
                     .row.w100.ex1
-                        audiotext(v-if="temps.au1" :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles y su valor depende del nivel en el que se encuentren, ya que habrá que multiplicar su valor por 1 si está en el primero, por 20 si está en el segundo, por 400 si está en el tercero y por 8000 si está en el cuarto." @completed="temps.au2 = true")
+                        audiotext(v-if="temps.au1" :speed-offset="1.4" :autoplay="true" audio="s/intro2.mp3" text="Los símbolos se escriben de abajo hacia arriba usando 4 niveles, su valor depende del nivel en el que se encuentren: Si están en el primero, hay que multiplicar por 1; si están en el segundo, por 20; si están en el tercero, por 400; si está en el cuarto nivel, por 8000." @completed="temps.au2 = true")
                     .row.w100.ex1
-                        audiotext(v-if="temps.au2"  :autoplay="true" audio="s/intro3.mp3" text="A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata." @completed="temps.au3 = true")
+                        audiotext(v-if="temps.au2" :speed-offset="1.2"  :autoplay="true" audio="s/intro3.mp3" text="A partir de números de 2 niveles se deben sumar los resultados de las multiplicaciones para obtener el número del que se trata." @completed="temps.au3 = true")
                     .row.w100
                         .w50.wm80: lottie-player(v-if="temps.au1" src="i/intro.json" key="lt1" background="transparent" speed="1" style="width: 100%; height: 100%;"  autoplay)
                     .row.w100.text-center(v-if="temps.au3"): button(@click="sceneCompleted(false)").button.animate__animated.animate__flip Continuar
@@ -256,7 +256,7 @@ html(lang="es")
                 ])
                 app.$set(app.temps, 'p2', [
                     ['3a', 2, ['1 x 4000', '10 x 8000', '11 x 8000'], 1, ['4000', '88000', '80000']],
-                    ['3b', 0, ['6 x 200', '3 x 400', '2 x 400'], 0, ['1200', '800', '1200']],
+                    ['3b', 1, ['6 x 200', '3 x 400', '2 x 400'], 0, ['1200', '800', '1000']],
                     ['3c', 1, ['2 x 20', '0 x 20', '0 x 400'], 0, ['0', '20', '40']],
                     ['3d', 0, ['16 x 1', '8 x 2', '0 x 2'], 2, ['8', '0', '16']],
                     [1, ['88216','89216','78214']]

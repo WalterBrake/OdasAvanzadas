@@ -2405,6 +2405,72 @@
 		"oAP": "\/CM2T3\/291\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/CM2T3\/294\/i\/v1.png": {
+		"ft": 32768,
+		"iS": 152789,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM2T3\/294\/i\/v2.png": {
+		"ft": 32768,
+		"iS": 141493,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM2T3\/294\/i\/v3.png": {
+		"ft": 32768,
+		"iS": 131085,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM2T3\/294\/i\/v4.png": {
+		"ft": 32768,
+		"iS": 79326,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM2T3\/294\/i\/v5.png": {
+		"ft": 32768,
+		"iS": 18574,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CM2T3\/294\/i\/v6.png": {
+		"ft": 32768,
+		"iS": 95470,
+		"oA": 0,
+		"oAP": "\/CM2T3\/294\/i\/v6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CM2T3\/294\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -2421,11 +2487,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/CM2T3\/294\/s\/¡Se me derramó! CM2°T3_Inst.wav": {
+	"\/CM2T3\/294\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CM2T3\/294\/s\/¡Se me derramó! CM2°T3_Inst.wav",
+		"oAP": "\/CM2T3\/294\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/CN3T1\/200\/aimg\/arterias.svg": {

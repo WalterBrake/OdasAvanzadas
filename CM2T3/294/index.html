@@ -3,23 +3,69 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>¡Se me derramó!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drop {
+          min-height: 80px;
+          background: #fff;
+          margin-top: 10px;
+          border-radius: 10px;
+          border: 2px dashed var(--main);
+          margin: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+      .drop.liq {
+          border-color: var(--sec);
+      }
+      .drop img {
+          max-width: 48%;
+      }
+      .imgs .drag {
+          margin: 4px;
+          width: auto;
+          height: auto;
+          max-width: 200px;
+      }
+      @media (max-width: 680px) {
+          .imgs .drag {
+              max-width: 120px;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="dragdrop" title="¡Se me derramó!" text="Coloca cada alimento en el recuadro correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w40 text-center">
+              <number c="1" smaller="smaller">Sólido</number>
+              <div class="drop sol" data="s" droptimes="multiple"></div>
+            </div>
+            <div class="w40 text-center">
+              <number c="2" smaller="smaller">Líquido</number>
+              <div class="drop liq" data="l" droptimes="multiple"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap imgs">
+            <template v-for="(i, index) in ['l', 's', 'l', 's', 'l', 's']">
+              <drag :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100" :src="'i/v'+(index+1)+'.png'"/></drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->

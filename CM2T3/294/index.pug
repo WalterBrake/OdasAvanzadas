@@ -1,12 +1,41 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = '¡Se me derramó!'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drop {
+                min-height: 80px;
+                background: #fff;
+                margin-top: 10px;
+                border-radius: 10px;
+                border: 2px dashed var(--main);
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .drop.liq {
+                border-color: var(--sec);
+            }
+            .drop img {
+                max-width: 48%;
+            }
+            .imgs .drag {
+                margin: 4px;
+                width: auto;
+                height: auto;
+                max-width: 200px;
+            }
+            @media (max-width: 680px) {
+                .imgs .drag {
+                    max-width: 120px;
+                }
+            }
 
 
     body
@@ -15,12 +44,19 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca cada alimento en el recuadro correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
-            
+                        .w40.text-center
+                            number(c=1 smaller) Sólido
+                            .drop(data="s" droptimes="multiple").sol
+                        .w40.text-center
+                            number(c=2 smaller) Líquido
+                            .drop(data="l" droptimes="multiple").liq
+                    .row.w100.wrap.imgs
+                        template(v-for="(i, index) in ['l', 's', 'l', 's', 'l', 's']")
+                            drag(:data="i" dropzone=".drop" stay-if-ok append-to-dropzone): img(:src="'i/v'+(index+1)+'.png'").w100
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
