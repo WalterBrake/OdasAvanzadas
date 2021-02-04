@@ -1,5 +1,5 @@
 Vue.component('info', {
-    props: ['title', 'text', 'textaudio', 'type', 'autoplay'],
+    props: ['title', 'text', 'textaudio', 'type', 'autoplay', 'speedOffset'],
     data () {
         return {
             score: 0,
@@ -10,7 +10,7 @@ Vue.component('info', {
         <div class="info">
             <h1>{{title}}</h1>
             <template v-if="showPlayer">
-                <h2><audiotext :text="text" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
+                <h2><audiotext :text="text" :speed-offset="speedOffset==undefined?1:speedOffset" :audio="textaudio" ref="instructions" :autoplay="autoplay!=undefined ? autoplay : true" @completed="$emit('completedinstructions')"></audiotext></h2>
             </template>
             <slot></slot>
             <div class="bottom">

@@ -111,7 +111,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.p1.length" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Ayuda a Monse a escribir qué son las encuestas. Coloca en orden alfabético los recuadros para descubrir la información." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" :speed-offset="1.2" title=title text="Ayuda a Monse a escribir qué son las encuestas. Coloca en orden alfabético los recuadros para descubrir la información." textaudio="s/instruccion1.mp3" :autoplay="true")
                     //audiotext(v-if="temps.au1" :autoplay="true" audio="s/a1.mp3" text="")
                 activity
                     .row.w100.text-center: .w40.ml-auto: img(src="i/girl.png").girl
