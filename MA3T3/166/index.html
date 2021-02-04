@@ -49,17 +49,17 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
         <info type="seleccionar" title="Marco mis giros" text="Observa los giros que trazan los brazos de los niños y elige la fracción que representan." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true"></info>
         <activity>
           <div class="row w100">
-            <div class="kidresp" :class="temps.cb == 0 ? 'w40': 'w20'">
-              <lottie-player src="i/b1.json" key="m1" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay" v-if="temps.au1"></lottie-player>
-              <lottie-player src="i/b1.json" key="m10" background="transparent" speed=".3" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
-              <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;0">5<hr>6</number>
-            </div>
+            <!--div(:class="temps.cb == 0 ? 'w40': 'w20'").kidresp
+            lottie-player(src="i/b1.json" key="m1" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay v-if="temps.au1")
+            lottie-player(src="i/b1.json" key="m10" background="transparent" speed=".3" style="width: 100%; height: 100%;" v-else)
+            number(randomc smaller v-if="temps.cb>0") 5<hr>6
+            -->
             <div class="kidresp" :class="temps.cb == 1 ? 'w40': 'w20'" v-if="temps.cb&gt;0">
-              <lottie-player src="i/b2.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay"></lottie-player>
+              <lottie-player src="i/b2.json" key="m2" background="transparent" speed=".3" style="width: 100%; height: 100%;" autoplay="autoplay" v-if="temps.au1"></lottie-player>
               <number randomc="randomc" smaller="smaller" v-if="temps.cb&gt;1">1<hr>3</number>
             </div>
             <div class="kidresp" :class="temps.cb == 2 ? 'w40': 'w20'" v-if="temps.cb&gt;1">
@@ -253,7 +253,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'cb', 0)
+      app.$set(app.temps, 'cb', 1)
       app.$set(app.temps, 'au1', 0)
       
       app.currentScene = 0
