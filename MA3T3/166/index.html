@@ -81,7 +81,7 @@
           </template>
           <template v-if="temps.cb == 1">
             <div class="row w100">
-              <div class="h4">Ahora realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+              <div class="h4">Andrés realizó un movimiento que representa <span class="frac"></span> de giro.</div>
             </div>
             <div class="row wrap around">
               <clickable v-for="(i, index) in ['2&lt;hr&gt;2','1&lt;hr&gt;3','2&lt;hr&gt;4']" :key="'b2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">
@@ -93,7 +93,7 @@
           </template>
           <template v-if="temps.cb == 2">
             <div class="row w100">
-              <div class="h4">Por último realizó un movimiento que representa <span class="frac"></span> de giro.</div>
+              <div class="h4">También realizó un movimiento que representa <span class="frac"></span> de giro.</div>
             </div>
             <div class="row wrap around">
               <clickable v-for="(i, index) in ['1&lt;hr&gt;4','5&lt;hr&gt;6','1&lt;hr&gt;2']" :key="'b3'+index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-3" @isok="temps.cb++">

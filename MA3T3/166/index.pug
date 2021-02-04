@@ -64,10 +64,10 @@ html(lang="es")
                         .row.w100: div.h4 Andrés realizó un movimiento que representa #[span.frac ] de giro.
                         .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>2','3<hr>4','5<hr>6']" :key="'b1'+index" :isok="index == 2" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
                     template(v-if="temps.cb == 1")
-                        .row.w100: div.h4 Ahora realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.w100: div.h4 Andrés realizó un movimiento que representa #[span.frac ] de giro.
                         .row.wrap.around: clickable(v-for="(i, index) in ['2<hr>2','1<hr>3','2<hr>4']" :key="'b2'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
                     template(v-if="temps.cb == 2")
-                        .row.w100: div.h4 Por último realizó un movimiento que representa #[span.frac ] de giro.
+                        .row.w100: div.h4 También realizó un movimiento que representa #[span.frac ] de giro.
                         .row.wrap.around: clickable(v-for="(i, index) in ['1<hr>4','5<hr>6','1<hr>2']" :key="'b3'+index" :isok="index == 2" simple-ok initclass="pa-3" @isok="temps.cb++"): number(randomc smaller): div(v-html="i")
             
             // SCENES
