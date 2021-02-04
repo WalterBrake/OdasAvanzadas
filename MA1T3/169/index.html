@@ -113,13 +113,13 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25">
-        <info type="dragdrop" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" :speed-offset="1.4" title="" text="Separa las monedas en decenas y unidades colocándolas en los espacios correspondientes. Después, escribe cuántas unidades y decenas hay en cada monto y cuál es la suma total." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 3" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 3" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 3" :key="'a'+index" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 3" :key="'b'+index" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
@@ -146,8 +146,8 @@
           <div class="row w100 mt-auto ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 4" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 2" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 4" :key="'c'+index" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 2" :key="'d'+index" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
@@ -174,8 +174,8 @@
           <div class="row w100 mt-auto ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 6" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 5" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 6" :key="'e'+index" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 5" :key="'f'+index" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
@@ -208,8 +208,8 @@
           <div class="row w100 ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 2" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 5" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 2" :key="'g'+index" data="d" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 5" :key="'h'+index" data="u" dropzone=".drop1" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
@@ -236,8 +236,8 @@
           <div class="row w100 mt-auto ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 1" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 7" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 1" :key="'i'+index" data="d" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 7" :key="'j'+index" data="u" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
@@ -264,8 +264,8 @@
           <div class="row w100 mt-auto ex1">
             <div class="w40">
               <div class="row wrap">
-                <drag class="w20" v-for="(i, index) in 5" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
-                <drag class="w10" v-for="(i, index) in 2" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
+                <drag class="w20" v-for="(i, index) in 5" :key="'k'+index" data="d" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 u" src="i/10.png"/></drag>
+                <drag class="w10" v-for="(i, index) in 2" :key="'l'+index" data="u" dropzone=".drop3" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 d" src="i/1.png"/></drag>
               </div>
             </div>
             <div class="w20 box">
