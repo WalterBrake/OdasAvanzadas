@@ -14806,6 +14806,237 @@
 		"oAP": "\/HI5T2\/275\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/HI5T3\/281\/i\/al.png": {
+		"ft": 32768,
+		"iS": 63870,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/al.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/autores.png": {
+		"ft": 32768,
+		"iS": 12183,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/autores.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/cc.png": {
+		"ft": 32768,
+		"iS": 73797,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/cc.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/ch.png": {
+		"ft": 32768,
+		"iS": 80485,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/ch.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/das.png": {
+		"ft": 32768,
+		"iS": 70965,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/das.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/dr.png": {
+		"ft": 32768,
+		"iS": 68336,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/dr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/escritores.png": {
+		"ft": 32768,
+		"iS": 12617,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/escritores.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/filosofos.png": {
+		"ft": 32768,
+		"iS": 11528,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/filosofos.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/fk.png": {
+		"ft": 32768,
+		"iS": 76465,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/fk.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/flu.png": {
+		"ft": 32768,
+		"iS": 66990,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/flu.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/jco.png": {
+		"ft": 32768,
+		"iS": 74208,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/jco.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/ma.png": {
+		"ft": 32768,
+		"iS": 64484,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/ma.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/mlg.png": {
+		"ft": 32768,
+		"iS": 66147,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/mlg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/mmp.png": {
+		"ft": 32768,
+		"iS": 64572,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/mmp.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/muralistas.png": {
+		"ft": 32768,
+		"iS": 12336,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/muralistas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/musicos.png": {
+		"ft": 32768,
+		"iS": 12313,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/musicos.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/op.png": {
+		"ft": 32768,
+		"iS": 70170,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/op.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/pintores.png": {
+		"ft": 32768,
+		"iS": 12081,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/pintores.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/rfm.png": {
+		"ft": 32768,
+		"iS": 58062,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/rfm.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/sir.png": {
+		"ft": 32768,
+		"iS": 68596,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/sir.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/281\/i\/sr.png": {
+		"ft": 32768,
+		"iS": 62903,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/i\/sr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/HI5T3\/281\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -14821,6 +15052,13 @@
 		"oAP": "\/HI5T3\/281\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/HI5T3\/281\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T3\/281\/s\/instruccion1.mp3",
+		"oF": 0
 		},
 	"\/HI6T1\/257\/aimg\/i1.svg": {
 		"ft": 2097152,

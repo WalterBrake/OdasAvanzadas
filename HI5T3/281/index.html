@@ -3,27 +3,80 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Reconozco la cultura de mi país</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drop {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+      }
+      .drop .retrato {
+          max-width: 30%;
+          margin: -35% auto -30%;
+      }
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <template v-for="(i, index) in [['fk', 'pintores'], ['cc', 'musicos'], ['al', 'musicos'], ['flu', 'autores'], ['ch','musicos']]">
+              <drag :data="i[1]" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 retrato" :src="'i/'+i[0]+'.png'"/></drag>
+            </template>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="w25" v-for="(i, index) in ['pintores', 'muralistas', 'autores', 'musicos']">
+              <div class="drop" :data="i" droptimes="multiple"><img class="w100" :src="'i/'+i+'.png'"/></div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <template v-for="(i, index) in [['dr', 'muralistas'], ['mlg', 'autores'], ['sir', 'musicos'], ['ma', 'autores'], ['sr','filosofos']]">
+              <drag :data="i[1]" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 retrato" :src="'i/'+i[0]+'.png'"/></drag>
+            </template>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="w25" v-for="(i, index) in ['filosofos', 'muralistas', 'autores', 'musicos']">
+              <div class="drop" :data="i" droptimes="multiple"><img class="w100" :src="'i/'+i+'.png'"/></div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <template v-for="(i, index) in [['jco', 'muralistas'], ['op', 'escritores'], ['das', 'muralistas'], ['rfm', 'autores'], ['mmp','musicos']]">
+              <drag :data="i[1]" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w100 retrato" :src="'i/'+i[0]+'.png'"/></drag>
+            </template>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="w25" v-for="(i, index) in ['muralistas', 'autores', 'musicos', 'escritores']">
+              <div class="drop" :data="i" droptimes="multiple"><img class="w100" :src="'i/'+i+'.png'"/></div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -61,7 +114,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 3
     </script>
   </body>
 </html>

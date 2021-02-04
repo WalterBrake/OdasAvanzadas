@@ -1,13 +1,23 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Reconozco la cultura de mi país'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
 
+            .drop {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            .drop .retrato {
+                max-width: 30%;
+                margin: -35% auto -30%;
+            }
 
     body
         #app
@@ -15,14 +25,36 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        template(v-for="(i, index) in [['fk', 'pintores'], ['cc', 'musicos'], ['al', 'musicos'], ['flu', 'autores'], ['ch','musicos']]")
+                            drag(:data="i[1]" dropzone=".drop" stay-if-ok append-to-dropzone): img(:src="'i/'+i[0]+'.png'").w100.retrato
+                    .row.w100.mt-1
+                        .w25(v-for="(i, index) in ['pintores', 'muralistas', 'autores', 'musicos']"): .drop(:data="i" droptimes="multiple"): img(:src="'i/'+i+'.png'").w100
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        template(v-for="(i, index) in [['dr', 'muralistas'], ['mlg', 'autores'], ['sir', 'musicos'], ['ma', 'autores'], ['sr','filosofos']]")
+                            drag(:data="i[1]" dropzone=".drop" stay-if-ok append-to-dropzone): img(:src="'i/'+i[0]+'.png'").w100.retrato
+                    .row.w100.mt-1
+                        .w25(v-for="(i, index) in ['filosofos', 'muralistas', 'autores', 'musicos']"): .drop(:data="i" droptimes="multiple"): img(:src="'i/'+i+'.png'").w100
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        template(v-for="(i, index) in [['jco', 'muralistas'], ['op', 'escritores'], ['das', 'muralistas'], ['rfm', 'autores'], ['mmp','musicos']]")
+                            drag(:data="i[1]" dropzone=".drop" stay-if-ok append-to-dropzone): img(:src="'i/'+i[0]+'.png'").w100.retrato
+                    .row.w100.mt-1
+                        .w25(v-for="(i, index) in ['muralistas', 'autores', 'musicos', 'escritores']"): .drop(:data="i" droptimes="multiple"): img(:src="'i/'+i+'.png'").w100
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +63,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3
