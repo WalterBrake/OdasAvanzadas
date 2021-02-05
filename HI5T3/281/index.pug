@@ -35,7 +35,7 @@ html(lang="es")
                         .w25(v-for="(i, index) in ['pintores', 'muralistas', 'autores', 'musicos']"): .drop(:data="i" droptimes="multiple"): img(:src="'i/'+i+'.png'").w100
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100
                         template(v-for="(i, index) in [['dr', 'muralistas'], ['mlg', 'autores'], ['sir', 'musicos'], ['ma', 'autores'], ['sr','filosofos']]")
@@ -44,7 +44,7 @@ html(lang="es")
                         .w25(v-for="(i, index) in ['filosofos', 'muralistas', 'autores', 'musicos']"): .drop(:data="i" droptimes="multiple"): img(:src="'i/'+i+'.png'").w100
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
                     .row.w100
                         template(v-for="(i, index) in [['jco', 'muralistas'], ['op', 'escritores'], ['das', 'muralistas'], ['rfm', 'autores'], ['mmp','musicos']]")

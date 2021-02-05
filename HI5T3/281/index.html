@@ -45,7 +45,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <template v-for="(i, index) in [['dr', 'muralistas'], ['mlg', 'autores'], ['sir', 'musicos'], ['ma', 'autores'], ['sr','filosofos']]">
@@ -61,7 +61,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Reconozco la cultura de mi país" text="Coloca los retratos en las cajas correspondientes." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <template v-for="(i, index) in [['jco', 'muralistas'], ['op', 'escritores'], ['das', 'muralistas'], ['rfm', 'autores'], ['mmp','musicos']]">
