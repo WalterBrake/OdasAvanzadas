@@ -221,14 +221,12 @@ html(lang="es")
                             img(src="i/bg.png").w100
                             .buttons
                                 .row
-                                    .w60 Giro izquierdo
-                                    .w40: .keydown(@click="giro('i')"): img(src="i/btnLeft.svg").w100
+                                    .w40: .keydown(@click="atras"): img(src="i/btnUp.svg").w100
                                 .row
-                                    .w60 Giro derecho
+                                    .w40: .keydown(@click="giro('i')"): img(src="i/btnLeft.svg").w100
                                     .w40: .keydown(@click="giro('d')"): img(src="i/btnRight.svg").w100
                                 .row
-                                    .w60 Avanzar
-                                    .w40: .keydown(@click="avanza"): img(src="i/btnUp.svg").w100
+                                    .w40: .keydown(@click="avanza"): img(src="i/btnDown.svg").w100
                     .row.w90.ins
                         audiotext(v-if="temps.au1 && temps.step==0" key="au1" :autoplay="true" audio="s/au1.mp3" text="Colmillo, camina tres cuadros hacia adelante, debes saltar el obstáculo. Después, da vuelta a tu izquierda y avanza un cuadro.")
                         audiotext(v-else-if="temps.step==1" key="au2" :autoplay="true" audio="s/au2.mp3" text="¡Muy bien Colmillo!, ahora gira a tu derecha y avanza un cuadro. Encontrarás la entada al túnel, entra en él.")
@@ -272,6 +270,8 @@ html(lang="es")
                 app.$set(app.temps, 'au3', false)
                 app.$set(app.temps, 'au4', false)
                 app.$set(app.temps, 'au5', false)
+
+                app.$set(app.temps, 'timerino', 0)
                 
                 app.$set(app.temps, 'doganim', null)
 
@@ -288,53 +288,92 @@ html(lang="es")
                 ])
 
                 app.giro = function (dir) {
-                    s_select.play()
-                    
-
-                    let crot = app.temps.dog.r
-                    let cindex = rota.indexOf(crot)
-                    switch(dir){
-                        case 'd':
-                            if(cindex==0){
-                                app.temps.dog.r = rota[rota.length-1]
-                            } else {
-                                app.temps.dog.r = rota[cindex-1]
-                            }
-                            break
-                        case 'i':
-                            if(cindex==rota.length-1){
-                                app.temps.dog.r = rota[0]
-                            } else {
-                                app.temps.dog.r = rota[cindex+1]
-                            }
-                            break
+                    if(app.temps.timerino<1){
+                        return false
                     }
+                    if(app.temps.dog.y == 0 || app.temps.dog.y == 5){
+                        s_error.play()
+                        return false
+                    }
+                    if(dir == 'd'){
+                        if(app.temps.dog.r == 'r'){
+                            if(app.temps.dog.x < 5){
+                                app.temps.dog.x++
+                                app.timermove()
+                                s_select.play()
+                            } else {
+                                s_error.play()
+                            }
+                        } else {
+                            app.temps.dog.r = 'r'
+                            app.timermove()
+                        }
+                    } else {
+                        if(app.temps.dog.r == 'l'){
+                            if(app.temps.dog.x > 0){
+                                app.temps.dog.x--
+                                app.timermove()
+                                 s_select.play()
+                            } else {
+                                s_error.play()
+                            }
+
+                        } else {
+                            app.temps.dog.r = 'l'
+                        }
+
+                    }
+                    app.verifysteps()
                 }
 
-                app.avanza = function () {
-                    s_select.play()
-                    switch(app.temps.dog.r){
-                        case 'f':
-                            if(app.temps.dog.y==4){ return false }
-                            app.temps.dog.y++
-                            break
-                        case 'b':
-                            if(app.temps.dog.y==1){ return false }
-                            app.temps.dog.y--
-                            break
-                        case 'l':
-                            if(app.temps.dog.x==0){ return false }
-                            app.temps.dog.x--
-                            break
-                        case 'r':
-                            if(app.temps.dog.x==5){ return false }
-                            app.temps.dog.x++
-                            break
+                app.atras = function () {
+                    if(app.temps.dog.y == 0){
+                        s_error.play()
+                        return false
                     }
-
-                    //Verify steps
+                    if(app.temps.timerino<1){
+                        return false
+                    }
+                    s_select.play()
+                    if(app.temps.dog.r == 'b'){
+                        if(app.temps.dog.y>1){
+                            app.temps.dog.y--
+                            app.timermove()
+                        }
+                    } else {
+                        app.temps.dog.r = 'b'
+                        app.timermove()
+                    }
+                    app.verifysteps()
+                }
+                app.avanza = function () {
+                    if(app.temps.dog.y == 5){
+                        s_error.play()
+                        return false
+                    }
+                    if(app.temps.timerino<1){
+                        return false
+                    }
+                    s_select.play()
+                    if(app.temps.dog.r == 'f'){
+                        if(app.temps.dog.y<4){
+                            app.temps.dog.y++
+                            app.timermove()
+                        }
+                    } else {
+                        app.temps.dog.r = 'f'
+                        app.timermove()
+                    }
                     app.verifysteps()
 
+                    
+                }
+
+                app.timermove = function () {
+                    app.temps.timerino = 0
+                }
+
+                app.customanimations = function () {
                     //Custom anims
                     if(app.temps.dog.x == 0 && app.temps.dog.y == 2){
                         app.temps.doganim = 'animate__animated animate__bounce'
@@ -352,13 +391,11 @@ html(lang="es")
                         app.temps.doganim = 'animate__animated animate__shakeY'
                     } else {
                         app.temps.doganim = ''
-
                     }
-
-                    
                 }
 
                 app.verifysteps = function () {
+                    app.customanimations()
                     if(app.temps.dog.x == app.temps.answers[app.temps.step].x && app.temps.dog.y == app.temps.answers[app.temps.step].y) {
                         for(var hw in Howler._howls){Howler._howls[hw].stop()}
                         app.temps.step++
@@ -375,9 +412,10 @@ html(lang="es")
                 app.keyboard = function(e) {
                     e = e || window.event;
                     if (e.keyCode == '38') { //up
-                        app.avanza()
+                        app.atras()
                     }
                     else if (e.keyCode == '40') { //down
+                        app.avanza()
                     }
                     else if (e.keyCode == '37') { //left
                         app.giro('i')
@@ -387,7 +425,9 @@ html(lang="es")
                     }
 
                 }
-
+                setInterval(function () {
+                    app.temps.timerino++
+                }, 500 )
                 document.onkeydown = app.keyboard
 
                 app.currentScene = 0

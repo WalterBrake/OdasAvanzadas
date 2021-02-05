@@ -224,21 +224,21 @@
               <div class="dog" :class="(temps.dog.r) + ' ' + 'x'+temps.dog.x + ' ' + 'y'+temps.dog.y + ' ' + temps.doganim"><img class="w100" :src="'i/dog'+temps.dog.r+'.png'"/></div><img class="w100" src="i/bg.png"/>
               <div class="buttons">
                 <div class="row">
-                  <div class="w60">Giro izquierdo</div>
                   <div class="w40">
-                    <div class="keydown" @click="giro('i')"><img class="w100" src="i/btnLeft.svg"/></div>
+                    <div class="keydown" @click="atras"><img class="w100" src="i/btnUp.svg"/></div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="w60">Giro derecho</div>
+                  <div class="w40">
+                    <div class="keydown" @click="giro('i')"><img class="w100" src="i/btnLeft.svg"/></div>
+                  </div>
                   <div class="w40">
                     <div class="keydown" @click="giro('d')"><img class="w100" src="i/btnRight.svg"/></div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="w60">Avanzar</div>
                   <div class="w40">
-                    <div class="keydown" @click="avanza"><img class="w100" src="i/btnUp.svg"/></div>
+                    <div class="keydown" @click="avanza"><img class="w100" src="i/btnDown.svg"/></div>
                   </div>
                 </div>
               </div>
@@ -334,6 +334,8 @@
       app.$set(app.temps, 'au4', false)
       app.$set(app.temps, 'au5', false)
       
+      app.$set(app.temps, 'timerino', 0)
+      
       app.$set(app.temps, 'doganim', null)
       
       var rota = ['f', 'r', 'b', 'l']
@@ -349,53 +351,92 @@
       ])
       
       app.giro = function (dir) {
-          s_select.play()
-          
-      
-          let crot = app.temps.dog.r
-          let cindex = rota.indexOf(crot)
-          switch(dir){
-              case 'd':
-                  if(cindex==0){
-                      app.temps.dog.r = rota[rota.length-1]
-                  } else {
-                      app.temps.dog.r = rota[cindex-1]
-                  }
-                  break
-              case 'i':
-                  if(cindex==rota.length-1){
-                      app.temps.dog.r = rota[0]
-                  } else {
-                      app.temps.dog.r = rota[cindex+1]
-                  }
-                  break
+          if(app.temps.timerino<1){
+              return false
           }
+          if(app.temps.dog.y == 0 || app.temps.dog.y == 5){
+              s_error.play()
+              return false
+          }
+          if(dir == 'd'){
+              if(app.temps.dog.r == 'r'){
+                  if(app.temps.dog.x < 5){
+                      app.temps.dog.x++
+                      app.timermove()
+                      s_select.play()
+                  } else {
+                      s_error.play()
+                  }
+              } else {
+                  app.temps.dog.r = 'r'
+                  app.timermove()
+              }
+          } else {
+              if(app.temps.dog.r == 'l'){
+                  if(app.temps.dog.x > 0){
+                      app.temps.dog.x--
+                      app.timermove()
+                       s_select.play()
+                  } else {
+                      s_error.play()
+                  }
+      
+              } else {
+                  app.temps.dog.r = 'l'
+              }
+      
+          }
+          app.verifysteps()
       }
       
-      app.avanza = function () {
-          s_select.play()
-          switch(app.temps.dog.r){
-              case 'f':
-                  if(app.temps.dog.y==4){ return false }
-                  app.temps.dog.y++
-                  break
-              case 'b':
-                  if(app.temps.dog.y==1){ return false }
-                  app.temps.dog.y--
-                  break
-              case 'l':
-                  if(app.temps.dog.x==0){ return false }
-                  app.temps.dog.x--
-                  break
-              case 'r':
-                  if(app.temps.dog.x==5){ return false }
-                  app.temps.dog.x++
-                  break
+      app.atras = function () {
+          if(app.temps.dog.y == 0){
+              s_error.play()
+              return false
           }
-      
-          //Verify steps
+          if(app.temps.timerino<1){
+              return false
+          }
+          s_select.play()
+          if(app.temps.dog.r == 'b'){
+              if(app.temps.dog.y>1){
+                  app.temps.dog.y--
+                  app.timermove()
+              }
+          } else {
+              app.temps.dog.r = 'b'
+              app.timermove()
+          }
+          app.verifysteps()
+      }
+      app.avanza = function () {
+          if(app.temps.dog.y == 5){
+              s_error.play()
+              return false
+          }
+          if(app.temps.timerino<1){
+              return false
+          }
+          s_select.play()
+          if(app.temps.dog.r == 'f'){
+              if(app.temps.dog.y<4){
+                  app.temps.dog.y++
+                  app.timermove()
+              }
+          } else {
+              app.temps.dog.r = 'f'
+              app.timermove()
+          }
           app.verifysteps()
       
+          
+      }
+      
+      app.timermove = function () {
+          app.temps.timerino = 0
+      }
+      
+      app.customanimations = function () {
           //Custom anims
           if(app.temps.dog.x == 0 && app.temps.dog.y == 2){
               app.temps.doganim = 'animate__animated animate__bounce'
@@ -413,13 +454,11 @@
               app.temps.doganim = 'animate__animated animate__shakeY'
           } else {
               app.temps.doganim = ''
-      
           }
-      
-          
       }
       
       app.verifysteps = function () {
+          app.customanimations()
           if(app.temps.dog.x == app.temps.answers[app.temps.step].x && app.temps.dog.y == app.temps.answers[app.temps.step].y) {
               for(var hw in Howler._howls){Howler._howls[hw].stop()}
               app.temps.step++
@@ -436,9 +475,10 @@
       app.keyboard = function(e) {
           e = e || window.event;
           if (e.keyCode == '38') { //up
-              app.avanza()
+              app.atras()
           }
           else if (e.keyCode == '40') { //down
+              app.avanza()
           }
           else if (e.keyCode == '37') { //left
               app.giro('i')
@@ -448,7 +488,9 @@
           }
       
       }
-      
+      setInterval(function () {
+          app.temps.timerino++
+      }, 500 )
       document.onkeydown = app.keyboard
       
       app.currentScene = 0
