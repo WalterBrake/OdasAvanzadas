@@ -1,0 +1,120 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Leo textos informativos'
+mixin infobutton
+    button(@click="$refs.notapopup.open()").button.mt-auto
+        img(src="i/panda.png").w20
+        p Ver texto informativo
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .dialogaudio {
+                position: relative;
+            }
+            .dialogaudio .audiotextBtn {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+
+            // SCENES
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="¡Vamos a leer un texto informativo!" textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.panda.play()")
+                activity
+                    .row.w100.text-center
+                        dialogaudio(ref="panda" audio="s/panda.mp3" :autoplay="false" always-visible @completed="temps.au1 = true")
+                            img(src="i/panda.png").w80.ws100
+                    .row.w100(v-if="temps.au1"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Siguiente
+            
+            // SCENES 2
+            template(v-for="(i, index) in temps.preguntas")
+                scene(v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                    info(type="seleccionar" title=title text="¡Veamos que aprendiste del oso panda! Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="index == 0 ? true : false" @completedinstructions="playfirst(index)")
+                        +infobutton
+                    activity
+                        .row.w100.text-center
+                            .h4: audiotext(ref="p1" :autoplay="index == 0 ? false : true" :audio="'s/p'+(index+1)+'.mp3'" :text="i.pregunta")
+                        .row.w100.wrap.mt-1: .row.wrap.around.text-center
+                            clickable(v-for="(ii, iindex) in i.opciones" :key="'p'+index+iindex" :isok="iindex == i.respuesta" simple-ok initclass="pa-1 w100"): number(randomc smaller) {{ii}}
+            
+            // END
+            scene(v-if="currentScene==8" :key="'lastframe'" end-scene :final-data="finalData")
+        
+            popup(ref="notapopup" :conf="['10%', '10%', '80%', '80%']" c="1")
+                .text-center
+                    dialogaudio(ref="nota" audio="s/panda.mp3" :autoplay="false" always-visible)
+                        img(src="i/panda.png").w80.ws100
+
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'au1', false)
+                app.$set(app.temps, 'preguntas', [
+                    {
+                        pregunta: '¿Cómo es físicamente el oso panda?', 
+                        opciones: [
+                            'De color blanco con manchas cafés oscuras en las orejas y la cola.',
+                            'De color blanco con partes negras en sus ojos, orejas, patas y hombros.',
+                            'De color negro con partes blancas en sus ojos, orejas, patas y hombros.'
+                        ],
+                        respuesta: 1
+                    },
+                    {
+                        pregunta: '¿Hasta cuánto llega a pesar el oso panda?', 
+                        opciones: [
+                            'Hasta 130 kg.','Hasta 100 kg.','Hasta 150 Kg.'
+                        ],
+                        respuesta: 2
+                    },
+                    {
+                        pregunta: '¿Qué come el oso panda?', 
+                        opciones: [
+                            'Come roedores, insectos y plantas.',
+                            'Come plantas, bambú y, algunas veces, roedores.',
+                            'Come bambú, insectos, plantas y roedores.'
+                        ],
+                        respuesta: 2
+                    },
+                    {
+                        pregunta: '¿Qué crees que pasaría si el oso panda viviera en un lugar frío?', 
+                        opciones: [
+                            'Podría morir por falta de alimento.','Podría correr más rápido porque vive en lugares fríos.','Podría trepar a los árboles y conseguir bambú.'
+                        ],
+                        respuesta: 0
+                    },
+                    {
+                        pregunta: '¿Cuánto mide el oso panda aproximadamente?', 
+                        opciones: [
+                            'Puede llegar a medir 170 cm de largo más 15 cm de la cola.','Puede llegar a medir 150 cm de largo más 10 o 15 cm de la cola.','Puede llegar a medir 150 cm de largo más 10 o 20 cm de la cola.'
+                        ],
+                        respuesta: 1
+                    },
+                    {
+                        pregunta: '¿Dónde vive el oso panda?', 
+                        opciones: [
+                            'En los bosques templados del suroeste de China.','En los bosques fríos del suroeste de China.','En los bosques templados del noroeste de China. '
+                        ],
+                        respuesta: 0
+                    },
+                ])
+
+                app.playfirst = function (indx) {
+                    if(indx == 0 ){
+                        app.$refs.p1[0].play()
+                    }
+                }
+                
+                app.currentScene = 6
+                app.scenesCount = app.temps.preguntas.length

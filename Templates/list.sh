@@ -4,7 +4,7 @@
 #done
 
 
-for value in ../CM1T3/231 ../CM2T3/294 ../ES1T3/71 ../GE4T3/247 ../MA1T3/174 ../MA5T3/154 ../HI5T3/281
+for value in ../ES2T3/117 ../ES2T3/115 ../MA4T3/163 ../HI4T3/284 ../ES6T3/78 ../ES6T3/75
 do
     echo $value
     cp -R tempPug/ $value

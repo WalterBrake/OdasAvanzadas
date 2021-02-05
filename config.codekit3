@@ -444,16 +444,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/assets\/modulos\/dialog.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/assets\/modulos\/dialog-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/assets\/modulos\/dialogaudio.js": {
 		"ft": 64,
 		"ma": 0,
@@ -9475,6 +9465,112 @@
 		"oAP": "\/ES2T2\/84\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES2T3\/115\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/index.html",
+		"oF": 0
+		},
+	"\/ES2T3\/115\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES2T3\/117\/i\/panda.png": {
+		"ft": 32768,
+		"iS": 945624,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/i\/panda.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/117\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/index.html",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES2T3\/117\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p1.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p2.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p3.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p4.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p5.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/p6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/p6.mp3",
+		"oF": 0
+		},
+	"\/ES2T3\/117\/s\/panda.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/117\/s\/panda.mp3",
+		"oF": 0
+		},
 	"\/ES2T3\/95\/i\/v1.mp4": {
 		"cB": 0,
 		"ft": 8192,
@@ -12966,6 +13062,38 @@
 		"oAP": "\/ES6T3\/70\/s\/p5.mp3",
 		"oF": 0
 		},
+	"\/ES6T3\/75\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/index.html",
+		"oF": 0
+		},
+	"\/ES6T3\/75\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES6T3\/78\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/78\/index.html",
+		"oF": 0
+		},
+	"\/ES6T3\/78\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES6T3\/78\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -14102,6 +14230,22 @@
 		"oA": 0,
 		"oAP": "\/HI4T2\/272\/s\/verde.mp3",
 		"oF": 0
+		},
+	"\/HI4T3\/284\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/index.html",
+		"oF": 0
+		},
+	"\/HI4T3\/284\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/index.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/HI5T1\/256\/aimg\/barco.svg": {
 		"ft": 2097152,
@@ -23599,6 +23743,22 @@
 		"oA": 0,
 		"oAP": "\/MA4T2\/147\/s\/instruccion2.mp3",
 		"oF": 0
+		},
+	"\/MA4T3\/163\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/163\/index.html",
+		"oF": 0
+		},
+	"\/MA4T3\/163\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA4T3\/163\/index.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {
 		"ft": 2097152,
