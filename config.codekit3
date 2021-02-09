@@ -9481,6 +9481,13 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES2T3\/115\/s\/Completo palabras Es 2o T3_Inst_Selecciona.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/s\/Completo palabras Es 2o T3_Inst_Selecciona.wav",
+		"oF": 0
+		},
 	"\/ES2T3\/117\/i\/panda.png": {
 		"ft": 32768,
 		"iS": 945624,
@@ -13078,6 +13085,34 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst1.wav",
+		"oF": 0
+		},
+	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst2.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst2.wav",
+		"oF": 0
+		},
+	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst3.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst3.wav",
+		"oF": 0
+		},
+	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Intro.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Intro.wav",
+		"oF": 0
+		},
 	"\/ES6T3\/78\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13093,6 +13128,13 @@
 		"oAP": "\/ES6T3\/78\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/ES6T3\/78\/s\/Repaso los elementos de un poema Es6°T3 _Inst1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES6T3\/78\/s\/Repaso los elementos de un poema Es6°T3 _Inst1.wav",
+		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
@@ -14246,6 +14288,13 @@
 		"oAP": "\/HI4T3\/284\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/HI4T3\/284\/s\/Conozco al Siervo de la Nación Hi4°T3_Inst1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/s\/Conozco al Siervo de la Nación Hi4°T3_Inst1.wav",
+		"oF": 0
 		},
 	"\/HI5T1\/256\/aimg\/barco.svg": {
 		"ft": 2097152,
@@ -23760,6 +23809,13 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/MA4T3\/163\/s\/Estimo medidas de una superficie Ma4°T3_Inst.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/163\/s\/Estimo medidas de una superficie Ma4°T3_Inst.wav",
+		"oF": 0
+		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -25730,6 +25786,162 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T2\/145\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/index.html",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_1.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_10.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_10.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_11.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_11.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_12.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_12.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_13.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_13.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_14.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_14.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_2.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_2.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_3.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_3.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_4.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_4.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_5.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_5.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_6.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_6.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_7.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_7.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_8.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_8.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_9.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_9.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst1.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst1.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst2.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst2.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst3.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst3.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst4.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst4.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst5.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst5.wav",
+		"oF": 0
+		},
+	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst6.wav": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst6.wav",
 		"oF": 0
 		},
 	"\/readme": {
