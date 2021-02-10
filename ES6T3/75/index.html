@@ -3,27 +3,260 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco el correo electrónico</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drop {
+          min-height: 60px;
+          background: #fff;
+          margin: 4px;
+          border-radius: 6px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 0.8rem;
+          padding: 6px;
+          box-sizing: border-box;
+          min-width: 120px;
+      }
+      .drop .number {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .drop.okdrop {
+          background: #1595FF;
+          box-shadow: 4px 4px 0 #1457CF;
+      }
+      .drop.okdrop .number {
+          left: unset;
+          bottom: unset;
+          background: #fff;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          top: -5px;
+          right: -5px;
+          font-size: 0.6rem !important;
+          text-shadow: none;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 6px;
+          max-width: 30%;
+      }
+      .drag div {
+          background: #fff;
+          padding: 4px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 680px) {
+          .drag div {
+              font-size: 0.6rem;
+          }
+      }
+      .drop:not(.okdrop){
+          border: 2px dashed #f5f5f5;
+      }
+      .sc_2 .dropss {
+          align-items: unset;
+      }
+      .sc_2 .drop {
+          height: 100%;
+          flex-direction: column;
+      }
+      .sc_2 .drop div {
+          background: #fff;
+          color: #1457CF;
+          padding: 6px;
+          border-radius: 6px;
+          margin: 4px;
+      }
+      .email .head {
+          background: #454948;
+          color: #fff;
+          text-align: center;
+      }
+      @media (max-width: 680px) {
+          .email .head {
+              font-size: 0.6rem;
+          }
+      }
+      .email .body {
+          padding: 2px 10px;
+          background: #fff;
+          box-sizing: border-box;
+          justify-content: flex-start;
+      }
+      .email .body .tag {
+          background: #f0f0f0;
+          color: #444;
+          padding: 2px 4px;
+          font-size: 0.8rem;
+          margin-right: 6px;
+          border-radius: 4px;
+      }
+      @media (max-width: 680px) {
+          .email .body .tag {
+              font-size: 0.5rem;
+          }
+      }
+      .email .body .txt {
+          font-size: 0.9rem;
+      }
+      @media (max-width: 680px) {
+          .email .body .txt {
+              font-size: 0.6rem;
+          }
+      }
+      .email .body .drp {
+          margin-left: auto;
+      }
+      .email .body .drp .drop {
+          background: #F1E7E1;
+          width: 100%;
+          min-height: 30px;
+      }
+      @media (max-width: 680px) {
+          .email .body .drp .drop {
+              min-height: 20px;
+              padding: 2px;
+              border-radius: 2px;
+          }
+      }
+      .email .body .drp .drop.okdrop {
+          background: #83C786;
+          font-size: 0.7rem;
+          box-shadow: 3px 3px 0 #C5E5C5;
+      }
+      @media (max-width: 680px) {
+          .email .body .drp .drop.okdrop {
+              font-size: 0.4rem;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="dragdrop" title="Conozco el correo electrónico" text="El correo electrónico es una forma de comunicación casi diaria hoy en día, tanto en el entorno escolar como de trabajo." textaudio="s/intro.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion1.mp3" text="Ordena los pasos para crear una cuenta de correo electrónico, colócalos en las cajas numeradas."></audiotext>
+        </info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w20 animate__animated animate__bounce"><img class="w100" src="i/a1.png"/></div>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in 6">
+              <div class="drop w30" :data="i" droptimes="untilok">
+                <number c="1" smaller="smaller">{{i}}</number>
+              </div>
+            </template>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.n" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="okdrop">
+                <div>{{i.t}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Conozco el correo electrónico" text="Coloca en la caja, las cinco recomendaciones para el momento de crear una cuenta de correo electrónico." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 dropss wrap">
+            <div class="w30 ws60 animate__animated animate__bounce"><img class="w100" src="i/a2.png"/></div>
+            <div class="w50 ws60">
+              <div class="drop" data="ok" droptimes="multiple"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <template v-for="(i, index) in temps.b">
+              <drag :data="i.n" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="okdrop">
+                <div>{{i.t}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Conozco el correo electrónico" text=" Observa el mensaje de correo electrónico y coloca los elementos a los que corresponde cada parte de éste." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="email w80 ws100">
+              <div class="head row w100">
+                <div class="w20">&nbsp;</div>
+                <div class="w60">Mensaje nuevo</div>
+                <div class="w20"><img class="w100" src="i/controls.png"/></div>
+              </div>
+              <div class="body row w100">
+                <div class="tag">Para:</div>
+                <div class="txt">bsalgado2020@mail.net</div>
+                <div class="drp">
+                  <div class="drop" :data="1" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="body row w100">
+                <div class="tag">De:</div>
+                <div class="txt">director@mail.net</div>
+                <div class="drp">
+                  <div class="drop" :data="2" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="body row w100">
+                <div class="tag">Asunto:</div>
+                <div class="txt">Petición de beca</div>
+                <div class="drp">
+                  <div class="drop" :data="3" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="body row w100">
+                <div class="txt">Estimado director del Colegio Montenegro, le escribo esta carta para pedirle que me considere para concursar por la beca de desempeño que ofrece el colegio. He tenido buenas calificaciones en el último año escolar.<br/>Espero su pronta respuesta por este medio y le agradezco el tiempo que se ha tomado para leer este correo.<br/>Saludos.</div>
+                <div class="drp">
+                  <div class="drop" :data="4" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="body row w100">
+                <div class="txt">José Vázquez<br/>Alumno de 6o grado</div>
+                <div class="drp">
+                  <div class="drop" :data="5" droptimes="untilok"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <template v-for="(i, index) in temps.c">
+              <drag :data="i.n" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="okdrop">
+                <div>{{i.t}}</div>
+              </drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +291,41 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', false)
       
+      app.$set(app.temps, 'a', [
+          {n: 4, t: 'Llenar el formulario con datos personales.'},
+          {n: 8, t: 'Descargar el programa de correo.'},
+          {n: 3, t: 'Ir a Crear cuenta/Registrar usuario.'},
+          {n: 6, t: 'Elegir contraseña.'},
+          {n: 2, t: 'Entrar a la plataforma de servicio de correo electrónico.'},
+          {n: 5, t: 'Elegir dirección de correo.'},
+          {n: 1, t: 'Ir a Internet.'},
+          {n: 7, t: 'Escribir el domicilio.'},
+      ])
+      app.$set(app.temps, 'b', [
+          {n: 'no', t: 'Elegir una dirección de correo de 30 caracteres.'},
+          {n: 'ok', t: 'Elegir una dirección de correo sencilla y seria.'},
+          {n: 'ok', t: 'Elegir una contraseña sencilla de recordar pero segura.'},
+          {n: 'ok', t: 'Usar mayúsculas, minúsculas, números y símbolos en la contraseña.'},
+          {n: 'no', t: 'Pagar con tarjeta de crédito.'},
+          {n: 'ok', t: 'Registrar una cuenta de correo alterna en caso de problemas con la que se generó.'},
+          {n: 'no', t: 'Elegir la fecha de nacimiento como contraseña.'},
+          {n: 'ok', t: 'Evitar colocar la fecha de nacimiento en la dirección de correo.'},
+      ])
+      
+      app.$set(app.temps, 'c', [
+          {n: 1, t: 'Dirección de correo electrónico de remitente.'},
+          {n: 2, t: 'Dirección  de correo electrónico de destinatario.'},
+          {n: 3, t: 'Enunciado de lo que trata el mensaje.'},
+          {n: 4, t: 'Mensaje.'},
+          {n: 5, t: 'Despedida.'},
+          {n: 6, t: 'Firma.'},
+          {n: 7, t: 'Sello digital.'},
+          {n: 8, t: 'Edad del destinatario.'},
+      ])
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 3
     </script>
   </body>
 </html>

@@ -13069,6 +13069,39 @@
 		"oAP": "\/ES6T3\/70\/s\/p5.mp3",
 		"oF": 0
 		},
+	"\/ES6T3\/75\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 26697,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/75\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 53155,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES6T3\/75\/i\/controls.png": {
+		"ft": 32768,
+		"iS": 8098,
+		"oA": 0,
+		"oAP": "\/ES6T3\/75\/i\/controls.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES6T3\/75\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13085,32 +13118,32 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst1.wav": {
+	"\/ES6T3\/75\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst1.wav",
+		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst1.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst2.wav": {
+	"\/ES6T3\/75\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst2.wav",
+		"oAP": "\/ES6T3\/75\/s\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst3.wav": {
+	"\/ES6T3\/75\/s\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Inst3.wav",
+		"oAP": "\/ES6T3\/75\/s\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Intro.wav": {
+	"\/ES6T3\/75\/s\/intro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES6T3\/75\/s\/Conozco el correo electrónico Es6°T3_Intro.wav",
+		"oAP": "\/ES6T3\/75\/s\/intro.mp3",
 		"oF": 0
 		},
 	"\/ES6T3\/78\/index.html": {
@@ -23864,11 +23897,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA4T3\/163\/s\/instruccion1.wav": {
+	"\/MA4T3\/163\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/163\/s\/instruccion1.wav",
+		"oAP": "\/MA4T3\/163\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {
