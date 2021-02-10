@@ -3,23 +3,84 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Repaso los elementos de un poema</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .ex1 {
+          justify-content: space-between;
+          font-size: 0.9rem;
+      }
+      .box {
+          background: #F3891E;
+          color: #fff;
+          font-size: 1.1rem;
+          font-weight: bold;
+          padding: 10px 6px;
+          border-radius: 2px 20px 20px 2px;
+          margin: 4px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .box .drag {
+          width: auto;
+          height: auto;
+      }
+      @media (max-width: 680px) {
+          .box {
+              font-size: 0.8rem;
+          }
+      }
+      .drop {
+          background: #fff;
+          padding: 4px 6px;
+          border-radius: 4px;
+          margin: 10px 4px;
+      }
+      .drop.hover {
+          background: var(--accent);
+      }
+      @media (max-width: 680px) {
+          .drop {
+              font-size: 0.8rem;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="relacionar" title="Repaso los elementos de un poema" text="Recordemos los elementos de un poema, relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 ex1">
+            <div class="w30">
+              <template v-for="(i, index) in temps.a">
+                <div class="box">
+                  <div>{{i.t}}</div>
+                  <drag ref="as" :data="i.d" dropzone=".drop" extval="extval" drag-line="drag-line" particle-color="#F3891E">
+                    <div class="conector" :class="'c'+(index+1)"></div>
+                  </drag>
+                </div>
+              </template>
+            </div>
+            <div class="w40">
+              <template v-for="(i, index) in temps.b">
+                <div class="drop" :data="i.d" droptimes="untilok">{{i.t}}</div>
+              </template>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['as'], 8)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -58,7 +119,28 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {d: 3, t:'Estrofa'},
+          {d: 7, t:'Verso'},
+          {d: 4, t:'Rima asonante'},
+          {d: 1, t:'Métrica'},
+          {d: 6, t:'Verso libre'},
+          {d: 8, t:'Rima consonante'},
+          {d: 2, t:'Soneto'},
+          {d: 5, t:'Sinalefa'}
+      ])
+      
+      app.$set(app.temps, 'b', [
+          {d:1, t:'Número de sílabas en un verso'},
+          {d:2, t:'Se compone de dos cuartetos y dos tercetos con once sílabas cada verso.'},
+          {d:3, t:'Conjunto de versos.'},
+          {d:4, t:'Es cuando al final de los versos las palabras suenan repetidas en las vocales.'},
+          {d:5, t:'Unión de vocales que se juntan en un verso.'},
+          {d:6, t:'Exige ritmo, pero no rima ni tiene métrica.'},
+          {d:7, t:'Enunciado o conjunto de palabras que forma la unidad del poema, sujeto a ritmo, rima y métrica.'},
+          {d:8, t:'Es cuando al final de los versos en las palabras se repiten consonantes y vocales.'},
+      ])
+      
       
       app.currentScene = 0
       app.scenesCount = 1

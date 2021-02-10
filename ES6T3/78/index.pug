@@ -1,12 +1,51 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Repaso los elementos de un poema'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .ex1 {
+                justify-content: space-between;
+                font-size: 0.9rem;
+            }
+            .box {
+                background: #F3891E;
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: bold;
+                padding: 10px 6px;
+                border-radius: 2px 20px 20px 2px;
+                margin: 4px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .box .drag {
+                width: auto;
+                height: auto;
+            }
+            @media (max-width: 680px) {
+                .box {
+                    font-size: 0.8rem;
+                }
+            }
+            .drop {
+                background: #fff;
+                padding: 4px 6px;
+                border-radius: 4px;
+                margin: 10px 4px;
+            }
+            .drop.hover {
+                background: var(--accent);
+            }
+            @media (max-width: 680px) {
+                .drop {
+                    font-size: 0.8rem;
+                }
+            }
 
 
     body
@@ -15,12 +54,20 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Recordemos los elementos de un poema, relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
-            
+                    .row.w100.ex1
+                        .w30
+                            template(v-for="(i, index) in temps.a")
+                                .box
+                                    div {{i.t}}
+                                    drag(ref="as" :data="i.d" dropzone=".drop" extval drag-line particle-color="#F3891E"): .conector(:class="'c'+(index+1)")
+                        .w40
+                            template(v-for="(i, index) in temps.b")
+                                .drop(:data="i.d" droptimes="untilok") {{i.t}}
+                    .text-center: button(@click="dragValidation(['as'], 8)").button.big.animate__animated.animate__flip Verificar
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -28,7 +75,28 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {d: 3, t:'Estrofa'},
+                    {d: 7, t:'Verso'},
+                    {d: 4, t:'Rima asonante'},
+                    {d: 1, t:'Métrica'},
+                    {d: 6, t:'Verso libre'},
+                    {d: 8, t:'Rima consonante'},
+                    {d: 2, t:'Soneto'},
+                    {d: 5, t:'Sinalefa'}
+                ])
+
+                app.$set(app.temps, 'b', [
+                    {d:1, t:'Número de sílabas en un verso'},
+                    {d:2, t:'Se compone de dos cuartetos y dos tercetos con once sílabas cada verso.'},
+                    {d:3, t:'Conjunto de versos.'},
+                    {d:4, t:'Es cuando al final de los versos las palabras suenan repetidas en las vocales.'},
+                    {d:5, t:'Unión de vocales que se juntan en un verso.'},
+                    {d:6, t:'Exige ritmo, pero no rima ni tiene métrica.'},
+                    {d:7, t:'Enunciado o conjunto de palabras que forma la unidad del poema, sujeto a ritmo, rima y métrica.'},
+                    {d:8, t:'Es cuando al final de los versos en las palabras se repiten consonantes y vocales.'},
+                ])
+
                 
                 app.currentScene = 0
                 app.scenesCount = 1
