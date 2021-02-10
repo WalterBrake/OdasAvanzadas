@@ -29,7 +29,7 @@ html(lang="es")
             }
             @media (max-width: 680px) {
                 .box {
-                    font-size: 0.8rem;
+                    font-size: 0.7rem;
                 }
             }
             .drop {
@@ -43,7 +43,7 @@ html(lang="es")
             }
             @media (max-width: 680px) {
                 .drop {
-                    font-size: 0.8rem;
+                    font-size: 0.5rem;
                 }
             }
 
@@ -58,7 +58,7 @@ html(lang="es")
                 info(type="relacionar" title=title text="Recordemos los elementos de un poema, relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.ex1
-                        .w30
+                        .w30.ws50
                             template(v-for="(i, index) in temps.a")
                                 .box
                                     div {{i.t}}
