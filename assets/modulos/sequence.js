@@ -1,5 +1,5 @@
 Vue.component('sequence', {
-    props: ['options', 'initclass', 'autoplay', 'noNav', 'useVif'],
+    props: ['options', 'initclass', 'autoplay', 'noNav', 'useVif', 'dots', 'arrows'],
     data () {
         return {
             current: 0
@@ -48,6 +48,15 @@ Vue.component('sequence', {
                 <button class="button" v-if="current==0" disabled>Atras</button>
                 <!--navigations-->
                 <button class="button big" v-if="current>0" @click="atras">Atras</button>
+
+
+                <div class="sequence_nav_dots" v-if="dots!=undefined">
+                    <div
+                        v-for="(i, index) in options.length" 
+                        :class="'dot ' + (index==current?'active animate__animated animate__rubberBand':'animate__animated animate__bounce')" 
+                        @click="current = index"
+                    ></div>
+                </div>
 
 
                 <!-- #### adelante --->

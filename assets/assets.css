@@ -1215,6 +1215,26 @@ embed {
   background: #f5f5f5;
   color: #aaa !important;
 }
+.sequence .sequence_nav .sequence_nav_dots {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+.sequence .sequence_nav .sequence_nav_dots .dot {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: var(--sec);
+  border-radius: 50%;
+  margin: 0 6px;
+}
+.sequence .sequence_nav .sequence_nav_dots .dot.active {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  background: var(--accent);
+}
+.sequence .sequence_nav .sequence_nav_dots .dot:hover {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
 /* FONTS SIZES */
 .h1 {
   font-size: 3rem;

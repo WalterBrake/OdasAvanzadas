@@ -3,13 +3,30 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco al Siervo de la Nación</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .infow {
+          background: #D6EDE6;
+          border-radius: 10px;
+          padding-top: 10px;
+      }
+      .sequence .sequence_nav {
+          align-items: center;
+      }
+      .sequence .sequence_nav .button {
+          font-size: 0.8rem;
+      }
+      .sequence .sequence_nav .button.big {
+          font-size: 0.8rem;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
@@ -17,13 +34,116 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Conozco al Siervo de la Nación" text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 text-center column infow">
+            <div class="w60"><img class="w100" src="i/title.png"/></div>
+            <div class="w80 ws100">
+              <sequence :options="temps.etapas" ref="etapas" :autoplay="true" dots="dots">
+                <template v-slot:option="{option}"><img class="w100" :src="'i/'+option.img+'.png'"/></template>
+              </sequence>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿En qué etapa del movimiento de Independencia participó Morelos?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['En la cuarta etapa.','En la quinta etapa.','En la segunda etapa.']" key="p1" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco al Siervo de la Nación" text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center column infow">
+            <div class="w60"><img class="w100" src="i/title.png"/></div>
+            <div class="w80 ws100">
+              <sequence :options="temps.etapas" ref="etapas" :autoplay="true" dots="dots">
+                <template v-slot:option="{option}"><img class="w100" :src="'i/'+option.img+'.png'"/></template>
+              </sequence>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Qué otros insurgentes  participaron en la segunda etapa?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Vicente Guerrero y Miguel Hidalgo.','Félix M. Calleja y Miguel Bravo.','Mariano Matamoros y Vicente Guerrero.']" key="p2" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco al Siervo de la Nación" text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center column infow">
+            <div class="w60"><img class="w100" src="i/title.png"/></div>
+            <div class="w80 ws100">
+              <sequence :options="temps.etapas" ref="etapas" :autoplay="true" dots="dots">
+                <template v-slot:option="{option}"><img class="w100" :src="'i/'+option.img+'.png'"/></template>
+              </sequence>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Qué documento se redactó en el Congreso de Chilpancingo?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Constitución de Chilpancingo.','Constitución de Apatzingán.','Constitución de Morelos.']" key="p3" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco al Siervo de la Nación" text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center column infow">
+            <div class="w60"><img class="w100" src="i/title.png"/></div>
+            <div class="w80 ws100">
+              <sequence :options="temps.etapas" ref="etapas" :autoplay="true" dots="dots">
+                <template v-slot:option="{option}"><img class="w100" :src="'i/'+option.img+'.png'"/></template>
+              </sequence>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Cuál fue una de las aportaciones escritas de Morelos?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['El documento Sentimientos de la Nación.','Decálogo de los Sentimientos de la Nación.','La novela Sentimientos de la Nación.']" key="p4" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco al Siervo de la Nación" text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center column infow">
+            <div class="w60"><img class="w100" src="i/title.png"/></div>
+            <div class="w80 ws100">
+              <sequence :options="temps.etapas" ref="etapas" :autoplay="true" dots="dots">
+                <template v-slot:option="{option}"><img class="w100" :src="'i/'+option.img+'.png'"/></template>
+              </sequence>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Cómo se le llamó a Morelos después del Congreso de Chilpancingo?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Alteza Serenísima.','Siervo de la Nación.','Padre de la Patria.']" key="p5" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -59,6 +179,13 @@
     <script>
       app.$devmode = false
       app.$set(app.temps, 'a', [])
+      
+      app.$set(app.temps, 'etapas', [
+          {img: '1a',},
+          {img: '2a'},
+          {img: '3a'},
+          {img: '4a'},
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
