@@ -38,7 +38,7 @@ html(lang="es")
                             template(v-slot:option="{option}"): img(:src="'i/'+option.img+'.png'").w100
                     .w100.mt-1.text-center
                         .h4 ¿En qué etapa del movimiento de Independencia participó Morelos?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['En la cuarta etapa.','En la quinta etapa.','En la segunda etapa.']" key="p1" :isok="index == 2" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['En la cuarta etapa.','En la quinta etapa.','En la segunda etapa.']" :key="'p1'+index" :isok="index == 2" simple-ok initclass=""): number(randomc smaller) {{i}}
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
@@ -49,7 +49,7 @@ html(lang="es")
                             template(v-slot:option="{option}"): img(:src="'i/'+option.img+'.png'").w100
                     .w100.mt-1.text-center
                         .h4 ¿Qué otros insurgentes  participaron en la segunda etapa?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['Vicente Guerrero y Miguel Hidalgo.','Félix M. Calleja y Miguel Bravo.','Mariano Matamoros y Vicente Guerrero.']" key="p2" :isok="index == 2" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Vicente Guerrero y Miguel Hidalgo.','Félix M. Calleja y Miguel Bravo.','Mariano Matamoros y Vicente Guerrero.']" :key="'p2'+index" :isok="index == 2" simple-ok initclass=""): number(randomc smaller) {{i}}
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
@@ -60,7 +60,7 @@ html(lang="es")
                             template(v-slot:option="{option}"): img(:src="'i/'+option.img+'.png'").w100
                     .w100.mt-1.text-center
                         .h4 ¿Qué documento se redactó en el Congreso de Chilpancingo?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['Constitución de Chilpancingo.','Constitución de Apatzingán.','Constitución de Morelos.']" key="p3" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Constitución de Chilpancingo.','Constitución de Apatzingán.','Constitución de Morelos.']" :key="'p3'+index" :isok="index == 1" simple-ok initclass=""): number(randomc smaller) {{i}}
             // SCENES
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
@@ -71,7 +71,7 @@ html(lang="es")
                             template(v-slot:option="{option}"): img(:src="'i/'+option.img+'.png'").w100
                     .w100.mt-1.text-center
                         .h4 ¿Cuál fue una de las aportaciones escritas de Morelos?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['El documento Sentimientos de la Nación.','Decálogo de los Sentimientos de la Nación.','La novela Sentimientos de la Nación.']" key="p4" :isok="index == 0" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['El documento Sentimientos de la Nación.','Decálogo de los Sentimientos de la Nación.','La novela Sentimientos de la Nación.']" :key="'p4'+index" :isok="index == 0" simple-ok initclass=""): number(randomc smaller) {{i}}
             // SCENES
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Lee la información de las etapas de la guerra de Independencia y selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false")
@@ -82,7 +82,7 @@ html(lang="es")
                             template(v-slot:option="{option}"): img(:src="'i/'+option.img+'.png'").w100
                     .w100.mt-1.text-center
                         .h4 ¿Cómo se le llamó a Morelos después del Congreso de Chilpancingo?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['Alteza Serenísima.','Siervo de la Nación.','Padre de la Patria.']" key="p5" :isok="index == 1" simple-ok initclass="pa-1"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Alteza Serenísima.','Siervo de la Nación.','Padre de la Patria.']" :key="'p5'+index" :isok="index == 1" simple-ok initclass=""): number(randomc smaller) {{i}}
 
             
             // END
