@@ -14273,6 +14273,50 @@
 		"oAP": "\/HI4T2\/272\/s\/verde.mp3",
 		"oF": 0
 		},
+	"\/HI4T3\/284\/i\/1a.png": {
+		"ft": 32768,
+		"iS": 465502,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/i\/1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T3\/284\/i\/2a.png": {
+		"ft": 32768,
+		"iS": 1250967,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/i\/2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T3\/284\/i\/3a.png": {
+		"ft": 32768,
+		"iS": 293554,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/i\/3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI4T3\/284\/i\/4a.png": {
+		"ft": 32768,
+		"iS": 312359,
+		"oA": 0,
+		"oAP": "\/HI4T3\/284\/i\/4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/HI4T3\/284\/i\/title.png": {
 		"ft": 32768,
 		"iS": 143348,
@@ -23820,11 +23864,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA4T3\/163\/s\/Estimo medidas de una superficie Ma4°T3_Inst.wav": {
+	"\/MA4T3\/163\/s\/instruccion1.wav": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/163\/s\/Estimo medidas de una superficie Ma4°T3_Inst.wav",
+		"oAP": "\/MA4T3\/163\/s\/instruccion1.wav",
 		"oF": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {

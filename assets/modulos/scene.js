@@ -37,7 +37,7 @@ Vue.component('scene', {
         }
     },
     template: `
-        <section class="scene" v-if="appearok" ref="sceneac">
+        <section :class="'scene ' + 'sc_'+$parent.currentScene" v-if="appearok" ref="sceneac">
             <div v-if="startScene!=undefined" class="startScene">
                 <button @click="comenzarFn" :disabled="comenzarBtnClicked" class="button">comenzar</button>
             </div>

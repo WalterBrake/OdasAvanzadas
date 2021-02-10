@@ -1,12 +1,124 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Estimo medidas de una superficie'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .sceneCompletedCalled {
+                position: absolute;
+                z-index: 0;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #000;
+            }
+            .sceneCompletedCalled.on {
+                transition: transform 0.5s;
+                transform: scale(100);
+            }
+            .cuadricula {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-wrap: wrap;
+                background: #fff;
+                margin: 0 auto;
+                border-radius: 4px;
+                box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+                border: 2px solid var(--c1);
+            }
+            .cuadricula.x4 {
+                width: 160px;
+            }
+            .cuadricula.x5 {
+                width: 200px;
+            }
+            .cuadricula.x6 {
+                width: 240px;
+            }
+            .cuadricula.x7 {
+                width: 280px;
+            }
+            .cuadricula.x8 {
+                width: 320px;
+            }
+            .cuadricula.y3 {
+                height: 120px;
+            }
+            .cuadricula.y4 {
+                height: 160px;
+            }
+            .cuadricula.y5 {
+                height: 200px;
+            }
+            .cuadricula.y6 {
+                height: 240px;
+            }
+            .cuadricula.y7 {
+                height: 280px;
+            }
+            .cuadricula.y8 {
+                height: 320px;
+            }
+            .cuadricula .drop,
+            .cuadricula .box {
+                box-sizing: border-box;
+                width: 40px;
+                height: 40px;
+                border: 1px solid #ccc;
+                background: #fff;
+            }
+            .cuadricula .drop.coloreado,
+            .cuadricula .box.coloreado,
+            .cuadricula .drop .okdrop,
+            .cuadricula .box .okdrop {
+                background: var(--clear);
+            }
+            .drag {
+                width: 40px;
+                height: 40px;
+                background: var(--clear);
+            }
+            .sc_1 .box.coloreado,
+            .sc_1 .drop.okdrop,
+            .sc_1 .drag,
+            .sc_1 .sceneCompletedCalled {
+                background: #FD99EA;
+            }
+            .sc_2 .box.coloreado,
+            .sc_2 .drop.okdrop,
+            .sc_2 .drag,
+            .sc_2 .sceneCompletedCalled {
+                background: #FFC100;
+            }
+            .sc_3 .box.coloreado,
+            .sc_3 .drop.okdrop,
+            .sc_3 .drag,
+            .sc_3 .sceneCompletedCalled {
+                background: #91D051;
+            }
+            .sc_4 .box.coloreado,
+            .sc_4 .drop.okdrop,
+            .sc_4 .drag,
+            .sc_4 .sceneCompletedCalled {
+                background: #A742C6;
+            }
+            .sc_5 .box.coloreado,
+            .sc_5 .drop.okdrop,
+            .sc_5 .drag,
+            .sc_5 .sceneCompletedCalled {
+                background: #7E5F01;
+            }
+            .sc_6 .box.coloreado,
+            .sc_6 .drop.okdrop,
+            .sc_6 .drag,
+            .sc_6 .sceneCompletedCalled {
+                background: #00B0F0;
+            }
+
 
 
     body
@@ -15,14 +127,117 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
                     .row.w100
+                        number(c=1 small) Área = 6 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x5.y4
+                            template(v-for="(y, indexy) in 4")
+                                template(v-for="(x, indexx) in 5")
+                                    template(v-if="x==2 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==4 && y==3"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x>=2 && x<=4 && y>=2 && y<=3"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" droptimes="untilok" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
+
+            // SCENES
+            scene(v-if="currentScene==2" :key="2"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
+                    .row.w100: number(c=1 small) Área = 9 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x5.y5
+                            template(v-for="(y, indexy) in 5")
+                                template(v-for="(x, indexx) in 5")
+                                    template(v-if="x==2 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==3 && y==3"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==4 && y==4"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x>=2 && x<=4 && y>=2 && y<=4"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
             
             
+            // SCENES
+            scene(v-if="currentScene==3" :key="3"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
+                    .row.w100: number(c=1 small) Área = 8 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x6.y4
+                            template(v-for="(y, indexy) in 4")
+                                template(v-for="(x, indexx) in 6")
+                                    template(v-if="x==2 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==5 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==3 && y==3"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x>=2 && x<=5 && y>=2 && y<=3"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
+            
+            
+            // SCENES
+            scene(v-if="currentScene==4" :key="4"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
+                    .row.w100: number(c=1 small) Área = 3 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x5.y4
+                            template(v-for="(y, indexy) in 4")
+                                template(v-for="(x, indexx) in 5")
+                                    template(v-if="x==2 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==2 && y==4"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+
+                                    template(v-else-if="x>=2 && x<=2 && y>=2 && y<=4"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
+            
+            
+            // SCENES
+            scene(v-if="currentScene==5" :key="5"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
+                    .row.w100: number(c=1 small) Área = 12 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x6.y5
+                            template(v-for="(y, indexy) in 5")
+                                template(v-for="(x, indexx) in 6")
+                                    template(v-if="x==2 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==5 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==4 && y==3"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==2 && y==4"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+
+                                    template(v-else-if="x>=2 && x<=5 && y>=2 && y<=4"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
+            
+            
+            // SCENES
+            scene(v-if="currentScene==6" :key="6"  :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca los cuadrados que faltan para hacer figuras cuadrangulares que tengan el área que se indica. Considera que 1 cuadrado es igual a 1 cm<sup>2</sup>." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .sceneCompletedCalled(:class="sceneCompletedCalled?'on':''")
+                    .row.w100: number(c=1 small) Área = 5 cm<sup>2</sup>
+                    .row.w100
+                        .w60: .cuadricula.x6.y3
+                            template(v-for="(y, indexy) in 3")
+                                template(v-for="(x, indexx) in 6")
+                                    template(v-if="x==1 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+                                    template(v-else-if="x==5 && y==2"): .box.coloreado(:class="'x'+x + ' ' + 'y'+y ")
+
+                                    template(v-else-if="x>=1 && x<=5 && y>=2 && y<=2"): .drop(data="yes" droptimes="multiple" :class="'x'+x + ' ' + 'y'+y " droplimit="1")
+                                    template(v-else): .drop(data="no" :class="'x'+x + ' ' + 'y'+y ")
+                    .row.w100.mt-1: drag(data="yes" dropzone=".drop" return-to-position dropzone-ok-class="okdrop"): div
+
+
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +246,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 6
