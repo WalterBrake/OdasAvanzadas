@@ -34,9 +34,10 @@ html(lang="es")
                 activity
                     .row.w100
                         .w10.ws20: img(src="i/apple.png").w100
-                    .row.w100.wrap.mt-1.mb-1
+                    .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.a")
                             clickable(:isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
+                    button(@click="verifyclicks(5)").button.big.animate__animated.animate__flip Verificar
                     .row.w100
                         .w10.ws20: img(src="i/cheese.png").w100
             
@@ -44,9 +45,10 @@ html(lang="es")
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25" @loaded="resetit")
                 info(type="seleccionar" title=title text="Selecciona la palabra que está escrita de manera correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
-                    .row.w100.wrap.mt-1.mb-1
+                    .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.b")
                             clickable(:isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
+                    button(@click="verifyclicks(5)").button.big.animate__animated.animate__flip Verificar
                     .row.w100
                         .w20.ws30: img(src="i/kid.png").w100
 
@@ -66,10 +68,15 @@ html(lang="es")
                     } else {
                         app.temps.clickeds--
                     }
+                }
+
+                app.verifyclicks = function (valids) {
                     if(app.temps.clickeds == valids){
                         for(var i = 0; i < valids; i ++){
                             EventBus.$emit('isok')
                         }
+                    } else {
+                        s_error.play()
                     }
                 }
 

@@ -39,13 +39,14 @@
           <div class="row w100">
             <div class="w10 ws20"><img class="w100" src="i/apple.png"/></div>
           </div>
-          <div class="row w100 wrap mt-1 mb-1">
+          <div class="row w100 wrap mt-1">
             <template v-for="(i, index) in temps.a">
               <clickable :isok="i.v" simple-ok="simple-ok" initclass="pa-1" ext-validation="ext-validation" @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)">
                 <div>{{i.t}}</div>
               </clickable>
             </template>
           </div>
+          <button class="button big animate__animated animate__flip" @click="verifyclicks(5)">Verificar</button>
           <div class="row w100">
             <div class="w10 ws20"><img class="w100" src="i/cheese.png"/></div>
           </div>
@@ -55,13 +56,14 @@
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25" @loaded="resetit">
         <info type="seleccionar" title="Completo palabras" text="Selecciona la palabra que está escrita de manera correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
-          <div class="row w100 wrap mt-1 mb-1">
+          <div class="row w100 wrap mt-1">
             <template v-for="(i, index) in temps.b">
               <clickable :isok="i.v" simple-ok="simple-ok" initclass="pa-1" ext-validation="ext-validation" @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)">
                 <div>{{i.t}}</div>
               </clickable>
             </template>
           </div>
+          <button class="button big animate__animated animate__flip" @click="verifyclicks(5)">Verificar</button>
           <div class="row w100">
             <div class="w20 ws30"><img class="w100" src="i/kid.png"/></div>
           </div>
@@ -112,10 +114,15 @@
           } else {
               app.temps.clickeds--
           }
+      }
+      
+      app.verifyclicks = function (valids) {
           if(app.temps.clickeds == valids){
               for(var i = 0; i < valids; i ++){
                   EventBus.$emit('isok')
               }
+          } else {
+              s_error.play()
           }
       }
       
