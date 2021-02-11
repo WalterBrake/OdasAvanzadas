@@ -201,7 +201,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
         <info type="dragdrop" title="Conozco el correo electrónico" text=" Observa el mensaje de correo electrónico y coloca los elementos a los que corresponde cada parte de éste." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100">
@@ -233,15 +233,21 @@
                 </div>
               </div>
               <div class="body row w100">
-                <div class="txt">Estimado director del Colegio Montenegro, le escribo esta carta para pedirle que me considere para concursar por la beca de desempeño que ofrece el colegio. He tenido buenas calificaciones en el último año escolar.<br/>Espero su pronta respuesta por este medio y le agradezco el tiempo que se ha tomado para leer este correo.<br/>Saludos.</div>
+                <div class="txt">Estimado director del Colegio Montenegro, le escribo esta carta para pedirle que me considere para concursar por la beca de desempeño que ofrece el colegio. He tenido buenas calificaciones en el último año escolar.</div>
                 <div class="drp">
                   <div class="drop" :data="4" droptimes="untilok"></div>
                 </div>
               </div>
               <div class="body row w100">
-                <div class="txt">José Vázquez<br/>Alumno de 6o grado</div>
+                <div class="txt">Espero su pronta respuesta por este medio y le agradezco el tiempo que se ha tomado para leer este correo.<br/>Saludos.</div>
                 <div class="drp">
                   <div class="drop" :data="5" droptimes="untilok"></div>
+                </div>
+              </div>
+              <div class="body row w100">
+                <div class="txt">José Vázquez<br/>Alumno de 6o grado</div>
+                <div class="drp">
+                  <div class="drop" :data="6" droptimes="untilok"></div>
                 </div>
               </div>
             </div>
@@ -315,14 +321,14 @@
       ])
       
       app.$set(app.temps, 'c', [
-          {n: 1, t: 'Dirección de correo electrónico de remitente.'},
-          {n: 2, t: 'Dirección  de correo electrónico de destinatario.'},
-          {n: 3, t: 'Enunciado de lo que trata el mensaje.'},
           {n: 4, t: 'Mensaje.'},
-          {n: 5, t: 'Despedida.'},
+          {n: 2, t: 'Dirección  de correo electrónico de remitente.'},
           {n: 6, t: 'Firma.'},
-          {n: 7, t: 'Sello digital.'},
+          {n: 1, t: 'Dirección de correo electrónico de destinatario.'},
+          {n: 3, t: 'Enunciado de lo que trata el mensaje.'},
+          {n: 5, t: 'Despedida.'},
           {n: 8, t: 'Edad del destinatario.'},
+          {n: 7, t: 'Sello digital.'},
       ])
       app.currentScene = 0
       app.scenesCount = 3

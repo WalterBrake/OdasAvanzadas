@@ -179,7 +179,7 @@ html(lang="es")
             
             
             // SCENES
-            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text=" Observa el mensaje de correo electrónico y coloca los elementos a los que corresponde cada parte de éste." textaudio="s/instruccion3.mp3" :autoplay="true")
                 activity
                     .row.w100
@@ -205,20 +205,21 @@ html(lang="es")
                                 .drp: .drop(:data="3" droptimes="untilok")
                             
                             .body.row.w100
+                                .txt Estimado director del Colegio Montenegro, le escribo esta carta para pedirle que me considere para concursar por la beca de desempeño que ofrece el colegio. He tenido buenas calificaciones en el último año escolar.
+                                .drp: .drop(:data="4" droptimes="untilok")
+                            .body.row.w100
                                 .txt
-                                    | Estimado director del Colegio Montenegro, le escribo esta carta para pedirle que me considere para concursar por la beca de desempeño que ofrece el colegio. He tenido buenas calificaciones en el último año escolar.
-                                    br
                                     | Espero su pronta respuesta por este medio y le agradezco el tiempo que se ha tomado para leer este correo.
                                     br
                                     | Saludos.
-                                .drp: .drop(:data="4" droptimes="untilok")
+                                .drp: .drop(:data="5" droptimes="untilok")
                             
                             .body.row.w100
                                 .txt
                                     | José Vázquez
                                     br
                                     | Alumno de 6o grado
-                                .drp: .drop(:data="5" droptimes="untilok")
+                                .drp: .drop(:data="6" droptimes="untilok")
                     
                     .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.c")
@@ -258,14 +259,14 @@ html(lang="es")
                 ])
                 
                 app.$set(app.temps, 'c', [
-                    {n: 1, t: 'Dirección de correo electrónico de remitente.'},
-                    {n: 2, t: 'Dirección  de correo electrónico de destinatario.'},
-                    {n: 3, t: 'Enunciado de lo que trata el mensaje.'},
                     {n: 4, t: 'Mensaje.'},
-                    {n: 5, t: 'Despedida.'},
+                    {n: 2, t: 'Dirección  de correo electrónico de remitente.'},
                     {n: 6, t: 'Firma.'},
-                    {n: 7, t: 'Sello digital.'},
+                    {n: 1, t: 'Dirección de correo electrónico de destinatario.'},
+                    {n: 3, t: 'Enunciado de lo que trata el mensaje.'},
+                    {n: 5, t: 'Despedida.'},
                     {n: 8, t: 'Edad del destinatario.'},
+                    {n: 7, t: 'Sello digital.'},
                 ])
                 app.currentScene = 0
                 app.scenesCount = 3
