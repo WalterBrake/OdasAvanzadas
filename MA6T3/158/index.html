@@ -1,29 +1,265 @@
-<!DOCTYPE html>
+
+<!--.pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")+pregunta('s/p1.mp3','¿?', "['']", 0)
+--><!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Representamos razones</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .comic { font-size: 0.8rem; }
+      .comic .dialog { padding: 4px 2px;}
+      .comic.outside .dialog{position: relative;}
+      .fr {
+          text-align: center;
+          display: inline-block;
+          vertical-align: middle;
+          padding: 0 6px;
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: 10px;
+          margin: 4px;
+      }
+      .fr hr {
+          width: 40px;
+          border: none;
+          border-top: 3px solid #667799;
+          margin-top: 2px;
+      }
+      .audiotext hr{
+          border: none;
+          border-top: 2px solid #667799;
+          min-width: 12px;
+      }
+      .sc_7 .comic .dialog { max-width: 66%; }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="comic w60 wm80"><img class="w100" src="i/v1.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-n" v-if="temps.a">
+                <audiotext audio="s/au1.mp3" :autoplay="true" @completed="temps.b=true" text="Un domingo en la mañana, Karen escuchó en las noticias lo siguiente:"></audiotext>
+              </div>
+              <div class="dialog br tip-r" v-if="temps.b">
+                <audiotext audio="s/au2.mp3" :autoplay="true" @completed="temps.c=true" text="3 de cada 5 niños menores de 10 años se han vacunado contra la influenza."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.c">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic outside w100">
+              <div class="dialog tc tip-n" v-if="temps.a">
+                <audiotext audio="s/au3.mp3" :autoplay="true" @completed="temps.b=true" text="Al día siguiente rumbo a la escuela…"></audiotext>
+              </div>
+            </div>
+            <div class="comic w60 wm80"><img class="w100" src="i/v2.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tl tip-b" v-if="temps.b">
+                <audiotext audio="s/au4.mp3" :autoplay="true" @completed="temps.c=true" text="Papá, ¿sabes cuántos niños se han vacunado contra la influenza?"></audiotext>
+              </div>
+              <div class="dialog br tip-t" v-if="temps.c">
+                <audiotext audio="s/au5.mp3" :autoplay="true" @completed="temps.d=true" text="6 de cada 10 niños, hija, o un 60 % de niños mexicanos."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.d">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES 3-->
+      <scene v-if="currentScene==3" hidescorebox="hidescorebox" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v3.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-l" v-if="temps.a">
+                <audiotext audio="s/au6.mp3" :autoplay="true" @completed="temps.b=true" text="Karen, ¿cuántos niños se han vacunado contra la influenza?"></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.b">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES 4 - count-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v4.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog br tip-l" v-if="temps.a">
+                <audiotext audio="s/au7.mp3" :autoplay="true" @completed="temps.b=true" text="En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60 % de niños mexicanos."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.b">
+            <div class="h4">
+              <audiotext audio="s/p1.mp3" :autoplay="true" text="¿Cómo se representan las razones &quot;3 de cada 5&quot; y &quot;6 de cada 10&quot;?" @completed="temps.p=true"></audiotext>
+            </div>
+            <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+              <clickable v-for="(i, index) in ['&lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; y &lt;div class=fr&gt;10&lt;hr&gt;6&lt;/div&gt;','&lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; y &lt;div class=fr&gt;5&lt;hr&gt;3&lt;/div&gt;','&lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; y &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt;']" :key="refCount()" @wasclicked="temps.c=true" :isok="index == 2" simple-ok="simple-ok" initclass="text-center">
+                <number randomc="randomc" smaller="smaller" v-html="i"></number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 5 - count-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v5.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-b" v-if="temps.a">
+                <audiotext audio="s/au8.mp3" :autoplay="true" @completed="temps.b=true" text="¿Entonces 3 de cada 5 es igual al 60%, y &lt;div&gt;3&lt;hr&gt;5&lt;/div&gt; = &lt;div&gt;6&lt;hr&gt;10&lt;/div&gt; = 60%? "></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.b">
+            <div class="h4">
+              <audiotext audio="s/p2.mp3" :autoplay="true" text="¿Qué fracción se usa para representar 60%?" @completed="temps.p=true"></audiotext>
+            </div>
+            <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+              <clickable v-for="(i, index) in [' &lt;div class=fr&gt;100&lt;hr&gt;60&lt;/div&gt; ', ' &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;6&lt;hr&gt;100&lt;/div&gt; ']" :key="refCount()" @wasclicked="temps.c=true" :isok="index == 1" simple-ok="simple-ok" initclass="text-center">
+                <number randomc="randomc" smaller="smaller" v-html="i"></number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 6-->
+      <scene v-if="currentScene==6" hidescorebox="hidescorebox" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v6.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-l" v-if="temps.a">
+                <audiotext audio="s/au9.mp3" :autoplay="true" @completed="temps.b=true" text="Sí, niños. Éstas son representaciones numéricas llamadas razones que son equivalentes entre sí."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.b">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES 7 - count-->
+      <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w80 wm80"><img class="w100" src="i/v7.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog br tip-l" v-if="temps.a">
+                <audiotext audio="s/au10.mp3" :autoplay="true" @completed="temps.b=true" text="Recuerden que 3 de cada 5 también se representa como la fracción &lt;div&gt;3&lt;hr&gt;5&lt;/div&gt; , entonces 3 de cada 5 es igual a la razón &lt;div&gt;3&lt;hr&gt;5&lt;/div&gt; y &lt;div&gt;3&lt;hr&gt;5&lt;/div&gt; = &lt;div&gt;6&lt;hr&gt;10&lt;/div&gt; = &lt;div&gt;60&lt;hr&gt;100&lt;/div&gt; = 60%. Por eso, si hubiera 500 000 niños menores de 10 años, sabríamos que 300 000 se han vacunado."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.b">
+            <div class="h4">
+              <audiotext audio="s/p3.mp3" :autoplay="true" text="¿Cuál es la operación que se realizó para concluir que se trata del 60%?" @completed="temps.p=true"></audiotext>
+            </div>
+            <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+              <clickable v-for="(i, index) in [' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 2 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 10 = &lt;div class=fr&gt;6&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;5&lt;hr&gt;3&lt;/div&gt; x 2 = &lt;div class=fr&gt;10&lt;hr&gt;6&lt;/div&gt; x 10 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 10 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 2 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ']" :key="refCount()" @wasclicked="temps.c=true" :isok="index == 0" simple-ok="simple-ok" initclass="text-center">
+                <number randomc="randomc" smaller="smaller" v-html="i"></number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 8 - count-->
+      <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v6.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tc tip-l" v-if="temps.a">
+                <audiotext audio="s/au11.mp3" :autoplay="true" @completed="temps.b=true" text="Resolvamos un ejercicio más niños."></audiotext>
+              </div>
+              <div class="dialog br tip-r" v-if="temps.b">
+                <audiotext audio="s/au12.mp3" :autoplay="true" @completed="temps.c=true" text="Sí, maestra."></audiotext>
+              </div>
+            </div>
+          </div>
+          <div v-show="!temps.d">
+            <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.c">
+              <div class="h4">
+                <audiotext audio="s/p4.mp3" :autoplay="true" text="Si la razón fuera 2 de cada 5 niños están vacunados, ¿cómo se representaría la razón?" @completed="temps.p=true"></audiotext>
+              </div>
+              <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+                <clickable v-for="(i, index) in [' &lt;div class=fr&gt;5&lt;hr&gt;2&lt;/div&gt; ', ' &lt;div class=fr&gt;1&lt;hr&gt;5&lt;/div&gt; ', ' &lt;div class=fr&gt;2&lt;hr&gt;5&lt;/div&gt; ']" :key="refCount()" @wasclicked="temps.d=true" :isok="index == 2" simple-ok="simple-ok" initclass="text-center">
+                  <number randomc="randomc" smaller="smaller" v-html="i"></number>
+                </clickable>
+              </div>
+            </div>
+          </div>
+          <div v-show="!temps.e">
+            <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.d">
+              <div class="h4">
+                <audiotext audio="s/p5.mp3" :autoplay="true" text="¿A qué porcentaje equivale la razón  2/5?" @completed="temps.p=true"></audiotext>
+              </div>
+              <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+                <clickable v-for="(i, index) in ['20%', '40%', '50%']" :key="refCount()" @wasclicked="temps.e=true" :isok="index == 1" simple-ok="simple-ok" initclass="text-center">
+                  <number randomc="randomc" smaller="smaller" v-html="i"></number>
+                </clickable>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="pregunta animate__animated animate__bounceInUp" v-if="temps.e">
+              <div class="h4">
+                <audiotext audio="s/p6.mp3" :autoplay="true" text="Si los niños fueran 100 000, ¿qué cantidad estarían vacunados de acuerdo con esa proporción?" @completed="temps.p=true"></audiotext>
+              </div>
+              <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
+                <clickable v-for="(i, index) in ['20 000', '30 000', '40 000']" :key="refCount()" @wasclicked="temps.f=true" :isok="index == 2" simple-ok="simple-ok" initclass="text-center">
+                  <number randomc="randomc" smaller="smaller" v-html="i"></number>
+                </clickable>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 9-->
+      <scene v-if="currentScene==9" hidescorebox="hidescorebox" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Representamos razones" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 column">
+            <div class="comic w60 wm80"><img class="w100" src="i/v6.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-l" v-if="temps.a">
+                <audiotext audio="s/au13.mp3" :autoplay="true" @completed="temps.b=true" text="Muy bien, ahora ya saben representar razones y obtener sus equivalencias."></audiotext>
+              </div>
+              <div class="dialog br tip-r" v-if="temps.b">
+                <audiotext audio="s/au14.mp3" :autoplay="true" @completed="temps.c=true" text="¡Síii!"></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.b">Finalizar</button>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==10" :key="10" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +294,26 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'p', false)
+      app.$set(app.temps, 'a', true)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      app.$set(app.temps, 'd', false)
+      app.$set(app.temps, 'e', false)
+      app.resetit = function (){
+          app.temps.p = false
       
+          app.temps.a = true
+          app.temps.b = false
+          app.temps.c = false
+          app.temps.d = false
+          app.temps.e = false
+      }
+      
+      
+      //##################
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>

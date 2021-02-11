@@ -1,12 +1,69 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Representamos razones'
 
+
+mixin pregunta(audio, p, ops,ans, vif)
+    - var complete = ''
+    if vif == 'a'
+        - complete = 'b'
+    if vif == 'b'
+        - complete = 'c'
+    if vif == 'c'
+        - complete = 'd'
+    if vif == 'd'
+        - complete = 'e'
+    if vif == 'e'
+        - complete = 'f'
+    .pregunta.animate__animated.animate__bounceInUp(v-if="temps."+vif)
+        .h4: audiotext(audio="s/"+audio+".mp3" :autoplay="true" text=p @completed="temps.p=true")
+        .row.wrap.around(v-if="temps.p").animate__animated.animate__pulse
+            clickable(v-for="(i, index) in "+ops :key="refCount()" @wasclicked="temps."+complete+"=true" :isok="index == "+ans simple-ok initclass="text-center"): number(randomc smaller v-html="i")
+//.pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
+    +pregunta('s/p1.mp3','¿?', "['']", 0)
+mixin dial(pos, tip, audio, vif, txt)
+    - var complete = ''
+    if vif == 'a'
+        - complete = 'b'
+    if vif == 'b'
+        - complete = 'c'
+    if vif == 'c'
+        - complete = 'd'
+    if vif == 'd'
+        - complete = 'e'
+    .dialog(class=pos+" tip-"+tip v-if="temps."+vif)
+        audiotext(audio="s/"+audio+".mp3" :autoplay="true" @completed="temps."+complete+"=true" text=txt)
+mixin fr(a, b)
+    .frac !{a} #[hr] !{b}
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .comic { font-size: 0.8rem; }
+            .comic .dialog { padding: 4px 2px;}
+            .comic.outside .dialog{position: relative;}
+            .fr {
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 6px;
+                background: rgba(255, 255, 255, 0.4);
+                border-radius: 10px;
+                margin: 4px;
+            }
+            .fr hr {
+                width: 40px;
+                border: none;
+                border-top: 3px solid #667799;
+                margin-top: 2px;
+            }
+            .audiotext hr{
+                border: none;
+                border-top: 2px solid #667799;
+                min-width: 12px;
+            }
+            .sc_7 .comic .dialog { max-width: 66%; }
 
 
     body
@@ -15,20 +72,141 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
                 activity
                     .row.w100
+                        .comic.w60.wm80
+                            img(src="i/v1.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'n', 'au1', 'a', 'Un domingo en la mañana, Karen escuchó en las noticias lo siguiente:')
+                            +dial('br', 'r', 'au2', 'b', '3 de cada 5 niños menores de 10 años se han vacunado contra la influenza.')
+                    button(@click="sceneCompleted(false)" v-if="temps.c").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 2
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.outside.w100: +dial('tc', 'n', 'au3', 'a', 'Al día siguiente rumbo a la escuela…')
+                        .comic.w60.wm80
+                            img(src="i/v2.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tl', 'b', 'au4', 'b',  'Papá, ¿sabes cuántos niños se han vacunado contra la influenza?')
+                            +dial('br', 't', 'au5', 'c',  '6 de cada 10 niños, hija, o un 60 % de niños mexicanos.')
+                    button(@click="sceneCompleted(false)" v-if="temps.d").button.big.animate__animated.animate__flip Continuar
             
             
+            // SCENES 3
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v3.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'l', 'au6', 'a', 'Karen, ¿cuántos niños se han vacunado contra la influenza?')
+                    button(@click="sceneCompleted(false)" v-if="temps.b").button.big.animate__animated.animate__flip Continuar
+                    
+            
+            // SCENES 4 - count
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v4.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('br', 'l', 'au7', 'a', 'En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60 % de niños mexicanos.')
+                    +pregunta('p1','¿Cómo se representan las razones "3 de cada 5" y "6 de cada 10"?', "['<div class=fr>3<hr>5</div> y <div class=fr>10<hr>6</div>','<div class=fr>6<hr>10</div> y <div class=fr>5<hr>3</div>','<div class=fr>3<hr>5</div> y <div class=fr>6<hr>10</div>']", 2, 'b')
+            
+            
+            // SCENES 5 - count
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v5.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'b', 'au8', 'a', '¿Entonces 3 de cada 5 es igual al 60%, y <div>3<hr>5</div> = <div>6<hr>10</div> = 60%? ')
+                    +pregunta('p2','¿Qué fracción se usa para representar 60%?', "[' <div class=fr>100<hr>60</div> ', ' <div class=fr>60<hr>100</div> ', ' <div class=fr>6<hr>100</div> ']", 1, 'b')
+            
+            // SCENES 6
+            scene(v-if="currentScene==6" hidescorebox :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v6.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'l', 'au9', 'a', 'Sí, niños. Éstas son representaciones numéricas llamadas razones que son equivalentes entre sí.')
+                    button(@click="sceneCompleted(false)" v-if="temps.b").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES 7 - count
+            scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w80.wm80
+                            img(src="i/v7.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('br', 'l', 'au10', 'a', 'Recuerden que 3 de cada 5 también se representa como la fracción <div>3<hr>5</div> , entonces 3 de cada 5 es igual a la razón <div>3<hr>5</div> y <div>3<hr>5</div> = <div>6<hr>10</div> = <div>60<hr>100</div> = 60%. Por eso, si hubiera 500 000 niños menores de 10 años, sabríamos que 300 000 se han vacunado.')
+                    +pregunta('p3','¿Cuál es la operación que se realizó para concluir que se trata del 60%?', "[' <div class=fr>3<hr>5</div> x 2 = <div class=fr>6<hr>10</div> x 10 = <div class=fr>6<hr>100</div> ', ' <div class=fr>5<hr>3</div> x 2 = <div class=fr>10<hr>6</div> x 10 = <div class=fr>60<hr>100</div> ', ' <div class=fr>3<hr>5</div> x 10 = <div class=fr>6<hr>10</div> x 2 = <div class=fr>60<hr>100</div> ']", 0, 'b')
+            
+            // SCENES 8 - count
+            scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v6.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tc', 'l', 'au11', 'a', 'Resolvamos un ejercicio más niños.')
+                            +dial('br', 'r', 'au12', 'b', 'Sí, maestra.')
+                    div(v-show="!temps.d"): +pregunta('p4','Si la razón fuera 2 de cada 5 niños están vacunados, ¿cómo se representaría la razón?', "[' <div class=fr>5<hr>2</div> ', ' <div class=fr>1<hr>5</div> ', ' <div class=fr>2<hr>5</div> ']", 2, 'c')
+                    
+                    div(v-show="!temps.e"): +pregunta('p5','¿A qué porcentaje equivale la razón  2/5?', "['20%', '40%', '50%']", 1, 'd')
+                    
+                    div(): +pregunta('p6','Si los niños fueran 100 000, ¿qué cantidad estarían vacunados de acuerdo con esa proporción?', "['20 000', '30 000', '40 000']", 2, 'e')
+
+            // SCENES 9
+            scene(v-if="currentScene==9" hidescorebox :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100.column
+                        .comic.w60.wm80
+                            img(src="i/v6.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'l', 'au13', 'a', 'Muy bien, ahora ya saben representar razones y obtener sus equivalencias.')
+                            +dial('br', 'r', 'au14', 'b', '¡Síii!')
+                    button(@click="sceneCompleted(false)" v-if="temps.b").button.big.animate__animated.animate__flip Finalizar
+            
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==10" :key="10" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
-                
+                app.$set(app.temps, 'p', false)
+                app.$set(app.temps, 'a', true)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                app.$set(app.temps, 'd', false)
+                app.$set(app.temps, 'e', false)
+                app.resetit = function (){
+                    app.temps.p = false
+
+                    app.temps.a = true
+                    app.temps.b = false
+                    app.temps.c = false
+                    app.temps.d = false
+                    app.temps.e = false
+                }
+
+
+                //##################
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 4

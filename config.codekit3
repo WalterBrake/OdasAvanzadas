@@ -25909,6 +25909,83 @@
 		"oAP": "\/MA6T2\/145\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA6T3\/158\/i\/v1.png": {
+		"ft": 32768,
+		"iS": 78117,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v2.png": {
+		"ft": 32768,
+		"iS": 92531,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v3.png": {
+		"ft": 32768,
+		"iS": 53591,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v4.png": {
+		"ft": 32768,
+		"iS": 63436,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v5.png": {
+		"ft": 32768,
+		"iS": 59435,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v6.png": {
+		"ft": 32768,
+		"iS": 48390,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v6.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/158\/i\/v7.png": {
+		"ft": 32768,
+		"iS": 33652,
+		"oA": 0,
+		"oAP": "\/MA6T3\/158\/i\/v7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA6T3\/158\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -25925,144 +26002,144 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_1.wav": {
+	"\/MA6T3\/158\/s\/au1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_1.wav",
+		"oAP": "\/MA6T3\/158\/s\/au1.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_10.wav": {
+	"\/MA6T3\/158\/s\/au10.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_10.wav",
+		"oAP": "\/MA6T3\/158\/s\/au10.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_11.wav": {
+	"\/MA6T3\/158\/s\/au11.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_11.wav",
+		"oAP": "\/MA6T3\/158\/s\/au11.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_12.wav": {
+	"\/MA6T3\/158\/s\/au12.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_12.wav",
+		"oAP": "\/MA6T3\/158\/s\/au12.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_13.wav": {
+	"\/MA6T3\/158\/s\/au13.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_13.wav",
+		"oAP": "\/MA6T3\/158\/s\/au13.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_14.wav": {
+	"\/MA6T3\/158\/s\/au14.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_14.wav",
+		"oAP": "\/MA6T3\/158\/s\/au14.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_2.wav": {
+	"\/MA6T3\/158\/s\/au2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_2.wav",
+		"oAP": "\/MA6T3\/158\/s\/au2.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_3.wav": {
+	"\/MA6T3\/158\/s\/au3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_3.wav",
+		"oAP": "\/MA6T3\/158\/s\/au3.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_4.wav": {
+	"\/MA6T3\/158\/s\/au4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_4.wav",
+		"oAP": "\/MA6T3\/158\/s\/au4.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_5.wav": {
+	"\/MA6T3\/158\/s\/au5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_5.wav",
+		"oAP": "\/MA6T3\/158\/s\/au5.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_6.wav": {
+	"\/MA6T3\/158\/s\/au6.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_6.wav",
+		"oAP": "\/MA6T3\/158\/s\/au6.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_7.wav": {
+	"\/MA6T3\/158\/s\/au7.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_7.wav",
+		"oAP": "\/MA6T3\/158\/s\/au7.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_8.wav": {
+	"\/MA6T3\/158\/s\/au8.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_8.wav",
+		"oAP": "\/MA6T3\/158\/s\/au8.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_9.wav": {
+	"\/MA6T3\/158\/s\/au9.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Audio_9.wav",
+		"oAP": "\/MA6T3\/158\/s\/au9.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst1.wav": {
+	"\/MA6T3\/158\/s\/p1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst1.wav",
+		"oAP": "\/MA6T3\/158\/s\/p1.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst2.wav": {
+	"\/MA6T3\/158\/s\/p2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst2.wav",
+		"oAP": "\/MA6T3\/158\/s\/p2.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst3.wav": {
+	"\/MA6T3\/158\/s\/p3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst3.wav",
+		"oAP": "\/MA6T3\/158\/s\/p3.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst4.wav": {
+	"\/MA6T3\/158\/s\/p4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst4.wav",
+		"oAP": "\/MA6T3\/158\/s\/p4.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst5.wav": {
+	"\/MA6T3\/158\/s\/p5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst5.wav",
+		"oAP": "\/MA6T3\/158\/s\/p5.mp3",
 		"oF": 0
 		},
-	"\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst6.wav": {
+	"\/MA6T3\/158\/s\/p6.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/158\/s\/Representamoss razones Ma6°T3_Inst6.wav",
+		"oAP": "\/MA6T3\/158\/s\/p6.mp3",
 		"oF": 0
 		},
 	"\/readme": {
