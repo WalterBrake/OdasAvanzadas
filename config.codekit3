@@ -9465,6 +9465,39 @@
 		"oAP": "\/ES2T2\/84\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES2T3\/115\/i\/apple.png": {
+		"ft": 32768,
+		"iS": 18825,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/i\/apple.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/115\/i\/cheese.png": {
+		"ft": 32768,
+		"iS": 13194,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/i\/cheese.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/115\/i\/kid.png": {
+		"ft": 32768,
+		"iS": 111614,
+		"oA": 0,
+		"oAP": "\/ES2T3\/115\/i\/kid.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES2T3\/115\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -9481,11 +9514,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES2T3\/115\/s\/Completo palabras Es 2o T3_Inst_Selecciona.wav": {
+	"\/ES2T3\/115\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T3\/115\/s\/Completo palabras Es 2o T3_Inst_Selecciona.wav",
+		"oAP": "\/ES2T3\/115\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/ES2T3\/117\/i\/panda.png": {

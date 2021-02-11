@@ -3,27 +3,72 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Completo palabras</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .clickable {
+          background: #fff;
+          border-radius: 10px;
+          margin: 6px;
+          font-size: 1.4rem;
+          border: 2px solid var(--c3);
+          box-shadow: 4px 4px 0 var(--c4);
+      }
+      .clickable:nth-child(3n) {
+          box-shadow: 4px 4px 0 var(--c5);
+      }
+      .clickable:nth-child(3n+1) {
+          box-shadow: 4px 4px 0 var(--c6);
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Completo palabras" text="Selecciona la palabra que está escrita de manera correcta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w10 ws20"><img class="w100" src="i/apple.png"/></div>
+          </div>
+          <div class="row w100 wrap mt-1 mb-1">
+            <template v-for="(i, index) in temps.a">
+              <clickable :isok="i.v" simple-ok="simple-ok" initclass="pa-1" ext-validation="ext-validation" @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)">
+                <div>{{i.t}}</div>
+              </clickable>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="w10 ws20"><img class="w100" src="i/cheese.png"/></div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Completo palabras" text="Selecciona la palabra que está escrita de manera correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 wrap mt-1 mb-1">
+            <template v-for="(i, index) in temps.b">
+              <clickable :isok="i.v" simple-ok="simple-ok" initclass="pa-1" ext-validation="ext-validation" @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)">
+                <div>{{i.t}}</div>
+              </clickable>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="w20 ws30"><img class="w100" src="i/kid.png"/></div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +103,55 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      
+      app.$set(app.temps, 'clickeds', 0)
+      
+      app.checkclicks = function (okerr, valids) {
+          if(okerr){
+              app.temps.clickeds++
+          } else {
+              app.temps.clickeds--
+          }
+          if(app.temps.clickeds == valids){
+              for(var i = 0; i < valids; i ++){
+                  EventBus.$emit('isok')
+              }
+          }
+      }
+      
+      app.resetit = function () {
+          app.temps.clickeds = 0
+      }
+      
+      app.$set(app.temps, 'a', [
+          {v: 1, t:'membrillo'},
+          {v: 0, t:'menvrillo'},
+          {v: 0, t:'mansana'},
+          {v: 1, t:'manzana'},
+          {v: 1, t:'ladrillo'},
+          {v: 0, t:'ladriyo'},
+          {v: 0, t:'cincero'},
+          {v: 1, t:'sincero'},
+          {v: 1, t:'queso'},
+          {v: 0, t:'keso'},
+      ])
+      
+      app.$set(app.temps, 'b', [
+      
+          {v: 0, t:'veso'},
+          {v: 1, t:'beso'},
+          {v: 1, t:'mañana'},
+          {v: 0, t:'mallana'},
+          {v: 1, t:'blanca'},
+          {v: 0, t:'vlanca'},
+          {v: 0, t:'vibo'},
+          {v: 1, t:'vivo'},
+          {v: 1, t:'cultivo'},
+          {v: 0, t:'cultibo'},
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>

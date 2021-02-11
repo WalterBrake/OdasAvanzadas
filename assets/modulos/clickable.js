@@ -46,6 +46,13 @@ Vue.component('clickable', {
             this.clicksoundsFn()
             if(this.extValidation==undefined){
                 this.isOkOrError(e)
+            } else {
+
+                if(this.isok == this.status){
+                    this.$emit('itsok')
+                } else {
+                    this.$emit('itserror')
+                }
             }
             s_select.play()
         },
@@ -76,6 +83,7 @@ Vue.component('clickable', {
 
         if(_this.isok == _this.status){
             //OK
+            
             //EventBus.$emit('clicked', 'ok')
             setTimeout(function () {
             
@@ -92,6 +100,9 @@ Vue.component('clickable', {
                 } else {
                     EventBus.$emit('isok')
                 }
+
+                
+
                 _this.setClassAnimation('ok', _this.$refs.clickable)
                 if(e){app.particleAnimation({clientX: e.clientX, clientY: e.clientY}, 100, null, null, _this.particleColor)}
                 setTimeout(function(){
@@ -104,6 +115,7 @@ Vue.component('clickable', {
                 
             } else {
                 //ERROR
+                
                 if(this.noErrorSound == undefined){
                     if(!s_error.playing()){
                         s_error.play()
