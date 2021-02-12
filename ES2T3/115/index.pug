@@ -36,8 +36,8 @@ html(lang="es")
                         .w10.ws20: img(src="i/apple.png").w100
                     .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.a")
-                            clickable(:isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
-                    button(@click="verifyclicks(5)").button.big.animate__animated.animate__flip Verificar
+                            clickable(ref="ex1" :key="'a'+index" :isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
+                    button(@click="verifyclicks(5, 'ex1')").button.big.animate__animated.animate__flip Verificar
                     .row.w100
                         .w10.ws20: img(src="i/cheese.png").w100
             
@@ -47,8 +47,8 @@ html(lang="es")
                 activity
                     .row.w100.wrap.mt-1
                         template(v-for="(i, index) in temps.b")
-                            clickable(:isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
-                    button(@click="verifyclicks(5)").button.big.animate__animated.animate__flip Verificar
+                            clickable(ref="ex2" :key="'b'+index" :isok="i.v" simple-ok initclass="pa-1" ext-validation @itsok="checkclicks(true, 5)" @itserror="checkclicks(false, 5)"): div {{i.t}}
+                    button(@click="verifyclicks(5, 'ex2')").button.big.animate__animated.animate__flip Verificar
                     .row.w100
                         .w20.ws30: img(src="i/kid.png").w100
 
@@ -70,14 +70,23 @@ html(lang="es")
                     }
                 }
 
-                app.verifyclicks = function (valids) {
+                app.verifyclicks = function (valids, refs) {
                     if(app.temps.clickeds == valids){
                         for(var i = 0; i < valids; i ++){
                             EventBus.$emit('isok')
                         }
                     } else {
                         s_error.play()
+
+                        for(var r in app.$refs[refs]){
+                            var item = app.$refs[refs][r]
+                            if(!item.validateok && item.status){
+                                item.reset()
+                                app.temps.clickeds++
+                            }
+                        }
                     }
+
                 }
 
                 app.resetit = function () {

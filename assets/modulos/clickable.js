@@ -20,7 +20,8 @@ Vue.component('clickable', {
     data() {
         return {
             status: false,
-            alreadyOk: false
+            alreadyOk: false,
+            validateok: false,
         }
     },
     template: `
@@ -31,6 +32,9 @@ Vue.component('clickable', {
     `,
 
     methods: {
+        reset() {  
+            this.status = false
+        },
         clicked (e) {
             if(this.example != undefined){ return false }
             if(this.alreadyOk && this.ignoreAlreadyOk == undefined) {
@@ -50,7 +54,9 @@ Vue.component('clickable', {
 
                 if(this.isok == this.status){
                     this.$emit('itsok')
+                    this.validateok = true
                 } else {
+                    
                     this.$emit('itserror')
                 }
             }
