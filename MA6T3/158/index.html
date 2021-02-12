@@ -78,7 +78,7 @@
                 <audiotext audio="s/au4.mp3" :autoplay="true" @completed="temps.c=true" text="Papá, ¿sabes cuántos niños se han vacunado contra la influenza?"></audiotext>
               </div>
               <div class="dialog br tip-t" v-if="temps.c">
-                <audiotext audio="s/au5.mp3" :autoplay="true" @completed="temps.d=true" text="6 de cada 10 niños, hija, o un 60 % de niños mexicanos."></audiotext>
+                <audiotext audio="s/au5.mp3" :autoplay="true" @completed="temps.d=true" text="6 de cada 10 niños, hija, o un 60% de niños mexicanos."></audiotext>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
             <div class="comic w60 wm80"><img class="w100" src="i/v4.png"/>
               <!--+dial('tr', 'n', 'au1', 'a', '')-->
               <div class="dialog br tip-l" v-if="temps.a">
-                <audiotext audio="s/au7.mp3" :autoplay="true" @completed="temps.b=true" text="En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60 % de niños mexicanos."></audiotext>
+                <audiotext audio="s/au7.mp3" :autoplay="true" @completed="temps.b=true" text="En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60% de niños mexicanos."></audiotext>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@
               <audiotext audio="s/p3.mp3" :autoplay="true" text="¿Cuál es la operación que se realizó para concluir que se trata del 60%?" @completed="temps.p=true"></audiotext>
             </div>
             <div class="row wrap around animate__animated animate__pulse" v-if="temps.p">
-              <clickable v-for="(i, index) in [' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 2 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 10 = &lt;div class=fr&gt;6&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;5&lt;hr&gt;3&lt;/div&gt; x 2 = &lt;div class=fr&gt;10&lt;hr&gt;6&lt;/div&gt; x 10 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 10 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 2 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ']" :key="refCount()" @wasclicked="temps.c=true" :isok="index == 0" simple-ok="simple-ok" initclass="text-center">
+              <clickable v-for="(i, index) in [' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 2 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 10 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;5&lt;hr&gt;3&lt;/div&gt; x 2 = &lt;div class=fr&gt;10&lt;hr&gt;6&lt;/div&gt; x 10 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ', ' &lt;div class=fr&gt;3&lt;hr&gt;5&lt;/div&gt; x 10 = &lt;div class=fr&gt;6&lt;hr&gt;10&lt;/div&gt; x 2 = &lt;div class=fr&gt;60&lt;hr&gt;100&lt;/div&gt; ']" :key="refCount()" @wasclicked="temps.c=true" :isok="index == 0" simple-ok="simple-ok" initclass="text-center">
                 <number randomc="randomc" smaller="smaller" v-html="i"></number>
               </clickable>
             </div>

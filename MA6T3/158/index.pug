@@ -93,7 +93,7 @@ html(lang="es")
                             img(src="i/v2.png").w100
                             //+dial('tr', 'n', 'au1', 'a', '')
                             +dial('tl', 'b', 'au4', 'b',  'Papá, ¿sabes cuántos niños se han vacunado contra la influenza?')
-                            +dial('br', 't', 'au5', 'c',  '6 de cada 10 niños, hija, o un 60 % de niños mexicanos.')
+                            +dial('br', 't', 'au5', 'c',  '6 de cada 10 niños, hija, o un 60% de niños mexicanos.')
                     button(@click="sceneCompleted(false)" v-if="temps.d").button.big.animate__animated.animate__flip Continuar
             
             
@@ -117,7 +117,7 @@ html(lang="es")
                         .comic.w60.wm80
                             img(src="i/v4.png").w100
                             //+dial('tr', 'n', 'au1', 'a', '')
-                            +dial('br', 'l', 'au7', 'a', 'En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60 % de niños mexicanos.')
+                            +dial('br', 'l', 'au7', 'a', 'En la radio escuché que 3 de cada 5, pero mi papá dice que 6 de cada 10, o un 60% de niños mexicanos.')
                     +pregunta('p1','¿Cómo se representan las razones "3 de cada 5" y "6 de cada 10"?', "['<div class=fr>3<hr>5</div> y <div class=fr>10<hr>6</div>','<div class=fr>6<hr>10</div> y <div class=fr>5<hr>3</div>','<div class=fr>3<hr>5</div> y <div class=fr>6<hr>10</div>']", 2, 'b')
             
             
@@ -152,7 +152,7 @@ html(lang="es")
                             img(src="i/v7.png").w100
                             //+dial('tr', 'n', 'au1', 'a', '')
                             +dial('br', 'l', 'au10', 'a', 'Recuerden que 3 de cada 5 también se representa como la fracción <div>3<hr>5</div> , entonces 3 de cada 5 es igual a la razón <div>3<hr>5</div> y <div>3<hr>5</div> = <div>6<hr>10</div> = <div>60<hr>100</div> = 60%. Por eso, si hubiera 500 000 niños menores de 10 años, sabríamos que 300 000 se han vacunado.')
-                    +pregunta('p3','¿Cuál es la operación que se realizó para concluir que se trata del 60%?', "[' <div class=fr>3<hr>5</div> x 2 = <div class=fr>6<hr>10</div> x 10 = <div class=fr>6<hr>100</div> ', ' <div class=fr>5<hr>3</div> x 2 = <div class=fr>10<hr>6</div> x 10 = <div class=fr>60<hr>100</div> ', ' <div class=fr>3<hr>5</div> x 10 = <div class=fr>6<hr>10</div> x 2 = <div class=fr>60<hr>100</div> ']", 0, 'b')
+                    +pregunta('p3','¿Cuál es la operación que se realizó para concluir que se trata del 60%?', "[' <div class=fr>3<hr>5</div> x 2 = <div class=fr>6<hr>10</div> x 10 = <div class=fr>60<hr>100</div> ', ' <div class=fr>5<hr>3</div> x 2 = <div class=fr>10<hr>6</div> x 10 = <div class=fr>60<hr>100</div> ', ' <div class=fr>3<hr>5</div> x 10 = <div class=fr>6<hr>10</div> x 2 = <div class=fr>60<hr>100</div> ']", 0, 'b')
             
             // SCENES 8 - count
             scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25" @loaded="resetit")
