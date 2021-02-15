@@ -9196,7 +9196,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 25710,
+		"iS": 10945,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -18923,6 +18923,113 @@
 		"oAP": "\/MA1T3\/174\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA1T3\/182\/i\/cabeza1.png": {
+		"ft": 32768,
+		"iS": 16655,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/cabeza1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/cabeza2.png": {
+		"ft": 32768,
+		"iS": 16042,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/cabeza2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/intro.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/MA1T3\/182\/i\/intro-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/MA1T3\/182\/i\/jicamas.png": {
+		"ft": 32768,
+		"iS": 16358,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/jicamas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/mangos.png": {
+		"ft": 32768,
+		"iS": 35692,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/mangos.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/manzanas.png": {
+		"ft": 32768,
+		"iS": 27690,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/manzanas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/mario.png": {
+		"ft": 32768,
+		"iS": 35225,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/mario.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/naranjas.png": {
+		"ft": 32768,
+		"iS": 22660,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/naranjas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/platanos.png": {
+		"ft": 32768,
+		"iS": 33725,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/platanos.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA1T3\/182\/i\/uvas.png": {
+		"ft": 32768,
+		"iS": 41509,
+		"oA": 0,
+		"oAP": "\/MA1T3\/182\/i\/uvas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA1T3\/182\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -18939,74 +19046,74 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_BuenTrabajo.wav": {
+	"\/MA1T3\/182\/s\/au1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_BuenTrabajo.wav",
+		"oAP": "\/MA1T3\/182\/s\/au1.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Gracias.wav": {
+	"\/MA1T3\/182\/s\/au2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Gracias.wav",
+		"oAP": "\/MA1T3\/182\/s\/au2.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Inst_Selecciona.wav": {
+	"\/MA1T3\/182\/s\/au3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Inst_Selecciona.wav",
+		"oAP": "\/MA1T3\/182\/s\/au3.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Ayuda.wav": {
+	"\/MA1T3\/182\/s\/buen.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Ayuda.wav",
+		"oAP": "\/MA1T3\/182\/s\/buen.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Hola.wav": {
+	"\/MA1T3\/182\/s\/gracias.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Hola.wav",
+		"oAP": "\/MA1T3\/182\/s\/gracias.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Mercado.wav": {
+	"\/MA1T3\/182\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Int_Mercado.wav",
+		"oAP": "\/MA1T3\/182\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos4.wav": {
+	"\/MA1T3\/182\/s\/n1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos4.wav",
+		"oAP": "\/MA1T3\/182\/s\/n1.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_1.wav": {
+	"\/MA1T3\/182\/s\/n2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_1.wav",
+		"oAP": "\/MA1T3\/182\/s\/n2.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_2.wav": {
+	"\/MA1T3\/182\/s\/n3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_2.wav",
+		"oAP": "\/MA1T3\/182\/s\/n3.mp3",
 		"oF": 0
 		},
-	"\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_3.wav": {
+	"\/MA1T3\/182\/s\/n4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA1T3\/182\/s\/Voy al mercado Ma 1° T3_Necesitamos_3.wav",
+		"oAP": "\/MA1T3\/182\/s\/n4.mp3",
 		"oF": 0
 		},
 	"\/MA1T3\/182\/Voy al mercado Ma 1° T3 - Hoja 1.ai": {

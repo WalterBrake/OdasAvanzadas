@@ -395,6 +395,12 @@ embed {
 .row.column {
   flex-direction: column;
 }
+.row.vertical {
+  align-items: unset;
+}
+.row.flex-end {
+  justify-content: flex-end;
+}
 .item {
   display: flex;
   justify-content: center;
@@ -844,6 +850,7 @@ embed {
   padding: 4px;
   border-radius: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 .inputable input {
   padding: 4px;
@@ -862,7 +869,15 @@ embed {
   background: #5EB246;
   box-shadow: 4px 4px 0 #55a03f, -1px -1px 0 #55a03f, 1px -1px 0 #55a03f, -1px 1px 0 #55a03f, 1px 1px 0 #55a03f;
 }
+.inputable.c1 .inputable_numerical {
+  background: #5EB246;
+  box-shadow: 4px 4px 0 #55a03f, -1px -1px 0 #55a03f, 1px -1px 0 #55a03f, -1px 1px 0 #55a03f, 1px 1px 0 #55a03f;
+}
 .inputable.c2 {
+  background: #005093;
+  box-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
+}
+.inputable.c2 .inputable_numerical {
   background: #005093;
   box-shadow: 4px 4px 0 #004884, -1px -1px 0 #004884, 1px -1px 0 #004884, -1px 1px 0 #004884, 1px 1px 0 #004884;
 }
@@ -870,7 +885,15 @@ embed {
   background: #00A9CB;
   box-shadow: 4px 4px 0 #0098b7, -1px -1px 0 #0098b7, 1px -1px 0 #0098b7, -1px 1px 0 #0098b7, 1px 1px 0 #0098b7;
 }
+.inputable.c3 .inputable_numerical {
+  background: #00A9CB;
+  box-shadow: 4px 4px 0 #0098b7, -1px -1px 0 #0098b7, 1px -1px 0 #0098b7, -1px 1px 0 #0098b7, 1px 1px 0 #0098b7;
+}
 .inputable.c4 {
+  background: #EB8B2E;
+  box-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
+}
+.inputable.c4 .inputable_numerical {
   background: #EB8B2E;
   box-shadow: 4px 4px 0 #d47d29, -1px -1px 0 #d47d29, 1px -1px 0 #d47d29, -1px 1px 0 #d47d29, 1px 1px 0 #d47d29;
 }
@@ -878,7 +901,15 @@ embed {
   background: #DB3E34;
   box-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
 }
+.inputable.c5 .inputable_numerical {
+  background: #DB3E34;
+  box-shadow: 4px 4px 0 #c5382f, -1px -1px 0 #c5382f, 1px -1px 0 #c5382f, -1px 1px 0 #c5382f, 1px 1px 0 #c5382f;
+}
 .inputable.c6 {
+  background: #F460AB;
+  box-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
+}
+.inputable.c6 .inputable_numerical {
   background: #F460AB;
   box-shadow: 4px 4px 0 #dc569a, -1px -1px 0 #dc569a, 1px -1px 0 #dc569a, -1px 1px 0 #dc569a, 1px 1px 0 #dc569a;
 }
@@ -886,9 +917,41 @@ embed {
   background: #A6881F;
   box-shadow: 4px 4px 0 #957a1c, -1px -1px 0 #957a1c, 1px -1px 0 #957a1c, -1px 1px 0 #957a1c, 1px 1px 0 #957a1c;
 }
+.inputable.c7 .inputable_numerical {
+  background: #A6881F;
+  box-shadow: 4px 4px 0 #957a1c, -1px -1px 0 #957a1c, 1px -1px 0 #957a1c, -1px 1px 0 #957a1c, 1px 1px 0 #957a1c;
+}
 .inputable.c8 {
   background: #C75980;
   box-shadow: 4px 4px 0 #b35073, -1px -1px 0 #b35073, 1px -1px 0 #b35073, -1px 1px 0 #b35073, 1px 1px 0 #b35073;
+}
+.inputable.c8 .inputable_numerical {
+  background: #C75980;
+  box-shadow: 4px 4px 0 #b35073, -1px -1px 0 #b35073, 1px -1px 0 #b35073, -1px 1px 0 #b35073, 1px 1px 0 #b35073;
+}
+.inputable.numerical {
+  display: flex;
+  justify-content: center;
+}
+.inputable.numerical .inputable_numerical {
+  min-width: 30px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-family: 'barnacle_boyregular';
+  cursor: pointer;
+  outline: none !important;
+}
+.inputable.numerical .inputable_numerical:hover {
+  box-shadow: 1px 1px 0 #fff;
+  background: rgba(255, 255, 255, 0.5);
+}
+.inputable.numerical .inputable_numerical:active {
+  background: #fff;
+}
+.inputable.numerical input {
+  margin: 0 4px;
 }
 /* #### MODULO desplegar.js */
 .desplegar {
@@ -948,6 +1011,28 @@ embed {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   box-shadow: 6px 6px 0 var(--main);
+}
+.desplegar {
+  position: relative;
+}
+.desplegar .reseter {
+  background: var(--wrongcol);
+  color: #fff;
+  font-family: 'barnacle_boyregular';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.desplegar .reseter:hover {
+  background: var(--accent);
 }
 /* VIDEOPLAYER */
 .videoplayer {
@@ -1292,6 +1377,9 @@ embed {
   text-align: center;
 }
 /*  COMIC */
+.relative {
+  position: relative;
+}
 .comic {
   text-align: center;
   position: relative;
@@ -1305,6 +1393,9 @@ embed {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.comic .dialog.none {
+  position: relative;
 }
 .comic .dialog.tc {
   left: 50%;

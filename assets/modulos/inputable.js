@@ -8,7 +8,9 @@ Vue.component('inputable', {
         'placeholder',
         'pattern',
         'disabled',
-        'type'
+        'type',
+        'numerical', //plus / minus buttons
+        'disableok', 
     ],
     data() {
         return {
@@ -17,18 +19,49 @@ Vue.component('inputable', {
         }
     },
     template: `
-        <div ref="inputable" :class="'inputable ' + (initclass!=undefined?initclass:'')+ ' ' + (status ? 'okInput':'') ">
+        <div ref="inputable" :class="'inputable '+ 
+            (initclass!=undefined?initclass:'') 
+             + ' ' + 
+            (status ? 'okInput':'') 
+            + ' ' + 
+            (numerical!=undefined ? 'numerical':'') 
+            ">
             <slot name="before"></slot>
+            <button v-if="numerical!=undefined && !status" class="inputable_numerical inputable_numerical_minus" @click="decrease">-</button>
             <slot v-if="status"></slot>
             <input @input="filled" v-model="inputed" v-if="!status" :placeholder="placeholder?placeholder:''" :pattern="pattern?pattern:''" :disabled="disabled?disabled:false" :type="type?type:'text'">
+            <button v-if="numerical!=undefined &&  !status" class="inputable_numerical inputable_numerical_plus" @click="increase">+</button>
             <slot name="after"></slot>
         </div>
     `,
     methods: {
+        increase () {
+            this.inputed++
+            this.filled()
+        },
+        decrease () {
+            if(this.inputed==0){ return false }
+            this.inputed--
+            this.filled()
+        },
         filled () {
+
+            this.$emit('current', this.inputed)
+
             s_select.play()
-            var textinput = this.inputed.toLowerCase().trim()
-            if(textinput == this.isok && textinput.length>0) {
+            var textinput = this.inputed
+            textinput = (typeof textinput == 'string' ? textinput.toLowerCase().trim() : textinput)
+            
+            
+            if(typeof textinput == 'string' && textinput.length<=0){
+                return false
+            }
+            
+            if(this.disableok!=undefined){
+                return false
+            }
+
+            if(textinput == this.isok) {
                 this.status = true
                 this.isOkFn()
             } else {
@@ -36,6 +69,7 @@ Vue.component('inputable', {
                     s_error.play()
                 }
             }
+
         },
         isOkFn() {
             var _this = this
@@ -94,6 +128,10 @@ Vue.component('inputable', {
 
     },
     mounted () {
+        if (this.numerical != undefined) {
+            this.inputed = 0
+        }
+
         //if(this.isok == this.status){this.$emit('input', true)}else{this.$emit('input', false)}
         //this.$refs.clickable.children[0].classList.add('animate__animated')
     }

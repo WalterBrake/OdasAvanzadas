@@ -387,6 +387,14 @@ embed {
     flex-direction: column;
 }
 
+.row.vertical{
+    align-items: unset;
+}
+
+.row.flex-end{
+    justify-content: flex-end;
+}
+
 .item{
     .fullflexcenter;
     transform: scale(1);
@@ -602,6 +610,7 @@ embed {
 	padding: 4px;
     border-radius: 10px;
     box-sizing: border-box;
+    text-align: center;
 	input{
         padding: 4px;
         width: 100%;
@@ -614,15 +623,43 @@ embed {
 			outline: none;
 		}
     }
-    &.c1{  .conectorbg(@main); }
-    &.c2{ .conectorbg(@sec); }
-    &.c3{ .conectorbg(@clear); }
-    &.c4{ .conectorbg(@accent); }
-    &.c5{ .conectorbg(@wrongcol); }
-    &.c6 { .conectorbg(@c6); }
-    &.c7 { .conectorbg(@c7); }
-    &.c8 { .conectorbg(@c8); }
+    &.c1{  .conectorbg(@main);  .inputable_numerical{ .conectorbg(@main); } }
+    &.c2{ .conectorbg(@sec);  .inputable_numerical{ .conectorbg(@sec); } }
+    &.c3{ .conectorbg(@clear);  .inputable_numerical{ .conectorbg(@clear); } }
+    &.c4{ .conectorbg(@accent);  .inputable_numerical{ .conectorbg(@accent); } }
+    &.c5{ .conectorbg(@wrongcol);  .inputable_numerical{ .conectorbg(@wrongcol); } }
+    &.c6 { .conectorbg(@c6);  .inputable_numerical{ .conectorbg(@c6); } }
+    &.c7 { .conectorbg(@c7);  .inputable_numerical{ .conectorbg(@c7); } }
+    &.c8 { .conectorbg(@c8);  .inputable_numerical{ .conectorbg(@c8); } }
+
 }
+
+
+.inputable.numerical {
+	display: flex;
+    justify-content: center;
+}
+.inputable.numerical .inputable_numerical {
+	min-width: 30px;
+	border-radius: 6px;
+	border: none;
+	background: transparent;
+	color: #fff;
+	font-family: 'barnacle_boyregular';
+	cursor: pointer;
+	outline: none !important;
+}
+.inputable.numerical .inputable_numerical:hover {
+	box-shadow: 1px 1px 0 #fff;
+	background: rgba(255, 255, 255, 0.5);
+}
+.inputable.numerical .inputable_numerical:active {
+	background: #fff;
+}
+.inputable.numerical input {
+	margin: 0 4px;
+}
+
 
 
 
@@ -688,6 +725,27 @@ embed {
 	box-shadow: 6px 6px 0 var(--main);
 }
 
+
+.desplegar{
+	position: relative;
+	.reseter{
+		background: var(--wrongcol);
+		color: #fff;
+		font-family: 'barnacle_boyregular';
+		position: absolute;
+		top: 0; right: 0;
+		width: 20px; height: 20px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+		&:hover{
+			background: var(--accent);
+		}
+	}
+}
 
 
 
@@ -906,12 +964,15 @@ embed {
 
 
 /*  COMIC */
-
+.relative{position: relative;}
 .comic {
 	text-align: center;
 	position: relative;
 	.dialog{
 		position: absolute;
+        &.none{
+            position: relative;
+        }
         &.tc{ left: 50%; top: 0; margin-left: -20%; }
         &.bc{ left: 50%; bottom: 0; margin-left: -20%; }
         &.cl{ left: 0; top: 50%; }

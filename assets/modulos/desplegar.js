@@ -6,7 +6,8 @@ Vue.component('desplegar', {
         'answerNum', // valor ok en el array -
         'showOk', // Cuando OK todos los ERROR se ocultan
         'modalOptions', //Mostrar las opciones "flotando",
-        'initialStatus' // initial state = 'open' ? 
+        'initialStatus', // initial state = 'open' ?
+        'disableok', //deshabilita el emit ok
     ],
     data () {
         return {
@@ -27,6 +28,9 @@ Vue.component('desplegar', {
                     </div>
                 </template>
             </div>
+            <div class="reseter" v-if="disableok != undefined && status == 'ok'" @click="reseter">
+                x
+            </div>
         </div>
     `,
     computed: {
@@ -46,12 +50,25 @@ Vue.component('desplegar', {
         }
     },
     methods: {
+        reseter () {
+            this.selected = null
+            this.status = 'open'
+            this.$emit('current', this.selected)
+        },
         clicked(ref, optionAnswer){
             if(this.selected != null){
                 return false
             }
+            
+            if(this.disableok != undefined){
+                this.selected = optionAnswer
+                this.status = 'ok'
+                this.$emit('current', this.selected)
+                return false
+            }
+
+            
             if(optionAnswer == this.theanswer) {
-                
                 // OK
                 this.selected = optionAnswer
                 EventBus.$emit('isok')
