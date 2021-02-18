@@ -3,27 +3,142 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Analizo un cuento</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .h4{
+          background: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          margin: 10px;
+          box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+      }
+      @media (max-width: 680px) {
+          .h4 {
+              font-size: 0.8rem;
+              padding: 4px;
+          }
+          .number.smaller {
+              font-size: 0.8rem;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="true")-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Analizo un cuento</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo un cuento" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="w100 text-center">
+            <div class="h4">¿Cómo es el pueblo de Hamelín?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Un pueblo con mucho dinero y castillos.','Es un lejano pueblo invadido de ratones.','Es una ciudad con grandes edificios.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿En qué momento el alcalde se desesperó con los ratones?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Cuando se comieron su pastel.','Cuando invadieron al panadero.','Cuando destruyeron su sillón favorito.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo un cuento" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="w100 text-center">
+            <div class="h4">¿Quién ofreció una solución al alcalde?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Un sastre que llevaba  tela a su casa.','Un flautista que pasaba por el lugar.','La cocinera del alcalde.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Cuál será la razón por la que el alcalde le ofreció al flautista mucho más dinero del que pidió?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Porque el flautista era muy pobre.','Porque quería resolver el problema lo más pronto posible.','Porque el alcalde había robado dinero.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo un cuento" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="w100 text-center">
+            <div class="h4">¿Qué opinas de la acción del acalde de no pagar al flautista?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Su acción fue correcta porque fue un trabajo corto.','Hizo bien en no pagar, era solo un flautista que no tiene profesión.','Fue algo incorrecto porque fue el acuerdo y el flautista resolvió el problema.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Qué características tiene el alcalde en este cuento?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Es alguien confiable y amable.','Tiene fama de tener mucho dinero.','Es mentiroso y desconsiderado.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 5-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo un cuento" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="w100 text-center">
+            <div class="h4">¿Qué hizo el flautista como respuesta a la acción del alcalde?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Se llevó a los panaderos del pueblo.','Tocó una melodía y se llevó a los niños.','No se fue de casa del alcalde hasta que le pagó.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
+          <div class="w100 mt-1 text-center">
+            <div class="h4">¿Por qué el flautista no quería que los niños del pueblo siguieran el ejemplo de los adultos?</div>
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Porque el flautista no quería que los niños siguieran el mal ejemplo de los que se burlaron de él.','Porque los adultos del pueblo son un ejemplo de bondad y de amabilidad.','Porque los niños se volverían alegres y trabajadores, y el flautista no lo era.']" :key="index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1 w100">
+                <number randomc="randomc" smaller="smaller">{{i}}</number>
+              </clickable>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +173,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>

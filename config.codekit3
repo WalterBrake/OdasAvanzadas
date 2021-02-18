@@ -12538,6 +12538,20 @@
 		"oAP": "\/ES4T3\/79\/Analizo un cuento Es4°T3 - Hoja 1.ai",
 		"oF": 0
 		},
+	"\/ES4T3\/79\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T3\/79\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES4T3\/79\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T3\/79\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/ES4T3\/79\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -12554,186 +12568,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_1.wav": {
+	"\/ES4T3\/79\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_1.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_2.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_3.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_3.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_4.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_4.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_5.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_5.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_6.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_6.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_7.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Audio_7.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_AudioTítulo.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_AudioTítulo.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXCaída.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXCaída.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir4.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir4.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir_2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir_2.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir_3.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXcrujir_3.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre3.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre3.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre4.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre4.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre5.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXHombre5.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre6.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre6.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre_2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXhombre_2.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatones.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatones.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatón.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatón.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatón_2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXRatón_2.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresa1.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresa1.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresa2.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresa2.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresaJuntos.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_FXSorpresaJuntos.wav",
-		"oF": 0
-		},
-	"\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Inst.wav": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES4T3\/79\/s\/Analizo un cuento Es4°T3_Inst.wav",
+		"oAP": "\/ES4T3\/79\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/ES5T1\/26\/aimg\/piramide.svg": {
