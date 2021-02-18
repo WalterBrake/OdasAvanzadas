@@ -3,27 +3,176 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Escribo mis propias adivinanzas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .card {
+          padding: 10px;
+          background: var(--main);
+          border-radius: 10px;
+          margin: 6px;
+          box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+      }
+      .card img {
+          margin: 0 auto;
+      }
+      p {
+          background: #fff;
+          padding: 6px;
+          border-radius: 10px;
+          font-size: 0.9rem;
+      }
+      p.end {
+          text-align: right;
+          font-weight: bold;
+          font-size: 0.8rem;
+          background: var(--sec);
+          color: #fff;
+          width: fit-content;
+          max-width: 50%;
+          padding: 4px;
+          margin-left: auto;
+      }
+      .drop {
+          min-height: 30px;
+          background: #fff;
+          border-radius: 10px;
+          border: 2px dashed var(--sec);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 4px 4px rgba(0, 0, 0, 0.1) inset;
+      }
+      @media (max-width: 680px) {
+          .card {
+              position: relative;
+          }
+          .card img {
+              position: absolute;
+              right: 10px;
+              top: 10px;
+              max-width: 50px;
+          }
+          .card p {
+              font-size: 0.6rem;
+          }
+      }
+      [wascloned]{
+          display: none;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Escribo mis propias adivinanzas" text="Coloca el tipo de recurso que usa cada adivinanza." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <div class="w30 ws100">
+              <div class="card">
+                <p>Lana sube,<br/>lana baja,<br/>y el señor que la trabaja.</p>
+                <p class="end">La navaja.</p>
+                <div class="text-center"><img class="w40" src="i/a1.png"/></div>
+                <div class="drop" data="Juego de palabras" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+            <div class="w30 ws100">
+              <div class="card">
+                <p>Adivina, adivina,<br/>alto, altanero,<br/>gran caballero,<br/>capota de grana<br/>y espuela de acero.</p>
+                <p class="end">El gallo.</p>
+                <div class="text-center"><img class="w40" src="i/a2.png"/></div>
+                <div class="drop" data="Rima" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+            <div class="w30 ws100">
+              <div class="card">
+                <p>Mis caras redondas,<br/>¡qué estiradas son!<br/>A fuerza de golpes,<br/>así canto yo.</p>
+                <p class="end">Los tambores.</p>
+                <div class="text-center"><img class="w40" src="i/a3.png"/></div>
+                <div class="drop" data="Metáfora" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 drags wrap">
+            <drag ref="d1" initclass="txt" data="Metáfora" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Metáfora</div>
+            </drag>
+            <drag ref="d2" isfalse="isfalse" initclass="txt" data="Analogía" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Analogía</div>
+            </drag>
+            <drag ref="d3" initclass="txt" data="Rima" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Rima</div>
+            </drag>
+            <drag ref="d4" initclass="txt" data="Juego de palabras" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Juego de palabras</div>
+            </drag>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['d1', 'd2', 'd3', 'd4'], 3)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Escribo mis propias adivinanzas" text="Coloca el tipo de recurso que usa cada adivinanza." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 wrap">
+            <div class="w30 ws100">
+              <div class="card">
+                <p>El día es al sol <br/>como la noche es a... </p>
+                <p class="end">La luna.</p>
+                <div class="text-center"><img class="w40" src="i/a4.png"/></div>
+                <div class="drop" data="Analogía" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+            <div class="w30 ws100">
+              <div class="card">
+                <p>Soy astuto y juguetón<br/>y cazar un ratón<br/>es mi mayor afición.</p>
+                <p class="end">El gato.</p>
+                <div class="text-center"><img class="w40" src="i/a5.png"/></div>
+                <div class="drop" data="Rima" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+            <div class="w30 ws100">
+              <div class="card">
+                <p>Cuando sube, sube llena,<br/>cuando baja, baja vacía,<br/>corre y no te entretengas,<br/>que la sopa se enfría.  </p>
+                <p class="end">La cucaracha.</p>
+                <div class="text-center"><img class="w40" src="i/a6.png"/></div>
+                <div class="drop" data="Juego de palabras" droptimes="multiple" droplimit="1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 drags wrap">
+            <drag ref="b4" initclass="txt" data="Juego de palabras" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Juego de palabras</div>
+            </drag>
+            <drag ref="b3" initclass="txt" data="Rima" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Rima</div>
+            </drag>
+            <drag ref="b2" initclass="txt" data="Analogía" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Analogía</div>
+            </drag>
+            <drag ref="b1" isfalse="isfalse" initclass="txt" data="Metáfora" dropzone=".drop" append-clone="append-clone" extval="extval">
+              <div>Metáfora</div>
+            </drag>
+          </div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['b1', 'b2', 'b3', 'b4'], 3)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -61,7 +210,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>

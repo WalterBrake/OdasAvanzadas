@@ -13,7 +13,7 @@ Vue.component('drag', {
         'dragOkClass', // coloca clase al drag si es ok
         'dragErrorClass', // coloca clase al drag si es error
         'particleColor', // color de particulas
-        'initclass', // class de inicio
+        'initclass', // class de inicio  ::::   "txt" 
         'dragLine', // Aparece una linea desde la ubicación inicial hasta donde se suelta, 
         'appendToDropzone', // Se añade al contenedor del dropzone,
         'appendClone', // Se añade al contenedor del dropzone un clon del contenido

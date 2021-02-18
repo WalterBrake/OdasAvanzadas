@@ -1,12 +1,67 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Escribo mis propias adivinanzas'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .card {
+                padding: 10px;
+                background: var(--main);
+                border-radius: 10px;
+                margin: 6px;
+                box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+            }
+            .card img {
+                margin: 0 auto;
+            }
+            p {
+                background: #fff;
+                padding: 6px;
+                border-radius: 10px;
+                font-size: 0.9rem;
+            }
+            p.end {
+                text-align: right;
+                font-weight: bold;
+                font-size: 0.8rem;
+                background: var(--sec);
+                color: #fff;
+                width: fit-content;
+                max-width: 50%;
+                padding: 4px;
+                margin-left: auto;
+            }
+            .drop {
+                min-height: 30px;
+                background: #fff;
+                border-radius: 10px;
+                border: 2px dashed var(--sec);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 4px 4px rgba(0, 0, 0, 0.1) inset;
+            }
+            @media (max-width: 680px) {
+                .card {
+                    position: relative;
+                }
+                .card img {
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    max-width: 50px;
+                }
+                .card p {
+                    font-size: 0.6rem;
+                }
+            }
+            [wascloned]{
+                display: none;
+            }
+
 
 
     body
@@ -15,14 +70,102 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca el tipo de recurso que usa cada adivinanza." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.wrap
+                        .w30.ws100: .card
+                            p
+                                | Lana sube,
+                                br
+                                | lana baja,
+                                br
+                                | y el señor que la trabaja.
+                            p.end La navaja.
+                            .text-center: img(src="i/a1.png").w40
+                            .drop(data="Juego de palabras" droptimes="multiple" droplimit="1")
+                        .w30.ws100: .card
+                            p
+                                | Adivina, adivina,
+                                br
+                                | alto, altanero,
+                                br
+                                | gran caballero,
+                                br
+                                | capota de grana
+                                br
+                                | y espuela de acero.
+                            p.end El gallo.
+                            .text-center: img(src="i/a2.png").w40
+                            .drop(data="Rima" droptimes="multiple" droplimit="1")
+                        .w30.ws100: .card
+                            p
+                                | Mis caras redondas,
+                                br
+                                | ¡qué estiradas son!
+                                br
+                                | A fuerza de golpes,
+                                br
+                                | así canto yo.
+                            p.end Los tambores.
+                            .text-center: img(src="i/a3.png").w40
+                            .drop(data="Metáfora" droptimes="multiple" droplimit="1")
+                    
+                    .row.w100.drags.wrap
+                        drag(ref="d1" initclass="txt" data="Metáfora" dropzone=".drop" append-clone extval): div Metáfora
+                        drag(ref="d2" isfalse initclass="txt" data="Analogía" dropzone=".drop" append-clone extval): div Analogía
+                        drag(ref="d3" initclass="txt" data="Rima" dropzone=".drop" append-clone extval): div Rima
+                        drag(ref="d4" initclass="txt" data="Juego de palabras" dropzone=".drop" append-clone extval): div Juego de palabras
                     .row.w100
+                        button(@click="dragValidation(['d1', 'd2', 'd3', 'd4'], 3)").button.big.animate__animated.animate__flip Verificar
             
             
+            // SCENES 2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca el tipo de recurso que usa cada adivinanza." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap
+                        .w30.ws100: .card
+                            p
+                                | El día es al sol 
+                                br
+                                | como la noche es a... 
+                            p.end La luna.
+                            .text-center: img(src="i/a4.png").w40
+                            .drop(data="Analogía" droptimes="multiple" droplimit="1")
+                        .w30.ws100: .card
+                            p
+                                | Soy astuto y juguetón
+                                br
+                                | y cazar un ratón
+                                br
+                                | es mi mayor afición.
+                            p.end El gato.
+                            .text-center: img(src="i/a5.png").w40
+                            .drop(data="Rima" droptimes="multiple" droplimit="1")
+                        .w30.ws100: .card
+                            p
+                                | Cuando sube, sube llena,
+                                br
+                                | cuando baja, baja vacía,
+                                br
+                                | corre y no te entretengas,
+                                br
+                                | que la sopa se enfría.  
+                            p.end La cucaracha.
+                            .text-center: img(src="i/a6.png").w40
+                            .drop(data="Juego de palabras" droptimes="multiple" droplimit="1")
+                    
+                    .row.w100.drags.wrap
+                        drag(ref="b4" initclass="txt" data="Juego de palabras" dropzone=".drop" append-clone extval): div Juego de palabras
+                        drag(ref="b3" initclass="txt" data="Rima" dropzone=".drop" append-clone extval): div Rima
+                        drag(ref="b2" initclass="txt" data="Analogía" dropzone=".drop" append-clone extval): div Analogía
+                        drag(ref="b1" isfalse initclass="txt" data="Metáfora" dropzone=".drop" append-clone extval): div Metáfora
+                    .row.w100
+                        button(@click="dragValidation(['b1', 'b2', 'b3', 'b4'], 3)").button.big.animate__animated.animate__flip Verificar
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +174,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2

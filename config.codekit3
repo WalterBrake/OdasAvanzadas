@@ -11473,12 +11473,71 @@
 		"oAP": "\/ES3T3\/80\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES3T3\/88\/Escribo mis propias adivinanzas Es3°T3 - Hoja 1.ai": {
-		"cB": 0,
-		"ft": 8192,
+	"\/ES3T3\/88\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 11712,
 		"oA": 0,
-		"oAP": "\/ES3T3\/88\/Escribo mis propias adivinanzas Es3°T3 - Hoja 1.ai",
-		"oF": 0
+		"oAP": "\/ES3T3\/88\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/88\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 26317,
+		"oA": 0,
+		"oAP": "\/ES3T3\/88\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/88\/i\/a3.png": {
+		"ft": 32768,
+		"iS": 20614,
+		"oA": 0,
+		"oAP": "\/ES3T3\/88\/i\/a3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/88\/i\/a4.png": {
+		"ft": 32768,
+		"iS": 22226,
+		"oA": 0,
+		"oAP": "\/ES3T3\/88\/i\/a4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/88\/i\/a5.png": {
+		"ft": 32768,
+		"iS": 20335,
+		"oA": 0,
+		"oAP": "\/ES3T3\/88\/i\/a5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/88\/i\/a6.png": {
+		"ft": 32768,
+		"iS": 9222,
+		"oA": 0,
+		"oAP": "\/ES3T3\/88\/i\/a6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ES3T3\/88\/index.html": {
 		"cB": 0,
@@ -11496,11 +11555,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES3T3\/88\/s\/Escribo mis propias adivinanzas Es3°T3_Inst.wav": {
+	"\/ES3T3\/88\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES3T3\/88\/s\/Escribo mis propias adivinanzas Es3°T3_Inst.wav",
+		"oAP": "\/ES3T3\/88\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
