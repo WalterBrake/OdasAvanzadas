@@ -9691,6 +9691,61 @@
 		"oAP": "\/ES2T2\/84\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES2T3\/111\/i\/a0.png": {
+		"ft": 32768,
+		"iS": 64814,
+		"oA": 0,
+		"oAP": "\/ES2T3\/111\/i\/a0.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/111\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 98934,
+		"oA": 0,
+		"oAP": "\/ES2T3\/111\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/111\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 94877,
+		"oA": 0,
+		"oAP": "\/ES2T3\/111\/i\/vestuaristas.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/111\/i\/a3.png": {
+		"ft": 32768,
+		"iS": 73819,
+		"oA": 0,
+		"oAP": "\/ES2T3\/111\/i\/a3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES2T3\/111\/i\/a4.png": {
+		"ft": 32768,
+		"iS": 90159,
+		"oA": 0,
+		"oAP": "\/ES2T3\/111\/i\/a4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES2T3\/111\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -9707,11 +9762,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES2T3\/111\/s\/Conozco una obra de teatro Es 2o T3_Inst_Teatro.wav": {
+	"\/ES2T3\/111\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES2T3\/111\/s\/Conozco una obra de teatro Es 2o T3_Inst_Teatro.wav",
+		"oAP": "\/ES2T3\/111\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/ES2T3\/115\/i\/apple.png": {

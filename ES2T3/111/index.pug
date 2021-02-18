@@ -1,12 +1,60 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco una obra de teatro'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag {
+                width: auto;
+                height: auto;
+                margin: 10px;
+                text-align: center;
+            }
+            .drag div {
+                padding: 10px;
+            }
+            @media (max-width: 680px) {
+                .drag .number {
+                    font-size: 0.7rem;
+                }
+            }
+            .card {
+                padding: 4px;
+                border-radius: 10px;
+                background: #DDF0EE;
+                margin: 4px 0;
+            }
+            .card img {
+                border-radius: 10px;
+            }
+            .card .tx {
+                font-size: 0.8rem;
+            }
+            @media (max-width: 680px) {
+                .card .tx {
+                    font-size: 0.6rem;
+                }
+            }
+            .card .drop {
+                background: #fff;
+                min-height: 40px;
+                border: 2px dashed #999;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @media (max-width: 680px) {
+                .card .drop .number {
+                    font-size: 0.7rem;
+                }
+            }
+            [wascloned] {
+                display: none;
+            }
 
 
     body
@@ -15,12 +63,24 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Vamos a conocer más de las obras de teatro. Coloca el nombre en el lugar que corresponde según su descripción." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w60
+                            template(v-for="(i, index) in temps.a")
+                                div.card.row
+                                    .w20.im: img(:src="'i/a'+index+'.png'").w90
+                                    .w40.tx {{i.t}}
+                                    .w40.drop(:data="i.v" droptimes="multiple" droplimit="1").title
             
-            
+                        .w40
+                            .row.wrap
+                                template(v-for="(i, index) in ['Escenógrafos','Vestuaristas','Público', 'Actores','Director',]")
+                                    drag(ref="drg" :data="i" dropzone=".drop" extval append-clone): number(randomc smaller) {{i}}
+                            .text-center.mt-2
+                                button(@click="dragValidation(['drg'], 5)").button.big.animate__animated.animate__flip Verificar
+
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -28,7 +88,13 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {v:'Director', t:'Es quien dirige la obra de teatro por completo.'},
+                    {v:'Actores', t:'Son las personas que representan a un personajes durante la obra de teatro.'},
+                    {v:'Vestuaristas', t:'Son los encargados de hacer la ropa y los disfraces de los actores.'},
+                    {v:'Escenógrafos', t:'Son quienes elaboran la decoración del escenario.'},
+                    {v:'Público', t:'Son las personas que van a ver y disfrutar una obra de teatro.'},
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1

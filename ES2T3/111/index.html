@@ -3,23 +3,96 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco una obra de teatro</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+          margin: 10px;
+          text-align: center;
+      }
+      .drag div {
+          padding: 10px;
+      }
+      @media (max-width: 680px) {
+          .drag .number {
+              font-size: 0.7rem;
+          }
+      }
+      .card {
+          padding: 4px;
+          border-radius: 10px;
+          background: #DDF0EE;
+          margin: 4px 0;
+      }
+      .card img {
+          border-radius: 10px;
+      }
+      .card .tx {
+          font-size: 0.8rem;
+      }
+      @media (max-width: 680px) {
+          .card .tx {
+              font-size: 0.6rem;
+          }
+      }
+      .card .drop {
+          background: #fff;
+          min-height: 40px;
+          border: 2px dashed #999;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      @media (max-width: 680px) {
+          .card .drop .number {
+              font-size: 0.7rem;
+          }
+      }
+      [wascloned] {
+          display: none;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco una obra de teatro" text="Vamos a conocer más de las obras de teatro. Coloca el nombre en el lugar que corresponde según su descripción." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w60">
+              <template v-for="(i, index) in temps.a">
+                <div class="card row">
+                  <div class="w20 im"><img class="w90" :src="'i/a'+index+'.png'"/></div>
+                  <div class="w40 tx">{{i.t}}</div>
+                  <div class="w40 drop title" :data="i.v" droptimes="multiple" droplimit="1"></div>
+                </div>
+              </template>
+            </div>
+            <div class="w40">
+              <div class="row wrap">
+                <template v-for="(i, index) in ['Escenógrafos','Vestuaristas','Público', 'Actores','Director',]">
+                  <drag ref="drg" :data="i" dropzone=".drop" extval="extval" append-clone="append-clone">
+                    <number randomc="randomc" smaller="smaller">{{i}}</number>
+                  </drag>
+                </template>
+              </div>
+              <div class="text-center mt-2">
+                <button class="button big animate__animated animate__flip" @click="dragValidation(['drg'], 5)">Verificar</button>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -58,7 +131,13 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {v:'Director', t:'Es quien dirige la obra de teatro por completo.'},
+          {v:'Actores', t:'Son las personas que representan a un personajes durante la obra de teatro.'},
+          {v:'Vestuaristas', t:'Son los encargados de hacer la ropa y los disfraces de los actores.'},
+          {v:'Escenógrafos', t:'Son quienes elaboran la decoración del escenario.'},
+          {v:'Público', t:'Son las personas que van a ver y disfrutar una obra de teatro.'},
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
