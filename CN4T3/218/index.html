@@ -3,27 +3,364 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Explico los eclipses </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .options {
+          background: #fff;
+          border-radius: 10px;
+          min-height: 60px;
+      }
+      .options .drag {
+          width: auto;
+          height: auto;
+          margin: 6px;
+          text-align: center;
+      }
+      .options .drag div {
+          background: #f5f5f5;
+          font-size: 0.9rem;
+          padding: 2px 6px;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+      }
+      .options .drag img {
+          max-width: 40px;
+      }
+      .sun {
+          position: relative;
+      }
+      .sun img {
+          position: relative;
+          z-index: 1;
+      }
+      .sun .sombra {
+          width: 0;
+          height: 40px;
+          border-top: 80px solid transparent;
+          border-bottom: 80px solid transparent;
+          border-left: 180px solid #E8C24F;
+          opacity: 0.6;
+          position: absolute;
+          right: -20%;
+          top: 50%;
+          z-index: 0;
+          margin-top: -100px;
+      }
+      @media (max-width: 680px) {
+          .sun .sombra {
+              border-top: 40px solid transparent;
+              border-bottom: 40px solid transparent;
+              border-left: 100px solid #E8C24F;
+              margin-top: -60px;
+          }
+      }
+      @media (max-width: 420px) {
+          .sun .sombra {
+              border-left: 80px solid #E8C24F;
+          }
+      }
+      .diagrama {
+          position: relative;
+      }
+      .sun,
+      .a1,
+      .a2,
+      .a3 {
+          position: relative;
+          min-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+      .drop {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .drop img {
+          position: relative;
+          z-index: 1;
+      }
+      .drop.astro {
+          border: 2px dashed #666;
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      @media (max-width: 680px) {
+          .drop.astro {
+              width: 60px;
+              height: 60px;
+          }
+      }
+      @media (max-width: 420px) {
+          .drop.astro {
+              width: 40px;
+              height: 40px;
+          }
+      }
+      .drop.tag {
+          background: #fff;
+          height: 40px;
+          border-radius: 6px;
+          border: 2px dashed #666;
+      }
+      .diagrama .drop.tag {
+          position: absolute;
+          bottom: -20px;
+          left: 5%;
+          width: 90%;
+          z-index: 2;
+      }
+      .sombra2.equal {
+          height: 70px;
+          width: 200%;
+          background: #000;
+          opacity: 0.2;
+          margin: 0 -50%;
+      }
+      @media (max-width: 680px) {
+          .sombra2.equal {
+              height: 40px;
+          }
+      }
+      .sombra2.masque {
+          width: 0;
+          height: 30px;
+          border-top: 40px solid transparent;
+          border-bottom: 40px solid transparent;
+          border-left: 280px solid #000;
+          opacity: 0.2;
+          position: absolute;
+          right: -50%;
+          top: 50%;
+          z-index: 0;
+          margin-top: -55px;
+      }
+      @media (max-width: 680px) {
+          .sombra2.masque {
+              border-top: 20px solid transparent;
+              border-bottom: 20px solid transparent;
+              border-left: 150px solid #000;
+              margin-top: -35px;
+          }
+      }
+      @media (max-width: 420px) {
+          .sombra2.masque {
+              border-left: 100px solid #000;
+          }
+      }
+      
+      .text {
+          background: var(--accent);
+          border-radius: 10px;
+          min-height: 40px;
+          margin: 10px 0;
+      }
+      .text .drop2 {
+          height: 20px;
+          min-width: 80px;
+          background: #fff;
+          margin: 4px 1px;
+          border-radius: 4px;
+          border: 2px dashed #ccc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1px 4px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="seleccionar" title="Explico los eclipses " text="Coloca los elementos en el esquema para representar cada eclipse." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w100 drop tag" data="title" droptimes="untilok"></div>
+          </div>
+          <div class="row w100 diagrama">
+            <div class="sun w40 text-center"><img class="w80" src="i/sol.png"/>
+              <div class="sombra"></div>
+              <div class="drop tag" data="tsol" droptimes="untilok"></div>
+            </div>
+            <div class="a1 w30 text-center">
+              <div class="drop astro" data="astro1" droptimes="untilok"></div>
+              <div class="drop tag" data="ttierra" droptimes="untilok"></div>
+            </div>
+            <div class="a2 w20 text-center">
+              <div class="sombra2 equal"></div>
+              <div class="drop tag" data="tsombra" droptimes="untilok"></div>
+            </div>
+            <div class="a3 w30 text-center">
+              <div class="drop astro" data="astro2" droptimes="untilok"></div>
+              <div class="drop tag" data="tluna" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 options mt-1 wrap">
+            <drag data="tluna" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Luna</div>
+            </drag>
+            <drag data="tsombra" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Sombra terrestre</div>
+            </drag>
+            <drag data="ttierra" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Tierra</div>
+            </drag>
+            <drag data="tsol" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Sol</div>
+            </drag>
+            <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Eclipse de Sol</div>
+            </drag>
+            <drag data="title" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Eclipse de Luna</div>
+            </drag>
+            <drag data="astro2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w50" src="i/luna.png"/></drag>
+            <drag data="astro1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w80" src="i/tierra.png"/></drag>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="seleccionar" title="Explico los eclipses " text="Coloca los elementos en el esquema para representar cada eclipse." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w100 drop tag" data="title" droptimes="untilok"></div>
+          </div>
+          <div class="row w100 diagrama">
+            <div class="sun w40 text-center"><img class="w80" src="i/sol.png"/>
+              <div class="sombra"></div>
+              <div class="drop tag" data="tsol" droptimes="untilok"></div>
+            </div>
+            <div class="a1 w30 text-center">
+              <div class="drop astro" data="astro1" droptimes="untilok"></div>
+              <div class="drop tag" data="tluna" droptimes="untilok"></div>
+            </div>
+            <div class="a2 w20 text-center">
+              <div class="sombra2 masque"></div>
+              <div class="drop tag" data="tsombra" droptimes="untilok"></div>
+            </div>
+            <div class="a3 w30 text-center">
+              <div class="drop astro" data="astro2" droptimes="untilok"></div>
+              <div class="drop tag" data="ttierra" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 options mt-1 wrap">
+            <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Eclipse de Luna</div>
+            </drag>
+            <drag data="title" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Eclipse de Sol</div>
+            </drag>
+            <drag data="tluna" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Luna</div>
+            </drag>
+            <drag data="tsol" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Sol</div>
+            </drag>
+            <drag data="ttierra" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Tierra</div>
+            </drag>
+            <drag data="tsombra" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div>Sombra lunar</div>
+            </drag>
+            <drag data="astro2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w80" src="i/tierra.png"/></drag>
+            <drag data="astro1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone"><img class="w50" src="i/luna.png"/></drag>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="seleccionar" title="Explico los eclipses " text="Coloca en orden los fragmentos del texto de la descripción de cada eclipse." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w100 drop tag" data="title" droptimes="untilok">
+              <div>Eclipse de Luna</div>
+            </div>
+          </div>
+          <div class="row w100 diagrama">
+            <div class="sun w40 text-center"><img class="w80" src="i/sol.png"/>
+              <div class="sombra"></div>
+            </div>
+            <div class="a1 w30 text-center">
+              <div class="drop astro" data="astro1" droptimes="untilok"><img class="w80" src="i/tierra.png"/></div>
+            </div>
+            <div class="a2 w20 text-center">
+              <div class="sombra2 equal"></div>
+            </div>
+            <div class="a3 w30 text-center">
+              <div class="drop astro" data="astro2" droptimes="untilok"><img class="w50" src="i/luna.png"/></div>
+            </div>
+          </div>
+          <div class="row w100 text wrap">
+            <template v-for="(i, index) in temps.aok">
+              <div class="drop2" :data="i" droptimes="untilok"></div>
+            </template>
+          </div>
+          <div class="row w100 options wrap">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="seleccionar" title="Explico los eclipses " text="Coloca en orden los fragmentos del texto de la descripción de cada eclipse." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w100 drop tag" data="title" droptimes="untilok">
+              <div>Eclipse de Sol</div>
+            </div>
+          </div>
+          <div class="row w100 diagrama">
+            <div class="sun w40 text-center"><img class="w80" src="i/sol.png"/>
+              <div class="sombra"></div>
+            </div>
+            <div class="a1 w30 text-center">
+              <div class="drop astro" data="astro2" droptimes="untilok"><img class="w50" src="i/luna.png"/></div>
+            </div>
+            <div class="a2 w20 text-center">
+              <div class="sombra2 masque"></div>
+            </div>
+            <div class="a3 w30 text-center">
+              <div class="drop astro" data="astro1" droptimes="untilok"><img class="w80" src="i/tierra.png"/></div>
+            </div>
+          </div>
+          <div class="row w100 text wrap">
+            <template v-for="(i, index) in temps.bok">
+              <div class="drop2" :data="i" droptimes="untilok"></div>
+            </template>
+          </div>
+          <div class="row w100 options wrap">
+            <template v-for="(i, index) in temps.b">
+              <drag :data="i" dropzone=".drop2" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==5" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +395,37 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          'no reciba los rayos del Sol.','interpone entre','Tierra se','El eclipse de Luna','el Sol y la Luna,','provocando que la Luna','sucede cuando la'
+      ])
+      
+      app.$set(app.temps, 'aok', [
+          'El eclipse de Luna','sucede cuando la','Tierra se','interpone entre','el Sol y la Luna,','provocando que la Luna','no reciba los rayos del Sol.'
+      ])
+      
+      
+      app.$set(app.temps, 'b', [
+          'una sombra.',
+          'Luna se interpone',
+          'El eclipse de Sol',
+          'entre el Sol y la Tierra,',
+          'es decir, se forma',
+          'ocurre cuando la',
+      ])
+      
+      app.$set(app.temps, 'bok', [
+          'El eclipse de Sol',
+          'ocurre cuando la',
+          'Luna se interpone',
+          'entre el Sol y la Tierra,',
+          'es decir, se forma',
+          'una sombra.'
+      ])
+      
+      
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>
