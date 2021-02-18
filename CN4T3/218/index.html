@@ -59,10 +59,16 @@
               margin-top: -60px;
           }
           .options .drag{
-              max-width: 40px;
+              margin: 4px;
+              max-width: 45px;
+              font-size: 0.5rem;
+              line-height: 1;
           }
           .options .drag div{
-              font-size: 0.6rem;
+              font-size: 0.5rem;
+              padding: 2px;
+              box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+              border-radius: 4px;
           }
           .drop{
               font-size: 0.6rem;
@@ -186,6 +192,11 @@
           justify-content: center;
           align-items: center;
           padding: 1px 4px;
+      }
+      @media (max-width: 680px) {
+          .text .drop2 {
+              font-size: 0.6rem;
+          }
       }
       
       
@@ -433,7 +444,7 @@
       
       
       
-      app.currentScene = 0
+      app.currentScene = 3
       app.scenesCount = 4
     </script>
   </body>
