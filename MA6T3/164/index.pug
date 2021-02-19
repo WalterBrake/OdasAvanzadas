@@ -1,12 +1,80 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Sigo las series'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .suc {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                box-sizing: border-box;
+            }
+            .tag {
+                text-align: center;
+                background: var(--accent);
+                border-radius: 6px;
+                padding: 4px;
+                width: 80%;
+                margin: 0 auto 10px;
+            }
+            @media (max-width: 680px) {
+                .tag {
+                    font-size: 0.6rem;
+                }
+            }
+            .desplegar .options {
+                text-align: center;
+                background: #f5f5f5;
+                border-radius: 10px;
+                padding: 6px;
+                box-sizing: border-box;
+            }
+            @media (max-width: 680px) {
+                .desplegar .options .number {
+                    font-size: 0.6rem;
+                }
+            }
+
+
+            .cuadros {
+                align-items: unset;
+                margin-bottom: 10px;
+            }
+            .cuadro {
+                background: #fff;
+                padding: 6px;
+                border-radius: 6px;
+                margin: 4px;
+                min-height: 100%;
+                box-sizing: border-box;
+            }
+            .cuadro.drop {
+                border: 2px dashed var(--sec);
+                box-sizing: border-box;
+            }
+            .tag2 {
+                margin: 0;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                max-width: 40px;
+                margin: 0 auto;
+            }
+            .drag img {
+                min-width: 30px;
+                max-width: 40px;
+            }
+            @media (max-width: 680px) {
+                .drag img {
+                    max-width: 30px;
+                }
+            }
+
 
 
     body
@@ -15,14 +83,171 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="2" show-ok modal-options  :options="['x2','÷4','+4']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a1.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['÷4','x4','x2']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a2.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="0" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+            // SCENES 2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="2" show-ok modal-options  :options="['x5','÷3','-4']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a3.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['x5','+6','+2']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a4.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+            
+            
+            // SCENES 3
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="2" show-ok modal-options  :options="['x8','+2','x3']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a5.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="0" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    
+                    .row.w100.suc
+                        .w30
+                            .tag Constante
+                            desplegar(:key="Math.random()" :answer-num="2" show-ok modal-options  :options="['+5','x1','-5']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w40
+                            .tag Sucesión
+                            img(src="i/a6.png").w100
+                        .w30
+                            .tag Tipo
+                            desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" )
+                                template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+            
+            
+            // SCENES 4
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6+8+2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.cuadros
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 2" src="i/b1.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 4" src="i/b1.png").w20
+                        .w20: .cuadro.row.wrap.drop(data="1" droptimes="multiple" droplimit="6").dropA
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 8" src="i/b1.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 10" src="i/b1.png").w20
                     .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="1" dropzone=".dropA" return-to-position append-clone): img(src="i/b1.png").w20
+                    .row.w100.cuadros.mt-1
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 1" src="i/b2.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 2" src="i/b2.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 4" src="i/b2.png").w20
+                        .w20: .cuadro.row.wrap.drop(data="2" droptimes="multiple" droplimit="8").dropB
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 16" src="i/b2.png").w20
+                    .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="0" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="2" dropzone=".dropB" return-to-position append-clone): img(src="i/b2.png").w20
             
+            // SCENES 5
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3+12+2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w100.cuadros
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 1" src="i/b3.png").w20
+                        .w20: .cuadro.row.wrap.drop(data="1" droptimes="multiple" droplimit="3").dropA
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 9" src="i/b3.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 27" src="i/b3.png").w20
+                    .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="0" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="1" dropzone=".dropA" return-to-position append-clone): img(src="i/b3.png").w20
+                    .row.w100.cuadros.mt-1
+                        .w20: .cuadro.row.wrap.drop(data="2" droptimes="multiple" droplimit="12").dropB
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 9" src="i/b4.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 6" src="i/b4.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 3" src="i/b4.png").w20
+                    .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="2" dropzone=".dropB" return-to-position append-clone): img(src="i/b4.png").w20
             
+            // SCENES 6
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9+11+2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="false")
+                activity
+                    .row.w100.cuadros
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 5" src="i/b5.png").w20
+                        .w20: .cuadro.row.wrap.drop(data="1" droptimes="multiple" droplimit="9").dropA
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 13" src="i/b5.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 17" src="i/b5.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 21" src="i/b5.png").w20
+                    .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="1" dropzone=".dropA" return-to-position append-clone): img(src="i/b5.png").w20
+                    .row.w100.cuadros.mt-1
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 15" src="i/b6.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 13" src="i/b6.png").w20
+                        .w20: .cuadro.row.wrap.drop(data="2" droptimes="multiple" droplimit="11").dropB
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 9" src="i/b6.png").w20
+                        .w20: .cuadro.row.wrap: img(v-for="(i, index) in 7" src="i/b6.png").w20
+                    .row.w100
+                        .w20: .tag.tag2 Sucesión:
+                        .w40: desplegar(:key="Math.random()" :answer-num="1" show-ok modal-options  :options="['Sucesión geométrica','Sucesión aritmética.']" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30: drag(data="2" dropzone=".dropB" return-to-position append-clone): img(src="i/b6.png").w20
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==8" :key="8" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +256,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 6

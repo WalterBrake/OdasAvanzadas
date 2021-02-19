@@ -3,27 +3,439 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Sigo las series</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .suc {
+          background: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          box-sizing: border-box;
+      }
+      .tag {
+          text-align: center;
+          background: var(--accent);
+          border-radius: 6px;
+          padding: 4px;
+          width: 80%;
+          margin: 0 auto 10px;
+      }
+      @media (max-width: 680px) {
+          .tag {
+              font-size: 0.6rem;
+          }
+      }
+      .desplegar .options {
+          text-align: center;
+          background: #f5f5f5;
+          border-radius: 10px;
+          padding: 6px;
+          box-sizing: border-box;
+      }
+      @media (max-width: 680px) {
+          .desplegar .options .number {
+              font-size: 0.6rem;
+          }
+      }
+      
+      
+      .cuadros {
+          align-items: unset;
+          margin-bottom: 10px;
+      }
+      .cuadro {
+          background: #fff;
+          padding: 6px;
+          border-radius: 6px;
+          margin: 4px;
+          min-height: 100%;
+          box-sizing: border-box;
+      }
+      .cuadro.drop {
+          border: 2px dashed var(--sec);
+          box-sizing: border-box;
+      }
+      .tag2 {
+          margin: 0;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          max-width: 40px;
+          margin: 0 auto;
+      }
+      .drag img {
+          min-width: 30px;
+          max-width: 40px;
+      }
+      @media (max-width: 680px) {
+          .drag img {
+              max-width: 30px;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['x2','÷4','+4']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a1.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['÷4','x4','x2']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a2.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 2-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['x5','÷3','-4']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a3.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['x5','+6','+2']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a4.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 3-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Selecciona la opción correcta para el valor de la constante en cada sucesión numérica, así como el tipo de sucesión que es." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['x8','+2','x3']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a5.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w100 suc">
+            <div class="w30">
+              <div class="tag">Constante</div>
+              <desplegar :key="Math.random()" :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['+5','x1','-5']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w40">
+              <div class="tag">Sucesión</div><img class="w100" src="i/a6.png"/>
+            </div>
+            <div class="w30">
+              <div class="tag">Tipo</div>
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 4-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6+8+2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 cuadros">
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 2" src="i/b1.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 4" src="i/b1.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap drop dropA" data="1" droptimes="multiple" droplimit="6"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 8" src="i/b1.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 10" src="i/b1.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="1" dropzone=".dropA" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b1.png"/></drag>
+            </div>
+          </div>
+          <div class="row w100 cuadros mt-1">
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 1" src="i/b2.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 2" src="i/b2.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 4" src="i/b2.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap drop dropB" data="2" droptimes="multiple" droplimit="8"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 16" src="i/b2.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="2" dropzone=".dropB" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b2.png"/></drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 5-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3+12+2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 cuadros">
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 1" src="i/b3.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap drop dropA" data="1" droptimes="multiple" droplimit="3"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 9" src="i/b3.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 27" src="i/b3.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="1" dropzone=".dropA" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b3.png"/></drag>
+            </div>
+          </div>
+          <div class="row w100 cuadros mt-1">
+            <div class="w20">
+              <div class="cuadro row wrap drop dropB" data="2" droptimes="multiple" droplimit="12"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 9" src="i/b4.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 6" src="i/b4.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 3" src="i/b4.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="2" dropzone=".dropB" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b4.png"/></drag>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES 6-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9+11+2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sigo las series" text="Coloca en los cuadros vacíos la cantidad necesaria de figuras para que se cumpla la sucesión. Después, elige el tipo de sucesión que es." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 cuadros">
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 5" src="i/b5.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap drop dropA" data="1" droptimes="multiple" droplimit="9"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 13" src="i/b5.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 17" src="i/b5.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 21" src="i/b5.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="1" dropzone=".dropA" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b5.png"/></drag>
+            </div>
+          </div>
+          <div class="row w100 cuadros mt-1">
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 15" src="i/b6.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 13" src="i/b6.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap drop dropB" data="2" droptimes="multiple" droplimit="11"></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 9" src="i/b6.png"/></div>
+            </div>
+            <div class="w20">
+              <div class="cuadro row wrap"><img class="w20" v-for="(i, index) in 7" src="i/b6.png"/></div>
+            </div>
+          </div>
+          <div class="row w100">
+            <div class="w20">
+              <div class="tag tag2">Sucesión:</div>
+            </div>
+            <div class="w40">
+              <desplegar :key="Math.random()" :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['Sucesión geométrica','Sucesión aritmética.']">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div class="w30">
+              <drag data="2" dropzone=".dropB" return-to-position="return-to-position" append-clone="append-clone"><img class="w20" src="i/b6.png"/></drag>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==8" :key="8" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -61,7 +473,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 6
     </script>
   </body>
 </html>

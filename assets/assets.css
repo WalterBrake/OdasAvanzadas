@@ -1024,7 +1024,7 @@ embed {
   border-radius: 20px;
   box-shadow: 6px 6px 0 var(--main);
 }
-.desplegar {
+.desplegar:not(.modaloptions) {
   position: relative;
 }
 .desplegar .reseter {
@@ -1045,6 +1045,35 @@ embed {
 }
 .desplegar .reseter:hover {
   background: var(--accent);
+}
+.desplegar .deployer {
+  background-image: url(../../assets/aanim/dropdownicon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 2px dotted #3BB3B5;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.desplegar .deployer:hover {
+  background-color: #D0F1ED;
+}
+.desplegar .options.modaloptions {
+  border: 4px dotted #3BB3B5;
+  box-sizing: border-box;
+  align-items: center;
+  background: #fff;
+}
+.desplegar .options.open .option {
+  background: #D0F1ED;
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px #3BB3B5;
+}
+@media (max-width: 680px) {
+  .desplegar .options.modaloptions {
+    flex-direction: column;
+  }
 }
 /* VIDEOPLAYER */
 .videoplayer {

@@ -18,9 +18,15 @@ Vue.component('desplegar', {
         }
     },
     template: `
-        <div :class="'desplegar ' + (initclass!=undefined?initclass:'') + ' ' + (status ? status : '') ">
+        <div :class="[
+            'desplegar',
+            (initclass!=undefined?initclass:''),
+            (status ? status : ''),
+            (modalOptions!=undefined? 'modaloptions': ''),
+            ]
+            ">
             <div class="deployer" v-if="status==null" @click="status='open'"></div>
-            <div v-if="optionsVisible" :class="optionsClasses">
+            <div v-if="optionsVisible" :class="['options', optionsClasses]">
                 <template  v-for="(opt,index) in desplegaropt">
                     <div :class="'option ' + (selected == opt.theanswer ? 'ok':'') " :ref="'opt'+index" @click="clicked('opt'+index, opt.theanswer)" >
                         <slot name="option" :option="opt" />
@@ -37,7 +43,7 @@ Vue.component('desplegar', {
         optionsClasses () {
             var showok = this.showOk!=undefined && this.status == 'ok' ? 'showok' : ''
             var modal = this.modalOptions!=undefined && this.status != 'ok' ? 'modaloptions' : ''
-            return 'options ' + showok + ' ' + modal + ' ' + this.status
+            return showok + ' ' + modal + ' ' + this.status
         },
         optionsVisible() {
             if(this.showOk != undefined) {
