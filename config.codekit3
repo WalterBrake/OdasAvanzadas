@@ -26670,6 +26670,102 @@
 		"oAP": "\/MA6T3\/158\/s\/p6.mp3",
 		"oF": 0
 		},
+	"\/MA6T3\/163\/i\/a.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T3\/163\/i\/a.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T3\/163\/i\/b.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T3\/163\/i\/b.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T3\/163\/i\/c.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/MA6T3\/163\/i\/c.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/MA6T3\/163\/i\/lapiz_A.png": {
+		"ft": 32768,
+		"iS": 2680,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_A.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/163\/i\/lapiz_B.png": {
+		"ft": 32768,
+		"iS": 2591,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_B.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/163\/i\/lapiz_C.png": {
+		"ft": 32768,
+		"iS": 2700,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_C.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/163\/i\/lapiz_D.png": {
+		"ft": 32768,
+		"iS": 2708,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_D.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/163\/i\/lapiz_E.png": {
+		"ft": 32768,
+		"iS": 2740,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_E.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA6T3\/163\/i\/lapiz_F.png": {
+		"ft": 32768,
+		"iS": 2689,
+		"oA": 0,
+		"oAP": "\/MA6T3\/163\/i\/lapiz_F.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA6T3\/163\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -26686,11 +26782,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA6T3\/163\/s\/Realizo operaciones Ma6°T3_Inst.wav": {
+	"\/MA6T3\/163\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA6T3\/163\/s\/Realizo operaciones Ma6°T3_Inst.wav",
+		"oAP": "\/MA6T3\/163\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA6T3\/164\/i\/a1.png": {

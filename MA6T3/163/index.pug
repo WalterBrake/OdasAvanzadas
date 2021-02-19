@@ -1,12 +1,52 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Realizo operaciones'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag {
+                width: auto;
+                height: auto;
+                width: 30px;
+                height: 30px;
+            }
+            .drag img {
+                min-width: 20px;
+            }
+            .pnzl {
+                max-width: 30px;
+            }
+            .lapiz {
+                background: #fff;
+                border-radius: 10px;
+                margin: 2px;
+                box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+            }
+            [data="dropA"],
+            [data="dropB"] {
+                fill: transparent !important;
+            }
+            [data="dropA"].rojo {
+                fill: #F3244E !important;
+            }
+            [data="dropB"].verde {
+                fill: #01B922 !important;
+            }
+            [data="dropA"].morado {
+                fill: #6D3EB1 !important;
+            }
+            [data="dropB"].rosa {
+                fill: #F35390 !important;
+            }
+            [data="dropA"].cian {
+                fill: #57C4D2 !important;
+            }
+            [data="dropB"].amarillo {
+                fill: #F0D34A !important;
+            }
 
 
     body
@@ -14,21 +54,71 @@ html(lang="es")
             // START
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
-            // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            // SCENES 1
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.sceneOks?temps.sceneOks:1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ayuda a Marisol a colorear las figuras. Coloca el lápiz de color hasta los números que correspondan." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.wrap
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropA" no-error-sound dropzone=".dropA path" return-to-position dropzone-ok-class="rojo"): img(src="i/lapiz_A.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores comunes entre 30 y 60.
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropB" no-error-sound dropzone=".dropB path" return-to-position dropzone-ok-class="verde"): img(src="i/lapiz_B.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores de 60.
+                    .row.w100.mt-1
+                        .w80.ws100: embedsvg(src="i/a.svg" @loaded="startScene")
+            // SCENES 2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.sceneOks?temps.sceneOks:1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ayuda a Marisol a colorear las figuras. Coloca el lápiz de color hasta los números que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropA" no-error-sound dropzone=".dropA path" return-to-position dropzone-ok-class="morado"): img(src="i/lapiz_C.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores comunes entre 18 y 24.
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropB" no-error-sound dropzone=".dropB path" return-to-position dropzone-ok-class="rosa"): img(src="i/lapiz_D.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores de 24.
+                    .row.w100.mt-1
+                        .w80.ws100: embedsvg(src="i/b.svg" @loaded="startScene")
+            // SCENES 3
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.sceneOks?temps.sceneOks:1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ayuda a Marisol a colorear las figuras. Coloca el lápiz de color hasta los números que correspondan." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100.wrap
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropA" no-error-sound dropzone=".dropA path" return-to-position dropzone-ok-class="cian"): img(src="i/lapiz_E.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores comunes entre 15 y 30.
+                        .w50.ws90.mt-1: .lapiz.row
+                            drag(data="dropB" no-error-sound dropzone=".dropB path" return-to-position dropzone-ok-class="amarillo"): img(src="i/lapiz_F.png").pnzl.animate__animated.animate__pulse.animate__infinite
+                            div Divisores de 30.
+                    .row.w100.mt-1
+                        .w80.ws100: embedsvg(src="i/c.svg" @loaded="startScene")
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'sceneOks', 0)
+
+                app.startScene = function () {
+
+                    app.temps.sceneOks = 0
+                    setTimeout(function (){
+                        document.querySelectorAll('.dropA path').forEach(function (itm) {
+                            itm.setAttribute('droptimes','untilok')
+                            itm.setAttribute('data','dropA')
+                            app.temps.sceneOks++
+                        })
+                        document.querySelectorAll('.dropB path').forEach(function (itm) {
+                            itm.setAttribute('droptimes','untilok')
+                            itm.setAttribute('data','dropB')
+                            app.temps.sceneOks++
+                        })
+                    },1000)
+                }
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 3
