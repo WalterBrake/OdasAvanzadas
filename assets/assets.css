@@ -1047,7 +1047,7 @@ embed {
   background: var(--accent);
 }
 .desplegar .deployer {
-  background-image: url(../../assets/aanim/dropdownicon.svg);
+  background-image: url(../assets/aanim/dropdownicon.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

@@ -4423,6 +4423,46 @@
 		"oAP": "\/CN4T3\/218\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/CN4T3\/220\/documento.pdf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T3\/220\/documento.pdf",
+		"oF": 0
+		},
+	"\/CN4T3\/220\/i\/icon.png": {
+		"ft": 32768,
+		"iS": 1265,
+		"oA": 0,
+		"oAP": "\/CN4T3\/220\/i\/icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN4T3\/220\/i\/ship.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/CN4T3\/220\/i\/ship-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/CN4T3\/220\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T3\/220\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/CN4T3\/220\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T3\/220\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/CN4T3\/220\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4439,18 +4479,25 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/CN4T3\/220\/s\/Construyo un juguete con calor CN4°T3_AudioComplemento.wav": {
+	"\/CN4T3\/220\/s\/documento.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T3\/220\/s\/Construyo un juguete con calor CN4°T3_AudioComplemento.wav",
+		"oAP": "\/CN4T3\/220\/s\/documento.mp3",
 		"oF": 0
 		},
-	"\/CN4T3\/220\/s\/Construyo un juguete con calor CN4°T3_Inst1.wav": {
+	"\/CN4T3\/220\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN4T3\/220\/s\/Construyo un juguete con calor CN4°T3_Inst1.wav",
+		"oAP": "\/CN4T3\/220\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/CN4T3\/220\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN4T3\/220\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/CN5T1\/168\/aimg\/i1.jpg": {

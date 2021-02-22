@@ -26,6 +26,34 @@
               font-size: 0.8rem;
           }
       }
+      .docubtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #3FABB3;
+          text-decoration: none;
+      }
+      .docubtn img {
+          max-height: 30px;
+          margin-right: 8px;
+      }
+      .downdoc {
+          position: relative;
+          color: #3FABB3;
+          padding: 10px;
+          background: #fff;
+          border-radius: 10px;
+          margin: 10px;
+          font-size: 0.9rem;
+      }
+      .downdoc .audiotextBtn {
+          position: absolute;
+          left: 0;
+          top: -10px;
+          height: 20px;
+          width: 20px;
+      }
+      
       
       
     </style>
@@ -44,27 +72,35 @@
           <div class="row w100">
             <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
           </div>
-          <div class="row w100" v-if="temps.a">
-            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          <div class="row w100 mt-auto text-center wrap" v-if="temps.a">
+            <div class="w50 wm100 downdoc">
+              <audiotext ref="" :autoplay="true" audio="s/documento.mp3" text="Usa el icono de documento para que descargues el diseño y lo uses directamente." @completed="temps.b=true"></audiotext>
+            </div>
+            <div class="w20 ws50"><a class="button animate__animated animate__flip docubtn" href="documento.pdf" target="_blank"><img src="i/icon.png"/>Descargar</a>
+            </div>
+            <div class="w20 ws50">
+              <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+            </div>
           </div>
         </activity>
       </scene>
       <!-- SCENES 2-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Construyo un juguete con calor" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Construyo un juguete con calor" text="Ahora que has visto cómo se construye el barquito, selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true"><a class="button animate__animated animate__flip docubtn" href="documento.pdf" target="_blank"><img src="i/icon.png"/>Descargar</a>
+        </info>
         <activity>
           <div class="w100 text-center">
-            <div class="h4">¿Cómo es el pueblo de Hamelín?</div>
+            <div class="h4">¿Cuál es la fuente de energía del barquito de vapor?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Un pueblo con mucho dinero y castillos.','Es un lejano pueblo invadido de ratones.','Es una ciudad con grandes edificios.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Agua.','Sol.','Calor.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
           </div>
           <div class="w100 mt-1 text-center">
-            <div class="h4">¿En qué momento el alcalde se desesperó con los ratones?</div>
+            <div class="h4">¿Por qué se usa un fragmento de lata en el motor?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Cuando se comieron su pastel.','Cuando invadieron al panadero.','Cuando destruyeron su sillón favorito.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Porque es un material que repele el agua.','Porque es un material que conduce el calor.','El fragmento se enfría con el agua.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
@@ -73,20 +109,21 @@
       </scene>
       <!-- SCENES 3-->
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Construyo un juguete con calor" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Construyo un juguete con calor" text="Ahora que has visto cómo se construye el barquito, selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"><a class="button animate__animated animate__flip docubtn" href="documento.pdf" target="_blank"><img src="i/icon.png"/>Descargar</a>
+        </info>
         <activity>
           <div class="w100 text-center">
-            <div class="h4">¿Quién ofreció una solución al alcalde?</div>
+            <div class="h4">¿Qué elemento proporciona la fuente de energía al barquito?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Un sastre que llevaba  tela a su casa.','Un flautista que pasaba por el lugar.','La cocinera del alcalde.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Los popotes.','La vela.','El pegamento.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
           </div>
           <div class="w100 mt-1 text-center">
-            <div class="h4">¿Cuál será la razón por la que el alcalde le ofreció al flautista mucho más dinero del que pidió?</div>
+            <div class="h4">¿Por qué es importante que los popotes estén doblados en un ángulo de 45°?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Porque el flautista era muy pobre.','Porque quería resolver el problema lo más pronto posible.','Porque el alcalde había robado dinero.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Porque así el fragmento de lata queda cerca de la vela.','Porque permite que el pegamento quede firme.','Porque así el barco no se hunda.']" :key="index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
@@ -95,20 +132,21 @@
       </scene>
       <!-- SCENES 4-->
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Construyo un juguete con calor" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="seleccionar" title="Construyo un juguete con calor" text="Ahora que has visto cómo se construye el barquito, selecciona la respuesta correcta en cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false"><a class="button animate__animated animate__flip docubtn" href="documento.pdf" target="_blank"><img src="i/icon.png"/>Descargar</a>
+        </info>
         <activity>
           <div class="w100 text-center">
-            <div class="h4">¿Qué opinas de la acción del acalde de no pagar al flautista?</div>
+            <div class="h4">¿Por qué es necesario colocar agua dentro de los popotes?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Su acción fue correcta porque fue un trabajo corto.','Hizo bien en no pagar, era solo un flautista que no tiene profesión.','Fue algo incorrecto porque fue el acuerdo y el flautista resolvió el problema.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Porque el calor los secará.','Para generar el vapor.','Para que tengan peso.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
           </div>
           <div class="w100 mt-1 text-center">
-            <div class="h4">¿Qué características tiene el alcalde en este cuento?</div>
+            <div class="h4">Andrés no tiene una vela de mecha y colocará una vela artificial que usa bateria, ¿crees que funcione el barquito?</div>
             <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Es alguien confiable y amable.','Tiene fama de tener mucho dinero.','Es mentiroso y desconsiderado.']" :key="index" :isok="index == 2" simple-ok="simple-ok" initclass="pa-1 w100">
+              <clickable v-for="(i, index) in ['Sí, lo importante es que produzca luz.','No, porque se necesita fuego para generar el calor necesario.','No, porque pesa más una vela artificial.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
                 <number randomc="randomc" smaller="smaller">{{i}}</number>
               </clickable>
             </div>
@@ -116,24 +154,15 @@
         </activity>
       </scene>
       <!-- SCENES 5-->
-      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
-        <info type="seleccionar" title="Construyo un juguete con calor" text="Selecciona la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Construyo un juguete con calor" text="Te invitamos a hacer el barquito para que experimentes y compruebes cómo funciona." textaudio="s/instruccion2.mp3" :autoplay="true"><a class="button animate__animated animate__flip docubtn" href="documento.pdf" target="_blank"><img src="i/icon.png"/>Descargar</a>
+        </info>
         <activity>
-          <div class="w100 text-center">
-            <div class="h4">¿Qué hizo el flautista como respuesta a la acción del alcalde?</div>
-            <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Se llevó a los panaderos del pueblo.','Tocó una melodía y se llevó a los niños.','No se fue de casa del alcalde hasta que le pagó.']" :key="index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
-                <number randomc="randomc" smaller="smaller">{{i}}</number>
-              </clickable>
-            </div>
+          <div class="w50 text-center">
+            <lottie-player src="i/ship.json" key="m3" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay="autoplay" loop="loop"></lottie-player>
           </div>
-          <div class="w100 mt-1 text-center">
-            <div class="h4">¿Por qué el flautista no quería que los niños del pueblo siguieran el ejemplo de los adultos?</div>
-            <div class="row wrap around">
-              <clickable v-for="(i, index) in ['Porque el flautista no quería que los niños siguieran el mal ejemplo de los que se burlaron de él.','Porque los adultos del pueblo son un ejemplo de bondad y de amabilidad.','Porque los niños se volverían alegres y trabajadores, y el flautista no lo era.']" :key="index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1 w100">
-                <number randomc="randomc" smaller="smaller">{{i}}</number>
-              </clickable>
-            </div>
+          <div class="row w100 mt-1 text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</button>
           </div>
         </activity>
       </scene>
@@ -174,9 +203,10 @@
     <script>
       app.$devmode = false
       app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
       
       app.currentScene = 0
-      app.scenesCount = 4
+      app.scenesCount = 2
     </script>
   </body>
 </html>
