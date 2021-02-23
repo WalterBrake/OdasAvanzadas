@@ -15,11 +15,27 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="El bullying se puede prevenir. Relaciona las situaciones, con el tipo de bullying y la mejor solución para prevenir cada una." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="El bullying se puede prevenir. Relaciona las situaciones, con el tipo de bullying y la mejor solución para prevenir cada una." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.tabla
+                        .w30
+                            .h4 Situación
+                            .situ Natalia es una niña nueva en el colegio. Sus nuevos compañeros le pusieron un apodo basado en la forma en que se peina.
+                        .w30
+                            .h4 Tipo
+                            .drop(data="Verbal" droptimes="untilok")
+
+                        .w30
+                            .h4 Prevención
+                            .drop(:data="ok" droptimes="untilok")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.tipos")
+                            drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="oktipo"): div {{i}}
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.prevA")
+                            drag(:data="i.v" initclass="txt prevs" dropzone=".drop" stay-if-ok append-to-dropzone  dropzone-ok-class="okprev"): div {{i.t}}
+                            
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +44,12 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'tipos', ['Físico','Ciberacoso','Verbal','Psicológico'])
+                app.$set(app.temps, 'prevA', [
+                    {v: 'ok', t: 'Los maestros deben estar al pendiente de estas prácticas y buscar dinámicas de integración que fomenten la sana convivencia.'},
+                    {v: 'no', t: 'Debería hablar con sus papás sobre la situación para que acudan con el director de la escuela y así evitar que se abuse de los medios electrónicos.'},
+                    {v: 'no', t: 'El entrenador del equipo debe intervenir para enseñar la conducta deportiva adecuada.'},
+                ])
                 
-                app.currentScene = 0
+                app.currentScene = 1
                 app.scenesCount = 1

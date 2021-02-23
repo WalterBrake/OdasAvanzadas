@@ -87,7 +87,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
-        <info type="seleccionar" title="Investigo comportamientos de violencia" text="Coloca los cuadros de texto en donde corresponda para completar el mapa conceptual sobre el &lt;em&gt;bullying&lt;/em&gt;." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Investigo comportamientos de violencia" text="Coloca los cuadros de texto en donde corresponda para completar el mapa conceptual sobre el &lt;em&gt;bullying&lt;/em&gt;." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 wrap">
             <div class="w70 ws100 relative"><img class="w100" src="i/bg.png"/>

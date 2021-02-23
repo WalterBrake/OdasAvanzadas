@@ -84,7 +84,7 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Coloca los cuadros de texto en donde corresponda para completar el mapa conceptual sobre el <em>bullying</em>." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Coloca los cuadros de texto en donde corresponda para completar el mapa conceptual sobre el <em>bullying</em>." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100.wrap
                         .w70.ws100.relative
