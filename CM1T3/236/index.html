@@ -3,23 +3,49 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Sabemos cómo se mueven los objetos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .theimg {
+          border-radius: 10px;
+          border: 6px solid var(--clear);
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
+        <info type="seleccionar" title="Sabemos cómo se mueven los objetos" text="Selecciona la palabra que indique la mejor manera de mover los objetos que aparezcan en pantalla." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="w100">
+            <sequence :options="temps.a" ref="seq" no-nav="no-nav">
+              <template v-slot:option="{option}">
+                <div class="text-center"><img class="w30 theimg animate__animated animate__bounce" :src="'i/a'+option.n+'.png'"/></div>
+                <div class="row text-center animate__animated animate__flash">
+                  <div class="w50">
+                    <clickable :isok="option.v=='e'?true:false" simple-ok="simple-ok" initclass="pa-1" @wasclicked="gonext()">
+                      <number c="1" small="small">Empujar</number>
+                    </clickable>
+                  </div>
+                  <div class="w50">
+                    <clickable :isok="option.v=='j'?true:false" simple-ok="simple-ok" initclass="pa-1" @wasclicked="gonext()">
+                      <number c="2" small="small">Jalar</number>
+                    </clickable>
+                  </div>
+                </div>
+              </template>
+            </sequence>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -58,7 +84,23 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {n:1, v:'e'},
+          {n:2, v:'e'},
+          {n:3, v:'j'},
+          {n:4, v:'j'},
+          {n:5, v:'e'},
+          {n:6, v:'j'},
+          {n:7, v:'e'},
+          {n:8, v:'j'},
+      ])
+      
+      app.gonext = function () {
+          s_ok.play()
+          setTimeout(function () {
+              app.$refs.seq.adelante()
+          },2000)
+      }
       
       app.currentScene = 0
       app.scenesCount = 1

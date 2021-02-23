@@ -1,12 +1,17 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Sabemos cómo se mueven los objetos'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .theimg {
+                border-radius: 10px;
+                border: 6px solid var(--clear);
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
 
 
     body
@@ -15,11 +20,16 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la palabra que indique la mejor manera de mover los objetos que aparezcan en pantalla." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .w100
+                        sequence(:options="temps.a" ref="seq" no-nav)
+                            template(v-slot:option="{option}")
+                                .text-center: img(:src="'i/a'+option.n+'.png'").w30.theimg.animate__animated.animate__bounce
+                                .row.text-center.animate__animated.animate__flash
+                                    .w50: clickable(:isok="option.v=='e'?true:false" simple-ok initclass="pa-1" @wasclicked="gonext()"): number(c=1 small) Empujar
+                                    .w50: clickable(:isok="option.v=='j'?true:false" simple-ok initclass="pa-1" @wasclicked="gonext()"): number(c=2 small) Jalar
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +38,23 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {n:1, v:'e'},
+                    {n:2, v:'e'},
+                    {n:3, v:'j'},
+                    {n:4, v:'j'},
+                    {n:5, v:'e'},
+                    {n:6, v:'j'},
+                    {n:7, v:'e'},
+                    {n:8, v:'j'},
+                ])
+
+                app.gonext = function () {
+                    s_ok.play()
+                    setTimeout(function () {
+                        app.$refs.seq.adelante()
+                    },2000)
+                }
                 
                 app.currentScene = 0
                 app.scenesCount = 1

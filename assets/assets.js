@@ -4,6 +4,14 @@ var s_error = new Howl({ src: ['../../assets/asound/error.mp3'] })
 var s_ok = new Howl({ src: ['../../assets/asound/ok.mp3'] })
 var s_select = new Howl({ src: ['../../assets/asound/select.mp3'] })
 var s_win = new Howl({ src: ['../../assets/asound/win.mp3'] })
+
+
+var s_bien1 = new Howl({ src: ['../../assets/asound/bienhecho_mujer.mp3'] });
+var s_bien2 = new Howl({ src: ['../../assets/asound/bienhecho_hombre.mp3'] });
+var s_bien3 = new Howl({ src: ['../../assets/asound/bienhecho_nino.mp3'] });
+var s_bien4 = new Howl({ src: ['../../assets/asound/bienhecho_nina.mp3'] });
+
+
 var counterRef = 0
 
 
