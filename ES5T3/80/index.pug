@@ -1,13 +1,81 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Investigo comportamientos de violencia'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
 
+            .activity {
+                background: #142E43;
+            }
+            .txt {
+                font-size: 0.7rem;
+                margin: 2px;
+            }
+            @media (max-width: 680px) {
+                .txt {
+                    font-size: 0.5rem;
+                    max-width: 120px;
+                }
+            }
+            .drops .drop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                z-index: 1;
+                border-radius: 10px;
+                line-height: 0.9;
+            }
+            .drops .drop:nth-child(1) {
+                width: 44%;
+                height: 17%;
+                top: 3.5%;
+                right: 7%;
+            }
+            .drops .drop:nth-child(2) {
+                width: 40%;
+                height: 16%;
+                top: 23.4%;
+                right: 3%;
+            }
+            .drops .drop:nth-child(3) {
+                width: 40%;
+                height: 16%;
+                top: 42.2%;
+                right: 2.8%;
+            }
+            .drops .drop:nth-child(4) {
+                width: 34.2%;
+                height: 17%;
+                top: 61%;
+                right: 3.8%;
+            }
+            .drops .drop:nth-child(5) {
+                width: 44%;
+                height: 15.5%;
+                top: 80.8%;
+                right: 6.5%;
+            }
+            .drops .drop:nth-child(6) {
+                width: 40.3%;
+                height: 16.5%;
+                top: 81%;
+                right: 57%;
+            }
+            .drag.txt{
+                margin: 1px;
+                padding: 1px;
+                linear-height: 1;
+            }
+            .drag.txt div{
+                padding: 3px;
+                margin: 1px;
+                border-radius: 4px;
+            }
 
     body
         #app
@@ -15,10 +83,18 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca los cuadros de texto en donde corresponda para completar el mapa conceptual sobre el <em>bullying</em>." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100.wrap
+                        .w70.ws100.relative
+                            img(src="i/bg.png").w100
+                            .drops
+                                template(v-for="(i, index) in 6")
+                                    .drop(:data="i" droptimes="untilok")
+                        .w30.ws100.row.wrap
+                            template(v-for="(i, index) in temps.a")
+                                drag(:data="i.v" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone): div.txt(v-html="i.t")
             
             
             // END
@@ -28,7 +104,14 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
-                
-                app.currentScene = 0
+                app.$set(app.temps, 'a', [
+                    {v: 3, t:'Físico, verbal, sexual, ciberacoso y psicológico.'},
+                    {v: 4, t:'Falta de autoestima.<br>Ansiedad anticipatoria.<br>Sentido de indefensión.<br>Tendencia a la depresión e impulsos suicidas.'},
+                    {v: 6, t:'Alumnos: Intentar no mostrar miedo ni disgusto, evitar responder a los ataques.<br>Maestros: Hacer cumplir reglamentos de la escuela, crear un comité contra la violencia.'},
+                    {v: 5, t:'Maestros.<br>Papás.<br>Autoridades locales.<br>Denuncia al 089.'},
+                    {v: 1, t:'Es constante.<br>No distingue edad o sexo.<br>Su finalidad es lastimar.<br>Se comete en grupo o de forma individual.'},
+                    {v: 2, t:'Conducta violenta entre alumnos o entre grupos que eligen una víctima constante.'},
+                ])
+
+                app.currentScene = 1
                 app.scenesCount = 1
