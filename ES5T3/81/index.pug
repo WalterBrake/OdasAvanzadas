@@ -7,6 +7,99 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .tabla {
+                background: #f5f5f5;
+                padding: 10px;
+                border-radius: 10px;
+                align-items: unset;
+            }
+            .tabla .h4 {
+                background: var(--sec);
+                padding: 4px 2px;
+                border-radius: 4px 4px 2px 2px;
+                margin: 2px;
+                text-align: center;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .tabla .h4.htipo {
+                background: var(--accent);
+            }
+            .tabla .h4.hprev {
+                background: var(--c8);
+            }
+            @media (max-width: 680px) {
+                .tabla .h4 {
+                    font-size: 0.6rem;
+                }
+            }
+            .tabla .situ {
+                margin: 2px;
+                background: #ECF1F3;
+                padding: 4px;
+                border-radius: 4px;
+                border: 1px solid var(--clear);
+                box-shadow: 2px 4px 0 var(--clear);
+            }
+            @media (max-width: 680px) {
+                .tabla .situ {
+                    font-size: 0.6rem;
+                }
+            }
+            .drag.txt div {
+                border: 1px solid var(--accent);
+                color: var(--accent);
+            }
+            @media (max-width: 680px) {
+                .drag.txt div {
+                    font-size: 0.6rem;
+                }
+            }
+            .drag.txt.prevs {
+                max-width: 30%;
+                font-size: 0.8rem;
+                text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+                font-weight: bold;
+            }
+            .drag.txt.prevs div {
+                color: var(--c8);
+                border: 1px solid var(--c8);
+            }
+            .drop {
+                margin: 2px;
+                min-height: 60px;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px dashed var(--accent);
+                box-shadow: 2px 4px 0 var(--accent);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @media (max-width: 680px) {
+                .drop {
+                    font-size: 0.5rem;
+                }
+            }
+            .drop.dropprev {
+                border-color: var(--c8);
+                box-shadow: 2px 4px 0 var(--c8);
+                font-size: 0.8rem;
+            }
+            .drop.dropprev div {
+                padding: 4px;
+                box-sizing: border-box;
+            }
+            .drop.oktipo {
+                background: var(--accent);
+                color: #fff;
+                border: none;
+            }
+            .drop.okprev {
+                background: var(--c8);
+                color: #fff;
+                border: none;
+            }
 
 
     body
@@ -15,41 +108,81 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="El bullying se puede prevenir. Relaciona las situaciones, con el tipo de bullying y la mejor solución para prevenir cada una." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-for="(i, index) in temps.scenes"  v-if="currentScene==(index+1)" :key="(index+1)" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="El bullying se puede prevenir. Relaciona las situaciones, con el tipo de bullying y la mejor solución para prevenir cada una." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false")
                 activity
-                    .row.w100.tabla
-                        .w30
+                    .row.w100.tabla.wrap
+                        .w40.ws100
                             .h4 Situación
-                            .situ Natalia es una niña nueva en el colegio. Sus nuevos compañeros le pusieron un apodo basado en la forma en que se peina.
-                        .w30
-                            .h4 Tipo
-                            .drop(data="Verbal" droptimes="untilok")
+                            .situ {{i.s}}
+                        .w20.ws40
+                            .h4.htipo Tipo
+                            .drop(:data="i.tipo" droptimes="untilok")
 
-                        .w30
-                            .h4 Prevención
-                            .drop(:data="ok" droptimes="untilok")
+                        .w40.ws60
+                            .h4.hprev Prevención
+                            .drop(data="ok" droptimes="untilok").dropprev
+                    .row.w100.wrap.mt-1
+                        template(v-for="(ii, iindex) in temps.tipos")
+                            drag(:data="ii" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="oktipo"): div {{ii}}
                     .row.w100.wrap
-                        template(v-for="(i, index) in temps.tipos")
-                            drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="oktipo"): div {{i}}
-                    .row.w100.wrap
-                        template(v-for="(i, index) in temps.prevA")
-                            drag(:data="i.v" initclass="txt prevs" dropzone=".drop" stay-if-ok append-to-dropzone  dropzone-ok-class="okprev"): div {{i.t}}
+                        template(v-for="(ii, iindex) in temps[i.t]")
+                            drag(:data="ii.v" initclass="txt prevs" dropzone=".drop" stay-if-ok append-to-dropzone  dropzone-ok-class="okprev"): div {{ii.t}}
                             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
                 app.$set(app.temps, 'tipos', ['Físico','Ciberacoso','Verbal','Psicológico'])
+                
+                app.$set(app.temps, 'scenes', [
+                    {t: 'prevA', tipo:'Verbal', s: 'Natalia es una niña nueva en el colegio. Sus nuevos compañeros le pusieron un apodo basado en la forma en que se peina.'},
+                    {t: 'prevB', tipo:'Ciberacoso', s: 'Juan es un niño muy tímido e introvertido. Un compañero le ha mandado mensajes a su correo electrónico escolar desde una cuenta falsa para burlarse de él.'},
+                    {t: 'prevC', tipo:'Psicológico', s: 'Las compañeras de Emma se pusieron de acuerdo para dejarle de hablar después de que ella le recordara al maestro la tarea que debía entregar hoy.'},
+                    {t: 'prevD', tipo:'Físico', s: 'Omar es un niño muy chaparrito de 5º año. Sus compañeros se aprovechan de su estatura para empujarlo y molestarlo cada vez que pasan a su lado.'},
+                    {t: 'prevE', tipo:'Verbal', s: 'Elena es una niña con sobre peso y algunos compañeros se burlan de ella cuando no está el profesor presente.'},
+                    {t: 'prevF', tipo:'Psicológico', s: 'El equipo de fútbol del colegio pasó a la final del campeonato y perdió en penales. Pablo falló el último penal y ahora sus compañeros de equipo no le hablan y, cuando los encuentra en los pasillos del colegio, le desvían la mirada.'},
+                ])
+                
+                
                 app.$set(app.temps, 'prevA', [
                     {v: 'ok', t: 'Los maestros deben estar al pendiente de estas prácticas y buscar dinámicas de integración que fomenten la sana convivencia.'},
                     {v: 'no', t: 'Debería hablar con sus papás sobre la situación para que acudan con el director de la escuela y así evitar que se abuse de los medios electrónicos.'},
                     {v: 'no', t: 'El entrenador del equipo debe intervenir para enseñar la conducta deportiva adecuada.'},
                 ])
+                app.$set(app.temps, 'prevB', [
+                    {v: 'no', t: 'Es necesario evitar contestar de la misma manera. Alejarse de inmediato y pedir ayuda para que esta situación no se siga repitiendo.'},
+                    {v: 'no', t: 'Los compañeros deben decirle al profesor sobre esta situación para que intervengan y puedan mediar la situación.'},
+                    {v: 'ok', t: 'Debería hablar con sus papás sobre la situación para que acudan con el director de la escuela y así evitar que se abuse de los medios electrónicos.'},
+                ])
+                app.$set(app.temps, 'prevC', [
+                    {v: 'ok', t: 'Ante situaciones así es importante no quedarse callado, acudir a los maestros para que sean mediadores y pueda llegarse a una resolución pacífica.'},
+                    {v: 'no', t: 'Emma debería dejar de hacer la tarea para solidarizarse con sus compañeros.'},
+                    {v: 'no', t: 'Debería hablar con sus papás sobre la situación para que acudan con el director de la escuela y así evitar que se abuse de los medios electrónicos.'},
+                ])
+                app.$set(app.temps, 'prevD', [
+                    {v: 'no', t: 'Los compañeros deben decirle a los papás de Omar sobre esta situación para que intervengan y puedan mediar la situación.'},
+                    {v: 'ok', t: 'Es necesario evitar contestar de la misma manera. Alejarse de inmediato y pedir ayuda para que esta situación no se siga repitiendo.'},
+                    {v: 'no', t: 'Omar debería decirle a sus compañeros de 6º año para que le ayuden a defenderse.'},
+                ])
+                app.$set(app.temps, 'prevE', [
+                    {v: 'ok', t: 'Los compañeros deben decirle al profesor sobre esta situación para que cambien a Elena de escuela.'},
+                    {v: 'no', t: 'Es necesario evitar contestar de la misma manera. Alejarse de inmediato y pedir ayuda para que esta situación no se siga repitiendo.'},
+                    {v: 'no', t: 'El entrenador del equipo debe intervenir para enseñar la conducta deportiva adecuada.'},
+                ])
+                app.$set(app.temps, 'prevF', [
+                    {v: 'no', t: 'Los compañeros deben decirle a los papás de Pablo sobre esta situación para que intervengan y puedan mediar la situación.'},
+                    {v: 'ok', t: 'El entrenador del equipo debe intervenir para enseñar la conducta deportiva y de convivencia adecuada.'},
+                    {v: 'no', t: 'Pablo debería salirse del equipo, alejarse y pedir ayuda para que esta situación no se siga repitiendo.'},
+                ])
+
+
+
+
                 
-                app.currentScene = 1
-                app.scenesCount = 1
+                app.currentScene = 0
+                app.scenesCount = 6
