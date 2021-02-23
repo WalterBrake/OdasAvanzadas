@@ -1,0 +1,137 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Ordeno palabras'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drop{
+                min-width: 80px;
+                min-height: 24px;
+                background: #fff;
+                border: 2px dashed var(--clear);
+                border-radius: 6px;
+                margin: 2px 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .drop.okdrag {
+                border: none;
+                background: var(--clear);
+                color: #fff;
+                font-weight: bold;
+                min-width: auto;
+                padding: 2px 10px;
+            }
+            @media (max-width:680px){
+                .drop{
+                    min-width: 40px;
+                    min-height: 18px;
+                    font-size: 0.8rem;
+                }
+                .drag.txt div{
+                    font-size: 0.8rem;
+                    padding: 2px;
+                }
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length + temps.b.length + temps.c.length" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca las palabras en el orden correcto para formar oraciones con sentido." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.a")
+                                    .drop(:data="i" droptimes="untilok").da
+                            .row.wrap
+                                template(v-for="(i, index) in temps.a1")
+                                    drag(:data="i" initclass="txt" dropzone=".da" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                        .w20: img(src="i/a1.png").w100
+                    .row.w100
+                        .w20: img(src="i/a2.png").w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.b")
+                                    .drop(:data="i" droptimes="untilok").db
+                            .row.wrap
+                                template(v-for="(i, index) in temps.b1")
+                                    drag(:data="i" initclass="txt" dropzone=".db" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                    .row.w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.c")
+                                    .drop(:data="i" droptimes="untilok").dc
+                            .row.wrap
+                                template(v-for="(i, index) in temps.c1")
+                                    drag(:data="i" initclass="txt" dropzone=".dc" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                        .w20: img(src="i/a3.png").w100
+
+
+
+            
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.d.length + temps.e.length + temps.f.length" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca las palabras en el orden correcto para formar oraciones con sentido." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.d")
+                                    .drop(:data="i" droptimes="untilok").da
+                            .row.wrap
+                                template(v-for="(i, index) in temps.d1")
+                                    drag(:data="i" initclass="txt" dropzone=".da" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                        .w20: img(src="i/a4.png").w100
+                    .row.w100
+                        .w20: img(src="i/a5.png").w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.e")
+                                    .drop(:data="i" droptimes="untilok").db
+                            .row.wrap
+                                template(v-for="(i, index) in temps.e1")
+                                    drag(:data="i" initclass="txt" dropzone=".db" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                    .row.w100
+                        .w80
+                            .row.wrap
+                                template(v-for="(i, index) in temps.f")
+                                    .drop(:data="i" droptimes="untilok").dc
+                            .row.wrap
+                                template(v-for="(i, index) in temps.f1")
+                                    drag(:data="i" initclass="txt" dropzone=".dc" stay-if-ok append-to-dropzone dropzone-ok-class="okdrag"): div {{i}}
+                        .w20: img(src="i/a6.png").w100
+            
+            
+            // END
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', ['El','chango','está','colgado','del','árbol.'])
+                app.$set(app.temps, 'a1', _.shuffle(app.temps.a))
+                app.$set(app.temps, 'b', ['El','chango','es','café.'])
+                app.$set(app.temps, 'b1', _.shuffle(app.temps.b))
+                app.$set(app.temps, 'c', ['El','elefante','pasea','por','el','campo.'])
+                app.$set(app.temps, 'c1', _.shuffle(app.temps.c))
+                app.$set(app.temps, 'd', ['El','elefante','tiene','cincuenta','años','de','edad.'])
+                app.$set(app.temps, 'd1', _.shuffle(app.temps.d))
+                app.$set(app.temps, 'e', ['La','jirafa','mastica','la','rama','del','árbol.'])
+                app.$set(app.temps, 'e1', _.shuffle(app.temps.e))
+                app.$set(app.temps, 'f', ['El','cuello','de','la','jirafa','es','muy','largo.'])
+                app.$set(app.temps, 'f1', _.shuffle(app.temps.f))
+                
+                app.currentScene = 0
+                app.scenesCount = 2
