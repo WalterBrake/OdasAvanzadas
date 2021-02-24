@@ -1,12 +1,98 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Mido una circunferencia'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .embedsvg {
+                max-width: 100%;
+                height: auto;
+            }
+            .embedsvg svg {
+                width: 100%;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+            }
+            .drag .embedsvg {
+                max-width: 100%;
+            }
+            .drag .embedsvg svg {
+                width: 100%;
+            }
+
+            .w20.w18 {
+                width: 18%;
+            }
+            .cir1 {
+                width: 100%;
+            }
+            .cir1 .maincircle {
+                fill: var(--main);
+            }
+            .cir2 {
+                width: 40%;
+            }
+            .cir2 .maincircle {
+                fill: var(--sec);
+            }
+            .cir3 {
+                width: 60%;
+            }
+            .cir3 .maincircle {
+                fill: var(--clear);
+            }
+            .cir4 {
+                width: 80%;
+            }
+            .cir4 .maincircle {
+                fill: var(--accent);
+            }
+            .cir5 {
+                width: 87.5%;
+            }
+            .cir5 .maincircle {
+                fill: var(--main);
+            }
+            .cir6 {
+                width: 100%;
+            }
+            .cir6 .maincircle {
+                fill: var(--sec);
+            }
+            .cir7 {
+                width: 62.5%;
+            }
+            .cir7 .maincircle {
+                fill: var(--clear);
+            }
+            .cir8 {
+                width: 75%;
+            }
+            .cir8 .maincircle {
+                fill: var(--accent);
+            }
+            .inputable {
+                margin: 14px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+            }
+            .inputable input {
+                max-width: 120px;
+                margin: 0 6px;
+            }
+            .inputable .number {
+                margin: 0 6px;
+            }
+
+
+
 
 
     body
@@ -15,14 +101,72 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Relaciona cada círculo con la medida de diámetro o radio que le corresponda. Usa la regla." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        .w20
+                            embedsvg(src="i/circle.svg").cir1
+                            embedsvg(src="i/circle.svg").cir2
+                            embedsvg(src="i/circle.svg").cir3
+                            embedsvg(src="i/circle.svg").cir4
+                            drag(data="n" dropzone=".drop" extval): embedsvg(src="i/regla.svg")
+                        .w50
+                            inputable(initclass="c1" :isok="5" )
+                                number(c=1 small) 5
+                                template(v-slot:before="")  Radio:
+                                template(v-slot:after=""): number(c=1 smaller) cm
+        
+                            inputable(initclass="c2" :isok="2" )
+                                number(c=2 small) 2
+                                template(v-slot:before="")  Radio:
+                                template(v-slot:after=""): number(c=2 smaller) cm
+        
+                            inputable(initclass="c3" :isok="1.5" )
+                                number(c=3 small) 1.5
+                                template(v-slot:before="")  Diámetro:
+                                template(v-slot:after=""): number(c=3 smaller) cm
+        
+                            inputable(initclass="c4" :isok="2" )
+                                number(c=4 small) 2
+                                template(v-slot:before="")  Diámetro:
+                                template(v-slot:after=""): number(c=4 smaller) cm
+        
+            // SCENES 2
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Relaciona cada círculo con la medida de diámetro o radio que le corresponda. Usa la regla." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w20.w18
+                            embedsvg(src="i/circle.svg").cir5
+                            embedsvg(src="i/circle.svg").cir6
+                            embedsvg(src="i/circle.svg").cir7
+                            embedsvg(src="i/circle.svg").cir8
+                            drag(data="n" dropzone=".drop" extval): embedsvg(src="i/regla8.svg")
+                        .w50
+                            inputable(initclass="c1" :isok="7" )
+                                number(c=1 small) 7
+                                template(v-slot:before="")  Diámetro:
+                                template(v-slot:after=""): number(c=1 smaller) cm
+        
+                            inputable(initclass="c2" :isok="8" )
+                                number(c=2 small) 8
+                                template(v-slot:before="")  Diámetro:
+                                template(v-slot:after=""): number(c=2 smaller) cm
+        
+                            inputable(initclass="c3" :isok="2.5" )
+                                number(c=3 small) 2.5
+                                template(v-slot:before="")  Radio:
+                                template(v-slot:after=""): number(c=3 smaller) cm
+        
+                            inputable(initclass="c4" :isok="3" )
+                                number(c=4 small) 3
+                                template(v-slot:before="")  Radio:
+                                template(v-slot:after=""): number(c=4 smaller) cm
+        
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +175,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2
