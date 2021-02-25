@@ -29,7 +29,7 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#174F6D">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100"><img class="w60 ws90" src="i/diagrama.png"/></div>
           <div class="row w100">
@@ -39,7 +39,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#B9D569">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <embedsvg src="i/g1.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
@@ -55,7 +55,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#65B9DD">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <embedsvg src="i/g2.svg" @loaded="svgloaded" initclass="w50 ws100"></embedsvg>
@@ -71,7 +71,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#F2B9BC">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <embedsvg src="i/g3.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
@@ -87,7 +87,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#FCD85D">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <embedsvg src="i/g4.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
@@ -103,7 +103,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3">
-        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="dragdrop" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
         <activity>
           <div class="row w100">
             <embedsvg src="i/g5.svg" @loaded="svgloaded" initclass="w60 ws100"></embedsvg>
@@ -119,7 +119,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3">
-        <info type="seleccionar" title="" text="¡Muy bien! El mapa mental ha quedado completo." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="" text="¡Muy bien! El mapa mental ha quedado completo." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100"><img class="w70 ws100" src="i/full.png"/></div>
           <div class="row w100">
