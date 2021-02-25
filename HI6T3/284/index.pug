@@ -7,6 +7,15 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .drop text {
+                display: none;
+            }
+            .drop.ok text {
+                display: unset;
+            }
+            .drag.dropped {
+                display: none;
+            }
 
 
     body
@@ -15,20 +24,89 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#174F6D")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
+                        img(src="i/diagrama.png").w60.ws90
+                    .row.w100: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#B9D569")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        embedsvg(src="i/g1.svg" @loaded="svgloaded" initclass="w70 ws100")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.a"): drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok dropzone-ok-class="ok" drag-ok-class="dropped"): div {{i}}
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#65B9DD")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        embedsvg(src="i/g2.svg" @loaded="svgloaded" initclass="w50 ws100")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.b"): drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok dropzone-ok-class="ok" drag-ok-class="dropped"): div {{i}}
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#F2B9BC")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        embedsvg(src="i/g3.svg" @loaded="svgloaded" initclass="w70 ws100")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.c"): drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok dropzone-ok-class="ok" drag-ok-class="dropped"): div {{i}}
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#FCD85D")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        embedsvg(src="i/g4.svg" @loaded="svgloaded" initclass="w70 ws100")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.d"): drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok dropzone-ok-class="ok" drag-ok-class="dropped"): div {{i}}
+            // SCENES
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3")
+                info(type="seleccionar" title=title text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        embedsvg(src="i/g5.svg" @loaded="svgloaded" initclass="w60 ws100")
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.e"): drag(:data="i" initclass="txt" dropzone=".drop" stay-if-ok dropzone-ok-class="ok" drag-ok-class="dropped"): div {{i}}
+            // SCENES
+            scene(v-if="currentScene==7" hidescorebox :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3")
+                info(type="seleccionar" title=title text="¡Muy bien! El mapa mental ha quedado completo." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        img(src="i/full.png").w70.ws100
+                    .row.w100: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==8" :key="8" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', ['Universo','Galileo Galilei.','Da Vinci.','investigación','Copérnico.'])
+                app.$set(app.temps, 'b', ['Italia','México','Hungría','filosófico.','religioso.','científico.'])
+                app.$set(app.temps, 'c', ['Venecia','romana.','Renacimiento.','monárquica','conocimiento.','divina.'])
+                app.$set(app.temps, 'd', ['Buonarroti.','Botticelli.','Da Vinci.','Poe.'])
+                app.$set(app.temps, 'e', ['sentimientos.','rasgos físicos.','humanas.','bíblicas.'])
                 
+                app.svgloaded = function () {
+                    setTimeout(function(){
+                        let dropses = ['#drop1','#drop2','#drop3','#drop4','#drop5']
+                        for(dr in dropses){
+                            document.querySelectorAll(dropses[dr]).forEach(function (item) {
+                                let txt = item.querySelectorAll('text')[0].innerHTML
+                                item.classList.add('drop')
+                                item.setAttribute('droptimes', 'untilok')
+                                item.setAttribute('data', txt)
+                            })
+                        }
+                    }, 500)
+                }
+
+                
+
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5

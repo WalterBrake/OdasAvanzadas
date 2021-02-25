@@ -9,21 +9,126 @@
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drop text {
+          display: none;
+      }
+      .drop.ok text {
+          display: unset;
+      }
+      .drag.dropped {
+          display: none;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#174F6D">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100"><img class="w60 ws90" src="i/diagrama.png"/></div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#B9D569">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <embedsvg src="i/g1.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i" initclass="txt" dropzone=".drop" stay-if-ok="stay-if-ok" dropzone-ok-class="ok" drag-ok-class="dropped">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#65B9DD">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <embedsvg src="i/g2.svg" @loaded="svgloaded" initclass="w50 ws100"></embedsvg>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.b">
+              <drag :data="i" initclass="txt" dropzone=".drop" stay-if-ok="stay-if-ok" dropzone-ok-class="ok" drag-ok-class="dropped">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#F2B9BC">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <embedsvg src="i/g3.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.c">
+              <drag :data="i" initclass="txt" dropzone=".drop" stay-if-ok="stay-if-ok" dropzone-ok-class="ok" drag-ok-class="dropped">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#FCD85D">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <embedsvg src="i/g4.svg" @loaded="svgloaded" initclass="w70 ws100"></embedsvg>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.d">
+              <drag :data="i" initclass="txt" dropzone=".drop" stay-if-ok="stay-if-ok" dropzone-ok-class="ok" drag-ok-class="dropped">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3">
+        <info type="seleccionar" title="" text="Ayuda a José a completar el mapa mental del Humanismo. Coloca las palabras que faltan en cada espacio en blanco." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <embedsvg src="i/g5.svg" @loaded="svgloaded" initclass="w60 ws100"></embedsvg>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.e">
+              <drag :data="i" initclass="txt" dropzone=".drop" stay-if-ok="stay-if-ok" dropzone-ok-class="ok" drag-ok-class="dropped">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#E1C1D3">
+        <info type="seleccionar" title="" text="¡Muy bien! El mapa mental ha quedado completo." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100"><img class="w70 ws100" src="i/full.png"/></div>
+          <div class="row w100">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==8" :key="8" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +163,30 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', ['Universo','Galileo Galilei.','Da Vinci.','investigación','Copérnico.'])
+      app.$set(app.temps, 'b', ['Italia','México','Hungría','filosófico.','religioso.','científico.'])
+      app.$set(app.temps, 'c', ['Venecia','romana.','Renacimiento.','monárquica','conocimiento.','divina.'])
+      app.$set(app.temps, 'd', ['Buonarroti.','Botticelli.','Da Vinci.','Poe.'])
+      app.$set(app.temps, 'e', ['sentimientos.','rasgos físicos.','humanas.','bíblicas.'])
+      
+      app.svgloaded = function () {
+          setTimeout(function(){
+              let dropses = ['#drop1','#drop2','#drop3','#drop4','#drop5']
+              for(dr in dropses){
+                  document.querySelectorAll(dropses[dr]).forEach(function (item) {
+                      let txt = item.querySelectorAll('text')[0].innerHTML
+                      item.classList.add('drop')
+                      item.setAttribute('droptimes', 'untilok')
+                      item.setAttribute('data', txt)
+                  })
+              }
+          }, 500)
+      }
+      
+      
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>

@@ -1,12 +1,15 @@
 Vue.component('embedsvg', {
-    props: ['src'],
+    props: ['src', 'initclass'],
     data () {
         return {
             body: null
         }
     },
     template: `
-        <div class="embedsvg" ref="embed" v-html="body"></div>
+        <div :class="[
+            'embedsvg',
+            (initclass!=undefined?initclass:'')
+        ]" ref="embed" v-html="body"></div>
     `,
     methods: {
         init(){
