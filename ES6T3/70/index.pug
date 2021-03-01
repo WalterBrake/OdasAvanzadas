@@ -66,7 +66,7 @@ html(lang="es")
                             .dialog.tl.tip-b.long: audiotext(audio="s/a1.mp3" :autoplay="true" @completed="temps.a1=true" text="¿Qué estabas leyendo, abuelo?")
                             .dialog.tr.tip-b.long(v-if="temps.a1"): audiotext(audio="s/a2.mp3" :autoplay="true" @completed="temps.a2=true" text="Es un viejo libro de poemas escritos por gente que habla las lenguas originarias de México.")
                     .pregunta.animate__animated.animate__bounceInUp(v-if="temps.a2")
-                        +pregunta('s/p1.mp3','¿Cuáles de las siguientes son lenguas originarias de México?', "['Náhuatl, maya y zapoteca.','Maya, castellano, hichol.','Azteca, náhuatl, mixteca.']", 0)
+                        +pregunta('s/p1.mp3','¿Cuáles de las siguientes son lenguas originarias de México?', "['Náhuatl, maya y zapoteca.','Maya, castellano, huichol.','Azteca, náhuatl, mixteca.']", 0)
             
             // SCENES 2
             scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetaus")
