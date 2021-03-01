@@ -14,6 +14,8 @@ html(lang="es")
                 margin: 6px;
                 border-radius: 6px;
                 box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                white-space: nowrap;
+                letter-spacing: -.1rem;
             }
             .drop {
                 border: 2px dashed var(--main);
@@ -21,10 +23,21 @@ html(lang="es")
                 padding: 10px;
                 margin: 1%;
                 background: rgba(129, 199, 139, 0.2);
+                box-sizing: border-box;
             }
             .drop.demo .operation {
                 background: #B3D432;
             }
+            .drag{
+                width: auto; height: auto;
+            }
+            @media (max-width:680px){
+                .operation{
+                    font-size: 0.8rem;
+                    letter-spacing: -.05rem;
+                }
+            }
+            
 
 
 
@@ -37,30 +50,30 @@ html(lang="es")
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#5EB247")
                 info(type="dragdrop" title=title text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .row.w100.wrap
                         template(v-for="(i, index) in [['15 + 15 + 5 =', 'B'],['20 + 20 =', 'C'],['25 + 10 =', 'B'],['30 + 10 =', 'C'] ]")
                             drag( :data="i[1]" dropzone=".drop" stay-if-ok append-to-dropzone)
                                 div.operation {{i[0]}}
-                    .row.w100
-                        .drop.demo.w30(data="A" droptimes="multiple" droplimit="0")
+                    .row.w100.wrap
+                        .drop.demo.w30.ws40(data="A" droptimes="multiple" droplimit="0")
                             img(src="i/a1.png").w100
                             div.operation 30 + 10 + 6 =
                             div.operation 20 + 20 + 6 =
-                        .drop.w30(data="B" droptimes="multiple"): img(src="i/a2.png").w100
-                        .drop.w30(data="C" droptimes="multiple"): img(src="i/a3.png").w100
+                        .drop.w30.ws40(data="B" droptimes="multiple"): img(src="i/a2.png").w100
+                        .drop.w30.ws40(data="C" droptimes="multiple"): img(src="i/a3.png").w100
             
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#5EB247")
                 info(type="dragdrop" title=title text="Coloca en los espacios correspondientes las sumas que dan como resultado el número de cada maceta. Observa el ejemplo." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
-                    .row.w100
+                    .row.w100.wrap
                         template(v-for="(i, index) in [['30 + 20 + 4 =', 'A'],['50 + 20 + 2=', 'B'],['40 + 10 + 4 =', 'A'],['50 + 40 =', 'C'],['30 + 40 + 2 =', 'B'],['40 + 40 + 10 =', 'C'] ]")
                             drag( :data="i[1]" dropzone=".drop" stay-if-ok append-to-dropzone)
                                 div.operation {{i[0]}}
-                    .row.w100
-                        .drop.w30(data="A" droptimes="multiple"): img(src="i/a4.png").w100
-                        .drop.w30(data="B" droptimes="multiple"): img(src="i/a5.png").w100
-                        .drop.w30(data="C" droptimes="multiple"): img(src="i/a6.png").w100
+                    .row.w100.wrap
+                        .drop.w30.ws40(data="A" droptimes="multiple"): img(src="i/a4.png").w100
+                        .drop.w30.ws40(data="B" droptimes="multiple"): img(src="i/a5.png").w100
+                        .drop.w30.ws40(data="C" droptimes="multiple"): img(src="i/a6.png").w100
             
             // END
             scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
@@ -71,5 +84,5 @@ html(lang="es")
                 app.$devmode = false
                 app.$set(app.temps, 'a', [])
                 
-                app.currentScene = 0
+                app.currentScene = 2
                 app.scenesCount = 2
