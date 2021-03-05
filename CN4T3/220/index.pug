@@ -97,7 +97,7 @@ html(lang="es")
                         .row.wrap.around: clickable(v-for="(i, index) in ['Los popotes.','La vela.','El pegamento.']" :key="index" :isok="index == 1" simple-ok initclass="pa-1 w100"): number(randomc smaller) {{i}}
                     .w100.mt-1.text-center
                         .h4 ¿Por qué es importante que los popotes estén doblados en un ángulo de 45°?
-                        .row.wrap.around: clickable(v-for="(i, index) in ['Porque así el fragmento de lata queda cerca de la vela.','Porque permite que el pegamento quede firme.','Porque así el barco no se hunda.']" :key="index" :isok="index == 0" simple-ok initclass="pa-1 w100"): number(randomc smaller) {{i}}
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Porque así el fragmento de lata queda cerca de la vela.','Porque permite que el pegamento quede firme.','Porque así el barco no se hunde.']" :key="index" :isok="index == 0" simple-ok initclass="pa-1 w100"): number(randomc smaller) {{i}}
             
             // SCENES 4
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
