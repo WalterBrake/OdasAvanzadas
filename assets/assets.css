@@ -167,7 +167,7 @@ input[type=number] {
   font-size: 1.8rem;
 }
 .info h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 4px;
 }
 .info .bottom {
@@ -191,6 +191,49 @@ input[type=number] {
 @media (min-width: 961px) {
   .info.w100 {
     max-width: 100%;
+  }
+}
+.info {
+  padding: 6px;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 680px) {
+  .info h1 {
+    font-size: 1.4rem;
+  }
+  .info .audiotext {
+    font-size: 0.8rem;
+  }
+  .info .scorebox {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+  .info .scorebox embed {
+    max-width: 24px;
+  }
+}
+.info {
+  background-image: url(../../assets/aanim/info2.svg);
+  background-size: cover;
+  animation: infobg 60s infinite alternate;
+}
+.info h1 {
+  text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
+}
+.scorebox {
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+@keyframes infobg {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
   }
 }
 .audiotextBtn {
@@ -260,11 +303,11 @@ input[type=number] {
   font-weight: normal;
   font-size: 2rem;
   border-radius: 10px;
-  padding: 10px;
+  padding: 6px 8px;
 }
 .scorebox embed {
   width: 100%;
-  max-width: 40px;
+  max-width: 30px;
   margin-right: 10px;
   max-height: 40px;
 }

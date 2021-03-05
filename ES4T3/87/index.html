@@ -3,23 +3,126 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Busco información específica</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .draggs .bx {
+          text-align: center;
+          background: #fff;
+          margin: 4px;
+          display: flex;
+          padding: 10px;
+          text-align: left;
+          border-radius: 6px;
+          align-items: center;
+      }
+      @media (max-width: 680px) {
+          .draggs .bx {
+              padding: 6px;
+              font-size: 0.7rem;
+          }
+      }
+      .draggs .drag {
+          margin-left: auto;
+          width: 24px;
+          height: 24px;
+      }
+      @media (max-width: 680px) {
+          .draggs .drag {
+              width: 20px;
+              height: 20px;
+          }
+      }
+      .draggs .drag img {
+          min-width: 20px;
+          max-width: 100%;
+          margin-right: -20%;
+          margin-top: -20%;
+      }
+      
+      path[data="m"].isok {
+          fill: #A381D8 !important;
+      }
+      path[data="a"].isok {
+          fill: #5F9CE7 !important;
+      }
+      path[data="am"].isok {
+          fill: #EAD074 !important;
+      }
+      path[data="n"].isok {
+          fill: #BB5C3F !important;
+      }
+      path[data="v"].isok {
+          fill: #8ED566 !important;
+      }
+      path[data="r"].isok {
+          fill: #F96C9F !important;
+      }
+      
+      [oktimes="1"]{
+          display: none;
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="dragdrop" title="Busco información específica" text="Coloca el lápiz de color sobre la parte sombreada de la nota a la que corresponda cada elemento indicado." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w80">
+              <embedsvg src="i/nota.svg" @loaded="buildsvg" initclass="w100"></embedsvg>
+            </div>
+          </div>
+          <div class="row w100 draggs text-center wrap">
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Suceso que se reporta.</div>
+                <drag data="v" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/lv.png"/></drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Población de mayor riesgo en México en 2009.</div>
+                <drag data="a" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/la.png"/></drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Tratamiento preventivo para personas con alto riesgo de complicaciones.</div>
+                <drag data="n" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/ln.png"/></drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Agentes involucrados en el suceso.</div>
+                <drag data="r" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/lr.png"/></drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Título.</div>
+                <drag data="m" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/lm.png"/></drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="bx">
+                <div class="txt">Entrada de la nota.</div>
+                <drag data="am" no-error-sound="no-error-sound" dropzone="#drops path" return-to-position="return-to-position" dropzone-ok-class="isok"><img class="w100" src="i/lam.png"/></drag>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -59,6 +162,21 @@
     <script>
       app.$devmode = false
       app.$set(app.temps, 'a', [])
+      
+      app.buildsvg = function () {
+          setTimeout(function () {
+              document.querySelectorAll('#drops path').forEach(function (itm, index) {
+              itm.setAttribute('droptimes','untilok')
+              if(index==0){ itm.setAttribute('data','m') }
+              if(index==1){ itm.setAttribute('data','am') }
+              if(index==2){ itm.setAttribute('data','v') }
+              if(index==3){ itm.setAttribute('data','a') }
+              if(index==4){ itm.setAttribute('data','r') }
+              if(index==5){ itm.setAttribute('data','n') }
+      
+          })
+          }, 800)
+      }
       
       app.currentScene = 0
       app.scenesCount = 1

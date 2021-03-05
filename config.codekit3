@@ -81,6 +81,26 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/aanim\/info.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/aanim\/info.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/aanim\/info2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/aanim\/info2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/aanim\/notfound.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -13080,6 +13100,82 @@
 		"oAP": "\/ES4T3\/83\/s\/intro.mp3",
 		"oF": 0
 		},
+	"\/ES4T3\/87\/i\/la.png": {
+		"ft": 32768,
+		"iS": 5408,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/la.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/lam.png": {
+		"ft": 32768,
+		"iS": 5316,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/lam.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/lm.png": {
+		"ft": 32768,
+		"iS": 5769,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/lm.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/ln.png": {
+		"ft": 32768,
+		"iS": 5816,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/ln.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/lr.png": {
+		"ft": 32768,
+		"iS": 5308,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/lr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/lv.png": {
+		"ft": 32768,
+		"iS": 5830,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/i\/lv.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES4T3\/87\/i\/nota.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/ES4T3\/87\/i\/nota.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/ES4T3\/87\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13096,11 +13192,11 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES4T3\/87\/s\/Busco información específica Es4°T3_Inst1.mp3": {
+	"\/ES4T3\/87\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES4T3\/87\/s\/Busco información específica Es4°T3_Inst1.mp3",
+		"oAP": "\/ES4T3\/87\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/ES5T1\/26\/aimg\/piramide.svg": {

@@ -42,11 +42,12 @@ Vue.component('drag', {
             isItOk: false,
             clonedIn: [],
             dragoks: 0,
+            oktimes: 0,
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
     template: `
-        <div ref="drag" :class="'drag ' + (initclass!=undefined?initclass:'')">
+        <div ref="drag" :class="'drag ' + (initclass!=undefined?initclass:'')" :oktimes="oktimes">
             <slot></slot>
         </div>
     `,
@@ -230,6 +231,11 @@ Vue.component('drag', {
                 _this.dragoks++
                 _this.$emit('isok', {droppedtimes: droppedtimes, dragoks: _this.dragoks})
                 _this.isItOk = true
+
+
+
+
+
                 
             }, 100)
             _this.returnToPositionFn()
@@ -248,7 +254,11 @@ Vue.component('drag', {
             _this.appendCloneToDropzoneFn(dropzone, e)
             if(_this.disableok==undefined && _this.extval == undefined){
                 EventBus.$emit('isok')
+                
             }
+            
+            _this.oktimes += 1
+
         },
         hitTestISERROR(dropzone, e){
             var _this = this
@@ -373,6 +383,7 @@ Vue.component('drag', {
             }
         },
         returnToPositionFn(){
+
             if(this.returnToPosition!=undefined) {
                 this.backToInitPos()
                 if(this.undroppable != undefined || this.extval != undefined) {

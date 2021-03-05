@@ -1,12 +1,70 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Busco información específica'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .draggs .bx {
+                text-align: center;
+                background: #fff;
+                margin: 4px;
+                display: flex;
+                padding: 10px;
+                text-align: left;
+                border-radius: 6px;
+                align-items: center;
+            }
+            @media (max-width: 680px) {
+                .draggs .bx {
+                    padding: 6px;
+                    font-size: 0.7rem;
+                }
+            }
+            .draggs .drag {
+                margin-left: auto;
+                width: 24px;
+                height: 24px;
+            }
+            @media (max-width: 680px) {
+                .draggs .drag {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .draggs .drag img {
+                min-width: 20px;
+                max-width: 100%;
+                margin-right: -20%;
+                margin-top: -20%;
+            }
+
+            path[data="m"].isok {
+                fill: #A381D8 !important;
+            }
+            path[data="a"].isok {
+                fill: #5F9CE7 !important;
+            }
+            path[data="am"].isok {
+                fill: #EAD074 !important;
+            }
+            path[data="n"].isok {
+                fill: #BB5C3F !important;
+            }
+            path[data="v"].isok {
+                fill: #8ED566 !important;
+            }
+            path[data="r"].isok {
+                fill: #F96C9F !important;
+            }
+
+            [oktimes="1"]{
+                display: none;
+            }
+
+
 
 
     body
@@ -15,12 +73,43 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Coloca el lápiz de color sobre la parte sombreada de la nota a la que corresponda cada elemento indicado." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
-            
-            
+                        .w80: embedsvg(src="i/nota.svg" @loaded="buildsvg" initclass="w100")
+                    
+                    .row.w100.draggs.text-center.wrap
+
+                        .w50: .bx
+                            div.txt Suceso que se reporta.
+                            drag(data="v" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/lv.png").w100
+                        .w50: .bx
+                            div.txt Población de mayor riesgo en México en 2009.
+                            drag(data="a" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/la.png").w100
+                        .w50: .bx
+                            div.txt Tratamiento preventivo para personas con alto riesgo de complicaciones.
+                            drag(data="n" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/ln.png").w100
+                        .w50: .bx
+                            div.txt Agentes involucrados en el suceso.
+                            drag(data="r" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/lr.png").w100
+                        .w50: .bx
+                            div.txt Título.
+                            drag(data="m" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/lm.png").w100
+                        .w50: .bx
+                            div.txt Entrada de la nota.
+                            drag(data="am" no-error-sound dropzone="#drops path" return-to-position dropzone-ok-class="isok"): img(src="i/lam.png").w100
+
+
+                        
+    
+    
+    
+    
+    
+    
+    
+    
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
         
@@ -29,6 +118,21 @@ html(lang="es")
 
                 app.$devmode = false
                 app.$set(app.temps, 'a', [])
-                
+
+                app.buildsvg = function () {
+                    setTimeout(function () {
+                        document.querySelectorAll('#drops path').forEach(function (itm, index) {
+                        itm.setAttribute('droptimes','untilok')
+                        if(index==0){ itm.setAttribute('data','m') }
+                        if(index==1){ itm.setAttribute('data','am') }
+                        if(index==2){ itm.setAttribute('data','v') }
+                        if(index==3){ itm.setAttribute('data','a') }
+                        if(index==4){ itm.setAttribute('data','r') }
+                        if(index==5){ itm.setAttribute('data','n') }
+
+                    })
+                    }, 800)
+                }
+
                 app.currentScene = 0
                 app.scenesCount = 1
