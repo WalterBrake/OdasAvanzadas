@@ -7,6 +7,50 @@ include ../../assets/pug/_scripts
 html(lang="es")
     +head
         style.
+            .texto {
+                background: #F0DDAA;
+                border: 2px solid #AF8B61;
+                padding: 6px;
+                font-size: 0.9rem;
+                color: #402f1e;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .drag{
+                text-align:center;
+            }
+            .texto .hidden {
+                opacity: 0.4;
+                font-size: 0.6rem;
+            }
+            @media (max-width: 680px) {
+                .texto .hidden {
+                    font-size: 0.5rem;
+                }
+                .texto .hidden .h4 {
+                    font-size: 0.8rem;
+                }
+            }
+            .texto p {
+                margin: 10px;
+            }
+            @media (max-width: 680px) {
+                .texto p {
+                    font-size: 0.7rem;
+                    margin: 4px;
+                }
+            }
+            @media (max-width: 680px) {
+                .texto {
+                    padding: 4px;
+                }
+            }
+            @media (max-width: 680px) {
+                .drag.txt {
+                    font-size: 0.7rem;
+                }
+            }
+
 
 
     body
@@ -15,20 +59,130 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Esta es la fotografía de uno de los escritores de cuentos infantiles clásicos. Veamos su biografía por partes y averiguemos qué información podemos obtener. Haz clic en el botón de Siguiente para avanzar." textaudio="s/intro.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w40.ws60: img(src="i/pic.png").w100.animate__animated.animate__tada
+                    .text-center.mt-1: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Siguiente
             
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Qué preguntas puedes responder con la información de cada parte de la biografía? Colócalas en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .texto
+                            .text-center
+                                .h4 Charles Perrault
+                                small (1628-1703)
+                            .row
+                                .w10: img(src="i/pic.png").w100
+                                .w90: p Charles Perrault fue un abogado y escritor francés que nació en París el 12 de enero de 1628, en una familia burguesa, lo que le permitió tener una infancia cómoda y estudiar en buenas escuelas.
+
+                    .row.w100
+                        .w50
+                            .drop(:data="1" droptimes="untilok").dr2
+                        .w50
+                            template(v-for="(i, index) in temps.a")
+                                drag(:data="i.v" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}}
+            
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Qué preguntas puedes responder con la información de cada parte de la biografía? Colócalas en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .texto
+                            .text-center.hidden
+                                .h4 Charles Perrault
+                                small (1628-1703)
+                            .row
+                                .w10: img(src="i/pic.png").w100
+                                .w90: p.hidden Charles Perrault fue un abogado y escritor francés que nació en París el 12 de enero de 1628, en una familia burguesa, lo que le permitió tener una infancia cómoda y estudiar en buenas escuelas.
+                            p  Ingresó al colegio Beauvais en 1637 donde aprendió lenguas muertas. En 1643 entró a la Escuela de Derecho y once años después lo contrataron como funcionario para trabajar en el servicio gubernamental. Fue un fiel seguidor del rey Luis XIV, lo que le permitió alcanzar un lugar privilegiado dentro de la corte con nombramientos como secretario de la Academia Francesa en 1663 y bibliotecario de la misma en 1673.
+                    .row.w100
+                        .w50
+                            .drop(:data="1" droptimes="untilok").dr2
+                        .w50
+                            template(v-for="(i, index) in temps.b")
+                                drag(:data="i.v" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}}
+            
+            
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Qué preguntas puedes responder con la información de cada parte de la biografía? Colócalas en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .texto
+                            .text-center.hidden
+                                .h4 Charles Perrault
+                                small (1628-1703)
+                            .row
+                                .w10: img(src="i/pic.png").w100
+                                .w90: p.hidden Charles Perrault fue un abogado y escritor francés que nació en París el 12 de enero de 1628, en una familia burguesa, lo que le permitió tener una infancia cómoda y estudiar en buenas escuelas.
+                            p.hidden  Ingresó al colegio Beauvais en 1637 donde aprendió lenguas muertas. En 1643 entró a la Escuela de Derecho y once años después lo contrataron como funcionario para trabajar en el servicio gubernamental. Fue un fiel seguidor del rey Luis XIV, lo que le permitió alcanzar un lugar privilegiado dentro de la corte con nombramientos como secretario de la Academia Francesa en 1663 y bibliotecario de la misma en 1673.
+                            p Perrault es reconocido a nivel mundial por haber dado forma literaria a los cuentos clásicos infantiles. A sus 55 años escribió el libro Cuentos del pasado, que incluye sus cuentos más famosos como "Pulgarcito", "La Cenicienta", "Caperucita Roja" y "El Gato con Botas", entre otros, dándoles un toque más infantil que lo ha hecho trascender a lo largo de los siglos.
+                    .row.w100
+                        .w50
+                            .drop(:data="1" droptimes="untilok").dr2
+                        .w50
+                            template(v-for="(i, index) in temps.c")
+                                drag(:data="i.v" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}}
+            
+            
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¿Qué preguntas puedes responder con la información de cada parte de la biografía? Colócalas en el recuadro." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .texto
+                            .text-center.hidden
+                                .h4 Charles Perrault
+                                small (1628-1703)
+                            .row
+                                .w10: img(src="i/pic.png").w100
+                                .w90: p.hidden Charles Perrault fue un abogado y escritor francés que nació en París el 12 de enero de 1628, en una familia burguesa, lo que le permitió tener una infancia cómoda y estudiar en buenas escuelas.
+                            p.hidden  Ingresó al colegio Beauvais en 1637 donde aprendió lenguas muertas. En 1643 entró a la Escuela de Derecho y once años después lo contrataron como funcionario para trabajar en el servicio gubernamental. Fue un fiel seguidor del rey Luis XIV, lo que le permitió alcanzar un lugar privilegiado dentro de la corte con nombramientos como secretario de la Academia Francesa en 1663 y bibliotecario de la misma en 1673.
+                            p.hidden Perrault es reconocido a nivel mundial por haber dado forma literaria a los cuentos clásicos infantiles. A sus 55 años escribió el libro Cuentos del pasado, que incluye sus cuentos más famosos como "Pulgarcito", "La Cenicienta", "Caperucita Roja" y "El Gato con Botas", entre otros, dándoles un toque más infantil que lo ha hecho trascender a lo largo de los siglos.
+                            p Los personajes a los que recurre son hadas, ogros, animales que hablan, brujas y princesas encantadas, e incluye al final de sus relatos una enseñanza moral. Fue la inspiración para muchos escritores, entre ellos los hermanos Grimm.
+                    .row.w100
+                        .w50
+                            .drop(:data="1" droptimes="untilok").dr2
+                        .w50
+                            template(v-for="(i, index) in temps.d")
+                                drag(:data="i.v" initclass="txt" dropzone=".drop" stay-if-ok append-to-dropzone): div {{i.t}}
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {v: 0, t: '¿A qué se dedicaban sus padres?'},
+                    {v: 1, t: '¿En qué fecha y en qué lugar nació Charles?'},
+                    {v: 0, t: '¿Cuándo aprendió lenguas muertas?'},
+                    {v: 1, t: '¿Cómo fue la infancia de Perrault?'},
+                ])
+                app.$set(app.temps, 'b', [
+                    {v: 1, t: '¿Qué nombramientos tuvo en la Academia Francesa?'},
+                    {v: 0, t: '¿A qué edad comenzó a escribir?'},
+                    {v: 1, t: '¿Qué estudios le permitieron ser funcionario gubernamental?'},
+                    {v: 1, t: '¿De qué rey era fiel seguidor?'},
+                ])
+                app.$set(app.temps, 'c', [
+                    {v: 0, t: '¿A quién le dedicó sus cuentos?'},
+                    {v: 1, t: '¿Cuál es la razón por la que Perrault es reconocido?'},
+                    {v: 1, t: '¿A qué edad escribió su libro Cuentos del pasado?'},
+                    {v: 1, t: '¿Cuáles son sus cuentos más famosos?'},
+                ])
+                app.$set(app.temps, 'd', [
+                    {v: 1, t: '¿Qué personajes usó en sus cuentos?'},
+                    {v: 0, t: '¿Cuáles fueron sus cuentos más leídos?'},
+                    {v: 0, t: '¿Qué palabras usaba para terminar los cuentos?'},
+                    {v: 1, t: '¿Qué escritores fueron influenciados por Perrault?'},
+                ])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 5

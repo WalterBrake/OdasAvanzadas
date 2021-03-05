@@ -3192,7 +3192,7 @@
 		},
 	"\/CN3T2\/222\/i\/i11.png": {
 		"ft": 32768,
-		"iS": 17400,
+		"iS": 21732,
 		"oA": 0,
 		"oAP": "\/CN3T2\/222\/i\/i12.png",
 		"oF": 0,
@@ -6454,6 +6454,111 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_1.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_10.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_11.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_11.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_12.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_2.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_3.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_4.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_5.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_6.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_7.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_8.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_9.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg1.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg2.mp3",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg3.mp3",
+		"oF": 0
+		},
 	"\/CNAME": {
 		"cB": 0,
 		"ft": 8192,
@@ -9376,7 +9481,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 25710,
+		"iS": 10945,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -11725,6 +11830,202 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_aguaHipo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_aguaHipo.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_1.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_10.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_11.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_11.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_12.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_13.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_13.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_14.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_14.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_2.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_3.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_4.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_5.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_6.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_7.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_8.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_9.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!_1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!_1.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Buuu.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Buuu.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Hipos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Hipos.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst1.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst2.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_LimónHipo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_LimónHipo.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre2.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño2.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_SacaLengua.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_SacaLengua.mp3",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Título.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Título.mp3",
+		"oF": 0
+		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -12738,6 +13039,17 @@
 		"oAP": "\/ES4T3\/79\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/ES4T3\/83\/i\/pic.png": {
+		"ft": 32768,
+		"iS": 2745555,
+		"oA": 0,
+		"oAP": "\/ES4T3\/83\/i\/pic.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES4T3\/83\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -12754,6 +13066,20 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES4T3\/83\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T3\/83\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES4T3\/83\/s\/intro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T3\/83\/s\/intro.mp3",
+		"oF": 0
+		},
 	"\/ES4T3\/87\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -12769,6 +13095,13 @@
 		"oAP": "\/ES4T3\/87\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/ES4T3\/87\/s\/Busco información específica Es4°T3_Inst1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES4T3\/87\/s\/Busco información específica Es4°T3_Inst1.mp3",
+		"oF": 0
 		},
 	"\/ES5T1\/26\/aimg\/piramide.svg": {
 		"ft": 2097152,
@@ -13290,6 +13623,118 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_AhoraQueSé_P5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_AhoraQueSé_P5.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_EntoncesP5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_EntoncesP5.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P7.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P8.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_NombreRaro_P1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_NombreRaro_P1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Pantalla2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Pantalla2.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_ParaDefenderse_P6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_ParaDefenderse_P6.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QuePuedoHacer_P6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QuePuedoHacer_P6.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QueTePasa_P1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QueTePasa_P1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SeTrata_P1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SeTrata_P1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P3.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P4.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_TuSabes_P4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_TuSabes_P4.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_YaVeo_P3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_YaVeo_P3.mp3",
+		"oF": 0
+		},
 	"\/ES5T3\/80\/i\/bg.png": {
 		"ft": 32768,
 		"iS": 642355,
@@ -13345,6 +13790,57 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES5T3\/81\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/index.html",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Audio1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Audio1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst1.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst2.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst3.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Intro1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Intro1.mp3",
 		"oF": 0
 		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
@@ -14420,6 +14916,118 @@
 		"oAP": "\/GE5T3\/247\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Inst.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Inst.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botellas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botellas.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botiquín.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botiquín.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Cuadro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Cuadro.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Documentos.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Documentos.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Encendedor.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Encendedor.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Enlatados.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Enlatados.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Laptop.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Laptop.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Linterna.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Linterna.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Maceta.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Maceta.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peine.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peine.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peluche.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peluche.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Pulseras.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Pulseras.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Radio.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Radio.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Ropa.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Ropa.mp3",
+		"oF": 0
+		},
+	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Silbatgo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Silbatgo.mp3",
+		"oF": 0
 		},
 	"\/GE6T1\/221\/aimg\/mapa.svg": {
 		"ft": 2097152,
@@ -16176,6 +16784,20 @@
 		"oAP": "\/HI5T3\/283\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Audio1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Audio1.mp3",
+		"oF": 0
+		},
+	"\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Instr.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Instr.mp3",
+		"oF": 0
 		},
 	"\/HI6T1\/257\/aimg\/i1.svg": {
 		"ft": 2097152,
@@ -22730,6 +23352,160 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_1.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_10.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_11.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_11.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_12.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_13.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_13.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_14.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_14.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_15.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_15.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_16.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_16.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_17.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_17.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_18.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_18.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_19.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_19.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_2.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_20.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_20.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_21.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_21.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_3.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_4.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_5.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_6.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_7.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_8.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_9.mp3",
+		"oF": 0
+		},
+	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Inst1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Inst1.mp3",
+		"oF": 0
+		},
 	"\/MA4T1\/111\/aimg\/az.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -25043,6 +25819,64 @@
 		"oAP": "\/MA4T2\/147\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/MA4T3\/159\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/index.html",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_1.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_2.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_3.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_4.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_5.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Inst.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Inst.mp3",
+		"oF": 0
+		},
 	"\/MA4T3\/163\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -25081,6 +25915,27 @@
 		"oAP": "\/MA4T3\/174\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Inst.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Inst.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Inst2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Inst2.mp3",
+		"oF": 0
+		},
+	"\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Intro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA4T3\/174\/s\/Analizo los datos Ma4°T3_Intro.mp3",
+		"oF": 0
 		},
 	"\/MA5T1\/108\/aimg\/acua.svg": {
 		"ft": 2097152,
@@ -27636,6 +28491,13 @@
 		"oAP": "\/MA6T3\/165\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/MA6T3\/165\/s\/Identifico la regularidad de una sucesión Ma6°T3_Inst.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/MA6T3\/165\/s\/Identifico la regularidad de una sucesión Ma6°T3_Inst.mp3",
+		"oF": 0
 		},
 	"\/readme": {
 		"ft": 65536,
