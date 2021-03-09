@@ -56,7 +56,6 @@ Vue.component('clickable', {
                     this.$emit('itsok')
                     this.validateok = true
                 } else {
-                    
                     this.$emit('itserror')
                 }
             }
@@ -101,12 +100,14 @@ Vue.component('clickable', {
                 } else {
                     _this.$emit('input', true)
                 }
+
                 if(_this.extValidation == undefined){
                     _this.$emit('wasclicked')
+                    
                 } else {
                     EventBus.$emit('isok')
                 }
-
+                
                 
 
                 _this.setClassAnimation('ok', _this.$refs.clickable)
@@ -127,6 +128,13 @@ Vue.component('clickable', {
                         s_error.play()
                     }
                 }
+
+                if(_this.extValidation == undefined){
+                    _this.$emit('wasclickederror')
+                    
+                }
+
+
                 this.setClassAnimation('error', this.$refs.clickable)
                 this.blockIfErrorFn()
                 this.$emit('input', false)

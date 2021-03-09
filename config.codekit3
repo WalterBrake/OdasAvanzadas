@@ -13703,6 +13703,42 @@
 		"oAP": "\/ES5T3\/67\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/ES5T3\/79\/i\/dislike.png": {
+		"ft": 32768,
+		"iS": 8591,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/i\/dislike.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/79\/i\/like.png": {
+		"ft": 32768,
+		"iS": 8029,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/i\/like.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/79\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/ES5T3\/79\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13719,41 +13755,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_AhoraQueSé_P5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_AhoraQueSé_P5.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_EntoncesP5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_EntoncesP5.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P1.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P7.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P7.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Inst_P8.mp3",
-		"oF": 0
-		},
 	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -13761,74 +13762,18 @@
 		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_NombreRaro_P1.mp3": {
+	"\/ES5T3\/79\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_NombreRaro_P1.mp3",
+		"oAP": "\/ES5T3\/79\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Pantalla2.mp3": {
+	"\/ES5T3\/79\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_Pantalla2.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_ParaDefenderse_P6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_ParaDefenderse_P6.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QuePuedoHacer_P6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QuePuedoHacer_P6.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QueTePasa_P1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_QueTePasa_P1.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SeTrata_P1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SeTrata_P1.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P3.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_SiProfe_P4.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_TuSabes_P4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_TuSabes_P4.mp3",
-		"oF": 0
-		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_YaVeo_P3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_YaVeo_P3.mp3",
+		"oAP": "\/ES5T3\/79\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/ES5T3\/80\/i\/bg.png": {

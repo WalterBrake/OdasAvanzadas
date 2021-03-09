@@ -3,13 +3,44 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Descubro algunos significados</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .areadrop{
+          background: #fff;
+          padding: 1px 6px;
+          margin: 4px 0;
+          border-radius: 10px;
+          
+      }
+      .drop.dr2{min-height: 20px;}
+      .draggs .drag:nth-child(odd) div {
+          background: #64BB4C;
+          color: #fff;
+      }
+      .draggs .drag:nth-child(even) div {
+          background: #369BAB;
+          color: #fff;
+      }
+      
+      .h4 {
+          font-size: 1.4rem;
+          padding: 10px;
+          background: rgba(255, 255, 255, 0.8);
+          color: #2789A7;
+          font-weight: bold;
+          border-radius: 10px;
+          box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+          margin: 10px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
@@ -17,13 +48,92 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Descubro algunos significados</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Descubro algunos significados" text="Ahora que ya sabes más sobre el bullying, confirma lo que aprendiste integra el concepto con el significado que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 wrap draggs">
+            <template v-for="(i, index) in ['Excluir.','Arrogancia.','Intimidar.','Agresión.','Violencia.']">
+              <drag :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" initclass="txt">
+                <div>{{i}}</div>
+              </drag>
+            </template>
+          </div>
+          <div class="row w90 wrap areadrop">
+            <div class="w30">
+              <div class="drop dr2" data="Intimidar." droptimes="untilok"></div>
+            </div>
+            <div class="w70 thetext">Hacer que otra persona sienta temor.</div>
+          </div>
+          <div class="row w90 wrap areadrop">
+            <div class="w30">
+              <div class="drop dr2" data="Agresión." droptimes="untilok"></div>
+            </div>
+            <div class="w70 thetext">Acción que realiza una persona para causar daño a otra.</div>
+          </div>
+          <div class="row w90 wrap areadrop">
+            <div class="w30">
+              <div class="drop dr2" data="Arrogancia." droptimes="untilok"></div>
+            </div>
+            <div class="w70 thetext">Persona que demuestra soberbia y trata como menos a los demás.</div>
+          </div>
+          <div class="row w90 wrap areadrop">
+            <div class="w30">
+              <div class="drop dr2" data="Excluir." droptimes="untilok"></div>
+            </div>
+            <div class="w70 thetext">Rechazar o no tener en cuenta a otra persona.</div>
+          </div>
+          <div class="row w90 wrap areadrop">
+            <div class="w30">
+              <div class="drop dr2" data="Violencia." droptimes="untilok"></div>
+            </div>
+            <div class="w70 thetext">Uso de la fuerza para conseguir un fin. </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descubro algunos significados" text="Lee los casos y selecciona el pulgar hacia arriba cuando consideres que es adecuado y el pulgar hacia abajo cuando no sea adecuado el comportamiento." textaudio="s/instruccion2.mp3" :autoplay="true">
+          <button class="button mt-auto" @click="$refs.vid.open()">Ver historieta</button>
+        </info>
+        <activity>
+          <sequence :options="temps.preguntas" ref="seque" no-nav="no-nav">
+            <template v-slot:option="{option}">
+              <div class="h4 text-center">{{option.t}}</div>
+              <div class="row w100">
+                <div class="row w20 ws40">
+                  <clickable :isok="option.v == true" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" @wasclickederror="playerrorsound()" initclass="pa-1"><img class="w100 animate__animated animate__rotateInDownLeft animate__delay-2s" src="i/like.png"/></clickable>
+                </div>
+                <div class="row w20 ws40">
+                  <clickable :isok="option.v == false" simple-ok="simple-ok" @wasclicked="$refs.seque.adelante()" @wasclickederror="playerrorsound()" initclass="pa-1"><img class="w100 animate__animated animate__rotateInUpRight animate__delay-3s" src="i/dislike.png"/></clickable>
+                </div>
+              </div>
+            </template>
+          </sequence>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
+      <popup :conf="['10%', '10%', '80%', '80%']" ref="vid">
+        <div class="vid">
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="false" path="i/v1"></videoplayer>
+          </div>
+        </div>
+      </popup>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -57,11 +167,22 @@
     <!-- Mainscript-->
     <script src="../../assets/assets.js"></script>
     <script>
+      app.playerrorsound = function () {
+          console.log('error!!!')
+          var error = new Howl({ src: ['s/vuelve.mp3'] });
+          error.play()
+      }
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'preguntas', [
+          {v:false,  t: 'Juan le tira el refresco a Martín en sus libros porque considera que es una broma simpática.'},
+          {v:true,  t: 'Durante una videollamada en donde los estudiantes deben participar y compartir opiniones, Cecilia apaga los microfonos de sus compañeros para que no puedan hacerlo. Ella cree que es divertido jugarles esa broma. Gabriel no le permite a Cecilia que lo haga y, además, lo comenta con la psicologa escolar para preguntarle qué pueden hacer la respecto.'},
+          {v:false,  t: 'El grupo de 4º A ganó el torneo de basquet ball y el grupo de 5º C se molestó con ellos. Como venganza, desordenaron y ensuciaron su salón de clases.'},
+          {v:false,  t: 'Monica es amiga de Leticia, ambas se burlan constantemente de Verónica, quien no se queja ni se defiende porque quiere ser su amiga para ser parte del grupo popular de la generación de 6º grado.'},
+          {v:true,  t: 'Un grupo de amigos se reune en una casa para molestar a algunos compañeros del salón enviando correos anónimos con bromas pesadas. Raquel y Paco se niegan a participar y le dicen al resto del grupo que esa acción puede asustar o dañar la integridad del los compañeros. '},
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>
