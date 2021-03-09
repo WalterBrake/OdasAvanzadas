@@ -104,6 +104,8 @@ html(lang="es")
                     var error = new Howl({ src: ['s/vuelve.mp3'] });
                     error.play()
                 }
+                app.$set(app.temps, 'a', false)
+
                 app.$devmode = false
                 app.$set(app.temps, 'preguntas', [
                     {v:false,  t: 'Juan le tira el refresco a Martín en sus libros porque considera que es una broma simpática.'},

@@ -3,27 +3,128 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Escribo verbos en infinitivo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      [wascloned] { display: none; }
+      .textoex2 {
+          background: #6E6B89;
+          border-radius: 10px;
+          font-size: 1.1rem;
+          padding: 10px;
+          color: #fff;
+      }
+      .textoex2 .drop.dr2 {
+          min-height: 20px;
+          width: 30%;
+          display: inline-block;
+          vertical-align: middle;
+          background: #A8A4D1;
+          border-color: #635F7B;
+      }
+      .sialguien{
+          background: #F7EF7A;
+          padding: 10px;
+          border-radius: 10px;
+          margin-bottom: 10px;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Escribo verbos en infinitivo</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true"> </videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
+        <info type="dragdrop" title="Escribo verbos en infinitivo" text="En la historia anterior se usan muchos verbos, ayúdanos a clasificar los siguientes. Coloca cada verbo en la caja que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <div class="w40">
+              <div class="h4">Verbos en infinitivo</div>
+              <div class="drop dr2" data="in" droptimes="untilok"></div>
+            </div>
+            <div class="w20"><img class="w100" src="i/a.png"/></div>
+            <div class="w40">
+              <div class="h4">Verbos en imperativo</div>
+              <div class="drop dr2" data="im" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.drags">
+              <template v-if="i.d">
+                <drag ref="drgs" :data="i.d" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
+                  <div>{{i.t}}</div>
+                </drag>
+              </template>
+              <template v-else="v-else">
+                <drag ref="drgs" :data="i.v" isfalse="isfalse" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
+                  <div>{{i.t}}</div>
+                </drag>
+              </template>
+            </template>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['drgs'], 9)">Verificar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Escribo verbos en infinitivo" text="Ahora, coloca los verbos que completen el texto." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <div class="w20"><img class="w100" src="i/b.png"/></div>
+            <div class="w80">
+              <div class="h4 sialguien">Si a alguien le diera hipo le diría:</div>
+              <div class="textoex2">No te desesperes,
+                <div class="drop dr2" data="haz" droptimes="untilok"></div> alguna actividad que te distraiga. Puedes  
+                <div class="drop dr2" data="acariciar" droptimes="untilok"></div> a tu mascota o 
+                <div class="drop dr2" data="caminar" droptimes="untilok"></div> en el jardín. 
+              </div>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.drags2">
+              <template v-if="i.d">
+                <drag ref="drgs2" :data="i.t" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
+                  <div>{{i.t}}</div>
+                </drag>
+              </template>
+              <template v-else="v-else">
+                <drag ref="drgs2" :data="i.t" isfalse="isfalse" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
+                  <div>{{i.t}}</div>
+                </drag>
+              </template>
+            </template>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="dragValidation(['drgs2'], 3)">Verificar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +159,31 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'drags', [
+          {t: 'chupar', d: 'in'},
+          {t: 'quitar', d: 'in'},
+          {t: 'dijo'},
+          {t: 'inclina', d: 'im'},
+          {t: 'poner', d: 'in'},
+          {t: 'bebe', d: 'im'},
+          {t: 'contó'},
+          {t: 'respirar', d: 'in'},
+          {t: 'saca', d: 'im'},
+          {t: 'llegó'},
+          {t: 'acariciar', d: 'in'},
+          {t: 'ponte', d: 'im'}
+      ])
+      app.$set(app.temps, 'drags2', [
+          {t: 'haz', d: true},
+          {t: 'as', d: false},
+          {t: 'maltratar', d: false},
+          {t: 'acariciar', d: true},
+          {t: 'caminar', d: true},
+          {t: 'correr', d: false},
+      ])
       
-      app.currentScene = 0
-      app.scenesCount = 1
+      app.currentScene = 3
+      app.scenesCount = 2
     </script>
   </body>
 </html>

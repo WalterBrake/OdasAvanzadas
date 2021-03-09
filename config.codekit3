@@ -11834,6 +11834,42 @@
 		"oAP": "\/ES3T3\/88\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/ES3T3\/91\/i\/a.png": {
+		"ft": 32768,
+		"iS": 26909,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/i\/a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/91\/i\/b.png": {
+		"ft": 32768,
+		"iS": 34101,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/i\/b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES3T3\/91\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/ES3T3\/91\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES3T3\/91\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/ES3T3\/91\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -11850,200 +11886,18 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_aguaHipo.mp3": {
+	"\/ES3T3\/91\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_aguaHipo.mp3",
+		"oAP": "\/ES3T3\/91\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_1.mp3": {
+	"\/ES3T3\/91\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_1.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_10.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_10.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_11.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_11.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_12.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_12.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_13.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_13.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_14.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_14.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_2.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_3.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_4.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_5.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_6.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_7.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_7.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_8.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_9.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Audio_9.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!_1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_ay!_1.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Buuu.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Buuu.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Hipos.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Hipos.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst1.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Inst2.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_LimónHipo.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_LimónHipo.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaHombre2.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_RisaNiño2.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_SacaLengua.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_SacaLengua.mp3",
-		"oF": 0
-		},
-	"\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Título.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES3T3\/91\/s\/Escribo verbos en infinitivo Es3°T3_Título.mp3",
+		"oAP": "\/ES3T3\/91\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/ES4T1\/17\/aimg\/1.svg": {
@@ -13755,13 +13609,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES5T3\/79\/s\/Descubro algunos significados Es 5oT3_IntNiño.mp3",
-		"oF": 0
-		},
 	"\/ES5T3\/79\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
@@ -13774,6 +13621,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES5T3\/79\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/ES5T3\/79\/s\/vuelve.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/ES5T3\/79\/s\/vuelve.mp3",
 		"oF": 0
 		},
 	"\/ES5T3\/80\/i\/bg.png": {

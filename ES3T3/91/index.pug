@@ -1,12 +1,34 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Escribo verbos en infinitivo'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            [wascloned] { display: none; }
+            .textoex2 {
+                background: #6E6B89;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                padding: 10px;
+                color: #fff;
+            }
+            .textoex2 .drop.dr2 {
+                min-height: 20px;
+                width: 30%;
+                display: inline-block;
+                vertical-align: middle;
+                background: #A8A4D1;
+                border-color: #635F7B;
+            }
+            .sialguien{
+                background: #F7EF7A;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
 
 
     body
@@ -15,20 +37,87 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
-            
+                    .row.w100.info: h1=title
+                    .row.w100: videoplayer(initclass="w100" :autoplay="true" c="6" path="i/v1" @completed="temps.a = true")  
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="En la historia anterior se usan muchos verbos, ayúdanos a clasificar los siguientes. Coloca cada verbo en la caja que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center
+                        .w40
+                            .h4 Verbos en infinitivo
+                            .drop(data="in" droptimes="untilok").dr2
+                        .w20: img(src="i/a.png").w100
+                        .w40
+                            .h4 Verbos en imperativo
+                            .drop(data="im" droptimes="untilok").dr2
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.drags")
+                            template(v-if="i.d")
+                                drag(ref="drgs" :data="i.d" extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                            template(v-else)
+                                drag(ref="drgs" :data="i.v" isfalse extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                    
+                    .text-center: button(@click="dragValidation(['drgs'], 9)").button.big.animate__animated.animate__flip Verificar
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Ahora, coloca los verbos que completen el texto." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center
+                        .w20: img(src="i/b.png").w100
+                        .w80
+                            .h4.sialguien Si a alguien le diera hipo le diría:
+                            .textoex2
+                                | No te desesperes,
+                                .drop(data="haz" droptimes="untilok").dr2
+                                |  alguna actividad que te distraiga. Puedes  
+                                .drop(data="acariciar" droptimes="untilok").dr2
+                                |  a tu mascota o 
+                                .drop(data="caminar" droptimes="untilok").dr2
+                                |  en el jardín. 
+                        
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.drags2")
+                            template(v-if="i.d")
+                                drag(ref="drgs2" :data="i.t" extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                            template(v-else)
+                                drag(ref="drgs2" :data="i.t" isfalse extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                    .text-center: button(@click="dragValidation(['drgs2'], 3)").button.big.animate__animated.animate__flip Verificar
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'drags', [
+                    {t: 'chupar', d: 'in'},
+                    {t: 'quitar', d: 'in'},
+                    {t: 'dijo'},
+                    {t: 'inclina', d: 'im'},
+                    {t: 'poner', d: 'in'},
+                    {t: 'bebe', d: 'im'},
+                    {t: 'contó'},
+                    {t: 'respirar', d: 'in'},
+                    {t: 'saca', d: 'im'},
+                    {t: 'llegó'},
+                    {t: 'acariciar', d: 'in'},
+                    {t: 'ponte', d: 'im'}
+                ])
+                app.$set(app.temps, 'drags2', [
+                    {t: 'haz', d: true},
+                    {t: 'as', d: false},
+                    {t: 'maltratar', d: false},
+                    {t: 'acariciar', d: true},
+                    {t: 'caminar', d: true},
+                    {t: 'correr', d: false},
+                ])
                 
-                app.currentScene = 0
-                app.scenesCount = 1
+                app.currentScene = 3
+                app.scenesCount = 2
