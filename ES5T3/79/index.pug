@@ -15,6 +15,7 @@ html(lang="es")
                 
             }
             .drop.dr2{min-height: 20px;}
+            
             .draggs .drag:nth-child(odd) div {
                 background: #64BB4C;
                 color: #fff;
@@ -33,6 +34,22 @@ html(lang="es")
                 border-radius: 10px;
                 box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
                 margin: 10px;
+            }
+
+            @media (max-width:680px){
+                .drop.dr2{min-height: 10px; padding: 6px;}
+                .thetext{
+                    font-size: 0.8rem;
+                    text-align:center;
+                }
+                .draggs .drag{
+                    font-size: 0.8rem;
+                    margin: 2px;
+                }
+                .h4{
+                    font-size: 0.9rem;
+                }
+
             }
 
 
@@ -58,20 +75,20 @@ html(lang="es")
                             drag(:data="i" dropzone=".drop" stay-if-ok append-to-dropzone initclass="txt"): div {{i}}
                     
                     .row.w90.wrap.areadrop
-                        .w30: .drop(data="Intimidar." droptimes="untilok").dr2
-                        .w70.thetext Hacer que otra persona sienta temor.
+                        .w30.ws100: .drop(data="Intimidar." droptimes="untilok").dr2
+                        .w70.ws100.thetext Hacer que otra persona sienta temor.
                     .row.w90.wrap.areadrop
-                        .w30: .drop(data="Agresión." droptimes="untilok").dr2
-                        .w70.thetext Acción que realiza una persona para causar daño a otra.
+                        .w30.ws100: .drop(data="Agresión." droptimes="untilok").dr2
+                        .w70.ws100.thetext Acción que realiza una persona para causar daño a otra.
                     .row.w90.wrap.areadrop
-                        .w30: .drop(data="Arrogancia." droptimes="untilok").dr2
-                        .w70.thetext Persona que demuestra soberbia y trata como menos a los demás.
+                        .w30.ws100: .drop(data="Arrogancia." droptimes="untilok").dr2
+                        .w70.ws100.thetext Persona que demuestra soberbia y trata como menos a los demás.
                     .row.w90.wrap.areadrop
-                        .w30: .drop(data="Excluir." droptimes="untilok").dr2
-                        .w70.thetext Rechazar o no tener en cuenta a otra persona.
+                        .w30.ws100: .drop(data="Excluir." droptimes="untilok").dr2
+                        .w70.ws100.thetext Rechazar o no tener en cuenta a otra persona.
                     .row.w90.wrap.areadrop
-                        .w30: .drop(data="Violencia." droptimes="untilok").dr2
-                        .w70.thetext Uso de la fuerza para conseguir un fin. 
+                        .w30.ws100: .drop(data="Violencia." droptimes="untilok").dr2
+                        .w70.ws100.thetext Uso de la fuerza para conseguir un fin. 
 
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
@@ -100,7 +117,6 @@ html(lang="es")
         +scripts
             script.
                 app.playerrorsound = function () {
-                    console.log('error!!!')
                     var error = new Howl({ src: ['s/vuelve.mp3'] });
                     error.play()
                 }

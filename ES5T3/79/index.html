@@ -18,6 +18,7 @@
           
       }
       .drop.dr2{min-height: 20px;}
+      
       .draggs .drag:nth-child(odd) div {
           background: #64BB4C;
           color: #fff;
@@ -36,6 +37,22 @@
           border-radius: 10px;
           box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
           margin: 10px;
+      }
+      
+      @media (max-width:680px){
+          .drop.dr2{min-height: 10px; padding: 6px;}
+          .thetext{
+              font-size: 0.8rem;
+              text-align:center;
+          }
+          .draggs .drag{
+              font-size: 0.8rem;
+              margin: 2px;
+          }
+          .h4{
+              font-size: 0.9rem;
+          }
+      
       }
       
       
@@ -73,34 +90,34 @@
             </template>
           </div>
           <div class="row w90 wrap areadrop">
-            <div class="w30">
+            <div class="w30 ws100">
               <div class="drop dr2" data="Intimidar." droptimes="untilok"></div>
             </div>
-            <div class="w70 thetext">Hacer que otra persona sienta temor.</div>
+            <div class="w70 ws100 thetext">Hacer que otra persona sienta temor.</div>
           </div>
           <div class="row w90 wrap areadrop">
-            <div class="w30">
+            <div class="w30 ws100">
               <div class="drop dr2" data="Agresión." droptimes="untilok"></div>
             </div>
-            <div class="w70 thetext">Acción que realiza una persona para causar daño a otra.</div>
+            <div class="w70 ws100 thetext">Acción que realiza una persona para causar daño a otra.</div>
           </div>
           <div class="row w90 wrap areadrop">
-            <div class="w30">
+            <div class="w30 ws100">
               <div class="drop dr2" data="Arrogancia." droptimes="untilok"></div>
             </div>
-            <div class="w70 thetext">Persona que demuestra soberbia y trata como menos a los demás.</div>
+            <div class="w70 ws100 thetext">Persona que demuestra soberbia y trata como menos a los demás.</div>
           </div>
           <div class="row w90 wrap areadrop">
-            <div class="w30">
+            <div class="w30 ws100">
               <div class="drop dr2" data="Excluir." droptimes="untilok"></div>
             </div>
-            <div class="w70 thetext">Rechazar o no tener en cuenta a otra persona.</div>
+            <div class="w70 ws100 thetext">Rechazar o no tener en cuenta a otra persona.</div>
           </div>
           <div class="row w90 wrap areadrop">
-            <div class="w30">
+            <div class="w30 ws100">
               <div class="drop dr2" data="Violencia." droptimes="untilok"></div>
             </div>
-            <div class="w70 thetext">Uso de la fuerza para conseguir un fin. </div>
+            <div class="w70 ws100 thetext">Uso de la fuerza para conseguir un fin. </div>
           </div>
         </activity>
       </scene>
@@ -168,7 +185,6 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.playerrorsound = function () {
-          console.log('error!!!')
           var error = new Howl({ src: ['s/vuelve.mp3'] });
           error.play()
       }
