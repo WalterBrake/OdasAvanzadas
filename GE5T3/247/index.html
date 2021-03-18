@@ -3,23 +3,60 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>¡Realicemos un plan!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          max-width: 60px;
+          height: auto;
+      }
+      .drag.isok img {
+          animation: oktra 1s forwards;
+      }
+      @keyframes oktra {
+          0% {
+              transform: scale(1);
+          }
+          50% {
+              opacity: 1;
+              transform: translatey(-200%);
+          }
+          100% {
+              opacity: 0;
+              transform: scale(0.1);
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25">
+        <info type="seleccionar" title="¡Realicemos un plan!" text="Coloca en la mochila las nueve cosas que son necesarias guardar para utilizar ante una emergencia o un desastre natural." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.d" dropzone=".drop" :dragsound="'s/'+i.i+'.mp3'" stay-if-ok="stay-if-ok" drag-ok-class="isok"><img class="w100" :src="'i/'+i.i+'.png'"/></drag>
+            </template>
+          </div>
+          <div class="row w100 mt-1 mb-1">
+            <div class="w20 ws50">
+              <div class="drop" data="m" droptimes="multiple"><img class="w100" src="i/mochila.png"/></div>
+            </div>
+          </div>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.b">
+              <drag :data="i.d" dropzone=".drop" :dragsound="'s/'+i.i+'.mp3'" stay-if-ok="stay-if-ok" drag-ok-class="isok"><img class="w100" :src="'i/'+i.i+'.png'"/></drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -58,7 +95,26 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          { d:'n', i:'pulseras' },
+          { d:'n', i:'cuadro' },
+          { d:'m', i:'botiquin' },
+          { d:'n', i:'oso' },
+          { d:'m', i:'silbato' },
+          { d:'m', i:'ropa' },
+          { d:'m', i:'documentos' },
+      ])
+      app.$set(app.temps, 'b', [
+          { d:'n', i:'peine' },
+          { d:'m', i:'encendedor' },
+          { d:'m', i:'alimentos' },
+          { d:'n', i:'maceta' },
+          { d:'m', i:'botellas' },
+          { d:'m', i:'radio' },
+          { d:'m', i:'linterna' },
+          { d:'n', i:'laptop' },
+      
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1

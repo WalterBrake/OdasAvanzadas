@@ -1,12 +1,32 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = '¡Realicemos un plan!'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag {
+                max-width: 60px;
+                height: auto;
+            }
+            .drag.isok img {
+                animation: oktra 1s forwards;
+            }
+            @keyframes oktra {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    opacity: 1;
+                    transform: translatey(-200%);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0.1);
+                }
+            }
 
 
     body
@@ -15,11 +35,19 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="9" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Coloca en la mochila las nueve cosas que son necesarias guardar para utilizar ante una emergencia o un desastre natural." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
-            
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.a")
+                            drag(:data="i.d" dropzone=".drop" :dragsound="'s/'+i.i+'.mp3'" stay-if-ok drag-ok-class="isok" ): img(:src="'i/'+i.i+'.png'").w100
+                    .row.w100.mt-1.mb-1
+                        .w20.ws50
+                            .drop(data="m" droptimes="multiple")
+                                img(src="i/mochila.png").w100
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.b")
+                            drag(:data="i.d" dropzone=".drop" :dragsound="'s/'+i.i+'.mp3'" stay-if-ok drag-ok-class="isok"): img(:src="'i/'+i.i+'.png'").w100
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
@@ -28,7 +56,26 @@ html(lang="es")
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    { d:'n', i:'pulseras' },
+                    { d:'n', i:'cuadro' },
+                    { d:'m', i:'botiquin' },
+                    { d:'n', i:'oso' },
+                    { d:'m', i:'silbato' },
+                    { d:'m', i:'ropa' },
+                    { d:'m', i:'documentos' },
+                ])
+                app.$set(app.temps, 'b', [
+                    { d:'n', i:'peine' },
+                    { d:'m', i:'encendedor' },
+                    { d:'m', i:'alimentos' },
+                    { d:'n', i:'maceta' },
+                    { d:'m', i:'botellas' },
+                    { d:'m', i:'radio' },
+                    { d:'m', i:'linterna' },
+                    { d:'n', i:'laptop' },
+                
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1

@@ -14796,6 +14796,182 @@
 		"oAP": "\/GE5T2\/237\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/GE5T3\/247\/i\/alimentos.png": {
+		"ft": 32768,
+		"iS": 35441,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/alimentos.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/botellas.png": {
+		"ft": 32768,
+		"iS": 23405,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/botellas.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/botiquin.png": {
+		"ft": 32768,
+		"iS": 14587,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/botiquin.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/cuadro.png": {
+		"ft": 32768,
+		"iS": 25457,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/cuadro.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/documentos.png": {
+		"ft": 32768,
+		"iS": 46473,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/documentos.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/encendedor.png": {
+		"ft": 32768,
+		"iS": 6542,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/encendedor.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/laptop.png": {
+		"ft": 32768,
+		"iS": 26565,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/laptop.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/linterna.png": {
+		"ft": 32768,
+		"iS": 21665,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/linterna.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/maceta.png": {
+		"ft": 32768,
+		"iS": 27439,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/maceta.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/mochila.png": {
+		"ft": 32768,
+		"iS": 339710,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/mochila.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/oso.png": {
+		"ft": 32768,
+		"iS": 29684,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/oso.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/peine.png": {
+		"ft": 32768,
+		"iS": 27311,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/peine.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/pulseras.png": {
+		"ft": 32768,
+		"iS": 17131,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/pulseras.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/radio.png": {
+		"ft": 32768,
+		"iS": 33123,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/radio.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/ropa.png": {
+		"ft": 32768,
+		"iS": 29626,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/ropa.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/GE5T3\/247\/i\/silbato.png": {
+		"ft": 32768,
+		"iS": 8184,
+		"oA": 0,
+		"oAP": "\/GE5T3\/247\/i\/silbato.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/GE5T3\/247\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -14812,116 +14988,116 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Inst.mp3": {
+	"\/GE5T3\/247\/s\/alimentos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Inst.mp3",
+		"oAP": "\/GE5T3\/247\/s\/alimentos.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botellas.mp3": {
+	"\/GE5T3\/247\/s\/botellas.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botellas.mp3",
+		"oAP": "\/GE5T3\/247\/s\/botellas.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botiquín.mp3": {
+	"\/GE5T3\/247\/s\/botiquin.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Botiquín.mp3",
+		"oAP": "\/GE5T3\/247\/s\/botiquin.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Cuadro.mp3": {
+	"\/GE5T3\/247\/s\/cuadro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Cuadro.mp3",
+		"oAP": "\/GE5T3\/247\/s\/cuadro.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Documentos.mp3": {
+	"\/GE5T3\/247\/s\/documentos.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Documentos.mp3",
+		"oAP": "\/GE5T3\/247\/s\/documentos.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Encendedor.mp3": {
+	"\/GE5T3\/247\/s\/encendedor.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Encendedor.mp3",
+		"oAP": "\/GE5T3\/247\/s\/encendedor.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Enlatados.mp3": {
+	"\/GE5T3\/247\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Enlatados.mp3",
+		"oAP": "\/GE5T3\/247\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Laptop.mp3": {
+	"\/GE5T3\/247\/s\/laptop.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Laptop.mp3",
+		"oAP": "\/GE5T3\/247\/s\/laptop.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Linterna.mp3": {
+	"\/GE5T3\/247\/s\/linterna.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Linterna.mp3",
+		"oAP": "\/GE5T3\/247\/s\/linterna.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Maceta.mp3": {
+	"\/GE5T3\/247\/s\/maceta.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Maceta.mp3",
+		"oAP": "\/GE5T3\/247\/s\/maceta.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peine.mp3": {
+	"\/GE5T3\/247\/s\/oso.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peine.mp3",
+		"oAP": "\/GE5T3\/247\/s\/oso.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peluche.mp3": {
+	"\/GE5T3\/247\/s\/peine.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Peluche.mp3",
+		"oAP": "\/GE5T3\/247\/s\/peine.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Pulseras.mp3": {
+	"\/GE5T3\/247\/s\/pulseras.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Pulseras.mp3",
+		"oAP": "\/GE5T3\/247\/s\/pulseras.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Radio.mp3": {
+	"\/GE5T3\/247\/s\/radio.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Radio.mp3",
+		"oAP": "\/GE5T3\/247\/s\/radio.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Ropa.mp3": {
+	"\/GE5T3\/247\/s\/ropa.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Ropa.mp3",
+		"oAP": "\/GE5T3\/247\/s\/ropa.mp3",
 		"oF": 0
 		},
-	"\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Silbatgo.mp3": {
+	"\/GE5T3\/247\/s\/silbato.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/GE5T3\/247\/s\/¡Realicemos un plan! Ge5°T3_Int_Silbatgo.mp3",
+		"oAP": "\/GE5T3\/247\/s\/silbato.mp3",
 		"oF": 0
 		},
 	"\/GE6T1\/221\/aimg\/mapa.svg": {
