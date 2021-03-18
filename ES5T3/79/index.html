@@ -80,7 +80,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="dragdrop" title="Descubro algunos significados" text="Ahora que ya sabes más sobre el bullying, confirma lo que aprendiste integra el concepto con el significado que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Descubro algunos significados" text="Ahora que ya sabes más sobre el bullying, confirma lo que aprendiste integrando el concepto con el significado que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
           <div class="row w100 wrap draggs">
             <template v-for="(i, index) in ['Excluir.','Arrogancia.','Intimidar.','Agresión.','Violencia.']">
@@ -194,7 +194,7 @@
       app.$set(app.temps, 'preguntas', [
           {v:false,  t: 'Juan le tira el refresco a Martín en sus libros porque considera que es una broma simpática.'},
           {v:true,  t: 'Durante una videollamada en donde los estudiantes deben participar y compartir opiniones, Cecilia apaga los microfonos de sus compañeros para que no puedan hacerlo. Ella cree que es divertido jugarles esa broma. Gabriel no le permite a Cecilia que lo haga y, además, lo comenta con la psicologa escolar para preguntarle qué pueden hacer la respecto.'},
-          {v:false,  t: 'El grupo de 4º A ganó el torneo de basquet ball y el grupo de 5º C se molestó con ellos. Como venganza, desordenaron y ensuciaron su salón de clases.'},
+          {v:false,  t: 'El grupo de 4º A ganó el torneo de básquetbol y el grupo de 5º C se molestó con ellos. Como venganza, desordenaron y ensuciaron su salón de clases.'},
           {v:false,  t: 'Monica es amiga de Leticia, ambas se burlan constantemente de Verónica, quien no se queja ni se defiende porque quiere ser su amiga para ser parte del grupo popular de la generación de 6º grado.'},
           {v:true,  t: 'Un grupo de amigos se reune en una casa para molestar a algunos compañeros del salón enviando correos anónimos con bromas pesadas. Raquel y Paco se niegan a participar y le dicen al resto del grupo que esa acción puede asustar o dañar la integridad del los compañeros. '},
       ])
