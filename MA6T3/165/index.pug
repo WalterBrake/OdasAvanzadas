@@ -1,12 +1,22 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Identifico la regularidad de una sucesión'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .common {
+                margin-bottom: 10px;
+            }
+            .common .h4 {
+                margin: 6px;
+            }
+            .common .desplegar {
+                padding: 6px;
+                box-sizing: border-box;
+            }
 
 
     body
@@ -15,14 +25,90 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        img(src="i/a.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div La cantidad de triángulos que debe de tener la figura 4 es:
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[15,  12, 16]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    .row.w80.flex-start.common
+                        div La cantidad de triángulos que debe de tener la figura 5 es:
+                        .w30.ws50: desplegar(:answer-num="1" show-ok modal-options  :options="[26, 25, 30]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    .row.w80.flex-start.common
+                        div La figura 
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[5, 8, 7]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        div tendría 49 triángulos.
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        img(src="i/b.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div La cantidad de cuadrados que tendría la figura 5 sería:
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[11,  8, 10]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    .row.w80.flex-start.common
+                        div La cantidad de cuadrados que tendría la figura 6 sería:
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[26, 10, 12]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        img(src="i/c.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div ¿Cómo quedaría la figura 7?
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="['<img src=i/c1.png>', '<img src=i/c2.png>', '<img src=i/c3.png>' ] " ): template(v-slot:option="{option}"): div(v-html="option.text")
+                    .row.w80.flex-start.common
+                        div ¿Cómo quedaría la figura 9?
+                        .w30.ws50: desplegar(:answer-num="1" show-ok modal-options  :options="['<img src=i/c4.png>', '<img src=i/c5.png>', '<img src=i/c6.png>' ] " ): template(v-slot:option="{option}"): div(v-html="option.text")
+                   
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        img(src="i/d.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div ¿Cuántos hexágonos tendrá la figura 7?
+                        .w30.ws50: desplegar(:answer-num="0" show-ok modal-options  :options="[15,  9, 13]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    .row.w80.flex-start.common
+                        div ¿Cuántos hexágonos tendrá la figura 9?
+                        .w30.ws50: desplegar(:answer-num="1" show-ok modal-options  :options="[11, 19, 22]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    
+            // SCENES
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        img(src="i/e.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div ¿Cuántos trapecios tendrá la figura 5?
+                        .w30.ws50: desplegar(:answer-num="1" show-ok modal-options  :options="[20, 16, 10]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                    .row.w80.flex-start.common
+                        div ¿De cuántos trapecios es la constante? 
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[2, 3, 4]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+
+            // SCENES
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        img(src="i/f.png").w80.ws100
+                    .row.w80.ws90.flex-start.common
+                        div ¿Cómo será a figura 4?
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="['<img src=i/f1.png>', '<img src=i/f2.png>', '<img src=i/f3.png>' ]" ): template(v-slot:option="{option}"): div(v-html="option.text")
+                    .row.w80.flex-start.common
+                        div ¿Cómo será la figura 5?
+                        .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="['<img src=i/f4.png>', '<img src=i/f5.png>', '<img src=i/f1.png>' ]" ): template(v-slot:option="{option}"): div(v-html="option.text")
+
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==7" :key="7" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -31,4 +117,4 @@ html(lang="es")
                 app.$set(app.temps, 'a', [])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 6

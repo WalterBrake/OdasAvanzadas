@@ -3,27 +3,206 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Identifico la regularidad de una sucesión</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .common {
+          margin-bottom: 10px;
+      }
+      .common .h4 {
+          margin: 6px;
+      }
+      .common .desplegar {
+          padding: 6px;
+          box-sizing: border-box;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100"><img class="w80 ws100" src="i/a.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>La cantidad de triángulos que debe de tener la figura 4 es:</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[15,  12, 16]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>La cantidad de triángulos que debe de tener la figura 5 es:</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[26, 25, 30]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>La figura </div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[5, 8, 7]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+            <div>tendría 49 triángulos.</div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w80 ws100" src="i/b.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>La cantidad de cuadrados que tendría la figura 5 sería:</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[11,  8, 10]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>La cantidad de cuadrados que tendría la figura 6 sería:</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[26, 10, 12]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w80 ws100" src="i/c.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>¿Cómo quedaría la figura 7?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['&lt;img src=i/c1.png&gt;', '&lt;img src=i/c2.png&gt;', '&lt;img src=i/c3.png&gt;' ] ">
+                <template v-slot:option="{option}">
+                  <div v-html="option.text"></div>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>¿Cómo quedaría la figura 9?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="['&lt;img src=i/c4.png&gt;', '&lt;img src=i/c5.png&gt;', '&lt;img src=i/c6.png&gt;' ] ">
+                <template v-slot:option="{option}">
+                  <div v-html="option.text"></div>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w80 ws100" src="i/d.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>¿Cuántos hexágonos tendrá la figura 7?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[15,  9, 13]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>¿Cuántos hexágonos tendrá la figura 9?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[11, 19, 22]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w80 ws100" src="i/e.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>¿Cuántos trapecios tendrá la figura 5?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[20, 16, 10]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>¿De cuántos trapecios es la constante? </div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[2, 3, 4]">
+                <template v-slot:option="{option}">
+                  <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Identifico la regularidad de una sucesión" text="Observa con atención las secuencias de figuras y elige la respuesta correcta." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100"><img class="w80 ws100" src="i/f.png"/></div>
+          <div class="row w80 ws90 flex-start common">
+            <div>¿Cómo será a figura 4?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['&lt;img src=i/f1.png&gt;', '&lt;img src=i/f2.png&gt;', '&lt;img src=i/f3.png&gt;' ]">
+                <template v-slot:option="{option}">
+                  <div v-html="option.text"></div>
+                </template>
+              </desplegar>
+            </div>
+          </div>
+          <div class="row w80 flex-start common">
+            <div>¿Cómo será la figura 5?</div>
+            <div class="w30 ws50">
+              <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="['&lt;img src=i/f4.png&gt;', '&lt;img src=i/f5.png&gt;', '&lt;img src=i/f1.png&gt;' ]">
+                <template v-slot:option="{option}">
+                  <div v-html="option.text"></div>
+                </template>
+              </desplegar>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==7" :key="7" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -61,7 +240,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 6
     </script>
   </body>
 </html>
