@@ -3,27 +3,230 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Cuento unidades cuadradas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .desplegar {
+          max-width: 140px;
+          margin: 0 10px;
+      }
+      @media (max-width: 680px) {
+          .desplegar {
+              max-width: 40px;
+          }
+          .activity .number.smaller {
+              font-size: 1rem;
+          }
+      }
+      .activity .number.smaller {
+          margin-bottom: 10px;
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuento unidades cuadradas" text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true"></info>
         <activity>
-          <div class="row w100"></div>
+          <template v-if="temps.au1">
+            <div class="row w100">
+              <div class="common">
+                <audiotext :autoplay="true" audio="s/audio1.mp3" text="Manuel tiene un terreno que mide 8 unidades de ancho y 5 unidades de largo. ¿Cuál es el área y el perímetro?"></audiotext>
+              </div>
+            </div>
+            <div class="row w100 wrap mt-1">
+              <div class="w40"><img class="w100" src="i/a.png"/></div>
+              <div class="w40 text-center">
+                <div class="common">
+                  <number c="4" smaller="smaller">Área =</number>
+                  <div class="row w100">
+                    <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[45, 40,30]">
+                      <template v-slot:option="{option}">
+                        <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                      </template>
+                    </desplegar>
+                    <div>unidades cuadradas.</div>
+                  </div>
+                </div>
+                <div class="common mt-1">
+                  <number c="5" smaller="smaller">Perímetro =</number>
+                  <div class="row w100">
+                    <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[24,26,28]">
+                      <template v-slot:option="{option}">
+                        <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                      </template>
+                    </desplegar>
+                    <div>unidades.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuento unidades cuadradas" text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="common">
+              <audiotext :autoplay="true" audio="s/audio2.mp3" text="Pedro compró una mesa que mide 7 unidades de ancho y 6 unidades de largo. ¿Cuál es el área y el perímetro de su mesa?"></audiotext>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="w40"><img class="w100" src="i/b.png"/></div>
+            <div class="w40 text-center">
+              <div class="common">
+                <number c="4" smaller="smaller">Área =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[54,35,42]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades cuadradas.</div>
+                </div>
+              </div>
+              <div class="common mt-1">
+                <number c="5" smaller="smaller">Perímetro =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[25,20,26]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuento unidades cuadradas" text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="common">
+              <audiotext :autoplay="true" audio="s/audio3.mp3" text="Ana pintó una pared de su habitación que mide 9 unidades de largo por 6 unidades de ancho. ¿Cuánto mide la pared de área y de perímetro?"></audiotext>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="w40"><img class="w100" src="i/c.png"/></div>
+            <div class="w40 text-center">
+              <div class="common">
+                <number c="4" smaller="smaller">Área =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[45,56,54]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades cuadradas.</div>
+                </div>
+              </div>
+              <div class="common mt-1">
+                <number c="5" smaller="smaller">Perímetro =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[28,30,32]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuento unidades cuadradas" text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="common">
+              <audiotext :autoplay="true" audio="s/audio4.mp3" text="Fernanda tiene un jardín que mide 10 unidades de largo y 7 unidades de ancho. ¿Cuánto mide de área y perímetro?"></audiotext>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="w40"><img class="w100" src="i/d.png"/></div>
+            <div class="w40 text-center">
+              <div class="common">
+                <number c="4" smaller="smaller">Área =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[60,70,17]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades cuadradas.</div>
+                </div>
+              </div>
+              <div class="common mt-1">
+                <number c="5" smaller="smaller">Perímetro =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[34,17,27]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Cuento unidades cuadradas" text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="common">
+              <audiotext :autoplay="true" audio="s/audio5.mp3" text="La maestra adornará la puerta del salón que mide 6 unidades de largo y 4 unidades de ancho. ¿Qué área total tiene que forrar la maestra para adornarla y cuánto listón necesita para el borde?"></audiotext>
+            </div>
+          </div>
+          <div class="row w100 wrap mt-1">
+            <div class="w40"><img class="w100" src="i/e.png"/></div>
+            <div class="w40 text-center">
+              <div class="common">
+                <number c="4" smaller="smaller">Área =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[10,42,24]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades cuadradas.</div>
+                </div>
+              </div>
+              <div class="common mt-1">
+                <number c="5" smaller="smaller">Perímetro =</number>
+                <div class="row w100">
+                  <desplegar :answer-num="2" show-ok="show-ok" modal-options="modal-options" :options="[14,10,20]">
+                    <template v-slot:option="{option}">
+                      <number smaller="smaller" randomc="randomc">{{option.text}}</number>
+                    </template>
+                  </desplegar>
+                  <div>unidades.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +261,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 5
     </script>
   </body>
 </html>

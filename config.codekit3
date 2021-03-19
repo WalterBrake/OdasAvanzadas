@@ -25945,6 +25945,61 @@
 		"oAP": "\/MA4T2\/147\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/MA4T3\/159\/i\/a.png": {
+		"ft": 32768,
+		"iS": 159571,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/i\/a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T3\/159\/i\/b.png": {
+		"ft": 32768,
+		"iS": 448924,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/i\/b.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T3\/159\/i\/c.png": {
+		"ft": 32768,
+		"iS": 4490,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/i\/c.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T3\/159\/i\/d.png": {
+		"ft": 32768,
+		"iS": 39377,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/i\/d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA4T3\/159\/i\/e.png": {
+		"ft": 32768,
+		"iS": 58312,
+		"oA": 0,
+		"oAP": "\/MA4T3\/159\/i\/e.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA4T3\/159\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -25961,46 +26016,46 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_1.mp3": {
+	"\/MA4T3\/159\/s\/audio1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_1.mp3",
+		"oAP": "\/MA4T3\/159\/s\/audio1.mp3",
 		"oF": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_2.mp3": {
+	"\/MA4T3\/159\/s\/audio2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_2.mp3",
+		"oAP": "\/MA4T3\/159\/s\/audio2.mp3",
 		"oF": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_3.mp3": {
+	"\/MA4T3\/159\/s\/audio3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_3.mp3",
+		"oAP": "\/MA4T3\/159\/s\/audio3.mp3",
 		"oF": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_4.mp3": {
+	"\/MA4T3\/159\/s\/audio4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_4.mp3",
+		"oAP": "\/MA4T3\/159\/s\/audio4.mp3",
 		"oF": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_5.mp3": {
+	"\/MA4T3\/159\/s\/audio5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Audio_5.mp3",
+		"oAP": "\/MA4T3\/159\/s\/audio5.mp3",
 		"oF": 0
 		},
-	"\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Inst.mp3": {
+	"\/MA4T3\/159\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA4T3\/159\/s\/Cuento unidades cuadradas Ma4°T3_Inst.mp3",
+		"oAP": "\/MA4T3\/159\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA4T3\/163\/index.html": {
