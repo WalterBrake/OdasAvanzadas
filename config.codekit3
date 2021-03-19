@@ -16840,6 +16840,61 @@
 		"oAP": "\/HI5T3\/281\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/HI5T3\/283\/i\/l.png": {
+		"ft": 32768,
+		"iS": 11885,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/i\/l.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/283\/i\/lb.png": {
+		"ft": 32768,
+		"iS": 10369,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/i\/lb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/283\/i\/map.png": {
+		"ft": 32768,
+		"iS": 539334,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/i\/map.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/283\/i\/r.png": {
+		"ft": 32768,
+		"iS": 10913,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/i\/r.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/HI5T3\/283\/i\/rb.png": {
+		"ft": 32768,
+		"iS": 10579,
+		"oA": 0,
+		"oAP": "\/HI5T3\/283\/i\/rb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/HI5T3\/283\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -16856,18 +16911,18 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Audio1.mp3": {
+	"\/HI5T3\/283\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Audio1.mp3",
+		"oAP": "\/HI5T3\/283\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Instr.mp3": {
+	"\/HI5T3\/283\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/HI5T3\/283\/s\/Ubico los principales acontecimientos Hi5°T3_Instr.mp3",
+		"oAP": "\/HI5T3\/283\/s\/instruccion2.mp3",
 		"oF": 0
 		},
 	"\/HI6T1\/257\/aimg\/i1.svg": {

@@ -1,13 +1,93 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Ubico los principales acontecimientos'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .diag {
+                width: 95%;
+                background: #DBD3E9;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            .flecha {
+                width: 7%;
+                max-width: 40px;
+            }
+            @media (max-width: 680px) {
+                .flecha {
+                    max-width: 24px;
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    position: relative;
+                    z-index: 2;
+                    margin-bottom: auto;
+                }
+            }
+            .carddate .drop {
+                margin: 0;
+            }
+            @media (max-width: 680px) {
+                .carddate .drop {
+                    font-size: 0.5rem;
+                }
+            }
+            .carddate .date {
+                font-size: 0.8rem;
+                font-size: bold;
+                background: #8972B3;
+                margin: -10px auto 10px;
+                border-radius: 6px;
+                color: #fff;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 680px) {
+                .carddate .date {
+                    font-size: 0.6rem;
+                }
+            }
+            .drag.txt {
+                max-width: 20%;
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            @media (max-width: 680px) {
+                .drag.txt {
+                    font-size: 0.5rem;
+                }
+                .drag.txt div {
+                    border-radius: 2px;
+                    padding: 1px;
+                }
+            }
+            .diag.lastdiag{
+                transform: scale(0.8);
+            }
+            .carddate.on .drop{
+                background: #46AB9F;
+                color: #fff;
+            }
 
+    mixin carddate(dir, lastarro, withtext)
+        if dir == 'l'
+            template(v-if="index>0"): img(src="i/"+dir+".png").flecha
+            template(v-else): img(src="i/"+dir+"b.png").flecha
+        
+        .carddate.w25.animate__animated.animate__heartBeat(:ref="'file'+index")
+            .drop(:data="i[1]" droptimes="untilok").dr2
+                if withtext 
+                    div {{i[2]}}
+            .date {{i[0]}}
+        
+        if dir == 'r' && !lastarro
+            template(v-if="index<3"): img(src="i/"+dir+".png").flecha
+            template(v-else): img(src="i/"+dir+"b.png").flecha
+        if lastarro
+            template(v-if="index<1"): img(src="i/"+dir+".png").flecha
 
     body
         #app
@@ -15,20 +95,178 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#DCD2E9")
+                info(type="dragdrop" title=title text="Coloca los sucesos según corresponda con los años indicados en cada fragmento de la línea del tiempo." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+                    .diag
+                        .row.w100.map.text-center   
+                            template(v-for="(i, index) in temps.bar1"): +carddate('r' , false, false)
+                        .row.w100.map.text-center   
+                            template(v-for="(i, index) in temps.bar2"): +carddate('l', false, false)
+
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.a")
+                            drag(ref="" :data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone initclass="txt"): div {{i.t}}
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.b.length" scene-color="#DCD2E9")
+                info(type="dragdrop" title=title text="Coloca los sucesos según corresponda con los años indicados en cada fragmento de la línea del tiempo." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .diag
+                        .row.w100.map.text-center   
+                            template(v-for="(i, index) in temps.bar3"): +carddate('r', false, false)
+                        .row.w100.map.text-center   
+                            template(v-for="(i, index) in temps.bar4"): +carddate('l', false, false)
+
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.b")
+                            drag(ref="" :data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone initclass="txt"): div {{i.t}}
+            
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#DCD2E9")
+                info(type="dragdrop" title=title text="Coloca los sucesos según corresponda con los años indicados en cada fragmento de la línea del tiempo." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .diag
+                        .row.w100.map.text-center   
+                            template(v-for="(i, index) in temps.bar5"): +carddate('r', true, false)
+                        
+
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.c")
+                            drag(ref="" :data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone initclass="txt"): div {{i.t}}
+
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" hidescorebox :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#DCD2E9" @loaded="lastscenefn")
+                info(type="dragdrop" title=title text="¡Has ubicado los hechos correctamente! Ahora ya tienes el panorama de los hechos en México entre el año 1968 y el 2017." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .diag.lastdiag
+                        .row.w100.map.text-center.d1
+                            template(v-for="(i, index) in temps.bar1"): +carddate('r' , false, true)
+                        .row.w100.map.text-center.d2
+                            template(v-for="(i, index) in temps.bar2"): +carddate('l' , false, true)
+                        .row.w100.map.text-center.d3
+                            template(v-for="(i, index) in temps.bar3"): +carddate('r' , false, true)
+                        .row.w100.map.text-center.d4
+                            template(v-for="(i, index) in temps.bar4"): +carddate('l' , false, true)
+                        .row.w100.map.text-center.d5
+                            template(v-for="(i, index) in temps.bar5"): +carddate('r', true, true)
+                            .w50.text-center: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
+
         
         +scripts
             script.
 
+                app.$set(app.temps, 'allboxes', [])
+                app.$set(app.temps, 'abcurr', 0)
+
+
+                app.lastscenefn = function () {
+
+                    
+                    setTimeout(function () {
+                        var boxes = [
+                            app.$refs['file0'][0],
+                            app.$refs['file1'][0],
+                            app.$refs['file2'][0],
+                            app.$refs['file3'][0],
+                            app.$refs['file3'][1],
+                            app.$refs['file2'][1],
+                            app.$refs['file1'][1],
+                            app.$refs['file0'][1],
+                            app.$refs['file0'][2],
+                            app.$refs['file1'][2],
+                            app.$refs['file2'][2],
+                            app.$refs['file3'][2],
+                            app.$refs['file3'][3],
+                            app.$refs['file2'][3],
+                            app.$refs['file1'][3],
+                            app.$refs['file0'][3],
+                            app.$refs['file0'][4],
+                            app.$refs['file1'][4],
+                        ]
+                        app.$set(app.temps, 'allboxes', boxes)
+                        app.sequencer()
+                    }, 1000)
+                }
+
+                app.sequencer = function (){
+
+                    setTimeout(function () {
+                        app.temps.allboxes[ app.temps.abcurr ].classList.add('on')
+                        app.sequencerREP()
+                    }, 500)
+                }
+                app.sequencerREP = function () {
+                    if( app.temps.abcurr  < app.temps.allboxes.length-1 ){
+                        app.temps.abcurr++
+                        app.sequencer()
+                    }
+                }
+
+
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
                 
-                app.currentScene = 0
-                app.scenesCount = 1
+                app.$set(app.temps, 'bar1', [
+                    ['1968', '68', 'Movimiento estudiantil.'],
+                    ['1982-1988','8288', 'Crisis económica.'],
+                    ['1982','82', 'Plan Nacional de Austeridad.'],
+                    ['1985','85', 'Se ponen en órbita los satélites Morelos I y II.'],
+                ])
+                app.$set(app.temps, 'bar2', [
+                    ['1990','90', 'Octavio Paz gana premio Nobel de Literatura.'],
+                    ['5 de mayo 1989','89m', 'Fundación del PRD.'],
+                    ['28 de febrero 1989','89f', 'Llega el Internet a México.'],
+                    ['1986','86', 'Campeonato mundial de futbol.'],
+                ])
+                app.$set(app.temps, 'bar3', [
+                    ['1 de enero 1994','94', 'Entra en vigor el TLC.'],
+                    ['1994-1995','9406', 'Crisis económica.'],
+                    ['1 al 12 de enero 1994','94e', 'Levantamiento del EZLN.'],
+                    ['1995','95', 'Mario Molina gana el Premio Nobel de Química.'],
+                ])
+                app.$set(app.temps, 'bar4', [
+                    ['2010','10', 'Bicentenario de la Independencia y Centenario de la Revolución.'],
+                    ['2006','9406', 'Crisis económica.'],
+                    ['2001','01', 'El EZLN llega a la Ciudad de México.'],
+                    ['2000','00', 'Inicia la alternancia en el poder.'],
+                ])
+                app.$set(app.temps, 'bar5', [
+                    ['2014','14', '75 aniversario del INAH.'],
+                    ['2017','17', 'Centenario de la promulgación de la Constitución Política.'],
+                ])
+
+                app.$set(app.temps, 'a', [
+                    {v:'86', t:'Campeonato mundial de futbol.'},
+                    {v:'8288', t:'Crisis económica.'},
+                    {v:'82', t:'Plan Nacional de Austeridad.'},
+                    {v:'90', t:'Octavio Paz gana premio Nobel de Literatura.'},
+                    {v:'85', t:'Se ponen en órbita los satélites Morelos I y II.'},
+                    {v:'89m', t:'Fundación del PRD.'},
+                    {v:'89f', t:'Llega el Internet a México.'},
+                    {v:'68', t:'Movimiento estudiantil.'},
+                ])
+                app.$set(app.temps, 'b', [
+                    {v:'10', t:'Bicentenario de la Independencia y Centenario de la Revolución.'},
+                    {v:'01', t:'El EZLN llega a la Ciudad de México.'},
+                    {v:'95', t:'Mario Molina gana el Premio Nobel de Química.'},
+                    {v:'94e', t:'Levantamiento del EZLN.'},
+                    {v:'00', t:'Inicia la alternancia en el poder.'},
+                    {v:'9406', t:'Crisis económica.'},
+                    {v:'9406', t:'Crisis económica.'},
+                    {v:'94', t:'Entra en vigor el TLC.'},
+                ])
+
+                app.$set(app.temps, 'c', [
+                    {v:'-', t:'Entra en vigor el TLC.'},
+                    {v:'14', t:'75 aniversario del INAH.'},
+                    {v:'-', t:'Crisis económica.'},
+                    {v:'17', t:'Centenario de la promulgación de la Constitución Política.'},
+                ])
+                
+                app.currentScene = 4
+                app.scenesCount = 3
