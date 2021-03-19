@@ -1,7 +1,7 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Analizo los datos'
 
 <!DOCTYPE html>
 html(lang="es")
@@ -15,20 +15,62 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Se hizo una pequeña encuesta en el grupo de 4º B para saber la preferencia de mascotas en los alumnos." textaudio="s/intro.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w80: img(src="i/a.png").w100
+                    .text-center: button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Observa la tabla de resultados y la gráfica, y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w90: img(src="i/b.png").w100
+                    
+                    .row.w100.mt-1
+                        sequence(:options="temps.a" ref="pregs" dots no-nav)
+                            template(v-slot:option="{option}")
+                                .common.text-center {{option.p}}
+                                selectives(:ans="option.ans" :ops="option.op" number automatic @isok="$refs.pregs.adelante()")
+
             
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {
+                        p: 'Si la maestra deja una tarea en la que los alumnos deban dibujar la mascota de su preferencia, ¿cuál es el animal que más van a dibujar?',
+                        op: ['canario','perros','gato'],
+                        ans: 2
+                    },
+                    {
+                        p: 'Si la tarea fuera dibujar la mascota que menos se prefiere de esas opciones, ¿cuál es el animal que más van a dibujar?',
+                        op: ['pez','gato','canario'],
+                        ans: 2
+                    },
+                    {
+                        p: '¿Qué mascotas tienen menos diferencia en los votos obtenidos?',
+                        op: ['perros y gatos','peces y loros','canarios y loros'],
+                        ans: 2
+                    },
+                    {
+                        p: '¿Cuál es la diferencia de votos entre la mascota que tiene más votos y la que tiene menos?',
+                        op: ['5 votos','8 votos','10 votos'],
+                        ans: 1
+                    },
+                    {
+                        p: '¿Cuántos alumnos hay en el grupo de 4°B?',
+                        op: ['38 alumnos','40 alumnos','39 alumnos'],
+                        ans: 2
+                    },
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Analizo los datos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
@@ -16,14 +16,36 @@
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo los datos" text="Se hizo una pequeña encuesta en el grupo de 4º B para saber la preferencia de mascotas en los alumnos." textaudio="s/intro.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w80"><img class="w100" src="i/a.png"/></div>
+          </div>
+          <div class="text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="seleccionar" title="Analizo los datos" text="Observa la tabla de resultados y la gráfica, y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w90"><img class="w100" src="i/b.png"/></div>
+          </div>
+          <div class="row w100 mt-1">
+            <sequence :options="temps.a" ref="pregs" dots="dots" no-nav="no-nav">
+              <template v-slot:option="{option}">
+                <div class="common text-center">{{option.p}}</div>
+                <selectives :ans="option.ans" :ops="option.op" number="number" automatic="automatic" @isok="$refs.pregs.adelante()"></selectives>
+              </template>
+            </sequence>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,7 +80,33 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {
+              p: 'Si la maestra deja una tarea en la que los alumnos deban dibujar la mascota de su preferencia, ¿cuál es el animal que más van a dibujar?',
+              op: ['canario','perros','gato'],
+              ans: 2
+          },
+          {
+              p: 'Si la tarea fuera dibujar la mascota que menos se prefiere de esas opciones, ¿cuál es el animal que más van a dibujar?',
+              op: ['pez','gato','canario'],
+              ans: 2
+          },
+          {
+              p: '¿Qué mascotas tienen menos diferencia en los votos obtenidos?',
+              op: ['perros y gatos','peces y loros','canarios y loros'],
+              ans: 2
+          },
+          {
+              p: '¿Cuál es la diferencia de votos entre la mascota que tiene más votos y la que tiene menos?',
+              op: ['5 votos','8 votos','10 votos'],
+              ans: 1
+          },
+          {
+              p: '¿Cuántos alumnos hay en el grupo de 4°B?',
+              op: ['38 alumnos','40 alumnos','39 alumnos'],
+              ans: 2
+          },
+      ])
       
       app.currentScene = 0
       app.scenesCount = 1
