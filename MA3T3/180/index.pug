@@ -1,12 +1,47 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Un día de compras'
+
+
+
+
+mixin dial(pos, tip, audio, vif, txt)
+    - var complete = ''
+    if vif == 'a'
+        - complete = 'b'
+    if vif == 'b'
+        - complete = 'c'
+    if vif == 'c'
+        - complete = 'd'
+    if vif == 'd'
+        - complete = 'e'
+    if vif == 'e'
+        - complete = 'f'
+    if vif == 'f'
+        - complete = 'g'
+    .dialog(class=pos+" tip-"+tip v-if="temps."+vif)
+        audiotext(audio="s/"+audio+".mp3" :autoplay="true" @completed="temps."+complete+"=true" text=txt)
+
+
+
+
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .comic { font-size: 0.8rem; }
+            .comic .dialog { padding: 4px 2px;}
+            .comic.outside .dialog{position: relative;}
+            
+            @media (max-width: 680px) {
+                .comic .dialog {
+                    padding: 2px;
+                    font-size: 0.5rem;
+                    line-height: 1;
+                }
+            }
 
 
     body
@@ -15,20 +50,150 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title text="De compras." textaudio="s/a1.mp3" :autoplay="true" @completedinstructions="temps.b = true")
                 activity
                     .row.w100
+                        .comic.w60.wm80.pt-3.pb-3
+                            img(src="i/a.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('cl', 't', 'a2', 'b', 'Llevaré una bolsa de uvas.')
+                            +dial('br', 't', 'a3', 'c', 'Un melón ocuparía menos lugar.')
+                            +dial('bl', 't', 'a4', 'd', 'Pero pesa más.')
+                    button(@click="sceneCompleted(false)" v-if="temps.e").button.big.animate__animated.animate__flip Continuar
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title  :autoplay="false")
+                activity
+                    .row.w100
+                        .comic.w60.wm80
+                            img(src="i/b.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'b', 'a5', 'a', 'Bueno, me ayudas a cargar y llevamos los dos.')
+                    button(@click="sceneCompleted(false)" v-if="temps.b").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                activity
+                    .row.w100
+                        .comic.w100.wm80.pt-5.pb-5.pa-5
+                            img(src="i/c.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tl', 'b', 'a6', 'a', 'Hay que llevar jamaica, ¿sí?')
+                            +dial('tr', 'b', 'a7', 'b', 'Sí, la jamaica casi no pesa.')
+                            +dial('bl', 't', 'a8', 'c', 'Ayer, la maestra nos dijo que para comparar el peso de los objetos debemos observar las características físicas y el material con el que están elaborados.')
+                    button(@click="sceneCompleted(false)" v-if="temps.d").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES
+            scene(v-if="currentScene==4" hidescorebox :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                activity
+                    .row.w100
+                        .comic.w50.wm80
+                            img(src="i/d.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('cl', 'b', 'a9', 'a', '¡Qué bueno que llegaron! ¡Hermana, esa bolsa debe pesar demasiado! ')
+                            +dial('tl', 'b', 'a10', 'b', 'Aunque mi bolsa sea muy grande no pesa más que la de mi mamá. ¡Ayúdale!')
+                    button(@click="sceneCompleted(false)" v-if="temps.c").button.big.animate__animated.animate__flip Continuar
+            
+            // SCENES
+            scene(v-if="currentScene==5" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                    audiotext(:autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b")
+                activity
+                    .row.w100
+                        .comic.w50.wm80
+                            img(src="i/e1.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tl', 'b', 'a11', 'a', '¿Qué pesará más, la sandía o los duraznos?')
+                            +dial('tr', 'b', 'a12', 'c', 'La sandía. ¿Qué pesa menos? ¿La bolsa de mole o la de chiles poblanos?')
+                            +dial('br', 't', 'a13', 'e', 'La bolsa de chiles poblanos, porque estos son más ligeros.')
+                    
+                    template(v-if="temps.b && !temps.d ")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa más la sandía.','Los duraznos pesan más.']" :key="'p1'+index" :isok="index == 0" simple-ok initclass="pa-1" @isok="temps.c=true"): number(randomc smaller): div(v-html="i")
+                    template(v-if="temps.d")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p2'+index" :isok="index == 1" simple-ok initclass="pa-1" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+            
+            // SCENES
+            scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                    audiotext(:autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b")
+                activity
+                    .row.w100
+                        .comic.w50.wm80
+                            img(src="i/e2.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tl', 'b', 'a14', 'a', '¿Qué pesa más, estas dos hojas grandes de espinaca o estas tres cebollas?')
+                            +dial('tr', 'b', 'a15', 'c', 'Las cebollas, porque aunque las hojas de espinaca son muy grandes son más ligeras. ')
+                            //+dial('br', 't', 'a13', 'e', 'La bolsa de chiles poblanos, porque estos son más ligeros.')
+                    
+                    template(v-if="temps.b")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Las hojas de espinaca.','Las tres cebollas.']" :key="'p3'+index" :isok="index == 1" simple-ok initclass="pa-1" @isok="temps.c=true"): number(randomc smaller): div(v-html="i")
+                    //template(v-if="temps.d")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+            
+            // SCENES
+            scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                    audiotext(:autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b")
+                activity
+                    .row.w100
+                        .comic.w50.wm80
+                            img(src="i/e3.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tl', 'b', 'a16', 'a', '¿Cuál será menos pesada,  esta hoja de maíz para el tamal o la hoja del elote fresco?')
+                            +dial('tr', 'b', 'a17', 'c', 'La hoja de maíz para tamal, como está seca, es más ligera. ¡Ay, qué ricos son los tamales! ')
+                            //+dial('br', 't', 'a13', 'e', 'La bolsa de chiles poblanos, porque estos son más ligeros.')
+                    
+                    template(v-if="temps.b")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['La hoja de elote fresco pesa menos.','Pesa menos la hoja de maíz para tamal.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-1" @isok="temps.c=true"): number(randomc smaller): div(v-html="i")
+                    //template(v-if="temps.d")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+            
+            // SCENES
+            scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit")
+                info(type="seleccionar" title=title :autoplay="false")
+                    audiotext(:autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b")
+                activity
+                    .row.w100
+                        .comic.w50.wm80.pt-5
+                            img(src="i/e4.png").w100
+                            //+dial('tr', 'n', 'au1', 'a', '')
+                            +dial('tr', 'b', 'a18', 'a', 'Ahora díganme, ¿qué pesará más, esta larga vara de canela o tres duraznos?')
+                            +dial('tl', 'b', 'a19', 'c', 'Los tres duraznos, aunque son pequeños, tienen mayor peso.')
+                            +dial('br', 't', 'a20', 'd', ' ¡Muy bien niñas! Ahora, vamos a preparar la comida.')
+                            +dial('bl', 't', 'a21', 'e', ' ¡Sí mamá!')
+                    
+                    template(v-if="temps.b")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa más la vara de canela.','Los tres duraznos pesan más.']" :key="'p5'+index" :isok="index == 1" simple-ok initclass="pa-1" @isok="temps.c=true"): number(randomc smaller): div(v-html="i")
+                    //template(v-if="temps.d")
+                        .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+    
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==9" :key="9" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                app.$set(app.temps, 'd', false)
+                app.$set(app.temps, 'e', false)
+                app.$set(app.temps, 'f', false)
+                app.$set(app.temps, 'g', false)
+                
+                app.resetit = function (){
+                    app.temps.a = true
+                    app.temps.b = false
+                    app.temps.c = false
+                    app.temps.d = false
+                    app.temps.e = false
+                    app.temps.f = false
+                    app.temps.g = false
+                }
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 4

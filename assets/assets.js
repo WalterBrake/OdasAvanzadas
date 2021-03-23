@@ -123,8 +123,8 @@ var app = new Vue({
 
             //this.changeSceneTransition()
             setTimeout(function (){
-                _this.timeoutSounds = setInterval(_this.checkIfSoundsArePlaying, 10)
-            }, 500)
+                _this.timeoutSounds = setInterval(_this.checkIfSoundsArePlaying, 300)
+            }, 1000)
         },
         checkIfSoundsArePlaying(){
             var allmuted = true

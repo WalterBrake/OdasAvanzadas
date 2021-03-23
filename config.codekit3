@@ -13749,22 +13749,22 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/ES5T3\/83\/i\/Artboard 16@3x.png": {
+	"\/ES5T3\/83\/i\/b.png": {
 		"ft": 32768,
-		"iS": 30024,
+		"iS": 41161,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/i\/Artboard 16@3x.png",
+		"oAP": "\/ES5T3\/83\/i\/b.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/ES5T3\/83\/i\/b.png": {
+	"\/ES5T3\/83\/i\/fin.png": {
 		"ft": 32768,
-		"iS": 41161,
+		"iS": 30024,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/i\/b.png",
+		"oAP": "\/ES5T3\/83\/i\/fin.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -23546,6 +23546,94 @@
 		"oAP": "\/MA3T3\/166\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/MA3T3\/180\/i\/a.png": {
+		"ft": 32768,
+		"iS": 103765,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/a.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/b.png": {
+		"ft": 32768,
+		"iS": 59648,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/b.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/c.png": {
+		"ft": 32768,
+		"iS": 150597,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/c.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/d.png": {
+		"ft": 32768,
+		"iS": 101618,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/e1.png": {
+		"ft": 32768,
+		"iS": 108454,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/e1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/e2.png": {
+		"ft": 32768,
+		"iS": 102506,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/e2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/e3.png": {
+		"ft": 32768,
+		"iS": 89504,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/e3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/MA3T3\/180\/i\/e4.png": {
+		"ft": 32768,
+		"iS": 102128,
+		"oA": 0,
+		"oAP": "\/MA3T3\/180\/i\/e4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/MA3T3\/180\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -23562,158 +23650,158 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_1.mp3": {
+	"\/MA3T3\/180\/s\/a1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_1.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a1.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_10.mp3": {
+	"\/MA3T3\/180\/s\/a10.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_10.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a10.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_11.mp3": {
+	"\/MA3T3\/180\/s\/a11.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_11.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a11.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_12.mp3": {
+	"\/MA3T3\/180\/s\/a12.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_12.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a12.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_13.mp3": {
+	"\/MA3T3\/180\/s\/a13.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_13.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a13.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_14.mp3": {
+	"\/MA3T3\/180\/s\/a14.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_14.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a14.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_15.mp3": {
+	"\/MA3T3\/180\/s\/a15.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_15.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a15.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_16.mp3": {
+	"\/MA3T3\/180\/s\/a16.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_16.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a16.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_17.mp3": {
+	"\/MA3T3\/180\/s\/a17.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_17.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a17.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_18.mp3": {
+	"\/MA3T3\/180\/s\/a18.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_18.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a18.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_19.mp3": {
+	"\/MA3T3\/180\/s\/a19.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_19.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a19.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_2.mp3": {
+	"\/MA3T3\/180\/s\/a2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_2.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a2.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_20.mp3": {
+	"\/MA3T3\/180\/s\/a20.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_20.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a20.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_21.mp3": {
+	"\/MA3T3\/180\/s\/a21.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_21.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a21.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_3.mp3": {
+	"\/MA3T3\/180\/s\/a3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_3.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a3.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_4.mp3": {
+	"\/MA3T3\/180\/s\/a4.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_4.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a4.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_5.mp3": {
+	"\/MA3T3\/180\/s\/a5.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_5.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a5.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_6.mp3": {
+	"\/MA3T3\/180\/s\/a6.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_6.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a6.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_7.mp3": {
+	"\/MA3T3\/180\/s\/a7.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_7.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a7.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_8.mp3": {
+	"\/MA3T3\/180\/s\/a8.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_8.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a8.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_9.mp3": {
+	"\/MA3T3\/180\/s\/a9.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Audio_9.mp3",
+		"oAP": "\/MA3T3\/180\/s\/a9.mp3",
 		"oF": 0
 		},
-	"\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Inst1.mp3": {
+	"\/MA3T3\/180\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/MA3T3\/180\/s\/Un día de compras Ma3°T3_Inst1.mp3",
+		"oAP": "\/MA3T3\/180\/s\/instruccion1.mp3",
 		"oF": 0
 		},
 	"\/MA4T1\/111\/aimg\/az.svg": {

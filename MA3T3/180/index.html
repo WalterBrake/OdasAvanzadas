@@ -3,27 +3,253 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Un día de compras</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .comic { font-size: 0.8rem; }
+      .comic .dialog { padding: 4px 2px;}
+      .comic.outside .dialog{position: relative;}
+      
+      @media (max-width: 680px) {
+          .comic .dialog {
+              padding: 2px;
+              font-size: 0.5rem;
+              line-height: 1;
+          }
+      }
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" text="De compras." textaudio="s/a1.mp3" :autoplay="true" @completedinstructions="temps.b = true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="comic w60 wm80 pt-3 pb-3"><img class="w100" src="i/a.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog cl tip-t" v-if="temps.b">
+                <audiotext audio="s/a2.mp3" :autoplay="true" @completed="temps.c=true" text="Llevaré una bolsa de uvas."></audiotext>
+              </div>
+              <div class="dialog br tip-t" v-if="temps.c">
+                <audiotext audio="s/a3.mp3" :autoplay="true" @completed="temps.d=true" text="Un melón ocuparía menos lugar."></audiotext>
+              </div>
+              <div class="dialog bl tip-t" v-if="temps.d">
+                <audiotext audio="s/a4.mp3" :autoplay="true" @completed="temps.e=true" text="Pero pesa más."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.e">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w60 wm80"><img class="w100" src="i/b.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-b" v-if="temps.a">
+                <audiotext audio="s/a5.mp3" :autoplay="true" @completed="temps.b=true" text="Bueno, me ayudas a cargar y llevamos los dos."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.b">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" hidescorebox="hidescorebox" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w100 wm80 pt-5 pb-5 pa-5"><img class="w100" src="i/c.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tl tip-b" v-if="temps.a">
+                <audiotext audio="s/a6.mp3" :autoplay="true" @completed="temps.b=true" text="Hay que llevar jamaica, ¿sí?"></audiotext>
+              </div>
+              <div class="dialog tr tip-b" v-if="temps.b">
+                <audiotext audio="s/a7.mp3" :autoplay="true" @completed="temps.c=true" text="Sí, la jamaica casi no pesa."></audiotext>
+              </div>
+              <div class="dialog bl tip-t" v-if="temps.c">
+                <audiotext audio="s/a8.mp3" :autoplay="true" @completed="temps.d=true" text="Ayer, la maestra nos dijo que para comparar el peso de los objetos debemos observar las características físicas y el material con el que están elaborados."></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.d">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" hidescorebox="hidescorebox" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w50 wm80"><img class="w100" src="i/d.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog cl tip-b" v-if="temps.a">
+                <audiotext audio="s/a9.mp3" :autoplay="true" @completed="temps.b=true" text="¡Qué bueno que llegaron! ¡Hermana, esa bolsa debe pesar demasiado! "></audiotext>
+              </div>
+              <div class="dialog tl tip-b" v-if="temps.b">
+                <audiotext audio="s/a10.mp3" :autoplay="true" @completed="temps.c=true" text="Aunque mi bolsa sea muy grande no pesa más que la de mi mamá. ¡Ayúdale!"></audiotext>
+              </div>
+            </div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)" v-if="temps.c">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false">
+          <audiotext :autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w50 wm80"><img class="w100" src="i/e1.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tl tip-b" v-if="temps.a">
+                <audiotext audio="s/a11.mp3" :autoplay="true" @completed="temps.b=true" text="¿Qué pesará más, la sandía o los duraznos?"></audiotext>
+              </div>
+              <div class="dialog tr tip-b" v-if="temps.c">
+                <audiotext audio="s/a12.mp3" :autoplay="true" @completed="temps.d=true" text="La sandía. ¿Qué pesa menos? ¿La bolsa de mole o la de chiles poblanos?"></audiotext>
+              </div>
+              <div class="dialog br tip-t" v-if="temps.e">
+                <audiotext audio="s/a13.mp3" :autoplay="true" @completed="temps.f=true" text="La bolsa de chiles poblanos, porque estos son más ligeros."></audiotext>
+              </div>
+            </div>
+          </div>
+          <template v-if="temps.b &amp;&amp; !temps.d ">
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Pesa más la sandía.','Los duraznos pesan más.']" :key="'p1'+index" :isok="index == 0" simple-ok="simple-ok" initclass="pa-1" @isok="temps.c=true">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <template v-if="temps.d">
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" @isok="temps.e=true">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false">
+          <audiotext :autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w50 wm80"><img class="w100" src="i/e2.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tl tip-b" v-if="temps.a">
+                <audiotext audio="s/a14.mp3" :autoplay="true" @completed="temps.b=true" text="¿Qué pesa más, estas dos hojas grandes de espinaca o estas tres cebollas?"></audiotext>
+              </div>
+              <div class="dialog tr tip-b" v-if="temps.c">
+                <audiotext audio="s/a15.mp3" :autoplay="true" @completed="temps.d=true" text="Las cebollas, porque aunque las hojas de espinaca son muy grandes son más ligeras. "></audiotext>
+              </div>
+              <!--+dial('br', 't', 'a13', 'e', 'La bolsa de chiles poblanos, porque estos son más ligeros.')-->
+            </div>
+          </div>
+          <template v-if="temps.b">
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Las hojas de espinaca.','Las tres cebollas.']" :key="'p3'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" @isok="temps.c=true">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <!--template(v-if="temps.d")
+          .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+          
+          -->
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false">
+          <audiotext :autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w50 wm80"><img class="w100" src="i/e3.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tl tip-b" v-if="temps.a">
+                <audiotext audio="s/a16.mp3" :autoplay="true" @completed="temps.b=true" text="¿Cuál será menos pesada,  esta hoja de maíz para el tamal o la hoja del elote fresco?"></audiotext>
+              </div>
+              <div class="dialog tr tip-b" v-if="temps.c">
+                <audiotext audio="s/a17.mp3" :autoplay="true" @completed="temps.d=true" text="La hoja de maíz para tamal, como está seca, es más ligera. ¡Ay, qué ricos son los tamales! "></audiotext>
+              </div>
+              <!--+dial('br', 't', 'a13', 'e', 'La bolsa de chiles poblanos, porque estos son más ligeros.')-->
+            </div>
+          </div>
+          <template v-if="temps.b">
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['La hoja de elote fresco pesa menos.','Pesa menos la hoja de maíz para tamal.']" :key="'p4'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" @isok="temps.c=true">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <!--template(v-if="temps.d")
+          .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+          
+          -->
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25" @loaded="resetit">
+        <info type="seleccionar" title="Un día de compras" :autoplay="false">
+          <audiotext :autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b"></audiotext>
+        </info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w50 wm80 pt-5"><img class="w100" src="i/e4.png"/>
+              <!--+dial('tr', 'n', 'au1', 'a', '')-->
+              <div class="dialog tr tip-b" v-if="temps.a">
+                <audiotext audio="s/a18.mp3" :autoplay="true" @completed="temps.b=true" text="Ahora díganme, ¿qué pesará más, esta larga vara de canela o tres duraznos?"></audiotext>
+              </div>
+              <div class="dialog tl tip-b" v-if="temps.c">
+                <audiotext audio="s/a19.mp3" :autoplay="true" @completed="temps.d=true" text="Los tres duraznos, aunque son pequeños, tienen mayor peso."></audiotext>
+              </div>
+              <div class="dialog br tip-t" v-if="temps.d">
+                <audiotext audio="s/a20.mp3" :autoplay="true" @completed="temps.e=true" text=" ¡Muy bien niñas! Ahora, vamos a preparar la comida."></audiotext>
+              </div>
+              <div class="dialog bl tip-t" v-if="temps.e">
+                <audiotext audio="s/a21.mp3" :autoplay="true" @completed="temps.f=true" text=" ¡Sí mamá!"></audiotext>
+              </div>
+            </div>
+          </div>
+          <template v-if="temps.b">
+            <div class="row wrap around">
+              <clickable v-for="(i, index) in ['Pesa más la vara de canela.','Los tres duraznos pesan más.']" :key="'p5'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1" @isok="temps.c=true">
+                <number randomc="randomc" smaller="smaller">
+                  <div v-html="i"></div>
+                </number>
+              </clickable>
+            </div>
+          </template>
+          <!--template(v-if="temps.d")
+          .row.wrap.around: clickable(v-for="(i, index) in ['Pesa menos la bolsa de mole.','La bolsa de chiles pesa menos.']" :key="'p4'+index" :isok="index == 1" simple-ok initclass="pa-3" @isok="temps.e=true"): number(randomc smaller): div(v-html="i")
+          
+          -->
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==9" :key="9" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +284,26 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      app.$set(app.temps, 'd', false)
+      app.$set(app.temps, 'e', false)
+      app.$set(app.temps, 'f', false)
+      app.$set(app.temps, 'g', false)
+      
+      app.resetit = function (){
+          app.temps.a = true
+          app.temps.b = false
+          app.temps.c = false
+          app.temps.d = false
+          app.temps.e = false
+          app.temps.f = false
+          app.temps.g = false
+      }
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>
