@@ -1,34 +1,100 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Experimentamos con el sol'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag {
+                width: auto;
+                height: auto;
+            }
+            .box {
+                justify-content: space-between;
+                background: #fff;
+                padding: 20px 10px;
+                margin: 6px;
+                border-radius: 6px;
+                background: #efffef;
+                box-shadow: 4px 4px 0 var(--accent);
+                border: 2px solid var(--accent);
+            }
+            .box.drop {
+                border: 2px dashed var(--accent);
+                color: var(--accent);
+                background: #FCEEE0;
+            }
+            .h4 {
+                text-align: center;
+            }
+            @media (max-width: 680px) {
+                .number.smaller {
+                    font-size: 0.8rem;
+                }
+                .h4 {
+                    font-size: 0.9rem;
+                }
+                .pa-1 {
+                    padding: 6px;
+                }
+            }
 
+            
 
     body
         #app
             // START
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
+
+
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="true" )
+                activity
+                    .row.w100.info: h1=title
+                    .row.w100: videoplayer(path="i/v1" :autoplay="true" c="2" ref="v1" @completed="temps.a=true")
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="¿Cuál crees que es la función de los componentes de este horno? Relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true")
+                    img(src="i/7.png").w80.wm40.ws30
                 activity
                     .row.w100
-            
-            
+                        .w50
+                            template(v-for="(i, index) in ['Aluminio', 'Cartulina negra', 'Plástico']")
+                                .box.row
+                                    div {{i}}
+                                    drag(:data="index" dropzone=".drop" stay-if-ok drag-line particle-color="#EC8B2E"): div(:class="['conector', 'c4']")
+                        
+                        .w50
+                            template(v-for="(i, index) in [{r:1,t:'Hace que el calor se concentre en el interior.'},{r:2, t:'Conserva el calor dentro del horno.'},{r:0, t:'Refleja el calor del sol al interior del horno.'}]")
+                                .drop(:data="i.r" droptimes="untilok").box
+                                    div {{i.t}}
+
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title :autoplay="false")
+                    img(src="i/6.png").w80.wm40.ws30.mt-auto
+                activity
+                    .row.w100
+                        .common: .h4 ¿Por qué es importante que la tapa permanezca abierta?
+                    .row.wrap.around.text-center: clickable(v-for="(i, index) in ['Porque se ventila el interior.','Porque refleja el calor del sol al interior.','Porque se ve bonito.']" :key="'b1'+index" :isok="index == 1" simple-ok initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
+
+                    .row.w100.mt-1
+                        .common: .h4 ¿Cuál es la diferencia entre este horno y uno eléctrico? 
+                    .row.wrap.around.text-center: clickable(v-for="(i, index) in ['El solar cuesta más dinero que el eléctrico.','El solar usa calor directo del sol y el otro debe producir calor usando la electricidad.','No hay diferencias, se usan para lo mismo.']" :key="'b2'+index" :isok="index == 1" simple-ok initclass="pa-1 w100" ): number(randomc smaller): div(v-html="i")
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2

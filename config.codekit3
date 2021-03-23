@@ -6458,6 +6458,53 @@
 		"oAP": "\/CN6T2\/203\/s\/instruccion2.mp3",
 		"oF": 0
 		},
+	"\/CN6T3\/215\/i\/6.png": {
+		"ft": 32768,
+		"iS": 31405,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/i\/6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T3\/215\/i\/7.png": {
+		"ft": 32768,
+		"iS": 50277,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/i\/7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T3\/215\/i\/8.png": {
+		"ft": 32768,
+		"iS": 40483,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/i\/8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/CN6T3\/215\/i\/v1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/i\/v1.mp4",
+		"oF": 0
+		},
+	"\/CN6T3\/215\/i\/v1.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/CN6T3\/215\/i\/v1.webm",
+		"oF": 0
+		},
 	"\/CN6T3\/215\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -6474,109 +6521,25 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_1.mp3": {
+	"\/CN6T3\/215\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_1.mp3",
+		"oAP": "\/CN6T3\/215\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_10.mp3": {
+	"\/CN6T3\/215\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_10.mp3",
+		"oAP": "\/CN6T3\/215\/s\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_11.mp3": {
+	"\/CN6T3\/215\/s\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_11.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_12.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_12.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_2.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_3.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_4.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_4.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_5.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_5.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_6.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_6.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_7.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_7.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_8.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_8.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_9.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Audio_9.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg1.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg2.mp3",
-		"oF": 0
-		},
-	"\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg3.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T3\/215\/s\/Experimentamos con el sol CN6°T3_Preg3.mp3",
+		"oAP": "\/CN6T3\/215\/s\/instruccion3.mp3",
 		"oF": 0
 		},
 	"\/CNAME": {

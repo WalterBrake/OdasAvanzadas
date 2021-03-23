@@ -3,27 +3,127 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Experimentamos con el sol</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag {
+          width: auto;
+          height: auto;
+      }
+      .box {
+          justify-content: space-between;
+          background: #fff;
+          padding: 20px 10px;
+          margin: 6px;
+          border-radius: 6px;
+          background: #efffef;
+          box-shadow: 4px 4px 0 var(--accent);
+          border: 2px solid var(--accent);
+      }
+      .box.drop {
+          border: 2px dashed var(--accent);
+          color: var(--accent);
+          background: #FCEEE0;
+      }
+      .h4 {
+          text-align: center;
+      }
+      @media (max-width: 680px) {
+          .number.smaller {
+              font-size: 0.8rem;
+          }
+          .h4 {
+              font-size: 0.9rem;
+          }
+          .pa-1 {
+              padding: 6px;
+          }
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="true" )-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Experimentamos con el sol</h1>
+          </div>
+          <div class="row w100">
+            <videoplayer path="i/v1" :autoplay="true" c="2" ref="v1" @completed="temps.a=true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="relacionar" title="Experimentamos con el sol" text="¿Cuál crees que es la función de los componentes de este horno? Relaciona las columnas." textaudio="s/instruccion1.mp3" :autoplay="true"><img class="w80 wm40 ws30" src="i/7.png"/></info>
+        <activity>
+          <div class="row w100">
+            <div class="w50">
+              <template v-for="(i, index) in ['Aluminio', 'Cartulina negra', 'Plástico']">
+                <div class="box row">
+                  <div>{{i}}</div>
+                  <drag :data="index" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#EC8B2E">
+                    <div :class="['conector', 'c4']"></div>
+                  </drag>
+                </div>
+              </template>
+            </div>
+            <div class="w50">
+              <template v-for="(i, index) in [{r:1,t:'Hace que el calor se concentre en el interior.'},{r:2, t:'Conserva el calor dentro del horno.'},{r:0, t:'Refleja el calor del sol al interior del horno.'}]">
+                <div class="drop box" :data="i.r" droptimes="untilok">
+                  <div>{{i.t}}</div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Experimentamos con el sol" :autoplay="false"><img class="w80 wm40 ws30 mt-auto" src="i/6.png"/></info>
+        <activity>
+          <div class="row w100">
+            <div class="common">
+              <div class="h4">¿Por qué es importante que la tapa permanezca abierta?</div>
+            </div>
+          </div>
+          <div class="row wrap around text-center">
+            <clickable v-for="(i, index) in ['Porque se ventila el interior.','Porque refleja el calor del sol al interior.','Porque se ve bonito.']" :key="'b1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+              <number randomc="randomc" smaller="smaller">
+                <div v-html="i"></div>
+              </number>
+            </clickable>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="common">
+              <div class="h4">¿Cuál es la diferencia entre este horno y uno eléctrico? </div>
+            </div>
+          </div>
+          <div class="row wrap around text-center">
+            <clickable v-for="(i, index) in ['El solar cuesta más dinero que el eléctrico.','El solar usa calor directo del sol y el otro debe producir calor usando la electricidad.','No hay diferencias, se usan para lo mismo.']" :key="'b2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+              <number randomc="randomc" smaller="smaller">
+                <div v-html="i"></div>
+              </number>
+            </clickable>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +158,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>
