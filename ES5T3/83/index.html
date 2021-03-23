@@ -3,27 +3,328 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Elaboro un tríptico</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag1 .drag {
+          width: auto;
+          height: auto;
+          max-width: 100px;
+      }
+      .drag1 .drag.txt {
+          font-size: 0.7rem;
+      }
+      .drag1 .drag.txt div {
+          padding: 2px;
+          border-radius: 4px;
+          line-height: 1;
+      }
+      .triptico1 .drop {
+          position: absolute;
+          width: 88%;
+          box-sizing: border-box;
+          min-height: 20px;
+          left: 0;
+      }
+      .triptico1 .drop.isok {
+          background: transparent;
+          box-shadow: none;
+          font-size: 0.7rem;
+          line-height: 1;
+      }
+      @media (max-width: 680px) {
+          .drag.txt{
+              font-size: 0.5rem;
+          }
+          .triptico1 .drop.isok {
+              font-size: 0.6rem;
+          }
+          .drop.isok div{
+              font-size: 0.5rem;
+          }
+      }
+      .triptico1 .drop[data="1a"] {
+          height: 8%;
+          top: 7%;
+      }
+      .triptico1 .drop[data="1b"] {
+          height: 14%;
+          top: 17%;
+      }
+      .triptico1 .drop[data="1c"] {
+          height: 30%;
+          top: 38%;
+          border-radius: 50%;
+      }
+      .triptico1 .drop[data="1d"] {
+          height: 20%;
+          top: 74%;
+      }
+      
+      
+      .drag2 .drag {
+          width: auto;
+          height: auto;
+          max-width: 110px;
+      }
+      .drag2 .drag.txt {
+          font-size: 0.7rem;
+      }
+      .drag2 .drag.txt div {
+          padding: 2px;
+          border-radius: 4px;
+          line-height: 1;
+      }
+      
+      .drag.txt {
+          margin: 2px;
+          padding: 0;
+      }
+      .drag.txt div {
+          font-size: 0.6rem;
+      }
+      
+      .triptico2 .drop {
+          position: absolute;
+          width: 29%;
+          box-sizing: border-box;
+          min-height: 20px;
+          left: 0;
+          margin: 2%;
+          text-align: left;
+      }
+      .triptico2 .drop.isok {
+          background: transparent;
+          box-shadow: none;
+          font-size: 0.5rem;
+          line-height: 1;
+      }
+      @media (max-width: 680px) {
+          .triptico2 .drop.isok {
+              font-size: 0.6rem;
+          }
+      }
+      .triptico2 .drop[data="1a"] {
+          height: 60%;
+          top: 27%;
+      }
+      .triptico2 .drop[data="1b"] {
+          height: 44%;
+          left: 34%;
+          top: 10%;
+      }
+      .triptico2 .drop[data="1c"] {
+          height: 30%;
+          top: 10%;
+          border-radius: 50%;
+          left: 67%;
+      }
+      .triptico2 .drop[data="1d"] {
+          height: 43%;
+          left: 67%;
+          top: 44%;
+      }
+      
+      
+      .drag3 .drag {
+          width: auto;
+          height: auto;
+          max-width: 110px;
+      }
+      .drag3 .drag.txt {
+      
+      }
+      .drag3 .drag.txt div {
+          padding: 4px;
+          border-radius: 4px;
+          line-height: 1;
+      }
+      .triptico3 .drop {
+          position: absolute;
+          width: 29%;
+          box-sizing: border-box;
+          min-height: 20px;
+          left: 0;
+          margin: 2%;
+          text-align: left;
+      }
+      .triptico3 .drop.isok {
+          background: transparent;
+          box-shadow: none;
+          font-size: 0.8rem;
+          line-height: 1rem;
+      }
+      @media (max-width: 680px) {
+          .triptico3 .drop.isok {
+              font-size: 0.6rem;
+          }
+      }
+      .triptico3 .drop[data="1a"] {
+          height: 24%;
+          top: 10%;
+      }
+      .triptico3 .drop[data="1b"] {
+          height: 50%;
+          top: 40%;
+      }
+      .triptico3 .drop[data="1c"] {
+          height: 50%;
+          left: 34%;
+          top: 10%;
+      }
+      .triptico3 .drop[data="1d"] {
+          height: 24%;
+          left: 34%;
+          top: 66%;
+      }
+      .triptico3 .drop[data="1e"] {
+          height: 30%;
+          top: 30%;
+          border-radius: 50%;
+          left: 67%;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Elaboro un tríptico" text="Brenda tiene como tarea hacer un tríptico sobre el bullying. Ayúdale a ordenar la información que escribirá en cada parte, haz clic en Continuar." textaudio="s/intro.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w60"><img class="w100" src="i/a.png"/></div>
+            <div class="w40"><img class="w100" src="i/b.png"/></div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Elaboro un tríptico" text="Coloca los elementos que deben estar en la portada." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 around">
+            <div class="w20 ws40">
+              <div class="relative triptico1"><img class="w100" src="i/1triptico.png"/>
+                <div class="drop dr2" data="1a" droptimes="untilok"></div>
+                <div class="drop dr2" data="1b" droptimes="untilok"></div>
+                <div class="drop dr2" data="1c" droptimes="untilok"></div>
+                <div class="drop dr2" data="1d" droptimes="untilok"></div>
+              </div>
+            </div>
+            <div class="w50 text-center drag1">
+              <div class="row wrap">
+                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>El título del tríptico.</div>
+                </drag>
+                <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Una frase que indique prevención de <em>bullying</em>.</div>
+                </drag>
+                <drag data="1d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Un logotipo (el de tu escuela, el de alguna asociación o empresa).</div>
+                </drag>
+                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Causas de la situación.</div>
+                </drag>
+                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/1a.png"/></drag>
+                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/1b.png"/></drag>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Elaboro un tríptico" text="Ahora, coloca los elementos que deben estar en las secciones interiores.  Guíate por lo que ya ha escrito Brenda." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 around">
+            <div class="w60 ws50">
+              <div class="relative triptico2"><img class="w100" src="i/2triptico.png"/>
+                <div class="drop dr2" data="1a" droptimes="untilok"></div>
+                <div class="drop dr2" data="1b" droptimes="untilok"></div>
+                <div class="drop dr2" data="1c" droptimes="untilok"></div>
+                <div class="drop dr2" data="1d" droptimes="untilok"></div>
+              </div>
+            </div>
+            <div class="w40 drag2">
+              <div class="row wrap">
+                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>
+                     1. Idea principal.<br/>2. Público a quien está dirigido.<br/>3. Descripción de la situación.<br/>4. Personas a quienes afecta esta situación</div>
+                </drag>
+                <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>1.Cómo prevenir la situación.<br/>2. Consejos y personas que pueden ayudar.</div>
+                </drag>
+                <drag data="1d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>
+                     1. Causas de la situación.<br/>2. Consecuencias de la situación.<br/>3. Ilustración o gráfica relacionada al texto.</div>
+                </drag>
+                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>
+                     1. El título del tríptico.<br/>2. Una frase que indique prevención de bullying.<br/>3. Una imagen que represente la frase y el título.</div>
+                </drag>
+                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/2a.png"/></drag>
+                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/2b.png"/></drag>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Elaboro un tríptico" text="Para terminar, coloca los elementos de las secciones finales." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 around">
+            <div class="w60 ws50">
+              <div class="relative triptico3"><img class="w100" src="i/3triptico.png"/>
+                <div class="drop dr2" data="1a" droptimes="untilok"></div>
+                <div class="drop dr2" data="1b" droptimes="untilok"></div>
+                <div class="drop dr2" data="1c" droptimes="untilok"></div>
+                <div class="drop dr2" data="1d" droptimes="untilok"></div>
+                <div class="drop dr2" data="1e" droptimes="untilok"></div>
+              </div>
+            </div>
+            <div class="w40 drag3">
+              <div class="row wrap">
+                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Consecuencias del bullying.(cotinuación)</div>
+                </drag>
+                <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Recomendaciones finales.</div>
+                </drag>
+                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Datos de autores del tríptico (nombre, domicilio, teléfono, correo electrónico y página web).</div>
+                </drag>
+                <drag data="1d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>
+                     1. Causas de la situación.<br/>2. Consecuencias de la situación.<br/>3. Ilustración o gráfica relacionada al texto.</div>
+                </drag>
+                <drag data="1e" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/3a.png"/></drag>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" hidescorebox="hidescorebox" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Elaboro un tríptico" text="¡Muy bien! Brenda ya tiene ordenada la información, ahora podrá hacer su tarea." textaudio="s/audio.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w40"><img class="w100 animate__animated animate__bounce animate__delay-2s" src="i/fin.png"/></div>
+          </div>
+          <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</button>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -61,7 +362,7 @@
       app.$set(app.temps, 'a', [])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 3
     </script>
   </body>
 </html>

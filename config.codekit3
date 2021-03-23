@@ -13650,6 +13650,127 @@
 		"oAP": "\/ES5T3\/81\/s\/instruccion1.mp3",
 		"oF": 0
 		},
+	"\/ES5T3\/83\/i\/1a.png": {
+		"ft": 32768,
+		"iS": 51996,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/1b.png": {
+		"ft": 32768,
+		"iS": 38892,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/1triptico.png": {
+		"ft": 32768,
+		"iS": 14261,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/1triptico.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/2a.png": {
+		"ft": 32768,
+		"iS": 34831,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/2b.png": {
+		"ft": 32768,
+		"iS": 36376,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/2triptico.png": {
+		"ft": 32768,
+		"iS": 42013,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/2triptico.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/3a.png": {
+		"ft": 32768,
+		"iS": 63727,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/3triptico.png": {
+		"ft": 32768,
+		"iS": 57650,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/3triptico.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/a.png": {
+		"ft": 32768,
+		"iS": 15890,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/Artboard 16@3x.png": {
+		"ft": 32768,
+		"iS": 30024,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/Artboard 16@3x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ES5T3\/83\/i\/b.png": {
+		"ft": 32768,
+		"iS": 41161,
+		"oA": 0,
+		"oAP": "\/ES5T3\/83\/i\/b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/ES5T3\/83\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13666,39 +13787,39 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Audio1.mp3": {
+	"\/ES5T3\/83\/s\/audio.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Audio1.mp3",
+		"oAP": "\/ES5T3\/83\/s\/audio.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst1.mp3": {
+	"\/ES5T3\/83\/s\/instruccion1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst1.mp3",
+		"oAP": "\/ES5T3\/83\/s\/instruccion1.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst2.mp3": {
+	"\/ES5T3\/83\/s\/instruccion2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst2.mp3",
+		"oAP": "\/ES5T3\/83\/s\/instruccion2.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst3.mp3": {
+	"\/ES5T3\/83\/s\/instruccion3.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Inst3.mp3",
+		"oAP": "\/ES5T3\/83\/s\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Intro1.mp3": {
+	"\/ES5T3\/83\/s\/intro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/ES5T3\/83\/s\/Elaboro un tríptico Es5°T3_Intro1.mp3",
+		"oAP": "\/ES5T3\/83\/s\/intro.mp3",
 		"oF": 0
 		},
 	"\/ES6T1\/29\/asound\/instruccion.mp3": {
