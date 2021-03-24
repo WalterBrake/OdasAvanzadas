@@ -154,7 +154,7 @@
             <div class="comic w50 wm80"><img class="w100" src="i/e2.png"/>
               <!--+dial('tr', 'n', 'au1', 'a', '')-->
               <div class="dialog tl tip-b" v-if="temps.a">
-                <audiotext audio="s/a14.mp3" :autoplay="true" @completed="temps.b=true" text="¿Qué pesa más, estas dos hojas grandes de espinaca o estas tres cebollas?"></audiotext>
+                <audiotext audio="s/a14.mp3" :autoplay="true" @completed="temps.b=true" text="¿Qué pesa más, este manojo de espinacas grandes o estas tres cebollas?"></audiotext>
               </div>
               <div class="dialog tr tip-b" v-if="temps.c">
                 <audiotext audio="s/a15.mp3" :autoplay="true" @completed="temps.d=true" text="Las cebollas, porque aunque las hojas de espinaca son muy grandes son más ligeras. "></audiotext>
@@ -302,7 +302,7 @@
           app.temps.g = false
       }
       
-      app.currentScene = 0
+      app.currentScene = 6
       app.scenesCount = 4
     </script>
   </body>
