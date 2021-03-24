@@ -65,7 +65,9 @@
           top: 74%;
       }
       
-      
+      .drag2 .drag img{
+          max-width: 90px;                
+      }
       .drag2 .drag {
           width: auto;
           height: auto;
@@ -100,8 +102,9 @@
       .triptico2 .drop.isok {
           background: transparent;
           box-shadow: none;
-          font-size: 0.5rem;
+      
           line-height: 1;
+          padding: 1px;
       }
       @media (max-width: 680px) {
           .triptico2 .drop.isok {
@@ -187,6 +190,10 @@
           border-radius: 50%;
           left: 67%;
       }
+      .triptico3 .drop.isok{
+          padding: 1px;
+          line-height: 1 !important;
+      }
       
       
       
@@ -222,8 +229,8 @@
             </div>
             <div class="w50 text-center drag1">
               <div class="row wrap">
-                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
-                  <div>El título del tríptico.</div>
+                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Causas de la situación.</div>
                 </drag>
                 <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>Una frase que indique prevención de <em>bullying</em>.</div>
@@ -231,11 +238,11 @@
                 <drag data="1d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>Un logotipo (el de tu escuela, el de alguna asociación o empresa).</div>
                 </drag>
-                <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
-                  <div>Causas de la situación.</div>
+                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>El título del tríptico.</div>
                 </drag>
-                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/1a.png"/></drag>
                 <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/1b.png"/></drag>
+                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/1a.png"/></drag>
               </div>
             </div>
           </div>
@@ -245,8 +252,8 @@
       <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
         <info type="dragdrop" title="Elaboro un tríptico" text="Ahora, coloca los elementos que deben estar en las secciones interiores.  Guíate por lo que ya ha escrito Brenda." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 around">
-            <div class="w60 ws50">
+          <div class="row w100 around wrap">
+            <div class="w60 ws100">
               <div class="relative triptico2"><img class="w100" src="i/2triptico.png"/>
                 <div class="drop dr2" data="1a" droptimes="untilok"></div>
                 <div class="drop dr2" data="1b" droptimes="untilok"></div>
@@ -254,12 +261,8 @@
                 <div class="drop dr2" data="1d" droptimes="untilok"></div>
               </div>
             </div>
-            <div class="w40 drag2">
+            <div class="w40 drag2 ws100">
               <div class="row wrap">
-                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
-                  <div>
-                     1. Idea principal.<br/>2. Público a quien está dirigido.<br/>3. Descripción de la situación.<br/>4. Personas a quienes afecta esta situación</div>
-                </drag>
                 <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>1.Cómo prevenir la situación.<br/>2. Consejos y personas que pueden ayudar.</div>
                 </drag>
@@ -270,6 +273,10 @@
                 <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>
                      1. El título del tríptico.<br/>2. Una frase que indique prevención de bullying.<br/>3. Una imagen que represente la frase y el título.</div>
+                </drag>
+                <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>
+                     1. Idea principal.<br/>2. Público a quien está dirigido.<br/>3. Descripción de la situación.<br/>4. Personas a quienes afecta esta situación</div>
                 </drag>
                 <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/2a.png"/></drag>
                 <drag data="no" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok"><img class="w100" src="i/2b.png"/></drag>
@@ -282,8 +289,8 @@
       <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
         <info type="dragdrop" title="Elaboro un tríptico" text="Para terminar, coloca los elementos de las secciones finales." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100 around">
-            <div class="w60 ws50">
+          <div class="row w100 around wrap">
+            <div class="w60 ws100">
               <div class="relative triptico3"><img class="w100" src="i/3triptico.png"/>
                 <div class="drop dr2" data="1a" droptimes="untilok"></div>
                 <div class="drop dr2" data="1b" droptimes="untilok"></div>
@@ -292,16 +299,16 @@
                 <div class="drop dr2" data="1e" droptimes="untilok"></div>
               </div>
             </div>
-            <div class="w40 drag3">
+            <div class="w40 drag3 ws100">
               <div class="row wrap">
+                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
+                  <div>Datos de autores del tríptico (nombre, domicilio, teléfono, correo electrónico y página web).</div>
+                </drag>
                 <drag data="1a" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>Consecuencias del bullying.(cotinuación)</div>
                 </drag>
                 <drag data="1b" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>Recomendaciones finales.</div>
-                </drag>
-                <drag data="1c" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
-                  <div>Datos de autores del tríptico (nombre, domicilio, teléfono, correo electrónico y página web).</div>
                 </drag>
                 <drag data="1d" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" dropzone-ok-class="isok" initclass="txt">
                   <div>

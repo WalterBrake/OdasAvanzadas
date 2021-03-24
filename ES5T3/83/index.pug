@@ -62,7 +62,9 @@ html(lang="es")
                 top: 74%;
             }
 
-
+            .drag2 .drag img{
+                max-width: 90px;                
+            }
             .drag2 .drag {
                 width: auto;
                 height: auto;
@@ -97,8 +99,9 @@ html(lang="es")
             .triptico2 .drop.isok {
                 background: transparent;
                 box-shadow: none;
-                font-size: 0.5rem;
+
                 line-height: 1;
+                padding: 1px;
             }
             @media (max-width: 680px) {
                 .triptico2 .drop.isok {
@@ -184,6 +187,10 @@ html(lang="es")
                 border-radius: 50%;
                 left: 67%;
             }
+            .triptico3 .drop.isok{
+                padding: 1px;
+                line-height: 1 !important;
+            }
 
 
 
@@ -215,34 +222,26 @@ html(lang="es")
                                 .drop(data="1d" droptimes="untilok").dr2
                         .w50.text-center.drag1
                             .row.wrap
-                                drag(data="1a" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div El título del tríptico.
+                                drag(data="no" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Causas de la situación.
                                 drag(data="1b" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Una frase que indique prevención de #[em bullying].
                                 drag(data="1d" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Un logotipo (el de tu escuela, el de alguna asociación o empresa).
-                                drag(data="no" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Causas de la situación.
-                                drag(data="1c" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok"): img(src="i/1a.png").w100
+                                drag(data="1a" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div El título del tríptico.
                                 drag(data="no" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok"): img(src="i/1b.png").w100
+                                drag(data="1c" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok"): img(src="i/1a.png").w100
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca los elementos que deben estar en las secciones interiores.  Guíate por lo que ya ha escrito Brenda." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
-                    .row.w100.around
-                        .w60.ws50
+                    .row.w100.around.wrap
+                        .w60.ws100
                             .relative.triptico2
                                 img(src="i/2triptico.png").w100
                                 .drop(data="1a" droptimes="untilok").dr2
                                 .drop(data="1b" droptimes="untilok").dr2
                                 .drop(data="1c" droptimes="untilok").dr2
                                 .drop(data="1d" droptimes="untilok").dr2
-                        .w40.drag2
+                        .w40.drag2.ws100
                             .row.wrap
-                                drag(data="1a" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div 
-                                    | 1. Idea principal.
-                                    br
-                                    | 2. Público a quien está dirigido.
-                                    br
-                                    | 3. Descripción de la situación.
-                                    br
-                                    | 4. Personas a quienes afecta esta situación
                                 drag(data="1b" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div
                                     | 1.Cómo prevenir la situación.
                                     br
@@ -259,6 +258,14 @@ html(lang="es")
                                     | 2. Una frase que indique prevención de bullying.
                                     br
                                     | 3. Una imagen que represente la frase y el título.
+                                drag(data="1a" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div 
+                                    | 1. Idea principal.
+                                    br
+                                    | 2. Público a quien está dirigido.
+                                    br
+                                    | 3. Descripción de la situación.
+                                    br
+                                    | 4. Personas a quienes afecta esta situación
                                 drag(data="1c" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok"): img(src="i/2a.png").w100
                                 drag(data="no" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok"): img(src="i/2b.png").w100
             
@@ -266,8 +273,8 @@ html(lang="es")
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Para terminar, coloca los elementos de las secciones finales." textaudio="s/instruccion3.mp3" :autoplay="true")
                 activity
-                    .row.w100.around
-                        .w60.ws50
+                    .row.w100.around.wrap
+                        .w60.ws100
                             .relative.triptico3
                                 img(src="i/3triptico.png").w100
                                 .drop(data="1a" droptimes="untilok").dr2
@@ -275,11 +282,11 @@ html(lang="es")
                                 .drop(data="1c" droptimes="untilok").dr2
                                 .drop(data="1d" droptimes="untilok").dr2
                                 .drop(data="1e" droptimes="untilok").dr2
-                        .w40.drag3
+                        .w40.drag3.ws100
                             .row.wrap
+                                drag(data="1c" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Datos de autores del tríptico (nombre, domicilio, teléfono, correo electrónico y página web).
                                 drag(data="1a" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Consecuencias del bullying.(cotinuación)
                                 drag(data="1b" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Recomendaciones finales.
-                                drag(data="1c" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div Datos de autores del tríptico (nombre, domicilio, teléfono, correo electrónico y página web).
                                 drag(data="1d" dropzone=".drop" stay-if-ok append-to-dropzone dropzone-ok-class="isok" initclass="txt"): div 
                                     | 1. Causas de la situación.
                                     br
