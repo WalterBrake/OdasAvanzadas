@@ -129,7 +129,9 @@ var app = new Vue({
         checkIfSoundsArePlaying(){
             var allmuted = true
             for(var hw in Howler._howls){
-                if(Howler._howls[hw].playing()){ allmuted = false }
+                if(Howler._howls[hw].playing() && Howler._howls[hw]._state == 'loaded' ){
+                    allmuted = false
+                }
             }
             if(allmuted){
                 clearInterval(this.timeoutSounds)

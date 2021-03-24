@@ -72,7 +72,6 @@ Vue.component('audiotext', {
                 onplay: function () {
                     _this.textanimation(_this.sound.duration())
                 },
-                
                 onend: function () {
                     _this.playing = false
                     _this.$emit('completed')
@@ -81,6 +80,7 @@ Vue.component('audiotext', {
                     _this.playing = false
                 }
             });
+            //console.log(_this.sound._state)
         }
     },
     mounted () {
