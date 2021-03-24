@@ -48,7 +48,7 @@ html(lang="es")
                                 .common.mt-1
                                     number(c=5 smaller) Perímetro =
                                     .row.w100
-                                        desplegar(:answer-num="0" show-ok modal-options  :options="[24,26,28]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                                        desplegar(:answer-num="1" show-ok modal-options  :options="[24,26,28]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
                                         div unidades.
             
             // SCENES
@@ -76,7 +76,7 @@ html(lang="es")
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Elige la respuesta correcta para resolver los problemas de área y perímetro." textaudio="s/instruccion1.mp3" :autoplay="false")
                 activity
-                        .row.w100: .common: audiotext(:autoplay="true" audio="s/audio3.mp3" text="Ana pintó una pared de su habitación que mide 9 unidades de largo por 6 unidades de ancho. ¿Cuánto mide la pared de área y de perímetro?")
+                        .row.w100: .common: audiotext(:autoplay="true" audio="s/audio3.mp3" text="Ana pintó una pared de su habitación que mide 9 unidades de largo por 5 unidades de ancho. ¿Cuánto mide la pared de área y de perímetro?")
 
                         .row.w100.wrap.mt-1
                             .w40: img(src="i/c.png").w100

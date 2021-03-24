@@ -60,7 +60,7 @@
                 <div class="common mt-1">
                   <number c="5" smaller="smaller">Perímetro =</number>
                   <div class="row w100">
-                    <desplegar :answer-num="0" show-ok="show-ok" modal-options="modal-options" :options="[24,26,28]">
+                    <desplegar :answer-num="1" show-ok="show-ok" modal-options="modal-options" :options="[24,26,28]">
                       <template v-slot:option="{option}">
                         <number smaller="smaller" randomc="randomc">{{option.text}}</number>
                       </template>
@@ -117,7 +117,7 @@
         <activity>
           <div class="row w100">
             <div class="common">
-              <audiotext :autoplay="true" audio="s/audio3.mp3" text="Ana pintó una pared de su habitación que mide 9 unidades de largo por 6 unidades de ancho. ¿Cuánto mide la pared de área y de perímetro?"></audiotext>
+              <audiotext :autoplay="true" audio="s/audio3.mp3" text="Ana pintó una pared de su habitación que mide 9 unidades de largo por 5 unidades de ancho. ¿Cuánto mide la pared de área y de perímetro?"></audiotext>
             </div>
           </div>
           <div class="row w100 wrap mt-1">
