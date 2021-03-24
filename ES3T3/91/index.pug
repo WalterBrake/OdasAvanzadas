@@ -66,9 +66,9 @@ html(lang="es")
                     .row.w100.wrap
                         template(v-for="(i, index) in temps.drags")
                             template(v-if="i.d")
-                                drag(ref="drgs" :data="i.d" extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                                drag(ref="drgs" :data="i.d" extval dropzone=".drop" append-clone initclass="txt"): div(v-html="i.t")
                             template(v-else)
-                                drag(ref="drgs" :data="i.v" isfalse extval dropzone=".drop" append-clone initclass="txt"): div {{i.t}}
+                                drag(ref="drgs" :data="i.v" isfalse extval dropzone=".drop" append-clone initclass="txt"): div(v-html="i.t")
                     
                     .text-center: button(@click="dragValidation(['drgs'], 9)").button.big.animate__animated.animate__flip Verificar
             // SCENES
@@ -114,7 +114,7 @@ html(lang="es")
                     {t: 'contó'},
                     {t: 'respirar', d: 'in'},
                     {t: 'saca', d: 'im'},
-                    {t: 'llegó'},
+                    {t: 'lleg&oacute;'},
                     {t: 'acariciar', d: 'in'},
                     {t: 'ponte', d: 'im'}
                 ])

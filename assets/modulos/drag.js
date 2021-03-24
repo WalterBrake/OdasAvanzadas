@@ -302,7 +302,15 @@ Vue.component('drag', {
         appendCloneToDropzoneFn(dropzone, e){
             if(this.appendClone != undefined){
                 var obj = this.$refs.drag.children[0].cloneNode(true)
+                if(dropzone.getAttribute('data') == this.data){
+                    obj.setAttribute('isright', true)
+                } else {
+                    obj.setAttribute('isright', false)
+                }
                 obj.setAttribute('isclone', true)
+                if(this.isfalse!=undefined){
+                    obj.setAttribute('isfalse', true)
+                }
                 dropzone.append(obj)
                 this.$refs.drag.setAttribute('wascloned', true)
                 this.clonedIn.push(dropzone)
@@ -494,9 +502,10 @@ Vue.component('drag', {
             }
         },
         removeClones () {
+
             for(var i in this.clonedIn){
                 let dzone = this.clonedIn[i]
-                let theclone = dzone.querySelectorAll('[isclone]')
+                let theclone = dzone.querySelectorAll('[isright="false"]')
                 dzone.classList.remove('dropzoneused')
                 // minus droppedtimes
                 if(this.undroppable != undefined || this.extval){
@@ -506,6 +515,7 @@ Vue.component('drag', {
                     dzone.setAttribute('droppedtimes', minus)
                 }
                 //---
+
                 theclone[0].remove()
             }
             this.$refs.drag.removeAttribute('wascloned')

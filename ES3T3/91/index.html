@@ -81,12 +81,12 @@
             <template v-for="(i, index) in temps.drags">
               <template v-if="i.d">
                 <drag ref="drgs" :data="i.d" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
-                  <div>{{i.t}}</div>
+                  <div v-html="i.t"></div>
                 </drag>
               </template>
               <template v-else="v-else">
                 <drag ref="drgs" :data="i.v" isfalse="isfalse" extval="extval" dropzone=".drop" append-clone="append-clone" initclass="txt">
-                  <div>{{i.t}}</div>
+                  <div v-html="i.t"></div>
                 </drag>
               </template>
             </template>
@@ -177,7 +177,7 @@
           {t: 'contó'},
           {t: 'respirar', d: 'in'},
           {t: 'saca', d: 'im'},
-          {t: 'llegó'},
+          {t: 'lleg&oacute;'},
           {t: 'acariciar', d: 'in'},
           {t: 'ponte', d: 'im'}
       ])
