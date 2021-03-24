@@ -105,7 +105,7 @@
         </activity>
       </scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==5" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit">
+      <scene v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit">
         <info type="seleccionar" title="Un día de compras" :autoplay="false">
           <audiotext :autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b"></audiotext>
         </info>

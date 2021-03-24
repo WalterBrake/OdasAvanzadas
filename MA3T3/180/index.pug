@@ -98,7 +98,7 @@ html(lang="es")
                     button(@click="sceneCompleted(false)" v-if="temps.c").button.big.animate__animated.animate__flip Continuar
             
             // SCENES
-            scene(v-if="currentScene==5" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit")
+            scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25" @loaded="resetit")
                 info(type="seleccionar" title=title :autoplay="false")
                     audiotext(:autoplay="true" audio="s/instruccion1.mp3" text="Selecciona la respuesta correcta" v-if="temps.b")
                 activity
