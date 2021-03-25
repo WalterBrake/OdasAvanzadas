@@ -87,7 +87,7 @@ html(lang="es")
                         img(src="i/e.png").w80.ws100
                     .row.w80.ws90.flex-start.common
                         div ¿Cuántos trapecios tendrá la figura 5?
-                        .w30.ws50: desplegar(:answer-num="1" show-ok modal-options  :options="[20, 16, 10]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
+                        .w30.ws50: desplegar(:answer-num="0" show-ok modal-options  :options="[20, 16, 10]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
                     .row.w80.flex-start.common
                         div ¿De cuántos trapecios es la constante? 
                         .w30.ws50: desplegar(:answer-num="2" show-ok modal-options  :options="[2, 3, 4]" ): template(v-slot:option="{option}"): number(smaller randomc) {{option.text}}
