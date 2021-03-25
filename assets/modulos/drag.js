@@ -43,6 +43,7 @@ Vue.component('drag', {
             clonedIn: [],
             dragoks: 0,
             oktimes: 0,
+            state: 'unset',
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -170,6 +171,7 @@ Vue.component('drag', {
                     if(!isdrop) { _this.hoverExitHitTest(dropzone, e) }
                 }
             }
+            _this.state = 'set'
             if(isdrop && drops == 0){ 
                     _this.backToInitPos()
                     _this.$emit('notdropped')
@@ -304,8 +306,10 @@ Vue.component('drag', {
                 var obj = this.$refs.drag.children[0].cloneNode(true)
                 if(dropzone.getAttribute('data') == this.data){
                     obj.setAttribute('isright', true)
+                    this.isItOk = true
                 } else {
                     obj.setAttribute('isright', false)
+                    this.isItOk = false
                 }
                 obj.setAttribute('isclone', true)
                 if(this.isfalse!=undefined){
@@ -502,7 +506,6 @@ Vue.component('drag', {
             }
         },
         removeClones () {
-
             for(var i in this.clonedIn){
                 let dzone = this.clonedIn[i]
                 let theclone = dzone.querySelectorAll('[isright="false"]')
@@ -515,7 +518,7 @@ Vue.component('drag', {
                     dzone.setAttribute('droppedtimes', minus)
                 }
                 //---
-
+                this.state = 'unset'
                 theclone[0].remove()
             }
             this.$refs.drag.removeAttribute('wascloned')
@@ -533,18 +536,19 @@ Vue.component('drag', {
             }*/
         },
         externalValidation(){
+
             let theresult = false
             if(this.isItOk == true){
                 theresult = true
             } else {
-                this.undroppableFn()
-                this.backToInitPos()
-                this.removeClones()
-                if(this.isfalse != undefined){
+                if(this.isfalse != undefined && this.state == 'unset'){
                     theresult = true
                 } else {
                     theresult = false
                 }
+                this.undroppableFn()
+                this.backToInitPos()
+                this.removeClones()
             }
             return theresult
         }
