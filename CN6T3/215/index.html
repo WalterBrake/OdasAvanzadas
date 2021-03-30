@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="row wrap around text-center">
-            <clickable v-for="(i, index) in ['Porque se ventila el interior.','Porque refleja el calor del sol al interior.','Porque se ve bonito.']" :key="'b1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+            <clickable v-for="(i, index) in ['Porque se ventila el interior.','Porque refleja el calor del sol al interior.','Porque se ve bonito.']" :key="'b1'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100 txt">
               <number randomc="randomc" smaller="smaller">
                 <div v-html="i"></div>
               </number>
@@ -114,7 +114,7 @@
             </div>
           </div>
           <div class="row wrap around text-center">
-            <clickable v-for="(i, index) in ['El solar cuesta más dinero que el eléctrico.','El solar usa calor directo del sol y el otro debe producir calor usando la electricidad.','No hay diferencias, se usan para lo mismo.']" :key="'b2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100">
+            <clickable v-for="(i, index) in ['El solar cuesta más dinero que el eléctrico.','El solar usa calor directo del sol y el otro debe producir calor usando la electricidad.','No hay diferencias, se usan para lo mismo.']" :key="'b2'+index" :isok="index == 1" simple-ok="simple-ok" initclass="pa-1 w100 txt">
               <number randomc="randomc" smaller="smaller">
                 <div v-html="i"></div>
               </number>

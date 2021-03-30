@@ -659,6 +659,22 @@ embed {
   height: 90%;
   z-index: 9;
 }
+.clickable.clicked.txt {
+  position: relative;
+}
+.clickable.clicked.txt .anim {
+  display: none;
+}
+.clickable.clicked.txt:after {
+  content: "";
+  position: absolute;
+  border: 4px solid #EB018C;
+  border-radius: 10px;
+  left: 5%;
+  top: 5% ;
+  bottom: 5% ;
+  right: 5%;
+}
 .w100 {
   width: 100%;
 }
