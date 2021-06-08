@@ -39,3 +39,34 @@ Vue.component('info', {
         }
     }
 })
+
+
+
+
+
+
+
+
+Vue.component('embedvideo', {
+    props: ['url'],
+    data () { return {
+        openvideo: false
+    }},
+    template: `
+        <div class="embedvideo">
+            <div class="embedvideo_btn animate__animated animate__pulse animate__infinite animate__slower" @click="openvideo=true" v-if="!openvideo"><img src="../../assets/aanim/playbutton.svg"></div>
+            <div class="embedvideo_container" v-else>
+                <div class="embedvideo_content">
+                <iframe
+                    width="560"
+                    height="315"
+                    :src="url"
+                    frameborder="0"
+                    allow="accelerometer;
+                    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="embedvideo_close" @click="openvideo=false"><img src="../../assets/aanim/closebutton.svg"></div>
+                </div>
+            </div>
+        </div>
+    `,
+})
