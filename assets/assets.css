@@ -1668,12 +1668,22 @@ embed {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  font-size: 0.7rem;
+  color: #457278;
 }
 .embedvideo .embedvideo_btn {
   max-width: 180px;
 }
 .embedvideo .embedvideo_btn img {
   width: 100%;
+}
+.embedvideo strong {
+  font-family: 'barnacle_boyregular';
+}
+.embedvideo .embedvideo_txt {
+  background: #E2F1F6;
+  padding: 6px;
+  border-radius: 2px;
 }
 .embedvideo .embedvideo_container {
   position: fixed;

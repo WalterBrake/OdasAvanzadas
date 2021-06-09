@@ -38,7 +38,7 @@ html(lang="es")
             template(v-for="(i, index) in temps.preguntas")
                 scene( v-if="currentScene==index+1" :key="index+1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                     info(type="seleccionar" title=title text="Selecciona la respuesta que corresponda al volumen de los cuerpos geométricos." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false")
-                        .mt-auto: embedvideo(url="https://www.youtube.com/embed/TpWnNWB56IY")
+                        .mt-auto: embedvideo(urlid="TpWnNWB56IY" title="Volumen")
                     activity
                         //.row.w90
                             //sequence(:options="temps.preguntas" ref="seque" @last="temps.last=true" no-nav)
