@@ -54,12 +54,13 @@ Vue.component('embedvideo', {
     }},
     template: `
         <div class="embedvideo">
-            <div class="embedvideo_btn animate__animated animate__pulse animate__infinite animate__slower" @click="openvideo=true" v-if="!openvideo">
+            <div class="embedvideo_btn animate__animated animate__pulse animate__infinite animate__slower" @click="openvideo=true">
+                <div class="embedvideo_vervideo">Ver Video</div>
                 <img src="../../assets/aanim/playbutton.svg">
-                <div>{{title}}</div>
+                <div class="embedvideo_title">{{title}}</div>
                 <div><strong>Montenegro hasta tu casa</strong></div>
             </div>
-            <div class="embedvideo_container" v-else>
+            <div class="embedvideo_container" v-if="openvideo">
                 <div class="embedvideo_content">
                 <iframe
                     width="560"
