@@ -155,7 +155,7 @@ var app = new Vue({
                     _this.notfoundimg()
 
                     _this.sceneCompletedCalled = false
-                    
+                    console.log(_this.currentScene, _this.scenesCount+1)
                     if(_this.currentScene == _this.scenesCount+1) {
                         _this.ended()
                     }
