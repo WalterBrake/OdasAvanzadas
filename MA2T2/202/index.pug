@@ -65,6 +65,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
                 info(type="relacionar" title=title text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3xK9KxPxd4g" title="Cuerpos geométricos")
                 activity
                     .row.w100
                         .w50.row.wrap
@@ -80,6 +81,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="relacionar" title=title text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="3xK9KxPxd4g" title="Cuerpos geométricos")
                 activity
                     .row.w100
                         .w50.row.wrap

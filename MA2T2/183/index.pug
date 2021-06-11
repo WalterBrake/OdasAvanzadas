@@ -123,6 +123,7 @@ html(lang="es")
             // SCENES P1
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="¿Cuántos litros usó el abuelo para llenar los vasos  de Elena?  Selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .row.w100.text-center.mb-1: img(src="i/nina1.png").w30
                     .h4.text-center ¿Cuántos litros usó el abuelo para llenar los vasos de Elena? 
@@ -131,6 +132,7 @@ html(lang="es")
             // SCENES 
             scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .row.w100: videoplayer(path="i/v2" :autoplay="true" c="2" ref="v1" @completed="temps.b=true")
                     .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Siguiente
@@ -138,6 +140,7 @@ html(lang="es")
             // SCENES P2
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="¿Cuántos vasos de Alan llenan un vaso de Elena? Selecciona la respuesta correcta." textaudio="s/instruccion3.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .row.w100.text-center.mb-1
                         img(src="i/nino1.png").w20
@@ -148,6 +151,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==5" hidescorebox :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="En la granja del abuelo Roque, sus nietos están apunto de aprender a medir los líquidos usando el litro." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .row.w100: videoplayer(path="i/v3" :autoplay="true" c="2" ref="v1" @completed="temps.c=true")
                     .row.w100(v-if="temps.c"): button(@click="sceneCompleted(false)").button.big Siguiente
@@ -155,6 +159,7 @@ html(lang="es")
             // SCENES P3
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="¿Cuántos litros le hacen falta a Elena para llenar su vaso?  Selecciona la respuesta correcta." textaudio="s/instruccion4.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .row.w100.text-center.mb-1: img(src="i/nina2.png").w30
                     .h4.text-center ¿Cuántos litros le hacen falta a Elena para llenar su vaso? 
@@ -163,6 +168,7 @@ html(lang="es")
             // SCENES P4
             scene(v-if="currentScene==7" :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     .h4.text-center ¿Cuántos litros sobrarán en el recipiente del abuelo si llena sólo los vasos de Elena?
                     .row.w100
@@ -185,6 +191,7 @@ html(lang="es")
             // SCENES P5
             scene(v-if="currentScene==8" :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
                     //.row.w100.text-center.mb-1: img(src="i/nino2.png").w25
                     //.h4.text-center ¿Cuántos vasos como el de Alan se pueden llenar con el recipiente del abuelo?
@@ -210,6 +217,7 @@ html(lang="es")
             // SCENES P6
             scene(v-if="currentScene==9" :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, coloca la respuesta correcta en la casilla." textaudio="s/instruccion5.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="xwQFizMTyFA" title="Comparación de pesos")
                 activity
 
                     .h4.text-center ¿De qué formas se puede llenar el recipiente del abuelo usando los vasos de los niños?

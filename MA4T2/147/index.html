@@ -145,7 +145,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
-        <info type="dragdrop" title="Descubro los cuadriláteros" text="Coloca la figura y su nombre de acuerdo con la descripción." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Descubro los cuadriláteros" text="Coloca la figura y su nombre de acuerdo con la descripción." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="mPwUPSQKMAU" title="Los cuadriláteros"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w100 table">
@@ -207,7 +211,11 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="48" scene-color="#ED1C25">
-        <info type="seleccionar" title="Descubro los cuadriláteros" text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn"></info>
+        <info type="seleccionar" title="Descubro los cuadriláteros" text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn">
+          <div class="mt-auto">
+            <embedvideo urlid="mPwUPSQKMAU" title="Los cuadriláteros"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 wrap">
             <div class="w25 text-center bx animate__animated animate__jello" v-if="temps.a==1"><img class="w50" src="i/lr.png"/>

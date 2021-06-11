@@ -68,7 +68,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
-        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="3xK9KxPxd4g" title="Cuerpos geométricos"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w50 row wrap">
@@ -89,7 +93,11 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
-        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <info type="relacionar" title="Conozco figuras y cuerpos geométricos" text="Relaciona los objetos con el cuerpo geométrico o la figura geométrica que corresponda." textaudio="s/instruccion1.mp3" :autoplay="false">
+          <div class="mt-auto">
+            <embedvideo urlid="3xK9KxPxd4g" title="Cuerpos geométricos"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w50 row wrap">

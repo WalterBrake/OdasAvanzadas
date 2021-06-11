@@ -82,6 +82,7 @@ html(lang="es")
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="El sistema de numeración egipcio es un sistema que apareció en los inicios de la escritura jeroglífica." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
                     audiotext(v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true")
+                    .mt-auto: embedvideo(urlid="B7dJ3HEDYYw" title="Los números egipcios")
                 activity
                     .row.w100.h3.text-center.mb-auto.mt-auto Sistema de numeración egipcio
                     .row.w100(v-if="temps.au3").wrap
@@ -98,6 +99,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, selecciona el número del sistema decimal que equivale a la representación en jeroglíficos egipcios." textaudio="s/instruccion3.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="B7dJ3HEDYYw" title="Los números egipcios")
                 activity
                     .row.w100: .pgr
                         .w40.ws100: img(src="i/b1.png")

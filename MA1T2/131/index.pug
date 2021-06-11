@@ -43,6 +43,7 @@ html(lang="es")
                     audiotext(key="a" audio="s/largos.mp3" text="Selecciona los tentáculos más largos." :autoplay="true" v-if="temps.a")
                     audiotext(key="b" audio="s/mismos.mp3" text="Seleciona los tentáculos que miden los mismo." :autoplay="true" v-if="temps.b")
                     audiotext(key="c" audio="s/cortos.mp3" text="Seleciona los tentáculos más cortos. " :autoplay="true" v-if="temps.c")
+                    .mt-auto: embedvideo(urlid="GnFl9qeSWDs" title="Corto y largo")
                 activity
                     .row.w100
                         embedsvg(src="i/scene.svg" @loaded="buzo")
@@ -50,6 +51,7 @@ html(lang="es")
             // SCENES Preg 1
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="GnFl9qeSWDs" title="Corto y largo")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
@@ -61,6 +63,7 @@ html(lang="es")
             // SCENES Preg 2
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="GnFl9qeSWDs" title="Corto y largo")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
@@ -72,6 +75,7 @@ html(lang="es")
             // SCENES Preg 3
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="GnFl9qeSWDs" title="Corto y largo")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")
@@ -83,6 +87,7 @@ html(lang="es")
             // SCENES Preg 4
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, selecciona la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="GnFl9qeSWDs" title="Corto y largo")
                 activity
                     .row.w50.mb-1
                         embedsvg(src="i/scene.svg" @loaded="buzo2")

@@ -1239,6 +1239,7 @@ embed {
 /* embed video mod */
 
 .embedvideo{
+    margin: 4px 0;
 	display: flex;
 	justify-content: center;
 	cursor: pointer;
@@ -1301,4 +1302,15 @@ embed {
 			width: 100%;
 		}
 	}
+    &.small{
+        padding: 1px 10px;
+        .embedvideo_vervideo{
+            font-size: 0.6rem;
+        }
+        .embedvideo_btn{
+            strong {
+                font-size: 0.6rem;
+            }
+        }
+    }
 }

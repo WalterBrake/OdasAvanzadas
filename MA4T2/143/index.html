@@ -42,7 +42,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="seleccionar" title="Sumo y resto fracciones" text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Sumo y resto fracciones" text="Relaciona cada figura con su fracción correspondiente." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="wLoww6toQuc" title="Sumo y resto fracciones"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="figuras w40">
@@ -84,7 +88,11 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
-        <info type="seleccionar" title="Sumo y resto fracciones" text="Relaciona la respuesta correcta de la suma o resta de fracciones." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Sumo y resto fracciones" text="Relaciona la respuesta correcta de la suma o resta de fracciones." textaudio="s/instruccion2.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="wLoww6toQuc" title="Sumo y resto fracciones"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="figuras w60 fracss">

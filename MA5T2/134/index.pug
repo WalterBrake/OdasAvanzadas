@@ -84,6 +84,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Relaciona las columnas para vincular el cuerpo geométrico con su desarrollo plano y sus características." textaudio="s/instruccion1.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="UBDek7bP740" title="Los prismas")
                 activity
                     .row.w100.around
                         .w20.wm30.cuerpos

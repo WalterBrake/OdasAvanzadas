@@ -74,7 +74,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene ref="es1" v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="52" scene-color="#ED1C25">
-        <info type="dragdrop" title="Cuento de 10 en 10" text="¡Vamos a formar grupos de 10! Coloca 10 peces en cada círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos peces sobraron." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Cuento de 10 en 10" text="¡Vamos a formar grupos de 10! Coloca 10 peces en cada círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos peces sobraron." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="2yDpr_vFWIQ" title="Las unidades y las decenas"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 areas wrap around d1">
             <div class="areas drop" v-for="(i, index) in 5" droptimes="multiple" :droplimit="10" data="p"></div>
@@ -105,7 +109,11 @@
       </scene>
       <!-- SCENES-->
       <scene ref="es2" v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="12" scene-color="#ED1C25">
-        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 soldados en el círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos soldados sobraron." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 soldados en el círculo. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 formaste y cuántos soldados sobraron." textaudio="s/instruccion2.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="2yDpr_vFWIQ" title="Las unidades y las decenas"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 areas wrap around">
             <div class="areas drop" v-for="(i, index) in 1" droptimes="multiple" :droplimit="10" data="p"></div>
@@ -136,7 +144,11 @@
       </scene>
       <!-- SCENES-->
       <scene ref="es3" v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="42" scene-color="#ED1C25">
-        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 abejas en los círculos. Mientras lo haces, cuenta en voz alta. Después escribe en los recuadros cuántos grupos de 10 formaste y cuántas abejas sobraron." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 abejas en los círculos. Mientras lo haces, cuenta en voz alta. Después escribe en los recuadros cuántos grupos de 10 formaste y cuántas abejas sobraron." textaudio="s/instruccion3.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="2yDpr_vFWIQ" title="Las unidades y las decenas"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 areas wrap around">
             <div class="areas drop" v-for="(i, index) in 4" droptimes="multiple" :droplimit="10" data="p"></div>
@@ -167,7 +179,11 @@
       </scene>
       <!-- SCENES-->
       <scene ref="es4" v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="32" scene-color="#ED1C25">
-        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 loros en los círculos. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 figuras formaste y cuántos loros sobraron." textaudio="s/instruccion4.mp3" :autoplay="true"></info>
+        <info type="dragdrop" title="Cuento de 10 en 10" text="Coloca 10 loros en los círculos. Mientras lo haces, cuenta en voz alta. Después, escribe en los recuadros cuántos grupos de 10 figuras formaste y cuántos loros sobraron." textaudio="s/instruccion4.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="2yDpr_vFWIQ" title="Las unidades y las decenas"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 areas wrap around">
             <div class="areas drop" v-for="(i, index) in 3" droptimes="multiple" :droplimit="10" data="p"></div>

@@ -161,6 +161,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Las sucesiones son un conjunto de números, objetos o figuras que ordenamos mediante una regla a la que llamamos progresión aritmética ascendente o descendente, según sea el caso." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.b=true")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w90.around.suc1
                         .animate__animated.animate__bounceIn.animate__delay-1s: number(c=1) 2
@@ -178,6 +179,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca cada auto en el cajón de estacionamiento que le corresponda de acuerdo con el número que tiene." textaudio="s/instruccion2.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w100
                         .w70.esta
@@ -191,6 +193,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la regla o constante que corresponde a cada sucesión y el tipo de progresión aritmética que le corresponda." textaudio="s/instruccion3.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w100: img(src="i/full1.png").w100
                     .row.w100.mt-1.wrap
@@ -207,6 +210,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la regla o constante que corresponde a cada sucesión y el tipo de progresión aritmética que le corresponda." textaudio="s/instruccion3.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w100: img(src="i/full2.png").w100
                     .row.w100.mt-1.wrap
@@ -223,6 +227,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Ahora, coloca la regla o constante que corresponde a cada sucesión y el tipo de progresión aritmética que le corresponda." textaudio="s/instruccion3.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w100: img(src="i/full3.png").w100
                     .row.w100.mt-1.wrap
@@ -240,6 +245,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Para terminar, coloca los números que faltan en la siguiente sucesión." textaudio="s/instruccion4.mp3" :autoplay="false")
+                    .mt-auto: embedvideo(urlid="SnIkjuUI-h8" title="Las sucesiones numéricas")
                 activity
                     .row.w100.wrap.h3.ex3
                         div 550,

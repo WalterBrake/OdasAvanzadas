@@ -142,6 +142,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="Coloca la figura y su nombre de acuerdo con la descripción." textaudio="s/instruccion1.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="mPwUPSQKMAU" title="Los cuadriláteros")
                 activity
                     .row.w100
                         .w100.table
@@ -183,6 +184,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="48" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Ahora, sigue cada indicación. " textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="startsvgfn")
+                    .mt-auto: embedvideo(urlid="mPwUPSQKMAU" title="Los cuadriláteros")
                 activity
                     .row.w100.wrap
                         .w25.text-center.bx(v-if="temps.a==1").animate__animated.animate__jello

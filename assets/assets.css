@@ -1665,6 +1665,7 @@ embed {
 }
 /* embed video mod */
 .embedvideo {
+  margin: 4px 0;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -1729,5 +1730,14 @@ embed {
 }
 .embedvideo .embedvideo_close img {
   width: 100%;
+}
+.embedvideo.small {
+  padding: 1px 10px;
+}
+.embedvideo.small .embedvideo_vervideo {
+  font-size: 0.6rem;
+}
+.embedvideo.small .embedvideo_btn strong {
+  font-size: 0.6rem;
 }
 /*# sourceMappingURL=assets.css.map */

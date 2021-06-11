@@ -78,32 +78,38 @@ html(lang="es")
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/306.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.a = true")
                     .high(v-if="temps.a"): audiotext(audio="s/306.mp3" text="Trescientos seis" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[3,0,6]', '[6,3,0]')
             
             // SCENES P2
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/587.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     .high: audiotext(audio="s/587.mp3" text="Quinientos ochenta y siete" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[5,8,7]', '[7,5,8]')
             // SCENES P3
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/601.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     .high: audiotext(audio="s/601.mp3" text="Seiscientos uno" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[6,0,1]', '[6,1,0]')
             // SCENES P4
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/909.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     .high: audiotext(audio="s/909.mp3" text="Novecientos nueve" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[9,0,9]', '[0,9,9]')
             // SCENES P5
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/422.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     .high: audiotext(audio="s/422.mp3" text="Cuatrocientos veintidos" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[4,2,2]', '[2,4,2]')
             // SCENES P6
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/125.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
                 info(type="dragdrop" title=title text="¡Ayuda a Juan a poner los números en su lugar! Coloca el número en la casilla que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="false")
                     .high: audiotext(audio="s/125.mp3" text="Ciento veinticinco" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="3yOUFdkm5OE" title="Leo, escribo y ordeno números")
                 activity: +casillas('[1,2,5]', '[5,1,2]')
 
             

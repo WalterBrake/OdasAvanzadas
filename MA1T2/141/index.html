@@ -194,6 +194,9 @@
       <scene v-if="currentScene===1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="11" scene-color="#ED1C25">
         <info type="dragdrop" title="Describo figuras" text="Coloca en el robot las figuras que tienen tres lados en los espacios que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true">
           <audiotext v-if="temps.co&gt;=4" :autoplay="true" audio="s/instruccion2.mp3" text="Coloca en el robot las figuras que tienen cuatro lados en los espacios que corresponda."></audiotext>
+          <div class="mt-auto">
+            <embedvideo urlid="tjFbJw4v2Sw" title="Figuras que forman el mundo"></embedvideo>
+          </div>
         </info>
         <activity>
           <div class="row w100">

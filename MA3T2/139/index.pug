@@ -55,6 +55,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Relaciona la fracción numérica con la figura que corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="MA3t2-139" title="Aprendemos fracciones")
                 activity
                     .row.w100
                         .figuras.w40

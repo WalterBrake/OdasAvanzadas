@@ -87,7 +87,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="8" scene-color="#ED1C25">
-        <info type="seleccionar" title="Reconozco los prismas" text="Relaciona las columnas para vincular el cuerpo geométrico con su desarrollo plano y sus características." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Reconozco los prismas" text="Relaciona las columnas para vincular el cuerpo geométrico con su desarrollo plano y sus características." textaudio="s/instruccion1.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="UBDek7bP740" title="Los prismas"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100 around">
             <div class="w20 wm30 cuerpos">

@@ -40,6 +40,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="$refs.a1.playstop()")
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100.text-center: number(c=8 small) Un día en la clase de ballet
                     .row.w100
@@ -51,6 +52,7 @@ html(lang="es")
             // SCENES P2
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w50.wm80.v2
                             img(src="i/v2.png").w100
@@ -63,6 +65,7 @@ html(lang="es")
             // SCENES P3
             scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w50.wm80.v3
                             img(src="i/v3.png").w100
@@ -75,6 +78,7 @@ html(lang="es")
             // SCENES P4
             scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w50.wm80.v4
                             img(src="i/v4.png").w100
@@ -87,6 +91,7 @@ html(lang="es")
             // SCENES P5
             scene(v-if="currentScene==5" :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w50.wm80.v5
                             img(src="i/v5.png").w100
@@ -99,6 +104,7 @@ html(lang="es")
             // SCENES P6
             scene(v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w80.wm100.v6
                             img(src="i/v6.png").w100
@@ -111,6 +117,7 @@ html(lang="es")
             // SCENES P7
             scene(v-if="currentScene==7" hidescorebox :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la clase de ballet y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion1.mp3" :autoplay="false" )
+                    .mt-auto: embedvideo(urlid="qGEmSU076Ak" title="Aprendo a medir los ángulos")
                 activity
                     .row.w100: .vineta.w60.wm90.v7
                             img(src="i/v7.png").w100

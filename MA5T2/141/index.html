@@ -86,6 +86,9 @@
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
         <info type="seleccionar" title="Cuento como un egipcio" text="El sistema de numeración egipcio es un sistema que apareció en los inicios de la escritura jeroglífica." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
           <audiotext v-if="temps.au1" :autoplay="true" audio="s/instruccion2.mp3" text="Observa sus características." @completed="temps.au2 = true"></audiotext>
+          <div class="mt-auto">
+            <embedvideo urlid="B7dJ3HEDYYw" title="Los números egipcios"></embedvideo>
+          </div>
         </info>
         <activity>
           <div class="row w100 h3 text-center mb-auto mt-auto">Sistema de numeración egipcio</div>
@@ -112,7 +115,11 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
-        <info type="seleccionar" title="Cuento como un egipcio" text="Ahora, selecciona el número del sistema decimal que equivale a la representación en jeroglíficos egipcios." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Cuento como un egipcio" text="Ahora, selecciona el número del sistema decimal que equivale a la representación en jeroglíficos egipcios." textaudio="s/instruccion3.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="B7dJ3HEDYYw" title="Los números egipcios"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="pgr">

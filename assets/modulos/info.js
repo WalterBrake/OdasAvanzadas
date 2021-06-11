@@ -48,12 +48,12 @@ Vue.component('info', {
 
 
 Vue.component('embedvideo', {
-    props: ['url', 'title'],
+    props: ['urlid', 'title', 'small'],
     data () { return {
         openvideo: false
     }},
     template: `
-        <div class="embedvideo">
+        <div :class="['embedvideo', small!=undefined ? 'small':'']">
             <div class="embedvideo_btn animate__animated animate__pulse animate__infinite animate__slower" @click="openvideo=true">
                 <div class="embedvideo_vervideo">Ver Video</div>
                 <img src="../../assets/aanim/playbutton.svg">
