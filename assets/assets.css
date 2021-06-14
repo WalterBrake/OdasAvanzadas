@@ -1740,4 +1740,56 @@ embed {
 .embedvideo.small .embedvideo_btn strong {
   font-size: 0.6rem;
 }
+.videosDibujable {
+  position: fixed;
+  right: 4px;
+  bottom: 4px;
+  width: 10%;
+  height: auto;
+  padding: 6px;
+  background: #6BB2BE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 2;
+  box-sizing: border-box;
+  text-align: center;
+}
+.videosDibujable .tucasaoutside {
+  font-family: 'barnacle_boyregular';
+  color: #E0F1F7;
+  font-size: 0.6rem;
+}
+@media (max-width: 860px) {
+  .videosDibujable .tucasaoutside {
+    display: none;
+  }
+}
+.videosDibujable .embedvideo {
+  margin-bottom: 10px;
+  padding: 2px 4px;
+}
+.videosDibujable .embedvideo .embedvideo_btn img {
+  max-width: 32px;
+}
+.videosDibujable .embedvideo.smaller .embedvideo_title {
+  font-size: 0.7rem;
+  line-height: 0.8;
+}
+.videosDibujable .embedvideo.smaller .embedvideo_vervideo {
+  display: none;
+}
+.videosDibujable .embedvideo.smaller .embedvideo_btn strong {
+  display: none;
+}
+@media (max-width: 860px) {
+  .videosDibujable .embedvideo.smaller {
+    box-shadow: none;
+  }
+  .videosDibujable .embedvideo.smaller .embedvideo_title {
+    display: none;
+  }
+}
 /*# sourceMappingURL=assets.css.map */

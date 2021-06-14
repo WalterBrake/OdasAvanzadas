@@ -55,6 +55,8 @@ Vue.component('DrawEditor', {
                     <button class="button limpiar" @click="cleanCanvas(this)"></button>
                     <button class="button finalizar" @click="downloadCanvas(this)" v-if="firstAction"></button>
                 </div>
+            
+
             </div>
         </div>
     `,

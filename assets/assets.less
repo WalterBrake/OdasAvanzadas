@@ -1314,3 +1314,56 @@ embed {
         }
     }
 }
+
+.videosDibujable{
+	position: fixed;
+    right: 4px;
+    bottom: 4px;
+    width: 10%;
+    height: auto;
+    padding: 6px;
+    background: #6BB2BE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    z-index: 2;
+    box-sizing: border-box;
+	text-align: center;
+	
+	.tucasaoutside{
+        font-family: 'barnacle_boyregular';
+		color: #E0F1F7;
+		font-size: 0.6rem;
+		@media (max-width: 860px){
+			display: none;
+		}
+    }
+	
+	.embedvideo{
+		margin-bottom: 10px;
+		padding: 2px 4px;
+		.embedvideo_btn img{ max-width: 32px;}
+		&.smaller{
+			.embedvideo_title{
+				font-size: 0.7rem;
+				line-height: 0.8;
+			}
+			.embedvideo_vervideo{
+				display: none;
+			}
+			.embedvideo_btn{
+				strong {
+					display: none;
+				}
+			}
+			@media (max-width: 860px){
+				box-shadow: none;
+				.embedvideo_title{
+					display: none;
+				}
+			}
+		}
+	}
+}

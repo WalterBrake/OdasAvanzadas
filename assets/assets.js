@@ -26,6 +26,7 @@ var app = new Vue({
     data () {
         return {
             bgimgpdf: '',
+            videosDibujable: null,
             $devmode: false,
             scenesCount: 0,
             score: 0,
@@ -308,7 +309,25 @@ var app = new Vue({
         this.score = h ? h : 100
         ScenesBus.$on('scenePoints', this.scenePointsFn)
 
+        /* DIBUJABLE */
+        /* URL FUNCTIONS */
         this.bgimgpdf = window.location.hash ? window.location.hash.replace('#img=', '') : ''
+
+        var videos = this.bgimgpdf.split('?video=')
+        videos = videos.slice(1)
+        if(videos.length){
+            this.videosDibujable = []
+            for(var i in videos){
+                var str = videos[i]
+                str = str.replace(/'/g, '"')
+                var strJS = JSON.parse(str)
+                this.videosDibujable.push({title: decodeURI(strJS[0]), id: strJS[1] })
+
+            }
+            console.log(this.videosDibujable)
+        }
+        /* END DIBUJABLE */
+
 
 
         this.loadScreencap()
