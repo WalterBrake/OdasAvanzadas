@@ -17,7 +17,11 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="Analizo los datos" text="Se hizo una pequeña encuesta en el grupo de 4º B para saber la preferencia de mascotas en los alumnos." textaudio="s/intro.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Analizo los datos" text="Se hizo una pequeña encuesta en el grupo de 4º B para saber la preferencia de mascotas en los alumnos." textaudio="s/intro.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="lEed18Ir4fg" title="Represento los datos"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w80"><img class="w100" src="i/a.png"/></div>
@@ -29,7 +33,11 @@
       </scene>
       <!-- SCENES-->
       <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
-        <info type="seleccionar" title="Analizo los datos" text="Observa la tabla de resultados y la gráfica, y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Analizo los datos" text="Observa la tabla de resultados y la gráfica, y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true">
+          <div class="mt-auto">
+            <embedvideo urlid="lEed18Ir4fg" title="Represento los datos"></embedvideo>
+          </div>
+        </info>
         <activity>
           <div class="row w100">
             <div class="w90"><img class="w100" src="i/b.png"/></div>

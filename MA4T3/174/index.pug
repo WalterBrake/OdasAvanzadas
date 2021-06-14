@@ -17,6 +17,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Se hizo una pequeña encuesta en el grupo de 4º B para saber la preferencia de mascotas en los alumnos." textaudio="s/intro.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="lEed18Ir4fg" title="Represento los datos")
                 activity
                     .row.w100
                         .w80: img(src="i/a.png").w100
@@ -25,6 +26,7 @@ html(lang="es")
             // SCENES
             scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
                 info(type="seleccionar" title=title text="Observa la tabla de resultados y la gráfica, y selecciona la respuesta correcta para cada pregunta." textaudio="s/instruccion2.mp3" :autoplay="true")
+                    .mt-auto: embedvideo(urlid="lEed18Ir4fg" title="Represento los datos")
                 activity
                     .row.w100
                         .w90: img(src="i/b.png").w100
