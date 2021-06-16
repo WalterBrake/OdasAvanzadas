@@ -239,13 +239,13 @@
 
            
             <activity>
+                
+                <div class="row w100 videosDibujable" v-if="videosDibujable" >
+                    <embedvideo v-for="(i, index) in videosDibujable" :urlid="i.id" :title="i.title"></embedvideo>
+                </div>
 
                 <draw-editor :imgbg="bgimgpdf.length ? bgimgpdf : 'aimg/test.png'"></draw-editor>
                 
-                <div class="videosDibujable" v-if="videosDibujable" >
-                    <embedvideo v-for="(i, index) in videosDibujable" :urlid="i.id" :title="i.title" smaller></embedvideo>
-                    <div class="tucasaoutside"><strong>Montenegro hasta tu casa</strong></div>
-                </div>
             </activity>
         </scene> <!-- end scene -->
         
