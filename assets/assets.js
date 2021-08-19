@@ -157,7 +157,7 @@ var app = new Vue({
 
                     _this.sceneCompletedCalled = false
                     console.log(_this.currentScene, _this.scenesCount+1)
-                    if(_this.currentScene == _this.scenesCount+1) {
+                    if(_this.currentScene >= _this.scenesCount+1) {
                         _this.ended()
                     }
                 }
@@ -167,6 +167,9 @@ var app = new Vue({
             var _this = this
             _this.finalData.screen = _this.screen
             var endData = JSON.stringify(_this.finalData)
+            
+            console.log('beforestringify:::', _this.finalData)
+            console.log('postmessage:::', endData)
             window.top.postMessage(endData, "*")
         },
         cleanstr(str){

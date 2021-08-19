@@ -70,7 +70,7 @@
                         <div class="aud right"><dialogaudio key="a3"  audio="asound/a3.mp3" :autoplay="false" show-on-play ref="a3" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <!--<button class="button prev" @click="temps='a'">Anterior</button>--><div></div><button class="button next" @click="temps='b'">Siguiente</button>
+                        <!--<button class="button prev" @click="clickjump('a')">Anterior</button>--><div></div><button class="button next" @click="clickjump('b')">Siguiente</button>
                     </div>
                 </div>
                 <!--strip B-->
@@ -81,7 +81,7 @@
                         <div class="aud bottom"><dialogaudio key="b2"  audio="asound/b2.mp3" :autoplay="false" show-on-play ref="b2" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='a'">Anterior</button><button class="button next" @click="temps='c'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('a')">Anterior</button><button class="button next" @click="clickjump('c')">Siguiente</button>
                     </div>
                 </div>
                 <!--strip C-->
@@ -93,7 +93,7 @@
                             <dialogaudio key="c3"  audio="asound/c3.mp3" :autoplay="false" show-on-play ref="c3" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='b'">Anterior</button><button class="button next" @click="temps='d'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('b')">Anterior</button><button class="button next" @click="clickjump('d')">Siguiente</button>
                     </div>
                 </div>
                 <!--strip D-->
@@ -104,7 +104,7 @@
                         <div class="aud right"><dialogaudio key="d2"  audio="asound/d2.mp3" :autoplay="false" show-on-play ref="d2" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='c'">Anterior</button><button class="button next" @click="temps='e'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('c')">Anterior</button><button class="button next" @click="clickjump('e')">Siguiente</button>
                     </div>
                 </div>
                 <!--strip E-->
@@ -115,7 +115,7 @@
                         <div class="aud right"><dialogaudio key="e2"  audio="asound/e2.mp3" :autoplay="false" show-on-play ref="e2" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='d'">Anterior</button><button class="button next" @click="temps='f'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('d')">Anterior</button><button class="button next" @click="clickjump('f')">Siguiente</button>
                     </div>
                 </div>
                 <!--strip F-->
@@ -127,7 +127,7 @@
                         <div class="aud right"><dialogaudio key="f3"  audio="asound/f3.mp3" :autoplay="false" show-on-play ref="f3" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='e'">Anterior</button><button class="button next" @click="temps='g'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('e')">Anterior</button><button class="button next" @click="clickjump('g')">Siguiente</button>
                     </div>
                 </div>
                 
@@ -138,7 +138,7 @@
                         <div class="aud bottom"><dialogaudio key="g1"  audio="asound/g1.mp3" :autoplay="true" show-on-play ref="g1" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='f'">Anterior</button><button class="button next" @click="temps='h'">Siguiente</button>
+                        <button class="button prev" @click="clickjump('f')">Anterior</button><button class="button next" @click="clickjump('h')">Siguiente</button>
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@
                         <div class="aud bottom"><dialogaudio key="h2"  audio="asound/h2.mp3" :autoplay="false" show-on-play ref="h2" @completed=""></dialogaudio></div>
                     </div>
                     <div class="row buttons w100">
-                        <button class="button prev" @click="temps='g'">Anterior</button><button class="button next finalizar" @click="sceneCompleted(false)">Finalizar</button>
+                        <button class="button prev" @click="clickjump('g')">Anterior</button><button class="button next finalizar" @click="endingFirst">Finalizar</button>
                     </div>
                 </div>
 
@@ -262,7 +262,18 @@
         app.temps = 'a'
         app.currentScene = 0
         app.scenesCount = 5
-        app.$devmode = false
+        app.$devmode = 0
+
+
+        app.endingFirst = function(){
+            for(var hw in Howler._howls){Howler._howls[hw].stop()}
+            app.sceneCompleted(false)
+        }
+        app.clickjump = function(arg){
+            for(var hw in Howler._howls){Howler._howls[hw].stop()}
+            this.temps = arg
+        }
+
     </script>
 </body>
 </html>
