@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mis propias decisiones</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .map lottie-player{
+          position: absolute;
+          left: 0; right: 0;
+          bottom: 0; top: 0;
+          width: 100%;
+          height: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
+        <activity>
+          <div class="row w100 info">
+            <h1>Mis propias decisiones</h1>
+          </div>
+          <audiotext audio="s/instruccion1.mp3" :autoplay="true" @completed="temps.a=true" text="En la vida cotidiana hay acciones que puedes hacer por ti mismo y otras en las que necesitas el acompañamiento de un adulto, es muy importante tener en cuenta esto para que los adultos te proporcionamos esa ayuda y puedas realizar o formar parte de estas actividades."></audiotext>
+          <div class="w30 wm50">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.a"></lottie-player>
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES - calle-->
+      <scene v-for="(i, index) in temps.allscenes" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Mis propias decisiones" text="Selecciona si cada una de las acciones las puedes hacer solo o si las debes hacer acompañado de un adulto." textaudio="s/instruccion2.mp3" :autoplay="index == 0"></info>
+        <activity>
+          <template v-if="!i.animation"><img class="w30 wm50" :src="i.img"/>
+            <div class="row wrap around text-center">
+              <template v-if="i.answer == 'adulto'">
+                <div class="w30 wm50">
+                  <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1" click-sound="s/adulto.mp3" ext-validation="ext-validation" @itsok="oknext(index)"><img class="w100" src="i/adulto.png"/>
+                    <div class="text-center">Puedo hacerlo con un adulto.</div>
+                  </clickable>
+                </div>
+                <div class="w30 wm50">
+                  <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1"><img class="w100" src="i/solo.png" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation"/>
+                    <div class="text-center">Puedo hacerlo solo.</div>
+                  </clickable>
+                </div>
+              </template>
+              <template v-if="i.answer == 'solo'">
+                <div class="w30 wm50">
+                  <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1"><img class="w100" src="i/adulto.png"/>
+                    <div class="text-center">Puedo hacerlo con un adulto.</div>
+                  </clickable>
+                </div>
+                <div class="w30 wm50">
+                  <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1" click-sound="s/solo.mp3" ext-validation="ext-validation" @itsok="oknext(index)"><img class="w100" src="i/solo.png" ignore-already-ok="ignore-already-ok" ext-validation="ext-validation"/>
+                    <div class="text-center">Puedo hacerlo solo.</div>
+                  </clickable>
+                </div>
+              </template>
+            </div>
+          </template>
+          <template v-else="v-else">
+            <div class="map relative w60"><img class="w100" src="i/bg.png"/>
+              <lottie-player :src="i.lottie" :key="'lott'+index" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay="autoplay" loop="loop"></lottie-player>
+            </div>
+            <div class="row w100">
+              <button class="button big" @click="nextScene">Siguiente</button>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==8" hidescorebox="hidescorebox" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Mis propias decisiones" text="" :autoplay="false"></info>
+        <activity>
+          <audiotext audio="s/cierre.mp3" :autoplay="true" @completed="temps.a=true" text="¡Muy bien! Recuerda pedir ayuda a los adultos cuando es necesario."></audiotext>
+          <div class="w30 wm50">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.a"></lottie-player>
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==9" :key="9" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      
+      
+      
+      app.$set(app.temps, 'allscenes', [
+          {animation: false, answer: 'adulto', img: 'i/tag_calle.svg', lottie: 'i/calle.json'},
+          {animation: false, answer: 'solo', img: 'i/tag_banarme.svg', lottie: 'i/banarme.json'},
+          {animation: false, answer: 'solo', img: 'i/tag_vestirme.svg', lottie: 'i/vestirme.json'},
+          {animation: false, answer: 'adulto', img: 'i/tag_escuela.svg', lottie: 'i/escuela.json'},
+          {animation: false, answer: 'adulto', img: 'i/tag_comida.svg', lottie: 'i/comida.json'},
+          {animation: false, answer: 'solo', img: 'i/tag_dientes.svg', lottie: 'i/dientes.json'},
+      ])
+      
+      
+      app.$set(app.temps, 'a', false)
+      
+      
+      app.currentScene = 0
+      app.scenesCount = 6
+      
+      app.oknext = function (inx) {
+          app.temps.allscenes[inx].animation = true
+          s_ok.play()
+      }
+      app.nextScene = function () {
+          EventBus.$emit('isok')
+      }
+    </script>
+  </body>
+</html>

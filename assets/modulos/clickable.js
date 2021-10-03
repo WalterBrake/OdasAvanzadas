@@ -1,6 +1,7 @@
 Vue.component('clickable', {
     props: [
         'value',// v-model | tracking de clickables en la escena
+        'hoverSound', //Sonido al pasar envima
         'clickSound', // sonido al dar click
         'clickErrorSound', // sonido al dar click si es ERROR
         'clickOkSound', // sonido al dar click si es OK
@@ -25,7 +26,7 @@ Vue.component('clickable', {
         }
     },
     template: `
-        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') +' '+ (status?'clicked':'')  + ' ' + (alreadyOk?'alreadyok':'') " @click="clicked">
+        <div ref="clickable" :class="'clickable ' + (initclass!=undefined?initclass:'') +' '+ (status?'clicked':'')  + ' ' + (alreadyOk?'alreadyok':'') " @click="clicked" @mouseover="hoverFn">
             <slot></slot>
             <embed class="anim" v-if="status" src="../../assets/aanim/Select.svg" />
         </div>
@@ -34,6 +35,20 @@ Vue.component('clickable', {
     methods: {
         reset() {  
             this.status = false
+        },
+        hoverFn () {
+
+            if(this.hoverSound!=undefined){
+                var allmuted = true
+                for(var hw in Howler._howls){
+                    if(Howler._howls[hw].playing() && Howler._howls[hw]._state == 'loaded' ){
+                        allmuted = false
+                    }
+                }
+                if(allmuted){
+                    var sound = new Howl({ src: [this.hoverSound], autoplay:true })
+                }
+            }
         },
         clicked (e) {
             if(this.example != undefined){ return false }

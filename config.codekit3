@@ -9484,7 +9484,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 25710,
+		"iS": 10945,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -12770,7 +12770,7 @@
 		},
 	"\/ES4T2\/65\/i\/a8.png": {
 		"ft": 32768,
-		"iS": 86412,
+		"iS": 2281538,
 		"oA": 0,
 		"oAP": "\/ES4T2\/65\/i\/a8.png",
 		"oF": 0,
@@ -14407,6 +14407,261 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/i\/adulto.png": {
+		"ft": 32768,
+		"iS": 174596,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/adulto.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/banarme.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/banarme-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/bg.png": {
+		"ft": 32768,
+		"iS": 2481141,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/calle.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/calle-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/comida.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/comida-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/dientes.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/dientes-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/escuela.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/escuela-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/solo.png": {
+		"ft": 32768,
+		"iS": 84409,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/solo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/sp1.png": {
+		"ft": 32768,
+		"iS": 21131,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/sp1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/sp2.png": {
+		"ft": 32768,
+		"iS": 21105,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/sp2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/sp3.png": {
+		"ft": 32768,
+		"iS": 20484,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/sp3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/sp4.png": {
+		"ft": 32768,
+		"iS": 20505,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/sp4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/sprite.png": {
+		"ft": 32768,
+		"iS": 67686,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/i\/sprite.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC1T1\/4\/i\/tag_banarme.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_banarme.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/tag_calle.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_calle.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/tag_comida.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_comida.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/tag_dientes.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_dientes.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/tag_escuela.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_escuela.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/tag_vestirme.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/FC1T1\/4\/i\/tag_vestirme.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/FC1T1\/4\/i\/talk.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/talk-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/i\/vestirme.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC1T1\/4\/i\/vestirme-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC1T1\/4\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/index.html",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/FC1T1\/4\/s\/adulto.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/s\/adulto.mp3",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/s\/cierre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/s\/cierre.mp3",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/FC1T1\/4\/s\/solo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC1T1\/4\/s\/solo.mp3",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
@@ -29097,13 +29352,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T3\/165\/s\/instruccion1.mp3",
-		"oF": 0
-		},
-	"\/odasAvanzadas-assets.zip": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/odasAvanzadas-assets.zip",
 		"oF": 0
 		},
 	"\/readme": {

@@ -156,7 +156,7 @@ var app = new Vue({
                     _this.notfoundimg()
 
                     _this.sceneCompletedCalled = false
-                    console.log(_this.currentScene, _this.scenesCount+1)
+                    //console.log(_this.currentScene, _this.scenesCount+1)
                     if(_this.currentScene >= _this.scenesCount+1) {
                         _this.ended()
                     }
@@ -168,8 +168,8 @@ var app = new Vue({
             _this.finalData.screen = _this.screen
             var endData = JSON.stringify(_this.finalData)
             
-            console.log('beforestringify:::', _this.finalData)
-            console.log('postmessage:::', endData)
+            //console.log('beforestringify:::', _this.finalData)
+            //console.log('postmessage:::', endData)
             window.top.postMessage(endData, "*")
         },
         cleanstr(str){
@@ -327,7 +327,7 @@ var app = new Vue({
                 this.videosDibujable.push({title: decodeURI(strJS[0]), id: strJS[1] })
 
             }
-            console.log(this.videosDibujable)
+            //console.log(this.videosDibujable)
         }
         /* END DIBUJABLE */
 
