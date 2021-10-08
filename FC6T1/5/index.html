@@ -3,27 +3,206 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Expreso mis sentimientos con libertad</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .title{
+          background:#fff;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 1.4rem;
+          box-shadow: 6px 6px 0 rgba(0,0,0, 0.1);
+      }
+      
+      .boxy{
+          background:#fff;
+          border-radius: 10px;
+          padding: 6px;
+          box-shadow: 6px 6px 0 #60B749;
+          margin: 10px;
+      }
+      
+      .words .text {
+          background: rgba(255, 255, 255, 0.5);
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          line-height: 2;
+      }
+      .words .drop {
+          width: 30%;
+          height: 26px;
+          background: #fff;
+          display: inline-block;
+          vertical-align: middle;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          margin-right: 4px;
+          text-align: center;
+      }
+      .words .drop .number{
+          font-size: 1rem;
+          line-height: 1.5;
+      }
+      .drag {
+         width: fit-content; width: -moz-fit-content;
+          height: auto;
+          margin: 10px;
+      }
+      .drags {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      [wascloned] {
+          display: none;
+      }
+      .title .drop{
+          height: 40px;
+      }
+      @media (max-width:680px){
+          .words .text{
+              font-size: 0.6rem;
+              line-height: 2.5;
+          }
+          .words .drop{
+              height: 16px;
+          }
+          .drag .number{
+              font-size: 0.8rem;
+          }
+      }
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
-      <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <!-- SCENES intro 1-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 info">
+            <h1>Expreso mis sentimientos con libertad</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/intro.mp3" text="Hola soy Carmen! Mis amigas y yo te vamos a contar una historia." @completed="temps.a=true"></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.a"></lottie-player>
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Expreso mis sentimientos con libertad" text="Lee y escucha a Carmen, Natalia, Sara y Marta hablando sobre sus sentimientos." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="setau(1)"></info>
+        <activity>
+          <div class="row comic w100">
+            <div class="w100">
+              <div class="w40 ml-auto"><img class="w100" src="i/girls.png"/></div>
+            </div>
+            <div class="dialog tl tip-r" v-if="temps.au==1">
+              <audiotext @completed="setau(2)" key="au1" :autoplay="true" audio="s/audio1.mp3" text="&lt;strong&gt;Carmen:&lt;/strong&gt; Camilo siempre me molesta y no sé por qué lo hace; se la pasa burlándose de mí. Cada vez que me dice algo siento que se me sube la sangre a la cabeza, mi corazón late más fuerte y me siento muy tensa. La verdad no sé qué hacer."></audiotext>
+            </div>
+            <div class="dialog tl tip-r" v-if="temps.au==2">
+              <audiotext @completed="setau(3)" key="au2" :autoplay="true" audio="s/audio2.mp3" text="&lt;strong&gt;Sara:&lt;/strong&gt; Yo pienso que lo mejor es que te aguantes y no hagas nada para no crear un problema más grande."></audiotext>
+            </div>
+            <div class="dialog bl tip-r" v-if="temps.au==3">
+              <audiotext @completed="setau(4)" key="au3" :autoplay="true" audio="s/audio3.mp3" text="&lt;strong&gt;Natalia:&lt;/strong&gt; ¡No! Nunca debes ocultar lo que sientes ni dejar que los demás te maltraten, ¡defiéndete! Yo que tú le haría lo mismo que él te hace. Además, lo amenazaría y le gritaría que me deje de molestar o se las verá con tus amigas."></audiotext>
+            </div>
+            <div class="dialog bl tip-r" v-if="temps.au==4">
+              <audiotext @completed="setau(5)" key="au4" :autoplay="true" audio="s/audio4.mp3" text="&lt;strong&gt;Marta:&lt;/strong&gt; Pienso que las dos tienen algo de razón. Por un lado, como dice Natalia, todos merecemos respeto, no debes permitir que alguien te haga algo que no te gusta o que te haga sentir incómoda. Por otro lado, como dice Sara, tampoco se trata de hacer el problema más grande. El otro día vi en internet una frase, decía algo así: “Si quieres que te respeten, respétate a ti misma, haz valer tus derechos, tu dignidad y la de otros."></audiotext>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.au==5">
+            <div class="w50">
+              <button class="button" @click="setau(1)">Repetir</button>
+            </div>
+            <div class="w50">
+              <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.scenes" v-if="currentScene==index+3" :key="index+3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Expreso mis sentimientos con libertad" text="Elige la respuesta correcta." textaudio="s/instruccion2.mp3" :autoplay="index==0?true:false"></info>
+        <activity>
+          <div class="row w90">
+            <div class="w100 text-center title">{{i.txt}}</div>
+          </div>
+          <div class="row w100 mt-1 text-center">
+            <div class="w30" v-for="(ia, indexa) in i.ops">
+              <clickable :isok="i.answer==indexa?true:false" simple-ok="simple-ok" initclass="pa-1">
+                <div class="boxy">{{ia}}</div>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES arrastra-->
+      <scene v-if="currentScene==6" :key="6" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Expreso mis sentimientos con libertad" text="Arrastra las palabras del recuadro para completar las siguientes ideas." textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w20">
+              <drag data="ejerce" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number c="3" smaller="smaller">ejerce</number>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag data="principios" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number c="1" smaller="smaller">principios</number>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag data="gustos" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number c="2" smaller="smaller">gustos</number>
+              </drag>
+            </div>
+            <div class="w20">
+              <drag data="derecho" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <number c="4" smaller="smaller">derecho</number>
+              </drag>
+            </div>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="words w100">
+              <div class="text">La libertad de pensamiento, expresión y acción es un
+                <div class="drop" data="derecho" droptimes="untilok"></div> humano que cada persona
+                <div class="drop" data="ejerce" droptimes="untilok"></div> considerando sus necesidades,
+                <div class="drop" data="gustos" droptimes="untilok"></div>, intereses y
+                <div class="drop" data="principios" droptimes="untilok"></div> éticos. 
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES intro 1-->
+      <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Expreso mis sentimientos con libertad</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/cierre.mp3" text="¡Muy bien! Recuerda expresar siempre tus emociones y actuar con asertividad." @completed="temps.b=true"></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.b"></lottie-player>
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.b">
+            <button class="button big" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==8" :key="8" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +237,22 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      
+      app.$set(app.temps, 'au', 0)
+      app.setau = function (num){
+          app.$set(app.temps, 'au', num)
+      }
+      
+      app.$set(app.temps, 'scenes', [
+          {txt: '¿Cómo crees que se siente Carmen cuando Camilo la Molesta?', ops: ['Contenta', 'Enojada'], answer: 1},
+          {txt: 'Lo que dijo Sara, ¿sería una manera asertiva de manejar emociones y resolver conflictos?', ops: ['Sí, porque los abusos se deben tolerar.', 'No, porque no debe permitir abusos y hablar sobre lo que siente para hacer valer sus derechos y cambiar la situación.'], answer: 1},
+          {txt: 'Lo que dijo Natalia, ¿es una buena estrategia?', ops: ['No lo es, la violencia genera violencia y Carmen estaría haciendo lo que no le gusta que le hagan.', 'Si lo es, porque si te atacan hay que atacar de regreso.'], answer: 0},
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 4
     </script>
   </body>
 </html>
