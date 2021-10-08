@@ -24,6 +24,13 @@
           margin-bottom:-13%;
           margin-top: 10%;
       }
+      .comic .dialog{
+          left: auto; top: auto;
+          position: relative;
+          width: 100%;
+          max-width: 80%;
+          margin: 0 auto;
+      }
       
     </style>
   </head>
@@ -80,8 +87,88 @@
           </div>
         </activity>
       </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==9" hidescorebox="hidescorebox" :key="9" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Soy libre y responsable con mis decisiones" text="Lee y escucha el siguiente texto y contesta las preguntas." textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="temps.c=true"></info>
+        <activity>
+          <div class="comic w100" v-if="temps.c">
+            <div class="dialog tip-b">
+              <audiotext @completed="temps.d = true" :autoplay="true" audio="s/audio3.mp3" text="Alberto tiene un pantalón que está bastante desgastado y su abuelito le dio dinero para que se comprara uno nuevo. Al llegar a la tienda departamental, Alberto se dio cuenta de que el nuevo juego que salió hace nueve meses, y todos sus amigos tienen, cuesta lo mismo que el pantalón. Ahora está muy indeciso de qué compra debería de realizar."></audiotext>
+            </div>
+          </div>
+          <div class="w20 wm40">
+            <lottie-player src="i/btalk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="temps.c &amp;&amp; !temps.d"></lottie-player>
+            <lottie-player src="i/btalk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.d">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Soy libre y responsable con mis decisiones" text="Ahora contesta las preguntas." textaudio="s/instruccion3.mp3" :autoplay="true" @completedinstructions="temps.pregunta1 = true"></info>
+        <activity>
+          <div class="row w100 text-center" v-if="temps.pregunta1">
+            <audiotext :autoplay="true" audio="s/audio4.mp3" text="¿Qué artículo debería comprar Alberto?"></audiotext>
+          </div>
+          <div class="row w100 wrap text-center" v-if="temps.pregunta1">
+            <div class="w40 mt-1">
+              <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">El pantalón.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">El videouego.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Los dos.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Ninguno de los dos.</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==11" :key="11" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/cierre.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Soy libre y responsable con mis decisiones" text="Ahora contesta las preguntas." textaudio="s/instruccion3.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <audiotext :autoplay="true" audio="s/audio5.mp3" text="¿Por qué?"></audiotext>
+          </div>
+          <div class="row w100 wrap text-center">
+            <div class="w40 mt-1">
+              <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Porque el pantalón es un artículo que necesitará más.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Porque el videojuego es algo que ha deseado por nueve meses.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Porque si compra los do, tiene algo que necesita y algo que desea.</number>
+              </clickable>
+            </div>
+            <div class="w40 mt-1">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Porque es una decisión muy difícil de tomar.</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
       <!-- END-->
-      <scene v-if="currentScene==11" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==12" :key="12" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -118,6 +205,11 @@
       app.$devmode = false
       app.$set(app.temps, 'a', false)
       app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      app.$set(app.temps, 'd', false)
+      
+      app.$set(app.temps, 'pregunta1', false)
+      app.$set(app.temps, 'pregunta2', false)
       
       app.$set(app.temps, 'scenes', [
           {image: 'i/bike.png', answer: 'necesidad'},
@@ -130,8 +222,8 @@
       
       
       
-      app.currentScene = 7
-      app.scenesCount = 6
+      app.currentScene = 11
+      app.scenesCount = 8
     </script>
   </body>
 </html>

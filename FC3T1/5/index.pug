@@ -21,6 +21,13 @@ html(lang="es")
                 margin-bottom:-13%;
                 margin-top: 10%;
             }
+            .comic .dialog{
+                left: auto; top: auto;
+                position: relative;
+                width: 100%;
+                max-width: 80%;
+                margin: 0 auto;
+            }
 
     body
         #app
@@ -63,10 +70,48 @@ html(lang="es")
                         lottie-player(src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
                     .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Siguiente
             
+            // SCENES
+            scene(v-if="currentScene==9" hidescorebox :key="9" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Lee y escucha el siguiente texto y contesta las preguntas." textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="temps.c=true")
+                activity
+                    .comic(v-if="temps.c").w100
+                        .dialog.tip-b: audiotext(@completed="temps.d = true" :autoplay="true" audio="s/audio3.mp3" text="Alberto tiene un pantalón que está bastante desgastado y su abuelito le dio dinero para que se comprara uno nuevo. Al llegar a la tienda departamental, Alberto se dio cuenta de que el nuevo juego que salió hace nueve meses, y todos sus amigos tienen, cuesta lo mismo que el pantalón. Ahora está muy indeciso de qué compra debería de realizar.")
+                    .w20.wm40
+                        lottie-player(src="i/btalk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay v-if="temps.c && !temps.d")
+                        lottie-player(src="i/btalk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
+                    .row.w100(v-if="temps.d"): button(@click="sceneCompleted(false)").button.big Siguiente
+
+            
+            // SCENES
+            scene(v-if="currentScene==10" :key="10" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora contesta las preguntas." textaudio="s/instruccion3.mp3" :autoplay="true" @completedinstructions="temps.pregunta1 = true")
+                activity
+                    .row.w100.text-center(v-if="temps.pregunta1")
+                        audiotext(:autoplay="true" audio="s/audio4.mp3" text="¿Qué artículo debería comprar Alberto?")
+                    
+                    .row.w100.wrap(v-if="temps.pregunta1").text-center
+                        .w40.mt-1: clickable(:isok="true" simple-ok initclass="pa-1"): number(randomc smaller) El pantalón.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) El videouego.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Los dos.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Ninguno de los dos.
+            
+            // SCENES
+            scene(v-if="currentScene==11" :key="11" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/cierre.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Ahora contesta las preguntas." textaudio="s/instruccion3.mp3" :autoplay="false")
+                activity
+                    .row.w100.text-center
+                        audiotext(:autoplay="true" audio="s/audio5.mp3" text="¿Por qué?")
+                    
+                    .row.w100.wrap.text-center
+                        .w40.mt-1: clickable(:isok="true" simple-ok initclass="pa-1"): number(randomc smaller) Porque el pantalón es un artículo que necesitará más.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Porque el videojuego es algo que ha deseado por nueve meses.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Porque si compra los do, tiene algo que necesita y algo que desea.
+                        .w40.mt-1: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Porque es una decisión muy difícil de tomar.
+
 
 
             // END
-            scene(v-if="currentScene==11" :key="5" end-scene :final-data="finalData")
+            scene(v-if="currentScene==12" :key="12" end-scene :final-data="finalData")
         
         +scripts
             script.
@@ -74,6 +119,11 @@ html(lang="es")
                 app.$devmode = false
                 app.$set(app.temps, 'a', false)
                 app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                app.$set(app.temps, 'd', false)
+                
+                app.$set(app.temps, 'pregunta1', false)
+                app.$set(app.temps, 'pregunta2', false)
                 
                 app.$set(app.temps, 'scenes', [
                     {image: 'i/bike.png', answer: 'necesidad'},
@@ -86,5 +136,5 @@ html(lang="es")
                 
 
 
-                app.currentScene = 7
-                app.scenesCount = 6
+                app.currentScene = 11
+                app.scenesCount = 8

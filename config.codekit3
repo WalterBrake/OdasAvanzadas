@@ -14840,6 +14840,58 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/FC3T1\/5\/i\/btalk.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC3T1\/5\/i\/btalk-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC3T1\/5\/i\/btalk1.png": {
+		"ft": 32768,
+		"iS": 27836,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/btalk1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/btalk2.png": {
+		"ft": 32768,
+		"iS": 27949,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/btalk2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/btalk3.png": {
+		"ft": 32768,
+		"iS": 27780,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/btalk3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/btalk4.png": {
+		"ft": 32768,
+		"iS": 27826,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/btalk4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/FC3T1\/5\/i\/food.png": {
 		"ft": 32768,
 		"iS": 34417,
@@ -14861,6 +14913,14 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"\/FC3T1\/5\/i\/mantalk.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC3T1\/5\/i\/mantalk-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/FC3T1\/5\/i\/phone.png": {
 		"ft": 32768,
