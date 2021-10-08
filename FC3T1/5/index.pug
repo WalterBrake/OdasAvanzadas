@@ -1,0 +1,90 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Soy libre y responsable con mis decisiones'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .imageBox{
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0,0,0,.1);
+                border: 4px solid var(--main);
+            }
+            .imageBox .drag{
+                width: auto; height: auto;
+                margin-bottom: 5%;
+            }
+            .imageBox img{
+                margin-bottom:-13%;
+                margin-top: 10%;
+            }
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                activity
+                    .row.w100.info: h1=title    
+                    audiotext(audio="s/intro.mp3" :autoplay="true" @completed="temps.a=true" text="En la vida hay que tomar decisiones. Lo importante es que nadie te obligue a tomarlas y que te hagas responsables de tus decisiones.")
+                    .w30.wm50.mt-1
+                        lottie-player(src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay v-if="!temps.a")
+                        lottie-player(src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES
+            scene(v-for="(i, index) in temps.scenes" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Une las imágenes que representan una necesidad o un deseo." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false")
+                activity
+                    .row.w100
+                        .w30.wm50.text-center.imageBox
+                            img(:src="i.image").w100
+                            drag(:data="i.answer" dropzone=".drop" stay-if-ok drag-line particle-color="#59B96E"): .conector.c1
+                    .row.w100.mt-auto
+                        .w20.wm30.drop(data="necesidad" droptimes="untilok" oksound="s/necesito.mp3")
+                            img(src="i/girl.png").w100
+            
+                        .w20.wm30.ml-1.drop(data="deseo" droptimes="untilok" oksound="s/deseo.mp3")
+                            img(src="i/boy.png").w100
+            
+
+            // SCENES
+            scene(v-if="currentScene==8" hidescorebox :key="8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                activity
+                    .row.w100.info: h1=title    
+                    audiotext(audio="s/intro2.mp3" :autoplay="true" @completed="temps.b=true" text="No es nada fácil tomar decisiones sobre lo que necesitamos y lo que deseamos. ¡Qué hubieras hecho tú, si fueras Alberto?")
+                    .w30.wm50.mt-1
+                        lottie-player(src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay v-if="!temps.b")
+                        lottie-player(src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
+                    .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+
+
+            // END
+            scene(v-if="currentScene==11" :key="5" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                
+                app.$set(app.temps, 'scenes', [
+                    {image: 'i/bike.png', answer: 'necesidad'},
+                    {image: 'i/shirt.png', answer: 'necesidad'},
+                    {image: 'i/phone.png', answer: 'deseo'},
+                    {image: 'i/bag.png', answer: 'necesidad'},
+                    {image: 'i/shoe.png', answer: 'deseo'},
+                    {image: 'i/food.png', answer: 'necesidad'},
+                ])
+                
+
+
+                app.currentScene = 7
+                app.scenesCount = 6

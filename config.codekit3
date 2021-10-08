@@ -14807,6 +14807,250 @@
 		"oAP": "\/FC2T1\/5\/s\/intro.mp3",
 		"oF": 0
 		},
+	"\/FC3T1\/5\/i\/bag.png": {
+		"ft": 32768,
+		"iS": 66333,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/bag.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/bike.png": {
+		"ft": 32768,
+		"iS": 56740,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/bike.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/boy.png": {
+		"ft": 32768,
+		"iS": 151130,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/boy.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/food.png": {
+		"ft": 32768,
+		"iS": 34417,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/food.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/girl.png": {
+		"ft": 32768,
+		"iS": 144574,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/girl.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/phone.png": {
+		"ft": 32768,
+		"iS": 35499,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/phone.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/shirt.png": {
+		"ft": 32768,
+		"iS": 38618,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/shirt.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/shoe.png": {
+		"ft": 32768,
+		"iS": 38119,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/shoe.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/show.png": {
+		"ft": 32768,
+		"iS": 38119,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/show.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/talk.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC3T1\/5\/i\/talk-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC3T1\/5\/i\/talk1.png": {
+		"ft": 32768,
+		"iS": 21290,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/talk1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/talk2.png": {
+		"ft": 32768,
+		"iS": 21498,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/talk2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/talk3.png": {
+		"ft": 32768,
+		"iS": 21189,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/talk3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/i\/talk4.png": {
+		"ft": 32768,
+		"iS": 21185,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/i\/talk4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC3T1\/5\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/index.html",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/FC3T1\/5\/s\/audio3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/audio3.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/audio4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/audio4.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/audio5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/audio5.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/cierre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/cierre.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/deseo.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/deseo.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/instruccion3.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/intro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/intro.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/intro2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/intro2.mp3",
+		"oF": 0
+		},
+	"\/FC3T1\/5\/s\/necesito.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC3T1\/5\/s\/necesito.mp3",
+		"oF": 0
+		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,

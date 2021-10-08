@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Soy libre y responsable con mis decisiones</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .imageBox{
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0,0,0,.1);
+          border: 4px solid var(--main);
+      }
+      .imageBox .drag{
+          width: auto; height: auto;
+          margin-bottom: 5%;
+      }
+      .imageBox img{
+          margin-bottom:-13%;
+          margin-top: 10%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Soy libre y responsable con mis decisiones</h1>
+          </div>
+          <audiotext audio="s/intro.mp3" :autoplay="true" @completed="temps.a=true" text="En la vida hay que tomar decisiones. Lo importante es que nadie te obligue a tomarlas y que te hagas responsables de tus decisiones."></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.a"></lottie-player>
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.scenes" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="relacionar" title="Soy libre y responsable con mis decisiones" text="Une las imágenes que representan una necesidad o un deseo." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w30 wm50 text-center imageBox"><img class="w100" :src="i.image"/>
+              <drag :data="i.answer" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#59B96E">
+                <div class="conector c1"></div>
+              </drag>
+            </div>
+          </div>
+          <div class="row w100 mt-auto">
+            <div class="w20 wm30 drop" data="necesidad" droptimes="untilok" oksound="s/necesito.mp3"><img class="w100" src="i/girl.png"/></div>
+            <div class="w20 wm30 ml-1 drop" data="deseo" droptimes="untilok" oksound="s/deseo.mp3"><img class="w100" src="i/boy.png"/></div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==8" hidescorebox="hidescorebox" :key="8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Soy libre y responsable con mis decisiones</h1>
+          </div>
+          <audiotext audio="s/intro2.mp3" :autoplay="true" @completed="temps.b=true" text="No es nada fácil tomar decisiones sobre lo que necesitamos y lo que deseamos. ¡Qué hubieras hecho tú, si fueras Alberto?"></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.b"></lottie-player>
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.b">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==11" :key="5" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      
+      app.$set(app.temps, 'scenes', [
+          {image: 'i/bike.png', answer: 'necesidad'},
+          {image: 'i/shirt.png', answer: 'necesidad'},
+          {image: 'i/phone.png', answer: 'deseo'},
+          {image: 'i/bag.png', answer: 'necesidad'},
+          {image: 'i/shoe.png', answer: 'deseo'},
+          {image: 'i/food.png', answer: 'necesidad'},
+      ])
+      
+      
+      
+      app.currentScene = 7
+      app.scenesCount = 6
+    </script>
+  </body>
+</html>
