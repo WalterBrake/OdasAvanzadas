@@ -1,0 +1,166 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Reconozco a los demás'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .title{
+                background:#fff;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 1.4rem;
+                box-shadow: 6px 6px 0 rgba(0,0,0, 0.1);
+            }
+            .exlast .exlastbox {
+                background: #fff;
+                display: flex;
+                min-height: 60px;
+                align-items: center;
+                border-radius: 10px;
+                margin: 5px 10px;
+                padding: 5px;
+                box-shadow: 6px 6px 0 #46AB89;
+            }
+            .exlast .exlastbox .drag {
+                margin-left: auto;
+                width: auto;
+                height: auto;
+                margin-right: -20px;
+            }
+            .exlast .drop {
+                background: #fff;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                margin: 5px 10px;
+                padding: 5px;
+                border-radius: 10px;
+                background: #46AB89;
+                color: var(--beige);
+                box-shadow: 6px 6px 0 #2793B8;
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES intro 1
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.info: h1=title
+                    audiotext(:autoplay="true" audio="s/audio1.mp3" text="Parte de tu crecimiento es  aprender a tomar decisiones libres y responsables. ¡Vamos a aprender cómo hacerlo!" @completed="temps.a=true")
+                    .row.w100.mt-1
+                        .w40.wm50: img(src="i/girl.png").w100
+
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+
+            // SCENES
+            scene(v-for="(i, index) in temps.scenes1" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true")
+                activity
+                    audiotext(ref="" :autoplay="true" :audio="i.audio" :text="i.txt" v-if="temps.firstAudio")
+                    //.row.w100.w30.wm40.mt-1: img(src="i/girl.png").w100
+                    .row.w100.mt-1(v-if="temps.firstAudio").text-center
+                        .w40: clickable(:isok="i.answer==0?true:false" simple-ok initclass="pa-1"): number(c=1 smaller) Acto Libre y responsable
+                        .w40: clickable(:isok="i.answer==1?true:false" simple-ok initclass="pa-1"): number(c=4 smaller) Acto irresponsable
+            // SCENES intro 2
+            scene(v-if="currentScene==7" hidescorebox :key="7" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+
+                activity
+                    .row.w100.info: h1=title
+                    audiotext(:autoplay="true" audio="s/audio8.mp3" text="Las decisiones libres y responsables que ya aprendimos a diferenciar las puedes tomar en diferentes lugares, ¡vamos a descubrirlos! " @completed="temps.b=true")
+                    .row.w100.mt-1
+                        .w40.wm50: img(src="i/girl.png").w100
+
+                    .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Siguiente
+
+            // SCENES
+            scene(v-for="(i, index) in temps.scenes2" v-if="currentScene==index+8" :key="index+8" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona el lugar adecuado donde tomarías las siguientes decisiones libres y responsables." textaudio="s/audio9.mp3" :autoplay="index==0?true:false")
+                activity
+                    .row.w90: .w100.text-center.title {{i.txt}}
+                    .row.w100.mt-1.text-center
+                        .w30(v-for="(ia, indexa) in i.ops"): clickable(:isok="i.answer==indexa?true:false" simple-ok initclass="pa-1"): number(randomc smaller) {{ia}}
+
+            // SCENES intro 3
+            scene(v-if="currentScene==11" hidescorebox :key="11" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                activity
+                    .row.w100.info: h1=title
+                    audiotext(:autoplay="true" audio="s/audio10.mp3" text="Por último, ¡recuerda que todos nuestros actos tienen consecuencias! Vamos a aprender algunas consecuencias de nuestros actos." @completed="temps.c=true")
+                    .row.w100.mt-1
+                        .w40.wm50: img(src="i/girl.png").w100
+
+                    .row.w100(v-if="temps.c"): button(@click="sceneCompleted(false)").button.big Siguiente
+
+            // SCENES
+            scene(v-if="currentScene==12" :key="12" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Relaciona cada una de las actividades con su posible consecuencia." textaudio="s/audio11.mp3" :autoplay="true")
+                activity
+                    .row.w100.wrap.exlast.text-center
+                        .w40
+                            .exlastbox
+                                div Comer comida chatarra en grandes cantidades.
+                                drag(data="uno" dropzone=".drop" stay-if-ok drag-line particle-color="#5EB247"): .conector.c1
+                        .w40.ml-auto: .drop(data="tres" droptimes="untilok") Mejoramos el medioambiente y generamos espacios verdes en los que podemos convivir sanamente con los demás.
+                        .w40
+                            .exlastbox
+                                div Pasar demasiado tiempo en la computadora viendo videos.
+                                drag(data="dos" dropzone=".drop" stay-if-ok particle-color="#015093"): .conector.c2
+                        .w40.ml-auto: .drop(data="uno" droptimes="untilok") Dañamos nuestra salud con el sobrepeso que genera la comida chatarra.
+                        .w40
+                            .exlastbox
+                                div Plantar árboles en el parque de mi colonía.
+                                drag(data="tres" dropzone=".drop" stay-if-ok particle-color="#00A9CB"): .conector.c3
+                        .w40.ml-auto: .drop(data="dos" droptimes="untilok") Convivimos menos con las personas y dejamos de hacer actividades físicas.
+
+            // SCENES intro 4
+            scene(v-if="currentScene==13" hidescorebox :key="13" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                activity
+                    .row.w100.info: h1=title
+                    audiotext(:autoplay="true" audio="s/audio12.mp3" text="¡Listo!. Hemos aprendido cómo tomar decisiones libres y responsables, ahora tienes que aplicarlo en tu vida diaria." @completed="temps.d=true")
+                    .row.w100.mt-1
+                        .w40.wm50: img(src="i/girl.png").w100
+
+                    .row.w100(v-if="temps.d"): button(@click="sceneCompleted(false)").button.big Finalizar
+
+
+            // END
+            scene(v-if="currentScene==14" :key="14" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'c', false)
+                app.$set(app.temps, 'd', false)
+
+                app.$set(app.temps, 'firstAudio', false)
+                
+                app.$set(app.temps, 'scenes1', [
+                    {txt: 'Dejar restos de comida durante muchos días en el bote de basura de mi cuarto.', audio: 's/audio3.mp3', answer: 1},
+                    {txt: 'Regalar presentes a mis amigos en sus cumpleaños con la intención de hacerlos sentirse apreciados.', audio: 's/audio4.mp3', answer: 0},
+                    {txt: 'Leer un libro de historia para conocer más acerca de mi país.', audio: 's/audio5.mp3', answer: 0},
+                    {txt: 'Salir a jugar con mis amigos sin haber hecho la tarea de la escuela.', audio: 's/audio6.mp3', answer: 1},
+                    {txt: 'Lavar los trastes de la comida para apoyar a mis papás y así terminar antes el aseo de la casa.', audio: 's/audio7.mp3', answer: 0},
+                ])
+                app.$set(app.temps, 'scenes2', [
+                    {txt: 'Apoyo a mis papás en el aseo y la limpieza de mi cuarto.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 0},
+                    {txt: 'Cuidar a mis mascotas, sacarlas a pasear y mantenerlas limpias.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 2},
+                    {txt: 'Poner atención en clases y cumplir tareas.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 1},
+
+                ])
+                
+
+
+
+                app.currentScene = 0
+                app.scenesCount = 9

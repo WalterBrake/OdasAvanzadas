@@ -15111,6 +15111,147 @@
 		"oAP": "\/FC3T1\/5\/s\/necesito.mp3",
 		"oF": 0
 		},
+	"\/FC4T1\/5\/i\/girl.png": {
+		"ft": 32768,
+		"iS": 235569,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/i\/girl.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC4T1\/5\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/index.html",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/FC4T1\/5\/s\/audio1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio1.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio10.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio10.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio11.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio11.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio12.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio12.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio2.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio3.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio3_alt.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio3_alt.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio4.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio5.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio6.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio7.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio8.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio8.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/audio9.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/audio9.mp3",
+		"oF": 0
+		},
+	"\/FC4T1\/5\/s\/Reconozco a los demás FCE4ºT1_A13_13.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T1\/5\/s\/Reconozco a los demás FCE4ºT1_A13_13.mp3",
+		"oF": 0
+		},
+	"\/FC6T1\/5\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T1\/5\/index.html",
+		"oF": 0
+		},
+	"\/FC6T1\/5\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/FC6T1\/5\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
 		"miP": 0,

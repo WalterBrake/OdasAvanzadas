@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reconozco a los demás</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .title{
+          background:#fff;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 1.4rem;
+          box-shadow: 6px 6px 0 rgba(0,0,0, 0.1);
+      }
+      .exlast .exlastbox {
+          background: #fff;
+          display: flex;
+          min-height: 60px;
+          align-items: center;
+          border-radius: 10px;
+          margin: 5px 10px;
+          padding: 5px;
+          box-shadow: 6px 6px 0 #46AB89;
+      }
+      .exlast .exlastbox .drag {
+          margin-left: auto;
+          width: auto;
+          height: auto;
+          margin-right: -20px;
+      }
+      .exlast .drop {
+          background: #fff;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          margin: 5px 10px;
+          padding: 5px;
+          border-radius: 10px;
+          background: #46AB89;
+          color: var(--beige);
+          box-shadow: 6px 6px 0 #2793B8;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES intro 1-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
+        <activity>
+          <div class="row w100 info">
+            <h1>Reconozco a los demás</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/audio1.mp3" text="Parte de tu crecimiento es  aprender a tomar decisiones libres y responsables. ¡Vamos a aprender cómo hacerlo!" @completed="temps.a=true"></audiotext>
+          <div class="row w100 mt-1">
+            <div class="w40 wm50"><img class="w100" src="i/girl.png"/></div>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.scenes1" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="dragdrop" title="Reconozco a los demás" text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true"></info>
+        <activity>
+          <audiotext ref="" :autoplay="true" :audio="i.audio" :text="i.txt" v-if="temps.firstAudio"></audiotext>
+          <!--.row.w100.w30.wm40.mt-1: img(src="i/girl.png").w100-->
+          <div class="row w100 mt-1 text-center" v-if="temps.firstAudio">
+            <div class="w40">
+              <clickable :isok="i.answer==0?true:false" simple-ok="simple-ok" initclass="pa-1">
+                <number c="1" smaller="smaller">Acto Libre y responsable</number>
+              </clickable>
+            </div>
+            <div class="w40">
+              <clickable :isok="i.answer==1?true:false" simple-ok="simple-ok" initclass="pa-1">
+                <number c="4" smaller="smaller">Acto irresponsable</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES intro 2-->
+      <scene v-if="currentScene==7" hidescorebox="hidescorebox" :key="7" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Reconozco a los demás</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/audio8.mp3" text="Las decisiones libres y responsables que ya aprendimos a diferenciar las puedes tomar en diferentes lugares, ¡vamos a descubrirlos! " @completed="temps.b=true"></audiotext>
+          <div class="row w100 mt-1">
+            <div class="w40 wm50"><img class="w100" src="i/girl.png"/></div>
+          </div>
+          <div class="row w100" v-if="temps.b">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.scenes2" v-if="currentScene==index+8" :key="index+8" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Reconozco a los demás" text="Selecciona el lugar adecuado donde tomarías las siguientes decisiones libres y responsables." textaudio="s/audio9.mp3" :autoplay="index==0?true:false"></info>
+        <activity>
+          <div class="row w90">
+            <div class="w100 text-center title">{{i.txt}}</div>
+          </div>
+          <div class="row w100 mt-1 text-center">
+            <div class="w30" v-for="(ia, indexa) in i.ops">
+              <clickable :isok="i.answer==indexa?true:false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">{{ia}}</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES intro 3-->
+      <scene v-if="currentScene==11" hidescorebox="hidescorebox" :key="11" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Reconozco a los demás</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/audio10.mp3" text="Por último, ¡recuerda que todos nuestros actos tienen consecuencias! Vamos a aprender algunas consecuencias de nuestros actos." @completed="temps.c=true"></audiotext>
+          <div class="row w100 mt-1">
+            <div class="w40 wm50"><img class="w100" src="i/girl.png"/></div>
+          </div>
+          <div class="row w100" v-if="temps.c">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==12" :key="12" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="relacionar" title="Reconozco a los demás" text="Relaciona cada una de las actividades con su posible consecuencia." textaudio="s/audio11.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 wrap exlast text-center">
+            <div class="w40">
+              <div class="exlastbox">
+                <div>Comer comida chatarra en grandes cantidades.</div>
+                <drag data="uno" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#5EB247">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40 ml-auto">
+              <div class="drop" data="tres" droptimes="untilok">Mejoramos el medioambiente y generamos espacios verdes en los que podemos convivir sanamente con los demás.</div>
+            </div>
+            <div class="w40">
+              <div class="exlastbox">
+                <div>Pasar demasiado tiempo en la computadora viendo videos.</div>
+                <drag data="dos" dropzone=".drop" stay-if-ok="stay-if-ok" particle-color="#015093">
+                  <div class="conector c2"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40 ml-auto">
+              <div class="drop" data="uno" droptimes="untilok">Dañamos nuestra salud con el sobrepeso que genera la comida chatarra.</div>
+            </div>
+            <div class="w40">
+              <div class="exlastbox">
+                <div>Plantar árboles en el parque de mi colonía.</div>
+                <drag data="tres" dropzone=".drop" stay-if-ok="stay-if-ok" particle-color="#00A9CB">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40 ml-auto">
+              <div class="drop" data="dos" droptimes="untilok">Convivimos menos con las personas y dejamos de hacer actividades físicas.</div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES intro 4-->
+      <scene v-if="currentScene==13" hidescorebox="hidescorebox" :key="13" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <activity>
+          <div class="row w100 info">
+            <h1>Reconozco a los demás</h1>
+          </div>
+          <audiotext :autoplay="true" audio="s/audio12.mp3" text="¡Listo!. Hemos aprendido cómo tomar decisiones libres y responsables, ahora tienes que aplicarlo en tu vida diaria." @completed="temps.d=true"></audiotext>
+          <div class="row w100 mt-1">
+            <div class="w40 wm50"><img class="w100" src="i/girl.png"/></div>
+          </div>
+          <div class="row w100" v-if="temps.d">
+            <button class="button big" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==14" :key="14" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'c', false)
+      app.$set(app.temps, 'd', false)
+      
+      app.$set(app.temps, 'firstAudio', false)
+      
+      app.$set(app.temps, 'scenes1', [
+          {txt: 'Dejar restos de comida durante muchos días en el bote de basura de mi cuarto.', audio: 's/audio3.mp3', answer: 1},
+          {txt: 'Regalar presentes a mis amigos en sus cumpleaños con la intención de hacerlos sentirse apreciados.', audio: 's/audio4.mp3', answer: 0},
+          {txt: 'Leer un libro de historia para conocer más acerca de mi país.', audio: 's/audio5.mp3', answer: 0},
+          {txt: 'Salir a jugar con mis amigos sin haber hecho la tarea de la escuela.', audio: 's/audio6.mp3', answer: 1},
+          {txt: 'Lavar los trastes de la comida para apoyar a mis papás y así terminar antes el aseo de la casa.', audio: 's/audio7.mp3', answer: 0},
+      ])
+      app.$set(app.temps, 'scenes2', [
+          {txt: 'Apoyo a mis papás en el aseo y la limpieza de mi cuarto.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 0},
+          {txt: 'Cuidar a mis mascotas, sacarlas a pasear y mantenerlas limpias.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 2},
+          {txt: 'Poner atención en clases y cumplir tareas.', ops: ['Casa',' Escuela','Medio ambiente'], answer: 1},
+      
+      ])
+      
+      
+      
+      
+      app.currentScene = 0
+      app.scenesCount = 9
+    </script>
+  </body>
+</html>
