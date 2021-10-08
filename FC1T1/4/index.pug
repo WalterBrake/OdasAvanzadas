@@ -35,7 +35,7 @@ html(lang="es")
             
             // SCENES - calle
             scene(v-for="(i, index) in temps.allscenes"  v-if="currentScene==index+2"  :key="index+2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Selecciona si cada una de las acciones las puedes hacer solo o si las debes hacer acompañado de un adulto." textaudio="s/instruccion2.mp3" :autoplay="index == 0")
+                info(type="seleccionar" title=title text="Selecciona si cada una de las acciones las puedes hacer solo o si las debes hacer acompañado de un adulto." textaudio="s/instruccion2.mp3" :autoplay="index == 0")
                 activity
                     template(v-if="!i.animation")
                         img(:src="i.img").w30.wm50

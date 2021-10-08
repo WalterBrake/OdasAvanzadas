@@ -9407,7 +9407,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 25761,
+		"iS": 23458,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -9484,7 +9484,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 10945,
+		"iS": 25710,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -12770,7 +12770,7 @@
 		},
 	"\/ES4T2\/65\/i\/a8.png": {
 		"ft": 32768,
-		"iS": 2281538,
+		"iS": 86412,
 		"oA": 0,
 		"oAP": "\/ES4T2\/65\/i\/a8.png",
 		"oF": 0,
@@ -14662,6 +14662,149 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/FC1T1\/4\/s\/solo.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/i\/kid1.png": {
+		"ft": 32768,
+		"iS": 105090,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/kid1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/kid2.png": {
+		"ft": 32768,
+		"iS": 78681,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/kid2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/kid3.png": {
+		"ft": 32768,
+		"iS": 81231,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/kid3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/talk.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC2T1\/5\/i\/talk-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC2T1\/5\/i\/talk1.png": {
+		"ft": 32768,
+		"iS": 25318,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/talk1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/talk2.png": {
+		"ft": 32768,
+		"iS": 25198,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/talk2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/talk3.png": {
+		"ft": 32768,
+		"iS": 24935,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/talk3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/i\/talk4.png": {
+		"ft": 32768,
+		"iS": 25046,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/i\/talk4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC2T1\/5\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/index.html",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/index.pug": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/FC2T1\/5\/s\/audio1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/audio1.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/s\/audio2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/audio2.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/s\/audio3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/audio3.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/s\/cierre.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/cierre.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC2T1\/5\/s\/intro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC2T1\/5\/s\/intro.mp3",
 		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {

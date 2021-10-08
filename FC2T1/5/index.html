@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Respeto a todas las personas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .kid{
+          cursor: pointer;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
+        <activity>
+          <div class="row w100 info">
+            <h1>Respeto a todas las personas</h1>
+          </div>
+          <audiotext audio="s/intro.mp3" :autoplay="true" @completed="temps.a=true" text="En la vida cotidiana hay acciones que puedes realizar para mostrar respeto a todas las personas, especialmente aquellas con discapacidades y necesidades especiales."></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.a"></lottie-player>
+            <lottie-player src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.a">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Respeto a todas las personas" text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w100 text-center">
+              <div class="kid" :class="temps.k1?'w50 ml-auto':'w50 mx-auto'" @click="temps.k1=true"><img class="w100 animate__animated animate__heartBeat animate__delay-2s" src="i/kid1.png"/></div>
+              <div class="dialog tl tip-r w50" v-if="temps.k1">
+                <audiotext :autoplay="true" audio="s/audio1.mp3" text="Utilizo una silla de ruedas para subir al 2o piso de la escuela. ¿Qué necesito para desplazarme más fácilmente?"></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.k1">
+            <div class="w30">
+              <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Un elevador o una rampa</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Más escaleras</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Una silla nueva</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Respeto a todas las personas" text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w100 text-center">
+              <div class="kid" :class="temps.k2?'w50 ml-auto':'w50 mx-auto'" @click="temps.k2=true"><img class="w100 animate__animated animate__heartBeat animate__delay-1s" src="i/kid2.png"/></div>
+              <div class="dialog tl tip-r w50" v-if="temps.k2">
+                <audiotext :autoplay="true" audio="s/audio2.mp3" text="Necesito comunicarme porque no puedo hablar ni oír. ¿Cómo te comunicarías conmigo?"></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.k2">
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Una llamada telefónica</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Con lenguaje de señas o por escrito</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Gritando</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Respeto a todas las personas" text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <div class="comic w100 text-center">
+              <div class="kid" :class="temps.k3?'w50 ml-auto':'w50 mx-auto'" @click="temps.k3=true"><img class="w100 animate__animated animate__heartBeat animate__delay-1s" src="i/kid3.png"/></div>
+              <div class="dialog tl tip-r w50" v-if="temps.k3">
+                <audiotext :autoplay="true" audio="s/audio3.mp3" text="Necesito compañía en la calle porque no puedo ver. ¿Cómo me ayudarías?"></audiotext>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 text-center" v-if="temps.k3">
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">No saldría a la calle</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Lo dejaría solo en la calle</number>
+              </clickable>
+            </div>
+            <div class="w30">
+              <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                <number randomc="randomc" smaller="smaller">Lo acompañaría en la calle</number>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==5" hidescorebox="hidescorebox" :key="5" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <!--info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")-->
+        <activity>
+          <div class="row w100 info">
+            <h1>Respeto a todas las personas</h1>
+          </div>
+          <audiotext audio="s/cierre.mp3" :autoplay="true" @completed="temps.b=true" text="El respeto es el valor que nos permite convivir con todas las personas de manera armónica."></audiotext>
+          <div class="w30 wm50 mt-1">
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="loop" autoplay="autoplay" v-if="!temps.b"></lottie-player>
+            <lottie-player src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else="v-else"></lottie-player>
+          </div>
+          <div class="row w100" v-if="temps.b">
+            <button class="button big" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==6" :key="6" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', false)
+      app.$set(app.temps, 'b', false)
+      app.$set(app.temps, 'k1', false)
+      app.$set(app.temps, 'k2', false)
+      app.$set(app.temps, 'k3', false)
+      
+      app.currentScene = 0
+      app.scenesCount = 3
+    </script>
+  </body>
+</html>

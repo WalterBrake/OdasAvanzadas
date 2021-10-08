@@ -1,0 +1,97 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Respeto a todas las personas'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+
+            .kid{
+                cursor: pointer;
+            }
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" hidescorebox :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.info: h1=title    
+                    audiotext(audio="s/intro.mp3" :autoplay="true" @completed="temps.a=true" text="En la vida cotidiana hay acciones que puedes realizar para mostrar respeto a todas las personas, especialmente aquellas con discapacidades y necesidades especiales.")
+                    .w30.wm50.mt-1
+                        lottie-player(src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay v-if="!temps.a")
+                        lottie-player(src="i/talk.json" key="l1" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
+                    .row.w100(v-if="temps.a"): button(@click="sceneCompleted(false)").button.big Siguiente
+            
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+
+                    .row.w100
+                        .comic.w100.text-center
+                            div(:class="temps.k1?'w50 ml-auto':'w50 mx-auto'"  @click="temps.k1=true").kid: img(src="i/kid1.png").w100.animate__animated.animate__heartBeat.animate__delay-2s
+                            .dialog.tl.tip-r( v-if="temps.k1").w50: audiotext(:autoplay="true" audio="s/audio1.mp3" text="Utilizo una silla de ruedas para subir al 2o piso de la escuela. ¿Qué necesito para desplazarme más fácilmente?")
+                    .row.w100.text-center(v-if="temps.k1")
+                        .w30: clickable(:isok="true" simple-ok initclass="pa-1"): number(randomc smaller) Un elevador o una rampa
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Más escaleras
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Una silla nueva
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+
+                    .row.w100
+                        .comic.w100.text-center
+                            div(:class="temps.k2?'w50 ml-auto':'w50 mx-auto'"  @click="temps.k2=true").kid: img(src="i/kid2.png").w100.animate__animated.animate__heartBeat.animate__delay-1s
+                            .dialog.tl.tip-r( v-if="temps.k2").w50: audiotext(:autoplay="true" audio="s/audio2.mp3" text="Necesito comunicarme porque no puedo hablar ni oír. ¿Cómo te comunicarías conmigo?")
+                    .row.w100.text-center(v-if="temps.k2")
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Una llamada telefónica
+                        .w30: clickable(:isok="true" simple-ok initclass="pa-1"): number(randomc smaller) Con lenguaje de señas o por escrito
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Gritando
+                        
+            // SCENES
+            scene(v-if="currentScene==4" :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona la imagen para escuchar sobre las personas con alguna discapacidad y contesta qué acciones necesitan de tu parte para convivir de manera armónica." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+
+                    .row.w100
+                        .comic.w100.text-center
+                            div(:class="temps.k3?'w50 ml-auto':'w50 mx-auto'"  @click="temps.k3=true").kid: img(src="i/kid3.png").w100.animate__animated.animate__heartBeat.animate__delay-1s
+                            .dialog.tl.tip-r( v-if="temps.k3").w50: audiotext(:autoplay="true" audio="s/audio3.mp3" text="Necesito compañía en la calle porque no puedo ver. ¿Cómo me ayudarías?")
+                    .row.w100.text-center(v-if="temps.k3")
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) No saldría a la calle
+                        .w30: clickable(:isok="false" simple-ok initclass="pa-1"): number(randomc smaller) Lo dejaría solo en la calle
+                        .w30: clickable(:isok="true" simple-ok initclass="pa-1"): number(randomc smaller) Lo acompañaría en la calle
+            
+            // SCENES
+            scene(v-if="currentScene==5" hidescorebox :key="5" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                //info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.info: h1=title    
+                    audiotext(audio="s/cierre.mp3" :autoplay="true" @completed="temps.b=true" text="El respeto es el valor que nos permite convivir con todas las personas de manera armónica.")
+                    .w30.wm50.mt-1
+                        lottie-player(src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay v-if="!temps.b")
+                        lottie-player(src="i/talk.json" key="l2" background="transparent" speed="1" style="width: 100%; height: 100%;" v-else)
+                    .row.w100(v-if="temps.b"): button(@click="sceneCompleted(false)").button.big Finalizar
+
+            // END
+            scene(v-if="currentScene==6" :key="6" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', false)
+                app.$set(app.temps, 'b', false)
+                app.$set(app.temps, 'k1', false)
+                app.$set(app.temps, 'k2', false)
+                app.$set(app.temps, 'k3', false)
+                
+                app.currentScene = 0
+                app.scenesCount = 3

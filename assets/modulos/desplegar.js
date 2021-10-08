@@ -7,7 +7,8 @@ Vue.component('desplegar', {
         'showOk', // Cuando OK todos los ERROR se ocultan
         'modalOptions', //Mostrar las opciones "flotando",
         'initialStatus', // initial state = 'open' ?
-        'disableok', //deshabilita el emit ok
+        'disableok', //deshabilita el emit ok,
+        'anyOk', //cualquier respuesta es correcta
     ],
     data () {
         return {
@@ -74,7 +75,7 @@ Vue.component('desplegar', {
             }
 
             
-            if(optionAnswer == this.theanswer) {
+            if(optionAnswer == this.theanswer || (this.anyOk!=undefined)) {
                 // OK
                 this.selected = optionAnswer
                 EventBus.$emit('isok')
