@@ -71,7 +71,7 @@
       </scene>
       <!-- SCENES-->
       <scene v-for="(i, index) in temps.scenes1" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="dragdrop" title="Reconozco a los demás" text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true"></info>
+        <info type="seleccionar" title="Reconozco a los demás" text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true"></info>
         <activity>
           <audiotext ref="" :autoplay="true" :audio="i.audio" :text="i.txt" v-if="temps.firstAudio"></audiotext>
           <!--.row.w100.w30.wm40.mt-1: img(src="i/girl.png").w100-->
@@ -154,7 +154,7 @@
             <div class="w40">
               <div class="exlastbox">
                 <div>Pasar demasiado tiempo en la computadora viendo videos.</div>
-                <drag data="dos" dropzone=".drop" stay-if-ok="stay-if-ok" particle-color="#015093">
+                <drag data="dos" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#015093">
                   <div class="conector c2"></div>
                 </drag>
               </div>
@@ -165,7 +165,7 @@
             <div class="w40">
               <div class="exlastbox">
                 <div>Plantar árboles en el parque de mi colonía.</div>
-                <drag data="tres" dropzone=".drop" stay-if-ok="stay-if-ok" particle-color="#00A9CB">
+                <drag data="tres" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00A9CB">
                   <div class="conector c3"></div>
                 </drag>
               </div>

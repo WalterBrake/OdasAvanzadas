@@ -3232,7 +3232,7 @@
 		},
 	"\/CN3T2\/222\/i\/i11.png": {
 		"ft": 32768,
-		"iS": 17400,
+		"iS": 21732,
 		"oA": 0,
 		"oAP": "\/CN3T2\/222\/i\/i12.png",
 		"oF": 0,
@@ -9407,7 +9407,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 23458,
+		"iS": 25761,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -15343,11 +15343,11 @@
 		"oAP": "\/FC6T1\/5\/s\/audio4.mp3",
 		"oF": 0
 		},
-	"\/FC6T1\/5\/s\/Expreso mis sentimientos con libertad FCE6º T1_Cierre.mp3": {
+	"\/FC6T1\/5\/s\/cierre.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/FC6T1\/5\/s\/Expreso mis sentimientos con libertad FCE6º T1_Cierre.mp3",
+		"oAP": "\/FC6T1\/5\/s\/cierre.mp3",
 		"oF": 0
 		},
 	"\/FC6T1\/5\/s\/instruccion1.mp3": {
@@ -16657,7 +16657,7 @@
 		},
 	"\/HI4T2\/266\/i\/rship.png": {
 		"ft": 32768,
-		"iS": 249592,
+		"iS": 590795,
 		"oA": 0,
 		"oAP": "\/HI4T2\/266\/i\/rship.png",
 		"oF": 0,

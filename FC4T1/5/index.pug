@@ -63,7 +63,7 @@ html(lang="es")
 
             // SCENES
             scene(v-for="(i, index) in temps.scenes1" v-if="currentScene==index+2" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="dragdrop" title=title text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true")
+                info(type="seleccionar" title=title text="Lee las oraciones y selecciona aquellas que representan un acto libre y responsable." textaudio="s/audio2.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.firstAudio = true")
                 activity
                     audiotext(ref="" :autoplay="true" :audio="i.audio" :text="i.txt" v-if="temps.firstAudio")
                     //.row.w100.w30.wm40.mt-1: img(src="i/girl.png").w100
@@ -112,12 +112,12 @@ html(lang="es")
                         .w40
                             .exlastbox
                                 div Pasar demasiado tiempo en la computadora viendo videos.
-                                drag(data="dos" dropzone=".drop" stay-if-ok particle-color="#015093"): .conector.c2
+                                drag(data="dos" dropzone=".drop" stay-if-ok drag-line particle-color="#015093"): .conector.c2
                         .w40.ml-auto: .drop(data="uno" droptimes="untilok") Dañamos nuestra salud con el sobrepeso que genera la comida chatarra.
                         .w40
                             .exlastbox
                                 div Plantar árboles en el parque de mi colonía.
-                                drag(data="tres" dropzone=".drop" stay-if-ok particle-color="#00A9CB"): .conector.c3
+                                drag(data="tres" dropzone=".drop" stay-if-ok drag-line particle-color="#00A9CB"): .conector.c3
                         .w40.ml-auto: .drop(data="dos" droptimes="untilok") Convivimos menos con las personas y dejamos de hacer actividades físicas.
 
             // SCENES intro 4
