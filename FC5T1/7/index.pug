@@ -1,0 +1,132 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Cumplo mis promesas'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .textbox {
+                padding: 20px;
+                background: #fff;
+                margin: 10px;
+                border-radius: 10px;
+                text-align: center;
+                position: relative;
+            }
+            .selector {
+                display: inline-block;
+                cursor: pointer;
+            }
+            .desplegar {
+                display: inline-block;
+                width: auto;
+                margin: 4px;
+            }
+            .desplegar .deployer {
+                display: none;
+            }
+            .desplegar.ok {
+                display: inline-block;
+                background: var(--sec);
+                border-radius: 10px;
+                padding: 5px;
+            }
+            .desplegar.ok .options,
+            .desplegar.ok .desplegar {
+                display: inline-block;
+            }
+            .desplegar.ok .number {
+                font-size: 1rem;
+                text-shadow: none;
+            }
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona  las palabras resaltadas y elige si es un acuerdo o un compromiso." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w30: img(src="i/a1.png").w100
+                        .w70: .textbox
+                            | Fabián y Laura tomaron la decisión de  
+                            span.selector(@click="openBox('r1')"): number(c=4 smaller) compartir los lápices de colores
+                            desplegar(key="r1" ref="r1" :answer-num="0" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                            |  siempre y cuando 
+                            span.selector(@click="openBox('r2')"): number(c=4 smaller) respeten sus turnos.
+                            desplegar(key="r2" ref="r2" :answer-num="1" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+            
+            
+                    .row.w100
+                        .w70: .textbox
+                            | Sandra 
+                            span.selector(@click="openBox('r3')"): number(c=4 smaller) limpió su habitación
+                            desplegar(key="r3" ref="r3" :answer-num="1" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                            |  para que sus padres 
+                            span.selector(@click="openBox('r4')"): number(c=4 smaller) le dieran permiso de ir al cine.
+                            desplegar(key="r4" ref="r4" :answer-num="0" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                        .w30: img(src="i/a2.png").w100
+           
+            // SCENES
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona  las palabras resaltadas y elige si es un acuerdo o un compromiso." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w30: img(src="i/a3.png").w100
+                        .w70: .textbox
+                            | José quería 
+                            span.selector(@click="openBox('r5')"): number(c=4 smaller)  comer pastel con helado
+                            desplegar(key="r5" ref="r5" :answer-num="0" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                            |  por lo tanto se 
+                            span.selector(@click="openBox('r6')"): number(c=4 smaller) comió todas sus verduras.
+                            desplegar(key="r6" ref="r6" :answer-num="1" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+
+                    .row.w100
+                        .w70: .textbox
+                            | Pedro puede  
+                            span.selector(@click="openBox('r7')"): number(c=4 smaller) ir a la playa
+                            desplegar(key="r7" ref="r7" :answer-num="0" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                            |  siempre y cuando saque buenas calificaciones y 
+                            span.selector(@click="openBox('r8')"): number(c=4 smaller) entregue todas sus tareas.
+                            desplegar(key="r8" ref="r8" :answer-num="1" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                        .w30: img(src="i/a4.png").w100
+            
+            // SCENES
+            scene(v-if="currentScene==3" :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona  las palabras resaltadas y elige si es un acuerdo o un compromiso." textaudio="s/instruccion1.mp3" :autoplay="false")
+                activity
+                    .row.w100
+                        .w30: img(src="i/a5.png").w100
+                        .w70: .textbox
+                            | Si Mariana 
+                            span.selector(@click="openBox('r9')"): number(c=4 smaller)  le presta su muñeca a su hermana,
+                            desplegar(key="r9" ref="r9" :answer-num="0" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+                            |  su hermana 
+                            span.selector(@click="openBox('r10')"): number(c=4 smaller) le prestará su vestido.
+                            desplegar(key="r10" ref="r10" :answer-num="1" show-ok modal-options :options="['Acuerdo','Compromiso']"): template(v-slot:option="{option}"): number(smaller c=3) {{option.text}}
+            
+
+            // END
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [])
+
+                app.openBox = function (box){
+
+                    s_select.play()
+                    this.$refs[box].status = this.$refs[box].status!='ok' ? 'open': 'ok'
+                }
+                
+                app.currentScene = 0
+                app.scenesCount = 3
