@@ -1,0 +1,223 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Descubro la diversidad de México'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .words .text {
+                background: rgba(255, 255, 255, 0.5);
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 10px;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+                line-height: 2;
+            }
+            .words .drop {
+                width: 30%;
+                height: 26px;
+                background: #fff;
+                display: inline-block;
+                vertical-align: middle;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+                margin-right: 4px;
+                text-align: center;
+            }
+            .words .drop .number{
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            .sc_1 .drag {
+                width: fit-content;
+                width: -moz-fit-content;
+                height: auto;
+                margin: 10px;
+            }
+            .sc_1 .drags {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .sc_1 .drop.hover {
+                background: #f0f0f0;
+            }
+            /*.sc_2*/
+            .kid {
+                height: 100%;
+                position: relative;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .kid .drag {
+                width: auto;
+                height: auto;
+            }
+            .kid .kdial {
+                position: absolute;
+                width: 60%;
+                z-index: 1;
+            }
+            .kid:nth-child(1) .kdial {
+                top: -15%;
+                left: 60%;
+            }
+            .kid:nth-child(2) .kdial {
+                top: -15%;
+                left: 60%;
+            }
+            .kid:nth-child(3) .kdial {
+                top: 55%;
+                right: 60%;
+            }
+            .kid:nth-child(4) .kdial {
+                top: -15%;
+                right: 60%;
+            }
+
+
+            .sc_2 .drop {
+                height: 100%;
+                background: #fff;
+                border-radius: 4px;
+                margin: 2px;
+                overflow: hidden;
+                box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 600px) {
+                .sc_2 .drop {
+                    margin: 1px;
+                }
+            }
+            .sc_2 .title {
+                text-align: center;
+                background: var(--c6);
+                color: #fff;
+                font-weight: bold;
+                padding: 4px;
+            }
+            @media (max-width: 600px) {
+                .sc_2 .title {
+                    padding: 4px 2px;
+                    font-size: 0.8rem;
+                }
+            }
+            .sc_2 .text {
+                font-size: 0.8rem;
+                padding: 4px;
+            }
+            @media (max-width: 600px) {
+                .sc_2 .text {
+                    padding: 2px;
+                    font-size: 0.6rem;
+                }
+            }
+            .sc_2 .drop.k1 .title{
+                background: #5EB247;
+            }
+            .sc_2 .drop.k2 .title{
+                background: #015093;
+            }
+            .sc_2 .drop.k3 .title{
+                background: #00A8CB;
+            }
+            .sc_2 .drop.k4 .title{
+                background: #EC8B2E;
+            }
+
+
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Arrastra las palabras del recuadro para completar el texto." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100.wrap
+                        template(v-for="(i, index) in temps.drags")
+                            .w20: drag(:data="i" dropzone=".drop" stay-if-ok append-to-dropzone): number(randomc smaller) {{i}}
+                        
+                    .row.w100
+                        .words.w100
+                            .text
+                                | La 
+                                .drop(data="identidad cultural" droptimes="untilok")
+                                |  es el conjunto de valores,
+                                .drop(data="tradiciones" droptimes="untilok")
+                                | y creencias que funcionan como elemento unificador entre los
+                                .drop(data="individuos" droptimes="untilok")
+                                | para fundamentar nuestro sentido de 
+                                .drop(data="pertenencia a la nación" droptimes="untilok")
+                                | .
+                            .text
+                                | Las personas y sus relaciones forman las
+                                .drop(data="sociedades" droptimes="untilok")
+                                | , las cuales practican diversas 
+                                .drop(data="costumbres" droptimes="untilok")
+                                | , respetando los 
+                                .drop(data="derechos" droptimes="untilok")
+                                | de cada persona.
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="relation" title=title text="Observa las imágenes y une cada texto con el personaje correspondiente." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .kid.w20
+                            img(src="i/k1.png", alt="").w50.animate__animated.animate__bounce.animate__delay-2s
+                            img(src="i/d1.png", alt="").kdial.animate__animated.animate__heartBeat.animate__infinite.animate__slower
+                            drag(ref="" data="k1" dropzone=".drop" stay-if-ok drag-line particle-color="#5EB247" dropzone-ok-class="k1"): .conector.c1
+                        .kid.w20
+                            img(src="i/k2.png", alt="").w50.animate__animated.animate__bounce.animate__delay-3s
+                            img(src="i/d2.png", alt="").kdial.animate__animated.animate__heartBeat.animate__infinite.animate__slower
+                            drag(ref="" data="k2" dropzone=".drop" stay-if-ok drag-line particle-color="#015093" dropzone-ok-class="k2"): .conector.c2
+                        .kid.w20
+                            img(src="i/k3.png", alt="").w50.animate__animated.animate__bounce.animate__delay-4s
+                            img(src="i/d3.png", alt="").kdial.animate__animated.animate__heartBeat.animate__infinite.animate__slower
+                            drag(ref="" data="k3" dropzone=".drop" stay-if-ok drag-line particle-color="#00A8CB" dropzone-ok-class="k3"): .conector.c3
+                        .kid.w20
+                            img(src="i/k4.png", alt="").w50.animate__animated.animate__bounce.animate__delay-5s
+                            img(src="i/d4.png", alt="").kdial.animate__animated.animate__heartBeat.animate__infinite.animate__slower
+                            drag(ref="" data="k4" dropzone=".drop" stay-if-ok drag-line particle-color="#EC8B2E" dropzone-ok-class="k4"): .conector.c4
+                    
+                    .row.w100.mt-1
+                        .drop(data="k3" droptimes="untilok").w20
+                            .title Huicholes
+                            .text Nuestra artesanía es muy colorista, utilizamos la chaquira como material.
+                        .drop(data="k1" droptimes="untilok").w20
+                            .title Coras
+                            .text Nuestra vestimenta consiste en un calzón y una camisa de manta con amarre en la cintura y adornados con animales bordados.
+                        .drop(data="k4" droptimes="untilok").w20
+                            .title Mayas
+                            .text Muchos de nosotros nos dedicamos al cultivo del maíz y a la producción de miel.
+                        .drop(data="k2" droptimes="untilok").w20
+                            .title Tarahumaras
+                            .text También nos conocen como rarámuris: nuestras casas tienen un granero y corral de madera
+
+
+            // END
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'drags', [
+                    'pertenencia a la nación',
+                    'sociedades',
+                    'costumbres',
+                    'individuos',
+                    'tradiciones',
+                    'identidad cultural',
+                    'derechos',
+                ])
+                
+                app.currentScene = 2
+                app.scenesCount = 2

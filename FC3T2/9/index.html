@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Descubro la diversidad de México</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .words .text {
+          background: rgba(255, 255, 255, 0.5);
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          line-height: 2;
+      }
+      .words .drop {
+          width: 30%;
+          height: 26px;
+          background: #fff;
+          display: inline-block;
+          vertical-align: middle;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          margin-right: 4px;
+          text-align: center;
+      }
+      .words .drop .number{
+          font-size: 1rem;
+          line-height: 1.5;
+      }
+      .sc_1 .drag {
+          width: fit-content;
+          width: -moz-fit-content;
+          height: auto;
+          margin: 10px;
+      }
+      .sc_1 .drags {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .sc_1 .drop.hover {
+          background: #f0f0f0;
+      }
+      /*.sc_2*/
+      .kid {
+          height: 100%;
+          position: relative;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .kid .drag {
+          width: auto;
+          height: auto;
+      }
+      .kid .kdial {
+          position: absolute;
+          width: 60%;
+          z-index: 1;
+      }
+      .kid:nth-child(1) .kdial {
+          top: -15%;
+          left: 60%;
+      }
+      .kid:nth-child(2) .kdial {
+          top: -15%;
+          left: 60%;
+      }
+      .kid:nth-child(3) .kdial {
+          top: 55%;
+          right: 60%;
+      }
+      .kid:nth-child(4) .kdial {
+          top: -15%;
+          right: 60%;
+      }
+      
+      
+      .sc_2 .drop {
+          height: 100%;
+          background: #fff;
+          border-radius: 4px;
+          margin: 2px;
+          overflow: hidden;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 600px) {
+          .sc_2 .drop {
+              margin: 1px;
+          }
+      }
+      .sc_2 .title {
+          text-align: center;
+          background: var(--c6);
+          color: #fff;
+          font-weight: bold;
+          padding: 4px;
+      }
+      @media (max-width: 600px) {
+          .sc_2 .title {
+              padding: 4px 2px;
+              font-size: 0.8rem;
+          }
+      }
+      .sc_2 .text {
+          font-size: 0.8rem;
+          padding: 4px;
+      }
+      @media (max-width: 600px) {
+          .sc_2 .text {
+              padding: 2px;
+              font-size: 0.6rem;
+          }
+      }
+      .sc_2 .drop.k1 .title{
+          background: #5EB247;
+      }
+      .sc_2 .drop.k2 .title{
+          background: #015093;
+      }
+      .sc_2 .drop.k3 .title{
+          background: #00A8CB;
+      }
+      .sc_2 .drop.k4 .title{
+          background: #EC8B2E;
+      }
+      
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="7" scene-color="#ED1C25">
+        <info type="seleccionar" title="Descubro la diversidad de México" text="Arrastra las palabras del recuadro para completar el texto." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 wrap">
+            <template v-for="(i, index) in temps.drags">
+              <div class="w20">
+                <drag :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <number randomc="randomc" smaller="smaller">{{i}}</number>
+                </drag>
+              </div>
+            </template>
+          </div>
+          <div class="row w100">
+            <div class="words w100">
+              <div class="text">La 
+                <div class="drop" data="identidad cultural" droptimes="untilok"></div> es el conjunto de valores,
+                <div class="drop" data="tradiciones" droptimes="untilok"></div>y creencias que funcionan como elemento unificador entre los
+                <div class="drop" data="individuos" droptimes="untilok"></div>para fundamentar nuestro sentido de 
+                <div class="drop" data="pertenencia a la nación" droptimes="untilok"></div>.
+              </div>
+              <div class="text">Las personas y sus relaciones forman las
+                <div class="drop" data="sociedades" droptimes="untilok"></div>, las cuales practican diversas 
+                <div class="drop" data="costumbres" droptimes="untilok"></div>, respetando los 
+                <div class="drop" data="derechos" droptimes="untilok"></div>de cada persona.
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="relation" title="Descubro la diversidad de México" text="Observa las imágenes y une cada texto con el personaje correspondiente." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="kid w20"><img class="w50 animate__animated animate__bounce animate__delay-2s" src="i/k1.png" alt=""/><img class="kdial animate__animated animate__heartBeat animate__infinite animate__slower" src="i/d1.png" alt=""/>
+              <drag ref="" data="k1" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#5EB247" dropzone-ok-class="k1">
+                <div class="conector c1"></div>
+              </drag>
+            </div>
+            <div class="kid w20"><img class="w50 animate__animated animate__bounce animate__delay-3s" src="i/k2.png" alt=""/><img class="kdial animate__animated animate__heartBeat animate__infinite animate__slower" src="i/d2.png" alt=""/>
+              <drag ref="" data="k2" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#015093" dropzone-ok-class="k2">
+                <div class="conector c2"></div>
+              </drag>
+            </div>
+            <div class="kid w20"><img class="w50 animate__animated animate__bounce animate__delay-4s" src="i/k3.png" alt=""/><img class="kdial animate__animated animate__heartBeat animate__infinite animate__slower" src="i/d3.png" alt=""/>
+              <drag ref="" data="k3" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#00A8CB" dropzone-ok-class="k3">
+                <div class="conector c3"></div>
+              </drag>
+            </div>
+            <div class="kid w20"><img class="w50 animate__animated animate__bounce animate__delay-5s" src="i/k4.png" alt=""/><img class="kdial animate__animated animate__heartBeat animate__infinite animate__slower" src="i/d4.png" alt=""/>
+              <drag ref="" data="k4" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#EC8B2E" dropzone-ok-class="k4">
+                <div class="conector c4"></div>
+              </drag>
+            </div>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="drop w20" data="k3" droptimes="untilok">
+              <div class="title">Huicholes</div>
+              <div class="text">Nuestra artesanía es muy colorista, utilizamos la chaquira como material.</div>
+            </div>
+            <div class="drop w20" data="k1" droptimes="untilok">
+              <div class="title">Coras</div>
+              <div class="text">Nuestra vestimenta consiste en un calzón y una camisa de manta con amarre en la cintura y adornados con animales bordados.</div>
+            </div>
+            <div class="drop w20" data="k4" droptimes="untilok">
+              <div class="title">Mayas</div>
+              <div class="text">Muchos de nosotros nos dedicamos al cultivo del maíz y a la producción de miel.</div>
+            </div>
+            <div class="drop w20" data="k2" droptimes="untilok">
+              <div class="title">Tarahumaras</div>
+              <div class="text">También nos conocen como rarámuris: nuestras casas tienen un granero y corral de madera</div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'drags', [
+          'pertenencia a la nación',
+          'sociedades',
+          'costumbres',
+          'individuos',
+          'tradiciones',
+          'identidad cultural',
+          'derechos',
+      ])
+      
+      app.currentScene = 2
+      app.scenesCount = 2
+    </script>
+  </body>
+</html>
