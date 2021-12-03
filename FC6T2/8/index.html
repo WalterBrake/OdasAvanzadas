@@ -3,27 +3,260 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco y respeto otras culturas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .map .clickable {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+      }
+      .map .clickable img {
+          width: 100%;
+      }
+      .map .clickable.coras {
+          left: 35.5%;
+          top: 54.8%;
+          width: 6.5%;
+      }
+      .map .clickable.tarahumaras {
+          left: 25.6%;
+          top: 9.8%;
+          width: 18%;
+      }
+      .map .clickable.mazahuas {
+          left: 52.3%;
+          top: 69.2%;
+          width: 6.5%;
+      }
+      .map .clickable.triquis {
+          left: 59.3%;
+          top: 77.1%;
+          width: 15.6%;
+      }
+      .clickable > img {
+          opacity: 0;
+      }
+      .clickable.clicked > img {
+          opacity: 1;
+          transition: opacity 0.3s;
+      }
+      .clickable .anim {
+          display: none;
+      }
+      .textbox {
+          position: absolute;
+          right: 2px;
+          top: 2px;
+          width: 45%;
+          text-align: center;
+          border-radius: 34px;
+          overflow: hidden;
+      }
+      .textbox .title {
+          font-weight: bold;
+      }
+      .textbox .img img {
+          margin-top: 4px;
+          max-height: 140px;
+      }
+      @media (max-width: 600px) {
+          .textbox .img img {
+              max-height: 100px;
+          }
+      }
+      .textbox .audiotext {
+          font-size: 0.9rem;
+          padding: 2px;
+          border-radius: 0 0 8px 8px;
+      }
+      .textbox .audiotext .audiotextBtn {
+          width: 20px;
+          height: 20px;
+      }
+      @media (max-width: 600px) {
+          .textbox .audiotext {
+              font-size: 0.7rem;
+          }
+      }
+      .textbox .coras .title {
+          background: #F7ABB7;
+      }
+      .textbox .coras .audiotext {
+          background: #FDF1F1;
+      }
+      .textbox .tarahumaras .title {
+          background: #78CAEF;
+      }
+      .textbox .tarahumaras .audiotext {
+          background: #E2ECF7;
+      }
+      .textbox .mazahuas .title {
+          background: #B9D65C;
+      }
+      .textbox .mazahuas .audiotext {
+          background: #D8E7A5;
+      }
+      .textbox .triquis .title {
+          background: #FCEC96;
+      }
+      .textbox .triquis .audiotext {
+          background: #FEF9E4;
+      }
+      
+      
+      
+      
+      .words .text {
+          background: rgba(255, 255, 255, 0.5);
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 10px;
+          box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+          line-height: 2;
+      }
+      .words .drop {
+          width: 30%;
+          height: 26px;
+          background: #fff;
+          display: inline-block;
+          vertical-align: middle;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          margin-right: 4px;
+          text-align: center;
+      }
+      .words .drop .number{
+          font-size: 1rem;
+          line-height: 1.5;
+      }
+      .drag {
+         width: fit-content; width: -moz-fit-content;
+          height: auto;
+          margin: 10px;
+      }
+      .drags {
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .text>.number{
+          display: inline;
+          margin-right: 10px;
+      }
+      .recuadro {
+          border: 4px dashed var(--main);
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          text-align: center;
+      }
+      .recuadro .drag {
+          width: auto;
+          height: auto;
+      }
+      
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="seleccionar" title="Conozco y respeto otras culturas" text="Selecciona el estado al que corresponde cada cultura." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = 1"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 relative map"><img class="w100" src="i/mapa.png"/>
+            <div class="clickables">
+              <template v-if="temps.au1&gt;=1">
+                <clickable :isok="true" simple-ok="simple-ok" initclass="coras" @wasclicked="increaseit(2)"><img src="i/s_coras.png"/></clickable>
+              </template>
+              <template v-if="temps.au1&gt;=2">
+                <clickable :isok="true" simple-ok="simple-ok" initclass="tarahumaras" @wasclicked="increaseit(3)"><img src="i/s_tarahumaras.png"/></clickable>
+              </template>
+              <template v-if="temps.au1&gt;=3">
+                <clickable :isok="true" simple-ok="simple-ok" initclass="mazahuas" @wasclicked="increaseit(4)"><img src="i/s_mazahuas.png"/></clickable>
+              </template>
+              <template v-if="temps.au1&gt;=4">
+                <clickable :isok="true" simple-ok="simple-ok" initclass="triquis"><img src="i/s_triquis.png"/></clickable>
+              </template>
+            </div>
+            <div class="textbox">
+              <template v-if="temps.au1==1">
+                <div class="coras">
+                  <div class="title">Coras</div>
+                  <audiotext :autoplay="true" key="1" audio="s/coras.mp3" text="Los coras son originarios del estado de Nayarit, su vestimenta es de manta de colores."></audiotext>
+                  <div class="img"><img src="i/coras.png"/></div>
+                </div>
+              </template>
+              <template v-if="temps.au1==2">
+                <div class="tarahumaras">
+                  <div class="title">Tarahumaras</div>
+                  <audiotext :autoplay="true" key="2" audio="s/tarahumaras.mp3" text="Los tarahumaras habitan en Chihuahua. Un platillo típico es el pinole que está hecho con maíz tostado."></audiotext>
+                  <div class="img"><img src="i/tarahumaras.png"/></div>
+                </div>
+              </template>
+              <template v-if="temps.au1==3">
+                <div class="mazahuas">
+                  <div class="title">Mazahuas</div>
+                  <audiotext :autoplay="true" key="3" audio="s/mazahuas.mp3" text="Los mazahuas son originarios del Estado de México, su vestimenta está hecha a mano con arreglos orales muy coloridos."></audiotext>
+                  <div class="img"><img src="i/mazahuas.png"/></div>
+                </div>
+              </template>
+              <template v-if="temps.au1==4">
+                <div class="triquis">
+                  <div class="title">Triquis</div>
+                  <audiotext :autoplay="true" key="4" audio="s/triquis.mp3" text="Los triquis son originarios de Oaxaca, las mujeres tejen sus vestiduras de algodón, con franjas horizontales y entretejidas, y una franja ancha con dibujitos en zigzag."></audiotext>
+                  <div class="img"><img src="i/triquis.png"/></div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/instruccion3.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25">
+        <info type="dragdrop" title="Conozco y respeto otras culturas" text="Arrastra las palabras del recuadro para completar los textos." textaudio="s/instruccion2.mp3" :autoplay="true" @completedinstructions="temps.au1 = 1"></info>
+        <activity>
+          <div class="row w100">
+            <div class="recuadro w100">
+              <template v-for="(i, index) in temps.palabras">
+                <div class="w20 wm40">
+                  <drag :data="i" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                    <number randomc="randomc" smaller="smaller">{{i}}</number>
+                  </drag>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="words w100">
+              <div class="text">
+                <number smaller="smaller" c="1">1.</number>La diversidad 
+                <div class="drop" data="cultural" droptimes="untilok"></div> es patrimonio de la humanidad porque es fuente de aprendizaje mutuo y 
+                <div class="drop" data="favorece" droptimes="untilok"></div> la creación de nuevas expresiones culturales.
+              </div>
+              <div class="text">
+                <number smaller="smaller" c="1">2.</number>Aceptar la diversidad es 
+                <div class="drop" data="respetar" droptimes="untilok"></div> la dignidad humana, reconocer los 
+                <div class="drop" data="derechos humanos" droptimes="untilok"></div> universales y las 
+                <div class="drop" data="libertades" droptimes="untilok"></div> fundamentales de los demás.
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +291,25 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', 0)
+      
+      
+      app.increaseit = function(val){
+          console.log('inscreassing')
+          app.$set(app.temps, 'au1', val)
+      
+      }
+      
+      app.$set(app.temps, 'palabras', [
+          'libertades',
+          'cultural',
+          'derechos humanos',
+          'respetar',
+          'favorece'
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>

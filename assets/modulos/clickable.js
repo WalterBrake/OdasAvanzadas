@@ -118,9 +118,11 @@ Vue.component('clickable', {
 
                 if(_this.extValidation == undefined){
                     _this.$emit('wasclicked')
+
                     
                 } else {
                     EventBus.$emit('isok')
+
                 }
                 
                 

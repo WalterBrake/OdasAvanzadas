@@ -15743,6 +15743,105 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/FC6T2\/8\/i\/coras.png": {
+		"ft": 32768,
+		"iS": 61579,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/coras.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/mapa.png": {
+		"ft": 32768,
+		"iS": 121098,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/mapa.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/mazahuas.png": {
+		"ft": 32768,
+		"iS": 57322,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/mazahuas.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/s_coras.png": {
+		"ft": 32768,
+		"iS": 2619,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/s_coras.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/s_mazahuas.png": {
+		"ft": 32768,
+		"iS": 2445,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/s_mazahuas.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/s_tarahumaras.png": {
+		"ft": 32768,
+		"iS": 5769,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/s_tarahumaras.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/s_triquis.png": {
+		"ft": 32768,
+		"iS": 3933,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/s_triquis.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/tarahumaras.png": {
+		"ft": 32768,
+		"iS": 59471,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/tarahumaras.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC6T2\/8\/i\/triquis.png": {
+		"ft": 32768,
+		"iS": 47945,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/i\/triquis.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/FC6T2\/8\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -15758,6 +15857,55 @@
 		"oAP": "\/FC6T2\/8\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/FC6T2\/8\/s\/coras.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/coras.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/instruccion3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/instruccion3.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/mazahuas.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/mazahuas.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/tarahumaras.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/tarahumaras.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/8\/s\/triquis.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/8\/s\/triquis.mp3",
+		"oF": 0
 		},
 	"\/GE4T1\/227\/aimg\/mapa.svg": {
 		"ft": 2097152,
