@@ -9407,7 +9407,7 @@
 		},
 	"\/ES2T2\/60\/i\/a1.png": {
 		"ft": 32768,
-		"iS": 23458,
+		"iS": 25761,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a1.png",
 		"oF": 0,
@@ -9484,7 +9484,7 @@
 		},
 	"\/ES2T2\/60\/i\/a2.png": {
 		"ft": 32768,
-		"iS": 25710,
+		"iS": 10945,
 		"oA": 0,
 		"oAP": "\/ES2T2\/60\/i\/a2.png",
 		"oF": 0,
@@ -15111,17 +15111,6 @@
 		"oAP": "\/FC3T1\/5\/s\/necesito.mp3",
 		"oF": 0
 		},
-	"\/FC3T2\/9\/i\/.d1~imageoptim.png": {
-		"ft": 32768,
-		"iS": 57231,
-		"oA": 0,
-		"oAP": "\/FC3T2\/9\/i\/d1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/FC3T2\/9\/i\/d1.png": {
 		"ft": 32768,
 		"iS": 57231,
@@ -15400,6 +15389,50 @@
 		"oAP": "\/FC4T1\/5\/s\/Reconozco a los demás FCE4ºT1_A13_13.mp3",
 		"oF": 0
 		},
+	"\/FC4T2\/9\/i\/a1.png": {
+		"ft": 32768,
+		"iS": 184884,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/i\/a1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC4T2\/9\/i\/a2.png": {
+		"ft": 32768,
+		"iS": 187545,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/i\/a2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC4T2\/9\/i\/a3.png": {
+		"ft": 32768,
+		"iS": 168080,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/i\/a3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/FC4T2\/9\/i\/a4.png": {
+		"ft": 32768,
+		"iS": 181980,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/i\/a4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/FC4T2\/9\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -15415,6 +15448,48 @@
 		"oAP": "\/FC4T2\/9\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/FC4T2\/9\/s\/huave.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/huave.mp3",
+		"oF": 0
+		},
+	"\/FC4T2\/9\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC4T2\/9\/s\/instruccion2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/instruccion2.mp3",
+		"oF": 0
+		},
+	"\/FC4T2\/9\/s\/maya.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/maya.mp3",
+		"oF": 0
+		},
+	"\/FC4T2\/9\/s\/seri.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/seri.mp3",
+		"oF": 0
+		},
+	"\/FC4T2\/9\/s\/tepehua.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC4T2\/9\/s\/tepehua.mp3",
+		"oF": 0
 		},
 	"\/FC5T1\/7\/i\/a1.png": {
 		"ft": 32768,

@@ -1,12 +1,47 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Conozco las lenguas de mi país'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .personaje {
+                display: flex;
+            }
+            .personaje img {
+                max-width: 200px;
+            }
+            .personaje .drag {
+                width: auto;
+                height: auto;
+            }
+            .drop {
+                background: #fff;
+                font-size: 0.9rem;
+                border-radius: 7px;
+                margin: 8px 4px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                border: 2px dashed var(--beige);
+            }
+            .drop .audiotextBtn {
+                width: 20px;
+                height: 20px;
+            }
+            .drop.active.tepehua {
+                border: 2px solid #F460AB;
+            }
+            .drop.active.maya {
+                border: 2px solid #00A8CB;
+            }
+            .drop.active.huave {
+                border: 2px solid #F49040;
+            }
+            .drop.active.seri {
+                border: 2px solid #C65880;
+            }
+
 
 
     body
@@ -15,10 +50,32 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Escucha a los personajes y relaciónalos con la lengua que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .personajes.w50.text-center
+                            div.personaje
+                                img(src="i/a1.png").w100
+                                drag(data="tepehua" dropzone=".drop" stay-if-ok drag-line particle-color="#F7C2C5" dropzone-ok-class="active"): .conector.c6
+                            div.personaje
+                                img(src="i/a2.png").w100
+                                drag(data="maya" dropzone=".drop" stay-if-ok drag-line particle-color="#66CEF4" dropzone-ok-class="active"): .conector.c3
+                            div.personaje
+                                img(src="i/a3.png").w100
+                                drag(data="huave" dropzone=".drop" stay-if-ok drag-line particle-color="#F59041" dropzone-ok-class="active"): .conector.c4
+                            div.personaje
+                                img(src="i/a4.png").w100
+                                drag(data="seri" dropzone=".drop" stay-if-ok  drag-line particle-color="#F38783" dropzone-ok-class="active"): .conector.c8
+                        .textos.w50.text-center
+                            .drop(data="tepehua" droptimes="untilok").tepehua
+                                audiotext(:autoplay="false" audio="s/tepehua.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo.")
+                            .drop(data="maya" droptimes="untilok").maya
+                                audiotext(:autoplay="false" audio="s/maya.mp3" text="Muchos de nosotros nos dedicamos al cultivo de maíz y a la producción de miel. Habitamos en Yucatán y Chiapas.")
+                            .drop(data="huave" droptimes="untilok").huave
+                                audiotext(:autoplay="false" audio="s/huave.mp3" text="Nos dedicamos a la pesca y habitamos en Oaxaca y gran parte del Istmo de Tehuantepec.")
+                            .drop(data="seri" droptimes="untilok").seri
+                                audiotext(:autoplay="false" audio="s/seri.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo.")
             
             
             // END

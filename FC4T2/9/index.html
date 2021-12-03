@@ -3,23 +3,98 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Conozco las lenguas de mi país</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .personaje {
+          display: flex;
+      }
+      .personaje img {
+          max-width: 200px;
+      }
+      .personaje .drag {
+          width: auto;
+          height: auto;
+      }
+      .drop {
+          background: #fff;
+          font-size: 0.9rem;
+          border-radius: 7px;
+          margin: 8px 4px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          border: 2px dashed var(--beige);
+      }
+      .drop .audiotextBtn {
+          width: 20px;
+          height: 20px;
+      }
+      .drop.active.tepehua {
+          border: 2px solid #F460AB;
+      }
+      .drop.active.maya {
+          border: 2px solid #00A8CB;
+      }
+      .drop.active.huave {
+          border: 2px solid #F49040;
+      }
+      .drop.active.seri {
+          border: 2px solid #C65880;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="relacionar" title="Conozco las lenguas de mi país" text="Escucha a los personajes y relaciónalos con la lengua que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="personajes w50 text-center">
+              <div class="personaje"><img class="w100" src="i/a1.png"/>
+                <drag data="tepehua" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#F7C2C5" dropzone-ok-class="active">
+                  <div class="conector c6"></div>
+                </drag>
+              </div>
+              <div class="personaje"><img class="w100" src="i/a2.png"/>
+                <drag data="maya" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#66CEF4" dropzone-ok-class="active">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+              <div class="personaje"><img class="w100" src="i/a3.png"/>
+                <drag data="huave" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#F59041" dropzone-ok-class="active">
+                  <div class="conector c4"></div>
+                </drag>
+              </div>
+              <div class="personaje"><img class="w100" src="i/a4.png"/>
+                <drag data="seri" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#F38783" dropzone-ok-class="active">
+                  <div class="conector c8"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="textos w50 text-center">
+              <div class="drop tepehua" data="tepehua" droptimes="untilok">
+                <audiotext :autoplay="false" audio="s/tepehua.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo."></audiotext>
+              </div>
+              <div class="drop maya" data="maya" droptimes="untilok">
+                <audiotext :autoplay="false" audio="s/maya.mp3" text="Muchos de nosotros nos dedicamos al cultivo de maíz y a la producción de miel. Habitamos en Yucatán y Chiapas."></audiotext>
+              </div>
+              <div class="drop huave" data="huave" droptimes="untilok">
+                <audiotext :autoplay="false" audio="s/huave.mp3" text="Nos dedicamos a la pesca y habitamos en Oaxaca y gran parte del Istmo de Tehuantepec."></audiotext>
+              </div>
+              <div class="drop seri" data="seri" droptimes="untilok">
+                <audiotext :autoplay="false" audio="s/seri.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo."></audiotext>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
