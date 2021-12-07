@@ -68,15 +68,14 @@ html(lang="es")
                                 img(src="i/a4.png").w100
                                 drag(data="seri" dropzone=".drop" stay-if-ok  drag-line particle-color="#F38783" dropzone-ok-class="active"): .conector.c8
                         .textos.w50.text-center
-                            .drop(data="tepehua" droptimes="untilok").tepehua
-                                audiotext(:autoplay="false" audio="s/tepehua.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo.")
                             .drop(data="maya" droptimes="untilok").maya
                                 audiotext(:autoplay="false" audio="s/maya.mp3" text="Muchos de nosotros nos dedicamos al cultivo de maíz y a la producción de miel. Habitamos en Yucatán y Chiapas.")
+                            .drop(data="seri" droptimes="untilok").seri
+                                audiotext(:autoplay="false" audio="s/seri.mp3" text="Nuestra lengua proviene de la lengua yaqui y significa \"hombres de la arena\". Habitamos en el estado de Sonora y nos dedicamos a la elaboración de artesanías.")
+                            .drop(data="tepehua" droptimes="untilok").tepehua
+                                audiotext(:autoplay="false" audio="s/tepehua.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo.")
                             .drop(data="huave" droptimes="untilok").huave
                                 audiotext(:autoplay="false" audio="s/huave.mp3" text="Nos dedicamos a la pesca y habitamos en Oaxaca y gran parte del Istmo de Tehuantepec.")
-                            .drop(data="seri" droptimes="untilok").seri
-                                audiotext(:autoplay="false" audio="s/seri.mp3" text="Nosotros nos dedicamos al cultivo de la yuca, la calabaza y el frijol, construimos la ciudad de El Tajín y habitamos en Veracruz, Puebla e Hidalgo.")
-            
             
             // END
             scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
