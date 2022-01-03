@@ -1,13 +1,109 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Trato a todos por igual'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .imageFam{
+                height: 416px;
+                background-size: 790px;
+                margin-bottom: 10px;
+                background-repeat: no-repeat;
+                transition: all 0.3s ease;
+            }
+            .imageFam.a{
+                background-size: 200%;
+                background-position: bottom left;
+                transition: all 0.3s ease;
+            }
+            .imageFam.b{
+                background-size: 250%;
+                background-position: 70% 20%;
+                transition: all 0.3s ease;
+            }
+            .imageFam.c{
+                background-size: 250%;
+                background-position: right;
+                transition: all 0.3s ease;
+            }
+            .imageFam.d{
+                background-size: 100%;
+                background-position: center;
+                transition: all 0.3s ease;
+            }
 
+
+            .drag {
+                width: auto;
+                width: fit-content; width: -moz-fit-content;
+                height: auto;
+                text-align: left;
+                justify-content: flex-start;
+                max-width: 80%;
+                margin: 4px auto;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                margin: 5px;
+            }
+            .drag > div {
+                text-align: left;
+                background: #fff;
+                padding: 4px;
+                border-radius: 6px;
+                font-size: 0.9rem;
+            }
+            @media (max-width: 680px) {
+                .drag > div {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase {
+                background: #FEF8E2;
+                border-radius: 6px;
+                padding: 6px;
+                margin-bottom: 5px;
+            }
+            @media (max-width: 680px) {
+                .frase {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase .drop {
+                min-height: 50px;
+                border: 2px dashed #fff;
+                border-radius: 4px;
+                background: var(--clear);
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1) inset;
+                padding: 4px;
+                font-size: 0.7rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @media (max-width: 680px) {
+                .frase .drop {
+                    font-size: 0.6rem;
+                }
+            }
+            .frase .drop.hover {
+                background: var(--accent);
+            }
+            [wascloned] {
+                display: none;
+            }
+            .ex1 {
+                height: 100%;
+                align-items: normal;
+            }
+            .frases,
+            .drags {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+            }
 
     body
         #app
@@ -16,19 +112,103 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="dragdrop" title=title text="Hola soy Carlos! Mi familia y yo estamos platicando en la sala de mi casa. Escucha la conversación." textaudio="s/intro.mp3" :autoplay="true" @completedinstructions="temps.au1 = true")
                 activity
-                    .row.w100
+                    .row.w100.text-center
+                        .w50
+                            template(v-if="!temps.au1")
+                                lottie-player(src="i/carlos.json" key="c1" background="transparent" style="width: 100%; height: 100%;" autoplay loop)
+                            template(v-else)
+                                lottie-player(src="i/carlos.json" key="c2" background="transparent" style="width: 100%; height: 100%;" )
+                                button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Hola soy Carlos! Mi familia y yo estamos platicando en la sala de mi casa. Escucha la conversación." textaudio="s/intro.mp3" :autoplay="false")
+                activity
+                    
+                    sequence(ref="sequence" :options="temps.ops" dots arrows initclass="w100" use-vif @completed="temps.sqCompleted = true")
+                        template(v-slot:option="{option}")
+                            .comic.w100
+                                .imageFam.w100(style="background-image: url(i/fami.png)" :class="option.classindex")
+                                .dialog(:class="option.dialogPos"): audiotext(:audio="option.audio" :text="option.dialog" :autoplay="true" @completed="temps.aus++")
+
+                    .text-center(v-if="temps.sqCompleted"): button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Continuar
             
+            // SCENES
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Arrastra la respuesta correcta a la pregunta que le corresponda." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+
+                    .row.w100.ex1
+                        .w40.frases
+                            div.frase
+                                .t Son características sociales que hay entre hombres y mujeres en la actualidad.
+                                .drop(data="b" droptimes="untilok")
             
+                            div.frase
+                                .t ¿Qué es la equidad de género?
+                                .drop(data="c" droptimes="untilok")
+            
+                            div.frase
+                                .t ¿Qué se puede hacer para evitar la desigualdad de género?
+                                .drop(data="a" droptimes="untilok")
+  
+                        .w40.drags.ml-auto
+                            drag(ref="a" data="a" dropzone=".drop" stay-if-ok append-clone extval): div Respetar los derechos humanos de cada persona, distribuir las tareas equitativamente y tratar a las personas con igualdad.
+                            drag(ref="b" data="b" dropzone=".drop" stay-if-ok append-clone extval): div Los salarios de las mujeres son más bajos que los de los hombres, aunque su desempeño sea el mismo.
+                            drag(ref="c" data="c" dropzone=".drop" stay-if-ok append-clone extval): div Es dar a cada uno lo que se merece, tanto a hombres como a mujeres, según su necesidad.
+
+                    .text-center: button(@click="dragValidation(['a','b','c'], 3)").button.big.animate__animated.animate__flip Verificar
+
+            // SCENES
+            scene(v-if="currentScene==4" hidescorebox :key="4" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="¡Muy bien! Habla con tu familia sobre el tratar a todos por igual." textaudio="s/fin.mp3" :autoplay="true" @completedinstructions="temps.au2 = true")
+                activity
+                    .row.w100.text-center
+                        .w50
+                            template(v-if="!temps.au2")
+                                lottie-player(src="i/carlos.json" key="c1" background="transparent" style="width: 100%; height: 100%;" autoplay loop)
+                            template(v-else)
+                                lottie-player(src="i/carlos.json" key="c2" background="transparent" style="width: 100%; height: 100%;" )
+                                button(@click="sceneCompleted(false)").button.big.animate__animated.animate__flip Finalizar
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==5" :key="5" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'sqCompleted', false)
+                
+                app.$set(app.temps, 'au1', false)
+                app.$set(app.temps, 'au2', false)
+                app.$set(app.temps, 'ops', [
+                    {
+                        classindex: 'a',
+                        dialog: 'Cuando yo tenía 13 años, mi mamá llegó un día a casa con dos pantalones que ella se había comprado. Mi padre le dijo que él era quien debía comprarlos.',
+                        audio: 's/au1.mp3',
+                        dialogPos: 'br tip-l'
+                    },
+                    {
+                        classindex: 'b',
+                        dialog: 'Yo recuerdo que cuando estudiaba en la Facultad de Ingeniería, sólo asistían hombres a las clases.',
+                        audio: 's/au2.mp3',
+                        dialogPos: 'tl tip-r'
+                    },
+                    {
+                        classindex: 'c',
+                        dialog: 'En la escuela de enfermería había sólo mujeres.',
+                        audio: 's/au3.mp3',
+                        dialogPos: 'bl tip-r'
+                    },
+                    {
+                        classindex: 'd',
+                        dialog: '¡Cómo han cambiado los tiempos! En mi escuela las mujeres participan en todo, ¡hasta juegan fútbol con los hombres!',
+                        audio: 's/au4.mp3',
+                        dialogPos: 'tc tip-b'
+                    },
+                ])
                 
                 app.currentScene = 0
                 app.scenesCount = 1

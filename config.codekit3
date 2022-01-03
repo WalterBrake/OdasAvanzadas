@@ -13870,7 +13870,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -13956,28 +13956,28 @@
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Hijo_Teatro.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -15711,6 +15711,25 @@
 		"oAP": "\/FC6T1\/5\/s\/intro.mp3",
 		"oF": 0
 		},
+	"\/FC6T2\/11\/i\/carlos.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/FC6T2\/11\/i\/carlos-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/FC6T2\/11\/i\/fami.png": {
+		"ft": 32768,
+		"iS": 330903,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/i\/fami.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/FC6T2\/11\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -15726,6 +15745,55 @@
 		"oAP": "\/FC6T2\/11\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/FC6T2\/11\/s\/au1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/au1.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/au2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/au2.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/au3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/au3.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/au4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/au4.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/fin.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/fin.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/instruccion1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/instruccion1.mp3",
+		"oF": 0
+		},
+	"\/FC6T2\/11\/s\/intro.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/FC6T2\/11\/s\/intro.mp3",
+		"oF": 0
 		},
 	"\/FC6T2\/13\/index.html": {
 		"cB": 0,
@@ -17013,7 +17081,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
