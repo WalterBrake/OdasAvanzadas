@@ -1,0 +1,90 @@
+include ../../assets/pug/_head
+include ../../assets/pug/_scripts
+
+- title = 'Mis derechos me protegen'
+
+<!DOCTYPE html>
+html(lang="es")
+    +head
+        style.
+            .drag{
+                width: auto;
+                height: auto;
+            }
+            .dragimg {
+                display: flex;
+                margin: 5px 0;
+            }
+            .dragimg.dragimgright {
+                justify-content: flex-end;
+            }
+            .row.vertical {
+                flex-direction: column;
+            }
+            .drop {
+                background: #fff;
+                padding: 10px 6px;
+                text-align: center;
+                margin: 10px 0;
+                border-radius: 6px;
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+            }
+            .drop.hover{
+                box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+            }
+            @media (max-width:600px){
+                .drop{
+                    font-size: 0.8rem;
+                    padding: 6px 2px;
+                }
+            }
+
+
+    body
+        #app
+            // START
+            scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
+
+            // SCENES
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="s/instruccion2.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Escucha y relaciona cada derecho con las imagen que lo representa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w30
+                            div.w100(v-for="(i, index) in 3").dragimg
+                                img(:src="'i/a'+(index+1)+'.png'").w50
+                                drag(:data="index+1" dropzone=".drop" stay-if-ok drag-line particle-color="#87C779"): .conector.c1 
+                        .w40
+                            template(v-for="(i, index) in temps.a")
+                                .drop(:data="i.v" droptimes="untilok"): div {{i.t}}
+                            
+
+                        .w30
+                            div.w100(v-for="(i, index) in 3").dragimg.dragimgright
+                                drag(:data="index+4" dropzone=".drop" stay-if-ok drag-line particle-color="#81D1D4"): .conector.c2 
+                                img(:src="'i/a'+(index+4)+'.png'").w50
+
+                            
+            
+            // END
+            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+        
+        +scripts
+            script.
+
+                app.$devmode = false
+                app.$set(app.temps, 'a', [
+                    { v:4, t:'Tener libre acceso al juego.'},
+                    { v:1, t:'Asistir a la escuela.'},
+                    { v:2, t:'No ser separados de nuestros papás.'},
+                    { v:5, t:'Tener una buena alimentación.'},
+                    { v:6, t:'Expresar nuestra opinión libremente.'},
+                    { v:3, t:'Ser atendidos por un médico.'}
+                ])
+                
+                app.currentScene = 0
+                app.scenesCount = 1

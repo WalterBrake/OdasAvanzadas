@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mis derechos me protegen</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .drag{
+          width: auto;
+          height: auto;
+      }
+      .dragimg {
+          display: flex;
+          margin: 5px 0;
+      }
+      .dragimg.dragimgright {
+          justify-content: flex-end;
+      }
+      .row.vertical {
+          flex-direction: column;
+      }
+      .drop {
+          background: #fff;
+          padding: 10px 6px;
+          text-align: center;
+          margin: 10px 0;
+          border-radius: 6px;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+      }
+      .drop.hover{
+          box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+      }
+      @media (max-width:600px){
+          .drop{
+              font-size: 0.8rem;
+              padding: 6px 2px;
+          }
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/instruccion2.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25">
+        <info type="relacionar" title="Mis derechos me protegen" text="Escucha y relaciona cada derecho con las imagen que lo representa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w30">
+              <div class="w100 dragimg" v-for="(i, index) in 3"><img class="w50" :src="'i/a'+(index+1)+'.png'"/>
+                <drag :data="index+1" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#87C779">
+                  <div class="conector c1"> </div>
+                </drag>
+              </div>
+            </div>
+            <div class="w40">
+              <template v-for="(i, index) in temps.a">
+                <div class="drop" :data="i.v" droptimes="untilok">
+                  <div>{{i.t}}</div>
+                </div>
+              </template>
+            </div>
+            <div class="w30">
+              <div class="w100 dragimg dragimgright" v-for="(i, index) in 3">
+                <drag :data="index+4" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" particle-color="#81D1D4">
+                  <div class="conector c2"> </div>
+                </drag><img class="w50" :src="'i/a'+(index+4)+'.png'"/>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'a', [
+          { v:4, t:'Tener libre acceso al juego.'},
+          { v:1, t:'Asistir a la escuela.'},
+          { v:2, t:'No ser separados de nuestros papás.'},
+          { v:5, t:'Tener una buena alimentación.'},
+          { v:6, t:'Expresar nuestra opinión libremente.'},
+          { v:3, t:'Ser atendidos por un médico.'}
+      ])
+      
+      app.currentScene = 0
+      app.scenesCount = 1
+    </script>
+  </body>
+</html>
