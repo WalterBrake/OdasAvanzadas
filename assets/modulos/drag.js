@@ -3,6 +3,7 @@ Vue.component('drag', {
         'dropzone', // item sobre el que se hace drop
         'dragsound', // sonido al iniciar drag
         'dropsound', // sonido al ser soltado
+        'isoksound', // sonido al ser soltado
         'data', // valor a comparar
         'returnIfError', //regresa si error
         'returnToPosition', // regresa aunque haya drop
@@ -111,7 +112,13 @@ Vue.component('drag', {
         },
         playDropSound(){
             if(this.dropsound){
-                var sound = new Howl({ src: [this.dropsound] })
+                var _this = this
+                var sound = new Howl({
+                     src: [this.dropsound],
+                     onend: function () {
+                        _this.$emit('dropsoundCompleted')
+                     }
+                })
                 sound.play()
             }
         },
@@ -226,6 +233,17 @@ Vue.component('drag', {
             //## OK
             if(_this.noOkSound == undefined && _this.extval == undefined){
                 s_ok.play()
+            }
+
+            if(_this.isoksound !=undefined){
+                var _this = this
+                var sound = new Howl({
+                     src: [_this.isoksound],
+                     onend: function () {
+                        _this.$emit('isoksoundcompleted')
+                     }
+                })
+                sound.play()
             }
 
             setTimeout(function (){

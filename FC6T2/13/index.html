@@ -3,23 +3,119 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Resuelvo conflictos adecuadamente</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .activity {
+          position: relative;
+      }
+      .presenterDialog {
+          position: absolute;
+          width: 35%;
+          left: 1%;
+          top: 1%;
+      }
+      .presenterDialog img {
+          max-width: 100%;
+      }
+      .presenterDialog .dialogaudio {
+          position: relative;
+      }
+      .presenterDialog .dialogaudio .audiotextBtn {
+          max-width: 30px;
+          margin-left: auto;
+          margin-bottom: -20px;
+      }
+      .drag{
+          margin: 0;
+          padding: auto;
+          width: auto;
+          height: auto;
+          max-width: 200px;
+      }
+      .relativeImg {
+          position: relative;
+      }
+      .guestDialog {
+          position: absolute;
+          top: 5%;
+          right: 1%;
+          width: 35%;
+          height: 90%;
+      }
+      .guestDialog .drop {
+          width: 96%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: 8%;
+          border: 2px dashed var(--accent);
+      }
+      .drop{
+          display: flex;
+          flex-direction: column;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="s/instruccion2.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="4" scene-color="#ED1C25">
+        <info type="dragdrop" title="Resuelvo conflictos adecuadamente" text="Escucha y arrastra los diálogós para completar la conversación." textaudio="s/instruccion1.mp3" :autoplay="true" @completedinstructions="temps.au1 = 1"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100 mb-auto relativeImg"><img class="w100" src="i/bg.png"/>
+            <div class="presenterDialog">
+              <template v-if="temps.au1==1">
+                <dialogaudio :autoplay="true" audio="s/l1.mp3" show-on-play="show-on-play" key="d1" @completed="changeVal(2)"><img src="i/l1.png"/>
+                  <!--buendia-->
+                </dialogaudio>
+              </template>
+              <template v-else-if="temps.au1==2">
+                <dialogaudio :autoplay="true" audio="s/l2.mp3" show-on-play="show-on-play" key="d2"><img src="i/l2.png"/>
+                  <!--porfavor-->
+                </dialogaudio>
+              </template>
+              <template v-else-if="temps.au1==3">
+                <dialogaudio :autoplay="true" audio="s/l3.mp3" show-on-play="show-on-play" key="d3"><img src="i/l3.png"/>
+                  <!--queinteresante -->
+                </dialogaudio>
+              </template>
+              <template v-else-if="temps.au1==4">
+                <dialogaudio :autoplay="true" audio="s/l4.mp3" show-on-play="show-on-play" key="d4"><img src="i/l4.png"/></dialogaudio>
+              </template>
+              <template v-else-if="temps.au1==5">
+                <dialogaudio :autoplay="true" audio="s/l5.mp3" show-on-play="show-on-play" key="d5"><img src="i/l5.png"/></dialogaudio>
+              </template>
+            </div>
+            <div class="guestDialog">
+              <template v-if="temps.au1==2">
+                <div class="drop" :data="2" droptimes="untilok" key="l1"></div>
+              </template>
+              <template v-else-if="temps.au1==3">
+                <div class="drop" :data="3" droptimes="untilok" key="l2"></div>
+              </template>
+              <template v-else-if="temps.au1==4">
+                <div class="drop" :data="4" droptimes="untilok" key="l3"></div>
+              </template>
+              <template v-else-if="temps.au1==5">
+                <div class="drop" :data="5" droptimes="untilok" key="l4"></div>
+              </template>
+            </div>
+          </div>
+          <div class="row w100 mb-auto">
+            <drag :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isoksoundcompleted="changeVal(4)" isoksound="s/d2.mp3"><img class="w100" src="i/d2.png"/></drag>
+            <drag :data="4" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isoksoundcompleted="changeVal(5)" isoksound="s/d3.mp3"><img class="w100 mt-auto" src="i/d3.png"/></drag>
+            <drag :data="5" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" isoksound="s/d4.mp3"><img class="w100 mt-auto" src="i/d4.png"/></drag>
+            <drag :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isoksoundcompleted="changeVal(3)" isoksound="s/d1.mp3"><img class="w100" src="i/d1.png"/></drag>
+          </div>
         </activity>
       </scene>
       <!-- END-->
@@ -58,7 +154,14 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'au1', 0)
+      
+      app.changeVal = function (val){
+      
+          app.temps.au1 = val
+          app.$set(app.temps, 'au1', val)
+          
+      }
       
       app.currentScene = 0
       app.scenesCount = 1
