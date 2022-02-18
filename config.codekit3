@@ -702,6 +702,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/bower.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/bower-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/CM1T1\/196\/aimg\/bg.svg": {
 		"ft": 2097152,
 		"miP": 0,
