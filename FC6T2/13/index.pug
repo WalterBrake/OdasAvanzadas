@@ -55,6 +55,9 @@ html(lang="es")
                 display: flex;
                 flex-direction: column;
             }
+            .indragarea img{
+                filter: grayscale(100%);
+            }
 
 
 
@@ -76,21 +79,21 @@ html(lang="es")
                                     img(src="i/l1.png")
                                     //buendia
                             template(v-else-if="temps.au1==2")
-                                dialogaudio(:autoplay="true" audio="s/l2.mp3" show-on-play key="d2")
+                                dialogaudio(:autoplay="true" audio="s/l2.mp3" show-on-play key="d2" @completed="temps.displaydrops=true")
                                     img(src="i/l2.png")
                                     //porfavor
                             template(v-else-if="temps.au1==3")
-                                dialogaudio(:autoplay="true" audio="s/l3.mp3" show-on-play key="d3")
+                                dialogaudio(:autoplay="true" audio="s/l3.mp3" show-on-play key="d3" @completed="temps.displaydrops=true")
                                     img(src="i/l3.png")
                                     //queinteresante 
                             template(v-else-if="temps.au1==4")
-                                dialogaudio(:autoplay="true" audio="s/l4.mp3" show-on-play key="d4")
+                                dialogaudio(:autoplay="true" audio="s/l4.mp3" show-on-play key="d4" @completed="temps.displaydrops=true")
                                     img(src="i/l4.png")
                             template(v-else-if="temps.au1==5")
-                                dialogaudio(:autoplay="true" audio="s/l5.mp3" show-on-play key="d5")
+                                dialogaudio(:autoplay="true" audio="s/l5.mp3" show-on-play key="d5" @completed="temps.displaydrops=true")
                                     img(src="i/l5.png")
 
-                        .guestDialog
+                        .guestDialog(v-if="temps.displaydrops")
                             template(v-if="temps.au1==2")
                                 .drop(:data="2" droptimes="untilok" key="l1")
                             template(v-else-if="temps.au1==3")
@@ -100,7 +103,7 @@ html(lang="es")
                             template(v-else-if="temps.au1==5")
                                 .drop(:data="5" droptimes="untilok" key="l4")
 
-                    .row.w100.mb-auto
+                    .row.w100.mb-auto.indragarea
                         drag(:data="3" dropzone=".drop" stay-if-ok append-to-dropzone @isoksoundcompleted="changeVal(4)" isoksound="s/d2.mp3"): img(src="i/d2.png").w100
                         drag(:data="4" dropzone=".drop" stay-if-ok append-to-dropzone @isoksoundcompleted="changeVal(5)" isoksound="s/d3.mp3"): img(src="i/d3.png").w100.mt-auto
                         drag(:data="5" dropzone=".drop" stay-if-ok append-to-dropzone isoksound="s/d4.mp3"): img(src="i/d4.png").w100.mt-auto
@@ -115,12 +118,12 @@ html(lang="es")
 
                 app.$devmode = false
                 app.$set(app.temps, 'au1', 0)
+                app.$set(app.temps, 'displaydrops', false)
 
                 app.changeVal = function (val){
-
                     app.temps.au1 = val
                     app.$set(app.temps, 'au1', val)
-                    
+                    app.$set(app.temps, 'displaydrops', false)
                 }
                 
                 app.currentScene = 0

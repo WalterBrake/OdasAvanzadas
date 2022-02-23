@@ -58,6 +58,9 @@
           display: flex;
           flex-direction: column;
       }
+      .indragarea img{
+          filter: grayscale(100%);
+      }
       
       
       
@@ -79,23 +82,23 @@
                 </dialogaudio>
               </template>
               <template v-else-if="temps.au1==2">
-                <dialogaudio :autoplay="true" audio="s/l2.mp3" show-on-play="show-on-play" key="d2"><img src="i/l2.png"/>
+                <dialogaudio :autoplay="true" audio="s/l2.mp3" show-on-play="show-on-play" key="d2" @completed="temps.displaydrops=true"><img src="i/l2.png"/>
                   <!--porfavor-->
                 </dialogaudio>
               </template>
               <template v-else-if="temps.au1==3">
-                <dialogaudio :autoplay="true" audio="s/l3.mp3" show-on-play="show-on-play" key="d3"><img src="i/l3.png"/>
+                <dialogaudio :autoplay="true" audio="s/l3.mp3" show-on-play="show-on-play" key="d3" @completed="temps.displaydrops=true"><img src="i/l3.png"/>
                   <!--queinteresante -->
                 </dialogaudio>
               </template>
               <template v-else-if="temps.au1==4">
-                <dialogaudio :autoplay="true" audio="s/l4.mp3" show-on-play="show-on-play" key="d4"><img src="i/l4.png"/></dialogaudio>
+                <dialogaudio :autoplay="true" audio="s/l4.mp3" show-on-play="show-on-play" key="d4" @completed="temps.displaydrops=true"><img src="i/l4.png"/></dialogaudio>
               </template>
               <template v-else-if="temps.au1==5">
-                <dialogaudio :autoplay="true" audio="s/l5.mp3" show-on-play="show-on-play" key="d5"><img src="i/l5.png"/></dialogaudio>
+                <dialogaudio :autoplay="true" audio="s/l5.mp3" show-on-play="show-on-play" key="d5" @completed="temps.displaydrops=true"><img src="i/l5.png"/></dialogaudio>
               </template>
             </div>
-            <div class="guestDialog">
+            <div class="guestDialog" v-if="temps.displaydrops">
               <template v-if="temps.au1==2">
                 <div class="drop" :data="2" droptimes="untilok" key="l1"></div>
               </template>
@@ -110,7 +113,7 @@
               </template>
             </div>
           </div>
-          <div class="row w100 mb-auto">
+          <div class="row w100 mb-auto indragarea">
             <drag :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isoksoundcompleted="changeVal(4)" isoksound="s/d2.mp3"><img class="w100" src="i/d2.png"/></drag>
             <drag :data="4" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" @isoksoundcompleted="changeVal(5)" isoksound="s/d3.mp3"><img class="w100 mt-auto" src="i/d3.png"/></drag>
             <drag :data="5" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone" isoksound="s/d4.mp3"><img class="w100 mt-auto" src="i/d4.png"/></drag>
@@ -155,12 +158,12 @@
     <script>
       app.$devmode = false
       app.$set(app.temps, 'au1', 0)
+      app.$set(app.temps, 'displaydrops', false)
       
       app.changeVal = function (val){
-      
           app.temps.au1 = val
           app.$set(app.temps, 'au1', val)
-          
+          app.$set(app.temps, 'displaydrops', false)
       }
       
       app.currentScene = 0
