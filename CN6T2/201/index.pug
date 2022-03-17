@@ -312,21 +312,31 @@ html(lang="es")
                     button(@click="sceneCompleted(false)" v-if="temps.clicks>=12").button.big.flying.animate__animated.animate__flip Siguiente
 
             // SCENES
-            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="6" scene-color="#ED1C25")
+            scene(v-if="currentScene==2" :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="5" scene-color="#ED1C25")
                 info(type="relacionar" title=title text="Ahora, relaciona los casos con la acción que le corresponda." textaudio="s/instruccion2.mp3" :autoplay="true")
                 activity
+                    
+                    
+
+                    
+                    
+                    
+                    
                     .row.w100
                         .w50
                             template(v-for="(i, index) in temps.relac")
                                 div.caso
                                     .txt {{i.t}}
-                                    drag(:data="i.v" dropzone=".drop" @isok="temps.ans['b'+index] = true" :particle-color="i.col" @iserror="temps.ans['b'+index] = false" :ref="'b'+index" drag-line no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): .conector(:class="'c'+(index+1)")
-                            
+                                    //drag(:data="i.v" dropzone=".drop" @isok="temps.ans['b'+index] = true" :particle-color="i.col" @iserror="temps.ans['b'+index] = false" :ref="'b'+index" drag-line no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable): .conector(:class="'c'+(index+1)")
+                                    drag(:ref="'rel'+index" :data="i.v" dropzone=".drop" extval drag-line :key="index")
+                                        .conector(:class="'c'+(index+1)")
                         .w50.acciones
                             .drop(data="reutilizar" droptimes="multiple"): number(c=1 small) Reutilizar
                             .drop(data="reciclar" droptimes="multiple"): number(c=1 small) Reciclar
                             .drop(data="reducir" droptimes="multiple"): number(c=1 small) Reducir
-                    button(@click="validateem").button.big.animate__animated.animate__flip Verificar
+
+                    //button(@click="validateem").button.big.animate__animated.animate__flip Verificar
+                    button(@click="dragValidation(['rel0','rel1','rel2','rel3','rel4', 'rel5'], 5)").button.big.animate__animated.animate__flip Verificar
 
             // END
             scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
@@ -408,13 +418,15 @@ html(lang="es")
                     } else {
                         s_error.play()
                         for(i in app.temps.ans){
-                            app.$refs[i][0].undroppableFn()
-                            app.$refs[i][0].backToInitPos()
-                            app.temps.ans.b0 = false
-                            app.temps.ans.b1 = false
-                            app.temps.ans.b2 = false
-                            app.temps.ans.b3 = false
-                            app.temps.ans.b4 = false
+                            if(app.$refs[i][0].$el.getAttribute('oktimes')  == 0){
+                                app.$refs[i][0].undroppableFn()
+                                app.$refs[i][0].backToInitPos()
+                                app.temps.ans.b0 = false
+                                app.temps.ans.b1 = false
+                                app.temps.ans.b2 = false
+                                app.temps.ans.b3 = false
+                                app.temps.ans.b4 = false
+                            }
                         }
                        
                     }

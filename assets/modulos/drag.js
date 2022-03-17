@@ -152,7 +152,7 @@ Vue.component('drag', {
             for(var dr = 0; dr < dropzones.length; dr++) {
                 var dropzone = dropzones[dr]
                 if(Draggable.hitTest(_this.$refs.drag, dropzone, '100%')){
-                    console.log('touchig dropzone', e)
+                    //console.log('touchig dropzone', e)
                     var droppedtimes = dropzone.getAttribute('droppedtimes')
                     droppedtimes = parseInt(droppedtimes)
                     var minus = droppedtimes > 0 ? droppedtimes-1 : 0
