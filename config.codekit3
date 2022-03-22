@@ -306,6 +306,118 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/assets\/canciones\/arcadesong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/arcadesong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Birdosong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Birdosong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Cancion_spacial.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Cancion_spacial.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/flutesong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/flutesong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Happysong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Happysong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Happysuccesssong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Happysuccesssong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/jokesong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/jokesong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Libreriasong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Libreriasong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Magosong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Magosong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Mda-partysong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Mda-partysong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Patronesong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Patronesong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Reglassong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Reglassong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Sadsong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Sadsong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Slowsong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Slowsong.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Spaceshipland.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Spaceshipland.m4a",
+		"oF": 0
+		},
+	"\/assets\/canciones\/Walksong.m4a": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/canciones\/Walksong.m4a",
+		"oF": 0
+		},
 	"\/assets\/font\/barnacle_boy_font_by_7ntypes-demo.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -5929,13 +6041,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/CN6T1\/184\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/CN6T1\/184\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/CN6T1\/184\/aimg\/triste.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -8447,13 +8552,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES1T3\/76\/s\/instruccion1.mp3",
-		"oF": 0
-		},
-	"\/ES2T1\/15\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/ES2T1\/15\/aimg\/Icon\r",
 		"oF": 0
 		},
 	"\/ES2T1\/15\/asound\/cierre.mp3": {
@@ -13878,7 +13976,7 @@
 		"oAP": "\/ES6T1\/39\/aimg\/V1.webm",
 		"oF": 0
 		},
-	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
+	"\/ES6T1\/39\/asound\/Conozco las fuentes de información Es6ºT1_Inst_Lee.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -13964,28 +14062,28 @@
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Hijo_Teatro.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Autor.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_Diferencia.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíPorque.mp3",
 		"oF": 0
 		},
-	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
+	"\/ES6T2\/55\/s\/Estudiamos las obras de teatro Es 6o T2_Papá_SíTeatro.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -17528,7 +17626,7 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
+	"\/HI4T1\/256\/asound\/Aprendo cuando se pobló América Hi4°T1_Inst_Bering.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
@@ -18170,13 +18268,6 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
-		},
-	"\/HI5T1\/256\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/HI5T1\/256\/aimg\/Icon\r",
-		"oF": 0
 		},
 	"\/HI5T1\/256\/aimg\/lottie-a.json": {
 		"ft": 524288,
@@ -26768,13 +26859,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA4T1\/180\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/180\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/MA4T1\/185\/aimg\/agua.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -26794,13 +26878,6 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
-		},
-	"\/MA4T1\/185\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA4T1\/185\/aimg\/Icon\r",
-		"oF": 0
 		},
 	"\/MA4T1\/185\/aimg\/mantequilla.svg": {
 		"ft": 2097152,
@@ -28480,13 +28557,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA5T1\/108\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA5T1\/108\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/MA5T1\/108\/aimg\/morado.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -29676,13 +29746,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/MA6T1\/113\/aimg\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/113\/aimg\/Icon\r",
-		"oF": 0
-		},
 	"\/MA6T1\/113\/aimg\/nina.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -29705,13 +29768,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/113\/asound\/instruccion2.mp3",
-		"oF": 0
-		},
-	"\/MA6T1\/113\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/113\/Icon\r",
 		"oF": 0
 		},
 	"\/MA6T1\/113\/index.html": {
@@ -29848,13 +29904,6 @@
 		"oAP": "\/MA6T1\/115\/asound\/instruccion.mp3",
 		"oF": 0
 		},
-	"\/MA6T1\/115\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/115\/Icon\r",
-		"oF": 0
-		},
 	"\/MA6T1\/115\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -29963,13 +30012,6 @@
 		"oAP": "\/MA6T1\/116\/asound\/instruccion3.mp3",
 		"oF": 0
 		},
-	"\/MA6T1\/116\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/116\/Icon\r",
-		"oF": 0
-		},
 	"\/MA6T1\/116\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -29999,13 +30041,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/MA6T1\/96\/index.html",
-		"oF": 0
-		},
-	"\/MA6T1\/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/MA6T1\/Icon\r",
 		"oF": 0
 		},
 	"\/MA6T2\/137\/i\/:Users:albinrdz:Documents:GitHub:OdasAvanzadas:MA6T2:137:i:v1.json:v1.json": {
