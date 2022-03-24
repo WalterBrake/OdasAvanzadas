@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nuestro satélite natural</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
+    <link rel="stylesheet" href="../../assets/assets.css"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
+    <style>
+      .activity{
+          position: relative;
+      }
+      .activity:before {
+          content: "";
+          height: 150%;
+          width: 100%;
+          background: url("i/bg.png");
+          background-size: cover;
+          animation: bgpos 7s infinite alternate;
+          position: absolute;
+          z-index: 0;
+          left: 0; top: 0; right: 0; bottom: 0;
+      }
+      .activity > * {
+          position: static; z-index: 1;
+      }
+      @keyframes bgpos {
+          from {
+              margin-top: 0;
+          }
+          to {
+              margin-top: -25%;
+          }
+      }
+      .astro{
+          position: absolute;
+          top:10%; right: 10%;
+      }
+      .cohete{
+          position: absolute;
+          top:10%; left: 10%;
+      }
+      .clikop .clickable {
+          background: #fff;
+          padding: 10px;
+          font-size: 0.8rem;
+          border-radius: 10px;
+          color: #fff;
+      }
+      .clikop:nth-child(1) .clickable {
+          background: #C75E1A;
+      }
+      .clikop:nth-child(2) .clickable {
+          background: #00AF50;
+      }
+      .clikop:nth-child(3) .clickable {
+          background: #7030A0;
+      }
+      
+      .endtext {
+          background: #064A8B;
+          border-radius: 10px;
+          padding: 30px;
+          position: relative;
+          font-size: 1.2rem;
+          color: #fff;
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+      }
+      .endtext .audiotext .audiotextBtn {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          left: 0;
+          top: 0;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- START-->
+      <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==1" hidescorebox="hidescorebox" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
+        <info type="seleccionar" title="Nuestro satélite natural" text="Fases de la Luna." textaudio="s/a1.mp3" :autoplay="true" @completedinstructions="temps.au1 = true">
+          <audiotext v-if="temps.au1" :autoplay="true" audio="s/a2.mp3" text="Son los cambios aparentes de la parte visible o iluminada de la Luna, causados por su cambio de posición respecto a la Tierra y el Sol. El ciclo completo se llama lunación y dura aproximadamente un mes." @completed="temps.au2 = true"></audiotext>
+        </info>
+        <activity>
+          <div class="text-right astro animate__animated animate__pulse animate__slower animate__infinite w20"><img class="w100" src="i/astro.png"/></div>
+          <div class="text-right cohete animate__animated animate__zoomInLeft animate__slower w20"><img class="w100" src="i/cohete.png"/></div>
+          <div class="row w100">
+            <div class="w80 mt-1"><img class="w100" src="i/title.png"/></div>
+          </div>
+          <div class="row luna w100 animate__animated animate__pulse">
+            <div class="w30">
+              <lottie-player src="i/fases.json" key="l0" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay="autoplay" loop="loop"></lottie-player>
+            </div>
+          </div>
+          <template v-if="temps.au2">
+            <div class="row w100 text-center">
+              <button class="button animate__animated animate__flip" @click="sceneCompleted(false)">Continuar</button>
+            </div>
+          </template>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-for="(i, index) in temps.preguntas" v-if="currentScene==(index+2)" :key="index+2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B" @loaded="loadedScene('fase'+index,i.frame)">
+        <info type="seleccionar" title="Nuestro satélite natural" text="Selecciona la descripción correcta para cada fase de la luna." textaudio="s/instruccion1.mp3" :autoplay="index==0?true:false" @completedinstructions="temps.inst1 = true"></info>
+        <activity>
+          <!--template(v-if="index==0 ? temps.inst1 : true")-->
+          <div class="row w100">
+            <number c="4" small="small">
+              <audiotext v-if="index==0?temps.inst1 : true" :autoplay="true" :audio="i.audio" :text="i.fase"></audiotext>
+            </number>
+          </div>
+          <div class="row luna w100 animate__animated animate__pulse" v-if="index+2==currentScene">
+            <div class="w30">
+              <lottie-player :ref="'fase'+index" src="i/fases.json" :key="'fasek'+index" background="transparent" speed="0" style="width: 100%; height: 100%;"></lottie-player>
+            </div>
+          </div>
+          <!--template(v-if="index==0 ? temps.inst1 : true")-->
+          <div class="row wrap around">
+            <div class="w30 clikop" v-for="(i2, index2) in i.opciones">
+              <clickable :key="'pregunta'+index+index2" :isok="index2 == i.correcta" block-if-error="block-if-error" simple-ok="simple-ok" initclass="pa-1">
+                <div>{{i2}}</div>
+              </clickable>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==10" hidescorebox="hidescorebox" :key="10" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#064A8B">
+        <info type="seleccionar" title="Nuestro satélite natural" text="Selecciona la descripción correcta para cada fase de la luna." textaudio="s/instruccion1.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="text-right astro animate__animated animate__pulse animate__slower animate__infinite w20"><img class="w100" src="i/astro.png"/></div>
+          <div class="text-right cohete animate__animated animate__zoomInLeft animate__slower w20"><img class="w100" src="i/cohete.png"/></div>
+          <div class="row luna w100 animate__animated animate__pulse">
+            <div class="w30">
+              <lottie-player src="i/fases.json" key="l0" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay="autoplay" loop="loop"></lottie-player>
+            </div>
+          </div>
+          <div class="endtext">
+            <audiotext :autoplay="true" audio="s/a11.mp3" text="Cuando mires al cielo, ya sabrás en qué fase está la Luna."></audiotext>
+          </div>
+          <div class="row w100 text-center">
+            <button class="button big animate__animated animate__flip" @click="sceneCompleted(false)">Finalizar</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- END-->
+      <scene v-if="currentScene==11" :key="11" end-scene="end-scene" :final-data="finalData"></scene>
+    </div>
+    <!-- CDNS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/Draggable.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+    <!-- Fireworks-->
+    <script src="../../assets/modulos/fworks.js"></script>
+    <!-- Modulos-->
+    <script src="../../assets/modulos/sequence.js"></script>
+    <script src="../../assets/modulos/videoplayer.js"></script>
+    <script src="../../assets/modulos/popup.js"></script>
+    <script src="../../assets/modulos/number.js"></script>
+    <script src="../../assets/modulos/inputable.js"></script>
+    <script src="../../assets/modulos/embedsvg.js"></script>
+    <script src="../../assets/modulos/tooltiper.js"></script>
+    <script src="../../assets/modulos/dialogaudio.js"></script>
+    <script src="../../assets/modulos/selectives.js"></script>
+    <script src="../../assets/modulos/clickable.js"></script>
+    <script src="../../assets/modulos/drag.js"></script>
+    <script src="../../assets/modulos/audiotext.js"></script>
+    <script src="../../assets/modulos/desplegar.js"></script>
+    <script src="../../assets/modulos/scorebox.js"></script>
+    <script src="../../assets/modulos/scene.js"></script>
+    <script src="../../assets/modulos/info.js"></script>
+    <script src="../../assets/modulos/activity.js"></script>
+    <!-- Mainscript-->
+    <script src="../../assets/assets.js"></script>
+    <script>
+      app.$devmode = false
+      app.$set(app.temps, 'au1', false)
+      app.$set(app.temps, 'au2', false)
+      
+      app.$set(app.temps, 'inst1', false)
+      
+      
+      app.$set(app.temps, 'preguntas',[
+          {
+              fase: 'Luna Nueva',
+              audio: 's/a3.mp3',
+              frame: '50%',
+              opciones: [
+                  'Ocurre entre los días 22 a 27; es visible un segmento de la Luna, al finalizar esta fase comienza otro ciclo de lunación.',
+                  'Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.',
+                  'La Luna se ubica entre la Tierra y el Sol, por lo que la cara más cercana a nuestro planeta está oscura y no es visible.'
+                  ],
+              correcta: 2
+          },
+          {
+              fase: 'Luna Creciente',
+              audio: 's/a4.mp3',
+              frame: '62%',
+              opciones: [
+                  'Ocurre entre los días 8 al 13, cuando se alinean, en este orden, Sol-Tierra-Luna.',
+                  'Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.',
+                  'El día 14, la Luna recibe los rayos solares en su cara visible y podemos ver un círculo completo.'
+                  ],
+              correcta: 1
+          },
+          {
+              fase: 'Cuarto Creciente',
+              audio: 's/a5.mp3',
+              frame: '75%',
+              opciones: [
+                  'Ocurre entre los días 15 a 20; la cara luminosa es menor por lo que la Luna se ve cóncava.','Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.','Ocurre a partir del día 7. Aumenta la superficie iluminada y se puede ver un cuarto de la cara lunar.'
+                  ],
+              correcta: 2
+          },
+          {
+              fase: 'Gibosa Creciente',
+              audio: 's/a6.mp3',
+              frame: '87%',
+              opciones: [
+                  'Ocurre entre los días 22 a 27; es visible un segmento de la Luna, al finalizar esta fase comienza otro ciclo de lunación.','Ocurre entre los días 8 al 13, cuando se alinean, en este orden, Sol-Tierra-Luna.','La Luna se ubica entre la Tierra y el Sol, por lo que la cara más cercana a nuestro planeta está oscura y no es visible.'
+                  ],
+              correcta: 1
+          },
+          {
+              fase: 'Luna Llena o Plenilunio',
+              audio: 's/a7.mp3',
+              frame: '99.9%',
+              opciones: [
+                  'Sucede el día 21. La Luna muestra iluminada la cara contraria al cuarto creciente.','Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.','El día 14, la Luna recibe los rayos solares en su cara visible y podemos ver un círculo completo.'
+                  ],
+              correcta: 2
+          },
+          {
+              fase: 'Gibosa Menguante',
+              audio: 's/a8.mp3',
+              frame: '12%',
+              opciones: [
+                  'Ocurre entre los días 15 a 20; la cara luminosa es menor por lo que la Luna se ve cóncava.','Ocurre entre los días 8 al 13, cuando se alinean, en este orden, Sol-Tierra-Luna.','Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.'
+                  ],
+              correcta: 0
+          },
+          {
+              fase: 'Cuarto Menguante',
+              audio: 's/a9.mp3',
+              frame: '25%',
+              opciones: [
+                  'Ocurre entre los días 22 a 27; es visible un segmento de la Luna, al finalizar esta fase comienza otro ciclo de lunación.','Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.','Sucede el día 21. La Luna muestra iluminada la cara contraria al cuarto creciente.'
+                  ],
+              correcta: 2
+          },
+          {
+              fase: 'Luna Menguante',
+              audio: 's/a10.mp3',
+              frame: '37%',
+              opciones: [
+                  'Ocurre entre los días 8 al 13, cuando se alinean, en este orden, Sol-Tierra-Luna.','Ocurre entre los días 22 a 27; es visible un segmento de la Luna, al finalizar esta fase se vuelve Luna nueva y comienza otro ciclo de lunación.','Ocurre del día 1 al 6; es visible durante el día y se oculta antes de medianoche.'
+                  ],
+              correcta: 1
+          },
+      ])
+      
+      
+      app.currentScene = 0
+      app.scenesCount = 8
+      
+      
+      app.loadedScene = function (fase, goto){
+          setTimeout(function (){
+              console.log(fase,goto)
+              app.$refs[fase][0].seek(goto)
+          }, 300)
+      }
+    </script>
+  </body>
+</html>
