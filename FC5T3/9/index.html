@@ -3,27 +3,180 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Mi gobierno es democrático</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag{
+          width: auto;
+          height: auto;
+      }
+      .drop{
+          min-height: 40px;
+          border: 2px dashed var(--clear);
+          border-radius: 10px;
+          margin-bottom: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .title{
+          font-weight: bold;
+          margin-bottom: 5px;
+          background: #fff;
+          border-radius: 6px;
+          padding: 5px 1px
+      }
+      .drags {
+          flex-wrap: wrap;
+          gap: 5px;
+          padding: 20px 0;
+      }
+      .drags .common {
+          padding: 8px;
+          font-size: 0.8rem;
+      }
+      .cols {
+          margin-top: 10px;
+          align-items: flex-start;
+          gap: 4px;
+      }
+      .cols .w30 {
+          border-left: 2px solid #fff;
+          border-right: 2px solid #fff;
+      }
+      .drop {
+          flex-direction: column;
+      }
+      .op {
+          height: 100%;
+          font-size: 0.9rem;
+          color: rgba(0, 0, 0, 0.6);
+          padding: 10px 0;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Mi gobierno es democrático" text=" Arrastra la definición de los siguientes tipos de gobierno. Consulta las páginas 145 a 147 de tu libro de texto SEP." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w40">
+              <div class="mt-1">
+                <drag ref="" :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <number c="6" smaller="smaller">Aristocracia</number>
+                </drag>
+              </div>
+              <div class="mt-1">
+                <drag ref="" :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <number c="7" smaller="smaller">Monarquía</number>
+                </drag>
+              </div>
+              <div class="mt-1">
+                <drag ref="" :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                  <number c="5" smaller="smaller">Gobierno democrático</number>
+                </drag>
+              </div>
+            </div>
+            <div class="w50">
+              <div class="common mt-1">
+                <div class="drop" :data="1" droptimes="untilok"></div>
+                <div>Forma de gobierno en la que una persona hereda el trono y ejerce el poder.</div>
+              </div>
+              <div class="common mt-1">
+                <div class="drop" :data="2" droptimes="untilok"></div>
+                <div>Esta forma de gobierno está basada en la amplia participación de la ciudadanía, la toma de decisiones, la elección de los gobernantes y la elaboración de las leyes.</div>
+              </div>
+              <div class="common mt-1">
+                <div class="drop" :data="3" droptimes="untilok"></div>
+                <div>La autoridad sólo está en manos de un grupo reducido de personas.</div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25">
+        <info type="dragdrop" title="Mi gobierno es democrático" text="Arrastra los elementos para completar el cuadro." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center">
+            <div class="w100">
+              <number c="4" smaller="smaller">División del Poder Judicial</number>
+            </div>
+          </div>
+          <div class="row w100 text-center cols">
+            <div class="w30">
+              <div class="title">Poder Legislativo</div>
+              <div class="drop" :data="1" droptimes="untilok"></div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Ejecutivo</div>
+              <div class="opt">Presidente</div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Judicial</div>
+              <div class="drop" :data="2" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 text-center">
+            <div class="w100">
+              <number c="4" smaller="smaller">División del Poder Estatal</number>
+            </div>
+          </div>
+          <div class="row w100 text-center cols">
+            <div class="w30">
+              <div class="title">Poder Legislativo</div>
+              <div class="op">Congreso local</div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Ejecutivo</div>
+              <div class="drop" :data="3" droptimes="untilok"></div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Judicial</div>
+              <div class="op">Tribunales</div>
+            </div>
+          </div>
+          <div class="row w100 text-center">
+            <div class="w100">
+              <number c="4" smaller="smaller">División del Poder Municipal</number>
+            </div>
+          </div>
+          <div class="row w100 text-center cols">
+            <div class="w30">
+              <div class="title">Poder Legislativo</div>
+              <div class="drop" :data="4" droptimes="untilok"></div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Ejecutivo</div>
+              <div class="drop" :data="5" droptimes="untilok"></div>
+            </div>
+            <div class="w30">
+              <div class="title">Poder Judicial</div>
+              <div class="drop" :data="6" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 drags mt-auto">
+            <template v-for="(i, index) in temps.a">
+              <drag :data="i.v" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+                <div class="common">{{i.t}}</div>
+              </drag>
+            </template>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +211,19 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'a', [
+          {v: 1, t: 'Cámara de Senadores'},
+          {v: 1, t: 'Cámara de Diputados'},
+          {v: 2, t: 'Suprema Corte de Justicia de la Nación'},
+          {v: 2, t: 'Tribunales'},
+          {v: 3, t: 'Gobernador'},
+          {v: 4, t: 'Regidores'},
+          {v: 5, t: 'Presidente municipal'},
+          {v: 6, t: 'Síndicos'}
+      ])
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>
