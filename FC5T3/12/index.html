@@ -3,13 +3,47 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Tomo en cuenta a los demás</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .justify-between {
+          justify-content: space-between;
+      }
+      .drop {
+          min-height: 100px;
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 10px;
+      }
+      .drop.a {
+          border: 4px dashed var(--main);
+      }
+      .drop.b {
+          border: 4px dashed var(--accent);
+      }
+      .drop.c {
+          border: 4px dashed var(--clear);
+      }
+      .drop .drag {
+          width: 100%;
+      }
+      .drag {
+          width: auto;
+          height: auto;
+          max-width: 200px;
+          width: 30%;
+      }
+      .drag .common {
+          font-size: 0.8rem;
+          padding: 2px;
+      }
+      
+      
+      
+    </style>
   </head>
   <body>
     <div id="app">
@@ -17,13 +51,49 @@
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
       <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+        <info type="seleccionar" title="Tomo en cuenta a los demás" text="Escucha la animación y responde las siguientes preguntas." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="false" c="1" path="i/v1" @completed="temps.video = true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.video">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="dragdrop" title="Tomo en cuenta a los demás" text="Arrastra cada elemento en cada recuadro de acuerdo con la descripción de los diferentes aspectos de la asamblea." textaudio="s/instruccion2.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100 text-center justify-between">
+            <div class="w30"> 
+              <number c="1" smaller="smaller">¿Cómo utilizaron el diálogo?</number>
+              <div class="drop a" :data="1" droptimes="untilok"></div>
+            </div>
+            <div class="w30"> 
+              <number c="4" smaller="smaller">¿Cómo emplearon la votación?</number>
+              <div class="drop b" :data="2" droptimes="untilok"></div>
+            </div>
+            <div class="w30"> 
+              <number c="3" smaller="smaller">¿Qué estrategia usaron para lograr acuerdos?</number>
+              <div class="drop c" :data="3" droptimes="untilok"></div>
+            </div>
+          </div>
+          <div class="row w100 justify-between">
+            <drag ref="" :data="2" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div class="common">Elaboramos unas boletas con los nombres de las personas que opinaron, cada quien eligió la propuesta que le pareció más adecuada. Después metimos las boletas en una caja y luego contamos los votos.</div>
+            </drag>
+            <drag ref="" :data="3" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div class="common">Entre todos contamos los votos y se eligieron las propuestas que fueron más populares.</div>
+            </drag>
+            <drag ref="" :data="1" dropzone=".drop" stay-if-ok="stay-if-ok" append-to-dropzone="append-to-dropzone">
+              <div class="common">Al principio todos querían hablar y nadie escuchaba. Después un compañero propuso que se asignaran turnos para hablar y pudimos escuchar las opiniones de los demás.</div>
+            </drag>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==3" :key="3" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,7 +128,7 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'video', false)
       
       app.currentScene = 0
       app.scenesCount = 1

@@ -1,12 +1,43 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Tomo en cuenta a los demás'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .justify-between {
+                justify-content: space-between;
+            }
+            .drop {
+                min-height: 100px;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+            }
+            .drop.a {
+                border: 4px dashed var(--main);
+            }
+            .drop.b {
+                border: 4px dashed var(--accent);
+            }
+            .drop.c {
+                border: 4px dashed var(--clear);
+            }
+            .drop .drag {
+                width: 100%;
+            }
+            .drag {
+                width: auto;
+                height: auto;
+                max-width: 200px;
+                width: 30%;
+            }
+            .drag .common {
+                font-size: 0.8rem;
+                padding: 2px;
+            }
+
 
 
     body
@@ -16,19 +47,44 @@ html(lang="es")
 
             // SCENES
             scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+                info(type="seleccionar" title=title text="Escucha la animación y responde las siguientes preguntas." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
-                    .row.w100
+
+                    .row.w100: videoplayer(initclass="w100" :autoplay="false" c="1" path="i/v1" @completed="temps.video = true")
+                    .row.w100(v-if="temps.video"): button(@click="sceneCompleted(false)").button.big Siguiente
             
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Arrastra cada elemento en cada recuadro de acuerdo con la descripción de los diferentes aspectos de la asamblea." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center.justify-between
+                        .w30 
+                            number(c=1 smaller) ¿Cómo utilizaron el diálogo?
+                            .drop(:data="1" droptimes="untilok").a
+                        .w30 
+                            number(c=4 smaller) ¿Cómo emplearon la votación?
+                            .drop(:data="2" droptimes="untilok").b
+                        .w30 
+                            number(c=3 smaller) ¿Qué estrategia usaron para lograr acuerdos?
+                            .drop(:data="3" droptimes="untilok").c
+                    .row.w100.justify-between
+                        drag(ref="" :data="2" dropzone=".drop" stay-if-ok append-to-dropzone)
+                            .common Elaboramos unas boletas con los nombres de las personas que opinaron, cada quien eligió la propuesta que le pareció más adecuada. Después metimos las boletas en una caja y luego contamos los votos.
+                        drag(ref="" :data="3" dropzone=".drop" stay-if-ok append-to-dropzone)
+                            .common Entre todos contamos los votos y se eligieron las propuestas que fueron más populares.
+                        drag(ref="" :data="1" dropzone=".drop" stay-if-ok append-to-dropzone)
+                            .common Al principio todos querían hablar y nadie escuchaba. Después un compañero propuso que se asignaran turnos para hablar y pudimos escuchar las opiniones de los demás.
+
+
             
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'video', false)
                 
                 app.currentScene = 0
                 app.scenesCount = 1
