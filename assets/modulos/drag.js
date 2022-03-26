@@ -28,6 +28,7 @@ Vue.component('drag', {
         'undroppable', // Se puede "sacar" del dropzone y resta los droptimes
         'extval', // no-return-on-drop no-animations no-ok-sound no-error-sound disableok undroppable
         'isfalse', // Regresa como ok si esta en falso (externalValidation)
+        'c' //color based on css variables
     ],
     data() {
         return {
@@ -45,6 +46,18 @@ Vue.component('drag', {
             dragoks: 0,
             oktimes: 0,
             state: 'unset',
+            csscolors: [
+                '#5fa7a3', //extra
+                '#5EB246', // 1
+                '#005093', // 2
+                '#00A9CB',
+                '#EB8B2E',
+                '#5EB246',
+                '#DB3E34',
+                '#F460AB',
+                '#A6881F',
+                '#C75980'
+            ]
         }
     },
     //:style="'left:'+x+'%; top:'+y+'%;'"
@@ -80,7 +93,7 @@ Vue.component('drag', {
         DragStart (e) {
             var _this = this
             _this.$emit('dragstarted')
-            app.particleAnimation(e, null, null, null, _this.particleColor)
+            app.particleAnimation(e, null, null, null, _this.csscolors[_this.c] || _this.particleColor)
             _this.setClassAnimation('start')
             s_select.play()
             _this.playDragSound()
@@ -100,7 +113,7 @@ Vue.component('drag', {
         },
         DragEnd (e) {
             var _this = this
-            app.particleAnimation(e, null, null, null, _this.particleColor)
+            app.particleAnimation(e, null, null, null, _this.csscolors[_this.c] || _this.particleColor)
             _this.HitTestFn(e, true)
             _this.playDropSound()
         },
@@ -456,7 +469,7 @@ Vue.component('drag', {
             var line = {}
             line.x = this.dragPosX
             line.y = this.dragPosY
-            line.color = this.particleColor
+            line.color = this.csscolors[this.c] || this.particleColor 
             line.lineWith = 4
             line.draw = function () {
                 ctx.beginPath()
@@ -494,7 +507,7 @@ Vue.component('drag', {
                 this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height)
                 this.ctx.beginPath()
                 this.ctx.lineWidth = 2
-                this.ctx.strokeStyle = this.particleColor
+                this.ctx.strokeStyle = this.csscolors[this.c] ||  this.particleColor
                 this.ctx.arc(this.dragPosX, this.dragPosY, 20, 0, 2*Math.PI)
                 this.ctx.stroke()
                 this.ctx.beginPath()
@@ -502,7 +515,7 @@ Vue.component('drag', {
                 this.ctx.stroke()
                 this.ctx.beginPath()
                 this.ctx.lineWidth = 6
-                this.ctx.strokeStyle = this.particleColor
+                this.ctx.strokeStyle = this.csscolors[this.c] || this.particleColor
                 this.ctx.lineCap = 'round'
                 this.ctx.setLineDash([5, 10])
                 this.ctx.moveTo(this.dragPosX, this.dragPosY)

@@ -3,27 +3,121 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
+    <title>Practico la justicia</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../../assets/font/stylesheet.css"/>
     <link rel="stylesheet" href="../../assets/assets.css"/>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css"/>
-    <style></style>
+    <style>
+      .drag{
+          width: auto;
+          height: auto;
+      }
+      .common{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <!-- START-->
       <scene v-if="currentScene==0" :key="0" start-scene="start-scene" @completed="sceneCompleted"></scene>
       <!-- SCENES-->
-      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
-        <info type="seleccionar" title="" text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
+      <scene v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25">
+        <info type="relacionar" title="Practico la justicia" text="Une con una línea cada palabra con su definición." textaudio="s/instruccion1.mp3" :autoplay="true"></info>
         <activity>
-          <div class="row w100"></div>
+          <div class="row w100">
+            <div class="w50">
+              <div class="common">
+                <number c="1" smaller="smaller">Justicia</number>
+                <drag data="Justicia" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" c="1">
+                  <div class="conector c1"></div>
+                </drag>
+              </div>
+              <div class="common mt-1">
+                <number c="2" smaller="smaller">Respeto</number>
+                <drag data="Respeto" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" c="2">
+                  <div class="conector c2"></div>
+                </drag>
+              </div>
+              <div class="common mt-1">
+                <number c="3" smaller="smaller">Responsabilidad</number>
+                <drag data="Responsabilidad" dropzone=".drop" stay-if-ok="stay-if-ok" drag-line="drag-line" c="3">
+                  <div class="conector c3"></div>
+                </drag>
+              </div>
+            </div>
+            <div class="w30 ml-auto">
+              <div class="common drop" data="Respeto" droptimes="untilok">
+                <div>Consideración y atención hacia los demás.</div>
+              </div>
+              <div class="common drop mt-1" data="Justicia" droptimes="untilok">
+                <div>Lo que debe hacerse según derecho o razón.</div>
+              </div>
+              <div class="common drop mt-1" data="Responsabilidad" droptimes="untilok">
+                <div>Cumplir con las tareas y deberes que me corresponden.</div>
+              </div>
+            </div>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==2" hidescorebox="hidescorebox" :key="2" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25">
+        <info type="seleccionar" title="Practico la justicia" text="Escucha la siguiente historia y contesta las preguntas. voz de niña." textaudio="s/instruccion2.mp3" :autoplay="false"></info>
+        <activity>
+          <div class="row w100">
+            <videoplayer initclass="w100" :autoplay="true" c="1" path="i/v1" @completed="temps.video = true"></videoplayer>
+          </div>
+          <div class="row w100" v-if="temps.video">
+            <button class="button big" @click="sceneCompleted(false)">Siguiente</button>
+          </div>
+        </activity>
+      </scene>
+      <!-- SCENES-->
+      <scene v-if="currentScene==3" hidescorebox="hidescorebox" :key="3" :score="scoreInScene" :temporals="temporals" alloks="alloks" alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25">
+        <info type="seleccionar" title="Practico la justicia" text="Selecciona las respuestas correctas" textaudio="s/instruccion3.mp3" :autoplay="true"></info>
+        <activity>
+          <div class="row w100">
+            <div class="w100 text-center">
+              <number c="2" smaller="smaller">¿Crees que fue correcto lo que hicieron los amigos de Pedro?</number>
+              <div class="row common mt-1">
+                <div class="w40">
+                  <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                    <number c="3" small="small">Sí</number>
+                  </clickable>
+                </div>
+                <div class="w40">
+                  <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                    <number c="3" small="small">No</number>
+                  </clickable>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row w100 mt-1">
+            <div class="w100 text-center">
+              <number c="2" smaller="smaller">¿Crees que fue justo que todos pagaran las consecuencias porque Pedro no fue honesto y no aceptó su responsabilidad? </number>
+              <div class="row common mt-1">
+                <div class="w40">
+                  <clickable :isok="false" simple-ok="simple-ok" initclass="pa-1">
+                    <number c="3" small="small">Sí</number>
+                  </clickable>
+                </div>
+                <div class="w40">
+                  <clickable :isok="true" simple-ok="simple-ok" initclass="pa-1">
+                    <number c="3" small="small">No</number>
+                  </clickable>
+                </div>
+              </div>
+            </div>
+          </div>
         </activity>
       </scene>
       <!-- END-->
-      <scene v-if="currentScene==2" :key="2" end-scene="end-scene" :final-data="finalData"></scene>
+      <scene v-if="currentScene==4" :key="4" end-scene="end-scene" :final-data="finalData"></scene>
     </div>
     <!-- CDNS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
@@ -58,10 +152,10 @@
     <script src="../../assets/assets.js"></script>
     <script>
       app.$devmode = false
-      app.$set(app.temps, 'a', [])
+      app.$set(app.temps, 'video', false)
       
       app.currentScene = 0
-      app.scenesCount = 1
+      app.scenesCount = 2
     </script>
   </body>
 </html>
