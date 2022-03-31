@@ -1,12 +1,60 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Mi gobierno es democrático'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
+            .drag{
+                width: auto;
+                height: auto;
+            }
+            .drop{
+                min-height: 40px;
+                border: 2px dashed var(--clear);
+                border-radius: 10px;
+                margin-bottom: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .title{
+                font-weight: bold;
+                margin-bottom: 5px;
+                background: #fff;
+                border-radius: 6px;
+                padding: 5px 1px
+            }
+            .drags {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 20px 0;
+            }
+            .drags .common {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+            .cols {
+                margin-top: 10px;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .cols .w30 {
+                border-left: 2px solid #fff;
+                border-right: 2px solid #fff;
+            }
+            .drop {
+                flex-direction: column;
+            }
+            .op {
+                height: 100%;
+                font-size: 0.9rem;
+                color: rgba(0, 0, 0, 0.6);
+                padding: 10px 0;
+            }
+
 
 
     body
@@ -15,20 +63,92 @@ html(lang="es")
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text=" Arrastra la definición de los siguientes tipos de gobierno. Consulta las páginas 145 a 147 de tu libro de texto SEP." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w40
+                            .mt-1: drag(ref="" :data="2" dropzone=".drop" stay-if-ok append-to-dropzone)
+                                number(c=6  smaller) Aristocracia
+                            .mt-1: drag(ref="" :data="3" dropzone=".drop" stay-if-ok append-to-dropzone)
+                                number(c=7 smaller) Monarquía
+                            .mt-1: drag(ref="" :data="1" dropzone=".drop" stay-if-ok append-to-dropzone)
+                                number(c=5 smaller) Gobierno democrático
+                        .w50
+                            .common.mt-1
+                                .drop(:data="1" droptimes="untilok")
+                                div Forma de gobierno en la que una persona hereda el trono y ejerce el poder.
+                            .common.mt-1
+                                .drop(:data="2" droptimes="untilok")
+                                div Esta forma de gobierno está basada en la amplia participación de la ciudadanía, la toma de decisiones, la elección de los gobernantes y la elaboración de las leyes.
+                            .common.mt-1
+                                .drop(:data="3" droptimes="untilok")
+                                div La autoridad sólo está en manos de un grupo reducido de personas.
             
-            
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="temps.a.length" scene-color="#ED1C25")
+                info(type="dragdrop" title=title text="Arrastra los elementos para completar el cuadro." textaudio="s/instruccion2.mp3" :autoplay="true")
+                activity
+                    .row.w100.text-center
+                        .w100: number(c=4 smaller) División del Poder Judicial
+                    .row.w100.text-center.cols
+                        .w30
+                            div.title Poder Legislativo
+                            .drop(:data="1" droptimes="untilok")
+                        .w30
+                            div.title Poder Ejecutivo
+                            div.opt Presidente
+                        .w30
+                            div.title Poder Judicial
+                            .drop(:data="2" droptimes="untilok")
+                    .row.w100.text-center
+                        .w100: number(c=4 smaller) División del Poder Estatal
+                    .row.w100.text-center.cols
+                        .w30
+                            div.title Poder Legislativo
+                            div.op Congreso local
+                        .w30
+                            div.title Poder Ejecutivo
+                            .drop(:data="3" droptimes="untilok")
+                        .w30
+                            div.title Poder Judicial
+                            div.op Tribunales
+                    
+                    .row.w100.text-center
+                        .w100: number(c=4 smaller) División del Poder Municipal
+                    .row.w100.text-center.cols
+                        .w30
+                            div.title Poder Legislativo
+                            .drop(:data="4" droptimes="untilok")
+                        .w30
+                            div.title Poder Ejecutivo
+                            .drop(:data="5" droptimes="untilok")
+                        .w30
+                            div.title Poder Judicial
+                            .drop(:data="6" droptimes="untilok")
+                    
+                    .row.w100.drags.mt-auto
+                        template(v-for="(i, index) in temps.a")
+                            drag(:data="i.v" dropzone=".drop" stay-if-ok append-to-dropzone)
+                                .common {{i.t}}
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==3" :key="3" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'a', [
+                    {v: 1, t: 'Cámara de Senadores'},
+                    {v: 1, t: 'Cámara de Diputados'},
+                    {v: 2, t: 'Suprema Corte de Justicia de la Nación'},
+                    {v: 2, t: 'Tribunales'},
+                    {v: 3, t: 'Gobernador'},
+                    {v: 4, t: 'Regidores'},
+                    {v: 5, t: 'Presidente municipal'},
+                    {v: 6, t: 'Síndicos'}
+                ])
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2

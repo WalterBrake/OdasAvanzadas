@@ -1,34 +1,78 @@
 include ../../assets/pug/_head
 include ../../assets/pug/_scripts
 
-- title = ''
+- title = 'Practico la justicia'
 
 <!DOCTYPE html>
 html(lang="es")
     +head
         style.
-
-
+            .drag{
+                width: auto;
+                height: auto;
+            }
+            .common{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
     body
         #app
             // START
             scene(v-if="currentScene==0" :key="0" start-scene @completed="sceneCompleted")
 
             // SCENES
-            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
-                info(type="seleccionar" title=title text="Lee la nota informativa." textaudio="s/instruccion1.mp3" :autoplay="true")
+            scene(v-if="currentScene==1" :key="1" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="3" scene-color="#ED1C25")
+                info(type="relacionar" title=title text="Une con una línea cada palabra con su definición." textaudio="s/instruccion1.mp3" :autoplay="true")
                 activity
                     .row.w100
+                        .w50
+                            .common
+                                number(c=1 smaller) Justicia
+                                drag(data="Justicia" dropzone=".drop" stay-if-ok drag-line c=1): .conector.c1
+                            .common.mt-1
+                                number(c=2 smaller) Respeto
+                                drag(data="Respeto" dropzone=".drop" stay-if-ok drag-line c=2): .conector.c2
+                            .common.mt-1
+                                number(c=3 smaller) Responsabilidad
+                                drag(data="Responsabilidad" dropzone=".drop" stay-if-ok drag-line c=3): .conector.c3
             
+                        .w30.ml-auto
+                            .common.drop(data="Respeto" droptimes="untilok"): div Consideración y atención hacia los demás.
+                            .common.drop.mt-1(data="Justicia" droptimes="untilok"): div Lo que debe hacerse según derecho o razón.
+                            .common.drop.mt-1(data="Responsabilidad" droptimes="untilok"): div Cumplir con las tareas y deberes que me corresponden.
+            // SCENES
+            scene(v-if="currentScene==2" hidescorebox :key="2" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="1" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Escucha la siguiente historia y contesta las preguntas. voz de niña." textaudio="s/instruccion2.mp3" :autoplay="false" )
+                activity
+                    .row.w100: videoplayer(initclass="w100" :autoplay="true" c="1" path="i/v1" @completed="temps.video = true")
+                    .row.w100(v-if="temps.video"): button(@click="sceneCompleted(false)").button.big Siguiente
             
+            // SCENES
+            scene(v-if="currentScene==3" hidescorebox :key="3" :score="scoreInScene" :temporals="temporals" alloks alloks-sound="../../assets/asound/bienhecho_mujer.mp3" @completed="sceneCompleted" :devmode="$devmode" :answers="2" scene-color="#ED1C25")
+                info(type="seleccionar" title=title text="Selecciona las respuestas correctas" textaudio="s/instruccion3.mp3" :autoplay="true")
+                activity
+                    .row.w100
+                        .w100.text-center
+                            number(c=2 smaller) ¿Crees que fue correcto lo que hicieron los amigos de Pedro?
+                            .row.common.mt-1
+                                .w40: clickable(:isok="false" simple-ok initclass="pa-1"): number(c=3 small) Sí
+                                .w40: clickable(:isok="true" simple-ok initclass="pa-1"): number(c=3 small) No
+                    .row.w100.mt-1
+                        .w100.text-center
+                            number(c=2 smaller) ¿Crees que fue justo que todos pagaran las consecuencias porque Pedro no fue honesto y no aceptó su responsabilidad? 
+                            .row.common.mt-1
+                                .w40: clickable(:isok="false" simple-ok initclass="pa-1"): number(c=3 small) Sí
+                                .w40: clickable(:isok="true" simple-ok initclass="pa-1"): number(c=3 small) No
+
             // END
-            scene(v-if="currentScene==2" :key="2" end-scene :final-data="finalData")
+            scene(v-if="currentScene==4" :key="4" end-scene :final-data="finalData")
         
         +scripts
             script.
 
                 app.$devmode = false
-                app.$set(app.temps, 'a', [])
+                app.$set(app.temps, 'video', false)
                 
                 app.currentScene = 0
-                app.scenesCount = 1
+                app.scenesCount = 2
